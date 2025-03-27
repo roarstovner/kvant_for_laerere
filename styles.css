@@ -34,3 +34,12 @@
   border-bottom: 2px solid #ddd;
   border-top: 2px solid #ddd;
 }
+
+body.quarto-dark img.img-fluid.figure-img {
+    filter: invert(1) hue-rotate(180deg);
+    mix-blend-mode: screen;
+}
+
+body.quarto-dark div.enlarge-image:hover {
+    background-color: var(--quarto-body-bg);
+}
