@@ -4,6 +4,7 @@
 .RData
 .Ruserdata
 .quarto/
+.Renviron
 /.quarto/
 learning-statistics-with-jamovi.tex
 termout.txt

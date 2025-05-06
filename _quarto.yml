@@ -5,7 +5,7 @@ execute:
   echo: false
   warning: false
 book: 
-  title: LEARNING STATISTICS WITH JAMOVI
+  title: Kvantitative metoder for lærere
   #subtitle: A Tutorial for Beginners in Statistical Analysis
   #author: "Danielle Navarro & David Foxcroft"
   #date: last-modified
@@ -19,18 +19,18 @@ book:
     style: floating
     collapse-level: 2
     pinned: false
-    tools:
-          - icon: book 
-            url: "https://www.openbookpublishers.com/books/10.11647/obp.0333"
-            text: Order hard copy
+    #tools:
+          #- icon: book 
+            #url: "https://www.openbookpublishers.com/books/10.11647/obp.0333"
+            #text: Order hard copy
   page-footer:
-    left: |
-      <a href="https://learnstatswithjamovi.com">learning statistics with jamovi</a>
+    #left: |
+      #<a href="https://learnstatswithjamovi.com">learning statistics with jamovi</a>
     right: |
-      This book was built with <a href="https://quarto.org/">Quarto</a> 
-  site-url: "https://davidfoxcroft.github.io/lsj-book/"
-  repo-url: "https://github.com/davidfoxcroft/lsj-book/"
-  repo-actions: [edit,issue]
+      Denne boka ble laget i <a href="https://quarto.org/">Quarto</a> 
+  #site-url: "https://davidfoxcroft.github.io/lsj-book/"
+  repo-url: "https://github.com/roarstovner/kvant_for_laerere"
+  #repo-actions: [edit,issue]
   open-graph: true
 
   chapters: 
@@ -38,42 +38,42 @@ book:
     - part: Beginnings
       chapters:
         - 01-Why-do-we-learn-statistics.qmd
-        - 02-A-brief-introduction-to-research-design.qmd
-    - part: An introduction to jamovi
-      chapters:
-         - 03-Getting-started-with-jamovi.qmd
-    - part: Working with data
-      chapters:
-         - 04-Descriptive-statistics.qmd
-         - 05-Drawing-graphs.qmd
-         - 06-Pragmatic-matters.qmd
-    - part: Statistical theory
-      chapters:
-         - Prelude-Part-IV.qmd
-         - 07-Introduction-to-probability.qmd
-         - 08-Estimating-unknown-quantities-from-a-sample.qmd
-         - 09-Hypothesis-testing.qmd
-    - part: Statistical tools
-      chapters:
-         - 10-Categorical-data-analysis.qmd
-         - 11-Comparing-two-means.qmd
-         - 12-Correlation-and-linear-regression.qmd
-         - 13-Comparing-several-means-one-way-ANOVA.qmd
-         - 14-Factorial-ANOVA.qmd
-         - 15-Factor-Analysis.qmd
-    - part: Endings, alternatives and prospects
-      chapters:
-         - 16-Bayesian-statistics.qmd
-    - Epilogue.qmd
-    - References.qmd
-    - obp-team.qmd
+    #     - 02-A-brief-introduction-to-research-design.qmd
+    # - part: An introduction to jamovi
+    #   chapters:
+    #      - 03-Getting-started-with-jamovi.qmd
+    # - part: Working with data
+    #   chapters:
+    #      - 04-Descriptive-statistics.qmd
+    #      - 05-Drawing-graphs.qmd
+    #      - 06-Pragmatic-matters.qmd
+    # - part: Statistical theory
+    #   chapters:
+    #      - Prelude-Part-IV.qmd
+    #      - 07-Introduction-to-probability.qmd
+    #      - 08-Estimating-unknown-quantities-from-a-sample.qmd
+    #      - 09-Hypothesis-testing.qmd
+    # - part: Statistical tools
+    #   chapters:
+    #      - 10-Categorical-data-analysis.qmd
+    #      - 11-Comparing-two-means.qmd
+    #      - 12-Correlation-and-linear-regression.qmd
+    #      - 13-Comparing-several-means-one-way-ANOVA.qmd
+    #      - 14-Factorial-ANOVA.qmd
+    #      - 15-Factor-Analysis.qmd
+    # - part: Endings, alternatives and prospects
+    #   chapters:
+    #      - 16-Bayesian-statistics.qmd
+    # - Epilogue.qmd
+    # - References.qmd
+    #- obp-team.qmd
 
 bibliography: refs.bib
 csl: apa.csl
 
 format:
   html:
-    mainfont: "TeX Gyre Pagella"
+    #mainfont: "TeX Gyre Pagella"
     title-block-style: none
     toc: true
     collapse: true
@@ -106,38 +106,38 @@ format:
   #   fig-align: left
   #   include-in-header: header-includes.html
   #   epub-cover-image: images/bookcover_html.png
-  pdf:
-    title: LEARNING STATISTICS WITH JAMOVI
-    mainfont: "TeX Gyre Pagella"
-    #subtitle: A Tutorial for Beginners in Statistical Analysis
-    #author: "Danielle Navarro & David Foxcroft"
-    documentclass: book
-    papersize: a4
-    geometry:
-      - paperwidth=8.0000000000000in
-      - paperheight=10.000000000000in
-      - left=1.25in
-      - textwidth= 5.25in
-      - top=1.00in
-      - textheight=8.25in
-      #- showframe
-    params:
-        endnotes: true
-    include-in-header: 
-      - preamble.tex
-    include-before-body: 
-      - first.tex
-      - before-body.tex
-    # include-after-body: 
-    #    text: \printendnotes
-    toc: true
-    colorlinks: true
-    fig-dpi: 300
-    fig-width: 6
-    fig-height: 6
-    fig-align: left
-    fig-pos: 'h!'
-    keep-tex: true
+  # pdf:
+  #   title: LEARNING STATISTICS WITH JAMOVI
+  #   mainfont: "TeX Gyre Pagella"
+  #   #subtitle: A Tutorial for Beginners in Statistical Analysis
+  #   #author: "Danielle Navarro & David Foxcroft"
+  #   documentclass: book
+  #   papersize: a4
+  #   geometry:
+  #     - paperwidth=8.0000000000000in
+  #     - paperheight=10.000000000000in
+  #     - left=1.25in
+  #     - textwidth= 5.25in
+  #     - top=1.00in
+  #     - textheight=8.25in
+  #     #- showframe
+  #   params:
+  #       endnotes: true
+  #   include-in-header: 
+  #     - preamble.tex
+  #   include-before-body: 
+  #     - first.tex
+  #     - before-body.tex
+  #   # include-after-body: 
+  #   #    text: \printendnotes
+  #   toc: true
+  #   colorlinks: true
+  #   fig-dpi: 300
+  #   fig-width: 6
+  #   fig-height: 6
+  #   fig-align: left
+  #   fig-pos: 'h!'
+  #   keep-tex: true
 
 crossref:
   title-delim: "."

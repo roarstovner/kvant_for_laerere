@@ -24,16 +24,16 @@ options(knitr.table.format = function() {
   if (knitr::is_html_output()) 'html' else pandoc
 })
 
-font_add(family = "TeX Gyre Pagella",   
-          regular = "texgyrepagella-regular.otf") # Name you want to use to call the font
+font_add(family = "Palatino Linotype",   
+          regular = "pala.ttf") # Name you want to use to call the font
 showtext_auto()
 
 huxtabs <- readRDS("data_and_tables/lsj_chapter_huxtabs.rds")
 
-theme_set(theme_classic(base_size=12, base_family="TeX Gyre Pagella"))
+theme_set(theme_classic(base_size=12, base_family="Palatino Linotype"))
 update_geom_defaults(
    geom = "text",
-   aes(family = "TeX Gyre Pagella",
+   aes(family = "Palatino Linotype",
        fontface = "plain",
        size = 3)
 )
