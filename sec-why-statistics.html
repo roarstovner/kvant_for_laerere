@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>1&nbsp; Hvorfor lære statistikk? – Kvantitative metoder for lærere</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./sec-measurement.html" rel="next">
+<link href="./index.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+
+    tex2jax: {
+
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+
+      displayMath: [ ['S$','S$'], ["\\[","\\]"] ]
+
+      processEscapes: true
+
+    }
+
+  });
+
+</script>
+
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
+<meta property="og:title" content="1&nbsp; Hvorfor lære statistikk? – Kvantitative metoder for lærere">
+<meta property="og:description" content="">
+<meta property="og:site_name" content="Kvantitative metoder for lærere">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sec-why-statistics.html">Beginnings</a></li><li class="breadcrumb-item"><a href="./sec-why-statistics.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Hvorfor lære statistikk?</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Kvantitative metoder for lærere</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/roarstovner/kvant_for_laerere" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="./Kvantitative-metoder-for-lærere.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Beginnings</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-why-statistics.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Hvorfor lære statistikk?</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-measurement.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Måling i utdanningsforskning</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#om-statistikkens-psykologi" id="toc-om-statistikkens-psykologi" class="nav-link active" data-scroll-target="#om-statistikkens-psykologi"><span class="header-section-number">1.1</span> Om statistikkens psykologi</a>
+  <ul class="collapse">
+  <li><a href="#forbannelsen-ved-eksisterende-oppfatninger" id="toc-forbannelsen-ved-eksisterende-oppfatninger" class="nav-link" data-scroll-target="#forbannelsen-ved-eksisterende-oppfatninger"><span class="header-section-number">1.1.1</span> Forbannelsen ved eksisterende oppfatninger</a></li>
+  </ul></li>
+  <li><a href="#en-advarsel-mot-å-tro-på-dataene-simpsons-paradoks" id="toc-en-advarsel-mot-å-tro-på-dataene-simpsons-paradoks" class="nav-link" data-scroll-target="#en-advarsel-mot-å-tro-på-dataene-simpsons-paradoks"><span class="header-section-number">1.2</span> En advarsel mot å “tro på dataene”: Simpsons paradoks</a></li>
+  <li><a href="#kvantitative-metoder-for-lærere" id="toc-kvantitative-metoder-for-lærere" class="nav-link" data-scroll-target="#kvantitative-metoder-for-lærere"><span class="header-section-number">1.3</span> Kvantitative metoder for lærere</a></li>
+  <li><a href="#det-er-mer-ved-kvantitativ-metode-enn-statistikk" id="toc-det-er-mer-ved-kvantitativ-metode-enn-statistikk" class="nav-link" data-scroll-target="#det-er-mer-ved-kvantitativ-metode-enn-statistikk"><span class="header-section-number">1.4</span> Det er mer ved kvantitativ metode enn statistikk</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header">
+<h1 class="title display-7"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Hvorfor lære statistikk?</span></h1>
+
+</header>
+
+
+<p><span class="math display">\[ \]</span> <!---- bug...need this here otherwise tables don't render latex in html output  ---></p>
+<blockquote class="blockquote">
+<p><em>Thou shalt not answer questionnaires</em><br>
+<em>Or quizzes upon World Affairs,</em><br>
+<em>Nor with compliance</em><br>
+<em>Take any test. Thou shalt not sit</em><br>
+<em>With statisticians nor commit</em><br>
+<em>A social science</em><br>
+– W.H. Auden<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+</blockquote>
+<section id="om-statistikkens-psykologi" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="om-statistikkens-psykologi"><span class="header-section-number">1.1</span> Om statistikkens psykologi</h2>
+<p>Mange blir overrasket over at de skal lære seg kvantitativ metode (statistikk, liksom!) i lærerutdanninga, men svært få blir overrasket over at det kanskje ikke er favorittdelen av lærerutdanninga. Hvis du virkelig digget statistikk ville du sannsynligvis vært påmeldt et statistikkurs nå, ikke et obligatorisk kurs i vitenskapsteori og metode for lærere. Likevel er studentmassen delt på midten i synet på kvantitativ metode, mange ser ikke vitsen, mens mange setter pris på å ha blitt tvunget gjennom stoffet, fordi de setter pris på at de bedre kan forholde seg til forskning etterpå. Med tanke på dette, tenkte jeg at det rette stedet å starte kunne være å svare på noen av de vanlige spørsmålene folk har om kvantitativ metode.</p>
+<p>En stor del av dette handler om selve ideen om kvantitativ metode. Hva er det? Hva er formålet med det? Og hvorfor er forskere så forferdelig opptatt av det? Mange forskere bruker statistikk så ofte at de glemmer å begrunne for andre og, kanskje verre, for seg selv, hvorfor de bruker det. Det er en tro blant mange forskere at funnene ikke kan stoles på før man har gjort noe statistikk. Det er en tro blant menigmann at kvantitativ forskning er mer til å stole på enn kvalitativ forskning. <em>“Bigger is better”</em>. Og dette kan ha stor samfunnsbetydning, fordi folk i viktige samfunnsposisjoner deler disse holdningene. Da Nicolai Tangen, lederen for oljefondet, intervjuet psykologen og forskeren Angela Duckworth til podcasten sin, spurte han om det var en sammenheng mellom alder eller kjønn og <em>grit</em> (pågangsmot) <span class="citation" data-cites="tangen2022">(<a href="#ref-tangen2022" role="doc-biblioref">Tangen, 2022</a>, etter etter ca. 40m30s)</span>. Angela svarte at man fikk mer <em>grit</em> ettersom man ble eldre, men at kjønn ikke så ut til å ha noen innvirkning, i hvert fall var utvalget hennes så stort at effekten måtte være kjempeliten. Tangen svarte at han var en “big believer in sample size”, men, som du kommer til å lære i løpet av dette kurset, så er det en million andre ting som er viktigere å tenke på enn utvalgsstørrelsen når man skal vurdere Duckworth sine påstander.</p>
+<p>Formålet med boka er først og fremst å kunne vurdere slike påstander som Duckworth kom med. Lærere blir bombardert med påstander begrunnet med kvantitative data hele tiden, om elevers lesekompetanse fra PISA-undersøkelsen, om læringseffekten av et nytt IKT-verktøy fra de som ønsker å selge det, og så videre. Hvis du kan vurdere kvantitativ forskning står du bedre rustet til å forholde deg kritisk til alt dette. Et tilleggsformål er å gi et grunnlag i hvordan man utfører kvantitativ metode, for de som kan tenke seg å benytte kvantitative metoder i mastergraden.</p>
+<p>Studenter kan tilgis for å tenke at vi alle er ganske sprø, siden ingen tar seg tid til å svare på et veldig enkelt spørsmål:</p>
+<blockquote class="blockquote">
+<p>Hvorfor driver vi med statistikk? Hvorfor bruker ikke forskere bare <strong>sunn fornuft</strong>?</p>
+</blockquote>
+<p>Det er et naivt spørsmål, men de fleste gode spørsmål er naive. Det finnes mange gode svar på spørsmålet,<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> men etter min mening er det beste svaret veldig enkelt: vi stoler ikke nok på oss selv. Vi bekymrer oss for at vi er mennesker, og derfor utsatt for alle de skjevhetene, fristelsene og svakhetene som mennesker lider av. Mye av statistikken er egentlig en sikkerhetsmekanisme. Å bruke “sunn fornuft” for å vurdere bevis betyr å stole på magefølelsen, på verbale argumenter og på den menneskelige fornuftens kraft for å finne det riktige svaret. De fleste forskere tror ikke at denne tilnærmingen vil fungere.</p>
+<p>Er det virkelig sannsynlig at denne “sunn fornuft”-tilnærmingen kan være pålitelig? Verbale argumenter må uttrykkes på et språk, og alle språk har skjevheter – noen ting er vanskeligere å si enn andre, og ikke nødvendigvis fordi de er usanne (f.eks. er kvanteelektrodynamikk en god teori, men vanskelig å forklare med ord). Magefølelsen vår oppsto ikke for å løse vitenskapelige problemer, men for å håndtere hverdagslige slutninger – og gitt at biologisk evolusjon er langsommere enn kulturelle endringer, bør vi si at de er laget for å løse hverdagsproblemer i en <em>annen verden</em> enn den vi lever i. Mest grunnleggende krever resonnement med sunn fornuft at folk driver med “induksjon”, altså gjøre kloke gjetninger som går utover dine umiddelbare sanseinntrykk for å gjøre generaliseringer om verden. Dette er vanskelig å gjøre riktig. Ja, som den neste delen viser, kan vi ikke engang løse “deduktive” problemer (de som kun krever logisk tenkning og ikke krever gjetting) uten å bli påvirket av våre forutinntattheter.</p>
+<section id="forbannelsen-ved-eksisterende-oppfatninger" class="level3" data-number="1.1.1">
+<h3 data-number="1.1.1" class="anchored" data-anchor-id="forbannelsen-ved-eksisterende-oppfatninger"><span class="header-section-number">1.1.1</span> Forbannelsen ved eksisterende oppfatninger</h3>
+<p>Mennesker er stort sett ganske smarte. Vi regnes som smartere enn mange andre arter vi deler planeten med (selv om noen kanskje vil være uenige). Vårt sinn er fascinerende, og vi ser ut til å være i stand til utrolig tanker og resonnementer. Vi er imidlertid langt fra perfekte. Psykologer har vist på et utall måter hvordan vi har vanskeligheter med å være nøytrale og vurdere bevis upartisk uten å påvirkes av våre eksisterende oppfatninger. Et godt eksempel på dette er <strong>belief bias</strong>: Hvis man ber folk avgjøre om et argument er logisk gyldig (det vil si, at konklusjonen ville vært sann hvis premissene var sanne), har de en tendens til å bli påvirket av hvor troverdig konklusjonen virker, selv når vi egentlig ikke burde bli det. For eksempel, her er et gyldig argument hvor konklusjonen er troverdig:</p>
+<blockquote class="blockquote">
+<p>Alle sigaretter er dyre (Premiss 1)<br>
+Noen avhengighetsskapende ting er billige (Premiss 2)<br>
+Derfor er noen avhengighetsskapende ting ikke sigaretter (Konklusjon)</p>
+</blockquote>
+<p>Og her er et gyldig argument hvor konklusjonen ikke er troverdig:</p>
+<blockquote class="blockquote">
+<p>Alle avhengighetsskapende ting er dyre (Premiss 1)<br>
+Noen sigaretter er billige (Premiss 2)<br>
+Derfor er noen sigaretter ikke avhengighetsskapende (Konklusjon)</p>
+</blockquote>
+<p>Den logiske <em>strukturen</em> til argument #2 er identisk med strukturen til argument #1, så begge argumentene er gyldige. Men i det andre argumentet er det gode grunner til å tenke at premiss 1 er feil, og i så fall er konklusjonen også feil. Men dette er helt irrelevant i denne sammenhengen; et argument er deduktivt gyldig hvis konklusjonen logisk følger av premissene. Det betyr at et gyldig argument ikke nødvendigvis må inneholde sanne utsagn.</p>
+<p>Og motsatt, her er et ugyldig argument med en troverdig konklusjon:</p>
+<blockquote class="blockquote">
+<p>Alle avhengighetsskapende ting er dyre (Premiss 1)<br>
+Noen sigaretter er rimelige (Premiss 2)<br>
+Derfor er noen avhengighetsskapende ting ikke sigaretter (Konklusjon)</p>
+</blockquote>
+<p>Og til slutt, et ugyldig argument med en lite troverdig konklusjon:</p>
+<blockquote class="blockquote">
+<p>Alle sigaretter er dyre (Premiss 1)<br>
+Noen avhengighetsskapende ting er rimelige (Premiss 2)<br>
+Derfor er noen sigaretter ikke avhengighetsskapende (Konklusjon)</p>
+</blockquote>
+<p>Nå, la oss anta at folk virkelig er i stand til å legge til side sine eksisterende oppfatninger om hva som er sant og faktisk klarer å evaluere argumenter basert på deres logiske kvaliteter. Vi ville forventet at 100% av folk sier at gyldige argumenter er gyldige og at 0% sier at ugyldige argumenter er gyldige. Så hvis du gjennomførte et eksperiment som undersøkte dette, ville du forventet å se data som vist i <a href="#tbl-tab1-1" class="quarto-xref">Table&nbsp;<span>1.1</span></a>.</p>
+<div class="cell" data-layout-align="left">
+<div id="tbl-tab1-1" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-layout-align="left">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tab1-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1.1. Gyldighet av argumenter
+</figcaption>
+<div aria-describedby="tbl-tab1-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="huxtable" data-quarto-disable-processing="true" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; width: 90%; margin-left: auto; margin-right: auto;  " id="tab:tbl-tab1-1">
+<colgroup><col><col><col></colgroup><tbody><tr>
+<th style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 2pt 12pt 2pt 0pt; font-weight: bold;"></th><th style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: bold;">Konklusjonen føles sann</th><th style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 2pt 0pt 2pt 12pt; font-weight: bold;">Konklusjonen føles usann</th></tr>
+<tr>
+<td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 0pt; font-weight: bold;">Argumentet er gyldig</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: normal;">100\(\%\) sier \(\text{``}\)gyldig\(\text{''}\)</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 2pt 0pt 2pt 12pt; font-weight: normal;">100\(\%\) sier \(\text{``}\)gyldig\(\text{''}\)</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 2pt 12pt 2pt 0pt; font-weight: bold;">Argumentet er ugyldig</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: normal;">0\(\%\) sier \(\text{``}\)gyldig\(\text{''}\)</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 2pt 0pt 2pt 12pt; font-weight: normal;">0\(\%\) sier \(\text{``}\)gyldig\(\text{''}\)</td></tr>
+</tbody></table>
+
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>Hvis dataene så slik ut (eller var veldig nære), ville vi kanskje føle oss trygge nok til å stole på folks magefølelse. Det vil si, det ville vært helt greit å la forskere evaluere data basert på sunn fornuft, uten å bry seg med all denne statistikken. Men hvis du kan noe som helst om psykologi, skjønner du nok hvor dette bærer hen.</p>
+<p>I en klassisk studie undersøkte <span class="citation" data-cites="Evans1983">Evans et al. (<a href="#ref-Evans1983" role="doc-biblioref">1983</a>)</span> nettopp dette med et fiffig eksperiment. Det de fant var at når eksisterende oppfatninger (dvs. tro) var i samsvar det logiske argumentet gikk alt slik man skulle håpe, se <a href="#tbl-tab1-2" class="quarto-xref">Table&nbsp;<span>1.2</span></a>. Folk resonnerte ikke perfekt, men ganske godt.</p>
+<div class="cell" data-layout-align="left">
+<div id="tbl-tab1-2" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-layout-align="left">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tab1-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1.2. Forutinntatte holdninger og gyldighet av argument
+</figcaption>
+<div aria-describedby="tbl-tab1-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="huxtable" data-quarto-disable-processing="true" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; width: 90%; margin-left: auto; margin-right: auto;  " id="tab:tbl-tab1-2">
+<colgroup><col><col><col></colgroup><tbody><tr>
+<th style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 2pt 12pt 2pt 0pt; font-weight: bold;"></th><th style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: bold;">konklusjonen føles sann</th><th style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 2pt 0pt 2pt 12pt; font-weight: bold;">konklusjonen føles usann</th></tr>
+<tr>
+<td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 0pt; font-weight: bold;">argumentet er gyldig</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: normal;">92\(\%\) sier \(\text{``}\)gyldig\(\text{''}\)</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 2pt 0pt 2pt 12pt; font-weight: normal;"></td></tr>
+<tr>
+<td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 2pt 12pt 2pt 0pt; font-weight: bold;">argumentet er ugyldig</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: normal;"></td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 2pt 0pt 2pt 12pt; font-weight: normal;">8\(\%\) sier \(\text{``}\)gyldig\(\text{''}\)</td></tr>
+</tbody></table>
+
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>Men se hva som skjedde da de eksisterende oppfatningene gikk på tvers av det logiske argumentet, altså at det logiske argumentet konkluderte ulikt med folks eksisterende oppfatning (<a href="#tbl-tab1-3" class="quarto-xref">Table&nbsp;<span>1.3</span></a>). Å huff, det er ikke like bra! Det ser ut til at når folk blir presentert for et sterkt argument som motsier våre eksisterende oppfatninger, synes vi det er ganske vanskelig å se at det faktisk er et sterkt argument (folk gjorde det bare 46% av tiden). Enda verre er det når folk blir presentert for et svakt argument som er i samsvar med våre eksisterende oppfatninger; nesten ingen klarer å se at argumentet er svakt – folk tok feil 92% av tiden! <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<div class="cell" data-layout-align="left" data-tbl-pos="h!">
+<div id="tbl-tab1-3" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-tbl-pos="h!" data-layout-align="left">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tab1-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1.3. Intuisjon og gyldighet av argument
+</figcaption>
+<div aria-describedby="tbl-tab1-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="huxtable" data-quarto-disable-processing="true" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; width: 90%; margin-left: auto; margin-right: auto;  " id="tab:tbl-tab1-3">
+<colgroup><col><col><col></colgroup><tbody><tr>
+<th style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 2pt 12pt 2pt 0pt; font-weight: bold;"></th><th style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: bold;">konklusjonen føles sann</th><th style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 2pt 0pt 2pt 12pt; font-weight: bold;">konklusjonen føles usann</th></tr>
+<tr>
+<td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 0pt; font-weight: bold;">argumentet er gyldig</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: normal;">92\(\%\) sier \(\text{``}\)gyldig\(\text{''}\)</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 2pt 0pt 2pt 12pt; font-weight: normal;">46\(\%\) sier \(\text{``}\)gyldig\(\text{''}\)</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 2pt 12pt 2pt 0pt; font-weight: bold;">argumentet er ugyldig</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: normal;">92\(\%\) sier \(\text{``}\)gyldig\(\text{''}\)</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 2pt 0pt 2pt 12pt; font-weight: normal;">8\(\%\) sier \(\text{``}\)gyldig\(\text{''}\)</td></tr>
+</tbody></table>
+
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>Om du tenker etter, er det ikke slik at disse resultatene er forferdelige. Totalt sett gjorde folk det bedre enn om de skulle svart helt tilfeldig, ettersom omtrent 60% av folks vurderinger var korrekte (du ville forvente 50% ved tilfeldig gjetning), så folk klarer i noen grad å se utover sine egne eksisterende oppfatninger. Likevel, hvis du var en profesjonell “bevisvurderer”, og noen tilbød deg et magisk verktøy som forbedret sjansene dine for å ta riktig beslutning fra 60% til (for eksempel) 95%, ville du antagelig gripe muligheten, ikke sant? Selvfølgelig ville du det. Heldigvis har vi faktisk et verktøy som kan gjøre dette, som kan garantere at du ikke forkaster en hypotese galt med hele 95 % sikkerhet! Men det er ikke magi, det er statistikk. Så det er grunn nr. 1 til hvorfor forskere elsker statistikk. Det er altfor lett for oss å “tro det vi vil tro”. Så istedenfor, hvis vi vil “tro på dataene”, trenger vi litt hjelp til å holde våre personlige fordommer i sjakk. Det er det statistikk gjør, det hjelper oss å være ærlige.</p>
+</section>
+</section>
+<section id="en-advarsel-mot-å-tro-på-dataene-simpsons-paradoks" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="en-advarsel-mot-å-tro-på-dataene-simpsons-paradoks"><span class="header-section-number">1.2</span> En advarsel mot å “tro på dataene”: Simpsons paradoks</h2>
+<p>I forrige avsnitt benyttet jeg uttrykket “å tro på dataene”, et uttrykk jeg misliker sterkt. Du skal nå få høre en fortelling som belyser hvorfor også du bør slutte å “tro på dataene”, “høre på det evidensen sier” og liknende.</p>
+<p>Følgende er en sann historie (tror jeg!). I 1973 hadde University of California, Berkeley, noen bekymringer rundt opptakene av studenter til deres videreutdanningskurs. Mer spesifikt var det kjønnsfordelingen i opptakene som forårsaket problemer (<a href="#tbl-tab1-4" class="quarto-xref">Table&nbsp;<span>1.4</span></a>).</p>
+<div class="cell" data-layout-align="left">
+<div id="tbl-tab1-4" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-layout-align="left">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tab1-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1.4. Berkeley-studenter etter kjønn
+</figcaption>
+<div aria-describedby="tbl-tab1-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="huxtable" data-quarto-disable-processing="true" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; width: 90%; margin-left: auto; margin-right: auto;  " id="tab:tbl-tab1-4">
+<colgroup><col><col><col></colgroup><tbody><tr>
+<th style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 2pt 12pt 2pt 0pt; font-weight: bold;"></th><th style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: bold;">Antall søkere</th><th style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 2pt 0pt 2pt 12pt; font-weight: bold;">Prosent tilbudt plass</th></tr>
+<tr>
+<td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 0pt; font-weight: normal;">Menn</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: normal;">8442</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 2pt 0pt 2pt 12pt; font-weight: normal;">44\(\%\)</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 2pt 12pt 2pt 0pt; font-weight: normal;">Kvinner</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: normal;">4321</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 2pt 0pt 2pt 12pt; font-weight: normal;">35\(\%\)</td></tr>
+</tbody></table>
+
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>På grunn av kjønnsfordelingen var de bekymret for å bli saksøkt!<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> Med nesten 13,000 søkere er en forskjell på 9 % i opptaksratene mellom menn og kvinner altfor stor til å være tilfeldig. Ganske overbevisende data, ikke sant? Men hva hvis jeg sa til deg at disse dataene <em>faktisk</em> reflekterte en svak skjevhet til fordel for kvinner (på en måte!)? Du ville antakelig trodd at jeg var gal, kvinnefiendtlig eller begge.</p>
+<p>Merkelig nok er dette faktisk delvis sant. Da folk så nærmere på opptaksdataene, viste de en litt annen historie <span class="citation" data-cites="Bickel1975">(<a href="#ref-Bickel1975" role="doc-biblioref">Bickel et al., 1975</a>)</span>. Spesielt da de så på opptakene avdeling for avdeling viste det seg at de fleste fakultetene faktisk hadde en litt <em>høyere</em> suksessrate for kvinnelige søkere enn for mannlige søkere. <a href="#tbl-tab1-5" class="quarto-xref">Table&nbsp;<span>1.5</span></a> viser opptaksdata for de seks største fakultetene (med navnene på fakultetene fjernet av personvernhensyn):</p>
+<div class="cell" data-layout-align="left">
+<div id="tbl-tab1-5" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-layout-align="left">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tab1-5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1.5. Berkeley-studenter etter kjønn for de seks største avdelingene
+</figcaption>
+<div aria-describedby="tbl-tab1-5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="huxtable" data-quarto-disable-processing="true" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; width: 90%; margin-left: auto; margin-right: auto;  " id="tab:tbl-tab1-5">
+<colgroup><col><col><col><col><col></colgroup><tbody><tr>
+<th style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 2pt 12pt 2pt 0pt; font-weight: bold;"></th><th colspan="2" style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: bold;">Menn</th><th colspan="2" style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: bold;">Kvinner</th></tr>
+<tr>
+<td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 0pt; font-weight: normal;">Avdeling</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: normal;">Søkere</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: normal;">Prosent tilbudt plass</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: normal;">Søkere</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 2pt 0pt 2pt 12pt; font-weight: normal;">Prosent tilbudt plass</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 0pt; font-weight: normal;">A</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: normal;">825</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: normal;">62\(\%\)</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: normal;">108</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 2pt 0pt 2pt 12pt; font-weight: normal;">82\(\%\)</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 0pt; font-weight: normal;">B</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: normal;">560</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: normal;">63\(\%\)</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: normal;">25</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 2pt 0pt 2pt 12pt; font-weight: normal;">68\(\%\)</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 0pt; font-weight: normal;">C</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: normal;">325</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: normal;">37\(\%\)</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: normal;">593</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 2pt 0pt 2pt 12pt; font-weight: normal;">34\(\%\)</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 0pt; font-weight: normal;">D</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: normal;">417</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: normal;">33\(\%\)</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: normal;">375</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 2pt 0pt 2pt 12pt; font-weight: normal;">35\(\%\)</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 0pt; font-weight: normal;">E</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: normal;">191</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: normal;">28\(\%\)</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: normal;">393</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 2pt 0pt 2pt 12pt; font-weight: normal;">24\(\%\)</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 2pt 12pt 2pt 0pt; font-weight: normal;">F</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: normal;">272</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: normal;">6\(\%\)</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: normal;">341</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 2pt 0pt 2pt 12pt; font-weight: normal;">7\(\%\)</td></tr>
+</tbody></table>
+
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>Det bemerkelsesverdige er at de fleste avdelingene hadde en <em>høyere</em> opptaksrate for kvinner enn for menn! Likevel var den totale opptaksraten ved universitetet lavere for kvinner enn for menn. Hvordan kan dette være mulig? Hvordan kan begge disse påstandene være sanne samtidig?</p>
+<p>Trekk pusten dypt, for du må trolig konsentrere deg litt for å henge med på forklaringen. For det første, merk at avdelingene ikke har like opptaksprosenter: noen fakulteter (f.eks. A og B) hadde en tendens til å ta opp en høy prosentandel kvalifiserte søkere, mens andre (f.eks. F) avslo de fleste kandidatene. Så blant de seks fakultetene som vises ovenfor er A er det mest sjenerøse, etterfulgt av B, C, D, E og F i den rekkefølgen. Videre, merk at menn og kvinner hadde en tendens til å søke ulike avdelinger. Hvis vi rangerer avdelingene etter det totale antallet mannlige søkere, får vi <strong>A</strong>&gt;<strong>B</strong>&gt;D&gt;C&gt;F&gt;E (de avdelingene som var enklere å komme inn på er uthevet). Generelt hadde menn en tendens til å søke til avdelingene som var enkle å komme inn på, altså de med høye opptaksrater. Når vi sammenligner dette med hvordan de kvinnelige søkerne fordelte seg, ser vi at bildet er ganske annerledes. Når vi rangere avdelingene etter det totale antallet kvinnelige søkere får vi rekkefølgen C&gt;E&gt;D&gt;F&gt;<strong>A</strong>&gt;<strong>B</strong>. Med andre ord, dataene ser ut til å vise at de kvinnelige søkerne søkte seg til “vanskeligere” fakulteter. Og faktisk, hvis vi ser på <a href="#fig-fig1-1" class="quarto-xref">Figure&nbsp;<span>1.1</span></a>, ser vi at denne trenden er systematisk, faktisk helt slående.</p>
+<p>Denne effekten, at sammenhenger som gjelder hele utvalget kan være annerledes i de fleste eller alle undergrupper, er kjent som <strong>Simpsons paradoks</strong>. Det er ikke vanlig, men det opptrer i virkeligheten, og de fleste blir svært overrasket når de først støter på det, og mange nekter til og med å tro at det er ekte. Det er veldig reelt. Og mens det er mange veldig subtile statistiske leksjoner begravet der inne, vil jeg bruke det til å gjøre et mye viktigere poeng: kvantitativ metode er vanskelig, og det er mange subtile, kontraintuitive fallgruver som lurer. Det er grunn #2 til at forskere elsker statistikk, og hvorfor vi lærer forskningsmetoder. Fordi vitenskap er vanskelig og sannheten ligger utspekulert i skjul i kroker og kriker av kompliserte data.</p>
+<div class="cell" data-layout-align="left">
+<div class="cell-output-display">
+<div id="fig-fig1-1" class="quarto-float quarto-figure quarto-figure-left anchored" data-fig-align="left" alt="Et spredningsdiagram viser prosentandelen kvinnelige søkere (x-akse) mot opptaksraten for begge kjønn (y-akse). Blå sirkler av varierende størrelser og grå pluss-tegn representerer datapunktene. En nedadgående trendlinje indikerer en negativ korrelasjon mellom variablene." data-fig-pos="H">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fig1-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="sec-why-statistics_files/figure-html/fig-fig1-1-1.png" class="img-fluid quarto-figure quarto-figure-left figure-img" style="width:85.0%" data-fig-pos="H" alt="Et spredningsdiagram viser prosentandelen kvinnelige søkere (x-akse) mot opptaksraten for begge kjønn (y-akse). Blå sirkler av varierende størrelser og grå pluss-tegn representerer datapunktene. En nedadgående trendlinje indikerer en negativ korrelasjon mellom variablene.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fig1-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.1. Berkeley-opptaksdata for 1973. Denne figuren viser opptaksraten for de 85 fakultetene som hadde minst én kvinnelig søker som en funksjon av prosentandelen kvinnelige søkere. Figuren er en nytegning av Figur 1 fra <span class="citation" data-cites="Bickel1975">Bickel et al. (<a href="#ref-Bickel1975" role="doc-biblioref">1975</a>)</span>. Sirkler representerer fakulteter med mer enn 40 søkere; arealet av sirkelen er proporsjonal med totalt antall søkere. Kryss representerer avdelinger med færre enn 40 søkere.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Historien er tilfredsstillende ved at den virker å avsløre en ugyldig slutning gjennom et fiffig statistisk argument, men det slutter ikke der. Fra et samfunnsvitenskapelig eller psykologisk perspektiv bør vi spørre <em>hvorfor</em> det er markante kjønnsforskjeller i søknadsmønstre. Hvorfor søker menn oftere til ingeniørfag, og kvinner til psykologi? Og hvorfor har avdelinger med flere kvinnelige søkere ofte lavere opptakstall enn de med flere mannlige søkere? Selv om hver avdeling er upartisk, kan dette fortsatt indikere kjønnsforskjeller.</p>
+<p>Anta at menn foretrekker “harde vitenskaper” og kvinner “humaniora”. Hva om humaniora har lavere opptaksrater fordi staten ikke finansierer dem like mye som de “harde vitenskapene”, kanskje fordi noen i staten mener humaniora er en “unyttig jenteting”? Dette ville virket kjønnsdiskriminerende. Slike aspekter faller utenfor statistikken, men påvirker hvilke konklusjoner vi kan trekke fra forskningen. Hvis du ser på strukturelle effekter av kjønnsforskjeller, bør du analysere både de samlede dataene og fakultetsdataene. Hvis du derimot er interessert i beslutningsprosessene ved University of California, bør du fokusere på fakultetsdataene.</p>
+<p>Det eksempelet viser er at hvilke slutninger du kan trekke fra data eller statistiske undersøkelser avhenger av en fortolkning. Forhåpentligvis har forskerne et bevisst forhold til sitt eget teoretiske ståsted og benytter dette til å fortolke dataene. I så fall kan andre kritisere fortolkningen enten ved at den ikke er i tråd med teorien, eller ved at de er uenige i teorien i utgangspunktet. Hvis forskerne <em>ikke</em> har et bevisst forhold til sitt teoretiske ståsted er det mye verre; da skjer fortolkningen basert på forskernes eksisterende oppfatninger, og disse er uskrevne og diffuse. Da kan ikke andre forskere kritisere fortolkningene på en nyttig måte. Og verre, forskerne vil med all sannsynlighet bare forsterke egne eksisterende oppfatninger og gå ut i verden med en ny klubbe de kan hamre inn argumentet sitt med: “dere må jo lytte til dataene!” Den kjente statistikeren Sander Greenland uttrykte dette godt:</p>
+<blockquote class="blockquote">
+<p>Den største illusjonen om forskning: “La dataene tale for seg selv” Men DATAENE SIER IKKE NOE SOM HELST! De er bare merker på papir eller bits [på en datamaskins harddisk] som bare ligger der og gjør ingenting. Hvis du hører dem snakke, bør du umiddelbart oppsøke psykiatrisk hjelp! <span class="citation" data-cites="greenland2022">(<a href="#ref-greenland2022" role="doc-biblioref">Greenland, 2022</a>, s. 7, min oversettelse)</span></p>
+</blockquote>
+<p>Kort sagt er det mange kritiske spørsmål som du ikke kan besvare med statistikk, men svarene på disse spørsmålene vil ha stor innvirkning på hvordan du analyserer og tolker data. Og dette er grunnen til at du alltid bør tenke på statistikk som et verktøy for å hjelpe deg med å analysere data og <em>ikke</em> som et verktøy som gir deg svar på forskningsspørsmål. Statistikk er ingen erstatning for teori – statistikken følger fra teorien og er avhengig av den.</p>
+</section>
+<section id="kvantitative-metoder-for-lærere" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="kvantitative-metoder-for-lærere"><span class="header-section-number">1.3</span> Kvantitative metoder for lærere</h2>
+<p>Jeg håper at eksemplene ovenfor hjalp med å forstå hvorfor kvantitative metoder og statistikk er viktig i utdanningsvitenskap. Men jeg antar du lurer på hvorfor du som lærerstudent må lære deg noe om kvantitativ metode. Her er et forsøk på et svar: !!!</p>
+<p><strong>Kvantitativ metode er premissleverandør for utdanningspolitikk og utdanningsforskning</strong></p>
+<p>Kvantitative undersøkelser og statistikk danner ofte grunnlaget for beslutninger i utdanningssektoren.</p>
+<ul>
+<li>PISA-undersøkelser og andre internasjonale komparative studier brukes som argument for reformer og endringer i skolesystemet !!!<span class="quarto-unresolved-ref">?sec-ILSA</span>.</li>
+<li>Nasjonale prøver påvirker prioriteringer og ressursfordeling i skolen.</li>
+<li>Elevundersøkelser om trivsel, mobbing og læringsmiljø danner grunnlag for tiltak for å bedre elevene kår.</li>
+<li>Statistikk om karakterer og gjennomføring brukes til å vurdere skolekvalitet og elevprestasjoner.</li>
+<li>Randomiserte kontrollerte eksperimenter blir benyttet til å argumentere for at noen undervisningsmetoder er bedre enn andre</li>
+</ul>
+<p>Som lærer vil du måtte forholde deg til premissene for utdanningspolitikk som legges av slike undersøkelser, så hvorfor ikke forstå grunnlaget de bygger på?</p>
+<p><strong>Kvantitativ metode hjelper deg å vurdere påstander du møter i læreryrket</strong></p>
+<p>Som lærer møter du mange påstander som hevdes å være forskningsbaserte. Læreverk og IKT-verktøy markedsføres som evidensbasert, pedagogiske tilnærminger som er “dokumentert effektive”, rektorer som kommer springende med en ny undervisningsmetode han hørte om på et forskningsseminar. Med grunnleggende kunnskaper i kvantitativ metode kan du kritisk vurdere slike påstander, for eksempel kan du vurdere kvaliteten på utvalget, om målemetodene er pålitelige, om forskningsdesignet er hensiktsmessig, og så videre.</p>
+<p><strong>Kvantitativ metode hjelper deg å med <em>assessment literacy</em>, altså å forstå vurderinger</strong></p>
+<p>Som lærer mottar du resultater om klassen din på nasjonale prøver, du sitter i evalueringsmøte med skoleledere som lurer på hvorfor klassen din skåret dårligere på tentamen, eller du lurer på hvordan du bør utforme spørsmålene på tentamen. Kvantitativ metode kan gi en grunnleggende <em>assessment literacy</em> som hjelper deg å forberede og tolke vurderingssituasjoner.</p>
+<p><strong>Kvantitativ metode hjelper deg som lærerstudent</strong></p>
+<p>I løpet av studiet ditt møter du forskningslitteratur som benytter kvantitative metoder. Hvis du kan noe om kvantitative metoder vil du forstå disse bedre.</p>
+<p><strong>Kvantitativ metode hjelper deg i hverdagen</strong></p>
+<p>Da jeg begynte å skrive forelesningsnotatene mine, tok jeg de 20 nyeste nyhetsartiklene publisert på ABC News-nettstedet. Av disse artiklene inkluderte åtte en diskusjon av et statistisk emne, og i seks av dem ble det gjort en feil. Den vanligste feilen var å ikke rapportere grunnlagsdata (f.eks. artikkelen nevner at 5 % av personer i situasjon X har en egenskap Y, men sier ikke hvor vanlig egenskapen er for alle andre!). Poenget jeg prøver å få frem her er ikke at journalister er dårlige i statistikk (selv om de nesten alltid er det), men at en grunnleggende kunnskap om statistikk er svært nyttig for å finne ut når noen enten gjør en feil eller til og med lyver for deg. Faktisk, en av de største fordelene statistikkunnskap gir deg, er at du oftere blir irritert på aviser eller internett. Du kan finne et godt eksempel på dette i <span class="quarto-unresolved-ref">?sec-A-real-life-example</span> i <span class="quarto-unresolved-ref">?sec-Descriptive-statistics</span>. I senere utgaver av denne boken vil jeg forsøke å inkludere flere anekdoter av den typen.</p>
+</section>
+<section id="det-er-mer-ved-kvantitativ-metode-enn-statistikk" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="det-er-mer-ved-kvantitativ-metode-enn-statistikk"><span class="header-section-number">1.4</span> Det er mer ved kvantitativ metode enn statistikk</h2>
+<p>Så langt har jeg stort sett snakket om statistikk, men statistikk er kun en liten del av kvantitativ metode, og i dette kurset skal vi nesten ikke lære noe statistikk – fokuset er på de andre delene av kvantitativ metode. Men det er ikke mulig å ha et kurs i kvantitativ metode uten noe statistikk, og etter de innledende kapitlene om forskningsdesign og måling og slikt går vi i gang med en del om statistikk. !!! DETTE MÅ SKRIVES ORDENTLIG !!!</p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-Bickel1975" class="csl-entry" role="listitem">
+Bickel, P. J., Hammel, E. A., &amp; O’Connell, J. W. (1975). Sex bias in graduate admissions: <span>Data</span> from <span>Berkeley</span>. <em>Science</em>, <em>187</em>, 398–404. <a href="https://doi.org/10.1126/science.187.4175.398">https://doi.org/10.1126/science.187.4175.398</a>
+</div>
+<div id="ref-Evans1983" class="csl-entry" role="listitem">
+Evans, J. St. B. T., Barston, J. L., &amp; Pollard, P. (1983). On the conflict between logic and belief in syllogistic reasoning. <em>Memory and Cognition</em>, <em>11</em>, 295–306. <a href="https://doi.org/10.3758/BF03196976">https://doi.org/10.3758/BF03196976</a>
+</div>
+<div id="ref-greenland2022" class="csl-entry" role="listitem">
+Greenland, S. (2022). <em>What <span>Does Statistics Have</span> to <span>Offer</span> the <span>Epidemiologist</span>?</em>
+</div>
+<div id="ref-tangen2022" class="csl-entry" role="listitem">
+Tangen, N. (2022). Bonus episode: <span>Grit</span> with <span>Angela Duckworth</span> [audio podcast episode]. <em>In Good Company</em>.
+</div>
+</div>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Sitatet kommer fra Audens dikt fra 1946, <em>Under Which Lyre: A Reactionary Tract for the Times</em>, som ble fremført som en del av avslutningstalen ved Harvard University. Historien bak diktet er ganske interessant, se Adam Kirschs analyse i <em>Harvard Magazine</em>, <a href="https://www.harvardmagazine.com/2007/11/a-poets-warning.html">https://www.harvardmagazine.com/2007/11/a-poets-warning.html</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Et annet godt svar er at sunn fornuft er mangelvare blant forskere.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>I mine mer kyniske øyeblikk tenker jeg at dette forklarer 95% av det jeg leser på internett.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Tidligere versjoner av denne boka foreslo feilaktig at University of California faktisk ble saksøkt, men det er ikke sant. Alex Reinhart skrev en fin kommentar om dette her: <a href="https://www.refsmmat.com/posts/2016-05-08-simpsons-paradox-berkeley.html">https://www.refsmmat.com/posts/2016-05-08-simpsons-paradox-berkeley.html</a> En stor takk til Wilfried Van Hirtum for å påpeke dette.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link" aria-label="Preface">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./sec-measurement.html" class="pagination-link" aria-label="Måling i utdanningsforskning">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Måling i utdanningsforskning</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Denne boka ble laget i <a href="https://quarto.org/">Quarto</a></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
