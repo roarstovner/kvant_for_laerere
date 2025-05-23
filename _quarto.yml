@@ -6,6 +6,7 @@ execute:
   warning: false
 book: 
   title: Kvantitative metoder for lærere
+  author: "Danielle Navarro, David Foxcroft og Roar Bakken Stovner"
   #subtitle: A Tutorial for Beginners in Statistical Analysis
   #author: "Danielle Navarro & David Foxcroft"
   #date: last-modified
@@ -37,8 +38,8 @@ book:
     - index.qmd
     - part: Beginnings
       chapters:
-        - 01-Why-do-we-learn-statistics.qmd
-    #     - 02-A-brief-introduction-to-research-design.qmd
+        - sec-why-statistics.qmd
+        - sec-measurement.qmd
     # - part: An introduction to jamovi
     #   chapters:
     #      - 03-Getting-started-with-jamovi.qmd

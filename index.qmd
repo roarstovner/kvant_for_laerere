@@ -5,11 +5,11 @@ source("header.R")
 
 ## Preface {.unnumbered}
 
-I denne læreboken dekker vi innholdet i et innføringskurs i kvantitative metoder for lærere. Boka er basert på et vanlig grunnkurs slik det vanligvis undervises for bachelorstudenter innen psykologi, helse eller samfunnsvitenskap, men er endret for å passe til et kort kurs i kvantitativ metode for lærerstudenter og forutsetter lite matematikkunnskap. !!! Fra et statistisk perspektiv diskuterer boken først beskrivende statistikk og grafisk framstilling, etterfulgt av kapitler om sannsynlighetsteori, utvalg og estimering, og testing av nullhypoteser. Etter å ha introdusert teorien, dekker boken analyse av krysstabeller, korrelasjon, t-tester, regresjon og ANOVA.
+I denne læreboken dekker vi innholdet i et innføringskurs i kvantitative metoder for lærere. Boka er basert på et vanlig grunnkurs slik det vanligvis undervises for bachelorstudenter innen psykologi, helse eller samfunnsvitenskap, men er endret slik at det forutsetter lite matematikkunnskap og er gjort relevant for arbeid i skolen.
 
 Boken er en oversatt og omarbeidet versjon av Navarro og Foxcroft (2025) sin bok "Learning statistics with jamovi: A Tutorial for Beginners in Statistical Analysis" [https://www.learnstatswithjamovi.com/](https://www.learnstatswithjamovi.com/), som igjen er en omarbeidet versjon av DJ Navarro (2018). Learning statistics with R: A tutorial for psychology students and other beginners. (Version 0.6). [https://learningstatisticswithr.com/](https://learningstatisticswithr.com/).
 
-If you spot any mistakes, or have any suggestions, please do let us know by raising an issue at [https://github.com/roarstovner/kvant_for_laerere/issues](https://github.com/roarstovner/kvant_for_laerere/issues) eller send meg en epost.
+Hvis du finner noen feil eller har forslag til forbedringer kan du "raise an issue" her [https://github.com/roarstovner/kvant_for_laerere/issues](https://github.com/roarstovner/kvant_for_laerere/issues) eller sende meg en epost.
 
 *Roar Stovner
 1. august, 2025*
