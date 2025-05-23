@@ -1,3 +1,3 @@
 source("renv/activate.R")
-options(.chores_chat = ellmer::chat_claude(model = "claude-3-7-sonnet-latest"))
+options(.chores_chat = ellmer::chat_anthropic(model = "claude-sonnet-4-0"))
 
