@@ -1,9 +1,12 @@
+filters:
+  - diagram
 project: 
   type: book
   output-dir: docs
 execute: 
   echo: false
   warning: false
+language: language.yml
 book: 
   title: Kvantitative metoder for lærere
   author: "Danielle Navarro, David Foxcroft og Roar Bakken Stovner"
@@ -40,6 +43,7 @@ book:
       chapters:
         - sec-why-statistics.qmd
         - sec-measurement.qmd
+        - sec-design.qmd
     # - part: An introduction to jamovi
     #   chapters:
     #      - 03-Getting-started-with-jamovi.qmd
@@ -72,6 +76,14 @@ book:
 bibliography: refs.bib
 csl: apa.csl
 
+diagram:
+  engine:
+    tikz:
+      header-includes:
+        - '\usepackage{color}'
+        - '\usetikzlibrary{arrows, shapes,decorations,calc,arrows.meta,fit,positioning,automata}'
+        - '\tikzset{-Latex,auto,node distance =1 cm and 1 cm, semithick,state/.style ={ellipse, draw, minimum width = 0.7 cm}'
+        
 format:
   html:
     #mainfont: "TeX Gyre Pagella"
@@ -107,38 +119,36 @@ format:
   #   fig-align: left
   #   include-in-header: header-includes.html
   #   epub-cover-image: images/bookcover_html.png
-  # pdf:
-  #   title: LEARNING STATISTICS WITH JAMOVI
-  #   mainfont: "TeX Gyre Pagella"
-  #   #subtitle: A Tutorial for Beginners in Statistical Analysis
-  #   #author: "Danielle Navarro & David Foxcroft"
-  #   documentclass: book
-  #   papersize: a4
-  #   geometry:
-  #     - paperwidth=8.0000000000000in
-  #     - paperheight=10.000000000000in
-  #     - left=1.25in
-  #     - textwidth= 5.25in
-  #     - top=1.00in
-  #     - textheight=8.25in
-  #     #- showframe
-  #   params:
-  #       endnotes: true
-  #   include-in-header: 
-  #     - preamble.tex
-  #   include-before-body: 
-  #     - first.tex
-  #     - before-body.tex
-  #   # include-after-body: 
-  #   #    text: \printendnotes
-  #   toc: true
-  #   colorlinks: true
-  #   fig-dpi: 300
-  #   fig-width: 6
-  #   fig-height: 6
-  #   fig-align: left
-  #   fig-pos: 'h!'
-  #   keep-tex: true
+  pdf:
+    title: Kvantitativ metode for lærere
+    #mainfont: "TeX Gyre Pagella"
+    documentclass: book
+    papersize: a4
+    geometry:
+      - paperwidth=8.0000000000000in
+      - paperheight=10.000000000000in
+      - left=1.25in
+      - textwidth= 5.25in
+      - top=1.00in
+      - textheight=8.25in
+      #- showframe
+    params:
+        endnotes: true
+    include-in-header:
+      - preamble.tex
+    include-before-body:
+      - first.tex
+      - before-body.tex
+    # include-after-body:
+    #    text: \printendnotes
+    toc: true
+    colorlinks: true
+    fig-dpi: 300
+    fig-width: 6
+    fig-height: 6
+    fig-align: left
+    fig-pos: 'h!'
+    keep-tex: true
 
 crossref:
   title-delim: "."
