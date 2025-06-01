@@ -215,6 +215,7 @@ Diskrete variabler er det motsatte. For eksempel er nominelle variabler alltid d
 I den virkelige verden er det mange variable som ikke passer så godt inn i disse målenivåene. Det er ikke problematisk, for målenivåene gir forskere likevel en mer presis måte å snakke om variablene sine. En vanlig målemetode som ikke helt passer inn i målenivåene er **Likert-spørsmål**. Likert-spørsmål er det vanligste verktøyet i spørreundersøkelser. Du har selv fylt ut hundrevis, kanskje tusenvis, av dem. Anta at vi har et spørsmål i en undersøkelse som ser slik ut:
 
 > Jeg har vanskeligheter med å avslutte det jeg begynner på.
+> 
 > 1.  Sterkt uenig
 > 2.  Uenig
 > 3.  Verken enig eller uenig
