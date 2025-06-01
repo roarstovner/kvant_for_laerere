@@ -71,9 +71,14 @@ Nå, la oss anta at folk virkelig er i stand til å legge til side sine eksister
 
 ```{r}
 #| label: tbl-tab1-1
-#| tbl-cap: Gyldighet av argumenter
-huxtabs[[1]][[1]] |> set_contents(1, 1, "") |>
-  set_bold(, 1, TRUE)
+#| tbl-cap: Argumenters gyldighet
+tinytable::tt(
+  tibble::tibble(
+    ` ` = c("Argumentet er gyldig", "Argumentet er ugyldig"),
+    `konklusjonen føles sann` = c("100\\% sier \"gyldig\"", "0\\% sier \"gyldig\""),
+    `konklusjonen føles usann` = c("100\\% sier \"gyldig\"", "0\\% sier \"gyldig\"")
+  )
+)
 ```
 
 Hvis dataene så slik ut (eller var veldig nære), ville vi kanskje føle oss trygge nok til å stole på folks magefølelse. Det vil si, det ville vært helt greit å la forskere evaluere data basert på sunn fornuft, uten å bry seg med all denne statistikken. Men hvis du kan noe som helst om psykologi, skjønner du nok hvor dette bærer hen.
@@ -83,8 +88,13 @@ I en klassisk studie undersøkte @Evans1983 nettopp dette med et fiffig eksperim
 ```{r}
 #| label: tbl-tab1-2
 #| tbl-cap:  Forutinntatte holdninger og gyldighet av argument
-huxtabs[[1]][[2]] |> set_contents(1, 1, "") |>
-  set_bold(, 1, TRUE)
+tinytable::tt(
+  tibble::tibble(
+    ` ` = c("Argumentet er gyldig", "Argumentet er ugyldig"),
+    `konklusjonen føles sann` = c("92\\% sier 'gyldig'", ""),
+    `konklusjonen føles usann` = c("", "8\\% sier 'gyldig'")
+  )
+)
 ```
 
  Men se hva som skjedde da de eksisterende oppfatningene gikk på tvers av det logiske argumentet, altså at det logiske argumentet konkluderte ulikt med folks eksisterende oppfatning (@tbl-tab1-3). Å huff, det er ikke like bra! Det ser ut til at når folk blir presentert for et sterkt argument som motsier våre eksisterende oppfatninger, synes vi det er ganske vanskelig å se at det faktisk er et sterkt argument (folk gjorde det bare 46% av tiden). Enda verre er det når folk blir presentert for et svakt argument som er i samsvar med våre eksisterende oppfatninger; nesten ingen klarer å se at argumentet er svakt -- folk tok feil 92% av tiden! [^why-do-we-learn-statistics-3]
@@ -95,8 +105,13 @@ huxtabs[[1]][[2]] |> set_contents(1, 1, "") |>
 #| label: tbl-tab1-3
 #| tbl-cap:  Intuisjon og gyldighet av argument
 #| tbl-pos: 'h!'
-huxtabs[[1]][[3]] |> set_contents(1, 1, "") |>
-  set_bold(, 1, TRUE)
+tinytable::tt(
+  tibble::tibble(
+    ` ` = c("Argumentet er gyldig", "Argumentet er ugyldig"),
+    `konklusjonen føles sann` = c("92\\% sier 'gyldig'", "92\\% sier 'gyldig'"),
+    `konklusjon føles usann` = c("46\\% sier 'gyldig'", "8\\% sier 'gyldig'")
+  )
+)
 ```
 
 Om du tenker etter, er det ikke slik at disse resultatene er forferdelige. Totalt sett gjorde folk det bedre enn om de skulle svart helt tilfeldig, ettersom omtrent 60% av folks vurderinger var korrekte (du ville forvente 50% ved tilfeldig gjetning), så folk klarer i noen grad å se utover sine egne eksisterende oppfatninger. Likevel, hvis du var en profesjonell "bevisvurderer", og noen tilbød deg et magisk verktøy som forbedret sjansene dine for å ta riktig beslutning fra 60% til (for eksempel) 95%, ville du antagelig gripe muligheten, ikke sant? Selvfølgelig ville du det. Heldigvis har vi faktisk et verktøy som kan gjøre dette, som kan garantere at du ikke forkaster en hypotese galt med hele 95 % sikkerhet! Men det er ikke magi, det er statistikk. Så det er grunn nr. 1 til hvorfor forskere elsker statistikk. Det er altfor lett for oss å "tro det vi vil tro". Så istedenfor, hvis vi vil "tro på dataene", trenger vi litt hjelp til å holde våre personlige fordommer i sjakk. Det er det statistikk gjør, det hjelper oss å være ærlige.
@@ -110,7 +125,13 @@ Følgende er en sann historie (tror jeg!). I 1973 hadde University of California
 ```{r}
 #| label: tbl-tab1-4
 #| tbl-cap: Berkeley-studenter etter kjønn
-huxtabs[[1]][[4]] |> set_contents(1, 1, "")
+tinytable::tt(
+  tibble::tibble(
+    ` ` = c("Menn", "Kvinner"),
+    `Antall søkere` = c(8442, 4321),
+    `Prosent tilbudt plass` = c("44\\%", "35\\%")
+  )
+)
 ```
 
 På grunn av kjønnsfordelingen var de bekymret for å bli saksøkt![^why-do-we-learn-statistics-4] Med nesten 13,000 søkere er en forskjell på 9 % i opptaksratene mellom menn og kvinner altfor stor til å være tilfeldig. Ganske overbevisende data, ikke sant? Men hva hvis jeg sa til deg at disse dataene *faktisk* reflekterte en svak skjevhet til fordel for kvinner (på en måte!)? Du ville antakelig trodd at jeg var gal, kvinnefiendtlig eller begge.
@@ -122,9 +143,23 @@ Merkelig nok er dette faktisk delvis sant. Da folk så nærmere på opptaksdatae
 ```{r}
 #| label: tbl-tab1-5
 #| tbl-cap: Berkeley-studenter etter kjønn for de seks største avdelingene
-huxtabs[[1]][[5]] |>
-  set_colspan(1, 2, 2) |>
-  set_colspan(1, 4, 2)
+
+tinytable::tt(
+  data.frame(
+    Avdeling = c("A", "B", "C", "D", "E", "F"),
+    Søkere = c(825, 560, 325, 417, 191, 272),
+    `Prosent tilbudt plass` = c("62\\%", "63\\%", "37\\%", "33\\%", "28\\%", "6\\%"),
+    Søkere = c(108, 25, 593, 375, 393, 341),
+    `Prosent tilbudt plass` = c("82\\%", "68\\%", "34\\%", "35\\%", "24\\%", "7\\%"),
+    check.names = FALSE
+  )
+) |> 
+  tinytable::group_tt(
+    j = list(
+      "Menn" = 2:3,
+      "Kvinner" = 4:5
+    )
+  )
 ```
 
 Det bemerkelsesverdige er at de fleste avdelingene hadde en *høyere* opptaksrate for kvinner enn for menn! Likevel var den totale opptaksraten ved universitetet lavere for kvinner enn for menn. Hvordan kan dette være mulig? Hvordan kan begge disse påstandene være sanne samtidig?
