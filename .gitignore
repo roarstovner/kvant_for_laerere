@@ -8,7 +8,7 @@
 /.quarto/
 learning-statistics-with-jamovi.tex
 termout.txt
-docs/*
+docs/**
 *.log
 *.aux
 *.tex
