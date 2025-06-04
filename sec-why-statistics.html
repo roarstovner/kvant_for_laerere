@@ -77,17 +77,17 @@ div.csl-indent {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Ingen resultater",
+    "search-matching-documents-text": "Samsvarende dokumenter",
+    "search-copy-link-title": "Kopier link for å søke",
+    "search-hide-matches-text": "Skjul ytterlige resultater",
+    "search-more-match-text": "annet resultat i dette dokumentet",
+    "search-more-matches-text": "andre resultater i dette dokumentet",
+    "search-clear-button-title": "Tøm",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Avbryt",
+    "search-submit-button-title": "Send inn",
+    "search-label": "Søk"
   }
 }</script>
 <script type="text/x-mathjax-config">
@@ -155,13 +155,13 @@ window.Quarto = {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Slå av eller på sidebarnavigering" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sec-why-statistics.html">Beginnings</a></li><li class="breadcrumb-item"><a href="./sec-why-statistics.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Hvorfor lære statistikk?</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Slå av eller på sidebarnavigering" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Søk" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -175,10 +175,10 @@ window.Quarto = {
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Kvantitative metoder for lærere</a> 
         <div class="sidebar-tools-main tools-wide">
-    <a href="https://github.com/roarstovner/kvant_for_laerere" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/roarstovner/kvant_for_laerere" title="Kildekode" class="quarto-navigation-tool px-1" aria-label="Kildekode"><i class="bi bi-github"></i></a>
     <a href="./Kvantitative-metoder-for-lærere.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
-  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Bytt mørk modus"><i class="bi"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Bytt lesermodus">
   <div class="quarto-reader-toggle-btn">
   <i class="bi"></i>
   </div>
@@ -188,7 +188,7 @@ window.Quarto = {
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
+        <div id="quarto-search" class="" title="Søk"></div>
         </div>
         </div>
     <div class="sidebar-menu-container"> 
@@ -203,7 +203,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Beginnings</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Slå på delen">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -220,6 +220,12 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Måling i utdanningsforskning</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-design.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Forskningsdesign i kvantitativ metode</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -229,7 +235,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
+    <h2 id="toc-title">Innholdsfortegnelse</h2>
    
   <ul>
   <li><a href="#om-statistikkens-psykologi" id="toc-om-statistikkens-psykologi" class="nav-link active" data-scroll-target="#om-statistikkens-psykologi"><span class="header-section-number">1.1</span> Om statistikkens psykologi</a>
@@ -299,71 +305,338 @@ Derfor er noen avhengighetsskapende ting ikke sigaretter (Konklusjon)</p>
 Noen avhengighetsskapende ting er rimelige (Premiss 2)<br>
 Derfor er noen sigaretter ikke avhengighetsskapende (Konklusjon)</p>
 </blockquote>
-<p>Nå, la oss anta at folk virkelig er i stand til å legge til side sine eksisterende oppfatninger om hva som er sant og faktisk klarer å evaluere argumenter basert på deres logiske kvaliteter. Vi ville forventet at 100% av folk sier at gyldige argumenter er gyldige og at 0% sier at ugyldige argumenter er gyldige. Så hvis du gjennomførte et eksperiment som undersøkte dette, ville du forventet å se data som vist i <a href="#tbl-tab1-1" class="quarto-xref">Table&nbsp;<span>1.1</span></a>.</p>
+<p>Nå, la oss anta at folk virkelig er i stand til å legge til side sine eksisterende oppfatninger om hva som er sant og faktisk klarer å evaluere argumenter basert på deres logiske kvaliteter. Vi ville forventet at 100% av folk sier at gyldige argumenter er gyldige og at 0% sier at ugyldige argumenter er gyldige. Så hvis du gjennomførte et eksperiment som undersøkte dette, ville du forventet å se data som vist i <a href="#tbl-tab1-1" class="quarto-xref">Tabell&nbsp;<span>1.1</span></a>.</p>
 <div class="cell" data-layout-align="left">
 <div id="tbl-tab1-1" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-layout-align="left">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tab1-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1.1. Gyldighet av argumenter
+Tabell&nbsp;1.1. Argumenters gyldighet
 </figcaption>
 <div aria-describedby="tbl-tab1-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<table class="huxtable" data-quarto-disable-processing="true" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; width: 90%; margin-left: auto; margin-right: auto;  " id="tab:tbl-tab1-1">
-<colgroup><col><col><col></colgroup><tbody><tr>
-<th style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 2pt 12pt 2pt 0pt; font-weight: bold;"></th><th style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: bold;">Konklusjonen føles sann</th><th style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 2pt 0pt 2pt 12pt; font-weight: bold;">Konklusjonen føles usann</th></tr>
-<tr>
-<td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 0pt; font-weight: bold;">Argumentet er gyldig</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: normal;">100\(\%\) sier \(\text{``}\)gyldig\(\text{''}\)</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 2pt 0pt 2pt 12pt; font-weight: normal;">100\(\%\) sier \(\text{``}\)gyldig\(\text{''}\)</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 2pt 12pt 2pt 0pt; font-weight: bold;">Argumentet er ugyldig</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: normal;">0\(\%\) sier \(\text{``}\)gyldig\(\text{''}\)</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 2pt 0pt 2pt 12pt; font-weight: normal;">0\(\%\) sier \(\text{``}\)gyldig\(\text{''}\)</td></tr>
-</tbody></table>
+<!-- preamble start -->
 
+    <script>
+
+      function styleCell_txgz1317ftylnsmm50a8(i, j, css_id) {
+          var table = document.getElementById("tinytable_txgz1317ftylnsmm50a8");
+          var cell = table.rows[i]?.cells[j];  // Safe navigation to avoid errors
+          if (cell) {
+              console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
+              cell.classList.add(css_id);
+          } else {
+              console.warn(`Cell at (${i}, ${j}) not found.`);
+          }
+      }
+      function insertSpanRow(i, colspan, content) {
+        var table = document.getElementById('tinytable_txgz1317ftylnsmm50a8');
+        var newRow = table.insertRow(i);
+        var newCell = newRow.insertCell(0);
+        newCell.setAttribute("colspan", colspan);
+        // newCell.innerText = content;
+        // this may be unsafe, but innerText does not interpret <br>
+        newCell.innerHTML = content;
+      }
+      function spanCell_txgz1317ftylnsmm50a8(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_txgz1317ftylnsmm50a8");
+        const targetRow = table.rows[i];
+        const targetCell = targetRow.cells[j];
+        for (let r = 0; r < rowspan; r++) {
+          // Only start deleting cells to the right for the first row (r == 0)
+          if (r === 0) {
+            // Delete cells to the right of the target cell in the first row
+            for (let c = colspan - 1; c > 0; c--) {
+              if (table.rows[i + r].cells[j + c]) {
+                table.rows[i + r].deleteCell(j + c);
+              }
+            }
+          }
+          // For rows below the first, delete starting from the target column
+          if (r > 0) {
+            for (let c = colspan - 1; c >= 0; c--) {
+              if (table.rows[i + r] && table.rows[i + r].cells[j]) {
+                table.rows[i + r].deleteCell(j);
+              }
+            }
+          }
+        }
+        // Set rowspan and colspan of the target cell
+        targetCell.rowSpan = rowspan;
+        targetCell.colSpan = colspan;
+      }
+      // tinytable span after
+      window.addEventListener('load', function () {
+          var cellsToStyle = [
+            // tinytable style arrays after
+          { positions: [ { i: 2, j: 0 }, { i: 2, j: 1 }, { i: 2, j: 2 },  ], css_id: 'tinytable_css_i2fcpwqtn6of0p81njmk',}, 
+          { positions: [ { i: 0, j: 0 }, { i: 0, j: 1 }, { i: 0, j: 2 },  ], css_id: 'tinytable_css_o49wjzm94gvy1dsjlb5k',}, 
+          ];
+
+          // Loop over the arrays to style the cells
+          cellsToStyle.forEach(function (group) {
+              group.positions.forEach(function (cell) {
+                  styleCell_txgz1317ftylnsmm50a8(cell.i, cell.j, group.css_id);
+              });
+          });
+      });
+    </script>
+
+    <style>
+      /* tinytable css entries after */
+      .table td.tinytable_css_i2fcpwqtn6of0p81njmk, .table th.tinytable_css_i2fcpwqtn6of0p81njmk { border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_o49wjzm94gvy1dsjlb5k, .table th.tinytable_css_o49wjzm94gvy1dsjlb5k { border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
+    </style>
+    <div class="container">
+      <table class="table table-borderless" id="tinytable_txgz1317ftylnsmm50a8" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+        <thead>
+        
+              <tr>
+                <th scope="col"> </th>
+                <th scope="col">konklusjonen føles sann</th>
+                <th scope="col">konklusjonen føles usann</th>
+              </tr>
+        </thead>
+        
+        <tbody>
+                <tr>
+                  <td>Argumentet er gyldig</td>
+                  <td>100\% sier "gyldig"</td>
+                  <td>100\% sier "gyldig"</td>
+                </tr>
+                <tr>
+                  <td>Argumentet er ugyldig</td>
+                  <td>0\% sier "gyldig"</td>
+                  <td>0\% sier "gyldig"</td>
+                </tr>
+        </tbody>
+      </table>
+    </div>
+<!-- hack to avoid NA insertion in last line -->
 </div>
 </div>
 </figure>
 </div>
 </div>
 <p>Hvis dataene så slik ut (eller var veldig nære), ville vi kanskje føle oss trygge nok til å stole på folks magefølelse. Det vil si, det ville vært helt greit å la forskere evaluere data basert på sunn fornuft, uten å bry seg med all denne statistikken. Men hvis du kan noe som helst om psykologi, skjønner du nok hvor dette bærer hen.</p>
-<p>I en klassisk studie undersøkte <span class="citation" data-cites="Evans1983">Evans et al. (<a href="#ref-Evans1983" role="doc-biblioref">1983</a>)</span> nettopp dette med et fiffig eksperiment. Det de fant var at når eksisterende oppfatninger (dvs. tro) var i samsvar det logiske argumentet gikk alt slik man skulle håpe, se <a href="#tbl-tab1-2" class="quarto-xref">Table&nbsp;<span>1.2</span></a>. Folk resonnerte ikke perfekt, men ganske godt.</p>
+<p>I en klassisk studie undersøkte <span class="citation" data-cites="Evans1983">Evans et al. (<a href="#ref-Evans1983" role="doc-biblioref">1983</a>)</span> nettopp dette med et fiffig eksperiment. Det de fant var at når eksisterende oppfatninger (dvs. tro) var i samsvar det logiske argumentet gikk alt slik man skulle håpe, se <a href="#tbl-tab1-2" class="quarto-xref">Tabell&nbsp;<span>1.2</span></a>. Folk resonnerte ikke perfekt, men ganske godt.</p>
 <div class="cell" data-layout-align="left">
 <div id="tbl-tab1-2" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-layout-align="left">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tab1-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1.2. Forutinntatte holdninger og gyldighet av argument
+Tabell&nbsp;1.2. Forutinntatte holdninger og gyldighet av argument
 </figcaption>
 <div aria-describedby="tbl-tab1-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<table class="huxtable" data-quarto-disable-processing="true" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; width: 90%; margin-left: auto; margin-right: auto;  " id="tab:tbl-tab1-2">
-<colgroup><col><col><col></colgroup><tbody><tr>
-<th style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 2pt 12pt 2pt 0pt; font-weight: bold;"></th><th style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: bold;">konklusjonen føles sann</th><th style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 2pt 0pt 2pt 12pt; font-weight: bold;">konklusjonen føles usann</th></tr>
-<tr>
-<td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 0pt; font-weight: bold;">argumentet er gyldig</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: normal;">92\(\%\) sier \(\text{``}\)gyldig\(\text{''}\)</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 2pt 0pt 2pt 12pt; font-weight: normal;"></td></tr>
-<tr>
-<td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 2pt 12pt 2pt 0pt; font-weight: bold;">argumentet er ugyldig</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: normal;"></td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 2pt 0pt 2pt 12pt; font-weight: normal;">8\(\%\) sier \(\text{``}\)gyldig\(\text{''}\)</td></tr>
-</tbody></table>
+<!-- preamble start -->
 
+    <script>
+
+      function styleCell_bawvcrkt6vdbzf3c2qxx(i, j, css_id) {
+          var table = document.getElementById("tinytable_bawvcrkt6vdbzf3c2qxx");
+          var cell = table.rows[i]?.cells[j];  // Safe navigation to avoid errors
+          if (cell) {
+              console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
+              cell.classList.add(css_id);
+          } else {
+              console.warn(`Cell at (${i}, ${j}) not found.`);
+          }
+      }
+      function insertSpanRow(i, colspan, content) {
+        var table = document.getElementById('tinytable_bawvcrkt6vdbzf3c2qxx');
+        var newRow = table.insertRow(i);
+        var newCell = newRow.insertCell(0);
+        newCell.setAttribute("colspan", colspan);
+        // newCell.innerText = content;
+        // this may be unsafe, but innerText does not interpret <br>
+        newCell.innerHTML = content;
+      }
+      function spanCell_bawvcrkt6vdbzf3c2qxx(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_bawvcrkt6vdbzf3c2qxx");
+        const targetRow = table.rows[i];
+        const targetCell = targetRow.cells[j];
+        for (let r = 0; r < rowspan; r++) {
+          // Only start deleting cells to the right for the first row (r == 0)
+          if (r === 0) {
+            // Delete cells to the right of the target cell in the first row
+            for (let c = colspan - 1; c > 0; c--) {
+              if (table.rows[i + r].cells[j + c]) {
+                table.rows[i + r].deleteCell(j + c);
+              }
+            }
+          }
+          // For rows below the first, delete starting from the target column
+          if (r > 0) {
+            for (let c = colspan - 1; c >= 0; c--) {
+              if (table.rows[i + r] && table.rows[i + r].cells[j]) {
+                table.rows[i + r].deleteCell(j);
+              }
+            }
+          }
+        }
+        // Set rowspan and colspan of the target cell
+        targetCell.rowSpan = rowspan;
+        targetCell.colSpan = colspan;
+      }
+      // tinytable span after
+      window.addEventListener('load', function () {
+          var cellsToStyle = [
+            // tinytable style arrays after
+          { positions: [ { i: 2, j: 0 }, { i: 2, j: 1 }, { i: 2, j: 2 },  ], css_id: 'tinytable_css_obgj5j3h3h0aculoa2dq',}, 
+          { positions: [ { i: 0, j: 0 }, { i: 0, j: 1 }, { i: 0, j: 2 },  ], css_id: 'tinytable_css_99xgj74qbjzrt0ozrwr8',}, 
+          ];
+
+          // Loop over the arrays to style the cells
+          cellsToStyle.forEach(function (group) {
+              group.positions.forEach(function (cell) {
+                  styleCell_bawvcrkt6vdbzf3c2qxx(cell.i, cell.j, group.css_id);
+              });
+          });
+      });
+    </script>
+
+    <style>
+      /* tinytable css entries after */
+      .table td.tinytable_css_obgj5j3h3h0aculoa2dq, .table th.tinytable_css_obgj5j3h3h0aculoa2dq { border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_99xgj74qbjzrt0ozrwr8, .table th.tinytable_css_99xgj74qbjzrt0ozrwr8 { border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
+    </style>
+    <div class="container">
+      <table class="table table-borderless" id="tinytable_bawvcrkt6vdbzf3c2qxx" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+        <thead>
+        
+              <tr>
+                <th scope="col"> </th>
+                <th scope="col">konklusjonen føles sann</th>
+                <th scope="col">konklusjonen føles usann</th>
+              </tr>
+        </thead>
+        
+        <tbody>
+                <tr>
+                  <td>Argumentet er gyldig</td>
+                  <td>92\% sier 'gyldig'</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Argumentet er ugyldig</td>
+                  <td></td>
+                  <td>8\% sier 'gyldig'</td>
+                </tr>
+        </tbody>
+      </table>
+    </div>
+<!-- hack to avoid NA insertion in last line -->
 </div>
 </div>
 </figure>
 </div>
 </div>
-<p>Men se hva som skjedde da de eksisterende oppfatningene gikk på tvers av det logiske argumentet, altså at det logiske argumentet konkluderte ulikt med folks eksisterende oppfatning (<a href="#tbl-tab1-3" class="quarto-xref">Table&nbsp;<span>1.3</span></a>). Å huff, det er ikke like bra! Det ser ut til at når folk blir presentert for et sterkt argument som motsier våre eksisterende oppfatninger, synes vi det er ganske vanskelig å se at det faktisk er et sterkt argument (folk gjorde det bare 46% av tiden). Enda verre er det når folk blir presentert for et svakt argument som er i samsvar med våre eksisterende oppfatninger; nesten ingen klarer å se at argumentet er svakt – folk tok feil 92% av tiden! <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<p>Men se hva som skjedde da de eksisterende oppfatningene gikk på tvers av det logiske argumentet, altså at det logiske argumentet konkluderte ulikt med folks eksisterende oppfatning (<a href="#tbl-tab1-3" class="quarto-xref">Tabell&nbsp;<span>1.3</span></a>). Å huff, det er ikke like bra! Det ser ut til at når folk blir presentert for et sterkt argument som motsier våre eksisterende oppfatninger, synes vi det er ganske vanskelig å se at det faktisk er et sterkt argument (folk gjorde det bare 46% av tiden). Enda verre er det når folk blir presentert for et svakt argument som er i samsvar med våre eksisterende oppfatninger; nesten ingen klarer å se at argumentet er svakt – folk tok feil 92% av tiden! <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
 <div class="cell" data-layout-align="left" data-tbl-pos="h!">
-<div id="tbl-tab1-3" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-tbl-pos="h!" data-layout-align="left">
+<div id="tbl-tab1-3" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-layout-align="left" data-tbl-pos="h!">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tab1-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1.3. Intuisjon og gyldighet av argument
+Tabell&nbsp;1.3. Intuisjon og gyldighet av argument
 </figcaption>
 <div aria-describedby="tbl-tab1-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<table class="huxtable" data-quarto-disable-processing="true" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; width: 90%; margin-left: auto; margin-right: auto;  " id="tab:tbl-tab1-3">
-<colgroup><col><col><col></colgroup><tbody><tr>
-<th style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 2pt 12pt 2pt 0pt; font-weight: bold;"></th><th style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: bold;">konklusjonen føles sann</th><th style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 2pt 0pt 2pt 12pt; font-weight: bold;">konklusjonen føles usann</th></tr>
-<tr>
-<td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 0pt; font-weight: bold;">argumentet er gyldig</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: normal;">92\(\%\) sier \(\text{``}\)gyldig\(\text{''}\)</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 2pt 0pt 2pt 12pt; font-weight: normal;">46\(\%\) sier \(\text{``}\)gyldig\(\text{''}\)</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 2pt 12pt 2pt 0pt; font-weight: bold;">argumentet er ugyldig</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: normal;">92\(\%\) sier \(\text{``}\)gyldig\(\text{''}\)</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 2pt 0pt 2pt 12pt; font-weight: normal;">8\(\%\) sier \(\text{``}\)gyldig\(\text{''}\)</td></tr>
-</tbody></table>
+<!-- preamble start -->
 
+    <script>
+
+      function styleCell_hcbcbn6aerrq4b54aqjs(i, j, css_id) {
+          var table = document.getElementById("tinytable_hcbcbn6aerrq4b54aqjs");
+          var cell = table.rows[i]?.cells[j];  // Safe navigation to avoid errors
+          if (cell) {
+              console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
+              cell.classList.add(css_id);
+          } else {
+              console.warn(`Cell at (${i}, ${j}) not found.`);
+          }
+      }
+      function insertSpanRow(i, colspan, content) {
+        var table = document.getElementById('tinytable_hcbcbn6aerrq4b54aqjs');
+        var newRow = table.insertRow(i);
+        var newCell = newRow.insertCell(0);
+        newCell.setAttribute("colspan", colspan);
+        // newCell.innerText = content;
+        // this may be unsafe, but innerText does not interpret <br>
+        newCell.innerHTML = content;
+      }
+      function spanCell_hcbcbn6aerrq4b54aqjs(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_hcbcbn6aerrq4b54aqjs");
+        const targetRow = table.rows[i];
+        const targetCell = targetRow.cells[j];
+        for (let r = 0; r < rowspan; r++) {
+          // Only start deleting cells to the right for the first row (r == 0)
+          if (r === 0) {
+            // Delete cells to the right of the target cell in the first row
+            for (let c = colspan - 1; c > 0; c--) {
+              if (table.rows[i + r].cells[j + c]) {
+                table.rows[i + r].deleteCell(j + c);
+              }
+            }
+          }
+          // For rows below the first, delete starting from the target column
+          if (r > 0) {
+            for (let c = colspan - 1; c >= 0; c--) {
+              if (table.rows[i + r] && table.rows[i + r].cells[j]) {
+                table.rows[i + r].deleteCell(j);
+              }
+            }
+          }
+        }
+        // Set rowspan and colspan of the target cell
+        targetCell.rowSpan = rowspan;
+        targetCell.colSpan = colspan;
+      }
+      // tinytable span after
+      window.addEventListener('load', function () {
+          var cellsToStyle = [
+            // tinytable style arrays after
+          { positions: [ { i: 2, j: 0 }, { i: 2, j: 1 }, { i: 2, j: 2 },  ], css_id: 'tinytable_css_fechy4wnelxzzdzkf3rv',}, 
+          { positions: [ { i: 0, j: 0 }, { i: 0, j: 1 }, { i: 0, j: 2 },  ], css_id: 'tinytable_css_1woktlujcw3jr68qveqo',}, 
+          ];
+
+          // Loop over the arrays to style the cells
+          cellsToStyle.forEach(function (group) {
+              group.positions.forEach(function (cell) {
+                  styleCell_hcbcbn6aerrq4b54aqjs(cell.i, cell.j, group.css_id);
+              });
+          });
+      });
+    </script>
+
+    <style>
+      /* tinytable css entries after */
+      .table td.tinytable_css_fechy4wnelxzzdzkf3rv, .table th.tinytable_css_fechy4wnelxzzdzkf3rv { border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_1woktlujcw3jr68qveqo, .table th.tinytable_css_1woktlujcw3jr68qveqo { border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
+    </style>
+    <div class="container">
+      <table class="table table-borderless" id="tinytable_hcbcbn6aerrq4b54aqjs" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+        <thead>
+        
+              <tr>
+                <th scope="col"> </th>
+                <th scope="col">konklusjonen føles sann</th>
+                <th scope="col">konklusjon føles usann</th>
+              </tr>
+        </thead>
+        
+        <tbody>
+                <tr>
+                  <td>Argumentet er gyldig</td>
+                  <td>92\% sier 'gyldig'</td>
+                  <td>46\% sier 'gyldig'</td>
+                </tr>
+                <tr>
+                  <td>Argumentet er ugyldig</td>
+                  <td>92\% sier 'gyldig'</td>
+                  <td>8\% sier 'gyldig'</td>
+                </tr>
+        </tbody>
+      </table>
+    </div>
+<!-- hack to avoid NA insertion in last line -->
 </div>
 </div>
 </figure>
@@ -375,75 +648,286 @@ Table&nbsp;1.3. Intuisjon og gyldighet av argument
 <section id="en-advarsel-mot-å-tro-på-dataene-simpsons-paradoks" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="en-advarsel-mot-å-tro-på-dataene-simpsons-paradoks"><span class="header-section-number">1.2</span> En advarsel mot å “tro på dataene”: Simpsons paradoks</h2>
 <p>I forrige avsnitt benyttet jeg uttrykket “å tro på dataene”, et uttrykk jeg misliker sterkt. Du skal nå få høre en fortelling som belyser hvorfor også du bør slutte å “tro på dataene”, “høre på det evidensen sier” og liknende.</p>
-<p>Følgende er en sann historie (tror jeg!). I 1973 hadde University of California, Berkeley, noen bekymringer rundt opptakene av studenter til deres videreutdanningskurs. Mer spesifikt var det kjønnsfordelingen i opptakene som forårsaket problemer (<a href="#tbl-tab1-4" class="quarto-xref">Table&nbsp;<span>1.4</span></a>).</p>
+<p>Følgende er en sann historie (tror jeg!). I 1973 hadde University of California, Berkeley, noen bekymringer rundt opptakene av studenter til deres videreutdanningskurs. Mer spesifikt var det kjønnsfordelingen i opptakene som forårsaket problemer (<a href="#tbl-tab1-4" class="quarto-xref">Tabell&nbsp;<span>1.4</span></a>).</p>
 <div class="cell" data-layout-align="left">
 <div id="tbl-tab1-4" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-layout-align="left">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tab1-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1.4. Berkeley-studenter etter kjønn
+Tabell&nbsp;1.4. Berkeley-studenter etter kjønn
 </figcaption>
 <div aria-describedby="tbl-tab1-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<table class="huxtable" data-quarto-disable-processing="true" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; width: 90%; margin-left: auto; margin-right: auto;  " id="tab:tbl-tab1-4">
-<colgroup><col><col><col></colgroup><tbody><tr>
-<th style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 2pt 12pt 2pt 0pt; font-weight: bold;"></th><th style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: bold;">Antall søkere</th><th style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 2pt 0pt 2pt 12pt; font-weight: bold;">Prosent tilbudt plass</th></tr>
-<tr>
-<td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 0pt; font-weight: normal;">Menn</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: normal;">8442</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 2pt 0pt 2pt 12pt; font-weight: normal;">44\(\%\)</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 2pt 12pt 2pt 0pt; font-weight: normal;">Kvinner</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: normal;">4321</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 2pt 0pt 2pt 12pt; font-weight: normal;">35\(\%\)</td></tr>
-</tbody></table>
+<!-- preamble start -->
 
+    <script>
+
+      function styleCell_lalw07rtt7xdswwj295n(i, j, css_id) {
+          var table = document.getElementById("tinytable_lalw07rtt7xdswwj295n");
+          var cell = table.rows[i]?.cells[j];  // Safe navigation to avoid errors
+          if (cell) {
+              console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
+              cell.classList.add(css_id);
+          } else {
+              console.warn(`Cell at (${i}, ${j}) not found.`);
+          }
+      }
+      function insertSpanRow(i, colspan, content) {
+        var table = document.getElementById('tinytable_lalw07rtt7xdswwj295n');
+        var newRow = table.insertRow(i);
+        var newCell = newRow.insertCell(0);
+        newCell.setAttribute("colspan", colspan);
+        // newCell.innerText = content;
+        // this may be unsafe, but innerText does not interpret <br>
+        newCell.innerHTML = content;
+      }
+      function spanCell_lalw07rtt7xdswwj295n(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_lalw07rtt7xdswwj295n");
+        const targetRow = table.rows[i];
+        const targetCell = targetRow.cells[j];
+        for (let r = 0; r < rowspan; r++) {
+          // Only start deleting cells to the right for the first row (r == 0)
+          if (r === 0) {
+            // Delete cells to the right of the target cell in the first row
+            for (let c = colspan - 1; c > 0; c--) {
+              if (table.rows[i + r].cells[j + c]) {
+                table.rows[i + r].deleteCell(j + c);
+              }
+            }
+          }
+          // For rows below the first, delete starting from the target column
+          if (r > 0) {
+            for (let c = colspan - 1; c >= 0; c--) {
+              if (table.rows[i + r] && table.rows[i + r].cells[j]) {
+                table.rows[i + r].deleteCell(j);
+              }
+            }
+          }
+        }
+        // Set rowspan and colspan of the target cell
+        targetCell.rowSpan = rowspan;
+        targetCell.colSpan = colspan;
+      }
+      // tinytable span after
+      window.addEventListener('load', function () {
+          var cellsToStyle = [
+            // tinytable style arrays after
+          { positions: [ { i: 2, j: 0 }, { i: 2, j: 1 }, { i: 2, j: 2 },  ], css_id: 'tinytable_css_w6lrd5qrdrl7x6ov9d4s',}, 
+          { positions: [ { i: 0, j: 0 }, { i: 0, j: 1 }, { i: 0, j: 2 },  ], css_id: 'tinytable_css_4om6vsensikv0r8b2asv',}, 
+          ];
+
+          // Loop over the arrays to style the cells
+          cellsToStyle.forEach(function (group) {
+              group.positions.forEach(function (cell) {
+                  styleCell_lalw07rtt7xdswwj295n(cell.i, cell.j, group.css_id);
+              });
+          });
+      });
+    </script>
+
+    <style>
+      /* tinytable css entries after */
+      .table td.tinytable_css_w6lrd5qrdrl7x6ov9d4s, .table th.tinytable_css_w6lrd5qrdrl7x6ov9d4s { border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_4om6vsensikv0r8b2asv, .table th.tinytable_css_4om6vsensikv0r8b2asv { border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
+    </style>
+    <div class="container">
+      <table class="table table-borderless" id="tinytable_lalw07rtt7xdswwj295n" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+        <thead>
+        
+              <tr>
+                <th scope="col"> </th>
+                <th scope="col">Antall søkere</th>
+                <th scope="col">Prosent tilbudt plass</th>
+              </tr>
+        </thead>
+        
+        <tbody>
+                <tr>
+                  <td>Menn</td>
+                  <td>8442</td>
+                  <td>44\%</td>
+                </tr>
+                <tr>
+                  <td>Kvinner</td>
+                  <td>4321</td>
+                  <td>35\%</td>
+                </tr>
+        </tbody>
+      </table>
+    </div>
+<!-- hack to avoid NA insertion in last line -->
 </div>
 </div>
 </figure>
 </div>
 </div>
 <p>På grunn av kjønnsfordelingen var de bekymret for å bli saksøkt!<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> Med nesten 13,000 søkere er en forskjell på 9 % i opptaksratene mellom menn og kvinner altfor stor til å være tilfeldig. Ganske overbevisende data, ikke sant? Men hva hvis jeg sa til deg at disse dataene <em>faktisk</em> reflekterte en svak skjevhet til fordel for kvinner (på en måte!)? Du ville antakelig trodd at jeg var gal, kvinnefiendtlig eller begge.</p>
-<p>Merkelig nok er dette faktisk delvis sant. Da folk så nærmere på opptaksdataene, viste de en litt annen historie <span class="citation" data-cites="Bickel1975">(<a href="#ref-Bickel1975" role="doc-biblioref">Bickel et al., 1975</a>)</span>. Spesielt da de så på opptakene avdeling for avdeling viste det seg at de fleste fakultetene faktisk hadde en litt <em>høyere</em> suksessrate for kvinnelige søkere enn for mannlige søkere. <a href="#tbl-tab1-5" class="quarto-xref">Table&nbsp;<span>1.5</span></a> viser opptaksdata for de seks største fakultetene (med navnene på fakultetene fjernet av personvernhensyn):</p>
+<p>Merkelig nok er dette faktisk delvis sant. Da folk så nærmere på opptaksdataene, viste de en litt annen historie <span class="citation" data-cites="Bickel1975">(<a href="#ref-Bickel1975" role="doc-biblioref">Bickel et al., 1975</a>)</span>. Spesielt da de så på opptakene avdeling for avdeling viste det seg at de fleste fakultetene faktisk hadde en litt <em>høyere</em> suksessrate for kvinnelige søkere enn for mannlige søkere. <a href="#tbl-tab1-5" class="quarto-xref">Tabell&nbsp;<span>1.5</span></a> viser opptaksdata for de seks største fakultetene (med navnene på fakultetene fjernet av personvernhensyn):</p>
 <div class="cell" data-layout-align="left">
 <div id="tbl-tab1-5" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-layout-align="left">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tab1-5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1.5. Berkeley-studenter etter kjønn for de seks største avdelingene
+Tabell&nbsp;1.5. Berkeley-studenter etter kjønn for de seks største avdelingene
 </figcaption>
 <div aria-describedby="tbl-tab1-5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<table class="huxtable" data-quarto-disable-processing="true" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; width: 90%; margin-left: auto; margin-right: auto;  " id="tab:tbl-tab1-5">
-<colgroup><col><col><col><col><col></colgroup><tbody><tr>
-<th style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 2pt 12pt 2pt 0pt; font-weight: bold;"></th><th colspan="2" style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: bold;">Menn</th><th colspan="2" style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: bold;">Kvinner</th></tr>
-<tr>
-<td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 0pt; font-weight: normal;">Avdeling</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: normal;">Søkere</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: normal;">Prosent tilbudt plass</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: normal;">Søkere</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 2pt 0pt 2pt 12pt; font-weight: normal;">Prosent tilbudt plass</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 0pt; font-weight: normal;">A</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: normal;">825</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: normal;">62\(\%\)</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: normal;">108</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 2pt 0pt 2pt 12pt; font-weight: normal;">82\(\%\)</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 0pt; font-weight: normal;">B</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: normal;">560</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: normal;">63\(\%\)</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: normal;">25</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 2pt 0pt 2pt 12pt; font-weight: normal;">68\(\%\)</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 0pt; font-weight: normal;">C</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: normal;">325</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: normal;">37\(\%\)</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: normal;">593</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 2pt 0pt 2pt 12pt; font-weight: normal;">34\(\%\)</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 0pt; font-weight: normal;">D</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: normal;">417</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: normal;">33\(\%\)</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: normal;">375</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 2pt 0pt 2pt 12pt; font-weight: normal;">35\(\%\)</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 0pt; font-weight: normal;">E</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: normal;">191</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: normal;">28\(\%\)</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: normal;">393</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 2pt 0pt 2pt 12pt; font-weight: normal;">24\(\%\)</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 2pt 12pt 2pt 0pt; font-weight: normal;">F</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: normal;">272</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: normal;">6\(\%\)</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 2pt 12pt 2pt 12pt; font-weight: normal;">341</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 2pt 0pt 2pt 12pt; font-weight: normal;">7\(\%\)</td></tr>
-</tbody></table>
+<!-- preamble start -->
 
+    <script>
+
+      function styleCell_1fzqtocmt6mi0ko00b61(i, j, css_id) {
+          var table = document.getElementById("tinytable_1fzqtocmt6mi0ko00b61");
+          var cell = table.rows[i]?.cells[j];  // Safe navigation to avoid errors
+          if (cell) {
+              console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
+              cell.classList.add(css_id);
+          } else {
+              console.warn(`Cell at (${i}, ${j}) not found.`);
+          }
+      }
+      function insertSpanRow(i, colspan, content) {
+        var table = document.getElementById('tinytable_1fzqtocmt6mi0ko00b61');
+        var newRow = table.insertRow(i);
+        var newCell = newRow.insertCell(0);
+        newCell.setAttribute("colspan", colspan);
+        // newCell.innerText = content;
+        // this may be unsafe, but innerText does not interpret <br>
+        newCell.innerHTML = content;
+      }
+      function spanCell_1fzqtocmt6mi0ko00b61(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_1fzqtocmt6mi0ko00b61");
+        const targetRow = table.rows[i];
+        const targetCell = targetRow.cells[j];
+        for (let r = 0; r < rowspan; r++) {
+          // Only start deleting cells to the right for the first row (r == 0)
+          if (r === 0) {
+            // Delete cells to the right of the target cell in the first row
+            for (let c = colspan - 1; c > 0; c--) {
+              if (table.rows[i + r].cells[j + c]) {
+                table.rows[i + r].deleteCell(j + c);
+              }
+            }
+          }
+          // For rows below the first, delete starting from the target column
+          if (r > 0) {
+            for (let c = colspan - 1; c >= 0; c--) {
+              if (table.rows[i + r] && table.rows[i + r].cells[j]) {
+                table.rows[i + r].deleteCell(j);
+              }
+            }
+          }
+        }
+        // Set rowspan and colspan of the target cell
+        targetCell.rowSpan = rowspan;
+        targetCell.colSpan = colspan;
+      }
+      // tinytable span after
+      window.addEventListener('load', function () {
+          var cellsToStyle = [
+            // tinytable style arrays after
+          { positions: [ { i: 0, j: 2 }, { i: 0, j: 1 },  ], css_id: 'tinytable_css_6xvmb8gaq0z7hr3cyzz9',}, 
+          { positions: [ { i: 7, j: 3 }, { i: 7, j: 2 }, { i: 7, j: 0 }, { i: 7, j: 1 }, { i: 7, j: 4 },  ], css_id: 'tinytable_css_hd6s48e3s4sn3698v31m',}, 
+          { positions: [ { i: 0, j: 0 }, { i: 0, j: 3 }, { i: 0, j: 4 },  ], css_id: 'tinytable_css_pg4yec4tw9n7dw4h6986',}, 
+          { positions: [ { i: 1, j: 0 }, { i: 1, j: 3 }, { i: 1, j: 2 }, { i: 1, j: 1 }, { i: 1, j: 4 },  ], css_id: 'tinytable_css_i38kdn8zuy88q11pwueu',}, 
+          ];
+
+          // Loop over the arrays to style the cells
+          cellsToStyle.forEach(function (group) {
+              group.positions.forEach(function (cell) {
+                  styleCell_1fzqtocmt6mi0ko00b61(cell.i, cell.j, group.css_id);
+              });
+          });
+      });
+    </script>
+
+    <style>
+      /* tinytable css entries after */
+      .table td.tinytable_css_6xvmb8gaq0z7hr3cyzz9, .table th.tinytable_css_6xvmb8gaq0z7hr3cyzz9 { border-top: solid #d3d8dc 0.1em; text-align: center; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_hd6s48e3s4sn3698v31m, .table th.tinytable_css_hd6s48e3s4sn3698v31m { border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_pg4yec4tw9n7dw4h6986, .table th.tinytable_css_pg4yec4tw9n7dw4h6986 { border-top: solid #d3d8dc 0.1em; text-align: center; }
+      .table td.tinytable_css_i38kdn8zuy88q11pwueu, .table th.tinytable_css_i38kdn8zuy88q11pwueu { border-bottom: solid #d3d8dc 0.05em; }
+    </style>
+    <div class="container">
+      <table class="table table-borderless" id="tinytable_1fzqtocmt6mi0ko00b61" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+        <thead>
+<tr>
+<th scope="col" align="center" colspan="1"> </th>
+<th scope="col" align="center" colspan="2">Menn</th>
+<th scope="col" align="center" colspan="2">Kvinner</th>
+</tr>
+        
+              <tr>
+                <th scope="col">Avdeling</th>
+                <th scope="col">Søkere</th>
+                <th scope="col">Prosent tilbudt plass</th>
+                <th scope="col">Søkere</th>
+                <th scope="col">Prosent tilbudt plass</th>
+              </tr>
+        </thead>
+        
+        <tbody>
+                <tr>
+                  <td>A</td>
+                  <td>825</td>
+                  <td>62\%</td>
+                  <td>108</td>
+                  <td>82\%</td>
+                </tr>
+                <tr>
+                  <td>B</td>
+                  <td>560</td>
+                  <td>63\%</td>
+                  <td>25</td>
+                  <td>68\%</td>
+                </tr>
+                <tr>
+                  <td>C</td>
+                  <td>325</td>
+                  <td>37\%</td>
+                  <td>593</td>
+                  <td>34\%</td>
+                </tr>
+                <tr>
+                  <td>D</td>
+                  <td>417</td>
+                  <td>33\%</td>
+                  <td>375</td>
+                  <td>35\%</td>
+                </tr>
+                <tr>
+                  <td>E</td>
+                  <td>191</td>
+                  <td>28\%</td>
+                  <td>393</td>
+                  <td>24\%</td>
+                </tr>
+                <tr>
+                  <td>F</td>
+                  <td>272</td>
+                  <td>6\%</td>
+                  <td>341</td>
+                  <td>7\%</td>
+                </tr>
+        </tbody>
+      </table>
+    </div>
+<!-- hack to avoid NA insertion in last line -->
 </div>
 </div>
 </figure>
 </div>
 </div>
 <p>Det bemerkelsesverdige er at de fleste avdelingene hadde en <em>høyere</em> opptaksrate for kvinner enn for menn! Likevel var den totale opptaksraten ved universitetet lavere for kvinner enn for menn. Hvordan kan dette være mulig? Hvordan kan begge disse påstandene være sanne samtidig?</p>
-<p>Trekk pusten dypt, for du må trolig konsentrere deg litt for å henge med på forklaringen. For det første, merk at avdelingene ikke har like opptaksprosenter: noen fakulteter (f.eks. A og B) hadde en tendens til å ta opp en høy prosentandel kvalifiserte søkere, mens andre (f.eks. F) avslo de fleste kandidatene. Så blant de seks fakultetene som vises ovenfor er A er det mest sjenerøse, etterfulgt av B, C, D, E og F i den rekkefølgen. Videre, merk at menn og kvinner hadde en tendens til å søke ulike avdelinger. Hvis vi rangerer avdelingene etter det totale antallet mannlige søkere, får vi <strong>A</strong>&gt;<strong>B</strong>&gt;D&gt;C&gt;F&gt;E (de avdelingene som var enklere å komme inn på er uthevet). Generelt hadde menn en tendens til å søke til avdelingene som var enkle å komme inn på, altså de med høye opptaksrater. Når vi sammenligner dette med hvordan de kvinnelige søkerne fordelte seg, ser vi at bildet er ganske annerledes. Når vi rangere avdelingene etter det totale antallet kvinnelige søkere får vi rekkefølgen C&gt;E&gt;D&gt;F&gt;<strong>A</strong>&gt;<strong>B</strong>. Med andre ord, dataene ser ut til å vise at de kvinnelige søkerne søkte seg til “vanskeligere” fakulteter. Og faktisk, hvis vi ser på <a href="#fig-fig1-1" class="quarto-xref">Figure&nbsp;<span>1.1</span></a>, ser vi at denne trenden er systematisk, faktisk helt slående.</p>
+<p>Trekk pusten dypt, for du må trolig konsentrere deg litt for å henge med på forklaringen. For det første, merk at avdelingene ikke har like opptaksprosenter: noen fakulteter (f.eks. A og B) hadde en tendens til å ta opp en høy prosentandel kvalifiserte søkere, mens andre (f.eks. F) avslo de fleste kandidatene. Så blant de seks fakultetene som vises ovenfor er A er det mest sjenerøse, etterfulgt av B, C, D, E og F i den rekkefølgen. Videre, merk at menn og kvinner hadde en tendens til å søke ulike avdelinger. Hvis vi rangerer avdelingene etter det totale antallet mannlige søkere, får vi <strong>A</strong>&gt;<strong>B</strong>&gt;D&gt;C&gt;F&gt;E (de avdelingene som var enklere å komme inn på er uthevet). Generelt hadde menn en tendens til å søke til avdelingene som var enkle å komme inn på, altså de med høye opptaksrater. Når vi sammenligner dette med hvordan de kvinnelige søkerne fordelte seg, ser vi at bildet er ganske annerledes. Når vi rangere avdelingene etter det totale antallet kvinnelige søkere får vi rekkefølgen C&gt;E&gt;D&gt;F&gt;<strong>A</strong>&gt;<strong>B</strong>. Med andre ord, dataene ser ut til å vise at de kvinnelige søkerne søkte seg til “vanskeligere” fakulteter. Og faktisk, hvis vi ser på <a href="#fig-fig1-1" class="quarto-xref">Figur&nbsp;<span>1.1</span></a>, ser vi at denne trenden er systematisk, faktisk helt slående.</p>
 <p>Denne effekten, at sammenhenger som gjelder hele utvalget kan være annerledes i de fleste eller alle undergrupper, er kjent som <strong>Simpsons paradoks</strong>. Det er ikke vanlig, men det opptrer i virkeligheten, og de fleste blir svært overrasket når de først støter på det, og mange nekter til og med å tro at det er ekte. Det er veldig reelt. Og mens det er mange veldig subtile statistiske leksjoner begravet der inne, vil jeg bruke det til å gjøre et mye viktigere poeng: kvantitativ metode er vanskelig, og det er mange subtile, kontraintuitive fallgruver som lurer. Det er grunn #2 til at forskere elsker statistikk, og hvorfor vi lærer forskningsmetoder. Fordi vitenskap er vanskelig og sannheten ligger utspekulert i skjul i kroker og kriker av kompliserte data.</p>
 <div class="cell" data-layout-align="left">
 <div class="cell-output-display">
-<div id="fig-fig1-1" class="quarto-float quarto-figure quarto-figure-left anchored" alt="Et spredningsdiagram viser prosentandelen kvinnelige søkere (x-akse) mot opptaksraten for begge kjønn (y-akse). Blå sirkler av varierende størrelser og grå pluss-tegn representerer datapunktene. En nedadgående trendlinje indikerer en negativ korrelasjon mellom variablene." data-fig-pos="H" data-fig-align="left">
+<div id="fig-fig1-1" class="quarto-float quarto-figure quarto-figure-left anchored" data-fig-align="left" alt="Et spredningsdiagram viser prosentandelen kvinnelige søkere (x-akse) mot opptaksraten for begge kjønn (y-akse). Blå sirkler av varierende størrelser og grå pluss-tegn representerer datapunktene. En nedadgående trendlinje indikerer en negativ korrelasjon mellom variablene." data-fig-pos="H">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-fig1-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="sec-why-statistics_files/figure-html/fig-fig1-1-1.png" class="img-fluid quarto-figure quarto-figure-left figure-img" style="width:85.0%" data-fig-pos="H" alt="Et spredningsdiagram viser prosentandelen kvinnelige søkere (x-akse) mot opptaksraten for begge kjønn (y-akse). Blå sirkler av varierende størrelser og grå pluss-tegn representerer datapunktene. En nedadgående trendlinje indikerer en negativ korrelasjon mellom variablene.">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fig1-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.1. Berkeley-opptaksdata for 1973. Denne figuren viser opptaksraten for de 85 fakultetene som hadde minst én kvinnelig søker som en funksjon av prosentandelen kvinnelige søkere. Figuren er en nytegning av Figur 1 fra <span class="citation" data-cites="Bickel1975">Bickel et al. (<a href="#ref-Bickel1975" role="doc-biblioref">1975</a>)</span>. Sirkler representerer fakulteter med mer enn 40 søkere; arealet av sirkelen er proporsjonal med totalt antall søkere. Kryss representerer avdelinger med færre enn 40 søkere.
+Figur&nbsp;1.1. Berkeley-opptaksdata for 1973. Denne figuren viser opptaksraten for de 85 fakultetene som hadde minst én kvinnelig søker som en funksjon av prosentandelen kvinnelige søkere. Figuren er en nytegning av Figur 1 fra <span class="citation" data-cites="Bickel1975">Bickel et al. (<a href="#ref-Bickel1975" role="doc-biblioref">1975</a>)</span>. Sirkler representerer fakulteter med mer enn 40 søkere; arealet av sirkelen er proporsjonal med totalt antall søkere. Kryss representerer avdelinger med færre enn 40 søkere.
 </figcaption>
 </figure>
 </div>
@@ -697,12 +1181,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // flash "checked"
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
+    button.setAttribute("title", "Kopiert!");
     let tooltip;
     if (window.bootstrap) {
       button.setAttribute("data-bs-toggle", "tooltip");
       button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
+      button.setAttribute("data-bs-title", "Kopiert!");
       tooltip = new bootstrap.Tooltip(button, 
         { trigger: "manual", 
           customClass: "code-copy-button-tooltip",
