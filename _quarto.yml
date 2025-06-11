@@ -70,7 +70,7 @@ book:
     #   chapters:
     #      - 16-Bayesian-statistics.qmd
     # - Epilogue.qmd
-    - References.qmd
+    - sec-references.qmd
     #- obp-team.qmd
 
 bibliography: refs.bib
