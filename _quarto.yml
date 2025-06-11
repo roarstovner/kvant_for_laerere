@@ -15,7 +15,7 @@ book:
   #date: last-modified
   date-format: "D MMMM YYYY"
   #doi: 10.11647/OBP.0333
-  cover-image: images/obp.0333.jpg
+  cover-image: images/cover.png
   downloads: pdf
   reader-mode: true
   sidebar:
@@ -39,9 +39,9 @@ book:
 
   chapters: 
     - index.qmd
-    - part: Beginnings
+    - sec-why-statistics.qmd
+    - part: Studiedesign
       chapters:
-        - sec-why-statistics.qmd
         - sec-measurement.qmd
         - sec-design.qmd
     # - part: An introduction to jamovi
@@ -70,7 +70,7 @@ book:
     #   chapters:
     #      - 16-Bayesian-statistics.qmd
     # - Epilogue.qmd
-    # - References.qmd
+    - References.qmd
     #- obp-team.qmd
 
 bibliography: refs.bib
@@ -118,7 +118,7 @@ format:
   #   fig-height: 5
   #   fig-align: left
   #   include-in-header: header-includes.html
-  #   epub-cover-image: images/bookcover_html.png
+  #   epub-cover-image: images/cover.pdf
   pdf:
     title: Kvantitativ metode for lærere
     #mainfont: "TeX Gyre Pagella"
@@ -148,7 +148,7 @@ format:
     fig-height: 6
     fig-align: left
     fig-pos: 'h!'
-    keep-tex: true
+    #keep-tex: true
 
 crossref:
   title-delim: "."
