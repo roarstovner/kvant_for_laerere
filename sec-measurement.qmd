@@ -47,9 +47,12 @@ Som du ser, for noen ting (som alder) virker det ganske opplagt hva mulige verdi
 
 Alle tingene vi ønsker å måle (slik som alder, motivasjon, læring, undervisning) har en teoretisk beskrivelse. Denne teoretiske beskrivelsen kalles et *teoretisk konstrukt*. Ofte utelater man "teoretisk" om omtaler det bare som "konstruktet". Når vi skal gjøre en måling av et teoretisk konstrukt må vi lage en *målemetode*. Dette kalles å *operasjonalisere* konstruktet, og vi kaller målemetoden en *operasjonalisering* av konstruktet. Begrepene blir oppsummert i @fig-operasjonalisering.
 
-
-![Operasjonalisering av konstruktet _alder_. Lengst til høyre er 'Alder' en variabel i datasettet som har verdiene 21, 38 og 72 for de tre første forskningsdeltagerne.](images/fig-operasjonalisering.png){#fig-operasjonalisering fig-alt="Lengst til venstre er 'Teoretisk konstrukt: Alder' med en pil til 'Målemetode: Selvrapportering fra nettspørreskjema: 'hvilket år ble du født?''. Det står 'operasjonalisering' på pila. Derfra går det en pil, 'datainnsamling', til 'Variabel'. Ved 'Variabel' er det et datasett med 'Fødselsår' og 'Alder'. Fra 'Fødselsår' til 'Alder' går det en liten pil, 'Etterbehandling av data'."}
-
+```{r}
+#| label: fig-operasjonalisering
+#| fig-cap: "Operasjonalisering av konstruktet _alder_. Lengst til høyre er 'Alder' en variabel i datasettet som har verdiene 21, 38 og 72 for de tre første forskningsdeltagerne."
+#| fig-alt: "Lengst til venstre er 'Teoretisk konstrukt: Alder' med en pil til 'Målemetode: Selvrapportering fra nettspørreskjema: 'hvilket år ble du født?''. Det står 'operasjonalisering' på pila. Derfra går det en pil, 'datainnsamling', til 'Variabel'. Ved 'Variabel' er det et datasett med 'Fødselsår' og 'Alder'. Fra 'Fødselsår' til 'Alder' går det en liten pil, 'Etterbehandling av data'."
+knitr::include_graphics("images/fig-operasjonalisering.png")
+```
 
 Kort fortalt handler operasjonalisering om å omforme et konstrukt, som ofte er ganske vagt, til en helt presist definert måling. Operasjonalisering omfatter blant annet:
 
@@ -146,9 +149,12 @@ Det rimelig å gruppere, for eksempel, (1), (2) og (3) sammen, og si at 81 av 10
 
 Det er fristende å regne med svaralternativene (1) til (4) som om de var tall. For eksempel er det fristende å si at gjennomsnittet av svar (1), (2) og (3) er $\frac{2+3+4}{3} = 2$. Det ville vært galt, siden det regnestykket krever at det er like stor forskjell mellom svaralternativ (1) og (2) som mellom (2) og (3). Men man kan argumentere for at konstruktet "enighet med vitenskapelig konsensus" er som i @fig-ordinal, der det er større forskjell mellom (1) og (2) og (2) og (3).
 
-
-![I en ordinal variabel er ikke nødvendigvis avstanden mellom kategoriene like store. Her markerer pilene avstanden mellom kategoriene, og avstanden mellom kategori (1) og (2) er større enn de andre.](images/fig-ordinal.png){#fig-ordinal fig-alt="Den ordinale variabelen \"enighet med vitenskapelig konsensus\" med forskjellig avstand mellom hvert svaralternativ. Det er størst avstand mellom (1) og (2)."}
-
+```{r}
+#| label: fig-ordinal
+#| fig-cap: "I en ordinal variabel er ikke nødvendigvis avstanden mellom kategoriene like store. Her markerer pilene avstanden mellom kategoriene, og avstanden mellom kategori (1) og (2) er større enn de andre."
+#| fig-alt: "Den ordinale variabelen \"enighet med vitenskapelig konsensus\" med forskjellig avstand mellom hvert svaralternativ. Det er størst avstand mellom (1) og (2)."
+knitr::include_graphics("images/fig-ordinal.png")
+```
 
 Når en ordinal variabel markeres med tall, som er helt vanlig, skal man altså ikke tolke tallstørrelsene bokstavelig og anta at man kan regne med dem -- tallene er der kun for å markere kategorienes rekkefølge.
 
@@ -282,7 +288,7 @@ Reliabilitet betyr altså at målingen gir samme verdi på tvers av situasjoner.
 
 Hvordan man bør vurdere en variabels reliabilitet avhenger av det teoretiske konstruktet. Anta at man skal måle konstruktet "elevers utagerende adferd" ved å observere én undervisningstime. Hvis formålet er å gi en generell vurdering av elevenes utagerende adferd vil målingen ha lav test-retest-reliabilitet, fordi den vil gi svært forskjellige svar avhenging av om du utfører målingen siste time fredag eller første time tirsdag. Hvis formålet derimot er å finne ut av hvordan elevenes adferd varierer i en undervisningsuke er hele poenget med målingen å fange opp disse variasjonene. Derfor må man tenke over det teoretiske konstruktet og forskningsformålet for å gi en vurdering av en målemetodes reliabilitet.
 
-### En målings validitet {#sec-measurement-validity}
+### En målings validitet {#sec-validity}
 
 En målemetode har høy **validitet** hvis den måler det man tror den måler. Validitet kalles også "gyldighet", som er et godt ord for validitet. Man skiller ofte mellom mange typer validitet, men den viktigste, som kanskje innebefatter alle andre måter å snakke om en målings validitet på, er konstruktvaliditet.
 
@@ -292,9 +298,12 @@ En målemetode har høy **validitet** hvis den måler det man tror den måler. V
 
 Det finnes flere måter en måling kan ha svak konstruktvaliditet på. For eksempel kan målingen bare måle en liten del av konstruktet, kalt (konstrukt-)*underrepresentasjon*, eller konstruktet kan måle andre ting enn det det skal, kalt (konstrukt-)*irrelevans*, se @fig-construct. 
 
-
-![At målemetoder fanger for lite eller for mye kalles underrepresentasjon og irrelevans](images/fig-construct.png){#fig-construct fig-alt="En ellipse det står \"Konstruktet som skal måles\" i. En anne ellipse, som delvis overlapper, er markert med \"Hva målemetoden måler\". Området inne i konstrukt-ellipsen som ikke overlapper er underrepresentasjon og området utenfor konstrukt-ellipsen, men inne i målemetode-ellipsen, er irrelevans."}
-
+```{r}
+#| label: fig-construct
+#| fig-cap: "At målemetoder fanger for lite eller for mye kalles underrepresentasjon og irrelevans"
+#| fig-alt: "En ellipse det står \"Konstruktet som skal måles\" i. En anne ellipse, som delvis overlapper, er markert med \"Hva målemetoden måler\". Området inne i konstrukt-ellipsen som ikke overlapper er underrepresentasjon og området utenfor konstrukt-ellipsen, men inne i målemetode-ellipsen, er irrelevans."
+knitr::include_graphics("images/fig-construct.png")
+```
 
 For å ha høy konstruktvaliditet kan det være nødvendig å ha høy **prediktiv validitet**. Dette betyr at målingene dine samsvarer med andre variable -- altså predikerer andre variable -- slik man ville forvente. Hvis man måler en lærers motivasjon for yrket kan man kontrollere den prediktive validiteten ved å sjekke om de motiverte lærerne velger å bli i yrket. Hvis dette ikke er tilfelle har du lav prediktiv validitet, og da har du kanskje ikke målt lærernes motivasjon.
 
@@ -324,7 +333,7 @@ I dette kapittelet har jeg kort diskutert følgende temaer:
 - [Operasjonalisering av teoretiske konstrukter](#sec-operationalization). Hva betyr det å operasjonalisere et teoretisk konstrukt? Hva betyr verdier, variabler, konstrukter og målemetoder?
 - [Målenivåer](#sec-Scales-of-measurement) og variabeltyper. Husk at det er to forskjellige distinksjoner her. Det er forskjellen mellom diskrete og kontinuerlige data, og det er forskjellen mellom de fire ulike målenivåene (nominal, ordinal, intervall og forholdstall).
 - [Vurdering av målingers reliabilitet](#sec-reliability). Hvis jeg måler den "samme" tingen to ganger, bør jeg forvente å se samme resultat? Bare hvis målingen min er reliabel. Men hva betyr det å snakke om å gjøre den "samme" tingen? Vel, det er derfor vi har forskjellige typer pålitelighet. Sørg for at du husker hva de er.
-- [Vurdering av målingers validitet](#sec-measurement-validity). Måler målemetoden din det du ønsker?
+- [Vurdering av målingers validitet](#sec-validity). Måler målemetoden din det du ønsker?
 
 Målinger er en viktig del av kvantitativ forskning, og trolig har den for lite plass i bevisstheten til folk når de hører om forskningsresultater. I første kapittel refererte jeg til en samtale mellom oljefondets leder Nicolai Tangen og forskeren Angela Duckworth. Da Duckworth sa hun hadde forsket på folks pågangsmot og at hun hadde veldig store utvalg burde ikke Tangen blitt imponert over utvalgsstørrelsen, han burde spurt: "hvordan målte du pågangsmotet til så mange folk?" Svaret er jo at alle har svart på et [spørreskjema med 10 spørsmål](https://angeladuckworth.com/grit-scale/). Tror du det måler pågangsmot på en god måte?
 
