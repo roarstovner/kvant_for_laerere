@@ -1,1 +1,1 @@
-Kan du skrive denne teksten bedre? Gjerne i en vennlig stil. Svar med kun den omskrevne teksten. Behold markdown formatteringer.
+Kan du skrive denne teksten bedre? Gjerne i en vennlig stil. Teksten skal være så tydelig at den kan publiseres. Svar med kun den omskrevne teksten. Behold markdown formatteringer, R-kode og liknende.
