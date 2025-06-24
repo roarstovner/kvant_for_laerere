@@ -6,15 +6,14 @@ project:
 execute: 
   echo: false
   warning: false
+  cache: false
 language: language.yml
 book: 
   title: Kvantitative metoder for lærere
   author: "Danielle Navarro, David Foxcroft og Roar Bakken Stovner"
   #subtitle: A Tutorial for Beginners in Statistical Analysis
-  #author: "Danielle Navarro & David Foxcroft"
-  #date: last-modified
+  date: last-modified
   date-format: "D MMMM YYYY"
-  #doi: 10.11647/OBP.0333
   cover-image: images/cover.png
   downloads: pdf
   reader-mode: true
@@ -32,10 +31,11 @@ book:
       #<a href="https://learnstatswithjamovi.com">learning statistics with jamovi</a>
     right: |
       Denne boka ble laget i <a href="https://quarto.org/">Quarto</a> 
-  #site-url: "https://davidfoxcroft.github.io/lsj-book/"
+  site-url: "https://roarstovner.github.io/kvant_for_laerere/"
   repo-url: "https://github.com/roarstovner/kvant_for_laerere"
   #repo-actions: [edit,issue]
   open-graph: true
+  google-analytics: "G-FRV7C65B01"
 
   chapters: 
     - index.qmd
@@ -44,12 +44,9 @@ book:
       chapters:
         - sec-measurement.qmd
         - sec-design.qmd
-    # - part: An introduction to jamovi
-    #   chapters:
-    #      - 03-Getting-started-with-jamovi.qmd
-    # - part: Working with data
-    #   chapters:
-    #      - 04-Descriptive-statistics.qmd
+    - part: Deskriptiv statistikk
+      chapters:
+         - sec-descriptive.qmd
     #      - 05-Drawing-graphs.qmd
     #      - 06-Pragmatic-matters.qmd
     # - part: Statistical theory
@@ -90,22 +87,22 @@ format:
     title-block-style: none
     toc: true
     collapse: true
-    html-math-method: mathjax
+    #html-math-method: mathjax
     include-in-header: header-includes.html
-    css: styles.css
-    theme:
-      light: 
-        - flatly
-        #- custom.scss
-      dark: 
-        - darkly
-        #- custom.scss
+    #css: styles.css
+    # theme:
+    #   light: 
+    #     - flatly
+    #     #- custom.scss
+    #   dark: 
+    #     - darkly
+    #     #- custom.scss
     number-sections: true
     link-external-newwindow: true
-    fig-dpi: 300
-    fig-width: 6
-    fig-height: 6
-    fig-align: 'left'
+    #fig-dpi: 300
+    #fig-width: 6
+    #fig-asp: .618
+    fig-align: 'center'
     fig-pos: 'h!'
     #reference-location: margin
   # epub: 
@@ -124,16 +121,8 @@ format:
     #mainfont: "TeX Gyre Pagella"
     documentclass: book
     papersize: a4
-    geometry:
-      - paperwidth=8.0000000000000in
-      - paperheight=10.000000000000in
-      - left=1.25in
-      - textwidth= 5.25in
-      - top=1.00in
-      - textheight=8.25in
-      #- showframe
-    params:
-        endnotes: true
+    #params:
+        #endnotes: true
     include-in-header:
       - preamble.tex
     include-before-body:
@@ -143,12 +132,9 @@ format:
     #    text: \printendnotes
     toc: true
     colorlinks: true
-    fig-dpi: 300
-    fig-width: 6
-    fig-height: 6
-    fig-align: left
+    #fig-align: left
     fig-pos: 'h!'
-    #keep-tex: true
+    reference-location: margin
 
 crossref:
   title-delim: "."

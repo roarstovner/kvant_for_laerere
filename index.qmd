@@ -1,9 +1,9 @@
 ```{r}
 #| include: FALSE
-source("header.R")
+source("chapter_header.R")
 ```
 
-## Preface {.unnumbered}
+## Forord {.unnumbered}
 
 I denne læreboken dekker vi innholdet i et innføringskurs i kvantitative metoder for lærere. Boka er basert på et vanlig grunnkurs slik det vanligvis undervises for bachelorstudenter innen psykologi, helse eller samfunnsvitenskap, men er endret slik at det forutsetter lite matematikkunnskap og er gjort relevant for arbeid i skolen.
 
