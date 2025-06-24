@@ -62,8 +62,8 @@ Jeg må innrømme at jeg synes disse navnene er problematiske. De er vanskelige 
 #| label: tbl-design-var-names
 #| tbl-cap: "Navn på variablenes roller"
 
-tinytable::tt(
-  tibble::tibble(
+tt(
+  tibble(
     `variabelens rolle` = c("skal forklares", "skal forklare"),
     `matematisk symbol` = c("$Y$", "$X$"),
     `klassisk navn` = c("avhengig variabel", "uavhengig variabel"),
@@ -72,7 +72,7 @@ tinytable::tt(
     `årsaksforklarende navn` = c("utfall", "årsaksvariabel")
   )
 ) |> 
-  tinytable::format_tt(j = 2, math = TRUE)
+  format_tt(j = 2, math = TRUE)
 ```
 
 
@@ -209,7 +209,7 @@ Datafilen deres må da ha sett ca. slik ut:
 ```{r}
 #| label: tbl-mindset-data
 #| tbl-cap: De første radene på en tenkt datafil tilhørende Bettinger et al. @bettinger2018 sin randomiserte kontrollstudie. Hver rad tilhører én student. Én nominell variabel angir om studenten er i intervensjons- eller kontrollgruppa, _tankesett_ er forklaringsvariabelen og _iherdighet_ og _algebraferdighet_ er utfallsvariable.
-tibble::tribble(
+tribble(
   ~gruppe, ~tankesett, ~iherdighet, ~algebraferdighet,
   "kontroll", 1.4    , 8          , 2.8,
   "intervensjon", 3.1, 8          , 2.1,
@@ -217,7 +217,7 @@ tibble::tribble(
   "kontroll", 2.1    , 5          , 1.9,
   "intervensjon", 3.7, 7          , 3.6,
 ) |> 
-  tinytable::tt()
+  tt()
 
 ```
 

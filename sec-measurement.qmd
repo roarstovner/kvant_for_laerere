@@ -93,8 +93,8 @@ Men man kan telle antallet innenfor hver kategori. Anta at jeg forsker på hvord
 ```{r}
 #| label: tbl-tab2-1
 #| tbl-cap: Hvordan 100 lærere pendlet til jobb i dag
-tinytable::tt(
-  tibble::tibble(
+tt(
+  tibble(
     Transportmiddel = c("(1) Tog", "(2) Buss", "(3) Bil", "(4) Sykkel"),
     `Antall lærere` = c(12, 30, 48, 10)
   )
@@ -106,8 +106,8 @@ Så, hva var den gjennomsnittlige transporttypen? Åpenbart er svaret her at det
 ```{r}
 #| label: tbl-tab2-2
 #| tbl-cap: Hvordan 100 lærere pendlet til jobb i dag, en annen visning
-tinytable::tt(
-  tibble::tibble(
+tt(
+  tibble(
     Transportmiddel = c("(3) Bil", "(1) Tog", "(4) Sykkel", "(2) Buss"),
     `Antall lærere` = c(48, 12, 10, 30)
   )
@@ -132,8 +132,8 @@ La oss anta at jeg stilte 100 elever disse spørsmålene og fikk svarene vist i 
 ```{r}
 #| label: tbl-tab2-3
 #| tbl-cap: Holdninger til klimaendringer
-tinytable::tt(
-  tibble::tibble(
+tt(
+  tibble(
     Respons = c(
       "(1) Temperaturene stiger på grunn av menneskelig aktivitet",
       "(2) Temperaturene stiger, men vi vet ikke hvorfor", 
@@ -199,8 +199,8 @@ Disse definisjonene virker sannsynligvis litt abstrakte, men de er ganske enkle 
 ```{r}
 #| label: tbl-tab2-4
 #| tbl-cap: Forholdet mellom målenivåene og skillet mellom diskret/kontinuerlig. Celler med et hakemerke tilsvarer en kombinasjon som er mulig
-tinytable::tt(
-  tibble::tibble(
+tt(
+  tibble(
     Målenivå = c("nominal", "ordinal", "intervall", "forholdstall"),
     kontinuerlig = c(" ", " ", "✓", "✓"),
     diskret = c("✓", "✓", "✓", "✓")

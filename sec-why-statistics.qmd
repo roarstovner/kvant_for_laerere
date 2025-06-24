@@ -72,8 +72,8 @@ Nå, la oss anta at folk virkelig er i stand til å legge til side sine eksister
 ```{r}
 #| label: tbl-tab1-1
 #| tbl-cap: Argumenters gyldighet
-tinytable::tt(
-  tibble::tibble(
+tt(
+  tibble(
     ` ` = c("Argumentet er gyldig", "Argumentet er ugyldig"),
     `konklusjonen føles sann` = c("100\\% sier \"gyldig\"", "0\\% sier \"gyldig\""),
     `konklusjonen føles usann` = c("100\\% sier \"gyldig\"", "0\\% sier \"gyldig\"")
@@ -88,8 +88,8 @@ I en klassisk studie undersøkte @Evans1983 nettopp dette med et fiffig eksperim
 ```{r}
 #| label: tbl-tab1-2
 #| tbl-cap:  Forutinntatte holdninger og gyldighet av argument
-tinytable::tt(
-  tibble::tibble(
+tt(
+  tibble(
     ` ` = c("Argumentet er gyldig", "Argumentet er ugyldig"),
     `konklusjonen føles sann` = c("92\\% sier 'gyldig'", ""),
     `konklusjonen føles usann` = c("", "8\\% sier 'gyldig'")
@@ -105,8 +105,8 @@ tinytable::tt(
 #| label: tbl-tab1-3
 #| tbl-cap:  Intuisjon og gyldighet av argument
 #| tbl-pos: 'h!'
-tinytable::tt(
-  tibble::tibble(
+tt(
+  tibble(
     ` ` = c("Argumentet er gyldig", "Argumentet er ugyldig"),
     `konklusjonen føles sann` = c("92\\% sier 'gyldig'", "92\\% sier 'gyldig'"),
     `konklusjon føles usann` = c("46\\% sier 'gyldig'", "8\\% sier 'gyldig'")
@@ -125,8 +125,8 @@ Følgende er en sann historie (tror jeg!). I 1973 hadde University of California
 ```{r}
 #| label: tbl-tab1-4
 #| tbl-cap: Berkeley-studenter etter kjønn
-tinytable::tt(
-  tibble::tibble(
+tt(
+  tibble(
     ` ` = c("Menn", "Kvinner"),
     `Antall søkere` = c(8442, 4321),
     `Prosent tilbudt plass` = c("44\\%", "35\\%")
@@ -144,7 +144,7 @@ Merkelig nok er dette faktisk delvis sant. Da folk så nærmere på opptaksdatae
 #| label: tbl-tab1-5
 #| tbl-cap: Berkeley-studenter etter kjønn for de seks største avdelingene
 
-tinytable::tt(
+tt(
   data.frame(
     Avdeling = c("A", "B", "C", "D", "E", "F"),
     Søkere = c(825, 560, 325, 417, 191, 272),
@@ -154,7 +154,7 @@ tinytable::tt(
     check.names = FALSE
   )
 ) |> 
-  tinytable::group_tt(
+  group_tt(
     j = list(
       "Menn" = 2:3,
       "Kvinner" = 4:5
@@ -168,11 +168,13 @@ Trekk pusten dypt, for du må trolig konsentrere deg litt for å henge med på f
 
 Denne effekten, at sammenhenger som gjelder hele utvalget kan være annerledes i de fleste eller alle undergrupper, er kjent som **Simpsons paradoks**. Det er ikke vanlig, men det opptrer i virkeligheten, og de fleste blir svært overrasket når de først støter på det, og mange nekter til og med å tro at det er ekte. Det er veldig reelt. Og mens det er mange veldig subtile statistiske leksjoner begravet der inne, vil jeg bruke det til å gjøre et mye viktigere poeng: kvantitativ metode er vanskelig, og det er mange subtile, kontraintuitive fallgruver som lurer. Det er grunn #2 til at forskere elsker statistikk, og hvorfor vi lærer forskningsmetoder. Fordi vitenskap er vanskelig og sannheten ligger utspekulert i skjul i kroker og kriker av kompliserte data.
 
-```{r out.width="85%"}
+```{r out.width="100%"}
 #| label: fig-fig1-1
 #| fig-cap: Berkeley-opptaksdata for 1973. Denne figuren viser opptaksraten for de 85 fakultetene som hadde minst én kvinnelig søker som en funksjon av prosentandelen kvinnelige søkere. Figuren er en nytegning av Figur 1 fra @Bickel1975. Sirkler representerer fakulteter med mer enn 40 søkere; arealet av sirkelen er proporsjonal med totalt antall søkere. Kryss representerer avdelinger med færre enn 40 søkere.
 #| fig-alt: Et spredningsdiagram viser prosentandelen kvinnelige søkere (x-akse) mot opptaksraten for begge kjønn (y-akse). Blå sirkler av varierende størrelser og grå pluss-tegn representerer datapunktene. En nedadgående trendlinje indikerer en negativ korrelasjon mellom variablene.
 #| fig-pos: 'H'
+#| classes: .enlarge-image
+#| fig-width: 8.571429
 
 load("data_and_tables/berkeley.Rdata")
 
@@ -185,9 +187,7 @@ ggplot() +
   scale_y_continuous(limits=c(0,100), breaks=seq(0,100,20)) +
   xlab("Prosentandel kvinnelige søkere") +
   ylab("Opptaksrate (begge kjønn)") +
-  theme(legend.position="none") +
-  theme(axis.title.x = element_text(size = rel(5.0))) +
-  theme(axis.title.y = element_text(size = rel(5.0)))
+  theme(legend.position="none")
 ```
 
 Historien er tilfredsstillende ved at den virker å avsløre en ugyldig slutning gjennom et fiffig statistisk argument, men det slutter ikke der. Fra et samfunnsvitenskapelig eller psykologisk perspektiv bør vi spørre *hvorfor* det er markante kjønnsforskjeller i søknadsmønstre. Hvorfor søker menn oftere til ingeniørfag, og kvinner til psykologi? Og hvorfor har avdelinger med flere kvinnelige søkere ofte lavere opptakstall enn de med flere mannlige søkere? Selv om hver avdeling er upartisk, kan dette fortsatt indikere kjønnsforskjeller. 
