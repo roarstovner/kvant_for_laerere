@@ -39,10 +39,57 @@ La oss åpne filen i et statistikkprogram. For å gjøre dette åpner vi filen *
 #| label: fig-descriptive-ICCS-data
 #| fig-cap: Et skjermbilde av jamovi som viser variablene lagret i filen *ICCS.csv*
 #| fig-alt: Et jamovi-skjermbilde viser et dataanalysegrensesnitt med 7 kolonner. Én kolonne med numeriske data er merket "likestilling".
+#| classes: .enlarge-image
 knitr::include_graphics("images/fig-descriptive-iccs-data.png")
 ```
 
-Vi skal fokusere på variabelen _Likestilling_ først. Som du kanskje oppfattet fra @sec-measurement bør man først spørre seg hva variabelen egentlig måler. Jeg fant frem i dokumentasjonen til ICCS 2022 [@fraillon2024] at _Likestilling_  er en samlevariabel satt sammen av følgende Likert-spørsmål:
+For å få en forståelse av dataene, må vi beregne deskriptiv statistikk (dette kapittelet) og lage noen fine figurer (@sec-graphs). Vi skal først beskrive de nominelle og ordinale dataene. Disse er markert med et symbol med tre prikker, og er altså _Land_, _Trinn_, _Kjønn_ og _Forventet utdanning_.
+
+## Frekvenstabeller og krysstabeller
+
+En av de mest grunnleggende oppgavene innen dataanalyse er telle opp hvor mange du har av de ulike verdiene for nominelle og ordinale variable. Heldigvis er dette enkelt i jamovi.
+
+### Frekvenstabeller
+
+En **frekvenstabell** viser hvor mange du har av hver verdi for én variabel. I statistikkprogrammet jamovi må man først trykke på Analyses, deretter på "Exploration" og "Descriptives. I menyen som dukker opp er det en avkryssingsboks som heter "Frequency tables", se @fig-descriptive-jamovi-frequency. Vi laster inn _Forventet utdanning_ i "Variables" og krysser av for "Frequency tables".
+
+```{r}
+#| label: fig-descriptive-jamovi-frequency
+#| fig-cap: Frekvenstabell for _Forventet utdanning_
+#| out-width: "100%"
+#| classes: .enlarge-image
+
+knitr::include_graphics("images/fig-descriptive-jamovi-frequency.png")
+```
+
+Frekvenstabellen er til høyre i figuren. De viser en opptelling av _Forventet utdanning_-variabelen. I første kolonne er variabelen øverst, med de ulike verdiene under. I "Counts"-kolonnen finner du hvor mange det var av hver verdi. Kolonnen "% of Total" viser hvor mange prosent dette utgjør. I "Cumulative %" summerer man de foregående prosentene. Slik ser man at 66,5 % av elevene skal ha "Høyere utdanning" eller "Kort utdanning".
+
+### Krysstabeller {#sec-descriptive-contingency}
+
+I jamovi lager avkrysningsboksen "Frequency tables" kun tabeller for enkeltvariabler. Hvis du ønsker en tabell med to variabler -- for eksempel for å kombinere _Forventet utdanning_ og _Land_ for å se om det er forskjell i hvor lang utdanning elevene ser for seg i Norge og Spania -– trenger du en krysstabell (_contingency table_ på engelsk). 
+
+Du lager dette i jamovi ved å velge analysen "Frequencies" → "Contingency Tables" → "Independent Samples". Flytt _Forventet utdanning_  til "Rows"-boksen og _Land_-variabelen til "Columns"-boksen. Vi gjør et lite ekstra triks og trykker på "Cells" og krysser av for "Percentages: Columns". Da får du en krysstabell som vist i @fig-descriptive-jamovi-contingency.
+
+```{r}
+#| label: fig-descriptive-jamovi-contingency
+#| classes: .enlarge-image
+#| fig-cap: Krysstabeluring av _Forventet utdanning_ og _Land_
+#| out-width: "100%"
+#| fig-alt: Et jamovi-skjermbilde som viser en krysstabell-analyse. Det venstre panelet viser alternativer for å velge rader, kolonner, antall og lag med "Forventet utdanning" og "Land" valgt. Det høyre panelet viser den resulterende krysstabellen.
+knitr::include_graphics("images/fig-descriptive-jamovi-contingency.png")
+```
+
+Ikke bekymre deg for "$\chi^2$ Tests"-tabellen som blir laget. Vi kommer tilbake til dette senere i @sec-Categorical-data-analysis. 
+
+Når du tolker krysstabellen, husk at "Observed" viser antall observasjoner. For eksempel betyr verdien 550 i første rad at 550 av de spanske elevene i utvalget ser for seg å ta en kort utdanning (for eksempel ett- til to-årig fagskole). I kolonnen "% within columns" står det at dette utgjør 16,5% av et eller annet. Siden vi valgte "% within columns" er det prosentandelen innenfor landet, altså "16,5% av de spanske elevene ser for seg kort utdanning". Hvis vi hadde valgt "% within rows" hadde det betydd "% av elevene som ser for seg kort utdanning er spanske."
+
+Krysstabeller er nyttige! Se, langt større andel av de norske elevene ser for seg å avslutte utdanningen etter ungdomsskolen -- hvorfor det, mon tro?
+
+## Intermezzo: Variabelen _Likestilling_
+
+I resten av delkapittelet skal vi fokusere på variabelen _Likestilling_. Som du kanskje oppfattet fra @sec-measurement bør man først spørre seg hva variabelen egentlig måler. Dette er viktig nok til at vi bruker litt tid på det.
+
+Jeg fant frem i dokumentasjonen til ICCS 2022 [@fraillon2024] at _Likestilling_  er en samlevariabel satt sammen av følgende Likert-spørsmål:
 
 - Men and women should have equal opportunities to take part in government.
 - Men and women should have the same rights in every way.
@@ -51,9 +98,9 @@ Vi skal fokusere på variabelen _Likestilling_ først. Som du kanskje oppfattet 
 - Men and women should get equal pay when they are doing the same jobs.
 - Men are better qualified to be political leaders than women.
 
-Alle spørsmålene virker jo å måle likestilling på en fin måte, men i Norge virker konstruktet litt tamt. I Norge ville man kanskje spurt om kjønnskvotering til høyere utdanning eller fordeling av foreldrepermisjon, men det hadde sikkert ikke vært så relevant i de andre landene der ICCS avholdes.
+Alle spørsmålene virker jo å måle likestilling på en fin måte, men i Norge virker konstruktet litt tamt. I Norge ville man kanskje spurt om kjønnskvotering til høyere utdanning eller fordeling av foreldrepermisjon, men det hadde sikkert ikke vært så relevant i de andre landene der ICCS avholdes. Og kanskje har ikke ungdomsskoleelever gjort seg opp en mening om foreldrepermisjon, slår det meg!
 
-Å se på rådataene fortalte oss lite, og for å få en forståelse av hva dataene faktisk sier, må vi beregne deskriptiv statistikk (dette kapittelet) og lage noen fine figurer (@sec-graphs). Siden deskriptiv statistikk er det enkleste av de to temaene, starter vi med det. Likevel viser jeg et histogram av *likestilling*-dataene, slik at vi vet hva det er vi prøver å beskrive med deskriptiv statistikk, se @fig-descriptive-ICCS-histogram. Neste kapittel inneholder mye mer om histogrammer.
+Å se på rådataene i tabellen på starten av kapittelet, @tbl-ICCS-data, fortalte oss lite Likevel viser jeg et histogram av *likestilling*-dataene, slik at vi vet hva det er vi prøver å beskrive med deskriptiv statistikk, se @fig-descriptive-ICCS-histogram. Neste kapittel inneholder mye mer om histogrammer.
 
 ```{r, fig-ICCS-histogram}
 #| label: fig-descriptive-ICCS-histogram
@@ -119,6 +166,7 @@ Straks du har gjort dette dukker en tabell med standard deskriptiv statistikk op
 #| label: fig-descriptive-jamovi-mean
 #| classes: .enlarge-image
 #| fig-cap: Standard deskriptiv statistikk for variabelen _Likestilling_.
+#| out-width: "100%"
 #| fig-alt: Et skjermbilde fra jamovi som viser resultater fra deskriptiv analyse. Til venstre kan man velge variable og dele opp dataene. Til høyre vises deskriptiv statistikk for "Likestilling" med verdier for N, Missing, Mean, Median, Standard deviation, Minimum og Maximum.
 knitr::include_graphics("images/fig-descriptive-jamovi-mean.png")
 ```
@@ -166,7 +214,7 @@ Hvis man sorterer dem i rekkefølge får man:
 
 Da ser man at medianen er `r forventet_utdanning[3]`.
 
-Selvfølgelig er det uaktuelt å regne medianen for hånd med våre `r n_elever` verdier. Derfor bruker vi jamovi, som allerede har beregnet en medianverdi på percentiles["50%"] for _Likestilling_, se i den røde markeringen i  @fig-descriptive-jamovi-mean.
+Selvfølgelig er det uaktuelt å regne medianen for hånd med våre `r n_elever` verdier. Derfor bruker vi jamovi, som allerede har beregnet en medianverdi på `r `percentiles["50%"]` for _Likestilling_, se i den røde markeringen i  @fig-descriptive-jamovi-mean.
 
 ### Gjennomsnitt eller median? Hva er forskjellen? {#sec-descriptive-mean-or-median}
 
@@ -514,7 +562,9 @@ Vi kan også lure på om det er forskjell mellom Norge og Spania for hvert kjøn
 knitr::include_graphics("images/fig-descriptive-jamovi-equality-x-gender-country.png")
 ```
 
-Når man deler inn i ulike undergrupper på denne måten, kan det være at enkelte undergrupper har svært få respondenter. Vi ser i @fig-descriptive-jamovi-equality-x-gender-country at det er svært få som har oppgitt Annet kjønn i Spania, 78 respondenter. Dette er fremdeles mange nok til at det gir mening å regne gjennomsnitt, men andre ganger vil det være like greit å si at man ikke har mange nok respondenter til å gjøre en undergruppeanalyse for akkurat dem. Merk at dette er et etisk problem for forskere, for hvis forskning kan gagne mennesker er det et problem om noen grupper mennesker stadig vekk blir utelatt.
+PS: Når man deler inn i ulike undergrupper på denne måten, kan det være at enkelte undergrupper har svært få respondenter. Vi ser i @fig-descriptive-jamovi-equality-x-gender-country at det er svært få som har oppgitt Annet kjønn i Spania, 78 respondenter. Dette er fremdeles mange nok til at det gir mening å regne gjennomsnitt, men andre ganger vil det være like greit å si at man ikke har mange nok respondenter til å gjøre en undergruppeanalyse for akkurat dem. Merk at dette er et etisk problem for forskere, for hvis forskning kan gagne mennesker er det et problem om noen grupper mennesker stadig vekk blir utelatt.
+
+PPS: Merk at krysstabellen, @sec-descriptive-contingency, også var en type undergruppeanalyse, bare at den var mellom to kategoriske variable.
 
 ## Standardskår {#sec-standard-scores}
 

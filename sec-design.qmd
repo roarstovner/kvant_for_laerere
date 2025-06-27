@@ -2,7 +2,7 @@
 \placetextbox{0.195}{0.05}{\scriptsize{CC BY-SA 4.0}}
 \placetextbox{0.70}{0.06}{\scriptsize{\url{https://doi.org/10.11647/OBP.0333.01}}}
 
-# Forskningsdesign i kvantitativ metode
+# Forskningsdesign i kvantitativ metode {#sec-design}
 
 ```{r}
 #| include: FALSE
