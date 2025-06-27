@@ -25,7 +25,7 @@ Det har blitt ganske vanlig å høre begrunnelser som "det er det dataene viser"
 #| tbl-cap: Noen få av variablene fra ICCS-studien.
 set.seed(2025)
 utvalg <- ICCS |>
-  dplyr::slice_sample(n = 50)
+  slice_sample(n = 50)
 utvalg |> 
   tt() |> 
   theme_tt("spacing")
@@ -55,11 +55,14 @@ Alle spørsmålene virker jo å måle likestilling på en fin måte, men i Norge
 
 Å se på rådataene fortalte oss lite, og for å få en forståelse av hva dataene faktisk sier, må vi beregne deskriptiv statistikk (dette kapittelet) og lage noen fine figurer (@sec-graphs). Siden deskriptiv statistikk er det enkleste av de to temaene, starter vi med det. Likevel viser jeg et histogram av *likestilling*-dataene, slik at vi vet hva det er vi prøver å beskrive med deskriptiv statistikk, se @fig-descriptive-ICCS-histogram. Neste kapittel inneholder mye mer om histogrammer.
 
-```{r}
+```{r, fig-ICCS-histogram}
 #| label: fig-descriptive-ICCS-histogram
 #| fig-cap: Et histogram av variabelen _Likestilling_ fra ICCS 2022.
 #| fig-alt: Histogram som viser variabelen _Likestilling_. Den horisontale aksen ($x$-aksen) strekker seg fra fra 15 til 70, og den vertikale aksen (y-aksen) viser tetthet, altså hvor mange svar som havner innad i hver søyle.
-knitr::include_graphics("images/fig-descriptive-ICCS-histogram.png")
+
+source("R/jamovi-histogram.R")
+ICCS |> 
+  jamovi_histogram(Likestilling, 16)
 ```
 
 Histogrammet i @fig-descriptive-ICCS-histogram viser oss godt at de fleste svarer veldig høyt på _Likestilling_, men at en betydelig andel svarer mye lavere. Hvis man ønsker å undersøke videre, for eksempel å undersøke kjønnsforskjeller, så er det bare å lage et histogram for hvert kjønn, @fig-descriptive-ICCS-histogram-gender.
@@ -68,7 +71,10 @@ Histogrammet i @fig-descriptive-ICCS-histogram viser oss godt at de fleste svare
 #| label: fig-descriptive-ICCS-histogram-gender
 #| fig-cap: Et histogram av variabelen _Likestilling_ for hver verdi av variabelen _Kjønn_.
 #| fig-alt: Histogram som viser variabelen _Likestilling_ for de tre verdiene i variabelen Kjønn; gutt, jente og annet. 
-knitr::include_graphics("images/fig-descriptive-ICCS-histogram-gender.png")
+
+ICCS |>
+  jamovi_histogram(Likestilling, 20) +
+  facet_grid(rows = vars(`Kjønn`), scales = "free_y")
 ```
 
 De fleste jentene er skårer maksimumsverdien på _Likestilling_, mens det blant guttene er vanlig å svare lavere også. Det var ganske få elever som oppga "Annet" på variabelen _Kjønn_, så det nederste histogrammet er basert på svært få verdier, men ellers likner histogrammet på gutta sitt.
@@ -80,7 +86,6 @@ De fleste jentene er skårer maksimumsverdien på _Likestilling_, mens det blant
 ### Gjennomsnittet
 
 ```{r}
-set.seed(100)
 five_first <- head(utvalg, 5)
 likestilling <- five_first |> 
   dplyr::pull(Likestilling)
@@ -255,7 +260,7 @@ Alt vi har sett på så langt handler om sentraltendens, altså hvilke verdier s
 
 La oss utforske fire ulike måter å måle spredning på ved hjelp av ICCS-dataene. Hvert spredningsmål har sine egne fordeler og ulemper, så det er nyttig å kjenne til flere. 
 
-### Variasjonsbredde
+### Variasjonsbredde @sec-descriptive-range
 
 **Variasjonsbredden** er det aller enkleste spredningsmålet. Den regnes ut ved å ta den største verdien minus den minste verdien. I @fig-descriptive-jamovi-dispersion
 
