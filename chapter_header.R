@@ -26,7 +26,13 @@ jamovi_qual_palette <- deframe(jamovi_qual_palette)
 marquee_style <- classic_style(body_font = "Palatino")
 
 ## ggplot options ------
-theme_set(theme_classic(base_size = 13))
+theme_set(theme_minimal(base_size = 13))
+theme_update(
+  panel.grid.major = element_blank(),
+  panel.grid.minor = element_blank(),
+  axis.line = element_line(),
+  axis.ticks = element_line()
+)
 # theme_set(theme_classic(base_size=30, base_family="Palatino Linotype"))
 # update_geom_defaults(
 #    geom = "text",
