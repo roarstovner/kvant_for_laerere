@@ -47,7 +47,7 @@ book:
     - part: Deskriptiv statistikk
       chapters:
          - sec-descriptive.qmd
-    #      - 05-Drawing-graphs.qmd
+         - sec-diagram.qmd
     #      - 06-Pragmatic-matters.qmd
     # - part: Statistical theory
     #   chapters:
@@ -89,7 +89,7 @@ format:
     collapse: true
     #html-math-method: mathjax
     include-in-header: header-includes.html
-    #css: styles.css
+    css: styles.css
     # theme:
     #   light: 
     #     - flatly
