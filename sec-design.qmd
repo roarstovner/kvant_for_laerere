@@ -253,7 +253,7 @@ Et sentralt spørsmål er hvilken **analyseenhet** man skal benytte. Analyseenhe
 
 I det følgende presenterer vi et lite knippe vanlige utvalgsmetoder og deres fordeler og ulemper.
 
-### Enkle tilfeldige utvalg
+### Enkle tilfeldige utvalg {#sec-design-simple-random}
 
 For å generalisere til populasjonen vil i de fleste tilfeller det beste utvalget er et utvalg som er helt likt populasjonen, bare mye mindre. I stedet for å velge ut alle de ca. 60 000 syvendeklassingene i Norge (populasjonen) og målt motivasjonen deres, hadde det vært ideelt å valgt ut 600 syvendeklassinger slik at disse svarer likt som populasjonen. Dette vil si at hvis 10 % av elevene i populasjonen er topp motiverte, så er 10 % av utvalgets elever det også; hvis 20 % av populasjonen er ganske motiverte, så er 20 % av utvalgets elever det også, og så videre. Denne egenskapen, at utvalget er likt populasjonen, kalles at utvalget er **representativt med hensyn til variabelen**.
 

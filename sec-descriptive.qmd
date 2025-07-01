@@ -401,7 +401,7 @@ Grunnen til at variansen er vanskelig å tolke er fordi vi kvadrerer alle verdie
 
 Så hvordan tolker du variansen? Deskriptiv statistikk skal tross alt beskrive ting og variansen virker bare som et meningsløst tall som er helt ubrukelig hvis du vil kommunisere med et faktisk menneske. Løsningen er standardavviket.
 
-### Standardavvik {#sec-descriptive-standard-deviation}
+### Standardavvik {#sec-descriptive-sd}
 
 Du kan stole på oss om at varians er flott på grunn av alle de praktiske matematiske egenskapene, som vi ikke har gått gjennom her, men du ønsker også et spredningsmål som har de samme enhetene som selve dataene (altså _likestillingspoeng_, ikke _kvadratlikestillingspoeng_). Hva gjør du da? 
 
