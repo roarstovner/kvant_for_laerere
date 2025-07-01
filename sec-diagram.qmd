@@ -338,7 +338,7 @@ Alt i alt blir øyet ledet rundt i figuren slik at den samlet sett forteller en 
 
 ```{r}
 #| label: fig-diagram-owid-bar
-#| fig-cap: Graph by Roser -@roser2022. Licensed as CC-BY.
+#| fig-cap: Et profesjonelt stolpediagram. Legg merke til forklarende tekst og farger. Grafen er laget av Roser -@roser2022. Utgitt under lisensen CC-BY.
 #| classes: .enlarge-image
 #| out-width: "100%"
 knitr::include_graphics("images/fig-diagram-owid-bar.png")
@@ -348,7 +348,7 @@ Det var et standard stolpediagram -- andre diagrammer er spesiallagde. Se for ek
 
 ```{r}
 #| label: fig-diagram-owid-line
-#| fig-cap: Graph by Roser -@roser2022. Licensed as CC-BY.
+#| fig-cap: Et profesjonelt linjediagram. Legg merke til forklarende tekst og farger. Grafen er laget av Roser -@roser2022. Utgitt under lisensen CC-BY.
 #| classes: .enlarge-image
 #| out-width: "100%"
 knitr::include_graphics("images/fig-diagram-owid-line.png")
