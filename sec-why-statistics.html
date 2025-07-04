@@ -58,14 +58,13 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-8ef56b68f8fa1e9d2ba328e99e439f80.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-89d524cf73f3b2250d5e74ecba7e97ca.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-32c0091d9c65541b54b40246001d65bb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-89d524cf73f3b2250d5e74ecba7e97ca.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-fd5afcc29437f4ae951c5494600eaeaa.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -158,174 +157,14 @@ window.Quarto = {
 <link rel="stylesheet" href="styles.css">
 <meta property="og:title" content="1&nbsp; Hvorfor lære statistikk? – Kvantitative metoder for lærere">
 <meta property="og:description" content="">
-<meta property="og:image" content="sec-why-statistics_files/figure-html/fig-fig1-1-1.png">
+<meta property="og:image" content="https://roarstovner.github.io/kvant_for_laerere/sec-why-statistics_files/figure-html/fig-fig1-1-1.png">
 <meta property="og:site_name" content="Kvantitative metoder for lærere">
 <meta property="og:image:alt" content="Et spredningsdiagram viser prosentandelen kvinnelige søkere (x-akse) mot opptaksraten for begge kjønn (y-akse). Blå sirkler av varierende størrelser og grå pluss-tegn representerer datapunktene. En nedadgående trendlinje indikerer en negativ korrelasjon mellom variablene.">
+<meta property="og:image:height" content="1017">
+<meta property="og:image:width" content="1645">
 </head>
 
-<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
-    const toggleBodyColorMode = (bsSheetEl) => {
-      const mode = bsSheetEl.getAttribute("data-mode");
-      const bodyEl = window.document.querySelector("body");
-      if (mode === "dark") {
-        bodyEl.classList.add("quarto-dark");
-        bodyEl.classList.remove("quarto-light");
-      } else {
-        bodyEl.classList.add("quarto-light");
-        bodyEl.classList.remove("quarto-dark");
-      }
-    }
-    const toggleBodyColorPrimary = () => {
-      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
-      if (bsSheetEl) {
-        toggleBodyColorMode(bsSheetEl);
-      }
-    }
-    const setColorSchemeToggle = (alternate) => {
-      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-      for (let i=0; i < toggles.length; i++) {
-        const toggle = toggles[i];
-        if (toggle) {
-          if (alternate) {
-            toggle.classList.add("alternate");
-          } else {
-            toggle.classList.remove("alternate");
-          }
-        }
-      }
-    };
-    const toggleColorMode = (alternate) => {
-      // Switch the stylesheets
-      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
-      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-      manageTransitions('#quarto-margin-sidebar .nav-link', false);
-      if (alternate) {
-        // note: dark is layered on light, we don't disable primary!
-        enableStylesheet(alternateStylesheets);
-        for (const sheetNode of alternateStylesheets) {
-          if (sheetNode.id === "quarto-bootstrap") {
-            toggleBodyColorMode(sheetNode);
-          }
-        }
-      } else {
-        disableStylesheet(alternateStylesheets);
-        enableStylesheet(primaryStylesheets)
-        toggleBodyColorPrimary();
-      }
-      manageTransitions('#quarto-margin-sidebar .nav-link', true);
-      // Switch the toggles
-      setColorSchemeToggle(alternate)
-      // Hack to workaround the fact that safari doesn't
-      // properly recolor the scrollbar when toggling (#1455)
-      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-        manageTransitions("body", false);
-        window.scrollTo(0, 1);
-        setTimeout(() => {
-          window.scrollTo(0, 0);
-          manageTransitions("body", true);
-        }, 40);
-      }
-    }
-    const disableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        stylesheet.rel = 'disabled-stylesheet';
-      }
-    }
-    const enableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
-          stylesheet.rel = 'stylesheet';
-        }
-      }
-    }
-    const manageTransitions = (selector, allowTransitions) => {
-      const els = window.document.querySelectorAll(selector);
-      for (let i=0; i < els.length; i++) {
-        const el = els[i];
-        if (allowTransitions) {
-          el.classList.remove('notransition');
-        } else {
-          el.classList.add('notransition');
-        }
-      }
-    }
-    const isFileUrl = () => {
-      return window.location.protocol === 'file:';
-    }
-    const hasAlternateSentinel = () => {
-      let styleSentinel = getColorSchemeSentinel();
-      if (styleSentinel !== null) {
-        return styleSentinel === "alternate";
-      } else {
-        return false;
-      }
-    }
-    const setStyleSentinel = (alternate) => {
-      const value = alternate ? "alternate" : "default";
-      if (!isFileUrl()) {
-        window.localStorage.setItem("quarto-color-scheme", value);
-      } else {
-        localAlternateSentinel = value;
-      }
-    }
-    const getColorSchemeSentinel = () => {
-      if (!isFileUrl()) {
-        const storageValue = window.localStorage.getItem("quarto-color-scheme");
-        return storageValue != null ? storageValue : localAlternateSentinel;
-      } else {
-        return localAlternateSentinel;
-      }
-    }
-    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-      let newTheme = '';
-      if(authorPrefersDark) {
-        newTheme = isAlternate ? baseTheme : alternateTheme;
-      } else {
-        newTheme = isAlternate ? alternateTheme : baseTheme;
-      }
-      const changeGiscusTheme = () => {
-        // From: https://github.com/giscus/giscus/issues/336
-        const sendMessage = (message) => {
-          const iframe = document.querySelector('iframe.giscus-frame');
-          if (!iframe) return;
-          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
-        }
-        sendMessage({
-          setConfig: {
-            theme: newTheme
-          }
-        });
-      }
-      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-      if (isGiscussLoaded) {
-        changeGiscusTheme();
-      }
-    };
-    const authorPrefersDark = false;
-    const darkModeDefault = authorPrefersDark;
-      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-    // Dark / light mode switch
-    window.quartoToggleColorScheme = () => {
-      // Read the current dark / light value
-      let toAlternate = !hasAlternateSentinel();
-      toggleColorMode(toAlternate);
-      setStyleSentinel(toAlternate);
-      toggleGiscusIfUsed(toAlternate, darkModeDefault);
-      window.dispatchEvent(new Event('resize'));
-    };
-    // Switch to dark mode if need be
-    if (hasAlternateSentinel()) {
-      toggleColorMode(true);
-    } else {
-      toggleColorMode(false);
-    }
-  </script>
+<body class="nav-sidebar floating quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -353,7 +192,6 @@ window.Quarto = {
         <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/roarstovner/kvant_for_laerere" title="Kildekode" class="quarto-navigation-tool px-1" aria-label="Kildekode"><i class="bi bi-github"></i></a>
     <a href="./Kvantitative-metoder-for-lærere.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Bytt mørk modus"><i class="bi"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Bytt lesermodus">
   <div class="quarto-reader-toggle-btn">
   <i class="bi"></i>
@@ -372,7 +210,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface</span></a>
+ <span class="menu-text">Forord</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -400,6 +238,52 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="./sec-design.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Forskningsdesign i kvantitativ metode</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Deskriptiv statistikk</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Slå på delen">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-descriptive.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Deskriptiv statistikk</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-diagram.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Visualisere data</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Statistisk teori</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Slå på delen">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-probability.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Sannsynlighet</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-estimation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Estimering av ukjente størrelser fra et utvalg</span></span></a>
   </div>
 </li>
       </ul>
@@ -432,7 +316,6 @@ window.Quarto = {
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 class="title display-7"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Hvorfor lære statistikk?</span></h1></header>
-
 
 <header id="title-block-header">
 
@@ -489,8 +372,8 @@ Noen avhengighetsskapende ting er rimelige (Premiss 2)<br>
 Derfor er noen sigaretter ikke avhengighetsskapende (Konklusjon)</p>
 </blockquote>
 <p>Nå, la oss anta at folk virkelig er i stand til å legge til side sine eksisterende oppfatninger om hva som er sant og faktisk klarer å evaluere argumenter basert på deres logiske kvaliteter. Vi ville forventet at 100% av folk sier at gyldige argumenter er gyldige og at 0% sier at ugyldige argumenter er gyldige. Så hvis du gjennomførte et eksperiment som undersøkte dette, ville du forventet å se data som vist i <a href="#tbl-tab1-1" class="quarto-xref">Tabell&nbsp;<span>1.1</span></a>.</p>
-<div class="cell" data-layout-align="left">
-<div id="tbl-tab1-1" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-layout-align="left">
+<div class="cell" data-layout-align="center">
+<div id="tbl-tab1-1" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tab1-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Tabell&nbsp;1.1. Argumenters gyldighet
@@ -499,11 +382,25 @@ Tabell&nbsp;1.1. Argumenters gyldighet
 <div class="cell-output-display">
 <!-- preamble start -->
 
+    <!-- tinytable mathjax start -->
+    <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <!-- tinytable mathjax end -->
+
     <script>
 
       function styleCell_txgz1317ftylnsmm50a8(i, j, css_id) {
           var table = document.getElementById("tinytable_txgz1317ftylnsmm50a8");
-          var cell = table.rows[i]?.cells[j];  // Safe navigation to avoid errors
+          var cell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
           if (cell) {
               console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
               cell.classList.add(css_id);
@@ -513,46 +410,51 @@ Tabell&nbsp;1.1. Argumenters gyldighet
       }
       function insertSpanRow(i, colspan, content) {
         var table = document.getElementById('tinytable_txgz1317ftylnsmm50a8');
-        var newRow = table.insertRow(i);
+        // Find the row with data-row attribute matching i
+        var targetRow = table.querySelector(`tr [data-row="${i}"]`).closest('tr');
+        var newRow = table.insertRow(targetRow.rowIndex);
         var newCell = newRow.insertCell(0);
         newCell.setAttribute("colspan", colspan);
+        newCell.setAttribute("data-col", "0");
+        newCell.setAttribute("data-row", i - 1);
         // newCell.innerText = content;
         // this may be unsafe, but innerText does not interpret <br>
         newCell.innerHTML = content;
       }
       function spanCell_txgz1317ftylnsmm50a8(i, j, rowspan, colspan) {
         var table = document.getElementById("tinytable_txgz1317ftylnsmm50a8");
-        const targetRow = table.rows[i];
-        const targetCell = targetRow.cells[j];
+        const targetCell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
+        if (!targetCell) {
+          console.warn(`Cell at (${i}, ${j}) not found.`);
+        }
+
+        // Get all cells that need to be removed
+        const cellsToRemove = [];
         for (let r = 0; r < rowspan; r++) {
-          // Only start deleting cells to the right for the first row (r == 0)
-          if (r === 0) {
-            // Delete cells to the right of the target cell in the first row
-            for (let c = colspan - 1; c > 0; c--) {
-              if (table.rows[i + r].cells[j + c]) {
-                table.rows[i + r].deleteCell(j + c);
-              }
-            }
-          }
-          // For rows below the first, delete starting from the target column
-          if (r > 0) {
-            for (let c = colspan - 1; c >= 0; c--) {
-              if (table.rows[i + r] && table.rows[i + r].cells[j]) {
-                table.rows[i + r].deleteCell(j);
-              }
+          for (let c = 0; c < colspan; c++) {
+            if (r === 0 && c === 0) continue; // Skip the target cell
+            const cell = table.querySelector(`[data-row="${i + r}"][data-col="${j + c}"]`);
+            if (cell) {
+              cellsToRemove.push(cell);
             }
           }
         }
-        // Set rowspan and colspan of the target cell
-        targetCell.rowSpan = rowspan;
-        targetCell.colSpan = colspan;
+
+        // Remove all cells
+        cellsToRemove.forEach(cell => cell.remove());
+
+        // Set rowspan and colspan of the target cell if it exists
+        if (targetCell) {
+          targetCell.rowSpan = rowspan;
+          targetCell.colSpan = colspan;
+        }
       }
       // tinytable span after
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: 2, j: 0 }, { i: 2, j: 1 }, { i: 2, j: 2 },  ], css_id: 'tinytable_css_i2fcpwqtn6of0p81njmk',}, 
-          { positions: [ { i: 0, j: 0 }, { i: 0, j: 1 }, { i: 0, j: 2 },  ], css_id: 'tinytable_css_o49wjzm94gvy1dsjlb5k',}, 
+          { positions: [ { i: '2', j: 0 }, { i: '2', j: 1 }, { i: '2', j: 2 },  ], css_id: 'tinytable_css_i2fcpwqtn6of0p81njmk',}, 
+          { positions: [ { i: '0', j: 0 }, { i: '0', j: 1 }, { i: '0', j: 2 },  ], css_id: 'tinytable_css_o49wjzm94gvy1dsjlb5k',}, 
           ];
 
           // Loop over the arrays to style the cells
@@ -574,22 +476,22 @@ Tabell&nbsp;1.1. Argumenters gyldighet
         <thead>
         
               <tr>
-                <th scope="col"> </th>
-                <th scope="col">konklusjonen føles sann</th>
-                <th scope="col">konklusjonen føles usann</th>
+                <th scope="col" data-row="0" data-col="0"> </th>
+                <th scope="col" data-row="0" data-col="1">konklusjonen føles sann</th>
+                <th scope="col" data-row="0" data-col="2">konklusjonen føles usann</th>
               </tr>
         </thead>
         
         <tbody>
                 <tr>
-                  <td>Argumentet er gyldig</td>
-                  <td>100\% sier "gyldig"</td>
-                  <td>100\% sier "gyldig"</td>
+                  <td data-row="1" data-col="0">Argumentet er gyldig</td>
+                  <td data-row="1" data-col="1">100\% sier "gyldig"</td>
+                  <td data-row="1" data-col="2">100\% sier "gyldig"</td>
                 </tr>
                 <tr>
-                  <td>Argumentet er ugyldig</td>
-                  <td>0\% sier "gyldig"</td>
-                  <td>0\% sier "gyldig"</td>
+                  <td data-row="2" data-col="0">Argumentet er ugyldig</td>
+                  <td data-row="2" data-col="1">0\% sier "gyldig"</td>
+                  <td data-row="2" data-col="2">0\% sier "gyldig"</td>
                 </tr>
         </tbody>
       </table>
@@ -602,8 +504,8 @@ Tabell&nbsp;1.1. Argumenters gyldighet
 </div>
 <p>Hvis dataene så slik ut (eller var veldig nære), ville vi kanskje føle oss trygge nok til å stole på folks magefølelse. Det vil si, det ville vært helt greit å la forskere evaluere data basert på sunn fornuft, uten å bry seg med all denne statistikken. Men hvis du kan noe som helst om psykologi, skjønner du nok hvor dette bærer hen.</p>
 <p>I en klassisk studie undersøkte <span class="citation" data-cites="Evans1983">Evans et al. (<a href="sec-references.html#ref-Evans1983" role="doc-biblioref">1983</a>)</span> nettopp dette med et fiffig eksperiment. Det de fant var at når eksisterende oppfatninger (dvs. tro) var i samsvar det logiske argumentet gikk alt slik man skulle håpe, se <a href="#tbl-tab1-2" class="quarto-xref">Tabell&nbsp;<span>1.2</span></a>. Folk resonnerte ikke perfekt, men ganske godt.</p>
-<div class="cell" data-layout-align="left">
-<div id="tbl-tab1-2" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-layout-align="left">
+<div class="cell" data-layout-align="center">
+<div id="tbl-tab1-2" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tab1-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Tabell&nbsp;1.2. Forutinntatte holdninger og gyldighet av argument
@@ -612,11 +514,25 @@ Tabell&nbsp;1.2. Forutinntatte holdninger og gyldighet av argument
 <div class="cell-output-display">
 <!-- preamble start -->
 
+    <!-- tinytable mathjax start -->
+    <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <!-- tinytable mathjax end -->
+
     <script>
 
       function styleCell_bawvcrkt6vdbzf3c2qxx(i, j, css_id) {
           var table = document.getElementById("tinytable_bawvcrkt6vdbzf3c2qxx");
-          var cell = table.rows[i]?.cells[j];  // Safe navigation to avoid errors
+          var cell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
           if (cell) {
               console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
               cell.classList.add(css_id);
@@ -626,46 +542,51 @@ Tabell&nbsp;1.2. Forutinntatte holdninger og gyldighet av argument
       }
       function insertSpanRow(i, colspan, content) {
         var table = document.getElementById('tinytable_bawvcrkt6vdbzf3c2qxx');
-        var newRow = table.insertRow(i);
+        // Find the row with data-row attribute matching i
+        var targetRow = table.querySelector(`tr [data-row="${i}"]`).closest('tr');
+        var newRow = table.insertRow(targetRow.rowIndex);
         var newCell = newRow.insertCell(0);
         newCell.setAttribute("colspan", colspan);
+        newCell.setAttribute("data-col", "0");
+        newCell.setAttribute("data-row", i - 1);
         // newCell.innerText = content;
         // this may be unsafe, but innerText does not interpret <br>
         newCell.innerHTML = content;
       }
       function spanCell_bawvcrkt6vdbzf3c2qxx(i, j, rowspan, colspan) {
         var table = document.getElementById("tinytable_bawvcrkt6vdbzf3c2qxx");
-        const targetRow = table.rows[i];
-        const targetCell = targetRow.cells[j];
+        const targetCell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
+        if (!targetCell) {
+          console.warn(`Cell at (${i}, ${j}) not found.`);
+        }
+
+        // Get all cells that need to be removed
+        const cellsToRemove = [];
         for (let r = 0; r < rowspan; r++) {
-          // Only start deleting cells to the right for the first row (r == 0)
-          if (r === 0) {
-            // Delete cells to the right of the target cell in the first row
-            for (let c = colspan - 1; c > 0; c--) {
-              if (table.rows[i + r].cells[j + c]) {
-                table.rows[i + r].deleteCell(j + c);
-              }
-            }
-          }
-          // For rows below the first, delete starting from the target column
-          if (r > 0) {
-            for (let c = colspan - 1; c >= 0; c--) {
-              if (table.rows[i + r] && table.rows[i + r].cells[j]) {
-                table.rows[i + r].deleteCell(j);
-              }
+          for (let c = 0; c < colspan; c++) {
+            if (r === 0 && c === 0) continue; // Skip the target cell
+            const cell = table.querySelector(`[data-row="${i + r}"][data-col="${j + c}"]`);
+            if (cell) {
+              cellsToRemove.push(cell);
             }
           }
         }
-        // Set rowspan and colspan of the target cell
-        targetCell.rowSpan = rowspan;
-        targetCell.colSpan = colspan;
+
+        // Remove all cells
+        cellsToRemove.forEach(cell => cell.remove());
+
+        // Set rowspan and colspan of the target cell if it exists
+        if (targetCell) {
+          targetCell.rowSpan = rowspan;
+          targetCell.colSpan = colspan;
+        }
       }
       // tinytable span after
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: 2, j: 0 }, { i: 2, j: 1 }, { i: 2, j: 2 },  ], css_id: 'tinytable_css_obgj5j3h3h0aculoa2dq',}, 
-          { positions: [ { i: 0, j: 0 }, { i: 0, j: 1 }, { i: 0, j: 2 },  ], css_id: 'tinytable_css_99xgj74qbjzrt0ozrwr8',}, 
+          { positions: [ { i: '2', j: 0 }, { i: '2', j: 1 }, { i: '2', j: 2 },  ], css_id: 'tinytable_css_obgj5j3h3h0aculoa2dq',}, 
+          { positions: [ { i: '0', j: 0 }, { i: '0', j: 1 }, { i: '0', j: 2 },  ], css_id: 'tinytable_css_99xgj74qbjzrt0ozrwr8',}, 
           ];
 
           // Loop over the arrays to style the cells
@@ -687,22 +608,22 @@ Tabell&nbsp;1.2. Forutinntatte holdninger og gyldighet av argument
         <thead>
         
               <tr>
-                <th scope="col"> </th>
-                <th scope="col">konklusjonen føles sann</th>
-                <th scope="col">konklusjonen føles usann</th>
+                <th scope="col" data-row="0" data-col="0"> </th>
+                <th scope="col" data-row="0" data-col="1">konklusjonen føles sann</th>
+                <th scope="col" data-row="0" data-col="2">konklusjonen føles usann</th>
               </tr>
         </thead>
         
         <tbody>
                 <tr>
-                  <td>Argumentet er gyldig</td>
-                  <td>92\% sier 'gyldig'</td>
-                  <td></td>
+                  <td data-row="1" data-col="0">Argumentet er gyldig</td>
+                  <td data-row="1" data-col="1">92\% sier 'gyldig'</td>
+                  <td data-row="1" data-col="2"></td>
                 </tr>
                 <tr>
-                  <td>Argumentet er ugyldig</td>
-                  <td></td>
-                  <td>8\% sier 'gyldig'</td>
+                  <td data-row="2" data-col="0">Argumentet er ugyldig</td>
+                  <td data-row="2" data-col="1"></td>
+                  <td data-row="2" data-col="2">8\% sier 'gyldig'</td>
                 </tr>
         </tbody>
       </table>
@@ -714,8 +635,8 @@ Tabell&nbsp;1.2. Forutinntatte holdninger og gyldighet av argument
 </div>
 </div>
 <p>Men se hva som skjedde da de eksisterende oppfatningene gikk på tvers av det logiske argumentet, altså at det logiske argumentet konkluderte ulikt med folks eksisterende oppfatning (<a href="#tbl-tab1-3" class="quarto-xref">Tabell&nbsp;<span>1.3</span></a>). Å huff, det er ikke like bra! Det ser ut til at når folk blir presentert for et sterkt argument som motsier våre eksisterende oppfatninger, synes vi det er ganske vanskelig å se at det faktisk er et sterkt argument (folk gjorde det bare 46% av tiden). Enda verre er det når folk blir presentert for et svakt argument som er i samsvar med våre eksisterende oppfatninger; nesten ingen klarer å se at argumentet er svakt – folk tok feil 92% av tiden! <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
-<div class="cell" data-layout-align="left" data-tbl-pos="h!">
-<div id="tbl-tab1-3" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-tbl-pos="h!" data-layout-align="left">
+<div class="cell" data-layout-align="center" data-tbl-pos="h!">
+<div id="tbl-tab1-3" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-tbl-pos="h!" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tab1-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Tabell&nbsp;1.3. Intuisjon og gyldighet av argument
@@ -724,11 +645,25 @@ Tabell&nbsp;1.3. Intuisjon og gyldighet av argument
 <div class="cell-output-display">
 <!-- preamble start -->
 
+    <!-- tinytable mathjax start -->
+    <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <!-- tinytable mathjax end -->
+
     <script>
 
       function styleCell_hcbcbn6aerrq4b54aqjs(i, j, css_id) {
           var table = document.getElementById("tinytable_hcbcbn6aerrq4b54aqjs");
-          var cell = table.rows[i]?.cells[j];  // Safe navigation to avoid errors
+          var cell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
           if (cell) {
               console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
               cell.classList.add(css_id);
@@ -738,46 +673,51 @@ Tabell&nbsp;1.3. Intuisjon og gyldighet av argument
       }
       function insertSpanRow(i, colspan, content) {
         var table = document.getElementById('tinytable_hcbcbn6aerrq4b54aqjs');
-        var newRow = table.insertRow(i);
+        // Find the row with data-row attribute matching i
+        var targetRow = table.querySelector(`tr [data-row="${i}"]`).closest('tr');
+        var newRow = table.insertRow(targetRow.rowIndex);
         var newCell = newRow.insertCell(0);
         newCell.setAttribute("colspan", colspan);
+        newCell.setAttribute("data-col", "0");
+        newCell.setAttribute("data-row", i - 1);
         // newCell.innerText = content;
         // this may be unsafe, but innerText does not interpret <br>
         newCell.innerHTML = content;
       }
       function spanCell_hcbcbn6aerrq4b54aqjs(i, j, rowspan, colspan) {
         var table = document.getElementById("tinytable_hcbcbn6aerrq4b54aqjs");
-        const targetRow = table.rows[i];
-        const targetCell = targetRow.cells[j];
+        const targetCell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
+        if (!targetCell) {
+          console.warn(`Cell at (${i}, ${j}) not found.`);
+        }
+
+        // Get all cells that need to be removed
+        const cellsToRemove = [];
         for (let r = 0; r < rowspan; r++) {
-          // Only start deleting cells to the right for the first row (r == 0)
-          if (r === 0) {
-            // Delete cells to the right of the target cell in the first row
-            for (let c = colspan - 1; c > 0; c--) {
-              if (table.rows[i + r].cells[j + c]) {
-                table.rows[i + r].deleteCell(j + c);
-              }
-            }
-          }
-          // For rows below the first, delete starting from the target column
-          if (r > 0) {
-            for (let c = colspan - 1; c >= 0; c--) {
-              if (table.rows[i + r] && table.rows[i + r].cells[j]) {
-                table.rows[i + r].deleteCell(j);
-              }
+          for (let c = 0; c < colspan; c++) {
+            if (r === 0 && c === 0) continue; // Skip the target cell
+            const cell = table.querySelector(`[data-row="${i + r}"][data-col="${j + c}"]`);
+            if (cell) {
+              cellsToRemove.push(cell);
             }
           }
         }
-        // Set rowspan and colspan of the target cell
-        targetCell.rowSpan = rowspan;
-        targetCell.colSpan = colspan;
+
+        // Remove all cells
+        cellsToRemove.forEach(cell => cell.remove());
+
+        // Set rowspan and colspan of the target cell if it exists
+        if (targetCell) {
+          targetCell.rowSpan = rowspan;
+          targetCell.colSpan = colspan;
+        }
       }
       // tinytable span after
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: 2, j: 0 }, { i: 2, j: 1 }, { i: 2, j: 2 },  ], css_id: 'tinytable_css_fechy4wnelxzzdzkf3rv',}, 
-          { positions: [ { i: 0, j: 0 }, { i: 0, j: 1 }, { i: 0, j: 2 },  ], css_id: 'tinytable_css_1woktlujcw3jr68qveqo',}, 
+          { positions: [ { i: '2', j: 0 }, { i: '2', j: 1 }, { i: '2', j: 2 },  ], css_id: 'tinytable_css_fechy4wnelxzzdzkf3rv',}, 
+          { positions: [ { i: '0', j: 0 }, { i: '0', j: 1 }, { i: '0', j: 2 },  ], css_id: 'tinytable_css_1woktlujcw3jr68qveqo',}, 
           ];
 
           // Loop over the arrays to style the cells
@@ -799,22 +739,22 @@ Tabell&nbsp;1.3. Intuisjon og gyldighet av argument
         <thead>
         
               <tr>
-                <th scope="col"> </th>
-                <th scope="col">konklusjonen føles sann</th>
-                <th scope="col">konklusjon føles usann</th>
+                <th scope="col" data-row="0" data-col="0"> </th>
+                <th scope="col" data-row="0" data-col="1">konklusjonen føles sann</th>
+                <th scope="col" data-row="0" data-col="2">konklusjon føles usann</th>
               </tr>
         </thead>
         
         <tbody>
                 <tr>
-                  <td>Argumentet er gyldig</td>
-                  <td>92\% sier 'gyldig'</td>
-                  <td>46\% sier 'gyldig'</td>
+                  <td data-row="1" data-col="0">Argumentet er gyldig</td>
+                  <td data-row="1" data-col="1">92\% sier 'gyldig'</td>
+                  <td data-row="1" data-col="2">46\% sier 'gyldig'</td>
                 </tr>
                 <tr>
-                  <td>Argumentet er ugyldig</td>
-                  <td>92\% sier 'gyldig'</td>
-                  <td>8\% sier 'gyldig'</td>
+                  <td data-row="2" data-col="0">Argumentet er ugyldig</td>
+                  <td data-row="2" data-col="1">92\% sier 'gyldig'</td>
+                  <td data-row="2" data-col="2">8\% sier 'gyldig'</td>
                 </tr>
         </tbody>
       </table>
@@ -832,8 +772,8 @@ Tabell&nbsp;1.3. Intuisjon og gyldighet av argument
 <h2 data-number="1.2" class="anchored" data-anchor-id="en-advarsel-mot-å-tro-på-dataene-simpsons-paradoks"><span class="header-section-number">1.2</span> En advarsel mot å “tro på dataene”: Simpsons paradoks</h2>
 <p>I forrige avsnitt benyttet jeg uttrykket “å tro på dataene”, et uttrykk jeg misliker sterkt. Du skal nå få høre en fortelling som belyser hvorfor også du bør slutte å “tro på dataene”, “høre på det evidensen sier” og liknende.</p>
 <p>Følgende er en sann historie (tror jeg!). I 1973 hadde University of California, Berkeley, noen bekymringer rundt opptakene av studenter til deres videreutdanningskurs. Mer spesifikt var det kjønnsfordelingen i opptakene som forårsaket problemer (<a href="#tbl-tab1-4" class="quarto-xref">Tabell&nbsp;<span>1.4</span></a>).</p>
-<div class="cell" data-layout-align="left">
-<div id="tbl-tab1-4" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-layout-align="left">
+<div class="cell" data-layout-align="center">
+<div id="tbl-tab1-4" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tab1-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Tabell&nbsp;1.4. Berkeley-studenter etter kjønn
@@ -842,11 +782,25 @@ Tabell&nbsp;1.4. Berkeley-studenter etter kjønn
 <div class="cell-output-display">
 <!-- preamble start -->
 
+    <!-- tinytable mathjax start -->
+    <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <!-- tinytable mathjax end -->
+
     <script>
 
       function styleCell_lalw07rtt7xdswwj295n(i, j, css_id) {
           var table = document.getElementById("tinytable_lalw07rtt7xdswwj295n");
-          var cell = table.rows[i]?.cells[j];  // Safe navigation to avoid errors
+          var cell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
           if (cell) {
               console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
               cell.classList.add(css_id);
@@ -856,46 +810,51 @@ Tabell&nbsp;1.4. Berkeley-studenter etter kjønn
       }
       function insertSpanRow(i, colspan, content) {
         var table = document.getElementById('tinytable_lalw07rtt7xdswwj295n');
-        var newRow = table.insertRow(i);
+        // Find the row with data-row attribute matching i
+        var targetRow = table.querySelector(`tr [data-row="${i}"]`).closest('tr');
+        var newRow = table.insertRow(targetRow.rowIndex);
         var newCell = newRow.insertCell(0);
         newCell.setAttribute("colspan", colspan);
+        newCell.setAttribute("data-col", "0");
+        newCell.setAttribute("data-row", i - 1);
         // newCell.innerText = content;
         // this may be unsafe, but innerText does not interpret <br>
         newCell.innerHTML = content;
       }
       function spanCell_lalw07rtt7xdswwj295n(i, j, rowspan, colspan) {
         var table = document.getElementById("tinytable_lalw07rtt7xdswwj295n");
-        const targetRow = table.rows[i];
-        const targetCell = targetRow.cells[j];
+        const targetCell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
+        if (!targetCell) {
+          console.warn(`Cell at (${i}, ${j}) not found.`);
+        }
+
+        // Get all cells that need to be removed
+        const cellsToRemove = [];
         for (let r = 0; r < rowspan; r++) {
-          // Only start deleting cells to the right for the first row (r == 0)
-          if (r === 0) {
-            // Delete cells to the right of the target cell in the first row
-            for (let c = colspan - 1; c > 0; c--) {
-              if (table.rows[i + r].cells[j + c]) {
-                table.rows[i + r].deleteCell(j + c);
-              }
-            }
-          }
-          // For rows below the first, delete starting from the target column
-          if (r > 0) {
-            for (let c = colspan - 1; c >= 0; c--) {
-              if (table.rows[i + r] && table.rows[i + r].cells[j]) {
-                table.rows[i + r].deleteCell(j);
-              }
+          for (let c = 0; c < colspan; c++) {
+            if (r === 0 && c === 0) continue; // Skip the target cell
+            const cell = table.querySelector(`[data-row="${i + r}"][data-col="${j + c}"]`);
+            if (cell) {
+              cellsToRemove.push(cell);
             }
           }
         }
-        // Set rowspan and colspan of the target cell
-        targetCell.rowSpan = rowspan;
-        targetCell.colSpan = colspan;
+
+        // Remove all cells
+        cellsToRemove.forEach(cell => cell.remove());
+
+        // Set rowspan and colspan of the target cell if it exists
+        if (targetCell) {
+          targetCell.rowSpan = rowspan;
+          targetCell.colSpan = colspan;
+        }
       }
       // tinytable span after
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: 2, j: 0 }, { i: 2, j: 1 }, { i: 2, j: 2 },  ], css_id: 'tinytable_css_w6lrd5qrdrl7x6ov9d4s',}, 
-          { positions: [ { i: 0, j: 0 }, { i: 0, j: 1 }, { i: 0, j: 2 },  ], css_id: 'tinytable_css_4om6vsensikv0r8b2asv',}, 
+          { positions: [ { i: '2', j: 0 }, { i: '2', j: 1 }, { i: '2', j: 2 },  ], css_id: 'tinytable_css_w6lrd5qrdrl7x6ov9d4s',}, 
+          { positions: [ { i: '0', j: 0 }, { i: '0', j: 1 }, { i: '0', j: 2 },  ], css_id: 'tinytable_css_4om6vsensikv0r8b2asv',}, 
           ];
 
           // Loop over the arrays to style the cells
@@ -917,22 +876,22 @@ Tabell&nbsp;1.4. Berkeley-studenter etter kjønn
         <thead>
         
               <tr>
-                <th scope="col"> </th>
-                <th scope="col">Antall søkere</th>
-                <th scope="col">Prosent tilbudt plass</th>
+                <th scope="col" data-row="0" data-col="0"> </th>
+                <th scope="col" data-row="0" data-col="1">Antall søkere</th>
+                <th scope="col" data-row="0" data-col="2">Prosent tilbudt plass</th>
               </tr>
         </thead>
         
         <tbody>
                 <tr>
-                  <td>Menn</td>
-                  <td>8442</td>
-                  <td>44\%</td>
+                  <td data-row="1" data-col="0">Menn</td>
+                  <td data-row="1" data-col="1">8442</td>
+                  <td data-row="1" data-col="2">44\%</td>
                 </tr>
                 <tr>
-                  <td>Kvinner</td>
-                  <td>4321</td>
-                  <td>35\%</td>
+                  <td data-row="2" data-col="0">Kvinner</td>
+                  <td data-row="2" data-col="1">4321</td>
+                  <td data-row="2" data-col="2">35\%</td>
                 </tr>
         </tbody>
       </table>
@@ -945,8 +904,8 @@ Tabell&nbsp;1.4. Berkeley-studenter etter kjønn
 </div>
 <p>På grunn av kjønnsfordelingen var de bekymret for å bli saksøkt!<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> Med nesten 13,000 søkere er en forskjell på 9 % i opptaksratene mellom menn og kvinner altfor stor til å være tilfeldig. Ganske overbevisende data, ikke sant? Men hva hvis jeg sa til deg at disse dataene <em>faktisk</em> reflekterte en svak skjevhet til fordel for kvinner (på en måte!)? Du ville antakelig trodd at jeg var gal, kvinnefiendtlig eller begge.</p>
 <p>Merkelig nok er dette faktisk delvis sant. Da folk så nærmere på opptaksdataene, viste de en litt annen historie <span class="citation" data-cites="Bickel1975">(<a href="sec-references.html#ref-Bickel1975" role="doc-biblioref">Bickel et al., 1975</a>)</span>. Spesielt da de så på opptakene avdeling for avdeling viste det seg at de fleste fakultetene faktisk hadde en litt <em>høyere</em> suksessrate for kvinnelige søkere enn for mannlige søkere. <a href="#tbl-tab1-5" class="quarto-xref">Tabell&nbsp;<span>1.5</span></a> viser opptaksdata for de seks største fakultetene (med navnene på fakultetene fjernet av personvernhensyn):</p>
-<div class="cell" data-layout-align="left">
-<div id="tbl-tab1-5" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-layout-align="left">
+<div class="cell" data-layout-align="center">
+<div id="tbl-tab1-5" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tab1-5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Tabell&nbsp;1.5. Berkeley-studenter etter kjønn for de seks største avdelingene
@@ -955,11 +914,25 @@ Tabell&nbsp;1.5. Berkeley-studenter etter kjønn for de seks største avdelingen
 <div class="cell-output-display">
 <!-- preamble start -->
 
+    <!-- tinytable mathjax start -->
+    <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <!-- tinytable mathjax end -->
+
     <script>
 
       function styleCell_1fzqtocmt6mi0ko00b61(i, j, css_id) {
           var table = document.getElementById("tinytable_1fzqtocmt6mi0ko00b61");
-          var cell = table.rows[i]?.cells[j];  // Safe navigation to avoid errors
+          var cell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
           if (cell) {
               console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
               cell.classList.add(css_id);
@@ -969,48 +942,53 @@ Tabell&nbsp;1.5. Berkeley-studenter etter kjønn for de seks største avdelingen
       }
       function insertSpanRow(i, colspan, content) {
         var table = document.getElementById('tinytable_1fzqtocmt6mi0ko00b61');
-        var newRow = table.insertRow(i);
+        // Find the row with data-row attribute matching i
+        var targetRow = table.querySelector(`tr [data-row="${i}"]`).closest('tr');
+        var newRow = table.insertRow(targetRow.rowIndex);
         var newCell = newRow.insertCell(0);
         newCell.setAttribute("colspan", colspan);
+        newCell.setAttribute("data-col", "0");
+        newCell.setAttribute("data-row", i - 1);
         // newCell.innerText = content;
         // this may be unsafe, but innerText does not interpret <br>
         newCell.innerHTML = content;
       }
       function spanCell_1fzqtocmt6mi0ko00b61(i, j, rowspan, colspan) {
         var table = document.getElementById("tinytable_1fzqtocmt6mi0ko00b61");
-        const targetRow = table.rows[i];
-        const targetCell = targetRow.cells[j];
+        const targetCell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
+        if (!targetCell) {
+          console.warn(`Cell at (${i}, ${j}) not found.`);
+        }
+
+        // Get all cells that need to be removed
+        const cellsToRemove = [];
         for (let r = 0; r < rowspan; r++) {
-          // Only start deleting cells to the right for the first row (r == 0)
-          if (r === 0) {
-            // Delete cells to the right of the target cell in the first row
-            for (let c = colspan - 1; c > 0; c--) {
-              if (table.rows[i + r].cells[j + c]) {
-                table.rows[i + r].deleteCell(j + c);
-              }
-            }
-          }
-          // For rows below the first, delete starting from the target column
-          if (r > 0) {
-            for (let c = colspan - 1; c >= 0; c--) {
-              if (table.rows[i + r] && table.rows[i + r].cells[j]) {
-                table.rows[i + r].deleteCell(j);
-              }
+          for (let c = 0; c < colspan; c++) {
+            if (r === 0 && c === 0) continue; // Skip the target cell
+            const cell = table.querySelector(`[data-row="${i + r}"][data-col="${j + c}"]`);
+            if (cell) {
+              cellsToRemove.push(cell);
             }
           }
         }
-        // Set rowspan and colspan of the target cell
-        targetCell.rowSpan = rowspan;
-        targetCell.colSpan = colspan;
+
+        // Remove all cells
+        cellsToRemove.forEach(cell => cell.remove());
+
+        // Set rowspan and colspan of the target cell if it exists
+        if (targetCell) {
+          targetCell.rowSpan = rowspan;
+          targetCell.colSpan = colspan;
+        }
       }
       // tinytable span after
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: 0, j: 2 }, { i: 0, j: 1 },  ], css_id: 'tinytable_css_6xvmb8gaq0z7hr3cyzz9',}, 
-          { positions: [ { i: 7, j: 3 }, { i: 7, j: 2 }, { i: 7, j: 0 }, { i: 7, j: 1 }, { i: 7, j: 4 },  ], css_id: 'tinytable_css_hd6s48e3s4sn3698v31m',}, 
-          { positions: [ { i: 0, j: 0 }, { i: 0, j: 3 }, { i: 0, j: 4 },  ], css_id: 'tinytable_css_pg4yec4tw9n7dw4h6986',}, 
-          { positions: [ { i: 1, j: 0 }, { i: 1, j: 3 }, { i: 1, j: 2 }, { i: 1, j: 1 }, { i: 1, j: 4 },  ], css_id: 'tinytable_css_i38kdn8zuy88q11pwueu',}, 
+          { positions: [ { i: '-1', j: 2 }, { i: '-1', j: 1 },  ], css_id: 'tinytable_css_6xvmb8gaq0z7hr3cyzz9',}, 
+          { positions: [ { i: '6', j: 3 }, { i: '6', j: 2 }, { i: '6', j: 0 }, { i: '6', j: 1 }, { i: '6', j: 4 },  ], css_id: 'tinytable_css_hd6s48e3s4sn3698v31m',}, 
+          { positions: [ { i: '-1', j: 0 }, { i: '-1', j: 3 }, { i: '-1', j: 4 },  ], css_id: 'tinytable_css_pg4yec4tw9n7dw4h6986',}, 
+          { positions: [ { i: '0', j: 0 }, { i: '0', j: 3 }, { i: '0', j: 2 }, { i: '0', j: 1 }, { i: '0', j: 4 },  ], css_id: 'tinytable_css_i38kdn8zuy88q11pwueu',}, 
           ];
 
           // Loop over the arrays to style the cells
@@ -1033,62 +1011,62 @@ Tabell&nbsp;1.5. Berkeley-studenter etter kjønn for de seks største avdelingen
       <table class="table table-borderless" id="tinytable_1fzqtocmt6mi0ko00b61" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
         <thead>
 <tr>
-<th scope="col" align="center" colspan="1"> </th>
-<th scope="col" align="center" colspan="2">Menn</th>
-<th scope="col" align="center" colspan="2">Kvinner</th>
+<th scope="col" align="center" colspan="1" data-row="-1" data-col="0"> </th>
+<th scope="col" align="center" colspan="2" data-row="-1" data-col="1">Menn</th>
+<th scope="col" align="center" colspan="2" data-row="-1" data-col="2">Kvinner</th>
 </tr>
         
               <tr>
-                <th scope="col">Avdeling</th>
-                <th scope="col">Søkere</th>
-                <th scope="col">Prosent tilbudt plass</th>
-                <th scope="col">Søkere</th>
-                <th scope="col">Prosent tilbudt plass</th>
+                <th scope="col" data-row="0" data-col="0">Avdeling</th>
+                <th scope="col" data-row="0" data-col="1">Søkere</th>
+                <th scope="col" data-row="0" data-col="2">Prosent tilbudt plass</th>
+                <th scope="col" data-row="0" data-col="3">Søkere</th>
+                <th scope="col" data-row="0" data-col="4">Prosent tilbudt plass</th>
               </tr>
         </thead>
         
         <tbody>
                 <tr>
-                  <td>A</td>
-                  <td>825</td>
-                  <td>62\%</td>
-                  <td>108</td>
-                  <td>82\%</td>
+                  <td data-row="1" data-col="0">A</td>
+                  <td data-row="1" data-col="1">825</td>
+                  <td data-row="1" data-col="2">62\%</td>
+                  <td data-row="1" data-col="3">108</td>
+                  <td data-row="1" data-col="4">82\%</td>
                 </tr>
                 <tr>
-                  <td>B</td>
-                  <td>560</td>
-                  <td>63\%</td>
-                  <td>25</td>
-                  <td>68\%</td>
+                  <td data-row="2" data-col="0">B</td>
+                  <td data-row="2" data-col="1">560</td>
+                  <td data-row="2" data-col="2">63\%</td>
+                  <td data-row="2" data-col="3">25</td>
+                  <td data-row="2" data-col="4">68\%</td>
                 </tr>
                 <tr>
-                  <td>C</td>
-                  <td>325</td>
-                  <td>37\%</td>
-                  <td>593</td>
-                  <td>34\%</td>
+                  <td data-row="3" data-col="0">C</td>
+                  <td data-row="3" data-col="1">325</td>
+                  <td data-row="3" data-col="2">37\%</td>
+                  <td data-row="3" data-col="3">593</td>
+                  <td data-row="3" data-col="4">34\%</td>
                 </tr>
                 <tr>
-                  <td>D</td>
-                  <td>417</td>
-                  <td>33\%</td>
-                  <td>375</td>
-                  <td>35\%</td>
+                  <td data-row="4" data-col="0">D</td>
+                  <td data-row="4" data-col="1">417</td>
+                  <td data-row="4" data-col="2">33\%</td>
+                  <td data-row="4" data-col="3">375</td>
+                  <td data-row="4" data-col="4">35\%</td>
                 </tr>
                 <tr>
-                  <td>E</td>
-                  <td>191</td>
-                  <td>28\%</td>
-                  <td>393</td>
-                  <td>24\%</td>
+                  <td data-row="5" data-col="0">E</td>
+                  <td data-row="5" data-col="1">191</td>
+                  <td data-row="5" data-col="2">28\%</td>
+                  <td data-row="5" data-col="3">393</td>
+                  <td data-row="5" data-col="4">24\%</td>
                 </tr>
                 <tr>
-                  <td>F</td>
-                  <td>272</td>
-                  <td>6\%</td>
-                  <td>341</td>
-                  <td>7\%</td>
+                  <td data-row="6" data-col="0">F</td>
+                  <td data-row="6" data-col="1">272</td>
+                  <td data-row="6" data-col="2">6\%</td>
+                  <td data-row="6" data-col="3">341</td>
+                  <td data-row="6" data-col="4">7\%</td>
                 </tr>
         </tbody>
       </table>
@@ -1102,12 +1080,12 @@ Tabell&nbsp;1.5. Berkeley-studenter etter kjønn for de seks største avdelingen
 <p>Det bemerkelsesverdige er at de fleste avdelingene hadde en <em>høyere</em> opptaksrate for kvinner enn for menn! Likevel var den totale opptaksraten ved universitetet lavere for kvinner enn for menn. Hvordan kan dette være mulig? Hvordan kan begge disse påstandene være sanne samtidig?</p>
 <p>Trekk pusten dypt, for du må trolig konsentrere deg litt for å henge med på forklaringen. For det første, merk at avdelingene ikke har like opptaksprosenter: noen fakulteter (f.eks. A og B) hadde en tendens til å ta opp en høy prosentandel kvalifiserte søkere, mens andre (f.eks. F) avslo de fleste kandidatene. Så blant de seks fakultetene som vises ovenfor er A er det mest sjenerøse, etterfulgt av B, C, D, E og F i den rekkefølgen. Videre, merk at menn og kvinner hadde en tendens til å søke ulike avdelinger. Hvis vi rangerer avdelingene etter det totale antallet mannlige søkere, får vi <strong>A</strong>&gt;<strong>B</strong>&gt;D&gt;C&gt;F&gt;E (de avdelingene som var enklere å komme inn på er uthevet). Generelt hadde menn en tendens til å søke til avdelingene som var enkle å komme inn på, altså de med høye opptaksrater. Når vi sammenligner dette med hvordan de kvinnelige søkerne fordelte seg, ser vi at bildet er ganske annerledes. Når vi rangere avdelingene etter det totale antallet kvinnelige søkere får vi rekkefølgen C&gt;E&gt;D&gt;F&gt;<strong>A</strong>&gt;<strong>B</strong>. Med andre ord, dataene ser ut til å vise at de kvinnelige søkerne søkte seg til “vanskeligere” fakulteter. Og faktisk, hvis vi ser på <a href="#fig-fig1-1" class="quarto-xref">Figur&nbsp;<span>1.1</span></a>, ser vi at denne trenden er systematisk, faktisk helt slående.</p>
 <p>Denne effekten, at sammenhenger som gjelder hele utvalget kan være annerledes i de fleste eller alle undergrupper, er kjent som <strong>Simpsons paradoks</strong>. Det er ikke vanlig, men det opptrer i virkeligheten, og de fleste blir svært overrasket når de først støter på det, og mange nekter til og med å tro at det er ekte. Det er veldig reelt. Og mens det er mange veldig subtile statistiske leksjoner begravet der inne, vil jeg bruke det til å gjøre et mye viktigere poeng: kvantitativ metode er vanskelig, og det er mange subtile, kontraintuitive fallgruver som lurer. Det er grunn #2 til at forskere elsker statistikk, og hvorfor vi lærer forskningsmetoder. Fordi vitenskap er vanskelig og sannheten ligger utspekulert i skjul i kroker og kriker av kompliserte data.</p>
-<div class="cell" data-layout-align="left">
+<div class="cell enlarge-image" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-fig1-1" class="quarto-float quarto-figure quarto-figure-left anchored" data-fig-align="left" alt="Et spredningsdiagram viser prosentandelen kvinnelige søkere (x-akse) mot opptaksraten for begge kjønn (y-akse). Blå sirkler av varierende størrelser og grå pluss-tegn representerer datapunktene. En nedadgående trendlinje indikerer en negativ korrelasjon mellom variablene." data-fig-pos="H">
+<div id="fig-fig1-1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-pos="H" alt="Et spredningsdiagram viser prosentandelen kvinnelige søkere (x-akse) mot opptaksraten for begge kjønn (y-akse). Blå sirkler av varierende størrelser og grå pluss-tegn representerer datapunktene. En nedadgående trendlinje indikerer en negativ korrelasjon mellom variablene." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-fig1-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="sec-why-statistics_files/figure-html/fig-fig1-1-1.png" class="img-fluid quarto-figure quarto-figure-left figure-img" style="width:85.0%" data-fig-pos="H" alt="Et spredningsdiagram viser prosentandelen kvinnelige søkere (x-akse) mot opptaksraten for begge kjønn (y-akse). Blå sirkler av varierende størrelser og grå pluss-tegn representerer datapunktene. En nedadgående trendlinje indikerer en negativ korrelasjon mellom variablene.">
+<a href="sec-why-statistics_files/figure-html/fig-fig1-1-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figur&nbsp;1.1. Berkeley-opptaksdata for 1973. Denne figuren viser opptaksraten for de 85 fakultetene som hadde minst én kvinnelig søker som en funksjon av prosentandelen kvinnelige søkere. Figuren er en nytegning av Figur 1 fra @Bickel1975. Sirkler representerer fakulteter med mer enn 40 søkere; arealet av sirkelen er proporsjonal med totalt antall søkere. Kryss representerer avdelinger med færre enn 40 søkere."><img src="sec-why-statistics_files/figure-html/fig-fig1-1-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" data-fig-pos="H" alt="Et spredningsdiagram viser prosentandelen kvinnelige søkere (x-akse) mot opptaksraten for begge kjønn (y-akse). Blå sirkler av varierende størrelser og grå pluss-tegn representerer datapunktene. En nedadgående trendlinje indikerer en negativ korrelasjon mellom variablene."></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fig1-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figur&nbsp;1.1. Berkeley-opptaksdata for 1973. Denne figuren viser opptaksraten for de 85 fakultetene som hadde minst én kvinnelig søker som en funksjon av prosentandelen kvinnelige søkere. Figuren er en nytegning av Figur 1 fra <span class="citation" data-cites="Bickel1975">Bickel et al. (<a href="sec-references.html#ref-Bickel1975" role="doc-biblioref">1975</a>)</span>. Sirkler representerer fakulteter med mer enn 40 søkere; arealet av sirkelen er proporsjonal med totalt antall søkere. Kryss representerer avdelinger med færre enn 40 søkere.
@@ -1179,19 +1157,6 @@ Tangen, N. (2022). Bonus episode: <span>Grit</span> with <span>Angela Duckworth<
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
-    // Ensure there is a toggle, if there isn't float one in the top right
-    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-      const a = window.document.createElement('a');
-      a.classList.add('top-right');
-      a.classList.add('quarto-color-scheme-toggle');
-      a.href = "";
-      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-      const i = window.document.createElement("i");
-      i.classList.add('bi');
-      a.appendChild(i);
-      window.document.body.appendChild(a);
-    }
-    setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {
@@ -1262,7 +1227,7 @@ Tangen, N. (2022). Bonus episode: <span>Grit</span> with <span>Angela Duckworth<
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/roarstovner\.github\.io\/kvant_for_laerere\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -1596,8 +1561,8 @@ Tangen, N. (2022). Bonus episode: <span>Grit</span> with <span>Angela Duckworth<
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link" aria-label="Preface">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
+      <a href="./index.html" class="pagination-link" aria-label="Forord">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Forord</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
@@ -1620,6 +1585,38 @@ Tangen, N. (2022). Bonus episode: <span>Grit</span> with <span>Angela Duckworth<
 </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

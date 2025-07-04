@@ -58,14 +58,13 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-8ef56b68f8fa1e9d2ba328e99e439f80.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-89d524cf73f3b2250d5e74ecba7e97ca.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-32c0091d9c65541b54b40246001d65bb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-89d524cf73f3b2250d5e74ecba7e97ca.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-fd5afcc29437f4ae951c5494600eaeaa.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -158,174 +157,14 @@ window.Quarto = {
 <link rel="stylesheet" href="styles.css">
 <meta property="og:title" content="2&nbsp; Måling i utdanningsforskning – Kvantitative metoder for lærere">
 <meta property="og:description" content="">
-<meta property="og:image" content="images/fig-operasjonalisering.png">
+<meta property="og:image" content="https://roarstovner.github.io/kvant_for_laerere/images/fig-operasjonalisering.png">
 <meta property="og:site_name" content="Kvantitative metoder for lærere">
 <meta property="og:image:alt" content="Lengst til venstre er 'Teoretisk konstrukt: Alder' med en pil til 'Målemetode: Selvrapportering fra nettspørreskjema: 'hvilket år ble du født?''. Det står 'operasjonalisering' på pila. Derfra går det en pil, 'datainnsamling', til 'Variabel'. Ved 'Variabel' er det et datasett med 'Fødselsår' og 'Alder'. Fra 'Fødselsår' til 'Alder' går det en liten pil, 'Etterbehandling av data'.">
+<meta property="og:image:height" content="349">
+<meta property="og:image:width" content="1044">
 </head>
 
-<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
-    const toggleBodyColorMode = (bsSheetEl) => {
-      const mode = bsSheetEl.getAttribute("data-mode");
-      const bodyEl = window.document.querySelector("body");
-      if (mode === "dark") {
-        bodyEl.classList.add("quarto-dark");
-        bodyEl.classList.remove("quarto-light");
-      } else {
-        bodyEl.classList.add("quarto-light");
-        bodyEl.classList.remove("quarto-dark");
-      }
-    }
-    const toggleBodyColorPrimary = () => {
-      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
-      if (bsSheetEl) {
-        toggleBodyColorMode(bsSheetEl);
-      }
-    }
-    const setColorSchemeToggle = (alternate) => {
-      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-      for (let i=0; i < toggles.length; i++) {
-        const toggle = toggles[i];
-        if (toggle) {
-          if (alternate) {
-            toggle.classList.add("alternate");
-          } else {
-            toggle.classList.remove("alternate");
-          }
-        }
-      }
-    };
-    const toggleColorMode = (alternate) => {
-      // Switch the stylesheets
-      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
-      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-      manageTransitions('#quarto-margin-sidebar .nav-link', false);
-      if (alternate) {
-        // note: dark is layered on light, we don't disable primary!
-        enableStylesheet(alternateStylesheets);
-        for (const sheetNode of alternateStylesheets) {
-          if (sheetNode.id === "quarto-bootstrap") {
-            toggleBodyColorMode(sheetNode);
-          }
-        }
-      } else {
-        disableStylesheet(alternateStylesheets);
-        enableStylesheet(primaryStylesheets)
-        toggleBodyColorPrimary();
-      }
-      manageTransitions('#quarto-margin-sidebar .nav-link', true);
-      // Switch the toggles
-      setColorSchemeToggle(alternate)
-      // Hack to workaround the fact that safari doesn't
-      // properly recolor the scrollbar when toggling (#1455)
-      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-        manageTransitions("body", false);
-        window.scrollTo(0, 1);
-        setTimeout(() => {
-          window.scrollTo(0, 0);
-          manageTransitions("body", true);
-        }, 40);
-      }
-    }
-    const disableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        stylesheet.rel = 'disabled-stylesheet';
-      }
-    }
-    const enableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
-          stylesheet.rel = 'stylesheet';
-        }
-      }
-    }
-    const manageTransitions = (selector, allowTransitions) => {
-      const els = window.document.querySelectorAll(selector);
-      for (let i=0; i < els.length; i++) {
-        const el = els[i];
-        if (allowTransitions) {
-          el.classList.remove('notransition');
-        } else {
-          el.classList.add('notransition');
-        }
-      }
-    }
-    const isFileUrl = () => {
-      return window.location.protocol === 'file:';
-    }
-    const hasAlternateSentinel = () => {
-      let styleSentinel = getColorSchemeSentinel();
-      if (styleSentinel !== null) {
-        return styleSentinel === "alternate";
-      } else {
-        return false;
-      }
-    }
-    const setStyleSentinel = (alternate) => {
-      const value = alternate ? "alternate" : "default";
-      if (!isFileUrl()) {
-        window.localStorage.setItem("quarto-color-scheme", value);
-      } else {
-        localAlternateSentinel = value;
-      }
-    }
-    const getColorSchemeSentinel = () => {
-      if (!isFileUrl()) {
-        const storageValue = window.localStorage.getItem("quarto-color-scheme");
-        return storageValue != null ? storageValue : localAlternateSentinel;
-      } else {
-        return localAlternateSentinel;
-      }
-    }
-    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-      let newTheme = '';
-      if(authorPrefersDark) {
-        newTheme = isAlternate ? baseTheme : alternateTheme;
-      } else {
-        newTheme = isAlternate ? alternateTheme : baseTheme;
-      }
-      const changeGiscusTheme = () => {
-        // From: https://github.com/giscus/giscus/issues/336
-        const sendMessage = (message) => {
-          const iframe = document.querySelector('iframe.giscus-frame');
-          if (!iframe) return;
-          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
-        }
-        sendMessage({
-          setConfig: {
-            theme: newTheme
-          }
-        });
-      }
-      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-      if (isGiscussLoaded) {
-        changeGiscusTheme();
-      }
-    };
-    const authorPrefersDark = false;
-    const darkModeDefault = authorPrefersDark;
-      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-    // Dark / light mode switch
-    window.quartoToggleColorScheme = () => {
-      // Read the current dark / light value
-      let toAlternate = !hasAlternateSentinel();
-      toggleColorMode(toAlternate);
-      setStyleSentinel(toAlternate);
-      toggleGiscusIfUsed(toAlternate, darkModeDefault);
-      window.dispatchEvent(new Event('resize'));
-    };
-    // Switch to dark mode if need be
-    if (hasAlternateSentinel()) {
-      toggleColorMode(true);
-    } else {
-      toggleColorMode(false);
-    }
-  </script>
+<body class="nav-sidebar floating quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -353,7 +192,6 @@ window.Quarto = {
         <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/roarstovner/kvant_for_laerere" title="Kildekode" class="quarto-navigation-tool px-1" aria-label="Kildekode"><i class="bi bi-github"></i></a>
     <a href="./Kvantitative-metoder-for-lærere.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Bytt mørk modus"><i class="bi"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Bytt lesermodus">
   <div class="quarto-reader-toggle-btn">
   <i class="bi"></i>
@@ -372,7 +210,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface</span></a>
+ <span class="menu-text">Forord</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -400,6 +238,52 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="./sec-design.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Forskningsdesign i kvantitativ metode</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Deskriptiv statistikk</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Slå på delen">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-descriptive.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Deskriptiv statistikk</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-diagram.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Visualisere data</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Statistisk teori</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Slå på delen">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-probability.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Sannsynlighet</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-estimation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Estimering av ukjente størrelser fra et utvalg</span></span></a>
   </div>
 </li>
       </ul>
@@ -439,7 +323,7 @@ window.Quarto = {
   <li><a href="#sec-reliability" id="toc-sec-reliability" class="nav-link" data-scroll-target="#sec-reliability"><span class="header-section-number">2.3</span> Å vurdere en målemetodes kvalitet: Reliabilitet og validitet</a>
   <ul class="collapse">
   <li><a href="#en-målings-reliabilitet" id="toc-en-målings-reliabilitet" class="nav-link" data-scroll-target="#en-målings-reliabilitet"><span class="header-section-number">2.3.1</span> En målings reliabilitet</a></li>
-  <li><a href="#sec-measurement-validity" id="toc-sec-measurement-validity" class="nav-link" data-scroll-target="#sec-measurement-validity"><span class="header-section-number">2.3.2</span> En målings validitet</a></li>
+  <li><a href="#sec-validity" id="toc-sec-validity" class="nav-link" data-scroll-target="#sec-validity"><span class="header-section-number">2.3.2</span> En målings validitet</a></li>
   <li><a href="#konstruktvaliditet" id="toc-konstruktvaliditet" class="nav-link" data-scroll-target="#konstruktvaliditet"><span class="header-section-number">2.3.3</span> Konstruktvaliditet</a></li>
   <li><a href="#et-eksempel-måling-av-elevers-indre-motivasjon-for-matematikk" id="toc-et-eksempel-måling-av-elevers-indre-motivasjon-for-matematikk" class="nav-link" data-scroll-target="#et-eksempel-måling-av-elevers-indre-motivasjon-for-matematikk"><span class="header-section-number">2.3.4</span> Et eksempel: måling av elevers indre motivasjon for matematikk</a></li>
   </ul></li>
@@ -449,7 +333,6 @@ window.Quarto = {
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sec-measurement.html">Studiedesign</a></li><li class="breadcrumb-item"><a href="./sec-measurement.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Måling i utdanningsforskning</span></a></li></ol></nav><h1 class="title display-7"><span id="sec-measurement" class="quarto-section-identifier"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Måling i utdanningsforskning</span></span></h1></header>
-
 
 <header id="title-block-header">
 
@@ -490,15 +373,19 @@ window.Quarto = {
 <section id="sec-operationalization" class="level3" data-number="2.1.2">
 <h3 data-number="2.1.2" class="anchored" data-anchor-id="sec-operationalization"><span class="header-section-number">2.1.2</span> Operasjonalisering av teoretiske konstrukter</h3>
 <p>Alle tingene vi ønsker å måle (slik som alder, motivasjon, læring, undervisning) har en teoretisk beskrivelse. Denne teoretiske beskrivelsen kalles et <em>teoretisk konstrukt</em>. Ofte utelater man “teoretisk” om omtaler det bare som “konstruktet”. Når vi skal gjøre en måling av et teoretisk konstrukt må vi lage en <em>målemetode</em>. Dette kalles å <em>operasjonalisere</em> konstruktet, og vi kaller målemetoden en <em>operasjonalisering</em> av konstruktet. Begrepene blir oppsummert i <a href="#fig-operasjonalisering" class="quarto-xref">Figur&nbsp;<span>2.1</span></a>.</p>
-<div id="fig-operasjonalisering" class="quarto-float quarto-figure quarto-figure-left anchored" alt="Lengst til venstre er 'Teoretisk konstrukt: Alder' med en pil til 'Målemetode: Selvrapportering fra nettspørreskjema: 'hvilket år ble du født?''. Det står 'operasjonalisering' på pila. Derfra går det en pil, 'datainnsamling', til 'Variabel'. Ved 'Variabel' er det et datasett med 'Fødselsår' og 'Alder'. Fra 'Fødselsår' til 'Alder' går det en liten pil, 'Etterbehandling av data'.">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-operasjonalisering" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Lengst til venstre er 'Teoretisk konstrukt: Alder' med en pil til 'Målemetode: Selvrapportering fra nettspørreskjema: 'hvilket år ble du født?''. Det står 'operasjonalisering' på pila. Derfra går det en pil, 'datainnsamling', til 'Variabel'. Ved 'Variabel' er det et datasett med 'Fødselsår' og 'Alder'. Fra 'Fødselsår' til 'Alder' går det en liten pil, 'Etterbehandling av data'.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-operasjonalisering-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/fig-operasjonalisering.png" class="img-fluid figure-img" alt="Lengst til venstre er 'Teoretisk konstrukt: Alder' med en pil til 'Målemetode: Selvrapportering fra nettspørreskjema: 'hvilket år ble du født?''. Det står 'operasjonalisering' på pila. Derfra går det en pil, 'datainnsamling', til 'Variabel'. Ved 'Variabel' er det et datasett med 'Fødselsår' og 'Alder'. Fra 'Fødselsår' til 'Alder' går det en liten pil, 'Etterbehandling av data'.">
+<a href="images/fig-operasjonalisering.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figur&nbsp;2.1. Operasjonalisering av konstruktet alder. Lengst til høyre er ‘Alder’ en variabel i datasettet som har verdiene 21, 38 og 72 for de tre første forskningsdeltagerne."><img src="images/fig-operasjonalisering.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" alt="Lengst til venstre er 'Teoretisk konstrukt: Alder' med en pil til 'Målemetode: Selvrapportering fra nettspørreskjema: 'hvilket år ble du født?''. Det står 'operasjonalisering' på pila. Derfra går det en pil, 'datainnsamling', til 'Variabel'. Ved 'Variabel' er det et datasett med 'Fødselsår' og 'Alder'. Fra 'Fødselsår' til 'Alder' går det en liten pil, 'Etterbehandling av data'."></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-operasjonalisering-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figur&nbsp;2.1. Operasjonalisering av konstruktet <em>alder</em>. Lengst til høyre er ‘Alder’ en variabel i datasettet som har verdiene 21, 38 og 72 for de tre første forskningsdeltagerne.
 </figcaption>
 </figure>
+</div>
+</div>
 </div>
 <p>Kort fortalt handler operasjonalisering om å omforme et konstrukt, som ofte er ganske vagt, til en helt presist definert måling. Operasjonalisering omfatter blant annet:</p>
 <ul>
@@ -530,8 +417,8 @@ Figur&nbsp;2.1. Operasjonalisering av konstruktet <em>alder</em>. Lengst til hø
 <h3 data-number="2.2.1" class="anchored" data-anchor-id="nominell-variabel"><span class="header-section-number">2.2.1</span> Nominell variabel</h3>
 <p>En <strong>nominell variabel</strong> (også kjent som en <strong>kategorisk variabel</strong>) er en variabel der de mulige verdiene er navn på kategorier. Et eksempel er øyenfarge; de mulige verdiene er “grønn”, “blå”, “grå”, “brun”, og så videre. Kjønn er en nominell variabel som ofte har bare to mulige verdier, “mann” og “kvinne”, men som kan ha flere. I utdanningsforskning er ofte variabelen <em>skole</em> av denne typen, der de mulige verdiene er navn på skoler (“Dalsiden Skole”, “Vangenhaug Skole”, osv.). Ordet <em>nominell</em> kommer av <em>nomen</em> som er latin for <em>navn</em> – en nominell variabel har altså verdier som er navnet på kategorier. For denne typen variabler gir det ikke mening å si at en av dem er “større” eller “bedre” enn noen annen, man kan altså ikke sortere dem i noen naturlig rekkefølge. Og det gir absolutt ikke mening å snakke om gjennomsnittet av målingene – hva skulle “elevene i studien sin gjennomsnittlige øyenfarge” ha vært? For å regne gjennomsnitt måtte man summert de 10 verdiene og delt på 10, men hva blir blå + grønn + blå + brun? Kort sagt, verdiene til nominelle variabler er kun navnet på en kategori. Verdiene har ikke noen naturlig rekkefølge, de kan ikke adderes, multipliseres eller regnes med på noen måte.</p>
 <p>Men man kan telle antallet innenfor hver kategori. Anta at jeg forsker på hvordan lærere pendler til og fra jobb. En variabel jeg burde målt<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> er hva slags transportmiddel lærerne bruker for å komme seg på jobb. Denne “transporttype”-variabelen kan ha ganske mange mulige verdier, inkludert: “tog”, “buss”, “bil”, “sykkel”. La oss anta at disse fire er de eneste mulighetene og forestill deg at jeg spør 100 lærere om hvordan de kom seg på jobb i dag, med dette resultatet (<a href="#tbl-tab2-1" class="quarto-xref">Tabell&nbsp;<span>2.1</span></a>).</p>
-<div class="cell" data-layout-align="left">
-<div id="tbl-tab2-1" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-layout-align="left">
+<div class="cell" data-layout-align="center">
+<div id="tbl-tab2-1" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tab2-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Tabell&nbsp;2.1. Hvordan 100 lærere pendlet til jobb i dag
@@ -540,11 +427,25 @@ Tabell&nbsp;2.1. Hvordan 100 lærere pendlet til jobb i dag
 <div class="cell-output-display">
 <!-- preamble start -->
 
+    <!-- tinytable mathjax start -->
+    <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <!-- tinytable mathjax end -->
+
     <script>
 
       function styleCell_txgz1317ftylnsmm50a8(i, j, css_id) {
           var table = document.getElementById("tinytable_txgz1317ftylnsmm50a8");
-          var cell = table.rows[i]?.cells[j];  // Safe navigation to avoid errors
+          var cell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
           if (cell) {
               console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
               cell.classList.add(css_id);
@@ -554,46 +455,51 @@ Tabell&nbsp;2.1. Hvordan 100 lærere pendlet til jobb i dag
       }
       function insertSpanRow(i, colspan, content) {
         var table = document.getElementById('tinytable_txgz1317ftylnsmm50a8');
-        var newRow = table.insertRow(i);
+        // Find the row with data-row attribute matching i
+        var targetRow = table.querySelector(`tr [data-row="${i}"]`).closest('tr');
+        var newRow = table.insertRow(targetRow.rowIndex);
         var newCell = newRow.insertCell(0);
         newCell.setAttribute("colspan", colspan);
+        newCell.setAttribute("data-col", "0");
+        newCell.setAttribute("data-row", i - 1);
         // newCell.innerText = content;
         // this may be unsafe, but innerText does not interpret <br>
         newCell.innerHTML = content;
       }
       function spanCell_txgz1317ftylnsmm50a8(i, j, rowspan, colspan) {
         var table = document.getElementById("tinytable_txgz1317ftylnsmm50a8");
-        const targetRow = table.rows[i];
-        const targetCell = targetRow.cells[j];
+        const targetCell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
+        if (!targetCell) {
+          console.warn(`Cell at (${i}, ${j}) not found.`);
+        }
+
+        // Get all cells that need to be removed
+        const cellsToRemove = [];
         for (let r = 0; r < rowspan; r++) {
-          // Only start deleting cells to the right for the first row (r == 0)
-          if (r === 0) {
-            // Delete cells to the right of the target cell in the first row
-            for (let c = colspan - 1; c > 0; c--) {
-              if (table.rows[i + r].cells[j + c]) {
-                table.rows[i + r].deleteCell(j + c);
-              }
-            }
-          }
-          // For rows below the first, delete starting from the target column
-          if (r > 0) {
-            for (let c = colspan - 1; c >= 0; c--) {
-              if (table.rows[i + r] && table.rows[i + r].cells[j]) {
-                table.rows[i + r].deleteCell(j);
-              }
+          for (let c = 0; c < colspan; c++) {
+            if (r === 0 && c === 0) continue; // Skip the target cell
+            const cell = table.querySelector(`[data-row="${i + r}"][data-col="${j + c}"]`);
+            if (cell) {
+              cellsToRemove.push(cell);
             }
           }
         }
-        // Set rowspan and colspan of the target cell
-        targetCell.rowSpan = rowspan;
-        targetCell.colSpan = colspan;
+
+        // Remove all cells
+        cellsToRemove.forEach(cell => cell.remove());
+
+        // Set rowspan and colspan of the target cell if it exists
+        if (targetCell) {
+          targetCell.rowSpan = rowspan;
+          targetCell.colSpan = colspan;
+        }
       }
       // tinytable span after
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: 4, j: 0 }, { i: 4, j: 1 },  ], css_id: 'tinytable_css_i2fcpwqtn6of0p81njmk',}, 
-          { positions: [ { i: 0, j: 0 }, { i: 0, j: 1 },  ], css_id: 'tinytable_css_o49wjzm94gvy1dsjlb5k',}, 
+          { positions: [ { i: '4', j: 0 }, { i: '4', j: 1 },  ], css_id: 'tinytable_css_i2fcpwqtn6of0p81njmk',}, 
+          { positions: [ { i: '0', j: 0 }, { i: '0', j: 1 },  ], css_id: 'tinytable_css_o49wjzm94gvy1dsjlb5k',}, 
           ];
 
           // Loop over the arrays to style the cells
@@ -615,27 +521,27 @@ Tabell&nbsp;2.1. Hvordan 100 lærere pendlet til jobb i dag
         <thead>
         
               <tr>
-                <th scope="col">Transportmiddel</th>
-                <th scope="col">Antall lærere</th>
+                <th scope="col" data-row="0" data-col="0">Transportmiddel</th>
+                <th scope="col" data-row="0" data-col="1">Antall lærere</th>
               </tr>
         </thead>
         
         <tbody>
                 <tr>
-                  <td>(1) Tog</td>
-                  <td>12</td>
+                  <td data-row="1" data-col="0">(1) Tog</td>
+                  <td data-row="1" data-col="1">12</td>
                 </tr>
                 <tr>
-                  <td>(2) Buss</td>
-                  <td>30</td>
+                  <td data-row="2" data-col="0">(2) Buss</td>
+                  <td data-row="2" data-col="1">30</td>
                 </tr>
                 <tr>
-                  <td>(3) Bil</td>
-                  <td>48</td>
+                  <td data-row="3" data-col="0">(3) Bil</td>
+                  <td data-row="3" data-col="1">48</td>
                 </tr>
                 <tr>
-                  <td>(4) Sykkel</td>
-                  <td>10</td>
+                  <td data-row="4" data-col="0">(4) Sykkel</td>
+                  <td data-row="4" data-col="1">10</td>
                 </tr>
         </tbody>
       </table>
@@ -647,8 +553,8 @@ Tabell&nbsp;2.1. Hvordan 100 lærere pendlet til jobb i dag
 </div>
 </div>
 <p>Så, hva var den gjennomsnittlige transporttypen? Åpenbart er svaret her at det ikke finnes noen. Det er et tåpelig spørsmål å stille. Du kan si at reise med bil er den mest populære metoden, og reise med tog er den minst populære metoden, men det er stort sett alt. Legg også merke til at rekkefølgen jeg viser alternativene i ikke er veldig interessant. Jeg kunne ha valgt å vise dataene som i <a href="#tbl-tab2-2" class="quarto-xref">Tabell&nbsp;<span>2.2</span></a>.</p>
-<div class="cell" data-layout-align="left">
-<div id="tbl-tab2-2" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-layout-align="left">
+<div class="cell" data-layout-align="center">
+<div id="tbl-tab2-2" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tab2-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Tabell&nbsp;2.2. Hvordan 100 lærere pendlet til jobb i dag, en annen visning
@@ -657,11 +563,25 @@ Tabell&nbsp;2.2. Hvordan 100 lærere pendlet til jobb i dag, en annen visning
 <div class="cell-output-display">
 <!-- preamble start -->
 
+    <!-- tinytable mathjax start -->
+    <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <!-- tinytable mathjax end -->
+
     <script>
 
       function styleCell_bawvcrkt6vdbzf3c2qxx(i, j, css_id) {
           var table = document.getElementById("tinytable_bawvcrkt6vdbzf3c2qxx");
-          var cell = table.rows[i]?.cells[j];  // Safe navigation to avoid errors
+          var cell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
           if (cell) {
               console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
               cell.classList.add(css_id);
@@ -671,46 +591,51 @@ Tabell&nbsp;2.2. Hvordan 100 lærere pendlet til jobb i dag, en annen visning
       }
       function insertSpanRow(i, colspan, content) {
         var table = document.getElementById('tinytable_bawvcrkt6vdbzf3c2qxx');
-        var newRow = table.insertRow(i);
+        // Find the row with data-row attribute matching i
+        var targetRow = table.querySelector(`tr [data-row="${i}"]`).closest('tr');
+        var newRow = table.insertRow(targetRow.rowIndex);
         var newCell = newRow.insertCell(0);
         newCell.setAttribute("colspan", colspan);
+        newCell.setAttribute("data-col", "0");
+        newCell.setAttribute("data-row", i - 1);
         // newCell.innerText = content;
         // this may be unsafe, but innerText does not interpret <br>
         newCell.innerHTML = content;
       }
       function spanCell_bawvcrkt6vdbzf3c2qxx(i, j, rowspan, colspan) {
         var table = document.getElementById("tinytable_bawvcrkt6vdbzf3c2qxx");
-        const targetRow = table.rows[i];
-        const targetCell = targetRow.cells[j];
+        const targetCell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
+        if (!targetCell) {
+          console.warn(`Cell at (${i}, ${j}) not found.`);
+        }
+
+        // Get all cells that need to be removed
+        const cellsToRemove = [];
         for (let r = 0; r < rowspan; r++) {
-          // Only start deleting cells to the right for the first row (r == 0)
-          if (r === 0) {
-            // Delete cells to the right of the target cell in the first row
-            for (let c = colspan - 1; c > 0; c--) {
-              if (table.rows[i + r].cells[j + c]) {
-                table.rows[i + r].deleteCell(j + c);
-              }
-            }
-          }
-          // For rows below the first, delete starting from the target column
-          if (r > 0) {
-            for (let c = colspan - 1; c >= 0; c--) {
-              if (table.rows[i + r] && table.rows[i + r].cells[j]) {
-                table.rows[i + r].deleteCell(j);
-              }
+          for (let c = 0; c < colspan; c++) {
+            if (r === 0 && c === 0) continue; // Skip the target cell
+            const cell = table.querySelector(`[data-row="${i + r}"][data-col="${j + c}"]`);
+            if (cell) {
+              cellsToRemove.push(cell);
             }
           }
         }
-        // Set rowspan and colspan of the target cell
-        targetCell.rowSpan = rowspan;
-        targetCell.colSpan = colspan;
+
+        // Remove all cells
+        cellsToRemove.forEach(cell => cell.remove());
+
+        // Set rowspan and colspan of the target cell if it exists
+        if (targetCell) {
+          targetCell.rowSpan = rowspan;
+          targetCell.colSpan = colspan;
+        }
       }
       // tinytable span after
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: 4, j: 0 }, { i: 4, j: 1 },  ], css_id: 'tinytable_css_obgj5j3h3h0aculoa2dq',}, 
-          { positions: [ { i: 0, j: 0 }, { i: 0, j: 1 },  ], css_id: 'tinytable_css_99xgj74qbjzrt0ozrwr8',}, 
+          { positions: [ { i: '4', j: 0 }, { i: '4', j: 1 },  ], css_id: 'tinytable_css_obgj5j3h3h0aculoa2dq',}, 
+          { positions: [ { i: '0', j: 0 }, { i: '0', j: 1 },  ], css_id: 'tinytable_css_99xgj74qbjzrt0ozrwr8',}, 
           ];
 
           // Loop over the arrays to style the cells
@@ -732,27 +657,27 @@ Tabell&nbsp;2.2. Hvordan 100 lærere pendlet til jobb i dag, en annen visning
         <thead>
         
               <tr>
-                <th scope="col">Transportmiddel</th>
-                <th scope="col">Antall lærere</th>
+                <th scope="col" data-row="0" data-col="0">Transportmiddel</th>
+                <th scope="col" data-row="0" data-col="1">Antall lærere</th>
               </tr>
         </thead>
         
         <tbody>
                 <tr>
-                  <td>(3) Bil</td>
-                  <td>48</td>
+                  <td data-row="1" data-col="0">(3) Bil</td>
+                  <td data-row="1" data-col="1">48</td>
                 </tr>
                 <tr>
-                  <td>(1) Tog</td>
-                  <td>12</td>
+                  <td data-row="2" data-col="0">(1) Tog</td>
+                  <td data-row="2" data-col="1">12</td>
                 </tr>
                 <tr>
-                  <td>(4) Sykkel</td>
-                  <td>10</td>
+                  <td data-row="3" data-col="0">(4) Sykkel</td>
+                  <td data-row="3" data-col="1">10</td>
                 </tr>
                 <tr>
-                  <td>(2) Buss</td>
-                  <td>30</td>
+                  <td data-row="4" data-col="0">(2) Buss</td>
+                  <td data-row="4" data-col="1">30</td>
                 </tr>
         </tbody>
       </table>
@@ -776,8 +701,8 @@ Tabell&nbsp;2.2. Hvordan 100 lærere pendlet til jobb i dag, en annen visning
 </ol>
 <p>Legg merke til at disse fire utsagnene faktisk har en naturlig rekkefølge i hvordan de måler enighet med nåværende vitenskapelig konsensus. Utsagn 1 er en nær match, utsagn 2 er en mindre nær match, utsagn 3 er ikke en særlig god match, og utsagn 4 er i sterk motsetning til nåværende konsensus. Derfor kan jeg ordne elementene som 1 <span class="math inline">\(&gt;\)</span> 2 <span class="math inline">\(&gt;\)</span> 3 <span class="math inline">\(&gt;\)</span> 4, som viser at “holdning til klimaendring”, operasjonalisert på denne måten, er en ordinal variabel.</p>
 <p>La oss anta at jeg stilte 100 elever disse spørsmålene og fikk svarene vist i <a href="#tbl-tab2-3" class="quarto-xref">Tabell&nbsp;<span>2.3</span></a>.</p>
-<div class="cell" data-layout-align="left">
-<div id="tbl-tab2-3" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-layout-align="left">
+<div class="cell" data-layout-align="center">
+<div id="tbl-tab2-3" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tab2-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Tabell&nbsp;2.3. Holdninger til klimaendringer
@@ -786,11 +711,25 @@ Tabell&nbsp;2.3. Holdninger til klimaendringer
 <div class="cell-output-display">
 <!-- preamble start -->
 
+    <!-- tinytable mathjax start -->
+    <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <!-- tinytable mathjax end -->
+
     <script>
 
       function styleCell_hcbcbn6aerrq4b54aqjs(i, j, css_id) {
           var table = document.getElementById("tinytable_hcbcbn6aerrq4b54aqjs");
-          var cell = table.rows[i]?.cells[j];  // Safe navigation to avoid errors
+          var cell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
           if (cell) {
               console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
               cell.classList.add(css_id);
@@ -800,46 +739,51 @@ Tabell&nbsp;2.3. Holdninger til klimaendringer
       }
       function insertSpanRow(i, colspan, content) {
         var table = document.getElementById('tinytable_hcbcbn6aerrq4b54aqjs');
-        var newRow = table.insertRow(i);
+        // Find the row with data-row attribute matching i
+        var targetRow = table.querySelector(`tr [data-row="${i}"]`).closest('tr');
+        var newRow = table.insertRow(targetRow.rowIndex);
         var newCell = newRow.insertCell(0);
         newCell.setAttribute("colspan", colspan);
+        newCell.setAttribute("data-col", "0");
+        newCell.setAttribute("data-row", i - 1);
         // newCell.innerText = content;
         // this may be unsafe, but innerText does not interpret <br>
         newCell.innerHTML = content;
       }
       function spanCell_hcbcbn6aerrq4b54aqjs(i, j, rowspan, colspan) {
         var table = document.getElementById("tinytable_hcbcbn6aerrq4b54aqjs");
-        const targetRow = table.rows[i];
-        const targetCell = targetRow.cells[j];
+        const targetCell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
+        if (!targetCell) {
+          console.warn(`Cell at (${i}, ${j}) not found.`);
+        }
+
+        // Get all cells that need to be removed
+        const cellsToRemove = [];
         for (let r = 0; r < rowspan; r++) {
-          // Only start deleting cells to the right for the first row (r == 0)
-          if (r === 0) {
-            // Delete cells to the right of the target cell in the first row
-            for (let c = colspan - 1; c > 0; c--) {
-              if (table.rows[i + r].cells[j + c]) {
-                table.rows[i + r].deleteCell(j + c);
-              }
-            }
-          }
-          // For rows below the first, delete starting from the target column
-          if (r > 0) {
-            for (let c = colspan - 1; c >= 0; c--) {
-              if (table.rows[i + r] && table.rows[i + r].cells[j]) {
-                table.rows[i + r].deleteCell(j);
-              }
+          for (let c = 0; c < colspan; c++) {
+            if (r === 0 && c === 0) continue; // Skip the target cell
+            const cell = table.querySelector(`[data-row="${i + r}"][data-col="${j + c}"]`);
+            if (cell) {
+              cellsToRemove.push(cell);
             }
           }
         }
-        // Set rowspan and colspan of the target cell
-        targetCell.rowSpan = rowspan;
-        targetCell.colSpan = colspan;
+
+        // Remove all cells
+        cellsToRemove.forEach(cell => cell.remove());
+
+        // Set rowspan and colspan of the target cell if it exists
+        if (targetCell) {
+          targetCell.rowSpan = rowspan;
+          targetCell.colSpan = colspan;
+        }
       }
       // tinytable span after
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: 4, j: 0 }, { i: 4, j: 1 },  ], css_id: 'tinytable_css_fechy4wnelxzzdzkf3rv',}, 
-          { positions: [ { i: 0, j: 0 }, { i: 0, j: 1 },  ], css_id: 'tinytable_css_1woktlujcw3jr68qveqo',}, 
+          { positions: [ { i: '4', j: 0 }, { i: '4', j: 1 },  ], css_id: 'tinytable_css_fechy4wnelxzzdzkf3rv',}, 
+          { positions: [ { i: '0', j: 0 }, { i: '0', j: 1 },  ], css_id: 'tinytable_css_1woktlujcw3jr68qveqo',}, 
           ];
 
           // Loop over the arrays to style the cells
@@ -861,27 +805,27 @@ Tabell&nbsp;2.3. Holdninger til klimaendringer
         <thead>
         
               <tr>
-                <th scope="col">Respons</th>
-                <th scope="col">Antall</th>
+                <th scope="col" data-row="0" data-col="0">Respons</th>
+                <th scope="col" data-row="0" data-col="1">Antall</th>
               </tr>
         </thead>
         
         <tbody>
                 <tr>
-                  <td>(1) Temperaturene stiger på grunn av menneskelig aktivitet</td>
-                  <td>51</td>
+                  <td data-row="1" data-col="0">(1) Temperaturene stiger på grunn av menneskelig aktivitet</td>
+                  <td data-row="1" data-col="1">51</td>
                 </tr>
                 <tr>
-                  <td>(2) Temperaturene stiger, men vi vet ikke hvorfor</td>
-                  <td>20</td>
+                  <td data-row="2" data-col="0">(2) Temperaturene stiger, men vi vet ikke hvorfor</td>
+                  <td data-row="2" data-col="1">20</td>
                 </tr>
                 <tr>
-                  <td>(3) Temperaturene stiger, men ikke på grunn av mennesker</td>
-                  <td>10</td>
+                  <td data-row="3" data-col="0">(3) Temperaturene stiger, men ikke på grunn av mennesker</td>
+                  <td data-row="3" data-col="1">10</td>
                 </tr>
                 <tr>
-                  <td>(4) Temperaturene stiger ikke</td>
-                  <td>19</td>
+                  <td data-row="4" data-col="0">(4) Temperaturene stiger ikke</td>
+                  <td data-row="4" data-col="1">19</td>
                 </tr>
         </tbody>
       </table>
@@ -894,15 +838,19 @@ Tabell&nbsp;2.3. Holdninger til klimaendringer
 </div>
 <p>Det rimelig å gruppere, for eksempel, (1), (2) og (3) sammen, og si at 81 av 100 personer var i det <em>minste delvis</em> enig med vitenskapen. Og det er også ganske rimelig å gruppere (2), (3) og (4) sammen og si at 49 av 100 personer registrerte <em>i det minste noe uenighet</em>. Men det ville være fullstendig merkelig å gruppere (1), (2) og (4) sammen og si at 90 av 100 personer sa… hva da? Det er ingenting fornuftig som tillater deg å gruppere disse svarene sammen i det hele tatt.</p>
 <p>Det er fristende å regne med svaralternativene (1) til (4) som om de var tall. For eksempel er det fristende å si at gjennomsnittet av svar (1), (2) og (3) er <span class="math inline">\(\frac{2+3+4}{3} = 2\)</span>. Det ville vært galt, siden det regnestykket krever at det er like stor forskjell mellom svaralternativ (1) og (2) som mellom (2) og (3). Men man kan argumentere for at konstruktet “enighet med vitenskapelig konsensus” er som i <a href="#fig-ordinal" class="quarto-xref">Figur&nbsp;<span>2.2</span></a>, der det er større forskjell mellom (1) og (2) og (2) og (3).</p>
-<div id="fig-ordinal" class="quarto-float quarto-figure quarto-figure-left anchored" alt="Den ordinale variabelen &quot;enighet med vitenskapelig konsensus&quot; med forskjellig avstand mellom hvert svaralternativ. Det er størst avstand mellom (1) og (2).">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-ordinal" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Den ordinale variabelen &quot;enighet med vitenskapelig konsensus&quot; med forskjellig avstand mellom hvert svaralternativ. Det er størst avstand mellom (1) og (2).">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ordinal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/fig-ordinal.png" class="img-fluid figure-img" alt="Den ordinale variabelen &quot;enighet med vitenskapelig konsensus&quot; med forskjellig avstand mellom hvert svaralternativ. Det er størst avstand mellom (1) og (2).">
+<a href="images/fig-ordinal.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figur&nbsp;2.2. I en ordinal variabel er ikke nødvendigvis avstanden mellom kategoriene like store. Her markerer pilene avstanden mellom kategoriene, og avstanden mellom kategori (1) og (2) er større enn de andre."><img src="images/fig-ordinal.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" alt="Den ordinale variabelen &quot;enighet med vitenskapelig konsensus&quot; med forskjellig avstand mellom hvert svaralternativ. Det er størst avstand mellom (1) og (2)."></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ordinal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figur&nbsp;2.2. I en ordinal variabel er ikke nødvendigvis avstanden mellom kategoriene like store. Her markerer pilene avstanden mellom kategoriene, og avstanden mellom kategori (1) og (2) er større enn de andre.
 </figcaption>
 </figure>
+</div>
+</div>
 </div>
 <p>Når en ordinal variabel markeres med tall, som er helt vanlig, skal man altså ikke tolke tallstørrelsene bokstavelig og anta at man kan regne med dem – tallene er der kun for å markere kategorienes rekkefølge.</p>
 <p>Et vanlig eksempel på en ordinal variabel i utdanningsforskning er “høyeste fullførte utdanningssnivå”. Du <em>kan</em> si at en person som kun har fullført ungdomsskolen har mindre utdanning en en person som har fullført videregående, og så videre. Med ordinale variable vet man ikke <em>hvor mye</em> større en verdi er enn en annen. For eksempel gir det ikke mening å spørre om det er større forskjell mellom “ungdomsskole” og “videregående” enn mellom “videregående” og “bachelor”. Er utdanningsnivået på en bachelor mye høyere eller litt høyere enn fullført videregående? Hvis variabelen er ordinal kan man ikke besvare det spørsmålet.</p>
@@ -934,8 +882,8 @@ Figur&nbsp;2.2. I en ordinal variabel er ikke nødvendigvis avstanden mellom kat
 <li>En <strong>diskret variabel</strong> er en variabel som ikke er kontinuerlig, altså vil det for en diskret variabel være to verdier uten noen annen verdi imellom.</li>
 </ul>
 <p>Disse definisjonene virker sannsynligvis litt abstrakte, men de er ganske enkle når du ser noen eksempler. For eksempel er svartid kontinuerlig. Hvis Roar bruker 3,1 sekunder og Bård bruker 2,3 sekunder på å svare på et spørsmål, vil Louises responstid ligge imellom hvis hun bruker 3,0 sekunder. Og selvfølgelig vil det også være mulig for Ingrid å bruke 3,031 sekunder på å svare, noe som betyr at hennes svartid vil ligge mellom Louises og Roars. Fordi vi i prinsippet alltid kan finne en ny verdi for svartiden mellom to andre, er svartid en kontinuerlig variabel.</p>
-<div class="cell" data-layout-align="left">
-<div id="tbl-tab2-4" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-layout-align="left">
+<div class="cell" data-layout-align="center">
+<div id="tbl-tab2-4" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tab2-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Tabell&nbsp;2.4. Forholdet mellom målenivåene og skillet mellom diskret/kontinuerlig. Celler med et hakemerke tilsvarer en kombinasjon som er mulig
@@ -944,11 +892,25 @@ Tabell&nbsp;2.4. Forholdet mellom målenivåene og skillet mellom diskret/kontin
 <div class="cell-output-display">
 <!-- preamble start -->
 
+    <!-- tinytable mathjax start -->
+    <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <!-- tinytable mathjax end -->
+
     <script>
 
       function styleCell_lalw07rtt7xdswwj295n(i, j, css_id) {
           var table = document.getElementById("tinytable_lalw07rtt7xdswwj295n");
-          var cell = table.rows[i]?.cells[j];  // Safe navigation to avoid errors
+          var cell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
           if (cell) {
               console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
               cell.classList.add(css_id);
@@ -958,46 +920,51 @@ Tabell&nbsp;2.4. Forholdet mellom målenivåene og skillet mellom diskret/kontin
       }
       function insertSpanRow(i, colspan, content) {
         var table = document.getElementById('tinytable_lalw07rtt7xdswwj295n');
-        var newRow = table.insertRow(i);
+        // Find the row with data-row attribute matching i
+        var targetRow = table.querySelector(`tr [data-row="${i}"]`).closest('tr');
+        var newRow = table.insertRow(targetRow.rowIndex);
         var newCell = newRow.insertCell(0);
         newCell.setAttribute("colspan", colspan);
+        newCell.setAttribute("data-col", "0");
+        newCell.setAttribute("data-row", i - 1);
         // newCell.innerText = content;
         // this may be unsafe, but innerText does not interpret <br>
         newCell.innerHTML = content;
       }
       function spanCell_lalw07rtt7xdswwj295n(i, j, rowspan, colspan) {
         var table = document.getElementById("tinytable_lalw07rtt7xdswwj295n");
-        const targetRow = table.rows[i];
-        const targetCell = targetRow.cells[j];
+        const targetCell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
+        if (!targetCell) {
+          console.warn(`Cell at (${i}, ${j}) not found.`);
+        }
+
+        // Get all cells that need to be removed
+        const cellsToRemove = [];
         for (let r = 0; r < rowspan; r++) {
-          // Only start deleting cells to the right for the first row (r == 0)
-          if (r === 0) {
-            // Delete cells to the right of the target cell in the first row
-            for (let c = colspan - 1; c > 0; c--) {
-              if (table.rows[i + r].cells[j + c]) {
-                table.rows[i + r].deleteCell(j + c);
-              }
-            }
-          }
-          // For rows below the first, delete starting from the target column
-          if (r > 0) {
-            for (let c = colspan - 1; c >= 0; c--) {
-              if (table.rows[i + r] && table.rows[i + r].cells[j]) {
-                table.rows[i + r].deleteCell(j);
-              }
+          for (let c = 0; c < colspan; c++) {
+            if (r === 0 && c === 0) continue; // Skip the target cell
+            const cell = table.querySelector(`[data-row="${i + r}"][data-col="${j + c}"]`);
+            if (cell) {
+              cellsToRemove.push(cell);
             }
           }
         }
-        // Set rowspan and colspan of the target cell
-        targetCell.rowSpan = rowspan;
-        targetCell.colSpan = colspan;
+
+        // Remove all cells
+        cellsToRemove.forEach(cell => cell.remove());
+
+        // Set rowspan and colspan of the target cell if it exists
+        if (targetCell) {
+          targetCell.rowSpan = rowspan;
+          targetCell.colSpan = colspan;
+        }
       }
       // tinytable span after
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: 4, j: 0 }, { i: 4, j: 1 }, { i: 4, j: 2 },  ], css_id: 'tinytable_css_w6lrd5qrdrl7x6ov9d4s',}, 
-          { positions: [ { i: 0, j: 0 }, { i: 0, j: 1 }, { i: 0, j: 2 },  ], css_id: 'tinytable_css_4om6vsensikv0r8b2asv',}, 
+          { positions: [ { i: '4', j: 0 }, { i: '4', j: 1 }, { i: '4', j: 2 },  ], css_id: 'tinytable_css_w6lrd5qrdrl7x6ov9d4s',}, 
+          { positions: [ { i: '0', j: 0 }, { i: '0', j: 1 }, { i: '0', j: 2 },  ], css_id: 'tinytable_css_4om6vsensikv0r8b2asv',}, 
           ];
 
           // Loop over the arrays to style the cells
@@ -1019,32 +986,32 @@ Tabell&nbsp;2.4. Forholdet mellom målenivåene og skillet mellom diskret/kontin
         <thead>
         
               <tr>
-                <th scope="col">Målenivå</th>
-                <th scope="col">kontinuerlig</th>
-                <th scope="col">diskret</th>
+                <th scope="col" data-row="0" data-col="0">Målenivå</th>
+                <th scope="col" data-row="0" data-col="1">kontinuerlig</th>
+                <th scope="col" data-row="0" data-col="2">diskret</th>
               </tr>
         </thead>
         
         <tbody>
                 <tr>
-                  <td>nominal</td>
-                  <td></td>
-                  <td>✓</td>
+                  <td data-row="1" data-col="0">nominal</td>
+                  <td data-row="1" data-col="1"></td>
+                  <td data-row="1" data-col="2">✓</td>
                 </tr>
                 <tr>
-                  <td>ordinal</td>
-                  <td></td>
-                  <td>✓</td>
+                  <td data-row="2" data-col="0">ordinal</td>
+                  <td data-row="2" data-col="1"></td>
+                  <td data-row="2" data-col="2">✓</td>
                 </tr>
                 <tr>
-                  <td>intervall</td>
-                  <td>✓</td>
-                  <td>✓</td>
+                  <td data-row="3" data-col="0">intervall</td>
+                  <td data-row="3" data-col="1">✓</td>
+                  <td data-row="3" data-col="2">✓</td>
                 </tr>
                 <tr>
-                  <td>forholdstall</td>
-                  <td>✓</td>
-                  <td>✓</td>
+                  <td data-row="4" data-col="0">forholdstall</td>
+                  <td data-row="4" data-col="1">✓</td>
+                  <td data-row="4" data-col="2">✓</td>
                 </tr>
         </tbody>
       </table>
@@ -1122,23 +1089,27 @@ Tabell&nbsp;2.4. Forholdet mellom målenivåene og skillet mellom diskret/kontin
 <p>Ikke alle samlevariable trenger å ha høy indre konsistens. Hvis vi vil lage en samlevariabel for kvaliteten på en lærers skriveundervisning med undervariablene ‘kvalitet på grammatikkundervisningen’ og ‘kvalitet på sjangerundervisningen’ gjør det ikke noe om undervariablenes verdier avviker.</p>
 <p>Hvordan man bør vurdere en variabels reliabilitet avhenger av det teoretiske konstruktet. Anta at man skal måle konstruktet “elevers utagerende adferd” ved å observere én undervisningstime. Hvis formålet er å gi en generell vurdering av elevenes utagerende adferd vil målingen ha lav test-retest-reliabilitet, fordi den vil gi svært forskjellige svar avhenging av om du utfører målingen siste time fredag eller første time tirsdag. Hvis formålet derimot er å finne ut av hvordan elevenes adferd varierer i en undervisningsuke er hele poenget med målingen å fange opp disse variasjonene. Derfor må man tenke over det teoretiske konstruktet og forskningsformålet for å gi en vurdering av en målemetodes reliabilitet.</p>
 </section>
-<section id="sec-measurement-validity" class="level3" data-number="2.3.2">
-<h3 data-number="2.3.2" class="anchored" data-anchor-id="sec-measurement-validity"><span class="header-section-number">2.3.2</span> En målings validitet</h3>
+<section id="sec-validity" class="level3" data-number="2.3.2">
+<h3 data-number="2.3.2" class="anchored" data-anchor-id="sec-validity"><span class="header-section-number">2.3.2</span> En målings validitet</h3>
 <p>En målemetode har høy <strong>validitet</strong> hvis den måler det man tror den måler. Validitet kalles også “gyldighet”, som er et godt ord for validitet. Man skiller ofte mellom mange typer validitet, men den viktigste, som kanskje innebefatter alle andre måter å snakke om en målings validitet på, er konstruktvaliditet.</p>
 </section>
 <section id="konstruktvaliditet" class="level3" data-number="2.3.3">
 <h3 data-number="2.3.3" class="anchored" data-anchor-id="konstruktvaliditet"><span class="header-section-number">2.3.3</span> Konstruktvaliditet</h3>
 <p><strong>Konstruktvaliditet</strong> (også kalt begrepsvaliditet) er i bunn og grunn et spørsmål om hvorvidt du måler det du ønsker å måle. En måling har god konstruktvaliditet hvis den faktisk måler det teoretiske konstruktet, og dårlig konstruktvaliditet hvis den ikke gjør det. For å gi et veldig enkelt (om enn latterlig) eksempel, anta at jeg prøver å undersøke hyppigheten av juks blant ungdomsskoleelever på norsktentamen. Og måten jeg forsøker å måle det på er ved å be de juksende studentene om å reise seg i klasserommet slik at jeg kan telle dem. Når jeg gjør dette med en klasse på 30 elever, er det 0 elever som hevder å ha jukset. Så jeg konkluderer derfor med at andelen juksere i klassen min er 0 %. Dette er åpenbart litt latterlig. Men poenget her er ikke at dette er et veldig dypt metodologisk eksempel, men heller å forklare hva konstruktvaliditet er. Problemet med målingen min er at mens jeg prøver å måle “andelen personer som jukser”, måler jeg faktisk “andelen personer som er ærlige nok til å innrømme juks, eller selvskadende nok til å late som om de juksa”. Åpenbart er ikke disse det samme! Så målemetoden min har mislyktes, den måler ikke konstruktet jeg prøvde å måle, så den har dårlig konstruktvaliditet.</p>
 <p>Det finnes flere måter en måling kan ha svak konstruktvaliditet på. For eksempel kan målingen bare måle en liten del av konstruktet, kalt (konstrukt-)<em>underrepresentasjon</em>, eller konstruktet kan måle andre ting enn det det skal, kalt (konstrukt-)<em>irrelevans</em>, se <a href="#fig-construct" class="quarto-xref">Figur&nbsp;<span>2.3</span></a>.</p>
-<div id="fig-construct" class="quarto-float quarto-figure quarto-figure-left anchored" alt="En ellipse det står &quot;Konstruktet som skal måles&quot; i. En anne ellipse, som delvis overlapper, er markert med &quot;Hva målemetoden måler&quot;. Området inne i konstrukt-ellipsen som ikke overlapper er underrepresentasjon og området utenfor konstrukt-ellipsen, men inne i målemetode-ellipsen, er irrelevans.">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-construct" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="En ellipse det står &quot;Konstruktet som skal måles&quot; i. En anne ellipse, som delvis overlapper, er markert med &quot;Hva målemetoden måler&quot;. Området inne i konstrukt-ellipsen som ikke overlapper er underrepresentasjon og området utenfor konstrukt-ellipsen, men inne i målemetode-ellipsen, er irrelevans.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-construct-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/fig-construct.png" class="img-fluid figure-img" alt="En ellipse det står &quot;Konstruktet som skal måles&quot; i. En anne ellipse, som delvis overlapper, er markert med &quot;Hva målemetoden måler&quot;. Området inne i konstrukt-ellipsen som ikke overlapper er underrepresentasjon og området utenfor konstrukt-ellipsen, men inne i målemetode-ellipsen, er irrelevans.">
+<a href="images/fig-construct.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figur&nbsp;2.3. At målemetoder fanger for lite eller for mye kalles underrepresentasjon og irrelevans"><img src="images/fig-construct.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" alt="En ellipse det står &quot;Konstruktet som skal måles&quot; i. En anne ellipse, som delvis overlapper, er markert med &quot;Hva målemetoden måler&quot;. Området inne i konstrukt-ellipsen som ikke overlapper er underrepresentasjon og området utenfor konstrukt-ellipsen, men inne i målemetode-ellipsen, er irrelevans."></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-construct-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figur&nbsp;2.3. At målemetoder fanger for lite eller for mye kalles underrepresentasjon og irrelevans
 </figcaption>
 </figure>
+</div>
+</div>
 </div>
 <p>For å ha høy konstruktvaliditet kan det være nødvendig å ha høy <strong>prediktiv validitet</strong>. Dette betyr at målingene dine samsvarer med andre variable – altså predikerer andre variable – slik man ville forvente. Hvis man måler en lærers motivasjon for yrket kan man kontrollere den prediktive validiteten ved å sjekke om de motiverte lærerne velger å bli i yrket. Hvis dette ikke er tilfelle har du lav prediktiv validitet, og da har du kanskje ikke målt lærernes motivasjon.</p>
 </section>
@@ -1162,7 +1133,7 @@ Figur&nbsp;2.3. At målemetoder fanger for lite eller for mye kalles underrepres
 <li><a href="#sec-operationalization">Operasjonalisering av teoretiske konstrukter</a>. Hva betyr det å operasjonalisere et teoretisk konstrukt? Hva betyr verdier, variabler, konstrukter og målemetoder?</li>
 <li><a href="#sec-Scales-of-measurement">Målenivåer</a> og variabeltyper. Husk at det er to forskjellige distinksjoner her. Det er forskjellen mellom diskrete og kontinuerlige data, og det er forskjellen mellom de fire ulike målenivåene (nominal, ordinal, intervall og forholdstall).</li>
 <li><a href="#sec-reliability">Vurdering av målingers reliabilitet</a>. Hvis jeg måler den “samme” tingen to ganger, bør jeg forvente å se samme resultat? Bare hvis målingen min er reliabel. Men hva betyr det å snakke om å gjøre den “samme” tingen? Vel, det er derfor vi har forskjellige typer pålitelighet. Sørg for at du husker hva de er.</li>
-<li><a href="#sec-measurement-validity">Vurdering av målingers validitet</a>. Måler målemetoden din det du ønsker?</li>
+<li><a href="#sec-validity">Vurdering av målingers validitet</a>. Måler målemetoden din det du ønsker?</li>
 </ul>
 <p>Målinger er en viktig del av kvantitativ forskning, og trolig har den for lite plass i bevisstheten til folk når de hører om forskningsresultater. I første kapittel refererte jeg til en samtale mellom oljefondets leder Nicolai Tangen og forskeren Angela Duckworth. Da Duckworth sa hun hadde forsket på folks pågangsmot og at hun hadde veldig store utvalg burde ikke Tangen blitt imponert over utvalgsstørrelsen, han burde spurt: “hvordan målte du pågangsmotet til så mange folk?” Svaret er jo at alle har svart på et <a href="https://angeladuckworth.com/grit-scale/">spørreskjema med 10 spørsmål</a>. Tror du det måler pågangsmot på en god måte?</p>
 
@@ -1195,19 +1166,6 @@ Stevens, S. S. (1946). On the theory of scales of measurement. <em>Science</em>,
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
-    // Ensure there is a toggle, if there isn't float one in the top right
-    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-      const a = window.document.createElement('a');
-      a.classList.add('top-right');
-      a.classList.add('quarto-color-scheme-toggle');
-      a.href = "";
-      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-      const i = window.document.createElement("i");
-      i.classList.add('bi');
-      a.appendChild(i);
-      window.document.body.appendChild(a);
-    }
-    setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {
@@ -1278,7 +1236,7 @@ Stevens, S. S. (1946). On the theory of scales of measurement. <em>Science</em>,
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/roarstovner\.github\.io\/kvant_for_laerere\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -1636,6 +1594,38 @@ Stevens, S. S. (1946). On the theory of scales of measurement. <em>Science</em>,
 </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

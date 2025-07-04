@@ -50,7 +50,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./sec-references.html" rel="next">
+<link href="./sec-descriptive.html" rel="next">
 <link href="./sec-measurement.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -58,14 +58,13 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-8ef56b68f8fa1e9d2ba328e99e439f80.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-89d524cf73f3b2250d5e74ecba7e97ca.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-32c0091d9c65541b54b40246001d65bb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-89d524cf73f3b2250d5e74ecba7e97ca.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-fd5afcc29437f4ae951c5494600eaeaa.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -158,174 +157,14 @@ window.Quarto = {
 <link rel="stylesheet" href="styles.css">
 <meta property="og:title" content="3&nbsp; Forskningsdesign i kvantitativ metode – Kvantitative metoder for lærere">
 <meta property="og:description" content="">
-<meta property="og:image" content="images/fig-spurious.png">
+<meta property="og:image" content="https://roarstovner.github.io/kvant_for_laerere/images/fig-spurious.png">
 <meta property="og:site_name" content="Kvantitative metoder for lærere">
 <meta property="og:image:alt" content="To grafer som viser utviklingen fra 1995 til 2021 i antall babyer i USA som heter Eleanor og antall kilowattimer vindkraft generert i Polen. Grafene er nesten perfekt overlappende.">
+<meta property="og:image:height" content="392">
+<meta property="og:image:width" content="600">
 </head>
 
-<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
-    const toggleBodyColorMode = (bsSheetEl) => {
-      const mode = bsSheetEl.getAttribute("data-mode");
-      const bodyEl = window.document.querySelector("body");
-      if (mode === "dark") {
-        bodyEl.classList.add("quarto-dark");
-        bodyEl.classList.remove("quarto-light");
-      } else {
-        bodyEl.classList.add("quarto-light");
-        bodyEl.classList.remove("quarto-dark");
-      }
-    }
-    const toggleBodyColorPrimary = () => {
-      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
-      if (bsSheetEl) {
-        toggleBodyColorMode(bsSheetEl);
-      }
-    }
-    const setColorSchemeToggle = (alternate) => {
-      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-      for (let i=0; i < toggles.length; i++) {
-        const toggle = toggles[i];
-        if (toggle) {
-          if (alternate) {
-            toggle.classList.add("alternate");
-          } else {
-            toggle.classList.remove("alternate");
-          }
-        }
-      }
-    };
-    const toggleColorMode = (alternate) => {
-      // Switch the stylesheets
-      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
-      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-      manageTransitions('#quarto-margin-sidebar .nav-link', false);
-      if (alternate) {
-        // note: dark is layered on light, we don't disable primary!
-        enableStylesheet(alternateStylesheets);
-        for (const sheetNode of alternateStylesheets) {
-          if (sheetNode.id === "quarto-bootstrap") {
-            toggleBodyColorMode(sheetNode);
-          }
-        }
-      } else {
-        disableStylesheet(alternateStylesheets);
-        enableStylesheet(primaryStylesheets)
-        toggleBodyColorPrimary();
-      }
-      manageTransitions('#quarto-margin-sidebar .nav-link', true);
-      // Switch the toggles
-      setColorSchemeToggle(alternate)
-      // Hack to workaround the fact that safari doesn't
-      // properly recolor the scrollbar when toggling (#1455)
-      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-        manageTransitions("body", false);
-        window.scrollTo(0, 1);
-        setTimeout(() => {
-          window.scrollTo(0, 0);
-          manageTransitions("body", true);
-        }, 40);
-      }
-    }
-    const disableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        stylesheet.rel = 'disabled-stylesheet';
-      }
-    }
-    const enableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
-          stylesheet.rel = 'stylesheet';
-        }
-      }
-    }
-    const manageTransitions = (selector, allowTransitions) => {
-      const els = window.document.querySelectorAll(selector);
-      for (let i=0; i < els.length; i++) {
-        const el = els[i];
-        if (allowTransitions) {
-          el.classList.remove('notransition');
-        } else {
-          el.classList.add('notransition');
-        }
-      }
-    }
-    const isFileUrl = () => {
-      return window.location.protocol === 'file:';
-    }
-    const hasAlternateSentinel = () => {
-      let styleSentinel = getColorSchemeSentinel();
-      if (styleSentinel !== null) {
-        return styleSentinel === "alternate";
-      } else {
-        return false;
-      }
-    }
-    const setStyleSentinel = (alternate) => {
-      const value = alternate ? "alternate" : "default";
-      if (!isFileUrl()) {
-        window.localStorage.setItem("quarto-color-scheme", value);
-      } else {
-        localAlternateSentinel = value;
-      }
-    }
-    const getColorSchemeSentinel = () => {
-      if (!isFileUrl()) {
-        const storageValue = window.localStorage.getItem("quarto-color-scheme");
-        return storageValue != null ? storageValue : localAlternateSentinel;
-      } else {
-        return localAlternateSentinel;
-      }
-    }
-    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-      let newTheme = '';
-      if(authorPrefersDark) {
-        newTheme = isAlternate ? baseTheme : alternateTheme;
-      } else {
-        newTheme = isAlternate ? alternateTheme : baseTheme;
-      }
-      const changeGiscusTheme = () => {
-        // From: https://github.com/giscus/giscus/issues/336
-        const sendMessage = (message) => {
-          const iframe = document.querySelector('iframe.giscus-frame');
-          if (!iframe) return;
-          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
-        }
-        sendMessage({
-          setConfig: {
-            theme: newTheme
-          }
-        });
-      }
-      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-      if (isGiscussLoaded) {
-        changeGiscusTheme();
-      }
-    };
-    const authorPrefersDark = false;
-    const darkModeDefault = authorPrefersDark;
-      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-    // Dark / light mode switch
-    window.quartoToggleColorScheme = () => {
-      // Read the current dark / light value
-      let toAlternate = !hasAlternateSentinel();
-      toggleColorMode(toAlternate);
-      setStyleSentinel(toAlternate);
-      toggleGiscusIfUsed(toAlternate, darkModeDefault);
-      window.dispatchEvent(new Event('resize'));
-    };
-    // Switch to dark mode if need be
-    if (hasAlternateSentinel()) {
-      toggleColorMode(true);
-    } else {
-      toggleColorMode(false);
-    }
-  </script>
+<body class="nav-sidebar floating quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -353,7 +192,6 @@ window.Quarto = {
         <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/roarstovner/kvant_for_laerere" title="Kildekode" class="quarto-navigation-tool px-1" aria-label="Kildekode"><i class="bi bi-github"></i></a>
     <a href="./Kvantitative-metoder-for-lærere.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Bytt mørk modus"><i class="bi"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Bytt lesermodus">
   <div class="quarto-reader-toggle-btn">
   <i class="bi"></i>
@@ -372,7 +210,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface</span></a>
+ <span class="menu-text">Forord</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -400,6 +238,52 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="./sec-design.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Forskningsdesign i kvantitativ metode</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Deskriptiv statistikk</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Slå på delen">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-descriptive.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Deskriptiv statistikk</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-diagram.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Visualisere data</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Statistisk teori</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Slå på delen">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-probability.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Sannsynlighet</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-estimation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Estimering av ukjente størrelser fra et utvalg</span></span></a>
   </div>
 </li>
       </ul>
@@ -433,7 +317,7 @@ window.Quarto = {
   <li><a href="#utvalg-fra-en-populasjon" id="toc-utvalg-fra-en-populasjon" class="nav-link" data-scroll-target="#utvalg-fra-en-populasjon"><span class="header-section-number">3.6</span> Utvalg fra en populasjon</a>
   <ul class="collapse">
   <li><a href="#populasjon-utvalg-og-analyseenhet" id="toc-populasjon-utvalg-og-analyseenhet" class="nav-link" data-scroll-target="#populasjon-utvalg-og-analyseenhet"><span class="header-section-number">3.6.1</span> Populasjon, utvalg og analyseenhet</a></li>
-  <li><a href="#enkle-tilfeldige-utvalg" id="toc-enkle-tilfeldige-utvalg" class="nav-link" data-scroll-target="#enkle-tilfeldige-utvalg"><span class="header-section-number">3.6.2</span> Enkle tilfeldige utvalg</a></li>
+  <li><a href="#sec-design-simple-random" id="toc-sec-design-simple-random" class="nav-link" data-scroll-target="#sec-design-simple-random"><span class="header-section-number">3.6.2</span> Enkle tilfeldige utvalg</a></li>
   <li><a href="#tilfeldige-klyngeutvalg" id="toc-tilfeldige-klyngeutvalg" class="nav-link" data-scroll-target="#tilfeldige-klyngeutvalg"><span class="header-section-number">3.6.3</span> Tilfeldige klyngeutvalg</a></li>
   <li><a href="#ikke-tilfeldige-utvalg" id="toc-ikke-tilfeldige-utvalg" class="nav-link" data-scroll-target="#ikke-tilfeldige-utvalg"><span class="header-section-number">3.6.4</span> Ikke-tilfeldige utvalg</a></li>
   </ul></li>
@@ -447,8 +331,7 @@ window.Quarto = {
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sec-measurement.html">Studiedesign</a></li><li class="breadcrumb-item"><a href="./sec-design.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Forskningsdesign i kvantitativ metode</span></a></li></ol></nav><h1 class="title display-7"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Forskningsdesign i kvantitativ metode</span></h1></header>
-
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sec-measurement.html">Studiedesign</a></li><li class="breadcrumb-item"><a href="./sec-design.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Forskningsdesign i kvantitativ metode</span></a></li></ol></nav><h1 class="title display-7"><span id="sec-design" class="quarto-section-identifier"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Forskningsdesign i kvantitativ metode</span></span></h1></header>
 
 <header id="title-block-header">
 
@@ -494,9 +377,9 @@ window.Quarto = {
 <h2 data-number="3.2" class="anchored" data-anchor-id="variablenes-roller-avhengige-og-uavhengige-variable"><span class="header-section-number">3.2</span> Variablenes roller: avhengige og uavhengige variable</h2>
 <p>Forskningsformålene (beskrive, predikere og årsaksforklare) gir oss to forskjellige typer Variabler. Hvis man vil beskrive kjønnsforskjeller i motivasjon for kroppsøving, tenker man gjerne at “kjønn” forklarer motivasjon for kroppsøving og ikke motsatt, at motivasjonen for kroppsøving forklarer hvilket kjønn du er. Når vi predikerer noe, er det én variabel vi ønsker å predikere og mange andre variable vi ønsker å bruke til å gjøre prediksjonen. I en årsaksforklaring er én variabel virkningen og potensielt flere variabler er årsakene. Det er viktig å holde de to rollene - “ting som forklarer” og “ting som blir forklart” - adskilt fra hverandre.</p>
 <p>La oss være tydelige på dette ved å introdusere matematiske symboler for å beskrive variabler (noe du vil møte igjen og igjen). Vi kan betegne variabelen som “skal forklares” som <span class="math inline">\(Y\)</span>, og variablene som “gjør forklaringen” som <span class="math inline">\(X_1 , X_2\)</span>, og så videre. Når vi gjør en analyse, har vi forskjellige navn for <span class="math inline">\(X\)</span> og <span class="math inline">\(Y\)</span> siden de spiller ulike roller. De klassiske navnene er <strong>uavhengig variabel</strong> og <strong>avhengig variabel</strong>. Uavhengig variabel er variabelen du bruker til å gjøre forklaringen (altså <span class="math inline">\(X\)</span>ene), mens avhengig variabel er variabelen som blir forklart (altså <span class="math inline">\(Y\)</span>). Logikken bak disse navnene er at hvis det virkelig er et årsaksforhold mellom <span class="math inline">\(X\)</span> og <span class="math inline">\(Y\)</span>, kan vi si at <span class="math inline">\(Y\)</span> avhenger av <span class="math inline">\(X\)</span>, mens <span class="math inline">\(X\)</span> er uavhengig av <span class="math inline">\(Y\)</span>.</p>
-<p>Jeg må innrømme at jeg synes disse navnene er problematiske. De er vanskelige å huske og ganske misvisende, fordi (1) uavhengig variabel er stort sett avhengig av en hel masse variable, og (b) hvis det ikke er noe årsaksforhold, avhenger ikke den avhengige variabelen faktisk av den uavhengige variabelen. Siden jeg ikke er alene om å synes “uavhengig variabel” og “avhengig variabel” er uklare navn, finnes det heldigvis flere alternativer som er mer intuitive. Begrepene jeg vil bruke for <span class="math inline">\(Y\)</span> i denne boka er <strong>utfall</strong> eller <strong>utfallsvariabel</strong>. Tanken her er at samme om du beskriver en sammenheng, predikerer en variabel eller årsaksforklarer en variabel, så er “utfall” et vanlig ord å bentytte som er mindre forvirrende enn avhengig variabel. Begrepene jeg vil bruke for variablene <span class="math inline">\(X_1, X_2,\)</span> og så videre, er <strong>forklaringsvariabel</strong>, <strong>prediktor</strong> og <strong>årsaksvariabel</strong>. Tanken her er at ingen av ordene er egentlig dekkende på tvers av de tre forskningsformålene, så da er flere ord i vanlig bruk. Det er ikke en regel at man må bruke ordet kun til det ene forskningsformålet, og du kommer til å se at ordene blir benyttet om hverandre, sikkert i denne boken også. <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Dette er oppsummert i <span class="quarto-unresolved-ref">?tbl-tab2-5</span>.</p>
-<div class="cell" data-layout-align="left">
-<div id="tbl-design-var-names" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-layout-align="left">
+<p>Jeg må innrømme at jeg synes disse navnene er problematiske. De er vanskelige å huske og ganske misvisende, fordi (1) uavhengig variabel er stort sett avhengig av en hel masse variable, og (b) hvis det ikke er noe årsaksforhold, avhenger ikke den avhengige variabelen faktisk av den uavhengige variabelen. Siden jeg ikke er alene om å synes “uavhengig variabel” og “avhengig variabel” er uklare navn, finnes det heldigvis flere alternativer som er mer intuitive. Begrepene jeg vil bruke for <span class="math inline">\(Y\)</span> i denne boka er <strong>utfall</strong> eller <strong>utfallsvariabel</strong>. Tanken her er at samme om du beskriver en sammenheng, predikerer en variabel eller årsaksforklarer en variabel, så er “utfall” et vanlig ord å bentytte som er mindre forvirrende enn avhengig variabel. Begrepene jeg vil bruke for variablene <span class="math inline">\(X_1, X_2,\)</span> og så videre, er <strong>forklaringsvariabel</strong>, <strong>prediktor</strong> og <strong>årsaksvariabel</strong>. Tanken her er at ingen av ordene er egentlig dekkende på tvers av de tre forskningsformålene, så da er flere ord i vanlig bruk. Det er ikke en regel at man må bruke ordet kun til det ene forskningsformålet, og du kommer til å se at ordene blir benyttet om hverandre, sikkert i denne boken også. <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Dette er oppsummert i <a href="#tbl-design-var-names" class="quarto-xref">Tabell&nbsp;<span>3.1</span></a>.</p>
+<div class="cell" data-layout-align="center">
+<div id="tbl-design-var-names" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-design-var-names-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Tabell&nbsp;3.1. Navn på variablenes roller
@@ -505,11 +388,25 @@ Tabell&nbsp;3.1. Navn på variablenes roller
 <div class="cell-output-display">
 <!-- preamble start -->
 
+    <!-- tinytable mathjax start -->
+    <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <!-- tinytable mathjax end -->
+
     <script>
 
       function styleCell_txgz1317ftylnsmm50a8(i, j, css_id) {
           var table = document.getElementById("tinytable_txgz1317ftylnsmm50a8");
-          var cell = table.rows[i]?.cells[j];  // Safe navigation to avoid errors
+          var cell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
           if (cell) {
               console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
               cell.classList.add(css_id);
@@ -519,46 +416,51 @@ Tabell&nbsp;3.1. Navn på variablenes roller
       }
       function insertSpanRow(i, colspan, content) {
         var table = document.getElementById('tinytable_txgz1317ftylnsmm50a8');
-        var newRow = table.insertRow(i);
+        // Find the row with data-row attribute matching i
+        var targetRow = table.querySelector(`tr [data-row="${i}"]`).closest('tr');
+        var newRow = table.insertRow(targetRow.rowIndex);
         var newCell = newRow.insertCell(0);
         newCell.setAttribute("colspan", colspan);
+        newCell.setAttribute("data-col", "0");
+        newCell.setAttribute("data-row", i - 1);
         // newCell.innerText = content;
         // this may be unsafe, but innerText does not interpret <br>
         newCell.innerHTML = content;
       }
       function spanCell_txgz1317ftylnsmm50a8(i, j, rowspan, colspan) {
         var table = document.getElementById("tinytable_txgz1317ftylnsmm50a8");
-        const targetRow = table.rows[i];
-        const targetCell = targetRow.cells[j];
+        const targetCell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
+        if (!targetCell) {
+          console.warn(`Cell at (${i}, ${j}) not found.`);
+        }
+
+        // Get all cells that need to be removed
+        const cellsToRemove = [];
         for (let r = 0; r < rowspan; r++) {
-          // Only start deleting cells to the right for the first row (r == 0)
-          if (r === 0) {
-            // Delete cells to the right of the target cell in the first row
-            for (let c = colspan - 1; c > 0; c--) {
-              if (table.rows[i + r].cells[j + c]) {
-                table.rows[i + r].deleteCell(j + c);
-              }
-            }
-          }
-          // For rows below the first, delete starting from the target column
-          if (r > 0) {
-            for (let c = colspan - 1; c >= 0; c--) {
-              if (table.rows[i + r] && table.rows[i + r].cells[j]) {
-                table.rows[i + r].deleteCell(j);
-              }
+          for (let c = 0; c < colspan; c++) {
+            if (r === 0 && c === 0) continue; // Skip the target cell
+            const cell = table.querySelector(`[data-row="${i + r}"][data-col="${j + c}"]`);
+            if (cell) {
+              cellsToRemove.push(cell);
             }
           }
         }
-        // Set rowspan and colspan of the target cell
-        targetCell.rowSpan = rowspan;
-        targetCell.colSpan = colspan;
+
+        // Remove all cells
+        cellsToRemove.forEach(cell => cell.remove());
+
+        // Set rowspan and colspan of the target cell if it exists
+        if (targetCell) {
+          targetCell.rowSpan = rowspan;
+          targetCell.colSpan = colspan;
+        }
       }
       // tinytable span after
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: 2, j: 0 }, { i: 2, j: 1 }, { i: 2, j: 2 }, { i: 2, j: 3 }, { i: 2, j: 4 }, { i: 2, j: 5 },  ], css_id: 'tinytable_css_i2fcpwqtn6of0p81njmk',}, 
-          { positions: [ { i: 0, j: 0 }, { i: 0, j: 1 }, { i: 0, j: 2 }, { i: 0, j: 3 }, { i: 0, j: 4 }, { i: 0, j: 5 },  ], css_id: 'tinytable_css_o49wjzm94gvy1dsjlb5k',}, 
+          { positions: [ { i: '2', j: 0 }, { i: '2', j: 1 }, { i: '2', j: 2 }, { i: '2', j: 3 }, { i: '2', j: 4 }, { i: '2', j: 5 },  ], css_id: 'tinytable_css_i2fcpwqtn6of0p81njmk',}, 
+          { positions: [ { i: '0', j: 0 }, { i: '0', j: 1 }, { i: '0', j: 2 }, { i: '0', j: 3 }, { i: '0', j: 4 }, { i: '0', j: 5 },  ], css_id: 'tinytable_css_o49wjzm94gvy1dsjlb5k',}, 
           ];
 
           // Loop over the arrays to style the cells
@@ -580,31 +482,31 @@ Tabell&nbsp;3.1. Navn på variablenes roller
         <thead>
         
               <tr>
-                <th scope="col">variabelens rolle</th>
-                <th scope="col">matematisk symbol</th>
-                <th scope="col">klassisk navn</th>
-                <th scope="col">beskrivende navn</th>
-                <th scope="col">predikerende navn</th>
-                <th scope="col">årsaksforklarende navn</th>
+                <th scope="col" data-row="0" data-col="0">variabelens rolle</th>
+                <th scope="col" data-row="0" data-col="1">matematisk symbol</th>
+                <th scope="col" data-row="0" data-col="2">klassisk navn</th>
+                <th scope="col" data-row="0" data-col="3">beskrivende navn</th>
+                <th scope="col" data-row="0" data-col="4">predikerende navn</th>
+                <th scope="col" data-row="0" data-col="5">årsaksforklarende navn</th>
               </tr>
         </thead>
         
         <tbody>
                 <tr>
-                  <td>skal forklares</td>
-                  <td>$$Y$$</td>
-                  <td>avhengig variabel</td>
-                  <td>utfall</td>
-                  <td>utfall</td>
-                  <td>utfall</td>
+                  <td data-row="1" data-col="0">skal forklares</td>
+                  <td data-row="1" data-col="1">$$Y$$</td>
+                  <td data-row="1" data-col="2">avhengig variabel</td>
+                  <td data-row="1" data-col="3">utfall</td>
+                  <td data-row="1" data-col="4">utfall</td>
+                  <td data-row="1" data-col="5">utfall</td>
                 </tr>
                 <tr>
-                  <td>skal forklare</td>
-                  <td>$$X$$</td>
-                  <td>uavhengig variabel</td>
-                  <td>forklaringsvariabel</td>
-                  <td>prediktor</td>
-                  <td>årsaksvariabel</td>
+                  <td data-row="2" data-col="0">skal forklare</td>
+                  <td data-row="2" data-col="1">$$X$$</td>
+                  <td data-row="2" data-col="2">uavhengig variabel</td>
+                  <td data-row="2" data-col="3">forklaringsvariabel</td>
+                  <td data-row="2" data-col="4">prediktor</td>
+                  <td data-row="2" data-col="5">årsaksvariabel</td>
                 </tr>
         </tbody>
       </table>
@@ -633,10 +535,10 @@ Tabell&nbsp;3.1. Navn på variablenes roller
 <p>Dette er et nyttig resultat som jeg tror er enkelt å skjønne.</p>
 <p>Men den “motsatte” regelen er ikke sann – det er ikke slik at en korrelasjon mellom <span class="math inline">\(A\)</span> og <span class="math inline">\(B\)</span> betyr at man kan konkludere med <span class="math inline">\(A\rightarrow B\)</span>. Dette er ikke like enkelt å skjønne. Hvorfor i huleste heiteste er det korrelasjon hvis den ene ikke forårsaker den andre? Hvis de var helt urelaterte burde det jo være ingen korrelasjon? Er korrelasjonen bare en tilfeldighet?</p>
 <p><strong>Tilfeldige korrelasjoner</strong> har blitt manges forklaring på hvorfor korrelasjon ikke er kausalitet. En tilfeldig korrelasjon er en korrelasjon som oppstår av, nettopp, tilfeldigheter. Hvis man hadde gjort samme studie om igjen hadde ikke korrelasjonen vært der, fordi den oppsto på grunn av tilfeldigheter med utvalget eller noe annet. Ideen om tilfeldige korrelasjoner har blitt popularisert gjennom det meget vittige nettstedet <a href="https://www.tylervigen.com/spurious-correlations" class="uri">https://www.tylervigen.com/spurious-correlations</a> som generer tusenvis av tilfeldige korrelasjoner som <a href="#fig-spurious" class="quarto-xref">Figur&nbsp;<span>3.1</span></a>.</p>
-<div id="fig-spurious" class="quarto-float quarto-figure quarto-figure-left anchored" alt="To grafer som viser utviklingen fra 1995 til 2021 i antall babyer i USA som heter Eleanor og antall kilowattimer vindkraft generert i Polen. Grafene er nesten perfekt overlappende.">
+<div id="fig-spurious" class="quarto-float quarto-figure quarto-figure-center anchored" alt="To grafer som viser utviklingen fra 1995 til 2021 i antall babyer i USA som heter Eleanor og antall kilowattimer vindkraft generert i Polen. Grafene er nesten perfekt overlappende.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-spurious-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/fig-spurious.png" class="img-fluid figure-img" alt="To grafer som viser utviklingen fra 1995 til 2021 i antall babyer i USA som heter Eleanor og antall kilowattimer vindkraft generert i Polen. Grafene er nesten perfekt overlappende.">
+<a href="images/fig-spurious.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figur&nbsp;3.1. En tilfeldig korrelasjon. Figuren er fra www.tylervigen.com og er utgitt under en CC-BY-lisens."><img src="images/fig-spurious.png" class="img-fluid figure-img" alt="To grafer som viser utviklingen fra 1995 til 2021 i antall babyer i USA som heter Eleanor og antall kilowattimer vindkraft generert i Polen. Grafene er nesten perfekt overlappende."></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-spurious-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figur&nbsp;3.1. En tilfeldig korrelasjon. Figuren er fra www.tylervigen.com og er utgitt under en CC-BY-lisens.
@@ -650,7 +552,7 @@ Figur&nbsp;3.1. En tilfeldig korrelasjon. Figuren er fra www.tylervigen.com og e
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="sec-design_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:10cm"></p>
+<p><a href="sec-design_files/figure-html/unnamed-chunk-2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="sec-design_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:10cm"></a></p>
 </figure>
 </div>
 </div>
@@ -666,7 +568,7 @@ Figur&nbsp;3.1. En tilfeldig korrelasjon. Figuren er fra www.tylervigen.com og e
 <div id="fig-confounder-general" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-confounder-general-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="sec-design_files/figure-html/fig-confounder-general-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:6cm" data-ref-parent="fig-confounder">
+<a href="sec-design_files/figure-html/fig-confounder-general-1.png" class="lightbox" data-gallery="fig-confounder" title="Figur&nbsp;3.2&nbsp;(a). Her er C en konfunder for A og B."><img src="sec-design_files/figure-html/fig-confounder-general-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:6cm" data-ref-parent="fig-confounder"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-confounder-general-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (a) Her er <span class="math inline">\(C\)</span> en konfunder for <span class="math inline">\(A\)</span> og <span class="math inline">\(B\)</span>.
@@ -680,7 +582,7 @@ Figur&nbsp;3.1. En tilfeldig korrelasjon. Figuren er fra www.tylervigen.com og e
 <div id="fig-confounder-reading" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-confounder-reading-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="sec-design_files/figure-html/fig-confounder-reading-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:12cm" data-ref-parent="fig-confounder">
+<a href="sec-design_files/figure-html/fig-confounder-reading-1.png" class="lightbox" data-gallery="fig-confounder" title="Figur&nbsp;3.2&nbsp;(b). Her er “foreldres leseinteresse” en konfunder for korrelasjonen mellom “antall bøker hjemme” og “leseforståelse”."><img src="sec-design_files/figure-html/fig-confounder-reading-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:12cm" data-ref-parent="fig-confounder"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-confounder-reading-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (b) Her er “foreldres leseinteresse” en konfunder for korrelasjonen mellom “antall bøker hjemme” og “leseforståelse”.
@@ -711,8 +613,8 @@ Figur&nbsp;3.2
 <p>Denne intervensjonen skulle påvirke forklaringsvariabelen <em>tankesett</em> til å være mer lærende. De hadde to utfallsvariable, <em>iherdighet</em> (perseverance) og <em>algebraferdighet</em>. Iherdighet ble målt ved om elevene valgte vanskeligere oppgaver på en algebratest, og algebraferdighet ble målt ved om de fikk til flere av oppgavene.</p>
 <p>Noen uker etterpå var andre økt. Da målte forskerne først forklaringsvariabelen (tankesett) for å finne ut om intervensjonen hadde virket. Tankesettet var langt mer lærende i intervensjonsgruppa enn i kontrollgruppa (faktisk 56% av et standardavvik høyere), så forskerne konkluderte med at intervensjonen hadde lyktes. Deretter ga de en algebratest for å måle <em>iherdighet</em> og <em>algebraferdighet</em>. Siden mange var fraværende fra den andre økta var det bare 289 elever som var til stede i begge øktene, altså 63% av de 458 elevene som ble spurt om å delta.</p>
 <p>Datafilen deres må da ha sett ca. slik ut:</p>
-<div class="cell" data-layout-align="left">
-<div id="tbl-mindset-data" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-layout-align="left">
+<div class="cell" data-layout-align="center">
+<div id="tbl-mindset-data" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-mindset-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Tabell&nbsp;3.2. De første radene på en tenkt datafil tilhørende Bettinger et al. <span class="citation" data-cites="bettinger2018">Bettinger et al. (<a href="sec-references.html#ref-bettinger2018" role="doc-biblioref">2018</a>)</span> sin randomiserte kontrollstudie. Hver rad tilhører én student. Én nominell variabel angir om studenten er i intervensjons- eller kontrollgruppa, <em>tankesett</em> er forklaringsvariabelen og <em>iherdighet</em> og <em>algebraferdighet</em> er utfallsvariable.
@@ -721,11 +623,25 @@ Tabell&nbsp;3.2. De første radene på en tenkt datafil tilhørende Bettinger et
 <div class="cell-output-display">
 <!-- preamble start -->
 
+    <!-- tinytable mathjax start -->
+    <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <!-- tinytable mathjax end -->
+
     <script>
 
       function styleCell_bawvcrkt6vdbzf3c2qxx(i, j, css_id) {
           var table = document.getElementById("tinytable_bawvcrkt6vdbzf3c2qxx");
-          var cell = table.rows[i]?.cells[j];  // Safe navigation to avoid errors
+          var cell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
           if (cell) {
               console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
               cell.classList.add(css_id);
@@ -735,46 +651,51 @@ Tabell&nbsp;3.2. De første radene på en tenkt datafil tilhørende Bettinger et
       }
       function insertSpanRow(i, colspan, content) {
         var table = document.getElementById('tinytable_bawvcrkt6vdbzf3c2qxx');
-        var newRow = table.insertRow(i);
+        // Find the row with data-row attribute matching i
+        var targetRow = table.querySelector(`tr [data-row="${i}"]`).closest('tr');
+        var newRow = table.insertRow(targetRow.rowIndex);
         var newCell = newRow.insertCell(0);
         newCell.setAttribute("colspan", colspan);
+        newCell.setAttribute("data-col", "0");
+        newCell.setAttribute("data-row", i - 1);
         // newCell.innerText = content;
         // this may be unsafe, but innerText does not interpret <br>
         newCell.innerHTML = content;
       }
       function spanCell_bawvcrkt6vdbzf3c2qxx(i, j, rowspan, colspan) {
         var table = document.getElementById("tinytable_bawvcrkt6vdbzf3c2qxx");
-        const targetRow = table.rows[i];
-        const targetCell = targetRow.cells[j];
+        const targetCell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
+        if (!targetCell) {
+          console.warn(`Cell at (${i}, ${j}) not found.`);
+        }
+
+        // Get all cells that need to be removed
+        const cellsToRemove = [];
         for (let r = 0; r < rowspan; r++) {
-          // Only start deleting cells to the right for the first row (r == 0)
-          if (r === 0) {
-            // Delete cells to the right of the target cell in the first row
-            for (let c = colspan - 1; c > 0; c--) {
-              if (table.rows[i + r].cells[j + c]) {
-                table.rows[i + r].deleteCell(j + c);
-              }
-            }
-          }
-          // For rows below the first, delete starting from the target column
-          if (r > 0) {
-            for (let c = colspan - 1; c >= 0; c--) {
-              if (table.rows[i + r] && table.rows[i + r].cells[j]) {
-                table.rows[i + r].deleteCell(j);
-              }
+          for (let c = 0; c < colspan; c++) {
+            if (r === 0 && c === 0) continue; // Skip the target cell
+            const cell = table.querySelector(`[data-row="${i + r}"][data-col="${j + c}"]`);
+            if (cell) {
+              cellsToRemove.push(cell);
             }
           }
         }
-        // Set rowspan and colspan of the target cell
-        targetCell.rowSpan = rowspan;
-        targetCell.colSpan = colspan;
+
+        // Remove all cells
+        cellsToRemove.forEach(cell => cell.remove());
+
+        // Set rowspan and colspan of the target cell if it exists
+        if (targetCell) {
+          targetCell.rowSpan = rowspan;
+          targetCell.colSpan = colspan;
+        }
       }
       // tinytable span after
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: 5, j: 0 }, { i: 5, j: 1 }, { i: 5, j: 2 }, { i: 5, j: 3 },  ], css_id: 'tinytable_css_obgj5j3h3h0aculoa2dq',}, 
-          { positions: [ { i: 0, j: 0 }, { i: 0, j: 1 }, { i: 0, j: 2 }, { i: 0, j: 3 },  ], css_id: 'tinytable_css_99xgj74qbjzrt0ozrwr8',}, 
+          { positions: [ { i: '5', j: 0 }, { i: '5', j: 1 }, { i: '5', j: 2 }, { i: '5', j: 3 },  ], css_id: 'tinytable_css_obgj5j3h3h0aculoa2dq',}, 
+          { positions: [ { i: '0', j: 0 }, { i: '0', j: 1 }, { i: '0', j: 2 }, { i: '0', j: 3 },  ], css_id: 'tinytable_css_99xgj74qbjzrt0ozrwr8',}, 
           ];
 
           // Loop over the arrays to style the cells
@@ -796,43 +717,43 @@ Tabell&nbsp;3.2. De første radene på en tenkt datafil tilhørende Bettinger et
         <thead>
         
               <tr>
-                <th scope="col">gruppe</th>
-                <th scope="col">tankesett</th>
-                <th scope="col">iherdighet</th>
-                <th scope="col">algebraferdighet</th>
+                <th scope="col" data-row="0" data-col="0">gruppe</th>
+                <th scope="col" data-row="0" data-col="1">tankesett</th>
+                <th scope="col" data-row="0" data-col="2">iherdighet</th>
+                <th scope="col" data-row="0" data-col="3">algebraferdighet</th>
               </tr>
         </thead>
         
         <tbody>
                 <tr>
-                  <td>kontroll</td>
-                  <td>1.4</td>
-                  <td>8</td>
-                  <td>2.8</td>
+                  <td data-row="1" data-col="0">kontroll</td>
+                  <td data-row="1" data-col="1">1.4</td>
+                  <td data-row="1" data-col="2">8</td>
+                  <td data-row="1" data-col="3">2.8</td>
                 </tr>
                 <tr>
-                  <td>intervensjon</td>
-                  <td>3.1</td>
-                  <td>8</td>
-                  <td>2.1</td>
+                  <td data-row="2" data-col="0">intervensjon</td>
+                  <td data-row="2" data-col="1">3.1</td>
+                  <td data-row="2" data-col="2">8</td>
+                  <td data-row="2" data-col="3">2.1</td>
                 </tr>
                 <tr>
-                  <td>intervensjon</td>
-                  <td>2.8</td>
-                  <td>5</td>
-                  <td>3.8</td>
+                  <td data-row="3" data-col="0">intervensjon</td>
+                  <td data-row="3" data-col="1">2.8</td>
+                  <td data-row="3" data-col="2">5</td>
+                  <td data-row="3" data-col="3">3.8</td>
                 </tr>
                 <tr>
-                  <td>kontroll</td>
-                  <td>2.1</td>
-                  <td>5</td>
-                  <td>1.9</td>
+                  <td data-row="4" data-col="0">kontroll</td>
+                  <td data-row="4" data-col="1">2.1</td>
+                  <td data-row="4" data-col="2">5</td>
+                  <td data-row="4" data-col="3">1.9</td>
                 </tr>
                 <tr>
-                  <td>intervensjon</td>
-                  <td>3.7</td>
-                  <td>7</td>
-                  <td>3.6</td>
+                  <td data-row="5" data-col="0">intervensjon</td>
+                  <td data-row="5" data-col="1">3.7</td>
+                  <td data-row="5" data-col="2">7</td>
+                  <td data-row="5" data-col="3">3.6</td>
                 </tr>
         </tbody>
       </table>
@@ -859,10 +780,10 @@ Tabell&nbsp;3.2. De første radene på en tenkt datafil tilhørende Bettinger et
 <h3 data-number="3.6.1" class="anchored" data-anchor-id="populasjon-utvalg-og-analyseenhet"><span class="header-section-number">3.6.1</span> Populasjon, utvalg og analyseenhet</h3>
 <p>Mange forskningsspørsmål i kvantitativ metode dreier seg om å finne ut av noe for en viss <strong>populasjon</strong>. Populasjonen er den mengden av folk eller ting man ønsker at forskningen sin skal gjelde for. For eksempel kan det være jeg vil finne ut hvordan motivasjonen for skole endrer seg mellom barneskolen og ungdomsskolen. I så fall vil populasjonen kanskje være noe slikt som “alle norske elever som starter på ungdomsskolen i 2025”. Merk at populasjonen er det jeg <em>ønsker</em> at forskningen skal gjelde for, og at vi sjeldent kan undersøke hele populasjonen.</p>
 <p>I praksis må man gjøre et <strong>utvalg</strong> fra populasjonen. Siden man ikke velger hele populasjonen, men kun et utvalg, er en sentral del av kvantitativ forskning å <strong>generalisere</strong> det som gjelder for utvalget til hele populasjonen. I kvantitativ metode trekker vi slutninger <em>fra</em> utvalget <em>om</em> populasjonen. Dette er illustrert i <a href="#fig-design-sampling" class="quarto-xref">Figur&nbsp;<span>3.3</span></a>.</p>
-<div id="fig-design-sampling" class="quarto-float quarto-figure quarto-figure-left anchored">
+<div id="fig-design-sampling" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-design-sampling-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/fig-design-sampling.png" class="img-fluid figure-img">
+<a href="images/fig-design-sampling.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figur&nbsp;3.3. Utvelgelse fra, og generalisering til, populasjonen."><img src="images/fig-design-sampling.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-design-sampling-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figur&nbsp;3.3. Utvelgelse fra, og generalisering til, populasjonen.
@@ -873,18 +794,18 @@ Figur&nbsp;3.3. Utvelgelse fra, og generalisering til, populasjonen.
 <p>Et sentralt spørsmål er hvilken <strong>analyseenhet</strong> man skal benytte. Analyseenheten er de enhetene (tingene) du samler data fra. Hvis jeg undersøker elevenes motivasjon ved å spørre elevene selv, er det <em>eleven</em> som er analyseenheten. Hvis jeg spør læreren om å vurdere motivasjonen til klassen, er det <em>læreren</em> eller <em>klassen</em> som er analyseenheten. Hvis jeg sender ut observatører i mange klasserom for å forsøke å observere klassens motivasjon i forskjellige undervisningsøkter, er det kanskje <em>undervisningsøkter</em> som er analyseenheten.</p>
 <p>I det følgende presenterer vi et lite knippe vanlige utvalgsmetoder og deres fordeler og ulemper.</p>
 </section>
-<section id="enkle-tilfeldige-utvalg" class="level3" data-number="3.6.2">
-<h3 data-number="3.6.2" class="anchored" data-anchor-id="enkle-tilfeldige-utvalg"><span class="header-section-number">3.6.2</span> Enkle tilfeldige utvalg</h3>
+<section id="sec-design-simple-random" class="level3" data-number="3.6.2">
+<h3 data-number="3.6.2" class="anchored" data-anchor-id="sec-design-simple-random"><span class="header-section-number">3.6.2</span> Enkle tilfeldige utvalg</h3>
 <p>For å generalisere til populasjonen vil i de fleste tilfeller det beste utvalget er et utvalg som er helt likt populasjonen, bare mye mindre. I stedet for å velge ut alle de ca. 60 000 syvendeklassingene i Norge (populasjonen) og målt motivasjonen deres, hadde det vært ideelt å valgt ut 600 syvendeklassinger slik at disse svarer likt som populasjonen. Dette vil si at hvis 10 % av elevene i populasjonen er topp motiverte, så er 10 % av utvalgets elever det også; hvis 20 % av populasjonen er ganske motiverte, så er 20 % av utvalgets elever det også, og så videre. Denne egenskapen, at utvalget er likt populasjonen, kalles at utvalget er <strong>representativt med hensyn til variabelen</strong>.</p>
 <p>Aller helst bør ikke utvalget bare være representativt med hensyn til én variabel, det bør være likt på alle andre mulige måter også. Hvis man ønsker å finne ut om elever med lave eller høye karakterer har forskjellig motivasjon, er det viktig at de elevene i utvalget med høye (eller lave) karakterer representerer elevene i populasjonen med høye (eller lave) karakterer. Hvis utvalget er representativt med hensyn på alle mulige variabler, kaller vi utvalget <strong>representativt</strong>. Hvis utvalget ikke er representativt er det <strong>skjevt</strong>.</p>
 <p>Det virker helt uoppnåelig å skaffe et representativt utvalg. Tenk på det, det finnes uendelig mange variable, og man må forsikre seg om at utvalget er likt populasjonen på alle sammen. Men det finnes et triks som fikser et representativt utvalg for deg, <strong>randomisering</strong>.</p>
 <p>For å holde ting enkle kan vi forestille oss at vi har en pose med 10 brikker. Hver brikke har sin egen unike bokstav, så vi kan skille dem fra hverandre. Brikkene kommer i to farger - svart og hvit. Dette settet med brikker er populasjonen vi er interessert i, og den er vist grafisk til venstre i <a href="#fig-design-unbiased" class="quarto-xref">Figur&nbsp;<span>3.4</span></a>. Som du kan se på bildet, er det 4 svarte brikker og 6 hvite brikker. Men i virkeligheten ville vi selvfølgelig ikke vite dette uten å kikke i posen først!</p>
 <p>La oss nå forestille oss at du kjører følgende “eksperiment”: Du rister posen godt, lukker øynene og trekker ut 4 brikker uten å legge noen av dem tilbake. Først kommer <span class="math inline">\(a\)</span>-brikken (svart), så <span class="math inline">\(c\)</span>-brikken (hvit), deretter <span class="math inline">\(j\)</span> (hvit) og til slutt <span class="math inline">\(b\)</span> (svart). Hvis du har lyst, kan du legge alle brikkene tilbake i posen og gjenta hele eksperimentet - akkurat som vist på høyre side av <a href="#fig-design-unbiased" class="quarto-xref">Figur&nbsp;<span>3.4</span></a>. Hver gang vil du få forskjellige resultater, selv om du følger nøyaktig samme prosedyre. Dette at samme utvalgsmetode kan gi forskjellige utvalg hver gang, kaller vi et <strong>tilfeldig utvalg</strong>. <a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
 <p>Siden vi ristet posen før vi trakk ut brikkene, virker det rimelig å anta at hver brikke har like stor sjanse for å bli valgt. En slik prosedyre - hvor hvert medlem av populasjonen har samme sjanse for å bli valgt - kalles et <strong>enkelt tilfeldig utvalg</strong>. Det at vi ikke legger brikkene tilbake etter å ha trukket dem, betyr at du ikke kan observere den samme brikken to ganger. I slike tilfeller sier vi at observasjonene er utvalgt.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p>
-<div id="fig-design-unbiased" class="quarto-float quarto-figure quarto-figure-left anchored" alt="Et diagram viser en populasjon bestående av 10 sirkler merket a til j. Piler peker fra denne populasjonen til tre grupper av sirkler, som demonstrerer enkle tilfeldige utvalg uten tilbakelegging. Gruppene er merket 'a, c, j, b,' 'i, e, a, f,' og 'g, c, f, d.'">
+<div id="fig-design-unbiased" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Et diagram viser en populasjon bestående av 10 sirkler merket a til j. Piler peker fra denne populasjonen til tre grupper av sirkler, som demonstrerer enkle tilfeldige utvalg uten tilbakelegging. Gruppene er merket 'a, c, j, b,' 'i, e, a, f,' og 'g, c, f, d.'">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-design-unbiased-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/fig-design-unbiased.png" class="img-fluid figure-img" alt="Et diagram viser en populasjon bestående av 10 sirkler merket a til j. Piler peker fra denne populasjonen til tre grupper av sirkler, som demonstrerer enkle tilfeldige utvalg uten tilbakelegging. Gruppene er merket 'a, c, j, b,' 'i, e, a, f,' og 'g, c, f, d.'">
+<a href="images/fig-design-unbiased.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figur&nbsp;3.4. Enkelt tilfeldig utvalg uten tilbakelegging fra en endelig populasjon"><img src="images/fig-design-unbiased.png" class="img-fluid figure-img" alt="Et diagram viser en populasjon bestående av 10 sirkler merket a til j. Piler peker fra denne populasjonen til tre grupper av sirkler, som demonstrerer enkle tilfeldige utvalg uten tilbakelegging. Gruppene er merket 'a, c, j, b,' 'i, e, a, f,' og 'g, c, f, d.'"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-design-unbiased-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figur&nbsp;3.4. Enkelt tilfeldig utvalg uten tilbakelegging fra en endelig populasjon
@@ -893,10 +814,10 @@ Figur&nbsp;3.4. Enkelt tilfeldig utvalg uten tilbakelegging fra en endelig popul
 </div>
 <p>Hvis du studerer utvalgene i <a href="#fig-design-unbiased" class="quarto-xref">Figur&nbsp;<span>3.4</span></a> nøye ser du at ingen av dem gjengir populasjonen riktig. I populasjonen er 40% av brikkene svarte, og i utvalgene er 50%, 25% og 25% svarte. Så utvalgene er skjeve, altså ikke representative, men hvis man hadde repetert utvalgsmetoden mange, mange ganger, hadde man hatt 40% svarte brikker i utvalgene sine i gjennomsnitt. Derfor sier man at enkelt tilfeldig utvalg er en <strong>forventingsrett</strong> utvalgsmetode.<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> Hvert enkelt utvalg er ikke nødvendigvis representativt, men hvis man repeterer utvalget mange ganger kan man forvente at gjennomsnittet er representativt, og hvis man gjør utvalget veldig veldig stort vil avviket fra et representativt utvalg være veldig lite, se [^sec-law-of-large-numbers].</p>
 <p>For å sikre at du forstår hvor viktig utvalgsprosedyren er, kan vi tenke på en alternativ måte å gjennomføre eksperimentet på. La oss si at min fem år gamle sønn hadde åpnet posen og bestemt seg for å bare trekke ut fire svarte brikker, uten å legge noen tilbake. Dette skjeve utvalget er illustrert i <a href="#fig-design-biased" class="quarto-xref">Figur&nbsp;<span>3.5</span></a>. Tenk nå på hvor mye vi kan lære av å se 4 svarte brikker og 0 hvite brikker. Det avhenger helt klart av hvordan utvalget ble gjort, ikke sant? Hvis du vet at prosedyren var skjev og bare valgte svarte brikker, forteller et utvalg med bare svarte brikker deg ikke særlig mye om populasjonen som helhet! Derfor liker statistikere virkelig godt når et datasett kan betraktes som et enkelt tilfeldig utvalg – det gjør dataanalysen <em>mye</em> enklere.</p>
-<div id="fig-design-biased" class="quarto-float quarto-figure quarto-figure-left anchored" alt="Et diagram viser skjevt utvalg (uten tilbakelegging) fra en populasjon på 10 elementer merket a til j. Tre utvalg på fire elementer hver blir trukket: 'a, b, g, h', 'g, b, h, a', og 'a, h, b, g'. Svarte sirkler viser valgte elementer; hvite sirkler viser ikke-valgte elementer.">
+<div id="fig-design-biased" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Et diagram viser skjevt utvalg (uten tilbakelegging) fra en populasjon på 10 elementer merket a til j. Tre utvalg på fire elementer hver blir trukket: 'a, b, g, h', 'g, b, h, a', og 'a, h, b, g'. Svarte sirkler viser valgte elementer; hvite sirkler viser ikke-valgte elementer.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-design-biased-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/fig-design-biased.png" class="img-fluid figure-img" alt="Et diagram viser skjevt utvalg (uten tilbakelegging) fra en populasjon på 10 elementer merket a til j. Tre utvalg på fire elementer hver blir trukket: 'a, b, g, h', 'g, b, h, a', og 'a, h, b, g'. Svarte sirkler viser valgte elementer; hvite sirkler viser ikke-valgte elementer.">
+<a href="images/fig-design-biased.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figur&nbsp;3.5. Skjevt utvalg uten tilbakelegging fra en endelig populasjon."><img src="images/fig-design-biased.png" class="img-fluid figure-img" alt="Et diagram viser skjevt utvalg (uten tilbakelegging) fra en populasjon på 10 elementer merket a til j. Tre utvalg på fire elementer hver blir trukket: 'a, b, g, h', 'g, b, h, a', og 'a, h, b, g'. Svarte sirkler viser valgte elementer; hvite sirkler viser ikke-valgte elementer."></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-design-biased-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figur&nbsp;3.5. Skjevt utvalg uten tilbakelegging fra en endelig populasjon.
@@ -950,7 +871,7 @@ Figur&nbsp;3.5. Skjevt utvalg uten tilbakelegging fra en endelig populasjon.
 <p>Dette høres kanskje enkelt ut, men i praksis er det utfordrende å vurdere en studies gyldighet fordi det er så mange ting som spiller inn på om studiens slutninger er gyldige. Bare i løpet av dette kapittelet har vi møtt mange trusler mot en studies validitet, konfundere, retningsproblemet, skjeve utvalg, selektiv deltagelse og dropout, og flere. Derfor er det nyttig å bryte validitet ned i forskjellige undertyper. De viktigste er indre- og ytre validitet.</p>
 <section id="indre-validitet" class="level3" data-number="3.7.1">
 <h3 data-number="3.7.1" class="anchored" data-anchor-id="indre-validitet"><span class="header-section-number">3.7.1</span> Indre validitet</h3>
-<p><strong>Indre validitet</strong> er om slutningene dine er gyldige for utvalget ditt. Det inkluderer målevaliditet, se <a href="sec-measurement.html#sec-measurement-validity" class="quarto-xref"><span>Seksjon 2.3.2</span></a>, og i forskning med formål om å finne årsaksforklaringer, så inkluderer det om årsaksforklaringen er godt underbygget. Det kalles “indre” fordi det dreier seg om sammenhengene mellom ting som skjer innenfor selve studien.</p>
+<p><strong>Indre validitet</strong> er om slutningene dine er gyldige for utvalget ditt. Det inkluderer målevaliditet, se <span class="quarto-unresolved-ref">?sec-measurement-validity</span>, og i forskning med formål om å finne årsaksforklaringer, så inkluderer det om årsaksforklaringen er godt underbygget. Det kalles “indre” fordi det dreier seg om sammenhengene mellom ting som skjer innenfor selve studien.</p>
 <p>Et enkelt eksempel er en studie som ønsker å finne ut om universitetsutdanning gjør folk til bedre skribenter. Du samler en gruppe førsteårsstudenter, ber dem skrive et essay på 1000 ord, og teller opp stavefeil og grammatiske feil. Så gjør du det samme med tredjeårsstudenter, som jo har mer universitetsutdanning bak seg. Hvis tredjeårsstudentene gjør færre feil, kan du da konkludere med at universitetsutdanning forbedrer skriveferdighetene?</p>
 <p>Her ligger problemet: Tredjeårsstudentene er jo også eldre og har helt naturlig fått mer skriveerfaring over tid, så alder er en konfunder. Så hva er egentlig årsaken til at de skriver bedre? Er det alderen? Når man blir eldre får man jo skrevet mer, uavhengig av om man går på universitetet eller ikke. Eller er det universitetsutdanningen? Du kan rett og slett ikke vite årsken basert på denne studien. Dette er et klassisk eksempel på svak indre validitet -– studien klarer ikke å utelukke konfundere på en god nok måte.</p>
 </section>
@@ -1003,19 +924,6 @@ Jensen, F., Kjærnsli, M., Knain, E., Løvgren, M., &amp; Pettersen, A. (2024). 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
-    // Ensure there is a toggle, if there isn't float one in the top right
-    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-      const a = window.document.createElement('a');
-      a.classList.add('top-right');
-      a.classList.add('quarto-color-scheme-toggle');
-      a.href = "";
-      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-      const i = window.document.createElement("i");
-      i.classList.add('bi');
-      a.appendChild(i);
-      window.document.body.appendChild(a);
-    }
-    setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {
@@ -1086,7 +994,7 @@ Jensen, F., Kjærnsli, M., Knain, E., Løvgren, M., &amp; Pettersen, A. (2024). 
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/roarstovner\.github\.io\/kvant_for_laerere\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -1425,8 +1333,8 @@ Jensen, F., Kjærnsli, M., Knain, E., Løvgren, M., &amp; Pettersen, A. (2024). 
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./sec-references.html" class="pagination-link" aria-label="Referanseliste">
-        <span class="nav-page-text">Referanseliste</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./sec-descriptive.html" class="pagination-link" aria-label="Deskriptiv statistikk">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Deskriptiv statistikk</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1444,6 +1352,38 @@ Jensen, F., Kjærnsli, M., Knain, E., Løvgren, M., &amp; Pettersen, A. (2024). 
 </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
