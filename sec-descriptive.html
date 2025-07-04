@@ -58,10 +58,14 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-8ef56b68f8fa1e9d2ba328e99e439f80.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-fd5afcc29437f4ae951c5494600eaeaa.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-89d524cf73f3b2250d5e74ecba7e97ca.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-32c0091d9c65541b54b40246001d65bb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-89d524cf73f3b2250d5e74ecba7e97ca.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -164,7 +168,169 @@ window.Quarto = {
 <meta property="og:image:width" content="727">
 </head>
 
-<body class="nav-sidebar floating quarto-light">
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -192,6 +358,7 @@ window.Quarto = {
         <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/roarstovner/kvant_for_laerere" title="Kildekode" class="quarto-navigation-tool px-1" aria-label="Kildekode"><i class="bi bi-github"></i></a>
     <a href="./Kvantitative-metoder-for-lærere.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Bytt mørk modus"><i class="bi"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Bytt lesermodus">
   <div class="quarto-reader-toggle-btn">
   <i class="bi"></i>
@@ -334,6 +501,7 @@ window.Quarto = {
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sec-descriptive.html">Deskriptiv statistikk</a></li><li class="breadcrumb-item"><a href="./sec-descriptive.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Deskriptiv statistikk</span></a></li></ol></nav><h1 class="title display-7"><span id="sec-descriptive" class="quarto-section-identifier"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Deskriptiv statistikk</span></span></h1></header>
+
 
 <header id="title-block-header">
 
@@ -1166,7 +1334,7 @@ Figur&nbsp;4.6. Standard deskriptiv statistikk for variabelen <em>Likestilling</
 <p>Dette illustreres også i <a href="#fig-descriptive-weight" class="quarto-xref">Figur&nbsp;<span>4.7</span></a>, hvor du kan se at når histogrammet er asymmetrisk, ligger medianen nærmere “hovedvekten” av dataene, mens gjennomsnittet blir trukket mot “halen” der de ekstreme verdiene befinner seg.</p>
 <div class="cell enlarge-image" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-descriptive-weight" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Et stolpediagram på venstre side har 48 observasjoner og ligner på et trappetrinnmønster med avtagende høyder fra venstre til høyre. Teksten lyder: &quot;Gjennomsnittet er 'balansepunktet' til dataene.&quot; Under diagrammet er det en horisontal linje merket &quot;balansepunkt&quot; med et trekantet støttepunkt som symboliserer balanse. Det samme stolpediagrammet vises på høyre side med dataene delt inn i to grupper på 24 observasjoner. Den venstre gruppen er skyggelagt i lys grå, og den høyre gruppen er skyggelagt i mørk grå. En pil peker på den 24. observasjonen med teksten &quot;Medianen er den 'midterste observasjonen' i datasettet&quot;" data-fig-pos="H">
+<div id="fig-descriptive-weight" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-pos="H" data-fig-align="center" alt="Et stolpediagram på venstre side har 48 observasjoner og ligner på et trappetrinnmønster med avtagende høyder fra venstre til høyre. Teksten lyder: &quot;Gjennomsnittet er 'balansepunktet' til dataene.&quot; Under diagrammet er det en horisontal linje merket &quot;balansepunkt&quot; med et trekantet støttepunkt som symboliserer balanse. Det samme stolpediagrammet vises på høyre side med dataene delt inn i to grupper på 24 observasjoner. Den venstre gruppen er skyggelagt i lys grå, og den høyre gruppen er skyggelagt i mørk grå. En pil peker på den 24. observasjonen med teksten &quot;Medianen er den 'midterste observasjonen' i datasettet&quot;">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-descriptive-weight-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="images/fig-descriptive-weight.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figur&nbsp;4.7. En illustrasjon av forskjellen mellom hvordan gjennomsnittet og medianen bør tolkes. Gjennomsnittet er &quot;balansepunktet&quot; til datasettet. Hvis du forestiller deg at histogrammet av dataene er et klosser på et brett, så er gjennomsnittet balansepunktet. Medianen den midterste observasjonen, og halvparten av klossene lenger til venstre og halvparten og halvparten lenger til høyre."><img src="images/fig-descriptive-weight.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" data-fig-pos="H" alt="Et stolpediagram på venstre side har 48 observasjoner og ligner på et trappetrinnmønster med avtagende høyder fra venstre til høyre. Teksten lyder: &quot;Gjennomsnittet er 'balansepunktet' til dataene.&quot; Under diagrammet er det en horisontal linje merket &quot;balansepunkt&quot; med et trekantet støttepunkt som symboliserer balanse. Det samme stolpediagrammet vises på høyre side med dataene delt inn i to grupper på 24 observasjoner. Den venstre gruppen er skyggelagt i lys grå, og den høyre gruppen er skyggelagt i mørk grå. En pil peker på den 24. observasjonen med teksten &quot;Medianen er den 'midterste observasjonen' i datasettet&quot;"></a>
@@ -1190,7 +1358,7 @@ Figur&nbsp;4.7. En illustrasjon av forskjellen mellom hvordan gjennomsnittet og 
 <p>Hvis vi skal finne typetallet for <em>Kjønn</em> i hele datasettet må vi sette oss ned og telle hvor mange det er av Gutt, Jente og Annet. Selvsagt gjør vi det heller med programvare, altså jamovi. <a href="#fig-descriptive-jamovi-mode" class="quarto-xref">Figur&nbsp;<span>4.8</span></a> viser et skjermbilde av hvordan det ser ut.</p>
 <div class="cell enlarge-image" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-descriptive-jamovi-mode" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Et jamovi-skjermbilde for analyse av variabelen Kjønn. Et panel til venstre inkluderer alternativer for å velge variabler og hvilke sentraltendenser man ønsker å regne ut. Det høyre panelet viser resultatene" data-fig-pos="H">
+<div id="fig-descriptive-jamovi-mode" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-pos="H" data-fig-align="center" alt="Et jamovi-skjermbilde for analyse av variabelen Kjønn. Et panel til venstre inkluderer alternativer for å velge variabler og hvilke sentraltendenser man ønsker å regne ut. Det høyre panelet viser resultatene">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-descriptive-jamovi-mode-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="images/fig-descriptive-jamovi-mode.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Figur&nbsp;4.8. Et skjermbilde av jamovi som viser typetall og frekvenstabell for variabelen Kjønn"><img src="images/fig-descriptive-jamovi-mode.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" data-fig-pos="H" alt="Et jamovi-skjermbilde for analyse av variabelen Kjønn. Et panel til venstre inkluderer alternativer for å velge variabler og hvilke sentraltendenser man ønsker å regne ut. Det høyre panelet viser resultatene"></a>
@@ -1206,7 +1374,7 @@ Figur&nbsp;4.8. Et skjermbilde av jamovi som viser typetall og frekvenstabell fo
 <p>For å finne ut av hva typetallet 2 betyr, må du trykke på ‘Variables’ → ‘Kjønn’ → ‘Edit’, se <a href="#fig-descriptive-jamovi-gender" class="quarto-xref">Figur&nbsp;<span>4.9</span></a>. Du kan se at “Jente” er lagret som 1, “Gutt” som 2 og “Annet” som 3. Typetallet 2 er altså “Gutt”, så det er flest gutter i datasettet.</p>
 <div class="cell enlarge-image" data-layout-align="center" data-out.wdith="100%">
 <div class="cell-output-display">
-<div id="fig-descriptive-jamovi-gender" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Et jamovi-skjermbilde for analyse av variabelen Kjønn. Det står at _Kjønn_ er en nominell variabel der &quot;Jente&quot; er lagret som 1, &quot;Gutt&quot; er lagret som 2, og &quot;Annet&quot; er lagret som 3." data-fig-pos="H">
+<div id="fig-descriptive-jamovi-gender" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-pos="H" data-fig-align="center" alt="Et jamovi-skjermbilde for analyse av variabelen Kjønn. Det står at _Kjønn_ er en nominell variabel der &quot;Jente&quot; er lagret som 1, &quot;Gutt&quot; er lagret som 2, og &quot;Annet&quot; er lagret som 3.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-descriptive-jamovi-gender-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="images/fig-descriptive-jamovi-gender.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Figur&nbsp;4.9. Et skjermbilde av jamovi som viser informasjon om variabelen Kjønn."><img src="images/fig-descriptive-jamovi-gender.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" data-fig-pos="H" alt="Et jamovi-skjermbilde for analyse av variabelen Kjønn. Det står at _Kjønn_ er en nominell variabel der &quot;Jente&quot; er lagret som 1, &quot;Gutt&quot; er lagret som 2, og &quot;Annet&quot; er lagret som 3."></a>
@@ -1221,7 +1389,7 @@ Figur&nbsp;4.9. Et skjermbilde av jamovi som viser informasjon om variabelen <em
 <p>En mer tilfredsstillende måte å finne typetallet på er å telle opp antallet av alle verdiene. Dette kalles å lage en <strong>frekvenstabell</strong>. I jamovi kan man akkurat som før trykke på “Analyses” → “Exploration” → “Descriptives”, men nå kan man velge “Frequency table”, se <a href="#fig-descriptive-jamovi-frequency-table" class="quarto-xref">Figur&nbsp;<span>4.10</span></a>.</p>
 <div class="cell enlarge-image" data-layout-align="center" data-out.wdith="100%">
 <div class="cell-output-display">
-<div id="fig-descriptive-jamovi-frequency-table" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Et skjermbilde av jamovi som viser frekvenstabell til _Kjønn_." data-fig-pos="H">
+<div id="fig-descriptive-jamovi-frequency-table" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-pos="H" data-fig-align="center" alt="Et skjermbilde av jamovi som viser frekvenstabell til _Kjønn_.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-descriptive-jamovi-frequency-table-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="images/fig-descriptive-jamovi-frequency-table.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="Figur&nbsp;4.10. Et skjermbilde av jamovi som viser frekvenstabell til Kjønn."><img src="images/fig-descriptive-jamovi-frequency-table.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" data-fig-pos="H" alt="Et skjermbilde av jamovi som viser frekvenstabell til _Kjønn_."></a>
@@ -1245,7 +1413,7 @@ Figur&nbsp;4.10. Et skjermbilde av jamovi som viser frekvenstabell til <em>Kjøn
 <p><strong>Variasjonsbredden</strong> er det aller enkleste spredningsmålet. Den regnes ut ved å ta den største verdien minus den minste verdien. I <a href="#fig-descriptive-jamovi-dispersion" class="quarto-xref">Figur&nbsp;<span>4.11</span></a></p>
 <div class="cell enlarge-image" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-descriptive-jamovi-dispersion" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Et skjermbilde av jamovi som likner på de foregående, men der boksene for &quot;Dispersion&quot; er krysset av; Std. deviation, Variance, Range, Minimum, Maximum" data-fig-pos="H">
+<div id="fig-descriptive-jamovi-dispersion" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-pos="H" data-fig-align="center" alt="Et skjermbilde av jamovi som likner på de foregående, men der boksene for &quot;Dispersion&quot; er krysset av; Std. deviation, Variance, Range, Minimum, Maximum">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-descriptive-jamovi-dispersion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="images/fig-descriptive-jamovi-dispersion.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="Figur&nbsp;4.11. Et skjermbilde av hvordan man finner ulike spredningsmål i jamovi"><img src="images/fig-descriptive-jamovi-dispersion.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" data-fig-pos="H" alt="Et skjermbilde av jamovi som likner på de foregående, men der boksene for &quot;Dispersion&quot; er krysset av; Std. deviation, Variance, Range, Minimum, Maximum"></a>
@@ -1917,6 +2085,19 @@ Fraillon, J., Friedman, T., &amp; Fraillon, J. (Eds.). (2024). <em><span>ICCS</s
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {

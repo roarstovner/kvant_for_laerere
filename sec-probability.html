@@ -58,10 +58,14 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-8ef56b68f8fa1e9d2ba328e99e439f80.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-fd5afcc29437f4ae951c5494600eaeaa.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-89d524cf73f3b2250d5e74ecba7e97ca.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-32c0091d9c65541b54b40246001d65bb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-89d524cf73f3b2250d5e74ecba7e97ca.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -164,7 +168,169 @@ window.Quarto = {
 <meta property="og:image:width" content="1645">
 </head>
 
-<body class="nav-sidebar floating quarto-light">
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -192,6 +358,7 @@ window.Quarto = {
         <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/roarstovner/kvant_for_laerere" title="Kildekode" class="quarto-navigation-tool px-1" aria-label="Kildekode"><i class="bi bi-github"></i></a>
     <a href="./Kvantitative-metoder-for-lærere.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Bytt mørk modus"><i class="bi"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Bytt lesermodus">
   <div class="quarto-reader-toggle-btn">
   <i class="bi"></i>
@@ -312,7 +479,7 @@ window.Quarto = {
   <li><a href="#sec-probability-distributions" id="toc-sec-probability-distributions" class="nav-link" data-scroll-target="#sec-probability-distributions"><span class="header-section-number">6.3</span> Sannsynlighetsfordelinger</a></li>
   <li><a href="#sec-probability-some-distributions" id="toc-sec-probability-some-distributions" class="nav-link" data-scroll-target="#sec-probability-some-distributions"><span class="header-section-number">6.4</span> Noen vanlige sannsynlighetsfordelinger</a>
   <ul class="collapse">
-  <li><a href="#binomialfordelingen" id="toc-binomialfordelingen" class="nav-link" data-scroll-target="#binomialfordelingen"><span class="header-section-number">6.4.1</span> Binomialfordelingen</a></li>
+  <li><a href="#sec-probability-binomial" id="toc-sec-probability-binomial" class="nav-link" data-scroll-target="#sec-probability-binomial"><span class="header-section-number">6.4.1</span> Binomialfordelingen</a></li>
   <li><a href="#sec-probability-normal" id="toc-sec-probability-normal" class="nav-link" data-scroll-target="#sec-probability-normal"><span class="header-section-number">6.4.2</span> Normalfordelingen</a></li>
   <li><a href="#sec-probability-other-distributions" id="toc-sec-probability-other-distributions" class="nav-link" data-scroll-target="#sec-probability-other-distributions"><span class="header-section-number">6.4.3</span> De andre sannsynlighetsfordelingene vi trenger</a></li>
   </ul></li>
@@ -322,6 +489,7 @@ window.Quarto = {
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sec-probability.html">Statistisk teori</a></li><li class="breadcrumb-item"><a href="./sec-probability.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Sannsynlighet</span></a></li></ol></nav><h1 class="title display-7"><span id="sec-probability" class="quarto-section-identifier"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Sannsynlighet</span></span></h1></header>
+
 
 <header id="title-block-header">
 
@@ -606,7 +774,7 @@ Tabell&nbsp;6.1. Myntkast og andel kron
 <p>Dessverre har jeg ikke et uendelig antall mynter eller den uendelige tålmodigheten som kreves for å kaste en mynt et uendelig antall ganger. Men jeg har en datamaskin, og datamaskiner er utmerkede til tankeløse repetitive oppgaver. Så jeg ba datamaskinen min simulere å kaste en mynt 1000 ganger og tegnet deretter et bilde av hva som skjer med andelen <span class="math inline">\(\frac{N_K}{N}\)</span> når <span class="math inline">\(N\)</span> øker. Faktisk gjorde jeg det fire ganger bare for å være sikker på at resultatet ikke var en tilfeldighet. Resultatene vises i <a href="#fig-probability-coin-simul" class="quarto-xref">Figur&nbsp;<span>6.1</span></a>. Som du kan se, slutter andelen observerte kroner til slutt å svinge og roer seg ned. Når det skjer, er tallet den til slutt slår seg til ro på den sanne sannsynligheten for kron.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-probability-coin-simul" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-pos="H" data-fig-align="center" alt="Fire linjediagram som hver viser andelen kroner versus antall myntkast, fra 0 til 1000 kast. Alle diagrammene demonstrerer konvergens mot 0,5 når antall kast øker, med innledende svingninger som stabiliserer seg over tid">
+<div id="fig-probability-coin-simul" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-pos="H" alt="Fire linjediagram som hver viser andelen kroner versus antall myntkast, fra 0 til 1000 kast. Alle diagrammene demonstrerer konvergens mot 0,5 når antall kast øker, med innledende svingninger som stabiliserer seg over tid" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-probability-coin-simul-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="sec-probability_files/figure-html/fig-probability-coin-simul-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figur&nbsp;6.1. En illustrasjon av hvordan frekventistisk sannsynlighet fungerer. Hvis du kaster en rettferdig mynt om og om igjen, vil andelen kroner du har sett til slutt stabilisere seg og konvergere mot den sanne sannsynligheten på 0,5. Hvert panel viser fire forskjellige simulerte eksperimenter. I hvert tilfelle later vi som om vi kastet en mynt 1000 ganger og holdt oversikt over andelen kast som var kroner underveis. Selv om ingen av disse sekvensene faktisk endte opp med en eksakt verdi på 0,5, ville de ha gjort det hvis vi hadde utvidet eksperimentet til et uendelig antall myntkast"><img src="sec-probability_files/figure-html/fig-probability-coin-simul-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%" data-fig-pos="H" alt="Fire linjediagram som hver viser andelen kroner versus antall myntkast, fra 0 til 1000 kast. Alle diagrammene demonstrerer konvergens mot 0,5 når antall kast øker, med innledende svingninger som stabiliserer seg over tid"></a>
@@ -644,7 +812,7 @@ Tabell&nbsp;6.2. En sannsynlighetsfordeling for buksebruk
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-probability-pants" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-pos="h!" data-fig-align="center" alt="Stolpediagram som viser sannsynligheten for forskjellige hendelser. Blå jeans har høyest sannsynlighet på 0,5, fulgt av grå jeans rundt 0,3. Sorte jeans og blå joggebukse har samme sannsynlighet nær 0,1, mens den sorte dressen har en sannsynlighet på 0.">
+<div id="fig-probability-pants" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-pos="h!" alt="Stolpediagram som viser sannsynligheten for forskjellige hendelser. Blå jeans har høyest sannsynlighet på 0,5, fulgt av grå jeans rundt 0,3. Sorte jeans og blå joggebukse har samme sannsynlighet nær 0,1, mens den sorte dressen har en sannsynlighet på 0." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-probability-pants-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="sec-probability_files/figure-html/fig-probability-pants-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figur&nbsp;6.2. En visuell fremstilling av “bukse”-sannsynlighetsfordelingen. Det er fem “elementære hendelser”, som tilsvarer de fem parene bukser jeg eier. Hver hendelse har en viss sannsynlighet for å inntreffe – denne sannsynligheten er et tall mellom 0 og 1. Summen av disse sannsynlighetene er 1"><img src="sec-probability_files/figure-html/fig-probability-pants-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" data-fig-pos="h!" alt="Stolpediagram som viser sannsynligheten for forskjellige hendelser. Blå jeans har høyest sannsynlighet på 0,5, fulgt av grå jeans rundt 0,3. Sorte jeans og blå joggebukse har samme sannsynlighet nær 0,1, mens den sorte dressen har en sannsynlighet på 0."></a>
@@ -662,15 +830,15 @@ Figur&nbsp;6.2. En visuell fremstilling av “bukse”-sannsynlighetsfordelingen
 <section id="sec-probability-some-distributions" class="level2" data-number="6.4">
 <h2 data-number="6.4" class="anchored" data-anchor-id="sec-probability-some-distributions"><span class="header-section-number">6.4</span> Noen vanlige sannsynlighetsfordelinger</h2>
 <p>Som du kan tenke deg, varierer sannsynlighetsfordelinger enormt. Men de er ikke alle like viktige. Denne boken bygger på fem fordelinger: binomisk fordeling, normalfordeling, <span class="math inline">\(t\)</span>-fordeling, <span class="math inline">\(\chi^2\)</span>-(“kjikvadrat”)-fordeling og <span class="math inline">\(F\)</span>-fordeling. Vi skal ikke lære noe om alle fem, men for å vise hva de går ut på og hvorfor normalfordelingen er så, vel, normal, skal jeg beskrive binomisk fordeling og hvordan den leder til normalfordelingen.</p>
-<section id="binomialfordelingen" class="level3" data-number="6.4.1">
-<h3 data-number="6.4.1" class="anchored" data-anchor-id="binomialfordelingen"><span class="header-section-number">6.4.1</span> Binomialfordelingen</h3>
+<section id="sec-probability-binomial" class="level3" data-number="6.4.1">
+<h3 data-number="6.4.1" class="anchored" data-anchor-id="sec-probability-binomial"><span class="header-section-number">6.4.1</span> Binomialfordelingen</h3>
 <p>Sannsynlighetsteorien oppstod i forsøket på å finne de beste strategiene i gambling-spill med terning eller kortstokk, så det er passende at vi diskuterer binomialfordelingen med terningkast. En <strong>binomialfordeling</strong> er sannsynlighetsfordelingen man får når man gjør et tilfeldig forsøk med to utfall (suksess og ikke suksses) mange ganger og teller opp antall suksesser man har fått. Man kaller sannsynligheten for suksess for for <span class="math inline">\(\theta\)</span> og antall ganger man gjør forsøket for <span class="math inline">\(N\)</span>.</p>
 <p>I vårt terningeksempel holder jeg 20 identiske sekssidede terninger. På den ene siden av hver terning er det et bilde av et dødninghode, de resterende fem sidene er hvite. Hvis jeg kaster alle 20 terningene, hva er sannsynligheten for at jeg får nøyaktig 4 dødninghoder? I utdanningsforskning kan dette tilsvare noe slikt: Hvis en av seks elever er på høyeste nivå lesing i 8. trinn og du trekker 20 elever tilfeldig, hva er sannsynligheten for at 4 av dem er på høyeste nivå? Dette høres oppkonstruert ut, men husk at sannsynlighetsregning er en forutsetning for inferensiell statistikk, og det statistiske spørsmålet kunne lydt: “Fire av 20 elever i utvalget er på høyeste nivå i lesing. Hvilken andel i populasjonen er på høyeste nivå i lesing?”</p>
 <p>Terningforsøket følger en binomisk sannsynlighetsfordeling siden det er 20 identiske forsøk, to hendelser (dødninghode og ikke dødninghode) og vi lurer på antall suksesser. Siden sjansen for dødninghode er 1 av 6, har vi <span class="math inline">\(\theta = \frac{1}{6} = 0.167\)</span>. Siden det er 20 forsøk har vi <span class="math inline">\(N = 20\)</span>. vet vi noe som tilsvarer 0,167. Dette er nok informasjon til å finne den binomiske fordelingen, som er vist i <a href="#fig-probability-binomial" class="quarto-xref">Figur&nbsp;<span>6.3</span></a>.</p>
 <p><a href="#fig-probability-binomial" class="quarto-xref">Figur&nbsp;<span>6.3</span></a> viser den binomiske sannsynlighetsfordelingen for alle mulige verdier av <span class="math inline">\(X\)</span> for vårt terningkast-eksperiment, fra <span class="math inline">\(X = 0\)</span> (ingen dødninghoder) helt opp til <span class="math inline">\(X = 20\)</span> (alle dødninghoder). Merk at dette i bunn og grunn er et stolpediagram, og er ikke forskjellig fra “bukse-sannsynlighets”-plottet jeg tegnet i <a href="#fig-probability-pants" class="quarto-xref">Figur&nbsp;<span>6.2</span></a>. På den horisontale aksen har vi alle de mulige hendelsene, og på den vertikale aksen kan vi lese av sannsynligheten for hver av disse hendelsene. Så sannsynligheten for å få <span class="math inline">\(4\)</span> dødninghoder av <span class="math inline">\(20\)</span> er omtrent <span class="math inline">\(0,20\)</span> (det faktiske svaret er <span class="math inline">\(0,2022036\)</span>). Med andre ord kan du forvente at det skjer omtrent 20% av gangene du gjentar dette eksperimentet.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-probability-binomial" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Et stolpediagram med tittelen &quot;Antall dødninghoder observert&quot; på x-aksen og &quot;Sannsynlighet&quot; på y-aksen. Grafen har stolper med høyder som avtar fra venstre til høyre, med topp rundt 4-5 dødninghoder, som illustrerer sannsynlighetsfordelingen av observerte dødninghoder">
+<div id="fig-probability-binomial" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Et stolpediagram med tittelen &quot;Antall dødninghoder observert&quot; på x-aksen og &quot;Sannsynlighet&quot; på y-aksen. Grafen har stolper med høyder som avtar fra venstre til høyre, med topp rundt 4-5 dødninghoder, som illustrerer sannsynlighetsfordelingen av observerte dødninghoder" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-probability-binomial-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="sec-probability_files/figure-html/fig-probability-binomial-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figur&nbsp;6.3. Binomialfordelingen med N = 20 og sannsynlighet for suksess på \theta = \frac{1}{6}. Hver vertikale stolpe viser sannsynligheten for ett spesifikt utfall (dvs. én mulig verdi av X). Fordi dette er en sannsynlighetsfordeling, må hver av sannsynlighetene være et tall mellom 0 og 1 og høydene på stolpene må summere til 1"><img src="sec-probability_files/figure-html/fig-probability-binomial-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="Et stolpediagram med tittelen &quot;Antall dødninghoder observert&quot; på x-aksen og &quot;Sannsynlighet&quot; på y-aksen. Grafen har stolper med høyder som avtar fra venstre til høyre, med topp rundt 4-5 dødninghoder, som illustrerer sannsynlighetsfordelingen av observerte dødninghoder"></a>
@@ -729,7 +897,7 @@ Figur&nbsp;6.4. To binomialfordelinger hvor jeg kaster en rettferdig mynt (<span
 <p>La oss opparbeide en følelse for hva det betyr at en variabel er normalfordelt. Ta en titt på <a href="#fig-probability-standard-normal" class="quarto-xref">Figur&nbsp;<span>6.5</span></a> som viser en normalfordeling med gjennomsnitt <span class="math inline">\(\mu = 0\)</span> og standardavvik <span class="math inline">\(\sigma = 1\)</span>. (Akkurat denne normalfordelingen kalles en standard normalfordeling.)</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-probability-standard-normal" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Et linjediagram som viser en klokkeformet kurve, normalfordelingen. X-aksen er merket &quot;Observert verdi,&quot; og spenner fra -3 til 3, og y-aksen er merket &quot;Sannsynlighetstetthet,&quot; og spenner fra 0,0 til 0,4. Toppen av kurven er ved x = 0.">
+<div id="fig-probability-standard-normal" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Et linjediagram som viser en klokkeformet kurve, normalfordelingen. X-aksen er merket &quot;Observert verdi,&quot; og spenner fra -3 til 3, og y-aksen er merket &quot;Sannsynlighetstetthet,&quot; og spenner fra 0,0 til 0,4. Toppen av kurven er ved x = 0." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-probability-standard-normal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="sec-probability_files/figure-html/fig-probability-standard-normal-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figur&nbsp;6.5. Normalfordelingen med gjennomsnitt \mu = 0 og standardavvik \sigma = 1. På x-aksen vil man typisk finne verdien til en variabel, og y-aksen forteller hvor sannsynlig det er at vi observerer den verdien."><img src="sec-probability_files/figure-html/fig-probability-standard-normal-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="Et linjediagram som viser en klokkeformet kurve, normalfordelingen. X-aksen er merket &quot;Observert verdi,&quot; og spenner fra -3 til 3, og y-aksen er merket &quot;Sannsynlighetstetthet,&quot; og spenner fra 0,0 til 0,4. Toppen av kurven er ved x = 0."></a>
@@ -745,7 +913,7 @@ Figur&nbsp;6.5. Normalfordelingen med gjennomsnitt <span class="math inline">\(\
 <p>La oss nå se om vi kan få en intuisjon for hvordan normalfordelingen fungerer. Først ser vi hva som skjer når vi leker med parametrene til fordelingen. <a href="#fig-probability-normals-mean" class="quarto-xref">Figur&nbsp;<span>6.6</span></a> viser derfor normalfordelinger som har forskjellige gjennomsnitt, men samme standardavvik. Alle disse fordelingene samme “bredde”. Den eneste forskjellen mellom dem er at de har blitt forskjøvet til venstre eller høyre. På alle andrem åter er de identiske. Derimot, hvis vi øker standardavviket mens vi holder gjennomsnittet konstant, forblir fordelingen sentrert på samme sted, men fordelingen blir bredere, som du kan se i <a href="#fig-probability-normals-sd" class="quarto-xref">Figur&nbsp;<span>6.7</span></a>. Legg merke til at når vi utvider fordelingen, synker høyden på toppen. Dette må skje, for på samme måte som høydene på søylene vi brukte til å tegne en diskret binomialfordeling må summere til 1, må det totale arealet under kurven for normalfordelingen være lik 1.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-probability-normals-mean" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Linjediagram som viser to overlappende sannsynlighetstetthets-kurver. Den heltrukne linjen har topp ved observert verdi 3, og den stiplede linjen har topp ved observert verdi 6. X-aksen er merket &quot;Observert verdi&quot; og y-aksen er merket &quot;Sannsynlighetstetthet&quot;">
+<div id="fig-probability-normals-mean" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Linjediagram som viser to overlappende sannsynlighetstetthets-kurver. Den heltrukne linjen har topp ved observert verdi 3, og den stiplede linjen har topp ved observert verdi 6. X-aksen er merket &quot;Observert verdi&quot; og y-aksen er merket &quot;Sannsynlighetstetthet&quot;" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-probability-normals-mean-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="sec-probability_files/figure-html/fig-probability-normals-mean-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figur&nbsp;6.6. En illustrasjon av hva som skjer når du endrer gjennomsnittet til en normalfordeling. Den heltrukne linjen viser en normalfordeling med gjennomsnitt \mu = 4. Den stiplede linjen viser en normalfordeling med gjennomsnitt \mu = 7. I begge tilfeller er standardavviket \sigma = 1. Ikke overraskende har de to fordelingene samme form, men den stiplede linjen er forskjøvet til høyre"><img src="sec-probability_files/figure-html/fig-probability-normals-mean-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="Linjediagram som viser to overlappende sannsynlighetstetthets-kurver. Den heltrukne linjen har topp ved observert verdi 3, og den stiplede linjen har topp ved observert verdi 6. X-aksen er merket &quot;Observert verdi&quot; og y-aksen er merket &quot;Sannsynlighetstetthet&quot;"></a>
@@ -759,7 +927,7 @@ Figur&nbsp;6.6. En illustrasjon av hva som skjer når du endrer gjennomsnittet t
 </div>
 <div class="cell" data-layout-align="center" data-outwidth="80%">
 <div class="cell-output-display">
-<div id="fig-probability-normals-sd" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Et sannsynlighetstetthet-plot som viser to kurver. Den heltrukne linjen representerer en normalfordeling sentrert ved 5 med høyere topp, mens den stiplede linjen representerer en bredere fordeling også sentrert ved 5. X-aksen er merket &quot;Observert verdi&quot; og y-aksen er merket &quot;Sannsynlighetstetthet&quot;">
+<div id="fig-probability-normals-sd" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Et sannsynlighetstetthet-plot som viser to kurver. Den heltrukne linjen representerer en normalfordeling sentrert ved 5 med høyere topp, mens den stiplede linjen representerer en bredere fordeling også sentrert ved 5. X-aksen er merket &quot;Observert verdi&quot; og y-aksen er merket &quot;Sannsynlighetstetthet&quot;" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-probability-normals-sd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="sec-probability_files/figure-html/fig-probability-normals-sd-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Figur&nbsp;6.7. En illustrasjon av hva som skjer når du endrer standardavviket til en normalfordeling. Begge fordelingene som er plottet i denne figuren har gjennomsnitt \mu = 5, men de har forskjellige standardavvik. Den heltrukne linjen viser en fordeling med standardavvik \sigma = 1, og den stiplede linjen viser en fordeling med standardavvik \sigma = 2. Som en konsekvens er begge fordelingene “sentrert” på samme sted, men den stiplede linjen er bredere enn den heltrukne"><img src="sec-probability_files/figure-html/fig-probability-normals-sd-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" alt="Et sannsynlighetstetthet-plot som viser to kurver. Den heltrukne linjen representerer en normalfordeling sentrert ved 5 med høyere topp, mens den stiplede linjen representerer en bredere fordeling også sentrert ved 5. X-aksen er merket &quot;Observert verdi&quot; og y-aksen er merket &quot;Sannsynlighetstetthet&quot;"></a>
@@ -774,7 +942,7 @@ Figur&nbsp;6.7. En illustrasjon av hva som skjer når du endrer standardavviket 
 <p>Uansett hvilke verdier gjennomsnittet og standardavviket har, vil alltid nøyaktig <span class="math inline">\(68.3\%\)</span> av arealet under kurven befinne seg innenfor 1 standardavvik fra gjennomsnittet, <span class="math inline">\(95.4\%\)</span> av fordelingen finner vi innenfor 2 standardavvik fra gjennomsnittet, og hele <span class="math inline">\(99.7\%\)</span> ligger innenfor 3 standardavvik. Denne regelen, som vi nevte i <a href="sec-descriptive.html#sec-descriptive-sd" class="quarto-xref"><span>Seksjon 4.4.4</span></a> og som ofte kalles “68-95-99.7-regelen”, er illustrert i <a href="#fig-probability-normal-shaded-sds" class="quarto-xref">Figur&nbsp;<span>6.8</span></a>. For en enda mer detaljert forklaring kan du også ta en titt på <a href="#fig-probability-normal-shaded-tails" class="quarto-xref">Figur&nbsp;<span>6.9</span></a>.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-probability-normal-shaded-sds" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="To normalfordelingskurver vises. Den venstre grafen er merket &quot;(a)&quot; med et skravert område på 68,3% under kurven, mens den høyre grafen er merket &quot;(b)&quot; med et skravert område på 95,4% under kurven. De skraverte områdene er sentrert rundt gjennomsnittet.">
+<div id="fig-probability-normal-shaded-sds" class="quarto-float quarto-figure quarto-figure-center anchored" alt="To normalfordelingskurver vises. Den venstre grafen er merket &quot;(a)&quot; med et skravert område på 68,3% under kurven, mens den høyre grafen er merket &quot;(b)&quot; med et skravert område på 95,4% under kurven. De skraverte områdene er sentrert rundt gjennomsnittet." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-probability-normal-shaded-sds-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="sec-probability_files/figure-html/fig-probability-normal-shaded-sds-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Figur&nbsp;6.8. Arealet under kurven forteller deg sannsynligheten for at en observasjon faller innenfor et bestemt område. De heltrukne linjene viser normalfordelinger med gjennomsnitt \mu = 0 og standardavvik \sigma = 1. De skraverte områdene illustrerer “areal under kurven” for to viktige tilfeller. I panel (a) kan vi se at det er 68,3% sjanse for at en observasjon vil falle innenfor ett standardavvik fra gjennomsnittet. I panel (b) ser vi at det er 95,4% sjanse for at en observasjon vil falle innenfor to standardavvik fra gjennomsnittet"><img src="sec-probability_files/figure-html/fig-probability-normal-shaded-sds-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="To normalfordelingskurver vises. Den venstre grafen er merket &quot;(a)&quot; med et skravert område på 68,3% under kurven, mens den høyre grafen er merket &quot;(b)&quot; med et skravert område på 95,4% under kurven. De skraverte områdene er sentrert rundt gjennomsnittet."></a>
@@ -788,7 +956,7 @@ Figur&nbsp;6.8. Arealet under kurven forteller deg sannsynligheten for at en obs
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-probability-normal-shaded-tails" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-pos="H" data-fig-align="center" alt="To klokkekurvediagrammer:- &quot;a&quot; viser en normalfordeling med et skravert område under kurven som strekker seg fra minus uendelig til omtrent -1, merket som 15,9%. &quot;b&quot; viser en normalfordeling med det skraverte området som strekker seg fra -1 til 1, merket som 34,1%">
+<div id="fig-probability-normal-shaded-tails" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-pos="H" alt="To klokkekurvediagrammer:- &quot;a&quot; viser en normalfordeling med et skravert område under kurven som strekker seg fra minus uendelig til omtrent -1, merket som 15,9%. &quot;b&quot; viser en normalfordeling med det skraverte området som strekker seg fra -1 til 1, merket som 34,1%" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-probability-normal-shaded-tails-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="sec-probability_files/figure-html/fig-probability-normal-shaded-tails-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="Figur&nbsp;6.9. To eksempler til på “arealet under kurven”-ideen. Det er 15,9% sjanse for at en observasjon er ett standardavvik under gjennomsnittet eller mindre (panel (a)), og 34,1% sjanse for at observasjonen er et sted mellom ett standardavvik under gjennomsnittet og gjennomsnittet (panel (b)). Legg merke til at hvis du legger disse to tallene sammen får du 15,9% + 34,1% = 50%. For normalfordelte data er det 50% sjanse for at en observasjon faller under gjennomsnittet. Og det innebærer selvfølgelig også at det er 50% sjanse for at den faller over gjennomsnittet"><img src="sec-probability_files/figure-html/fig-probability-normal-shaded-tails-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" data-fig-pos="H" alt="To klokkekurvediagrammer:- &quot;a&quot; viser en normalfordeling med et skravert område under kurven som strekker seg fra minus uendelig til omtrent -1, merket som 15,9%. &quot;b&quot; viser en normalfordeling med det skraverte området som strekker seg fra -1 til 1, merket som 34,1%"></a>
@@ -806,7 +974,7 @@ Figur&nbsp;6.9. To eksempler til på “arealet under kurven”-ideen. Det er 15
 <p>Normalfordelingen er den mest brukte fordelingen i statistikk (vi skal snart se hvorfor), og binomialfordelingen er svært nyttig for mange formål. Men statistikkens verden inneholder mange sannsynlighetsfordelinger, og vi vil møte to av dem, <span class="math inline">\(\chi^2\)</span>-fordelingen (uttales “kji-kvadrat”) og <span class="math inline">\(F\)</span>-fordelingen. Jeg vil ikke gå inn på formlene for disse, eller snakke om dem i stor detalj, men la oss se på hvordan de ser ut: <a href="#fig-probability-chi-square" class="quarto-xref">Figur&nbsp;<span>6.10</span></a> og <a href="#fig-probability-F" class="quarto-xref">Figur&nbsp;<span>6.11</span></a>.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-probability-chi-square" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-pos="H" data-fig-align="center" alt="Et linjediagram viser en sannsynlighetstetthetsfunksjon med &quot;Observert Verdi&quot; på x-aksen (0 til 10) og &quot;Sannsynlighetstetthet&quot; på y-aksen (0 til 0,25). Kurven når toppen nær &quot;Observert Verdi&quot; 1,5 og avtar asymptotisk mot x-aksen på begge sider">
+<div id="fig-probability-chi-square" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-pos="H" alt="Et linjediagram viser en sannsynlighetstetthetsfunksjon med &quot;Observert Verdi&quot; på x-aksen (0 til 10) og &quot;Sannsynlighetstetthet&quot; på y-aksen (0 til 0,25). Kurven når toppen nær &quot;Observert Verdi&quot; 1,5 og avtar asymptotisk mot x-aksen på begge sider" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-probability-chi-square-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="sec-probability_files/figure-html/fig-probability-chi-square-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="Figur&nbsp;6.10. \chi^2-fordeling med 3 frihetsgrader. Legg merke til at de observerte verdiene alltid må være større enn null, og at fordelingen er ganske skjev. Dette er nøkkelegenskapene til en kji-kvadrat-fordeling"><img src="sec-probability_files/figure-html/fig-probability-chi-square-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" data-fig-pos="H" alt="Et linjediagram viser en sannsynlighetstetthetsfunksjon med &quot;Observert Verdi&quot; på x-aksen (0 til 10) og &quot;Sannsynlighetstetthet&quot; på y-aksen (0 til 0,25). Kurven når toppen nær &quot;Observert Verdi&quot; 1,5 og avtar asymptotisk mot x-aksen på begge sider"></a>
@@ -820,7 +988,7 @@ Figur&nbsp;6.10. <span class="math inline">\(\chi^2\)</span>-fordeling med 3 fri
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-probability-F" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-pos="H" data-fig-align="center" alt="Et sannsynlighetstetthetsfunksjonsgraf som viser en kurve som når skarpt topp nær y-aksen og deretter gradvis avtar, og nærmer seg x-aksen mens den beveger seg til høyre. X-aksen er merket &quot;Observert Verdi&quot; og y-aksen er merket &quot;Sannsynlighetstetthet&quot;">
+<div id="fig-probability-F" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-pos="H" alt="Et sannsynlighetstetthetsfunksjonsgraf som viser en kurve som når skarpt topp nær y-aksen og deretter gradvis avtar, og nærmer seg x-aksen mens den beveger seg til høyre. X-aksen er merket &quot;Observert Verdi&quot; og y-aksen er merket &quot;Sannsynlighetstetthet&quot;" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-probability-F-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="sec-probability_files/figure-html/fig-probability-F-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12" title="Figur&nbsp;6.11. En F-fordeling med 3 og 5 frihetsgrader. Kvalitativt sett ser den ganske lik ut som en kji-kvadrat-fordeling, men de er ikke helt like generelt sett"><img src="sec-probability_files/figure-html/fig-probability-F-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" data-fig-pos="H" alt="Et sannsynlighetstetthetsfunksjonsgraf som viser en kurve som når skarpt topp nær y-aksen og deretter gradvis avtar, og nærmer seg x-aksen mens den beveger seg til høyre. X-aksen er merket &quot;Observert Verdi&quot; og y-aksen er merket &quot;Sannsynlighetstetthet&quot;"></a>
@@ -844,7 +1012,7 @@ Figur&nbsp;6.11. En <span class="math inline">\(F\)</span>-fordeling med 3 og 5 
 <li>Sannsynlighet versus statistikk: <a href="#hva-er-forskjellen-på-sannsynlighet-og-statistikk">Hva er forskjellen på sannsynlighet og statistikk?</a></li>
 <li><a href="#sec-probability-frequentism">Det frekventistiske synet på sannsynlighet</a>.</li>
 <li><a href="#sec-probability-distributions">Sannsynlighetsfordelinger</a>.</li>
-<li><a href="#binomialfordelingen">Binomialfordelingen</a>, <a href="#sec-probability-normal">Normalfordelingen</a>, og <a href="#sec-probability-other-distributions">De andre sannsynlighetsfordelingene vi trenger</a>, <span class="math inline">\(\chi^2\)</span> og <span class="math inline">\(F\)</span>.</li>
+<li><a href="#sec-probability-binomial">Binomialfordelingen</a>, <a href="#sec-probability-normal">Normalfordelingen</a>, og <a href="#sec-probability-other-distributions">De andre sannsynlighetsfordelingene vi trenger</a>, <span class="math inline">\(\chi^2\)</span> og <span class="math inline">\(F\)</span>.</li>
 </ul>
 <p>Dette kapittelet kan virke som en omvei. Mange kurs i statistikk hopper over å diskutere det grunnleggende og går heller rett videre til hvordan man regner ut ting. Vi gjør det omvendt og inkluderer noe av grunnlaget til statistikken og hopper over hvordan man faktisk gjør utregningene. Utregningene <em>er</em> opplysende, men de krever mer tid enn man har i et kurs om kvantitativ metode for lærere, og da er det viktigere å kunne tenke konseptuelt og få en datamaskin til å faktisk gjøre utregningene.</p>
 
@@ -871,6 +1039,19 @@ McShane, B. B., &amp; Gal, D. (2015). Blinding <span>Us</span> to the <span>Obvi
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {

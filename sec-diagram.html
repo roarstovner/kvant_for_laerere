@@ -58,10 +58,14 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-8ef56b68f8fa1e9d2ba328e99e439f80.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-fd5afcc29437f4ae951c5494600eaeaa.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-89d524cf73f3b2250d5e74ecba7e97ca.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-32c0091d9c65541b54b40246001d65bb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-89d524cf73f3b2250d5e74ecba7e97ca.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -164,7 +168,169 @@ window.Quarto = {
 <meta property="og:image:width" content="1152">
 </head>
 
-<body class="nav-sidebar floating quarto-light">
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -192,6 +358,7 @@ window.Quarto = {
         <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/roarstovner/kvant_for_laerere" title="Kildekode" class="quarto-navigation-tool px-1" aria-label="Kildekode"><i class="bi bi-github"></i></a>
     <a href="./Kvantitative-metoder-for-lærere.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Bytt mørk modus"><i class="bi"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Bytt lesermodus">
   <div class="quarto-reader-toggle-btn">
   <i class="bi"></i>
@@ -321,6 +488,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sec-descriptive.html">Deskriptiv statistikk</a></li><li class="breadcrumb-item"><a href="./sec-diagram.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Visualisere data</span></a></li></ol></nav><h1 class="title display-7"><span id="sec-diagram" class="quarto-section-identifier"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Visualisere data</span></span></h1></header>
 
+
 <header id="title-block-header">
 
 
@@ -339,7 +507,7 @@ window.Quarto = {
 <p>Det klassiske eksempelet for å vise hvor overbevisende og kraftfulle grafer kan være, er vist i <span class="quarto-unresolved-ref">?fig-diagrams-snow</span>. Det er en stilisert versjon av en av de mest berømte grafene gjennom tidene – legen John Snow sitt kart over koleradødsfall fra 1854. Bakgrunnen er et kolerautbrudd som hadde tatt livet av over 500 personer. På den tiden forklarte man hvordan sykdommer smittet med <em>miasme</em>-teorien. Denne teorien hadde vært til stor hjelp og hjalp leger med gode tiltak mot mange sykdommer, for eksempel bruk av munnbind og begraving av lik langt unna folk. At sykdom kunne smitte via vann var uhørt, og John Snow vant ikke gjennom med argumentene sine om at kolera smittet fra vannpumpen på Broad Street. Derfor lagde han en figur. Figuren er elegant, det er rett og slett et gatekart som viser vannpumper (blå stor prikk) og addressen til personer som døde av kolera (gul liten prikk). Selv et kjapt blikk på grafen gjør det klart at vannpumpen i Broad Street er en mistenkt. Med figuren klarte han å overbevise myndighetene om å fjerne håndtaket på pumpen, noe som stoppet utbruddet. Slik er kraften i en god datavisualisering.</p>
 <div class="cell enlarge-image" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-diagram-snow" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Et kart med tittelen &quot;Snows kolerakart over London&quot; viser oransje firkanter som indikerer kolerafaller klynget rundt Broad St. Blå prikker angir plasseringer av vannpumper, inkludert Castle St, Oxford St, Gt Marlborough, Crown Chapel og andre.">
+<div id="fig-diagram-snow" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Et kart med tittelen &quot;Snows kolerakart over London&quot; viser oransje firkanter som indikerer kolerafaller klynget rundt Broad St. Blå prikker angir plasseringer av vannpumper, inkludert Castle St, Oxford St, Gt Marlborough, Crown Chapel og andre." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-diagram-snow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="sec-diagram_files/figure-html/fig-diagram-snow-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figur&nbsp;5.1. En stilisert omtegning av John Snows originale kolerakart over London. Hver lille oransje firkant representerer plasseringen av et koleradødsfall og hver blå sirkel viser plasseringen av en vannpumpe. Som plottet tydelig viser, er kolerautbruddet sentrert svært nært Broad St-pumpen"><img src="sec-diagram_files/figure-html/fig-diagram-snow-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" alt="Et kart med tittelen &quot;Snows kolerakart over London&quot; viser oransje firkanter som indikerer kolerafaller klynget rundt Broad St. Blå prikker angir plasseringer av vannpumper, inkludert Castle St, Oxford St, Gt Marlborough, Crown Chapel og andre."></a>
@@ -659,7 +827,7 @@ Figur&nbsp;5.7. Stablet stolpediagram av <em>Forventet utdanning</em> for hvert 
 <p>Prinsippet er enkelt: Du deler opp de mulige verdiene i <strong>intervaller</strong> og teller hvor mange observasjoner som faller innenfor hvert intervall. Denne tellingen kalles frekvensen eller tettheten til intervallet og vises som en vertikal stolpe. Jeg tror noe av grunnen til at de oppfattes som så enkle er at de minner om stolpediagrammer. For variabelen <em>Likestilling</em> finner vi for eksempel rundt 4000 elever som fikk max poengsum, noe som representeres av høyden på den høyre stolpen i histogrammet <a href="#fig-diagram-ICCS-histogram" class="quarto-xref">Figur&nbsp;<span>5.8</span></a>, som vi også viste på starten av <a href="sec-descriptive.html#fig-descriptive-ICCS-histogram" class="quarto-xref">Figur&nbsp;<span>4.4</span></a>.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-diagram-ICCS-histogram" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Histogram som viser variabelen _Likestilling_. Den horisontale aksen ($x$-aksen) strekker seg fra fra 15 til 70, og den vertikale aksen (y-aksen) viser &quot;count&quot;, altså hvor mange svar som havner innad i hver søyle.">
+<div id="fig-diagram-ICCS-histogram" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Histogram som viser variabelen _Likestilling_. Den horisontale aksen ($x$-aksen) strekker seg fra fra 15 til 70, og den vertikale aksen (y-aksen) viser &quot;count&quot;, altså hvor mange svar som havner innad i hver søyle." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-diagram-ICCS-histogram-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="sec-diagram_files/figure-html/fig-diagram-ICCS-histogram-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Figur&nbsp;5.8. Et histogram av variabelen Likestilling fra ICCS 2022."><img src="sec-diagram_files/figure-html/fig-diagram-ICCS-histogram-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" alt="Histogram som viser variabelen _Likestilling_. Den horisontale aksen ($x$-aksen) strekker seg fra fra 15 til 70, og den vertikale aksen (y-aksen) viser &quot;count&quot;, altså hvor mange svar som havner innad i hver søyle."></a>
@@ -809,7 +977,7 @@ Figur&nbsp;5.14. Et fiolinplott av <em>Likestilling</em> per <em>Forventet utdan
 <div class="quarto-layout-row">
 <div class="cell enlarge-image quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-scatter" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="cell-output-display quarto-layout-cell-subref" data-ref-parent="fig-scatter">
-<div id="fig-diagram-jamovi-scatter" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Menyen der man velger innstillinger for &quot;Scatter plot&quot; i jamovi">
+<div id="fig-diagram-jamovi-scatter" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Menyen der man velger innstillinger for &quot;Scatter plot&quot; i jamovi" data-fig-align="center">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-diagram-jamovi-scatter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="images/fig-diagram-jamovi-scatter.png" class="lightbox" data-gallery="fig-scatter" title="Figur&nbsp;5.15&nbsp;(a). Trykk på “Analyses” → “Exploration” → “Scatter plot” for å få opp denne menyen."><img src="images/fig-diagram-jamovi-scatter.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" data-ref-parent="fig-scatter" alt="Menyen der man velger innstillinger for &quot;Scatter plot&quot; i jamovi"></a>
@@ -823,7 +991,7 @@ Figur&nbsp;5.14. Et fiolinplott av <em>Likestilling</em> per <em>Forventet utdan
 </div>
 <div class="cell enlarge-image quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-scatter" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="cell-output-display quarto-layout-cell-subref" data-ref-parent="fig-scatter">
-<div id="fig-diagram-scatter" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Et spredningsplott med Likestilling på y-aksen og Sosioøkonomisk status på x-aksen. Veldig mange punkter er samlet i en linje horisontal linje langs hele toppen, og ellers er punktene jevnt spredt utover.">
+<div id="fig-diagram-scatter" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Et spredningsplott med Likestilling på y-aksen og Sosioøkonomisk status på x-aksen. Veldig mange punkter er samlet i en linje horisontal linje langs hele toppen, og ellers er punktene jevnt spredt utover." data-fig-align="center">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-diagram-scatter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="images/fig-diagram-scatter.png" class="lightbox" data-gallery="fig-scatter" title="Figur&nbsp;5.15&nbsp;(b). Spredningsplott over Likestilling og Sosioøkonomisk status."><img src="images/fig-diagram-scatter.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" data-ref-parent="fig-scatter" alt="Et spredningsplott med Likestilling på y-aksen og Sosioøkonomisk status på x-aksen. Veldig mange punkter er samlet i en linje horisontal linje langs hele toppen, og ellers er punktene jevnt spredt utover."></a>
@@ -845,7 +1013,7 @@ Figur&nbsp;5.15. Spredningsplott med jamovi
 <p>For å gjøre sammenhengen tydeligere er det vanlig å legge en linje over spredningsplottet, slik som i <a href="#fig-diagram-scatter-line" class="quarto-xref">Figur&nbsp;<span>5.16</span></a>. Den viser at det er en svak positiv tendens, altså at elever med høy sosioøkonomisk status svarer høyere på spørsmålene om likestilling. Du lærer mer om slike linjer, regresjonslinjer, i <span class="quarto-unresolved-ref">?sec-regression</span>.</p>
 <div class="cell enlarge-image" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-diagram-scatter-line" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Samme figur som det forrige spredningsplottet, men med en linje lagt oppå punktene. Linja heller svakt oppover mot høyre.">
+<div id="fig-diagram-scatter-line" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Samme figur som det forrige spredningsplottet, men med en linje lagt oppå punktene. Linja heller svakt oppover mot høyre." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-diagram-scatter-line-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="images/fig-diagram-scatter-line.png" class="lightbox" data-gallery="quarto-lightbox-gallery-19" title="Figur&nbsp;5.16. Spredningsplott med en regresjonslinje lagt til"><img src="images/fig-diagram-scatter-line.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" alt="Samme figur som det forrige spredningsplottet, men med en linje lagt oppå punktene. Linja heller svakt oppover mot høyre."></a>
@@ -930,6 +1098,19 @@ Roser, M. (2022). Millions of children learn only very little. <span>How</span> 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {
