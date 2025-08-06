@@ -515,7 +515,7 @@ window.Quarto = {
 
 
 <p>Hver gang du skal analysere et nytt datasett, må du finne måter å beskrive dataene på en kompakt og lett forståelig måte. Dette kalles <strong>deskriptiv statistikk</strong>, eller beskrivende statistikk. Merk at når man beskriver dataene, så beskriver man kun utvalget, og statistikken som sier noe om populasjonen kommer senere i <span class="quarto-unresolved-ref">?sec-inferential</span>.</p>
-<p>Det har blitt ganske vanlig å høre begrunnelser som “det er det dataene viser” eller formaninger som “du må se på dataene, dummen!” Jeg tror ikke man kan lære så mye ved å se på dataene, men vi får vel prøve, da, og se hvor mye klokere vi blir. Jeg har forberedt et lite datasett fra den store internasjonale undersøkelsen ICCS, International Civic and Citizenship Education Study. Dette datasettet inneholder variable for kjønn, skole, land, trinn, forventet høyeste fullførte utdanning og en samlevariabel for hvor enig man er i at kjønnene bør ha like rettigheter. Datasettet har 8583 rader, én rad for hver elev, men vi viser bare 50 rader:</p>
+<p>Det har blitt ganske vanlig å høre begrunnelser som “det er det dataene viser” eller formaninger som “du må se på dataene, dummen!” Jeg tror ikke man kan lære så mye ved å se på dataene, men vi får vel prøve, da, og se hvor mye klokere vi blir. Jeg har forberedt et lite datasett fra den store internasjonale undersøkelsen ICCS, International Civic and Citizenship Education Study. Dette datasettet inneholder variable for kjønn, skole, land, trinn, forventet høyeste fullførte utdanning og en samlevariabel for hvor enig man er i at kjønnene bør ha like rettigheter. Datasettet har 8622 rader, én rad for hver elev, men vi viser bare 50 rader:</p>
 <div class="cell" data-layout-align="center">
 <div id="tbl-ICCS-data" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -542,8 +542,8 @@ Tabell&nbsp;4.1. Noen få av variablene fra ICCS-studien.
 
     <script>
 
-      function styleCell_xh9eh0tr5paog5tpa3br(i, j, css_id) {
-          var table = document.getElementById("tinytable_xh9eh0tr5paog5tpa3br");
+      function styleCell_kaziop86xci30ttofnaj(i, j, css_id) {
+          var table = document.getElementById("tinytable_kaziop86xci30ttofnaj");
           var cell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
           if (cell) {
               console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
@@ -553,7 +553,7 @@ Tabell&nbsp;4.1. Noen få av variablene fra ICCS-studien.
           }
       }
       function insertSpanRow(i, colspan, content) {
-        var table = document.getElementById('tinytable_xh9eh0tr5paog5tpa3br');
+        var table = document.getElementById('tinytable_kaziop86xci30ttofnaj');
         // Find the row with data-row attribute matching i
         var targetRow = table.querySelector(`tr [data-row="${i}"]`).closest('tr');
         var newRow = table.insertRow(targetRow.rowIndex);
@@ -565,8 +565,8 @@ Tabell&nbsp;4.1. Noen få av variablene fra ICCS-studien.
         // this may be unsafe, but innerText does not interpret <br>
         newCell.innerHTML = content;
       }
-      function spanCell_xh9eh0tr5paog5tpa3br(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_xh9eh0tr5paog5tpa3br");
+      function spanCell_kaziop86xci30ttofnaj(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_kaziop86xci30ttofnaj");
         const targetCell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
         if (!targetCell) {
           console.warn(`Cell at (${i}, ${j}) not found.`);
@@ -597,18 +597,18 @@ Tabell&nbsp;4.1. Noen få av variablene fra ICCS-studien.
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: '50', j: 7 },  ], css_id: 'tinytable_css_2tg89pwf5bvlhry8o41y',}, 
-          { positions: [ { i: '1', j: 7 }, { i: '2', j: 7 }, { i: '3', j: 7 }, { i: '4', j: 7 }, { i: '5', j: 7 }, { i: '6', j: 7 }, { i: '7', j: 7 }, { i: '8', j: 7 }, { i: '9', j: 7 }, { i: '10', j: 7 }, { i: '11', j: 7 }, { i: '12', j: 7 }, { i: '13', j: 7 }, { i: '14', j: 7 }, { i: '15', j: 7 }, { i: '16', j: 7 }, { i: '17', j: 7 }, { i: '18', j: 7 }, { i: '19', j: 7 }, { i: '20', j: 7 }, { i: '21', j: 7 }, { i: '22', j: 7 }, { i: '23', j: 7 }, { i: '24', j: 7 }, { i: '25', j: 7 }, { i: '26', j: 7 }, { i: '27', j: 7 }, { i: '28', j: 7 }, { i: '29', j: 7 }, { i: '30', j: 7 }, { i: '31', j: 7 }, { i: '32', j: 7 }, { i: '33', j: 7 }, { i: '34', j: 7 }, { i: '35', j: 7 }, { i: '36', j: 7 }, { i: '37', j: 7 }, { i: '38', j: 7 }, { i: '39', j: 7 }, { i: '40', j: 7 }, { i: '41', j: 7 }, { i: '42', j: 7 }, { i: '43', j: 7 }, { i: '44', j: 7 }, { i: '45', j: 7 }, { i: '46', j: 7 }, { i: '47', j: 7 }, { i: '48', j: 7 }, { i: '49', j: 7 },  ], css_id: 'tinytable_css_14jhdpdrxiqo66a5bwt9',}, 
-          { positions: [ { i: '0', j: 7 },  ], css_id: 'tinytable_css_q53oc6a18cl1ei75zequ',}, 
-          { positions: [ { i: '50', j: 5 }, { i: '50', j: 1 }, { i: '50', j: 0 }, { i: '50', j: 2 }, { i: '50', j: 3 }, { i: '50', j: 4 }, { i: '50', j: 6 },  ], css_id: 'tinytable_css_vklbzm6x362fcc3u0gfp',}, 
-          { positions: [ { i: '2', j: 0 }, { i: '4', j: 0 }, { i: '1', j: 0 }, { i: '10', j: 0 }, { i: '7', j: 0 }, { i: '8', j: 0 }, { i: '5', j: 0 }, { i: '14', j: 0 }, { i: '15', j: 0 }, { i: '12', j: 0 }, { i: '17', j: 0 }, { i: '18', j: 0 }, { i: '6', j: 0 }, { i: '16', j: 0 }, { i: '21', j: 0 }, { i: '9', j: 0 }, { i: '23', j: 0 }, { i: '20', j: 0 }, { i: '25', j: 0 }, { i: '26', j: 0 }, { i: '27', j: 0 }, { i: '28', j: 0 }, { i: '29', j: 0 }, { i: '30', j: 0 }, { i: '31', j: 0 }, { i: '19', j: 0 }, { i: '33', j: 0 }, { i: '34', j: 0 }, { i: '35', j: 0 }, { i: '36', j: 0 }, { i: '37', j: 0 }, { i: '38', j: 0 }, { i: '39', j: 0 }, { i: '40', j: 0 }, { i: '41', j: 0 }, { i: '42', j: 0 }, { i: '3', j: 0 }, { i: '44', j: 0 }, { i: '45', j: 0 }, { i: '46', j: 0 }, { i: '47', j: 0 }, { i: '48', j: 0 }, { i: '49', j: 0 }, { i: '18', j: 3 }, { i: '11', j: 0 }, { i: '1', j: 1 }, { i: '2', j: 1 }, { i: '3', j: 1 }, { i: '4', j: 1 }, { i: '5', j: 1 }, { i: '6', j: 1 }, { i: '7', j: 1 }, { i: '8', j: 1 }, { i: '9', j: 1 }, { i: '10', j: 1 }, { i: '22', j: 0 }, { i: '12', j: 1 }, { i: '24', j: 0 }, { i: '14', j: 1 }, { i: '15', j: 1 }, { i: '16', j: 1 }, { i: '17', j: 1 }, { i: '18', j: 1 }, { i: '19', j: 1 }, { i: '20', j: 1 }, { i: '21', j: 1 }, { i: '22', j: 1 }, { i: '23', j: 1 }, { i: '24', j: 1 }, { i: '25', j: 1 }, { i: '26', j: 1 }, { i: '27', j: 1 }, { i: '28', j: 1 }, { i: '29', j: 1 }, { i: '30', j: 1 }, { i: '31', j: 1 }, { i: '43', j: 0 }, { i: '33', j: 1 }, { i: '34', j: 1 }, { i: '35', j: 1 }, { i: '36', j: 1 }, { i: '37', j: 1 }, { i: '38', j: 1 }, { i: '39', j: 1 }, { i: '40', j: 1 }, { i: '41', j: 1 }, { i: '42', j: 1 }, { i: '43', j: 1 }, { i: '44', j: 1 }, { i: '45', j: 1 }, { i: '46', j: 1 }, { i: '47', j: 1 }, { i: '48', j: 1 }, { i: '49', j: 1 }, { i: '18', j: 4 }, { i: '11', j: 1 }, { i: '1', j: 2 }, { i: '2', j: 2 }, { i: '3', j: 2 }, { i: '4', j: 2 }, { i: '5', j: 2 }, { i: '6', j: 2 }, { i: '7', j: 2 }, { i: '8', j: 2 }, { i: '9', j: 2 }, { i: '10', j: 2 }, { i: '11', j: 2 }, { i: '12', j: 2 }, { i: '13', j: 2 }, { i: '14', j: 2 }, { i: '15', j: 2 }, { i: '16', j: 2 }, { i: '17', j: 2 }, { i: '18', j: 2 }, { i: '19', j: 2 }, { i: '20', j: 2 }, { i: '21', j: 2 }, { i: '22', j: 2 }, { i: '23', j: 2 }, { i: '24', j: 2 }, { i: '25', j: 2 }, { i: '26', j: 2 }, { i: '27', j: 2 }, { i: '28', j: 2 }, { i: '29', j: 2 }, { i: '30', j: 2 }, { i: '31', j: 2 }, { i: '13', j: 0 }, { i: '33', j: 2 }, { i: '34', j: 2 }, { i: '35', j: 2 }, { i: '36', j: 2 }, { i: '37', j: 2 }, { i: '38', j: 2 }, { i: '39', j: 2 }, { i: '40', j: 2 }, { i: '41', j: 2 }, { i: '42', j: 2 }, { i: '43', j: 2 }, { i: '44', j: 2 }, { i: '45', j: 2 }, { i: '46', j: 2 }, { i: '47', j: 2 }, { i: '48', j: 2 }, { i: '49', j: 2 }, { i: '18', j: 5 }, { i: '32', j: 0 }, { i: '1', j: 3 }, { i: '2', j: 3 }, { i: '3', j: 3 }, { i: '4', j: 3 }, { i: '5', j: 3 }, { i: '6', j: 3 }, { i: '7', j: 3 }, { i: '8', j: 3 }, { i: '9', j: 3 }, { i: '10', j: 3 }, { i: '11', j: 3 }, { i: '12', j: 3 }, { i: '13', j: 3 }, { i: '14', j: 3 }, { i: '15', j: 3 }, { i: '16', j: 3 }, { i: '17', j: 3 }, { i: '37', j: 5 }, { i: '19', j: 3 }, { i: '20', j: 3 }, { i: '21', j: 3 }, { i: '22', j: 3 }, { i: '23', j: 3 }, { i: '24', j: 3 }, { i: '25', j: 3 }, { i: '26', j: 3 }, { i: '27', j: 3 }, { i: '28', j: 3 }, { i: '29', j: 3 }, { i: '30', j: 3 }, { i: '31', j: 3 }, { i: '13', j: 1 }, { i: '33', j: 3 }, { i: '34', j: 3 }, { i: '35', j: 3 }, { i: '36', j: 3 }, { i: '37', j: 3 }, { i: '38', j: 3 }, { i: '39', j: 3 }, { i: '40', j: 3 }, { i: '41', j: 3 }, { i: '42', j: 3 }, { i: '43', j: 3 }, { i: '44', j: 3 }, { i: '45', j: 3 }, { i: '46', j: 3 }, { i: '47', j: 3 }, { i: '48', j: 3 }, { i: '49', j: 3 }, { i: '18', j: 6 }, { i: '32', j: 1 }, { i: '1', j: 4 }, { i: '2', j: 4 }, { i: '3', j: 4 }, { i: '4', j: 4 }, { i: '5', j: 4 }, { i: '6', j: 4 }, { i: '7', j: 4 }, { i: '8', j: 4 }, { i: '9', j: 4 }, { i: '10', j: 4 }, { i: '11', j: 4 }, { i: '12', j: 4 }, { i: '13', j: 4 }, { i: '14', j: 4 }, { i: '15', j: 4 }, { i: '16', j: 4 }, { i: '17', j: 4 }, { i: '37', j: 6 }, { i: '19', j: 4 }, { i: '20', j: 4 }, { i: '21', j: 4 }, { i: '22', j: 4 }, { i: '23', j: 4 }, { i: '24', j: 4 }, { i: '25', j: 4 }, { i: '26', j: 4 }, { i: '27', j: 4 }, { i: '28', j: 4 }, { i: '29', j: 4 }, { i: '30', j: 4 }, { i: '31', j: 4 }, { i: '32', j: 4 }, { i: '33', j: 4 }, { i: '34', j: 4 }, { i: '35', j: 4 }, { i: '36', j: 4 }, { i: '37', j: 4 }, { i: '38', j: 4 }, { i: '39', j: 4 }, { i: '40', j: 4 }, { i: '41', j: 4 }, { i: '42', j: 4 }, { i: '43', j: 4 }, { i: '44', j: 4 }, { i: '45', j: 4 }, { i: '46', j: 4 }, { i: '47', j: 4 }, { i: '48', j: 4 }, { i: '49', j: 4 }, { i: '39', j: 5 }, { i: '32', j: 2 }, { i: '1', j: 5 }, { i: '2', j: 5 }, { i: '3', j: 5 }, { i: '4', j: 5 }, { i: '5', j: 5 }, { i: '6', j: 5 }, { i: '7', j: 5 }, { i: '8', j: 5 }, { i: '9', j: 5 }, { i: '10', j: 5 }, { i: '11', j: 5 }, { i: '12', j: 5 }, { i: '13', j: 5 }, { i: '14', j: 5 }, { i: '15', j: 5 }, { i: '16', j: 5 }, { i: '17', j: 5 }, { i: '7', j: 6 }, { i: '19', j: 5 }, { i: '20', j: 5 }, { i: '21', j: 5 }, { i: '22', j: 5 }, { i: '23', j: 5 }, { i: '24', j: 5 }, { i: '25', j: 5 }, { i: '26', j: 5 }, { i: '27', j: 5 }, { i: '28', j: 5 }, { i: '29', j: 5 }, { i: '30', j: 5 }, { i: '31', j: 5 }, { i: '32', j: 5 }, { i: '33', j: 5 }, { i: '34', j: 5 }, { i: '35', j: 5 }, { i: '36', j: 5 }, { i: '26', j: 6 }, { i: '38', j: 5 }, { i: '28', j: 6 }, { i: '40', j: 5 }, { i: '41', j: 5 }, { i: '42', j: 5 }, { i: '43', j: 5 }, { i: '44', j: 5 }, { i: '45', j: 5 }, { i: '46', j: 5 }, { i: '47', j: 5 }, { i: '48', j: 5 }, { i: '49', j: 5 }, { i: '39', j: 6 }, { i: '32', j: 3 }, { i: '1', j: 6 }, { i: '2', j: 6 }, { i: '3', j: 6 }, { i: '4', j: 6 }, { i: '5', j: 6 }, { i: '6', j: 6 }, { i: '47', j: 6 }, { i: '8', j: 6 }, { i: '9', j: 6 }, { i: '10', j: 6 }, { i: '11', j: 6 }, { i: '12', j: 6 }, { i: '13', j: 6 }, { i: '14', j: 6 }, { i: '15', j: 6 }, { i: '16', j: 6 }, { i: '17', j: 6 }, { i: '31', j: 6 }, { i: '19', j: 6 }, { i: '20', j: 6 }, { i: '21', j: 6 }, { i: '22', j: 6 }, { i: '23', j: 6 }, { i: '24', j: 6 }, { i: '25', j: 6 }, { i: '30', j: 6 }, { i: '27', j: 6 }, { i: '41', j: 6 }, { i: '29', j: 6 }, { i: '34', j: 6 }, { i: '44', j: 6 }, { i: '32', j: 6 }, { i: '33', j: 6 }, { i: '38', j: 6 }, { i: '35', j: 6 }, { i: '36', j: 6 }, { i: '45', j: 6 }, { i: '42', j: 6 }, { i: '43', j: 6 }, { i: '40', j: 6 }, { i: '49', j: 6 }, { i: '46', j: 6 }, { i: '48', j: 6 },  ], css_id: 'tinytable_css_ulr1udjn2pfiv2tgg8sm',}, 
-          { positions: [ { i: '0', j: 0 }, { i: '0', j: 2 }, { i: '0', j: 3 }, { i: '0', j: 4 }, { i: '0', j: 6 }, { i: '0', j: 5 }, { i: '0', j: 1 },  ], css_id: 'tinytable_css_u34cr2y7bbnnatg87vp3',}, 
+          { positions: [ { i: '50', j: 7 },  ], css_id: 'tinytable_css_zqqym2u1m28tut8zxlrs',}, 
+          { positions: [ { i: '1', j: 7 }, { i: '2', j: 7 }, { i: '3', j: 7 }, { i: '4', j: 7 }, { i: '5', j: 7 }, { i: '6', j: 7 }, { i: '7', j: 7 }, { i: '8', j: 7 }, { i: '9', j: 7 }, { i: '10', j: 7 }, { i: '11', j: 7 }, { i: '12', j: 7 }, { i: '13', j: 7 }, { i: '14', j: 7 }, { i: '15', j: 7 }, { i: '16', j: 7 }, { i: '17', j: 7 }, { i: '18', j: 7 }, { i: '19', j: 7 }, { i: '20', j: 7 }, { i: '21', j: 7 }, { i: '22', j: 7 }, { i: '23', j: 7 }, { i: '24', j: 7 }, { i: '25', j: 7 }, { i: '26', j: 7 }, { i: '27', j: 7 }, { i: '28', j: 7 }, { i: '29', j: 7 }, { i: '30', j: 7 }, { i: '31', j: 7 }, { i: '32', j: 7 }, { i: '33', j: 7 }, { i: '34', j: 7 }, { i: '35', j: 7 }, { i: '36', j: 7 }, { i: '37', j: 7 }, { i: '38', j: 7 }, { i: '39', j: 7 }, { i: '40', j: 7 }, { i: '41', j: 7 }, { i: '42', j: 7 }, { i: '43', j: 7 }, { i: '44', j: 7 }, { i: '45', j: 7 }, { i: '46', j: 7 }, { i: '47', j: 7 }, { i: '48', j: 7 }, { i: '49', j: 7 },  ], css_id: 'tinytable_css_gr6jhsgw11cn2h1bc5fy',}, 
+          { positions: [ { i: '0', j: 7 },  ], css_id: 'tinytable_css_usgjyow139w4o7okhu56',}, 
+          { positions: [ { i: '50', j: 5 }, { i: '50', j: 1 }, { i: '50', j: 0 }, { i: '50', j: 2 }, { i: '50', j: 3 }, { i: '50', j: 4 }, { i: '50', j: 6 },  ], css_id: 'tinytable_css_vjn8md5q0pgspqk6pj5t',}, 
+          { positions: [ { i: '2', j: 0 }, { i: '4', j: 0 }, { i: '1', j: 0 }, { i: '10', j: 0 }, { i: '7', j: 0 }, { i: '8', j: 0 }, { i: '5', j: 0 }, { i: '14', j: 0 }, { i: '15', j: 0 }, { i: '12', j: 0 }, { i: '17', j: 0 }, { i: '18', j: 0 }, { i: '6', j: 0 }, { i: '16', j: 0 }, { i: '21', j: 0 }, { i: '9', j: 0 }, { i: '23', j: 0 }, { i: '20', j: 0 }, { i: '25', j: 0 }, { i: '26', j: 0 }, { i: '27', j: 0 }, { i: '28', j: 0 }, { i: '29', j: 0 }, { i: '30', j: 0 }, { i: '31', j: 0 }, { i: '19', j: 0 }, { i: '33', j: 0 }, { i: '34', j: 0 }, { i: '35', j: 0 }, { i: '36', j: 0 }, { i: '37', j: 0 }, { i: '38', j: 0 }, { i: '39', j: 0 }, { i: '40', j: 0 }, { i: '41', j: 0 }, { i: '42', j: 0 }, { i: '3', j: 0 }, { i: '44', j: 0 }, { i: '45', j: 0 }, { i: '46', j: 0 }, { i: '47', j: 0 }, { i: '48', j: 0 }, { i: '49', j: 0 }, { i: '18', j: 3 }, { i: '11', j: 0 }, { i: '1', j: 1 }, { i: '2', j: 1 }, { i: '3', j: 1 }, { i: '4', j: 1 }, { i: '5', j: 1 }, { i: '6', j: 1 }, { i: '7', j: 1 }, { i: '8', j: 1 }, { i: '9', j: 1 }, { i: '10', j: 1 }, { i: '22', j: 0 }, { i: '12', j: 1 }, { i: '24', j: 0 }, { i: '14', j: 1 }, { i: '15', j: 1 }, { i: '16', j: 1 }, { i: '17', j: 1 }, { i: '18', j: 1 }, { i: '19', j: 1 }, { i: '20', j: 1 }, { i: '21', j: 1 }, { i: '22', j: 1 }, { i: '23', j: 1 }, { i: '24', j: 1 }, { i: '25', j: 1 }, { i: '26', j: 1 }, { i: '27', j: 1 }, { i: '28', j: 1 }, { i: '29', j: 1 }, { i: '30', j: 1 }, { i: '31', j: 1 }, { i: '43', j: 0 }, { i: '33', j: 1 }, { i: '34', j: 1 }, { i: '35', j: 1 }, { i: '36', j: 1 }, { i: '37', j: 1 }, { i: '38', j: 1 }, { i: '39', j: 1 }, { i: '40', j: 1 }, { i: '41', j: 1 }, { i: '42', j: 1 }, { i: '43', j: 1 }, { i: '44', j: 1 }, { i: '45', j: 1 }, { i: '46', j: 1 }, { i: '47', j: 1 }, { i: '48', j: 1 }, { i: '49', j: 1 }, { i: '18', j: 4 }, { i: '11', j: 1 }, { i: '1', j: 2 }, { i: '2', j: 2 }, { i: '3', j: 2 }, { i: '4', j: 2 }, { i: '5', j: 2 }, { i: '6', j: 2 }, { i: '7', j: 2 }, { i: '8', j: 2 }, { i: '9', j: 2 }, { i: '10', j: 2 }, { i: '11', j: 2 }, { i: '12', j: 2 }, { i: '13', j: 2 }, { i: '14', j: 2 }, { i: '15', j: 2 }, { i: '16', j: 2 }, { i: '17', j: 2 }, { i: '18', j: 2 }, { i: '19', j: 2 }, { i: '20', j: 2 }, { i: '21', j: 2 }, { i: '22', j: 2 }, { i: '23', j: 2 }, { i: '24', j: 2 }, { i: '25', j: 2 }, { i: '26', j: 2 }, { i: '27', j: 2 }, { i: '28', j: 2 }, { i: '29', j: 2 }, { i: '30', j: 2 }, { i: '31', j: 2 }, { i: '13', j: 0 }, { i: '33', j: 2 }, { i: '34', j: 2 }, { i: '35', j: 2 }, { i: '36', j: 2 }, { i: '37', j: 2 }, { i: '38', j: 2 }, { i: '39', j: 2 }, { i: '40', j: 2 }, { i: '41', j: 2 }, { i: '42', j: 2 }, { i: '43', j: 2 }, { i: '44', j: 2 }, { i: '45', j: 2 }, { i: '46', j: 2 }, { i: '47', j: 2 }, { i: '48', j: 2 }, { i: '49', j: 2 }, { i: '18', j: 5 }, { i: '32', j: 0 }, { i: '1', j: 3 }, { i: '2', j: 3 }, { i: '3', j: 3 }, { i: '4', j: 3 }, { i: '5', j: 3 }, { i: '6', j: 3 }, { i: '7', j: 3 }, { i: '8', j: 3 }, { i: '9', j: 3 }, { i: '10', j: 3 }, { i: '11', j: 3 }, { i: '12', j: 3 }, { i: '13', j: 3 }, { i: '14', j: 3 }, { i: '15', j: 3 }, { i: '16', j: 3 }, { i: '17', j: 3 }, { i: '37', j: 5 }, { i: '19', j: 3 }, { i: '20', j: 3 }, { i: '21', j: 3 }, { i: '22', j: 3 }, { i: '23', j: 3 }, { i: '24', j: 3 }, { i: '25', j: 3 }, { i: '26', j: 3 }, { i: '27', j: 3 }, { i: '28', j: 3 }, { i: '29', j: 3 }, { i: '30', j: 3 }, { i: '31', j: 3 }, { i: '13', j: 1 }, { i: '33', j: 3 }, { i: '34', j: 3 }, { i: '35', j: 3 }, { i: '36', j: 3 }, { i: '37', j: 3 }, { i: '38', j: 3 }, { i: '39', j: 3 }, { i: '40', j: 3 }, { i: '41', j: 3 }, { i: '42', j: 3 }, { i: '43', j: 3 }, { i: '44', j: 3 }, { i: '45', j: 3 }, { i: '46', j: 3 }, { i: '47', j: 3 }, { i: '48', j: 3 }, { i: '49', j: 3 }, { i: '18', j: 6 }, { i: '32', j: 1 }, { i: '1', j: 4 }, { i: '2', j: 4 }, { i: '3', j: 4 }, { i: '4', j: 4 }, { i: '5', j: 4 }, { i: '6', j: 4 }, { i: '7', j: 4 }, { i: '8', j: 4 }, { i: '9', j: 4 }, { i: '10', j: 4 }, { i: '11', j: 4 }, { i: '12', j: 4 }, { i: '13', j: 4 }, { i: '14', j: 4 }, { i: '15', j: 4 }, { i: '16', j: 4 }, { i: '17', j: 4 }, { i: '37', j: 6 }, { i: '19', j: 4 }, { i: '20', j: 4 }, { i: '21', j: 4 }, { i: '22', j: 4 }, { i: '23', j: 4 }, { i: '24', j: 4 }, { i: '25', j: 4 }, { i: '26', j: 4 }, { i: '27', j: 4 }, { i: '28', j: 4 }, { i: '29', j: 4 }, { i: '30', j: 4 }, { i: '31', j: 4 }, { i: '32', j: 4 }, { i: '33', j: 4 }, { i: '34', j: 4 }, { i: '35', j: 4 }, { i: '36', j: 4 }, { i: '37', j: 4 }, { i: '38', j: 4 }, { i: '39', j: 4 }, { i: '40', j: 4 }, { i: '41', j: 4 }, { i: '42', j: 4 }, { i: '43', j: 4 }, { i: '44', j: 4 }, { i: '45', j: 4 }, { i: '46', j: 4 }, { i: '47', j: 4 }, { i: '48', j: 4 }, { i: '49', j: 4 }, { i: '39', j: 5 }, { i: '32', j: 2 }, { i: '1', j: 5 }, { i: '2', j: 5 }, { i: '3', j: 5 }, { i: '4', j: 5 }, { i: '5', j: 5 }, { i: '6', j: 5 }, { i: '7', j: 5 }, { i: '8', j: 5 }, { i: '9', j: 5 }, { i: '10', j: 5 }, { i: '11', j: 5 }, { i: '12', j: 5 }, { i: '13', j: 5 }, { i: '14', j: 5 }, { i: '15', j: 5 }, { i: '16', j: 5 }, { i: '17', j: 5 }, { i: '7', j: 6 }, { i: '19', j: 5 }, { i: '20', j: 5 }, { i: '21', j: 5 }, { i: '22', j: 5 }, { i: '23', j: 5 }, { i: '24', j: 5 }, { i: '25', j: 5 }, { i: '26', j: 5 }, { i: '27', j: 5 }, { i: '28', j: 5 }, { i: '29', j: 5 }, { i: '30', j: 5 }, { i: '31', j: 5 }, { i: '32', j: 5 }, { i: '33', j: 5 }, { i: '34', j: 5 }, { i: '35', j: 5 }, { i: '36', j: 5 }, { i: '26', j: 6 }, { i: '38', j: 5 }, { i: '28', j: 6 }, { i: '40', j: 5 }, { i: '41', j: 5 }, { i: '42', j: 5 }, { i: '43', j: 5 }, { i: '44', j: 5 }, { i: '45', j: 5 }, { i: '46', j: 5 }, { i: '47', j: 5 }, { i: '48', j: 5 }, { i: '49', j: 5 }, { i: '39', j: 6 }, { i: '32', j: 3 }, { i: '1', j: 6 }, { i: '2', j: 6 }, { i: '3', j: 6 }, { i: '4', j: 6 }, { i: '5', j: 6 }, { i: '6', j: 6 }, { i: '47', j: 6 }, { i: '8', j: 6 }, { i: '9', j: 6 }, { i: '10', j: 6 }, { i: '11', j: 6 }, { i: '12', j: 6 }, { i: '13', j: 6 }, { i: '14', j: 6 }, { i: '15', j: 6 }, { i: '16', j: 6 }, { i: '17', j: 6 }, { i: '31', j: 6 }, { i: '19', j: 6 }, { i: '20', j: 6 }, { i: '21', j: 6 }, { i: '22', j: 6 }, { i: '23', j: 6 }, { i: '24', j: 6 }, { i: '25', j: 6 }, { i: '30', j: 6 }, { i: '27', j: 6 }, { i: '41', j: 6 }, { i: '29', j: 6 }, { i: '34', j: 6 }, { i: '44', j: 6 }, { i: '32', j: 6 }, { i: '33', j: 6 }, { i: '38', j: 6 }, { i: '35', j: 6 }, { i: '36', j: 6 }, { i: '45', j: 6 }, { i: '42', j: 6 }, { i: '43', j: 6 }, { i: '40', j: 6 }, { i: '49', j: 6 }, { i: '46', j: 6 }, { i: '48', j: 6 },  ], css_id: 'tinytable_css_7h8669nmpws9caop6omp',}, 
+          { positions: [ { i: '0', j: 0 }, { i: '0', j: 2 }, { i: '0', j: 3 }, { i: '0', j: 4 }, { i: '0', j: 6 }, { i: '0', j: 5 }, { i: '0', j: 1 },  ], css_id: 'tinytable_css_2szlja7k1c57vzdfmw9o',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  styleCell_xh9eh0tr5paog5tpa3br(cell.i, cell.j, group.css_id);
+                  styleCell_kaziop86xci30ttofnaj(cell.i, cell.j, group.css_id);
               });
           });
       });
@@ -616,15 +616,15 @@ Tabell&nbsp;4.1. Noen få av variablene fra ICCS-studien.
 
     <style>
       /* tinytable css entries after */
-      .table td.tinytable_css_2tg89pwf5bvlhry8o41y, .table th.tinytable_css_2tg89pwf5bvlhry8o41y { border-bottom: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_14jhdpdrxiqo66a5bwt9, .table th.tinytable_css_14jhdpdrxiqo66a5bwt9 { padding-bottom: 0.1em; }
-      .table td.tinytable_css_q53oc6a18cl1ei75zequ, .table th.tinytable_css_q53oc6a18cl1ei75zequ { border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; border-bottom: solid #d3d8dc 0.1em; padding-bottom: 0.1em; }
-      .table td.tinytable_css_vklbzm6x362fcc3u0gfp, .table th.tinytable_css_vklbzm6x362fcc3u0gfp { border-bottom: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.1em; padding-right: 0.5em; }
-      .table td.tinytable_css_ulr1udjn2pfiv2tgg8sm, .table th.tinytable_css_ulr1udjn2pfiv2tgg8sm { padding-right: 0.5em; padding-bottom: 0.1em; }
-      .table td.tinytable_css_u34cr2y7bbnnatg87vp3, .table th.tinytable_css_u34cr2y7bbnnatg87vp3 { border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; border-bottom: solid #d3d8dc 0.1em; padding-right: 0.5em; padding-bottom: 0.1em; }
+      .table td.tinytable_css_zqqym2u1m28tut8zxlrs, .table th.tinytable_css_zqqym2u1m28tut8zxlrs { border-bottom: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_gr6jhsgw11cn2h1bc5fy, .table th.tinytable_css_gr6jhsgw11cn2h1bc5fy { padding-bottom: 0.1em; }
+      .table td.tinytable_css_usgjyow139w4o7okhu56, .table th.tinytable_css_usgjyow139w4o7okhu56 { border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; border-bottom: solid #d3d8dc 0.1em; padding-bottom: 0.1em; }
+      .table td.tinytable_css_vjn8md5q0pgspqk6pj5t, .table th.tinytable_css_vjn8md5q0pgspqk6pj5t { border-bottom: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.1em; padding-right: 0.5em; }
+      .table td.tinytable_css_7h8669nmpws9caop6omp, .table th.tinytable_css_7h8669nmpws9caop6omp { padding-right: 0.5em; padding-bottom: 0.1em; }
+      .table td.tinytable_css_2szlja7k1c57vzdfmw9o, .table th.tinytable_css_2szlja7k1c57vzdfmw9o { border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; border-bottom: solid #d3d8dc 0.1em; padding-right: 0.5em; padding-bottom: 0.1em; }
     </style>
     <div class="container">
-      <table class="table table-borderless" id="tinytable_xh9eh0tr5paog5tpa3br" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+      <table class="table table-borderless" id="tinytable_kaziop86xci30ttofnaj" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
         <thead>
         
               <tr>
@@ -642,503 +642,503 @@ Tabell&nbsp;4.1. Noen få av variablene fra ICCS-studien.
         <tbody>
                 <tr>
                   <td data-row="1" data-col="0">Spania</td>
-                  <td data-row="1" data-col="1">50440404</td>
-                  <td data-row="1" data-col="2">5044</td>
+                  <td data-row="1" data-col="1">51180119</td>
+                  <td data-row="1" data-col="2">5118</td>
                   <td data-row="1" data-col="3">8</td>
-                  <td data-row="1" data-col="4">Jente</td>
-                  <td data-row="1" data-col="5">Ungdomsskole</td>
-                  <td data-row="1" data-col="6">65.70400</td>
-                  <td data-row="1" data-col="7">-1.52547</td>
+                  <td data-row="1" data-col="4">Gutt</td>
+                  <td data-row="1" data-col="5">Kort utdanning</td>
+                  <td data-row="1" data-col="6">42.63710</td>
+                  <td data-row="1" data-col="7">0.17825</td>
                 </tr>
                 <tr>
                   <td data-row="2" data-col="0">Spania</td>
-                  <td data-row="2" data-col="1">50950107</td>
-                  <td data-row="2" data-col="2">5095</td>
+                  <td data-row="2" data-col="1">51210112</td>
+                  <td data-row="2" data-col="2">5121</td>
                   <td data-row="2" data-col="3">8</td>
                   <td data-row="2" data-col="4">Gutt</td>
-                  <td data-row="2" data-col="5">VGS</td>
-                  <td data-row="2" data-col="6">65.70400</td>
-                  <td data-row="2" data-col="7">0.01987</td>
+                  <td data-row="2" data-col="5">Ungdomsskole</td>
+                  <td data-row="2" data-col="6">57.13913</td>
+                  <td data-row="2" data-col="7">1.22299</td>
                 </tr>
                 <tr>
                   <td data-row="3" data-col="0">Spania</td>
-                  <td data-row="3" data-col="1">50130106</td>
-                  <td data-row="3" data-col="2">5013</td>
+                  <td data-row="3" data-col="1">51430108</td>
+                  <td data-row="3" data-col="2">5143</td>
                   <td data-row="3" data-col="3">8</td>
                   <td data-row="3" data-col="4">Jente</td>
                   <td data-row="3" data-col="5">VGS</td>
-                  <td data-row="3" data-col="6">52.66245</td>
-                  <td data-row="3" data-col="7">0.30340</td>
+                  <td data-row="3" data-col="6">49.42491</td>
+                  <td data-row="3" data-col="7">0.57663</td>
                 </tr>
                 <tr>
-                  <td data-row="4" data-col="0">Norge</td>
-                  <td data-row="4" data-col="1">51920121</td>
-                  <td data-row="4" data-col="2">5192</td>
-                  <td data-row="4" data-col="3">9</td>
-                  <td data-row="4" data-col="4">Gutt</td>
-                  <td data-row="4" data-col="5">VGS</td>
-                  <td data-row="4" data-col="6">49.42491</td>
-                  <td data-row="4" data-col="7">-0.00542</td>
+                  <td data-row="4" data-col="0">Spania</td>
+                  <td data-row="4" data-col="1">50880122</td>
+                  <td data-row="4" data-col="2">5088</td>
+                  <td data-row="4" data-col="3">8</td>
+                  <td data-row="4" data-col="4">Jente</td>
+                  <td data-row="4" data-col="5">Høyere utdanning</td>
+                  <td data-row="4" data-col="6">65.70400</td>
+                  <td data-row="4" data-col="7">-0.85618</td>
                 </tr>
                 <tr>
                   <td data-row="5" data-col="0">Norge</td>
-                  <td data-row="5" data-col="1">50420115</td>
-                  <td data-row="5" data-col="2">5042</td>
+                  <td data-row="5" data-col="1">50020111</td>
+                  <td data-row="5" data-col="2">5002</td>
                   <td data-row="5" data-col="3">9</td>
                   <td data-row="5" data-col="4">Jente</td>
-                  <td data-row="5" data-col="5">Høyere utdanning</td>
+                  <td data-row="5" data-col="5">Kort utdanning</td>
                   <td data-row="5" data-col="6">65.70400</td>
-                  <td data-row="5" data-col="7">-1.03225</td>
+                  <td data-row="5" data-col="7">-0.05390</td>
                 </tr>
                 <tr>
-                  <td data-row="6" data-col="0">Spania</td>
-                  <td data-row="6" data-col="1">50750203</td>
-                  <td data-row="6" data-col="2">5075</td>
-                  <td data-row="6" data-col="3">8</td>
+                  <td data-row="6" data-col="0">Norge</td>
+                  <td data-row="6" data-col="1">50470622</td>
+                  <td data-row="6" data-col="2">5047</td>
+                  <td data-row="6" data-col="3">9</td>
                   <td data-row="6" data-col="4">Gutt</td>
                   <td data-row="6" data-col="5">Høyere utdanning</td>
-                  <td data-row="6" data-col="6">65.70400</td>
-                  <td data-row="6" data-col="7">0.45147</td>
+                  <td data-row="6" data-col="6">52.66245</td>
+                  <td data-row="6" data-col="7">-0.53658</td>
                 </tr>
                 <tr>
                   <td data-row="7" data-col="0">Norge</td>
-                  <td data-row="7" data-col="1">51390115</td>
-                  <td data-row="7" data-col="2">5139</td>
+                  <td data-row="7" data-col="1">51260113</td>
+                  <td data-row="7" data-col="2">5126</td>
                   <td data-row="7" data-col="3">9</td>
-                  <td data-row="7" data-col="4">Gutt</td>
+                  <td data-row="7" data-col="4">Jente</td>
                   <td data-row="7" data-col="5">Høyere utdanning</td>
-                  <td data-row="7" data-col="6">44.59585</td>
-                  <td data-row="7" data-col="7">-0.08189</td>
+                  <td data-row="7" data-col="6">65.70400</td>
+                  <td data-row="7" data-col="7">-0.92911</td>
                 </tr>
                 <tr>
-                  <td data-row="8" data-col="0">Norge</td>
-                  <td data-row="8" data-col="1">51560507</td>
-                  <td data-row="8" data-col="2">5156</td>
-                  <td data-row="8" data-col="3">9</td>
-                  <td data-row="8" data-col="4">Gutt</td>
+                  <td data-row="8" data-col="0">Spania</td>
+                  <td data-row="8" data-col="1">51320206</td>
+                  <td data-row="8" data-col="2">5132</td>
+                  <td data-row="8" data-col="3">8</td>
+                  <td data-row="8" data-col="4">Jente</td>
                   <td data-row="8" data-col="5">VGS</td>
-                  <td data-row="8" data-col="6">39.20663</td>
-                  <td data-row="8" data-col="7">-0.42087</td>
+                  <td data-row="8" data-col="6">31.55703</td>
+                  <td data-row="8" data-col="7">-1.06462</td>
                 </tr>
                 <tr>
                   <td data-row="9" data-col="0">Norge</td>
-                  <td data-row="9" data-col="1">51570125</td>
-                  <td data-row="9" data-col="2">5157</td>
+                  <td data-row="9" data-col="1">50610223</td>
+                  <td data-row="9" data-col="2">5061</td>
                   <td data-row="9" data-col="3">9</td>
                   <td data-row="9" data-col="4">Gutt</td>
-                  <td data-row="9" data-col="5">Høyere utdanning</td>
-                  <td data-row="9" data-col="6">65.70400</td>
-                  <td data-row="9" data-col="7">1.09371</td>
+                  <td data-row="9" data-col="5">Ungdomsskole</td>
+                  <td data-row="9" data-col="6">42.63710</td>
+                  <td data-row="9" data-col="7">-0.90046</td>
                 </tr>
                 <tr>
                   <td data-row="10" data-col="0">Spania</td>
-                  <td data-row="10" data-col="1">50260410</td>
-                  <td data-row="10" data-col="2">5026</td>
+                  <td data-row="10" data-col="1">51380217</td>
+                  <td data-row="10" data-col="2">5138</td>
                   <td data-row="10" data-col="3">8</td>
                   <td data-row="10" data-col="4">Gutt</td>
-                  <td data-row="10" data-col="5">VGS</td>
-                  <td data-row="10" data-col="6">42.63710</td>
-                  <td data-row="10" data-col="7">0.32190</td>
+                  <td data-row="10" data-col="5">Høyere utdanning</td>
+                  <td data-row="10" data-col="6">52.66245</td>
+                  <td data-row="10" data-col="7">-0.47464</td>
                 </tr>
                 <tr>
                   <td data-row="11" data-col="0">Norge</td>
-                  <td data-row="11" data-col="1">51390213</td>
-                  <td data-row="11" data-col="2">5139</td>
+                  <td data-row="11" data-col="1">51030119</td>
+                  <td data-row="11" data-col="2">5103</td>
                   <td data-row="11" data-col="3">9</td>
                   <td data-row="11" data-col="4">Jente</td>
-                  <td data-row="11" data-col="5">Høyere utdanning</td>
+                  <td data-row="11" data-col="5">Ungdomsskole</td>
                   <td data-row="11" data-col="6">65.70400</td>
-                  <td data-row="11" data-col="7">1.30023</td>
+                  <td data-row="11" data-col="7">1.17769</td>
                 </tr>
                 <tr>
-                  <td data-row="12" data-col="0">Norge</td>
-                  <td data-row="12" data-col="1">51070520</td>
-                  <td data-row="12" data-col="2">5107</td>
-                  <td data-row="12" data-col="3">9</td>
+                  <td data-row="12" data-col="0">Spania</td>
+                  <td data-row="12" data-col="1">51240107</td>
+                  <td data-row="12" data-col="2">5124</td>
+                  <td data-row="12" data-col="3">8</td>
                   <td data-row="12" data-col="4">Gutt</td>
                   <td data-row="12" data-col="5">VGS</td>
                   <td data-row="12" data-col="6">37.63793</td>
-                  <td data-row="12" data-col="7">-0.75301</td>
+                  <td data-row="12" data-col="7">-1.15001</td>
                 </tr>
                 <tr>
-                  <td data-row="13" data-col="0">Norge</td>
-                  <td data-row="13" data-col="1">50310813</td>
-                  <td data-row="13" data-col="2">5031</td>
-                  <td data-row="13" data-col="3">9</td>
-                  <td data-row="13" data-col="4">Gutt</td>
-                  <td data-row="13" data-col="5">Kort utdanning</td>
-                  <td data-row="13" data-col="6">31.55703</td>
-                  <td data-row="13" data-col="7">-0.67653</td>
+                  <td data-row="13" data-col="0">Spania</td>
+                  <td data-row="13" data-col="1">51430101</td>
+                  <td data-row="13" data-col="2">5143</td>
+                  <td data-row="13" data-col="3">8</td>
+                  <td data-row="13" data-col="4">Jente</td>
+                  <td data-row="13" data-col="5">Høyere utdanning</td>
+                  <td data-row="13" data-col="6">49.42491</td>
+                  <td data-row="13" data-col="7">0.68916</td>
                 </tr>
                 <tr>
                   <td data-row="14" data-col="0">Spania</td>
-                  <td data-row="14" data-col="1">51260305</td>
-                  <td data-row="14" data-col="2">5126</td>
+                  <td data-row="14" data-col="1">50760123</td>
+                  <td data-row="14" data-col="2">5076</td>
                   <td data-row="14" data-col="3">8</td>
-                  <td data-row="14" data-col="4">Gutt</td>
-                  <td data-row="14" data-col="5">Kort utdanning</td>
-                  <td data-row="14" data-col="6">49.42491</td>
-                  <td data-row="14" data-col="7">-1.16442</td>
+                  <td data-row="14" data-col="4">Jente</td>
+                  <td data-row="14" data-col="5">Høyere utdanning</td>
+                  <td data-row="14" data-col="6">65.70400</td>
+                  <td data-row="14" data-col="7">0.74741</td>
                 </tr>
                 <tr>
-                  <td data-row="15" data-col="0">Norge</td>
-                  <td data-row="15" data-col="1">50870121</td>
-                  <td data-row="15" data-col="2">5087</td>
-                  <td data-row="15" data-col="3">9</td>
+                  <td data-row="15" data-col="0">Spania</td>
+                  <td data-row="15" data-col="1">50250621</td>
+                  <td data-row="15" data-col="2">5025</td>
+                  <td data-row="15" data-col="3">8</td>
                   <td data-row="15" data-col="4">Jente</td>
                   <td data-row="15" data-col="5">Høyere utdanning</td>
-                  <td data-row="15" data-col="6">42.63710</td>
-                  <td data-row="15" data-col="7">1.17769</td>
+                  <td data-row="15" data-col="6">65.70400</td>
+                  <td data-row="15" data-col="7">0.96238</td>
                 </tr>
                 <tr>
-                  <td data-row="16" data-col="0">Spania</td>
-                  <td data-row="16" data-col="1">50880109</td>
-                  <td data-row="16" data-col="2">5088</td>
-                  <td data-row="16" data-col="3">8</td>
+                  <td data-row="16" data-col="0">Norge</td>
+                  <td data-row="16" data-col="1">50380222</td>
+                  <td data-row="16" data-col="2">5038</td>
+                  <td data-row="16" data-col="3">9</td>
                   <td data-row="16" data-col="4">Jente</td>
-                  <td data-row="16" data-col="5">VGS</td>
+                  <td data-row="16" data-col="5">Høyere utdanning</td>
                   <td data-row="16" data-col="6">65.70400</td>
-                  <td data-row="16" data-col="7">-0.51132</td>
+                  <td data-row="16" data-col="7">0.09765</td>
                 </tr>
                 <tr>
                   <td data-row="17" data-col="0">Norge</td>
-                  <td data-row="17" data-col="1">51350401</td>
-                  <td data-row="17" data-col="2">5135</td>
+                  <td data-row="17" data-col="1">51640210</td>
+                  <td data-row="17" data-col="2">5164</td>
                   <td data-row="17" data-col="3">9</td>
-                  <td data-row="17" data-col="4">Gutt</td>
+                  <td data-row="17" data-col="4">Jente</td>
                   <td data-row="17" data-col="5">Høyere utdanning</td>
-                  <td data-row="17" data-col="6">36.11853</td>
-                  <td data-row="17" data-col="7">-0.84073</td>
+                  <td data-row="17" data-col="6">52.66245</td>
+                  <td data-row="17" data-col="7">0.08229</td>
                 </tr>
                 <tr>
                   <td data-row="18" data-col="0">Spania</td>
-                  <td data-row="18" data-col="1">50290114</td>
-                  <td data-row="18" data-col="2">5029</td>
+                  <td data-row="18" data-col="1">50490515</td>
+                  <td data-row="18" data-col="2">5049</td>
                   <td data-row="18" data-col="3">8</td>
                   <td data-row="18" data-col="4">Gutt</td>
-                  <td data-row="18" data-col="5">Høyere utdanning</td>
-                  <td data-row="18" data-col="6">65.70400</td>
-                  <td data-row="18" data-col="7">0.62226</td>
+                  <td data-row="18" data-col="5">VGS</td>
+                  <td data-row="18" data-col="6">49.42491</td>
+                  <td data-row="18" data-col="7">-0.10738</td>
                 </tr>
                 <tr>
-                  <td data-row="19" data-col="0">Spania</td>
-                  <td data-row="19" data-col="1">51430127</td>
-                  <td data-row="19" data-col="2">5143</td>
-                  <td data-row="19" data-col="3">8</td>
-                  <td data-row="19" data-col="4">Jente</td>
-                  <td data-row="19" data-col="5">VGS</td>
-                  <td data-row="19" data-col="6">42.63710</td>
-                  <td data-row="19" data-col="7">0.42855</td>
+                  <td data-row="19" data-col="0">Norge</td>
+                  <td data-row="19" data-col="1">51390116</td>
+                  <td data-row="19" data-col="2">5139</td>
+                  <td data-row="19" data-col="3">9</td>
+                  <td data-row="19" data-col="4">Gutt</td>
+                  <td data-row="19" data-col="5">Ungdomsskole</td>
+                  <td data-row="19" data-col="6">65.70400</td>
+                  <td data-row="19" data-col="7">-0.14096</td>
                 </tr>
                 <tr>
-                  <td data-row="20" data-col="0">Norge</td>
-                  <td data-row="20" data-col="1">51530820</td>
-                  <td data-row="20" data-col="2">5153</td>
-                  <td data-row="20" data-col="3">9</td>
+                  <td data-row="20" data-col="0">Spania</td>
+                  <td data-row="20" data-col="1">51430128</td>
+                  <td data-row="20" data-col="2">5143</td>
+                  <td data-row="20" data-col="3">8</td>
                   <td data-row="20" data-col="4">Gutt</td>
-                  <td data-row="20" data-col="5">Kort utdanning</td>
-                  <td data-row="20" data-col="6">49.42491</td>
-                  <td data-row="20" data-col="7">-2.93794</td>
+                  <td data-row="20" data-col="5">Ungdomsskole</td>
+                  <td data-row="20" data-col="6">37.63793</td>
+                  <td data-row="20" data-col="7">-0.09497</td>
                 </tr>
                 <tr>
-                  <td data-row="21" data-col="0">Norge</td>
-                  <td data-row="21" data-col="1">51040310</td>
-                  <td data-row="21" data-col="2">5104</td>
-                  <td data-row="21" data-col="3">9</td>
-                  <td data-row="21" data-col="4">Jente</td>
+                  <td data-row="21" data-col="0">Spania</td>
+                  <td data-row="21" data-col="1">51540217</td>
+                  <td data-row="21" data-col="2">5154</td>
+                  <td data-row="21" data-col="3">8</td>
+                  <td data-row="21" data-col="4">Gutt</td>
                   <td data-row="21" data-col="5">Høyere utdanning</td>
                   <td data-row="21" data-col="6">65.70400</td>
-                  <td data-row="21" data-col="7">0.72983</td>
+                  <td data-row="21" data-col="7">1.11256</td>
                 </tr>
                 <tr>
-                  <td data-row="22" data-col="0">Spania</td>
-                  <td data-row="22" data-col="1">50580212</td>
-                  <td data-row="22" data-col="2">5058</td>
-                  <td data-row="22" data-col="3">8</td>
+                  <td data-row="22" data-col="0">Norge</td>
+                  <td data-row="22" data-col="1">51760111</td>
+                  <td data-row="22" data-col="2">5176</td>
+                  <td data-row="22" data-col="3">9</td>
                   <td data-row="22" data-col="4">Gutt</td>
-                  <td data-row="22" data-col="5">Høyere utdanning</td>
-                  <td data-row="22" data-col="6">65.70400</td>
-                  <td data-row="22" data-col="7">1.42323</td>
+                  <td data-row="22" data-col="5">VGS</td>
+                  <td data-row="22" data-col="6">52.66245</td>
+                  <td data-row="22" data-col="7">-2.27068</td>
                 </tr>
                 <tr>
                   <td data-row="23" data-col="0">Norge</td>
-                  <td data-row="23" data-col="1">50310815</td>
-                  <td data-row="23" data-col="2">5031</td>
+                  <td data-row="23" data-col="1">50240105</td>
+                  <td data-row="23" data-col="2">5024</td>
                   <td data-row="23" data-col="3">9</td>
-                  <td data-row="23" data-col="4">Jente</td>
-                  <td data-row="23" data-col="5">Høyere utdanning</td>
-                  <td data-row="23" data-col="6">65.70400</td>
-                  <td data-row="23" data-col="7">1.29415</td>
+                  <td data-row="23" data-col="4">Gutt</td>
+                  <td data-row="23" data-col="5">Ungdomsskole</td>
+                  <td data-row="23" data-col="6">37.63793</td>
+                  <td data-row="23" data-col="7">0.05805</td>
                 </tr>
                 <tr>
                   <td data-row="24" data-col="0">Norge</td>
-                  <td data-row="24" data-col="1">50280128</td>
-                  <td data-row="24" data-col="2">5028</td>
+                  <td data-row="24" data-col="1">51910307</td>
+                  <td data-row="24" data-col="2">5191</td>
                   <td data-row="24" data-col="3">9</td>
                   <td data-row="24" data-col="4">Gutt</td>
-                  <td data-row="24" data-col="5">Kort utdanning</td>
-                  <td data-row="24" data-col="6">49.42491</td>
-                  <td data-row="24" data-col="7">0.72983</td>
+                  <td data-row="24" data-col="5">VGS</td>
+                  <td data-row="24" data-col="6">42.63710</td>
+                  <td data-row="24" data-col="7">-1.87948</td>
                 </tr>
                 <tr>
                   <td data-row="25" data-col="0">Spania</td>
-                  <td data-row="25" data-col="1">51290317</td>
-                  <td data-row="25" data-col="2">5129</td>
+                  <td data-row="25" data-col="1">50100123</td>
+                  <td data-row="25" data-col="2">5010</td>
                   <td data-row="25" data-col="3">8</td>
-                  <td data-row="25" data-col="4">Gutt</td>
-                  <td data-row="25" data-col="5">Kort utdanning</td>
-                  <td data-row="25" data-col="6">57.13913</td>
-                  <td data-row="25" data-col="7">1.94887</td>
+                  <td data-row="25" data-col="4">Jente</td>
+                  <td data-row="25" data-col="5">VGS</td>
+                  <td data-row="25" data-col="6">65.70400</td>
+                  <td data-row="25" data-col="7">0.66202</td>
                 </tr>
                 <tr>
                   <td data-row="26" data-col="0">Norge</td>
-                  <td data-row="26" data-col="1">51080204</td>
-                  <td data-row="26" data-col="2">5108</td>
+                  <td data-row="26" data-col="1">51840626</td>
+                  <td data-row="26" data-col="2">5184</td>
                   <td data-row="26" data-col="3">9</td>
-                  <td data-row="26" data-col="4">Gutt</td>
+                  <td data-row="26" data-col="4">Jente</td>
                   <td data-row="26" data-col="5">Høyere utdanning</td>
                   <td data-row="26" data-col="6">65.70400</td>
-                  <td data-row="26" data-col="7">0.05805</td>
+                  <td data-row="26" data-col="7">0.41818</td>
                 </tr>
                 <tr>
-                  <td data-row="27" data-col="0">Spania</td>
-                  <td data-row="27" data-col="1">50630221</td>
-                  <td data-row="27" data-col="2">5063</td>
-                  <td data-row="27" data-col="3">8</td>
-                  <td data-row="27" data-col="4">Gutt</td>
-                  <td data-row="27" data-col="5">Høyere utdanning</td>
+                  <td data-row="27" data-col="0">Norge</td>
+                  <td data-row="27" data-col="1">51040212</td>
+                  <td data-row="27" data-col="2">5104</td>
+                  <td data-row="27" data-col="3">9</td>
+                  <td data-row="27" data-col="4">Annet</td>
+                  <td data-row="27" data-col="5">Ungdomsskole</td>
                   <td data-row="27" data-col="6">37.63793</td>
-                  <td data-row="27" data-col="7">-0.86859</td>
+                  <td data-row="27" data-col="7">-1.63197</td>
                 </tr>
                 <tr>
-                  <td data-row="28" data-col="0">Norge</td>
-                  <td data-row="28" data-col="1">51410108</td>
-                  <td data-row="28" data-col="2">5141</td>
-                  <td data-row="28" data-col="3">9</td>
-                  <td data-row="28" data-col="4">Jente</td>
-                  <td data-row="28" data-col="5">Ungdomsskole</td>
-                  <td data-row="28" data-col="6">57.13913</td>
-                  <td data-row="28" data-col="7">-0.28091</td>
+                  <td data-row="28" data-col="0">Spania</td>
+                  <td data-row="28" data-col="1">50760108</td>
+                  <td data-row="28" data-col="2">5076</td>
+                  <td data-row="28" data-col="3">8</td>
+                  <td data-row="28" data-col="4">Gutt</td>
+                  <td data-row="28" data-col="5">Høyere utdanning</td>
+                  <td data-row="28" data-col="6">39.20663</td>
+                  <td data-row="28" data-col="7">0.32023</td>
                 </tr>
                 <tr>
                   <td data-row="29" data-col="0">Norge</td>
-                  <td data-row="29" data-col="1">51250104</td>
-                  <td data-row="29" data-col="2">5125</td>
+                  <td data-row="29" data-col="1">50310416</td>
+                  <td data-row="29" data-col="2">5031</td>
                   <td data-row="29" data-col="3">9</td>
                   <td data-row="29" data-col="4">Jente</td>
-                  <td data-row="29" data-col="5">VGS</td>
-                  <td data-row="29" data-col="6">57.13913</td>
-                  <td data-row="29" data-col="7">-1.04483</td>
+                  <td data-row="29" data-col="5">Høyere utdanning</td>
+                  <td data-row="29" data-col="6">65.70400</td>
+                  <td data-row="29" data-col="7">1.68152</td>
                 </tr>
                 <tr>
                   <td data-row="30" data-col="0">Norge</td>
-                  <td data-row="30" data-col="1">50940211</td>
-                  <td data-row="30" data-col="2">5094</td>
+                  <td data-row="30" data-col="1">50210215</td>
+                  <td data-row="30" data-col="2">5021</td>
                   <td data-row="30" data-col="3">9</td>
-                  <td data-row="30" data-col="4">Gutt</td>
+                  <td data-row="30" data-col="4">Jente</td>
                   <td data-row="30" data-col="5">Høyere utdanning</td>
-                  <td data-row="30" data-col="6">44.59585</td>
-                  <td data-row="30" data-col="7">-1.06465</td>
+                  <td data-row="30" data-col="6">65.70400</td>
+                  <td data-row="30" data-col="7">0.41443</td>
                 </tr>
                 <tr>
-                  <td data-row="31" data-col="0">Spania</td>
-                  <td data-row="31" data-col="1">50470104</td>
-                  <td data-row="31" data-col="2">5047</td>
-                  <td data-row="31" data-col="3">8</td>
+                  <td data-row="31" data-col="0">Norge</td>
+                  <td data-row="31" data-col="1">50260108</td>
+                  <td data-row="31" data-col="2">5026</td>
+                  <td data-row="31" data-col="3">9</td>
                   <td data-row="31" data-col="4">Gutt</td>
                   <td data-row="31" data-col="5">Høyere utdanning</td>
                   <td data-row="31" data-col="6">65.70400</td>
-                  <td data-row="31" data-col="7">0.81220</td>
+                  <td data-row="31" data-col="7">1.00974</td>
                 </tr>
                 <tr>
-                  <td data-row="32" data-col="0">Norge</td>
-                  <td data-row="32" data-col="1">51170316</td>
-                  <td data-row="32" data-col="2">5117</td>
-                  <td data-row="32" data-col="3">9</td>
-                  <td data-row="32" data-col="4">Gutt</td>
-                  <td data-row="32" data-col="5">Kort utdanning</td>
-                  <td data-row="32" data-col="6">40.85939</td>
-                  <td data-row="32" data-col="7">0.70184</td>
+                  <td data-row="32" data-col="0">Spania</td>
+                  <td data-row="32" data-col="1">51390211</td>
+                  <td data-row="32" data-col="2">5139</td>
+                  <td data-row="32" data-col="3">8</td>
+                  <td data-row="32" data-col="4">Jente</td>
+                  <td data-row="32" data-col="5">Høyere utdanning</td>
+                  <td data-row="32" data-col="6">65.70400</td>
+                  <td data-row="32" data-col="7">0.56190</td>
                 </tr>
                 <tr>
-                  <td data-row="33" data-col="0">Norge</td>
-                  <td data-row="33" data-col="1">51250107</td>
-                  <td data-row="33" data-col="2">5125</td>
-                  <td data-row="33" data-col="3">9</td>
-                  <td data-row="33" data-col="4">Jente</td>
-                  <td data-row="33" data-col="5">Høyere utdanning</td>
+                  <td data-row="33" data-col="0">Spania</td>
+                  <td data-row="33" data-col="1">50130121</td>
+                  <td data-row="33" data-col="2">5013</td>
+                  <td data-row="33" data-col="3">8</td>
+                  <td data-row="33" data-col="4">Annet</td>
+                  <td data-row="33" data-col="5">VGS</td>
                   <td data-row="33" data-col="6">65.70400</td>
-                  <td data-row="33" data-col="7">-0.90487</td>
+                  <td data-row="33" data-col="7">1.57341</td>
                 </tr>
                 <tr>
-                  <td data-row="34" data-col="0">Spania</td>
-                  <td data-row="34" data-col="1">50560121</td>
-                  <td data-row="34" data-col="2">5056</td>
-                  <td data-row="34" data-col="3">8</td>
+                  <td data-row="34" data-col="0">Norge</td>
+                  <td data-row="34" data-col="1">51930503</td>
+                  <td data-row="34" data-col="2">5193</td>
+                  <td data-row="34" data-col="3">9</td>
                   <td data-row="34" data-col="4">Jente</td>
-                  <td data-row="34" data-col="5">Ungdomsskole</td>
-                  <td data-row="34" data-col="6">65.70400</td>
-                  <td data-row="34" data-col="7">0.38668</td>
+                  <td data-row="34" data-col="5">VGS</td>
+                  <td data-row="34" data-col="6">52.66245</td>
+                  <td data-row="34" data-col="7">0.50591</td>
                 </tr>
                 <tr>
-                  <td data-row="35" data-col="0">Norge</td>
-                  <td data-row="35" data-col="1">50770121</td>
-                  <td data-row="35" data-col="2">5077</td>
-                  <td data-row="35" data-col="3">9</td>
+                  <td data-row="35" data-col="0">Spania</td>
+                  <td data-row="35" data-col="1">50030103</td>
+                  <td data-row="35" data-col="2">5003</td>
+                  <td data-row="35" data-col="3">8</td>
                   <td data-row="35" data-col="4">Jente</td>
                   <td data-row="35" data-col="5">Høyere utdanning</td>
                   <td data-row="35" data-col="6">65.70400</td>
-                  <td data-row="35" data-col="7">-0.11738</td>
+                  <td data-row="35" data-col="7">0.23861</td>
                 </tr>
                 <tr>
-                  <td data-row="36" data-col="0">Spania</td>
-                  <td data-row="36" data-col="1">50380323</td>
-                  <td data-row="36" data-col="2">5038</td>
-                  <td data-row="36" data-col="3">8</td>
-                  <td data-row="36" data-col="4">Jente</td>
-                  <td data-row="36" data-col="5">Høyere utdanning</td>
-                  <td data-row="36" data-col="6">57.13913</td>
-                  <td data-row="36" data-col="7">-0.91654</td>
+                  <td data-row="36" data-col="0">Norge</td>
+                  <td data-row="36" data-col="1">51940228</td>
+                  <td data-row="36" data-col="2">5194</td>
+                  <td data-row="36" data-col="3">9</td>
+                  <td data-row="36" data-col="4">Annet</td>
+                  <td data-row="36" data-col="5">VGS</td>
+                  <td data-row="36" data-col="6">49.42491</td>
+                  <td data-row="36" data-col="7">1.09371</td>
                 </tr>
                 <tr>
                   <td data-row="37" data-col="0">Norge</td>
-                  <td data-row="37" data-col="1">51260310</td>
-                  <td data-row="37" data-col="2">5126</td>
+                  <td data-row="37" data-col="1">51500105</td>
+                  <td data-row="37" data-col="2">5150</td>
                   <td data-row="37" data-col="3">9</td>
                   <td data-row="37" data-col="4">Jente</td>
                   <td data-row="37" data-col="5">Høyere utdanning</td>
                   <td data-row="37" data-col="6">65.70400</td>
-                  <td data-row="37" data-col="7">0.19867</td>
+                  <td data-row="37" data-col="7">0.07854</td>
                 </tr>
                 <tr>
                   <td data-row="38" data-col="0">Norge</td>
-                  <td data-row="38" data-col="1">51490324</td>
-                  <td data-row="38" data-col="2">5149</td>
+                  <td data-row="38" data-col="1">51230207</td>
+                  <td data-row="38" data-col="2">5123</td>
                   <td data-row="38" data-col="3">9</td>
                   <td data-row="38" data-col="4">Gutt</td>
                   <td data-row="38" data-col="5">Høyere utdanning</td>
-                  <td data-row="38" data-col="6">65.70400</td>
-                  <td data-row="38" data-col="7">1.26166</td>
+                  <td data-row="38" data-col="6">42.63710</td>
+                  <td data-row="38" data-col="7">1.67865</td>
                 </tr>
                 <tr>
                   <td data-row="39" data-col="0">Norge</td>
-                  <td data-row="39" data-col="1">50400411</td>
-                  <td data-row="39" data-col="2">5040</td>
+                  <td data-row="39" data-col="1">51490205</td>
+                  <td data-row="39" data-col="2">5149</td>
                   <td data-row="39" data-col="3">9</td>
                   <td data-row="39" data-col="4">Gutt</td>
-                  <td data-row="39" data-col="5">VGS</td>
-                  <td data-row="39" data-col="6">37.63793</td>
-                  <td data-row="39" data-col="7">0.69315</td>
+                  <td data-row="39" data-col="5">Kort utdanning</td>
+                  <td data-row="39" data-col="6">39.20663</td>
+                  <td data-row="39" data-col="7">1.42960</td>
                 </tr>
                 <tr>
-                  <td data-row="40" data-col="0">Norge</td>
-                  <td data-row="40" data-col="1">50400126</td>
-                  <td data-row="40" data-col="2">5040</td>
-                  <td data-row="40" data-col="3">9</td>
-                  <td data-row="40" data-col="4">Jente</td>
+                  <td data-row="40" data-col="0">Spania</td>
+                  <td data-row="40" data-col="1">51210105</td>
+                  <td data-row="40" data-col="2">5121</td>
+                  <td data-row="40" data-col="3">8</td>
+                  <td data-row="40" data-col="4">Gutt</td>
                   <td data-row="40" data-col="5">Høyere utdanning</td>
-                  <td data-row="40" data-col="6">65.70400</td>
-                  <td data-row="40" data-col="7">1.26166</td>
+                  <td data-row="40" data-col="6">49.42491</td>
+                  <td data-row="40" data-col="7">-0.40563</td>
                 </tr>
                 <tr>
                   <td data-row="41" data-col="0">Norge</td>
-                  <td data-row="41" data-col="1">51310624</td>
-                  <td data-row="41" data-col="2">5131</td>
+                  <td data-row="41" data-col="1">51260108</td>
+                  <td data-row="41" data-col="2">5126</td>
                   <td data-row="41" data-col="3">9</td>
                   <td data-row="41" data-col="4">Gutt</td>
-                  <td data-row="41" data-col="5">Høyere utdanning</td>
-                  <td data-row="41" data-col="6">57.13913</td>
-                  <td data-row="41" data-col="7">0.95235</td>
+                  <td data-row="41" data-col="5">Kort utdanning</td>
+                  <td data-row="41" data-col="6">44.59585</td>
+                  <td data-row="41" data-col="7">-1.57158</td>
                 </tr>
                 <tr>
                   <td data-row="42" data-col="0">Norge</td>
-                  <td data-row="42" data-col="1">50810416</td>
-                  <td data-row="42" data-col="2">5081</td>
+                  <td data-row="42" data-col="1">51950416</td>
+                  <td data-row="42" data-col="2">5195</td>
                   <td data-row="42" data-col="3">9</td>
                   <td data-row="42" data-col="4">Gutt</td>
                   <td data-row="42" data-col="5">Høyere utdanning</td>
-                  <td data-row="42" data-col="6">37.63793</td>
-                  <td data-row="42" data-col="7">-0.22493</td>
+                  <td data-row="42" data-col="6">65.70400</td>
+                  <td data-row="42" data-col="7">0.67385</td>
                 </tr>
                 <tr>
                   <td data-row="43" data-col="0">Norge</td>
-                  <td data-row="43" data-col="1">50930409</td>
-                  <td data-row="43" data-col="2">5093</td>
+                  <td data-row="43" data-col="1">51000501</td>
+                  <td data-row="43" data-col="2">5100</td>
                   <td data-row="43" data-col="3">9</td>
                   <td data-row="43" data-col="4">Jente</td>
                   <td data-row="43" data-col="5">Høyere utdanning</td>
                   <td data-row="43" data-col="6">65.70400</td>
-                  <td data-row="43" data-col="7">0.55814</td>
+                  <td data-row="43" data-col="7">0.47792</td>
                 </tr>
                 <tr>
                   <td data-row="44" data-col="0">Norge</td>
-                  <td data-row="44" data-col="1">50840323</td>
-                  <td data-row="44" data-col="2">5084</td>
+                  <td data-row="44" data-col="1">50430119</td>
+                  <td data-row="44" data-col="2">5043</td>
                   <td data-row="44" data-col="3">9</td>
                   <td data-row="44" data-col="4">Jente</td>
                   <td data-row="44" data-col="5">Høyere utdanning</td>
-                  <td data-row="44" data-col="6">65.70400</td>
-                  <td data-row="44" data-col="7">-0.08939</td>
+                  <td data-row="44" data-col="6">49.42491</td>
+                  <td data-row="44" data-col="7">0.07346</td>
                 </tr>
                 <tr>
                   <td data-row="45" data-col="0">Spania</td>
-                  <td data-row="45" data-col="1">50650210</td>
-                  <td data-row="45" data-col="2">5065</td>
+                  <td data-row="45" data-col="1">51010229</td>
+                  <td data-row="45" data-col="2">5101</td>
                   <td data-row="45" data-col="3">8</td>
-                  <td data-row="45" data-col="4">Gutt</td>
-                  <td data-row="45" data-col="5">VGS</td>
-                  <td data-row="45" data-col="6">57.13913</td>
-                  <td data-row="45" data-col="7">0.60376</td>
+                  <td data-row="45" data-col="4">Jente</td>
+                  <td data-row="45" data-col="5">Høyere utdanning</td>
+                  <td data-row="45" data-col="6">40.85939</td>
+                  <td data-row="45" data-col="7">-0.43277</td>
                 </tr>
                 <tr>
                   <td data-row="46" data-col="0">Norge</td>
-                  <td data-row="46" data-col="1">51130301</td>
-                  <td data-row="46" data-col="2">5113</td>
+                  <td data-row="46" data-col="1">51000506</td>
+                  <td data-row="46" data-col="2">5100</td>
                   <td data-row="46" data-col="3">9</td>
-                  <td data-row="46" data-col="4">Gutt</td>
-                  <td data-row="46" data-col="5">Ungdomsskole</td>
+                  <td data-row="46" data-col="4">Jente</td>
+                  <td data-row="46" data-col="5">Høyere utdanning</td>
                   <td data-row="46" data-col="6">65.70400</td>
-                  <td data-row="46" data-col="7">1.34563</td>
+                  <td data-row="46" data-col="7">-0.47685</td>
                 </tr>
                 <tr>
-                  <td data-row="47" data-col="0">Norge</td>
-                  <td data-row="47" data-col="1">51420127</td>
-                  <td data-row="47" data-col="2">5142</td>
-                  <td data-row="47" data-col="3">9</td>
+                  <td data-row="47" data-col="0">Spania</td>
+                  <td data-row="47" data-col="1">50340626</td>
+                  <td data-row="47" data-col="2">5034</td>
+                  <td data-row="47" data-col="3">8</td>
                   <td data-row="47" data-col="4">Gutt</td>
-                  <td data-row="47" data-col="5">Ungdomsskole</td>
-                  <td data-row="47" data-col="6">37.63793</td>
-                  <td data-row="47" data-col="7">0.28264</td>
+                  <td data-row="47" data-col="5">Høyere utdanning</td>
+                  <td data-row="47" data-col="6">57.13913</td>
+                  <td data-row="47" data-col="7">0.81220</td>
                 </tr>
                 <tr>
                   <td data-row="48" data-col="0">Norge</td>
-                  <td data-row="48" data-col="1">50280120</td>
-                  <td data-row="48" data-col="2">5028</td>
+                  <td data-row="48" data-col="1">51140230</td>
+                  <td data-row="48" data-col="2">5114</td>
                   <td data-row="48" data-col="3">9</td>
                   <td data-row="48" data-col="4">Gutt</td>
                   <td data-row="48" data-col="5">Høyere utdanning</td>
                   <td data-row="48" data-col="6">65.70400</td>
-                  <td data-row="48" data-col="7">0.27823</td>
+                  <td data-row="48" data-col="7">0.47792</td>
                 </tr>
                 <tr>
-                  <td data-row="49" data-col="0">Spania</td>
-                  <td data-row="49" data-col="1">50580206</td>
-                  <td data-row="49" data-col="2">5058</td>
-                  <td data-row="49" data-col="3">8</td>
+                  <td data-row="49" data-col="0">Norge</td>
+                  <td data-row="49" data-col="1">50760521</td>
+                  <td data-row="49" data-col="2">5076</td>
+                  <td data-row="49" data-col="3">9</td>
                   <td data-row="49" data-col="4">Gutt</td>
-                  <td data-row="49" data-col="5">Kort utdanning</td>
-                  <td data-row="49" data-col="6">52.66245</td>
-                  <td data-row="49" data-col="7">-1.86116</td>
+                  <td data-row="49" data-col="5">Høyere utdanning</td>
+                  <td data-row="49" data-col="6">65.70400</td>
+                  <td data-row="49" data-col="7">1.14969</td>
                 </tr>
                 <tr>
                   <td data-row="50" data-col="0">Norge</td>
-                  <td data-row="50" data-col="1">51760120</td>
-                  <td data-row="50" data-col="2">5176</td>
+                  <td data-row="50" data-col="1">51400321</td>
+                  <td data-row="50" data-col="2">5140</td>
                   <td data-row="50" data-col="3">9</td>
-                  <td data-row="50" data-col="4">Gutt</td>
+                  <td data-row="50" data-col="4">Jente</td>
                   <td data-row="50" data-col="5">Høyere utdanning</td>
-                  <td data-row="50" data-col="6">37.45846</td>
-                  <td data-row="50" data-col="7">-2.69430</td>
+                  <td data-row="50" data-col="6">49.42491</td>
+                  <td data-row="50" data-col="7">1.31764</td>
                 </tr>
         </tbody>
       </table>
@@ -1153,7 +1153,7 @@ Tabell&nbsp;4.1. Noen få av variablene fra ICCS-studien.
 <p>La oss åpne filen i et statistikkprogram. For å gjøre dette åpner vi filen <em><a href="data_and_tables/ICCS.csv">ICCS.csv</a></em> og ser hvilke variabler som er lagret i filen, se <a href="#fig-descriptive-ICCS-data" class="quarto-xref">Figur&nbsp;<span>4.1</span></a>.</p>
 <div class="cell enlarge-image" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-descriptive-ICCS-data" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Et jamovi-skjermbilde viser et dataanalysegrensesnitt med 7 kolonner. Én kolonne med numeriske data er merket &quot;likestilling&quot;.">
+<div id="fig-descriptive-ICCS-data" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Et jamovi-skjermbilde viser et dataanalysegrensesnitt med 7 kolonner. Én kolonne med numeriske data er merket &quot;likestilling&quot;." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-descriptive-ICCS-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="images/fig-descriptive-iccs-data.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figur&nbsp;4.1. Et skjermbilde av jamovi som viser variablene lagret i filen ICCS.csv"><img src="images/fig-descriptive-iccs-data.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" alt="Et jamovi-skjermbilde viser et dataanalysegrensesnitt med 7 kolonner. Én kolonne med numeriske data er merket &quot;likestilling&quot;."></a>
@@ -1194,7 +1194,7 @@ Figur&nbsp;4.2. Frekvenstabell for <em>Forventet utdanning</em>
 <p>Du lager dette i jamovi ved å velge analysen “Frequencies” → “Contingency Tables” → “Independent Samples”. Flytt <em>Forventet utdanning</em> til “Rows”-boksen og <em>Land</em>-variabelen til “Columns”-boksen. Vi gjør et lite ekstra triks og trykker på “Cells” og krysser av for “Percentages: Columns”. Da får du en krysstabell som vist i <a href="#fig-descriptive-jamovi-contingency" class="quarto-xref">Figur&nbsp;<span>4.3</span></a>.</p>
 <div class="cell enlarge-image" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-descriptive-jamovi-contingency" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Et jamovi-skjermbilde som viser en krysstabell-analyse. Det venstre panelet viser alternativer for å velge rader, kolonner, antall og lag med &quot;Forventet utdanning&quot; og &quot;Land&quot; valgt. Det høyre panelet viser den resulterende krysstabellen.">
+<div id="fig-descriptive-jamovi-contingency" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Et jamovi-skjermbilde som viser en krysstabell-analyse. Det venstre panelet viser alternativer for å velge rader, kolonner, antall og lag med &quot;Forventet utdanning&quot; og &quot;Land&quot; valgt. Det høyre panelet viser den resulterende krysstabellen." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-descriptive-jamovi-contingency-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="images/fig-descriptive-jamovi-contingency.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figur&nbsp;4.3. Krysstabeluring av Forventet utdanning og Land"><img src="images/fig-descriptive-jamovi-contingency.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="Et jamovi-skjermbilde som viser en krysstabell-analyse. Det venstre panelet viser alternativer for å velge rader, kolonner, antall og lag med &quot;Forventet utdanning&quot; og &quot;Land&quot; valgt. Det høyre panelet viser den resulterende krysstabellen."></a>
@@ -1227,7 +1227,7 @@ Figur&nbsp;4.3. Krysstabeluring av <em>Forventet utdanning</em> og <em>Land</em>
 <p>Å se på rådataene i tabellen på starten av kapittelet, <a href="#tbl-ICCS-data" class="quarto-xref">Tabell&nbsp;<span>4.1</span></a>, fortalte oss lite Likevel viser jeg et histogram av <em>likestilling</em>-dataene, slik at vi vet hva det er vi prøver å beskrive med deskriptiv statistikk, se <a href="#fig-descriptive-ICCS-histogram" class="quarto-xref">Figur&nbsp;<span>4.4</span></a>. Neste kapittel inneholder mye mer om histogrammer.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-descriptive-ICCS-histogram" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Histogram som viser variabelen _Likestilling_. Den horisontale aksen ($x$-aksen) strekker seg fra fra 15 til 70, og den vertikale aksen (y-aksen) viser tetthet, altså hvor mange svar som havner innad i hver søyle.">
+<div id="fig-descriptive-ICCS-histogram" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Histogram som viser variabelen _Likestilling_. Den horisontale aksen ($x$-aksen) strekker seg fra fra 15 til 70, og den vertikale aksen (y-aksen) viser tetthet, altså hvor mange svar som havner innad i hver søyle." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-descriptive-ICCS-histogram-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="sec-descriptive_files/figure-html/fig-descriptive-ICCS-histogram-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figur&nbsp;4.4. Et histogram av variabelen Likestilling fra ICCS 2022."><img src="sec-descriptive_files/figure-html/fig-descriptive-ICCS-histogram-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" alt="Histogram som viser variabelen _Likestilling_. Den horisontale aksen ($x$-aksen) strekker seg fra fra 15 til 70, og den vertikale aksen (y-aksen) viser tetthet, altså hvor mange svar som havner innad i hver søyle."></a>
@@ -1242,7 +1242,7 @@ Figur&nbsp;4.4. Et histogram av variabelen <em>Likestilling</em> fra ICCS 2022.
 <p>Histogrammet i <a href="#fig-descriptive-ICCS-histogram" class="quarto-xref">Figur&nbsp;<span>4.4</span></a> viser oss godt at de fleste svarer veldig høyt på <em>Likestilling</em>, men at en betydelig andel svarer mye lavere. Hvis man ønsker å undersøke videre, for eksempel å undersøke kjønnsforskjeller, så er det bare å lage et histogram for hvert kjønn, <a href="#fig-descriptive-ICCS-histogram-gender" class="quarto-xref">Figur&nbsp;<span>4.5</span></a>.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-descriptive-ICCS-histogram-gender" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Histogram som viser variabelen _Likestilling_ for de tre verdiene i variabelen Kjønn; gutt, jente og annet.">
+<div id="fig-descriptive-ICCS-histogram-gender" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Histogram som viser variabelen _Likestilling_ for de tre verdiene i variabelen Kjønn; gutt, jente og annet." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-descriptive-ICCS-histogram-gender-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="sec-descriptive_files/figure-html/fig-descriptive-ICCS-histogram-gender-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figur&nbsp;4.5. Et histogram av variabelen Likestilling for hver verdi av variabelen Kjønn."><img src="sec-descriptive_files/figure-html/fig-descriptive-ICCS-histogram-gender-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" alt="Histogram som viser variabelen _Likestilling_ for de tre verdiene i variabelen Kjønn; gutt, jente og annet."></a>
@@ -1263,12 +1263,12 @@ Figur&nbsp;4.5. Et histogram av variabelen <em>Likestilling</em> for hver verdi 
 <h3 data-number="4.3.1" class="anchored" data-anchor-id="gjennomsnittet"><span class="header-section-number">4.3.1</span> Gjennomsnittet</h3>
 <p><strong>Gjennomsnittet</strong> er det vanlige gjennomsnittet du kjenner fra før. Du legger sammen alle verdiene og deler på antall verdier. De første fem verdiene på <em>Likestilling</em> i <a href="#tbl-ICCS-data" class="quarto-xref">Tabell&nbsp;<span>4.1</span></a> var</p>
 <blockquote class="blockquote">
-<p>65.7, 65.7, 52.7, 49.4, 65.7,</p>
+<p>42.6, 57.1, 49.4, 65.7, 65.7,</p>
 </blockquote>
 <p>så gjennomsnittet blir:</p>
 <p><span class="math display">\[\frac{42.6 + 62.9 + 52.7 + 37.6 + 42.6}{5} = \frac{238.4}{5} = 47.68\]</span></p>
 <p>Dette er selvsagt ikke noe nytt for deg, siden du allerede er godt kjent med gjennomsnitt.</p>
-<p>Det som kanskje er nytt for deg er hvordan man kan få statistikk-programvare til å gjøre regnejobben for oss! Når du har mange observasjoner, vi hadde 8583, er det mye lettere å regne ut ting digitalt.</p>
+<p>Det som kanskje er nytt for deg er hvordan man kan få statistikk-programvare til å gjøre regnejobben for oss! Når du har mange observasjoner, vi hadde 8622, er det mye lettere å regne ut ting digitalt.</p>
 <p>Slik gjør man det i jamovi:</p>
 <ol type="1">
 <li>Klikk på “Exploration”-knappen</li>
@@ -1279,7 +1279,7 @@ Figur&nbsp;4.5. Et histogram av variabelen <em>Likestilling</em> for hver verdi 
 <p>Straks du har gjort dette dukker en tabell med standard deskriptiv statistikk opp på høyre side av skjermen, som vist i <a href="#fig-descriptive-jamovi-mean" class="quarto-xref">Figur&nbsp;<span>4.6</span></a>. (Hvis du ikke finner ‘Exploration’-knappen må du trykke på “Analyses” først.)</p>
 <div class="cell enlarge-image" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-descriptive-jamovi-mean" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Et skjermbilde fra jamovi som viser resultater fra deskriptiv analyse. Til venstre kan man velge variable og dele opp dataene. Til høyre vises deskriptiv statistikk for &quot;Likestilling&quot; med verdier for N, Missing, Mean, Median, Standard deviation, Minimum og Maximum.">
+<div id="fig-descriptive-jamovi-mean" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Et skjermbilde fra jamovi som viser resultater fra deskriptiv analyse. Til venstre kan man velge variable og dele opp dataene. Til høyre vises deskriptiv statistikk for &quot;Likestilling&quot; med verdier for N, Missing, Mean, Median, Standard deviation, Minimum og Maximum." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-descriptive-jamovi-mean-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="images/fig-descriptive-jamovi-mean.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figur&nbsp;4.6. Standard deskriptiv statistikk for variabelen Likestilling."><img src="images/fig-descriptive-jamovi-mean.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="Et skjermbilde fra jamovi som viser resultater fra deskriptiv analyse. Til venstre kan man velge variable og dele opp dataene. Til høyre vises deskriptiv statistikk for &quot;Likestilling&quot; med verdier for N, Missing, Mean, Median, Standard deviation, Minimum og Maximum."></a>
@@ -1291,10 +1291,10 @@ Figur&nbsp;4.6. Standard deskriptiv statistikk for variabelen <em>Likestilling</
 </div>
 </div>
 </div>
-<p>Som du kan se i den røde markeringen i <a href="#fig-descriptive-jamovi-mean" class="quarto-xref">Figur&nbsp;<span>4.6</span></a>, viser resultatet at gjennomsnittsverdien for <em>Likestilling</em> er 54,8. I tillegg får du annen nyttig informasjon som det totale antallet observasjoner (N = 8583) <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, antall manglende verdier, samt median-, minimum- og maksimumsverdier og standardavviket for variabelen. (“Manglende verdier” er typisk at elever har unnlatt å svare på et spørsmål, eller at svaret var uleselig. Ingen verdier mangler i dette tilfellet, siden jeg fjernet manglende verdier da jeg forberedte dataene.)</p>
+<p>Som du kan se i den røde markeringen i <a href="#fig-descriptive-jamovi-mean" class="quarto-xref">Figur&nbsp;<span>4.6</span></a>, viser resultatet at gjennomsnittsverdien for <em>Likestilling</em> er 54,8. I tillegg får du annen nyttig informasjon som det totale antallet observasjoner (N = 8622) <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, antall manglende verdier, samt median-, minimum- og maksimumsverdier og standardavviket for variabelen. (“Manglende verdier” er typisk at elever har unnlatt å svare på et spørsmål, eller at svaret var uleselig. Ingen verdier mangler i dette tilfellet, siden jeg fjernet manglende verdier da jeg forberedte dataene.)</p>
 <p>Hva hvis vi skal regne ut gjennomsnittet av variabelen <em>Forventet utdanning</em>? De fem første verdiene av denne variabelen er</p>
 <blockquote class="blockquote">
-<p>Ungdomsskole, VGS, VGS, VGS, Høyere utdanning.</p>
+<p>Kort utdanning, Ungdomsskole, VGS, Høyere utdanning, Kort utdanning.</p>
 </blockquote>
 <p>Hvordan skal man regne gjennomsnittet av dette? Det går ikke an, for man kan ikke legge sammen verdiene. Derfor kan man bare regne gjennomsnitt for variable med tall, altså variable på intervall- og forholdstallskala.</p>
 </section>
@@ -1302,13 +1302,13 @@ Figur&nbsp;4.6. Standard deskriptiv statistikk for variabelen <em>Likestilling</
 <h3 data-number="4.3.2" class="anchored" data-anchor-id="medianen"><span class="header-section-number">4.3.2</span> Medianen</h3>
 <p>Et annet mål for sentraltendens er <strong>medianen</strong>, og den er enda enklere å forstå enn gjennomsnittet. Medianen av et sett observasjoner er ganske enkelt middelverdien. Hvis vi tar de fem første verdiene av <em>Likestilling</em> fra <a href="#tbl-ICCS-data" class="quarto-xref">Tabell&nbsp;<span>4.1</span></a> igjen, får vi</p>
 <blockquote class="blockquote">
-<p>65.7, 65.7, 52.7, 49.4, 65.7.</p>
+<p>42.6, 57.1, 49.4, 65.7, 65.7.</p>
 </blockquote>
 <p>For å finne medianen sorterer vi disse tallene i stigende rekkefølge:</p>
 <blockquote class="blockquote">
-<p>49.4, 52.7, 65.7, 65.7, 65.7.</p>
+<p>42.6, 49.4, 57.1, 65.7, 65.7.</p>
 </blockquote>
-<p>Da ser vi at 65.7 står i midten, så 65.7 er medianen.</p>
+<p>Da ser vi at 57.1 står i midten, så 57.1 er medianen.</p>
 <p>Av og til er det ingen verdier i midten, for eksempel her:</p>
 <blockquote class="blockquote">
 <p>1, 3, 5, 6, 10, 15</p>
@@ -1316,14 +1316,14 @@ Figur&nbsp;4.6. Standard deskriptiv statistikk for variabelen <em>Likestilling</
 <p>Her er både 5 og 6 like nære midten. Da er medianen definert til å være gjennomsnittet av disse to verdiene, altså 5,5.</p>
 <p>Man kan regne medianen av ordinale data. De fem første verdiene av variabelen <em>Forventet utdanning</em> var</p>
 <blockquote class="blockquote">
-<p>Ungdomsskole, VGS, VGS, VGS, Høyere utdanning.</p>
+<p>Kort utdanning, Ungdomsskole, VGS, Høyere utdanning, Kort utdanning.</p>
 </blockquote>
 <p>Hvis man sorterer dem i rekkefølge får man:</p>
 <blockquote class="blockquote">
-<p>Ungdomsskole, VGS, VGS, VGS, Høyere utdanning.</p>
+<p>Ungdomsskole, VGS, Kort utdanning, Kort utdanning, Høyere utdanning.</p>
 </blockquote>
-<p>Da ser man at medianen er VGS.</p>
-<p>Selvfølgelig er det uaktuelt å regne medianen for hånd med våre 8583 verdier. Derfor bruker vi jamovi, som allerede har beregnet en medianverdi på <code>r</code>percentiles[“50%”]` for <em>Likestilling</em>, se i den røde markeringen i <a href="#fig-descriptive-jamovi-mean" class="quarto-xref">Figur&nbsp;<span>4.6</span></a>.</p>
+<p>Da ser man at medianen er Kort utdanning.</p>
+<p>Selvfølgelig er det uaktuelt å regne medianen for hånd med våre 8622 verdier. Derfor bruker vi jamovi, som allerede har beregnet en medianverdi på 57.1 for <em>Likestilling</em>, se i den røde markeringen i <a href="#fig-descriptive-jamovi-mean" class="quarto-xref">Figur&nbsp;<span>4.6</span></a>.</p>
 </section>
 <section id="sec-descriptive-mean-or-median" class="level3" data-number="4.3.3">
 <h3 data-number="4.3.3" class="anchored" data-anchor-id="sec-descriptive-mean-or-median"><span class="header-section-number">4.3.3</span> Gjennomsnitt eller median? Hva er forskjellen?</h3>
@@ -1339,7 +1339,7 @@ Figur&nbsp;4.6. Standard deskriptiv statistikk for variabelen <em>Likestilling</
 <p>Dette illustreres også i <a href="#fig-descriptive-weight" class="quarto-xref">Figur&nbsp;<span>4.7</span></a>, hvor du kan se at når histogrammet er asymmetrisk, ligger medianen nærmere “hovedvekten” av dataene, mens gjennomsnittet blir trukket mot “halen” der de ekstreme verdiene befinner seg.</p>
 <div class="cell enlarge-image" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-descriptive-weight" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Et stolpediagram på venstre side har 48 observasjoner og ligner på et trappetrinnmønster med avtagende høyder fra venstre til høyre. Teksten lyder: &quot;Gjennomsnittet er 'balansepunktet' til dataene.&quot; Under diagrammet er det en horisontal linje merket &quot;balansepunkt&quot; med et trekantet støttepunkt som symboliserer balanse. Det samme stolpediagrammet vises på høyre side med dataene delt inn i to grupper på 24 observasjoner. Den venstre gruppen er skyggelagt i lys grå, og den høyre gruppen er skyggelagt i mørk grå. En pil peker på den 24. observasjonen med teksten &quot;Medianen er den 'midterste observasjonen' i datasettet&quot;" data-fig-pos="H">
+<div id="fig-descriptive-weight" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Et stolpediagram på venstre side har 48 observasjoner og ligner på et trappetrinnmønster med avtagende høyder fra venstre til høyre. Teksten lyder: &quot;Gjennomsnittet er 'balansepunktet' til dataene.&quot; Under diagrammet er det en horisontal linje merket &quot;balansepunkt&quot; med et trekantet støttepunkt som symboliserer balanse. Det samme stolpediagrammet vises på høyre side med dataene delt inn i to grupper på 24 observasjoner. Den venstre gruppen er skyggelagt i lys grå, og den høyre gruppen er skyggelagt i mørk grå. En pil peker på den 24. observasjonen med teksten &quot;Medianen er den 'midterste observasjonen' i datasettet&quot;" data-fig-align="center" data-fig-pos="H">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-descriptive-weight-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="images/fig-descriptive-weight.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figur&nbsp;4.7. En illustrasjon av forskjellen mellom hvordan gjennomsnittet og medianen bør tolkes. Gjennomsnittet er &quot;balansepunktet&quot; til datasettet. Hvis du forestiller deg at histogrammet av dataene er et klosser på et brett, så er gjennomsnittet balansepunktet. Medianen den midterste observasjonen, og halvparten av klossene lenger til venstre og halvparten og halvparten lenger til høyre."><img src="images/fig-descriptive-weight.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" data-fig-pos="H" alt="Et stolpediagram på venstre side har 48 observasjoner og ligner på et trappetrinnmønster med avtagende høyder fra venstre til høyre. Teksten lyder: &quot;Gjennomsnittet er 'balansepunktet' til dataene.&quot; Under diagrammet er det en horisontal linje merket &quot;balansepunkt&quot; med et trekantet støttepunkt som symboliserer balanse. Det samme stolpediagrammet vises på høyre side med dataene delt inn i to grupper på 24 observasjoner. Den venstre gruppen er skyggelagt i lys grå, og den høyre gruppen er skyggelagt i mørk grå. En pil peker på den 24. observasjonen med teksten &quot;Medianen er den 'midterste observasjonen' i datasettet&quot;"></a>
@@ -1357,13 +1357,13 @@ Figur&nbsp;4.7. En illustrasjon av forskjellen mellom hvordan gjennomsnittet og 
 <h3 data-number="4.3.4" class="anchored" data-anchor-id="sec-mode"><span class="header-section-number">4.3.4</span> Typetallet</h3>
 <p>Typetallet til en variabel er den verdien som forekommer hyppigst. Vi kan finne typetallet til nominelle variable, noe som gjør dem velegnet til slike data. En nominell variabel i ICCS-dataene er <em>Kjønn</em>. Typetallet til <em>Kjønn</em> vil si oss hvilket kjønn det er flest av i dataene. De fem første verdiene er:</p>
 <blockquote class="blockquote">
-<p>Jente, Gutt, Jente, Gutt, Jente.</p>
+<p>Gutt, Gutt, Jente, Jente, Jente.</p>
 </blockquote>
 <p>Typetallet er Gutt fordi det var flest av den verdien.</p>
 <p>Hvis vi skal finne typetallet for <em>Kjønn</em> i hele datasettet må vi sette oss ned og telle hvor mange det er av Gutt, Jente og Annet. Selvsagt gjør vi det heller med programvare, altså jamovi. <a href="#fig-descriptive-jamovi-mode" class="quarto-xref">Figur&nbsp;<span>4.8</span></a> viser et skjermbilde av hvordan det ser ut.</p>
 <div class="cell enlarge-image" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-descriptive-jamovi-mode" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Et jamovi-skjermbilde for analyse av variabelen Kjønn. Et panel til venstre inkluderer alternativer for å velge variabler og hvilke sentraltendenser man ønsker å regne ut. Det høyre panelet viser resultatene" data-fig-pos="H">
+<div id="fig-descriptive-jamovi-mode" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Et jamovi-skjermbilde for analyse av variabelen Kjønn. Et panel til venstre inkluderer alternativer for å velge variabler og hvilke sentraltendenser man ønsker å regne ut. Det høyre panelet viser resultatene" data-fig-align="center" data-fig-pos="H">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-descriptive-jamovi-mode-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="images/fig-descriptive-jamovi-mode.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Figur&nbsp;4.8. Et skjermbilde av jamovi som viser typetall og frekvenstabell for variabelen Kjønn"><img src="images/fig-descriptive-jamovi-mode.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" data-fig-pos="H" alt="Et jamovi-skjermbilde for analyse av variabelen Kjønn. Et panel til venstre inkluderer alternativer for å velge variabler og hvilke sentraltendenser man ønsker å regne ut. Det høyre panelet viser resultatene"></a>
@@ -1379,7 +1379,7 @@ Figur&nbsp;4.8. Et skjermbilde av jamovi som viser typetall og frekvenstabell fo
 <p>For å finne ut av hva typetallet 2 betyr, må du trykke på ‘Variables’ → ‘Kjønn’ → ‘Edit’, se <a href="#fig-descriptive-jamovi-gender" class="quarto-xref">Figur&nbsp;<span>4.9</span></a>. Du kan se at “Jente” er lagret som 1, “Gutt” som 2 og “Annet” som 3. Typetallet 2 er altså “Gutt”, så det er flest gutter i datasettet.</p>
 <div class="cell enlarge-image" data-layout-align="center" data-out.wdith="100%">
 <div class="cell-output-display">
-<div id="fig-descriptive-jamovi-gender" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Et jamovi-skjermbilde for analyse av variabelen Kjønn. Det står at _Kjønn_ er en nominell variabel der &quot;Jente&quot; er lagret som 1, &quot;Gutt&quot; er lagret som 2, og &quot;Annet&quot; er lagret som 3." data-fig-pos="H">
+<div id="fig-descriptive-jamovi-gender" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Et jamovi-skjermbilde for analyse av variabelen Kjønn. Det står at _Kjønn_ er en nominell variabel der &quot;Jente&quot; er lagret som 1, &quot;Gutt&quot; er lagret som 2, og &quot;Annet&quot; er lagret som 3." data-fig-align="center" data-fig-pos="H">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-descriptive-jamovi-gender-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="images/fig-descriptive-jamovi-gender.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Figur&nbsp;4.9. Et skjermbilde av jamovi som viser informasjon om variabelen Kjønn."><img src="images/fig-descriptive-jamovi-gender.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" data-fig-pos="H" alt="Et jamovi-skjermbilde for analyse av variabelen Kjønn. Det står at _Kjønn_ er en nominell variabel der &quot;Jente&quot; er lagret som 1, &quot;Gutt&quot; er lagret som 2, og &quot;Annet&quot; er lagret som 3."></a>
@@ -1394,7 +1394,7 @@ Figur&nbsp;4.9. Et skjermbilde av jamovi som viser informasjon om variabelen <em
 <p>En mer tilfredsstillende måte å finne typetallet på er å telle opp antallet av alle verdiene. Dette kalles å lage en <strong>frekvenstabell</strong>. I jamovi kan man akkurat som før trykke på “Analyses” → “Exploration” → “Descriptives”, men nå kan man velge “Frequency table”, se <a href="#fig-descriptive-jamovi-frequency-table" class="quarto-xref">Figur&nbsp;<span>4.10</span></a>.</p>
 <div class="cell enlarge-image" data-layout-align="center" data-out.wdith="100%">
 <div class="cell-output-display">
-<div id="fig-descriptive-jamovi-frequency-table" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Et skjermbilde av jamovi som viser frekvenstabell til _Kjønn_." data-fig-pos="H">
+<div id="fig-descriptive-jamovi-frequency-table" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Et skjermbilde av jamovi som viser frekvenstabell til _Kjønn_." data-fig-align="center" data-fig-pos="H">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-descriptive-jamovi-frequency-table-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="images/fig-descriptive-jamovi-frequency-table.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="Figur&nbsp;4.10. Et skjermbilde av jamovi som viser frekvenstabell til Kjønn."><img src="images/fig-descriptive-jamovi-frequency-table.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" data-fig-pos="H" alt="Et skjermbilde av jamovi som viser frekvenstabell til _Kjønn_."></a>
@@ -1418,7 +1418,7 @@ Figur&nbsp;4.10. Et skjermbilde av jamovi som viser frekvenstabell til <em>Kjøn
 <p><strong>Variasjonsbredden</strong> er det aller enkleste spredningsmålet. Den regnes ut ved å ta den største verdien minus den minste verdien. I <a href="#fig-descriptive-jamovi-dispersion" class="quarto-xref">Figur&nbsp;<span>4.11</span></a></p>
 <div class="cell enlarge-image" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-descriptive-jamovi-dispersion" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Et skjermbilde av jamovi som likner på de foregående, men der boksene for &quot;Dispersion&quot; er krysset av; Std. deviation, Variance, Range, Minimum, Maximum" data-fig-pos="H">
+<div id="fig-descriptive-jamovi-dispersion" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Et skjermbilde av jamovi som likner på de foregående, men der boksene for &quot;Dispersion&quot; er krysset av; Std. deviation, Variance, Range, Minimum, Maximum" data-fig-align="center" data-fig-pos="H">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-descriptive-jamovi-dispersion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="images/fig-descriptive-jamovi-dispersion.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="Figur&nbsp;4.11. Et skjermbilde av hvordan man finner ulike spredningsmål i jamovi"><img src="images/fig-descriptive-jamovi-dispersion.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" data-fig-pos="H" alt="Et skjermbilde av jamovi som likner på de foregående, men der boksene for &quot;Dispersion&quot; er krysset av; Std. deviation, Variance, Range, Minimum, Maximum"></a>
@@ -1448,7 +1448,7 @@ Figur&nbsp;4.11. Et skjermbilde av hvordan man finner ulike spredningsmål i jam
 <section id="varians" class="level3" data-number="4.4.3">
 <h3 data-number="4.4.3" class="anchored" data-anchor-id="varians"><span class="header-section-number">4.4.3</span> Varians</h3>
 <p>De to spredningsmålene vi har sett på så langt er differanser, enten mellom største og minste verdi eller mellom tjuefemte og syttifemte persentil. En annen tilnærming er å regne ut hvor stort et “typisk” avvik er fra sentraltendensen.</p>
-<p>Vi tar et eksempel. De fem første verdiene på variabelen <em>Likestilling</em> er vist i første kolonne i <a href="#tbl-descriptive-deviation" class="quarto-xref">Tabell&nbsp;<span>4.2</span></a>. Gjennomsnittet av <em>Likestilling</em> er 54,8. Da kan man regne ut hvor mye hver verdi avviker fra gjennomsnittet. I tabellen ser vi at første verdi avviker 10.9 fra gjennomsnittet. <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> Den nye kolonnen <em>Avvik fra gjennomsnittet</em> inneholder alle disse avvikene. Disse verdiene kan man bruke til å beskrive spredningen, for eksempel ved å regne gjennomsnittet eller medianen av dem. Slike spredningsmål blir brukt, men de desidert vanligste spredningsmålene legger til et steg til.</p>
+<p>Vi tar et eksempel. De fem første verdiene på variabelen <em>Likestilling</em> er vist i første kolonne i <a href="#tbl-descriptive-deviation" class="quarto-xref">Tabell&nbsp;<span>4.2</span></a>. Gjennomsnittet av <em>Likestilling</em> er 54,8. Da kan man regne ut hvor mye hver verdi avviker fra gjennomsnittet. I tabellen ser vi at første verdi avviker 12.2 fra gjennomsnittet. <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> Den nye kolonnen <em>Avvik fra gjennomsnittet</em> inneholder alle disse avvikene. Disse verdiene kan man bruke til å beskrive spredningen, for eksempel ved å regne gjennomsnittet eller medianen av dem. Slike spredningsmål blir brukt, men de desidert vanligste spredningsmålene legger til et steg til.</p>
 <div class="cell" data-layout-align="center">
 <div id="tbl-descriptive-deviation" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -1475,8 +1475,8 @@ Tabell&nbsp;4.2. Noen verdier på variabelen <em>Likestilling</em> og deres avvi
 
     <script>
 
-      function styleCell_lmaje3b7r23ur2sivgms(i, j, css_id) {
-          var table = document.getElementById("tinytable_lmaje3b7r23ur2sivgms");
+      function styleCell_wfrbr1b5fei2wwaz9nrh(i, j, css_id) {
+          var table = document.getElementById("tinytable_wfrbr1b5fei2wwaz9nrh");
           var cell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
           if (cell) {
               console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
@@ -1486,7 +1486,7 @@ Tabell&nbsp;4.2. Noen verdier på variabelen <em>Likestilling</em> og deres avvi
           }
       }
       function insertSpanRow(i, colspan, content) {
-        var table = document.getElementById('tinytable_lmaje3b7r23ur2sivgms');
+        var table = document.getElementById('tinytable_wfrbr1b5fei2wwaz9nrh');
         // Find the row with data-row attribute matching i
         var targetRow = table.querySelector(`tr [data-row="${i}"]`).closest('tr');
         var newRow = table.insertRow(targetRow.rowIndex);
@@ -1498,8 +1498,8 @@ Tabell&nbsp;4.2. Noen verdier på variabelen <em>Likestilling</em> og deres avvi
         // this may be unsafe, but innerText does not interpret <br>
         newCell.innerHTML = content;
       }
-      function spanCell_lmaje3b7r23ur2sivgms(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_lmaje3b7r23ur2sivgms");
+      function spanCell_wfrbr1b5fei2wwaz9nrh(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_wfrbr1b5fei2wwaz9nrh");
         const targetCell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
         if (!targetCell) {
           console.warn(`Cell at (${i}, ${j}) not found.`);
@@ -1530,18 +1530,18 @@ Tabell&nbsp;4.2. Noen verdier på variabelen <em>Likestilling</em> og deres avvi
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: '5', j: 1 },  ], css_id: 'tinytable_css_hcn8rtn8gtsclc5f1kpp',}, 
-          { positions: [ { i: '1', j: 1 }, { i: '2', j: 1 }, { i: '3', j: 1 }, { i: '4', j: 1 },  ], css_id: 'tinytable_css_jqqadf87qixja8tgp1r2',}, 
-          { positions: [ { i: '0', j: 1 },  ], css_id: 'tinytable_css_udko1pekzqg937fg7xzg',}, 
-          { positions: [ { i: '5', j: 0 },  ], css_id: 'tinytable_css_dy3muq5i5o3o7lvxq7zh',}, 
-          { positions: [ { i: '1', j: 0 }, { i: '2', j: 0 }, { i: '3', j: 0 }, { i: '4', j: 0 },  ], css_id: 'tinytable_css_0eavo1zb4d8x03yi00fb',}, 
-          { positions: [ { i: '0', j: 0 },  ], css_id: 'tinytable_css_8syxoxxl0246gkkmjnj7',}, 
+          { positions: [ { i: '5', j: 1 },  ], css_id: 'tinytable_css_ntmvgpmpz7ez2wprpgm9',}, 
+          { positions: [ { i: '1', j: 1 }, { i: '2', j: 1 }, { i: '3', j: 1 }, { i: '4', j: 1 },  ], css_id: 'tinytable_css_aw2wtx1jdo6yulflswu7',}, 
+          { positions: [ { i: '0', j: 1 },  ], css_id: 'tinytable_css_5rvyrj04aj196zmxn3sm',}, 
+          { positions: [ { i: '5', j: 0 },  ], css_id: 'tinytable_css_f8at9xjd5h17ak6m79g5',}, 
+          { positions: [ { i: '1', j: 0 }, { i: '2', j: 0 }, { i: '3', j: 0 }, { i: '4', j: 0 },  ], css_id: 'tinytable_css_3nr25zt9ozo3elnefi7u',}, 
+          { positions: [ { i: '0', j: 0 },  ], css_id: 'tinytable_css_gj8a74s59p8a5vbiqvqt',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  styleCell_lmaje3b7r23ur2sivgms(cell.i, cell.j, group.css_id);
+                  styleCell_wfrbr1b5fei2wwaz9nrh(cell.i, cell.j, group.css_id);
               });
           });
       });
@@ -1549,15 +1549,15 @@ Tabell&nbsp;4.2. Noen verdier på variabelen <em>Likestilling</em> og deres avvi
 
     <style>
       /* tinytable css entries after */
-      .table td.tinytable_css_hcn8rtn8gtsclc5f1kpp, .table th.tinytable_css_hcn8rtn8gtsclc5f1kpp { border-bottom: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_jqqadf87qixja8tgp1r2, .table th.tinytable_css_jqqadf87qixja8tgp1r2 { padding-bottom: 0.1em; }
-      .table td.tinytable_css_udko1pekzqg937fg7xzg, .table th.tinytable_css_udko1pekzqg937fg7xzg { border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; border-bottom: solid #d3d8dc 0.1em; padding-bottom: 0.1em; }
-      .table td.tinytable_css_dy3muq5i5o3o7lvxq7zh, .table th.tinytable_css_dy3muq5i5o3o7lvxq7zh { border-bottom: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.1em; padding-right: 0.5em; }
-      .table td.tinytable_css_0eavo1zb4d8x03yi00fb, .table th.tinytable_css_0eavo1zb4d8x03yi00fb { padding-right: 0.5em; padding-bottom: 0.1em; }
-      .table td.tinytable_css_8syxoxxl0246gkkmjnj7, .table th.tinytable_css_8syxoxxl0246gkkmjnj7 { border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; border-bottom: solid #d3d8dc 0.1em; padding-right: 0.5em; padding-bottom: 0.1em; }
+      .table td.tinytable_css_ntmvgpmpz7ez2wprpgm9, .table th.tinytable_css_ntmvgpmpz7ez2wprpgm9 { border-bottom: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_aw2wtx1jdo6yulflswu7, .table th.tinytable_css_aw2wtx1jdo6yulflswu7 { padding-bottom: 0.1em; }
+      .table td.tinytable_css_5rvyrj04aj196zmxn3sm, .table th.tinytable_css_5rvyrj04aj196zmxn3sm { border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; border-bottom: solid #d3d8dc 0.1em; padding-bottom: 0.1em; }
+      .table td.tinytable_css_f8at9xjd5h17ak6m79g5, .table th.tinytable_css_f8at9xjd5h17ak6m79g5 { border-bottom: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.1em; padding-right: 0.5em; }
+      .table td.tinytable_css_3nr25zt9ozo3elnefi7u, .table th.tinytable_css_3nr25zt9ozo3elnefi7u { padding-right: 0.5em; padding-bottom: 0.1em; }
+      .table td.tinytable_css_gj8a74s59p8a5vbiqvqt, .table th.tinytable_css_gj8a74s59p8a5vbiqvqt { border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; border-bottom: solid #d3d8dc 0.1em; padding-right: 0.5em; padding-bottom: 0.1em; }
     </style>
     <div class="container">
-      <table class="table table-borderless" id="tinytable_lmaje3b7r23ur2sivgms" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+      <table class="table table-borderless" id="tinytable_wfrbr1b5fei2wwaz9nrh" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
         <thead>
         
               <tr>
@@ -1568,20 +1568,20 @@ Tabell&nbsp;4.2. Noen verdier på variabelen <em>Likestilling</em> og deres avvi
         
         <tbody>
                 <tr>
-                  <td data-row="1" data-col="0">65.7</td>
-                  <td data-row="1" data-col="1">10.9</td>
+                  <td data-row="1" data-col="0">42.6</td>
+                  <td data-row="1" data-col="1">12.2</td>
                 </tr>
                 <tr>
-                  <td data-row="2" data-col="0">65.7</td>
-                  <td data-row="2" data-col="1">10.9</td>
+                  <td data-row="2" data-col="0">57.1</td>
+                  <td data-row="2" data-col="1">2.3</td>
                 </tr>
                 <tr>
-                  <td data-row="3" data-col="0">52.7</td>
-                  <td data-row="3" data-col="1">2.1</td>
+                  <td data-row="3" data-col="0">49.4</td>
+                  <td data-row="3" data-col="1">5.4</td>
                 </tr>
                 <tr>
-                  <td data-row="4" data-col="0">49.4</td>
-                  <td data-row="4" data-col="1">5.4</td>
+                  <td data-row="4" data-col="0">65.7</td>
+                  <td data-row="4" data-col="1">10.9</td>
                 </tr>
                 <tr>
                   <td data-row="5" data-col="0">65.7</td>
@@ -1596,7 +1596,7 @@ Tabell&nbsp;4.2. Noen verdier på variabelen <em>Likestilling</em> og deres avvi
 </figure>
 </div>
 </div>
-<p>Det første av de vanligste og mest elegante spredningsmålene vi skal møte er <strong>varians</strong>. For å regne ut dette tar man ikke gjennomsnittlig avvik, men gjennomsnittlig <em>kvadratisk</em> avvik. Det første avviket var <span class="math inline">\(12,2\)</span> og da er det kvadratiske avviket <span class="math inline">\(12,2^2 = 148,84\)</span>, man opphøyer altså tallet i andre. Da kan man regne ut kvadratet av alle avvikene, se <a href="#tbl-descriptive-variance" class="quarto-xref">Tabell&nbsp;<span>4.3</span></a>.</p>
+<p>Det første av de vanligste og mest elegante spredningsmålene vi skal møte er <strong>varians</strong>. For å regne ut dette tar man ikke gjennomsnittlig avvik, men gjennomsnittlig <em>kvadratisk</em> avvik. Det første avviket var <span class="math inline">\(12{,}2\)</span> og da er det kvadratiske avviket <span class="math inline">\(12{,}2^2 = 148{,}84\)</span>, man opphøyer altså tallet i andre. Da kan man regne ut kvadratet av alle avvikene, se <a href="#tbl-descriptive-variance" class="quarto-xref">Tabell&nbsp;<span>4.3</span></a>.</p>
 <div class="cell" data-layout-align="center">
 <div id="tbl-descriptive-variance" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -1623,8 +1623,8 @@ Tabell&nbsp;4.3. Noen verdier på variabelen <em>Likestilling</em> og deres avvi
 
     <script>
 
-      function styleCell_z9gb0w4spxlhpgm80nyb(i, j, css_id) {
-          var table = document.getElementById("tinytable_z9gb0w4spxlhpgm80nyb");
+      function styleCell_9g72dr58wix0rt3pa4zi(i, j, css_id) {
+          var table = document.getElementById("tinytable_9g72dr58wix0rt3pa4zi");
           var cell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
           if (cell) {
               console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
@@ -1634,7 +1634,7 @@ Tabell&nbsp;4.3. Noen verdier på variabelen <em>Likestilling</em> og deres avvi
           }
       }
       function insertSpanRow(i, colspan, content) {
-        var table = document.getElementById('tinytable_z9gb0w4spxlhpgm80nyb');
+        var table = document.getElementById('tinytable_9g72dr58wix0rt3pa4zi');
         // Find the row with data-row attribute matching i
         var targetRow = table.querySelector(`tr [data-row="${i}"]`).closest('tr');
         var newRow = table.insertRow(targetRow.rowIndex);
@@ -1646,8 +1646,8 @@ Tabell&nbsp;4.3. Noen verdier på variabelen <em>Likestilling</em> og deres avvi
         // this may be unsafe, but innerText does not interpret <br>
         newCell.innerHTML = content;
       }
-      function spanCell_z9gb0w4spxlhpgm80nyb(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_z9gb0w4spxlhpgm80nyb");
+      function spanCell_9g72dr58wix0rt3pa4zi(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_9g72dr58wix0rt3pa4zi");
         const targetCell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
         if (!targetCell) {
           console.warn(`Cell at (${i}, ${j}) not found.`);
@@ -1678,18 +1678,18 @@ Tabell&nbsp;4.3. Noen verdier på variabelen <em>Likestilling</em> og deres avvi
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: '5', j: 2 },  ], css_id: 'tinytable_css_erry91q5dc2qkrj9w6zu',}, 
-          { positions: [ { i: '1', j: 2 }, { i: '2', j: 2 }, { i: '3', j: 2 }, { i: '4', j: 2 },  ], css_id: 'tinytable_css_kriujcttwuty20r85sfv',}, 
-          { positions: [ { i: '0', j: 2 },  ], css_id: 'tinytable_css_g2qba6duio99dho3e73q',}, 
-          { positions: [ { i: '5', j: 0 }, { i: '5', j: 1 },  ], css_id: 'tinytable_css_jfzn5wawecvaz1zcjcdd',}, 
-          { positions: [ { i: '1', j: 0 }, { i: '3', j: 0 }, { i: '4', j: 0 }, { i: '3', j: 1 }, { i: '2', j: 0 }, { i: '1', j: 1 }, { i: '2', j: 1 }, { i: '4', j: 1 },  ], css_id: 'tinytable_css_yo065809z4npt5uk5ukb',}, 
-          { positions: [ { i: '0', j: 0 }, { i: '0', j: 1 },  ], css_id: 'tinytable_css_d10s205mbxvobq8amlaf',}, 
+          { positions: [ { i: '5', j: 2 },  ], css_id: 'tinytable_css_whjq98uihrkszjm41hbc',}, 
+          { positions: [ { i: '1', j: 2 }, { i: '2', j: 2 }, { i: '3', j: 2 }, { i: '4', j: 2 },  ], css_id: 'tinytable_css_c715mgvd6c7ag6iedpqg',}, 
+          { positions: [ { i: '0', j: 2 },  ], css_id: 'tinytable_css_oel7sk8xa36awak92yxr',}, 
+          { positions: [ { i: '5', j: 0 }, { i: '5', j: 1 },  ], css_id: 'tinytable_css_9ny97v6gjw991emy158m',}, 
+          { positions: [ { i: '1', j: 0 }, { i: '3', j: 0 }, { i: '4', j: 0 }, { i: '3', j: 1 }, { i: '2', j: 0 }, { i: '1', j: 1 }, { i: '2', j: 1 }, { i: '4', j: 1 },  ], css_id: 'tinytable_css_oz263n32a9sm4nvoa9eu',}, 
+          { positions: [ { i: '0', j: 0 }, { i: '0', j: 1 },  ], css_id: 'tinytable_css_yw4mok4b1h3m70aaeeee',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  styleCell_z9gb0w4spxlhpgm80nyb(cell.i, cell.j, group.css_id);
+                  styleCell_9g72dr58wix0rt3pa4zi(cell.i, cell.j, group.css_id);
               });
           });
       });
@@ -1697,15 +1697,15 @@ Tabell&nbsp;4.3. Noen verdier på variabelen <em>Likestilling</em> og deres avvi
 
     <style>
       /* tinytable css entries after */
-      .table td.tinytable_css_erry91q5dc2qkrj9w6zu, .table th.tinytable_css_erry91q5dc2qkrj9w6zu { border-bottom: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_kriujcttwuty20r85sfv, .table th.tinytable_css_kriujcttwuty20r85sfv { padding-bottom: 0.1em; }
-      .table td.tinytable_css_g2qba6duio99dho3e73q, .table th.tinytable_css_g2qba6duio99dho3e73q { border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; border-bottom: solid #d3d8dc 0.1em; padding-bottom: 0.1em; }
-      .table td.tinytable_css_jfzn5wawecvaz1zcjcdd, .table th.tinytable_css_jfzn5wawecvaz1zcjcdd { border-bottom: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.1em; padding-right: 0.5em; }
-      .table td.tinytable_css_yo065809z4npt5uk5ukb, .table th.tinytable_css_yo065809z4npt5uk5ukb { padding-right: 0.5em; padding-bottom: 0.1em; }
-      .table td.tinytable_css_d10s205mbxvobq8amlaf, .table th.tinytable_css_d10s205mbxvobq8amlaf { border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; border-bottom: solid #d3d8dc 0.1em; padding-right: 0.5em; padding-bottom: 0.1em; }
+      .table td.tinytable_css_whjq98uihrkszjm41hbc, .table th.tinytable_css_whjq98uihrkszjm41hbc { border-bottom: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_c715mgvd6c7ag6iedpqg, .table th.tinytable_css_c715mgvd6c7ag6iedpqg { padding-bottom: 0.1em; }
+      .table td.tinytable_css_oel7sk8xa36awak92yxr, .table th.tinytable_css_oel7sk8xa36awak92yxr { border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; border-bottom: solid #d3d8dc 0.1em; padding-bottom: 0.1em; }
+      .table td.tinytable_css_9ny97v6gjw991emy158m, .table th.tinytable_css_9ny97v6gjw991emy158m { border-bottom: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.1em; padding-right: 0.5em; }
+      .table td.tinytable_css_oz263n32a9sm4nvoa9eu, .table th.tinytable_css_oz263n32a9sm4nvoa9eu { padding-right: 0.5em; padding-bottom: 0.1em; }
+      .table td.tinytable_css_yw4mok4b1h3m70aaeeee, .table th.tinytable_css_yw4mok4b1h3m70aaeeee { border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; border-bottom: solid #d3d8dc 0.1em; padding-right: 0.5em; padding-bottom: 0.1em; }
     </style>
     <div class="container">
-      <table class="table table-borderless" id="tinytable_z9gb0w4spxlhpgm80nyb" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+      <table class="table table-borderless" id="tinytable_9g72dr58wix0rt3pa4zi" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
         <thead>
         
               <tr>
@@ -1717,24 +1717,24 @@ Tabell&nbsp;4.3. Noen verdier på variabelen <em>Likestilling</em> og deres avvi
         
         <tbody>
                 <tr>
-                  <td data-row="1" data-col="0">65.7</td>
-                  <td data-row="1" data-col="1">10.9</td>
-                  <td data-row="1" data-col="2">118.81</td>
+                  <td data-row="1" data-col="0">42.6</td>
+                  <td data-row="1" data-col="1">12.2</td>
+                  <td data-row="1" data-col="2">148.84</td>
                 </tr>
                 <tr>
-                  <td data-row="2" data-col="0">65.7</td>
-                  <td data-row="2" data-col="1">10.9</td>
-                  <td data-row="2" data-col="2">118.81</td>
+                  <td data-row="2" data-col="0">57.1</td>
+                  <td data-row="2" data-col="1">2.3</td>
+                  <td data-row="2" data-col="2">5.29</td>
                 </tr>
                 <tr>
-                  <td data-row="3" data-col="0">52.7</td>
-                  <td data-row="3" data-col="1">2.1</td>
-                  <td data-row="3" data-col="2">4.41</td>
+                  <td data-row="3" data-col="0">49.4</td>
+                  <td data-row="3" data-col="1">5.4</td>
+                  <td data-row="3" data-col="2">29.16</td>
                 </tr>
                 <tr>
-                  <td data-row="4" data-col="0">49.4</td>
-                  <td data-row="4" data-col="1">5.4</td>
-                  <td data-row="4" data-col="2">29.16</td>
+                  <td data-row="4" data-col="0">65.7</td>
+                  <td data-row="4" data-col="1">10.9</td>
+                  <td data-row="4" data-col="2">118.81</td>
                 </tr>
                 <tr>
                   <td data-row="5" data-col="0">65.7</td>
@@ -1828,7 +1828,7 @@ Figur&nbsp;4.12. Two figures, linked inextricably.
 <p>Skjevhet er et mål på asymmetri. En variabel er symmetrisk hvis høyre og venstre side er speilbilder av hverandre, og asymmetrisk hvis de ikke er speilbilder av hverandre. Vi sier at variabelen er venstreskjev hvis verdiene som ligger til venstre for gjennomsnittet ligger langt unna, altså at vi har lengre hale til venstre enn til høyre. Dette kalles også <strong>negativ skjevhet</strong>. Høyreskjevhet kalles <strong>positiv skjevhet</strong>. <a href="#fig-descriptive-skew" class="quarto-xref">Figur&nbsp;<span>4.13</span></a> er bildet du bør ha i hodet.</p>
 <div class="cell enlarge-image" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-descriptive-skew" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Tre stolpediagram demonstrerer henholdsvis negativ skjevhet, ingen skjevhet og positiv skjevhet. Diagrammet til venstre viser en lengre hale til venstre, det midterste diagrammet er symmetrisk, og diagrammet til høyre viser en lengre hale til høyre">
+<div id="fig-descriptive-skew" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Tre stolpediagram demonstrerer henholdsvis negativ skjevhet, ingen skjevhet og positiv skjevhet. Diagrammet til venstre viser en lengre hale til venstre, det midterste diagrammet er symmetrisk, og diagrammet til høyre viser en lengre hale til høyre" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-descriptive-skew-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="sec-descriptive_files/figure-html/fig-descriptive-skew-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14" title="Figur&nbsp;4.13. En illustrasjon av skjevhet. Til venstre har vi et negativt skjevt datasett, i midten har vi et datasett uten skjevhet, og til høyre har vi et positivt skjevt datasett"><img src="sec-descriptive_files/figure-html/fig-descriptive-skew-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="Tre stolpediagram demonstrerer henholdsvis negativ skjevhet, ingen skjevhet og positiv skjevhet. Diagrammet til venstre viser en lengre hale til venstre, det midterste diagrammet er symmetrisk, og diagrammet til høyre viser en lengre hale til høyre"></a>
@@ -1865,8 +1865,8 @@ Figur&nbsp;4.13. En illustrasjon av skjevhet. Til venstre har vi et negativt skj
 
     <script>
 
-      function styleCell_rjjtpzd3u8du73799vnh(i, j, css_id) {
-          var table = document.getElementById("tinytable_rjjtpzd3u8du73799vnh");
+      function styleCell_6t0jcnpy0zxa5tm93sug(i, j, css_id) {
+          var table = document.getElementById("tinytable_6t0jcnpy0zxa5tm93sug");
           var cell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
           if (cell) {
               console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
@@ -1876,7 +1876,7 @@ Figur&nbsp;4.13. En illustrasjon av skjevhet. Til venstre har vi et negativt skj
           }
       }
       function insertSpanRow(i, colspan, content) {
-        var table = document.getElementById('tinytable_rjjtpzd3u8du73799vnh');
+        var table = document.getElementById('tinytable_6t0jcnpy0zxa5tm93sug');
         // Find the row with data-row attribute matching i
         var targetRow = table.querySelector(`tr [data-row="${i}"]`).closest('tr');
         var newRow = table.insertRow(targetRow.rowIndex);
@@ -1888,8 +1888,8 @@ Figur&nbsp;4.13. En illustrasjon av skjevhet. Til venstre har vi et negativt skj
         // this may be unsafe, but innerText does not interpret <br>
         newCell.innerHTML = content;
       }
-      function spanCell_rjjtpzd3u8du73799vnh(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_rjjtpzd3u8du73799vnh");
+      function spanCell_6t0jcnpy0zxa5tm93sug(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_6t0jcnpy0zxa5tm93sug");
         const targetCell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
         if (!targetCell) {
           console.warn(`Cell at (${i}, ${j}) not found.`);
@@ -1920,14 +1920,14 @@ Figur&nbsp;4.13. En illustrasjon av skjevhet. Til venstre har vi et negativt skj
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: '5', j: 0 }, { i: '5', j: 1 }, { i: '5', j: 2 }, { i: '5', j: 3 }, { i: '5', j: 4 }, { i: '5', j: 5 }, { i: '5', j: 6 }, { i: '5', j: 7 },  ], css_id: 'tinytable_css_pe36t0jcnpy0zxa5tm93',}, 
-          { positions: [ { i: '0', j: 0 }, { i: '0', j: 1 }, { i: '0', j: 2 }, { i: '0', j: 3 }, { i: '0', j: 4 }, { i: '0', j: 5 }, { i: '0', j: 6 }, { i: '0', j: 7 },  ], css_id: 'tinytable_css_3x9od9wguhb28s2387uu',}, 
+          { positions: [ { i: '5', j: 0 }, { i: '5', j: 1 }, { i: '5', j: 2 }, { i: '5', j: 3 }, { i: '5', j: 4 }, { i: '5', j: 5 }, { i: '5', j: 6 }, { i: '5', j: 7 },  ], css_id: 'tinytable_css_ferna00rxr4nkpfcxjza',}, 
+          { positions: [ { i: '0', j: 0 }, { i: '0', j: 1 }, { i: '0', j: 2 }, { i: '0', j: 3 }, { i: '0', j: 4 }, { i: '0', j: 5 }, { i: '0', j: 6 }, { i: '0', j: 7 },  ], css_id: 'tinytable_css_xjlv22opxhb4ljzve0n0',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  styleCell_rjjtpzd3u8du73799vnh(cell.i, cell.j, group.css_id);
+                  styleCell_6t0jcnpy0zxa5tm93sug(cell.i, cell.j, group.css_id);
               });
           });
       });
@@ -1935,11 +1935,11 @@ Figur&nbsp;4.13. En illustrasjon av skjevhet. Til venstre har vi et negativt skj
 
     <style>
       /* tinytable css entries after */
-      .table td.tinytable_css_pe36t0jcnpy0zxa5tm93, .table th.tinytable_css_pe36t0jcnpy0zxa5tm93 { border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_3x9od9wguhb28s2387uu, .table th.tinytable_css_3x9od9wguhb28s2387uu { border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_ferna00rxr4nkpfcxjza, .table th.tinytable_css_ferna00rxr4nkpfcxjza { border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_xjlv22opxhb4ljzve0n0, .table th.tinytable_css_xjlv22opxhb4ljzve0n0 { border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
     </style>
     <div class="container">
-      <table class="table table-borderless" id="tinytable_rjjtpzd3u8du73799vnh" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+      <table class="table table-borderless" id="tinytable_6t0jcnpy0zxa5tm93sug" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
         <thead>
         
               <tr>
@@ -1957,53 +1957,53 @@ Figur&nbsp;4.13. En illustrasjon av skjevhet. Til venstre har vi et negativt skj
         <tbody>
                 <tr>
                   <td data-row="1" data-col="0">Spania</td>
-                  <td data-row="1" data-col="1">50440404</td>
-                  <td data-row="1" data-col="2">5044</td>
+                  <td data-row="1" data-col="1">51180119</td>
+                  <td data-row="1" data-col="2">5118</td>
                   <td data-row="1" data-col="3">8</td>
-                  <td data-row="1" data-col="4">Jente</td>
-                  <td data-row="1" data-col="5">Ungdomsskole</td>
-                  <td data-row="1" data-col="6">65.70400</td>
-                  <td data-row="1" data-col="7">-1.52547</td>
+                  <td data-row="1" data-col="4">Gutt</td>
+                  <td data-row="1" data-col="5">Kort utdanning</td>
+                  <td data-row="1" data-col="6">42.63710</td>
+                  <td data-row="1" data-col="7">0.17825</td>
                 </tr>
                 <tr>
                   <td data-row="2" data-col="0">Spania</td>
-                  <td data-row="2" data-col="1">50950107</td>
-                  <td data-row="2" data-col="2">5095</td>
+                  <td data-row="2" data-col="1">51210112</td>
+                  <td data-row="2" data-col="2">5121</td>
                   <td data-row="2" data-col="3">8</td>
                   <td data-row="2" data-col="4">Gutt</td>
-                  <td data-row="2" data-col="5">VGS</td>
-                  <td data-row="2" data-col="6">65.70400</td>
-                  <td data-row="2" data-col="7">0.01987</td>
+                  <td data-row="2" data-col="5">Ungdomsskole</td>
+                  <td data-row="2" data-col="6">57.13913</td>
+                  <td data-row="2" data-col="7">1.22299</td>
                 </tr>
                 <tr>
                   <td data-row="3" data-col="0">Spania</td>
-                  <td data-row="3" data-col="1">50130106</td>
-                  <td data-row="3" data-col="2">5013</td>
+                  <td data-row="3" data-col="1">51430108</td>
+                  <td data-row="3" data-col="2">5143</td>
                   <td data-row="3" data-col="3">8</td>
                   <td data-row="3" data-col="4">Jente</td>
                   <td data-row="3" data-col="5">VGS</td>
-                  <td data-row="3" data-col="6">52.66245</td>
-                  <td data-row="3" data-col="7">0.30340</td>
+                  <td data-row="3" data-col="6">49.42491</td>
+                  <td data-row="3" data-col="7">0.57663</td>
                 </tr>
                 <tr>
-                  <td data-row="4" data-col="0">Norge</td>
-                  <td data-row="4" data-col="1">51920121</td>
-                  <td data-row="4" data-col="2">5192</td>
-                  <td data-row="4" data-col="3">9</td>
-                  <td data-row="4" data-col="4">Gutt</td>
-                  <td data-row="4" data-col="5">VGS</td>
-                  <td data-row="4" data-col="6">49.42491</td>
-                  <td data-row="4" data-col="7">-0.00542</td>
+                  <td data-row="4" data-col="0">Spania</td>
+                  <td data-row="4" data-col="1">50880122</td>
+                  <td data-row="4" data-col="2">5088</td>
+                  <td data-row="4" data-col="3">8</td>
+                  <td data-row="4" data-col="4">Jente</td>
+                  <td data-row="4" data-col="5">Høyere utdanning</td>
+                  <td data-row="4" data-col="6">65.70400</td>
+                  <td data-row="4" data-col="7">-0.85618</td>
                 </tr>
                 <tr>
                   <td data-row="5" data-col="0">Norge</td>
-                  <td data-row="5" data-col="1">50420115</td>
-                  <td data-row="5" data-col="2">5042</td>
+                  <td data-row="5" data-col="1">50020111</td>
+                  <td data-row="5" data-col="2">5002</td>
                   <td data-row="5" data-col="3">9</td>
                   <td data-row="5" data-col="4">Jente</td>
-                  <td data-row="5" data-col="5">Høyere utdanning</td>
+                  <td data-row="5" data-col="5">Kort utdanning</td>
                   <td data-row="5" data-col="6">65.70400</td>
-                  <td data-row="5" data-col="7">-1.03225</td>
+                  <td data-row="5" data-col="7">-0.05390</td>
                 </tr>
         </tbody>
       </table>
@@ -2018,7 +2018,7 @@ Figur&nbsp;4.13. En illustrasjon av skjevhet. Til venstre har vi et negativt skj
 <p>Dette er ganske enkelt å gjøre i jamovi. For å regne ut deskriptiv statistikk separat for Gutt, Jente og Annet, må jeg dele opp dataene med verdiene i variabelen <em>Kjønn</em>. I jamovi går man nok en gang til menyen for deskriptiv statistikk (“Analyses” → “Exploration” → “Descriptives”). Deretter legger du til variabelen Kjønn i vinduet der det står “Split by”, se den røde markeringen i <a href="#fig-descriptive-jamovi-equality-x-gender" class="quarto-xref">Figur&nbsp;<span>4.14</span></a>.</p>
 <div class="cell enlarge-image" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-descriptive-jamovi-equality-x-gender" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Et jamovi-skjermbilde som viser at _Kjønn_ er lagt til i vinduet &quot;Split by&quot;. Da vises deskriptiv statistikk for Gutt, Jente og Annet i et vindu til høyre">
+<div id="fig-descriptive-jamovi-equality-x-gender" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Et jamovi-skjermbilde som viser at _Kjønn_ er lagt til i vinduet &quot;Split by&quot;. Da vises deskriptiv statistikk for Gutt, Jente og Annet i et vindu til høyre" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-descriptive-jamovi-equality-x-gender-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="images/fig-descriptive-jamovi-equality-x-gender.png" class="lightbox" data-gallery="quarto-lightbox-gallery-15" title="Figur&nbsp;4.14. Et skjermbilde av jamovi som viser Likestilling for de forskjellige verdiene av Kjønn"><img src="images/fig-descriptive-jamovi-equality-x-gender.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" alt="Et jamovi-skjermbilde som viser at _Kjønn_ er lagt til i vinduet &quot;Split by&quot;. Da vises deskriptiv statistikk for Gutt, Jente og Annet i et vindu til høyre"></a>
@@ -2034,7 +2034,7 @@ Figur&nbsp;4.14. Et skjermbilde av jamovi som viser <em>Likestilling</em> for de
 <p>Vi kan også lure på om det er forskjell mellom Norge og Spania for hvert kjønn. Da legger vi til variabelen <em>Land</em> i “Split by”, se <a href="#fig-descriptive-jamovi-equality-x-gender-country" class="quarto-xref">Figur&nbsp;<span>4.15</span></a>. Vi ser at de norske jentene er mer for likestilling enn de spanske jentene (61,2 mot 58,8), men at de norske gutta er <em>mindre</em> for likestilling enn de spanske guttene (49,2 mot 50,5)! Skjerpings, gutter!</p>
 <div class="cell enlarge-image" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-descriptive-jamovi-equality-x-gender-country" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Et jamovi-skjermbilde som viser at _Kjønn_ og _Land_ er lagt til i vinduet &quot;Split by&quot;. Da vises deskriptiv statistikk for Gutt, Jente og Annet separat for hvert land i et vindu til høyre">
+<div id="fig-descriptive-jamovi-equality-x-gender-country" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Et jamovi-skjermbilde som viser at _Kjønn_ og _Land_ er lagt til i vinduet &quot;Split by&quot;. Da vises deskriptiv statistikk for Gutt, Jente og Annet separat for hvert land i et vindu til høyre" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-descriptive-jamovi-equality-x-gender-country-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="images/fig-descriptive-jamovi-equality-x-gender-country.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16" title="Figur&nbsp;4.15. Et skjermbilde av jamovi som viser Likestilling for de forskjellige verdiene av Kjønn og Land"><img src="images/fig-descriptive-jamovi-equality-x-gender-country.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" alt="Et jamovi-skjermbilde som viser at _Kjønn_ og _Land_ er lagt til i vinduet &quot;Split by&quot;. Da vises deskriptiv statistikk for Gutt, Jente og Annet separat for hvert land i et vindu til høyre"></a>
