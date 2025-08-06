@@ -23,11 +23,16 @@ ICCS <- bind_rows(ISGESPC4, ISGNORC4) |>
     Kjønn = fct_recode(Kjønn, Gutt = "Boy", Jente = "Girl", Annet = "<Other>"),
     Land = fct_recode(Land, Spania = "ESP", Norge = "NOR"),
     `Forventet utdanning` = fct_recode(`Forventet utdanning`,
-                                       `Høyere utdanning` = "<ISCED level 6, 7 or 8>",
-                                       `Kort utdanning` = "<ISCED level 4 or 5>",
+                                       `Ungdomsskole` = "<ISCED level 2> or below",
                                        `VGS` = "<ISCED level 3>",
-                                       `Ungdomsskole` = "<ISCED level 2> or below"
-                                       )
+                                       `Kort utdanning` = "<ISCED level 4 or 5>",
+                                       `Høyere utdanning` = "<ISCED level 6, 7 or 8>"
+                                       ) |> 
+      factor(ordered = TRUE, levels = c("Ungdomsskole",
+                                          "VGS",
+                                          "Kort utdanning",
+                                          "Høyere utdanning"
+      ))
   ) |> 
   filter(
     !`Trinn` %in% c(98, 99),

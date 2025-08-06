@@ -23,7 +23,7 @@ Det har blitt ganske vanlig å høre begrunnelser som "det er det dataene viser"
 ```{r}
 #| label: tbl-ICCS-data
 #| tbl-cap: Noen få av variablene fra ICCS-studien.
-set.seed(2025)
+set.seed(123)
 utvalg <- ICCS |>
   slice_sample(n = 50)
 utvalg |> 
@@ -33,7 +33,7 @@ utvalg |>
 
 Nå, ble du noe klokere? Jeg tipper du ikke ble noe klokere, og at du lengter etter å få dataene omarbeidet og presentert på en eller annen måte. Det er det som kalles deskriptiv statistikk.
 
-La oss åpne filen i et statistikkprogram. For å gjøre dette åpner vi filen *[ICCS.csv](data-and-tables/ICCS.csv)* og ser hvilke variabler som er lagret i filen, se @fig-descriptive-ICCS-data.
+La oss åpne filen i et statistikkprogram. For å gjøre dette åpner vi filen *[ICCS.csv](data_and_tables/ICCS.csv)* og ser hvilke variabler som er lagret i filen, se @fig-descriptive-ICCS-data.
 
 ```{r}
 #| label: fig-descriptive-ICCS-data
@@ -102,7 +102,7 @@ Alle spørsmålene virker jo å måle likestilling på en fin måte, men i Norge
 
 Å se på rådataene i tabellen på starten av kapittelet, @tbl-ICCS-data, fortalte oss lite Likevel viser jeg et histogram av *likestilling*-dataene, slik at vi vet hva det er vi prøver å beskrive med deskriptiv statistikk, se @fig-descriptive-ICCS-histogram. Neste kapittel inneholder mye mer om histogrammer.
 
-```{r, fig-ICCS-histogram}
+```{r}
 #| label: fig-descriptive-ICCS-histogram
 #| fig-cap: Et histogram av variabelen _Likestilling_ fra ICCS 2022.
 #| fig-alt: Histogram som viser variabelen _Likestilling_. Den horisontale aksen ($x$-aksen) strekker seg fra fra 15 til 70, og den vertikale aksen (y-aksen) viser tetthet, altså hvor mange svar som havner innad i hver søyle.
@@ -210,11 +210,11 @@ Man kan regne medianen av ordinale data. De fem første verdiene av variabelen _
 
 Hvis man sorterer dem i rekkefølge får man:
 
-> `r forventet_utdanning`.
+> `r sort(forventet_utdanning)`.
 
-Da ser man at medianen er `r forventet_utdanning[3]`.
+Da ser man at medianen er `r sort(forventet_utdanning)[3]`.
 
-Selvfølgelig er det uaktuelt å regne medianen for hånd med våre `r n_elever` verdier. Derfor bruker vi jamovi, som allerede har beregnet en medianverdi på `r `percentiles["50%"]` for _Likestilling_, se i den røde markeringen i  @fig-descriptive-jamovi-mean.
+Selvfølgelig er det uaktuelt å regne medianen for hånd med våre `r n_elever` verdier. Derfor bruker vi jamovi, som allerede har beregnet en medianverdi på `r median(ICCS$Likestilling) |> round(digits = 1)` for _Likestilling_, se i den røde markeringen i  @fig-descriptive-jamovi-mean.
 
 ### Gjennomsnitt eller median? Hva er forskjellen? {#sec-descriptive-mean-or-median}
 
@@ -378,7 +378,7 @@ avvik |>
   theme_tt("spacing")
 ```
 
-Det første av de vanligste og mest elegante spredningsmålene vi skal møte er **varians**. For å regne ut dette tar man ikke gjennomsnittlig avvik, men gjennomsnittlig _kvadratisk_ avvik. Det første avviket var $12,2$ og da er det kvadratiske avviket $12,2^2 = 148,84$, man opphøyer altså tallet i andre. Da kan man regne ut kvadratet av alle avvikene, se @tbl-descriptive-variance.
+Det første av de vanligste og mest elegante spredningsmålene vi skal møte er **varians**. For å regne ut dette tar man ikke gjennomsnittlig avvik, men gjennomsnittlig _kvadratisk_ avvik. Det første avviket var $12{,}2$ og da er det kvadratiske avviket $12{,}2^2 = 148{,}84$, man opphøyer altså tallet i andre. Da kan man regne ut kvadratet av alle avvikene, se @tbl-descriptive-variance.
 
 ```{r}
 #| label: tbl-descriptive-variance
