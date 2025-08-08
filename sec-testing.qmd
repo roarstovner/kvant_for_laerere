@@ -378,22 +378,35 @@ En variant av denne misforståelsen er å si at "$p$-verdien er sannsynligheten 
 
 Nå gjenstår bare å skrive resultatet av ESP-hypotesetesten din i en vitenskapelig artikkel og publisere den. Hvis man skulle forklart det ned i minste detalj kunne man skrevet slik:
 
+<<<<<<< HEAD
 > I utvalget vårt valgte $X = 62$ deltagere riktig farge på kortet. Under en tosidig binomialtest der nullhypotesen var at deltagerne hadde $50\%$ sjanse for å velge riktig farge, gir dette $p = 0{,}02$, som er mindre enn det satte signifikansnivået $\alpha = 0{,}05$. Dette betyr at resultatet er statistisk signifiknant og forkaster nullhypotesen. Vi anerkjenner at vi har benyttet en beslutningsprosedyre som forkaster nullhypotesen $5\%$ av gangene selv når den er sann, men vi synes denne feilraten er akseptabel og vil betrakte nullhypotesen som forkastet inntil eventuelle nye studier får oss til å skifte mening.
 
 Men det er vanligere å skrive det opp omtrent slik
 
 > I utvalget gjettet $X = 62$ deltagere riktig farge på kortet, som var signifikant forskjellig fra den forventede verdien (todisidig binomialtest, $p = 0{,}02$).
+=======
+> I utvalget vårt var verdien av testobservatoren $X = 62$. Under en tosidig nullhypotese gir dette $p = 0{,}02$, som er mindre enn det satte signifikansnivået $\alpha = 0{,}05$. Dette betyr at vi har resultatet er statistisk signifiknant og vi forkaster nullhypotesen om at deltagerne hadde $50\%$ sjanse for å gjette riktig farge på kortet. Vi anerkjenner at vi har benyttet en beslutningsprosedyre som forkaster nullhypotesen $5\%$ av gangene selv når den er sann, men vi synes denne feilraten er akseptabel og vil betrakte nullhypotesen som forkastet inntil eventuelle nye studier får oss til å skifte mening.
+
+Men det er vanligere å skrive det opp omtrent slik
+
+> Utvalget gjettet $X = 62$ kort riktig, som var signifikant forskjellig fra den forventede verdien ($p = 0{,}02$).
+>>>>>>> 7290743c375dd1a260f598ef57243ce4863b3733
 
 Så står det usagt hva signifikansnivået var og hvordan man skal tolke "signifikant forskjellig".
 
 Hvis man ikke får et signifikant resultat kunne man rapportert det ned i minste detalj slik:
 
+<<<<<<< HEAD
 > I utvalget vårt valgte $X = 45$ deltagere riktig farge på kortet. Under en tosidig binomialtest der nullhypotesen var at deltagerne hadde $50\%$ sjanse for å velge riktig farge, gir dette $p = 0{,}368$ som er over det satte signifikansnivået på $\alpha = 0{,}05$. Resultatet er ikke statistisk signifikant og vi beholder nullhypotesen. Vi anerkjenner at vi har benyttet en beslutningsprosedyre som vil beholde nullhypotesen med en viss sannsynlighet også når den er feil, og at vi ikke vet hvor stor denne sannsynligheten er.
+=======
+> I utvalget vårt var verdien av testobservatoren $X = 45$. Under en tosidig nullhypotese gir dette $p = 0{,}368$ som er over det satte signifikansnivået på $\alpha = 0{,}05$. Resultatet er ikke statistisk signifikant og vi beholder nullhypotesen om at deltagerne hadde $50\%$ sjanse for å gjette riktig farge på kortet. Vi anerkjenner at vi har benyttet en beslutningsprosedyre som vil beholde nullhypotesen med en viss sannsynlighet også når den er feil, og at vi ikke vet hvor stor denne sannsynligheten er.
+>>>>>>> 7290743c375dd1a260f598ef57243ce4863b3733
 
 Hvis du synes den siste setningen var lite tilfredsstillende, så er jeg enig i det, men slik er hypotesetesting -- den er designet for å kontrollere type I-feil og ikke type II-feil. (Man kan estimere sjansen for type II-feil hvis man spesifiserer eksakt hva alternativ-hypotesen er, for eksempel at sjansen for å trekke riktig kort er $70\%$, men det går vi ikke inn på i denne boka.)
 
 I artikler rapporteres ikke-signifikante resultater ofte slik som dette:
 
+<<<<<<< HEAD
 > I utvalget gjettet $X = 45$ deltagere riktig farge på kortet, som ikke var statistisk signifikant (tosidig binomialtest, $p = 0{,}368$).
 
 <!--
@@ -407,6 +420,9 @@ Vurder å ta med noe av dette. Dette er veldig bra!!
 
 [^10-categorical-data-analysis-7]: Well, sort of. The conventions for how statistics should be reported tend to differ somewhat from discipline to discipline. I've tended to stick with how things are done in psychology, since that's what I do. But the general principle of providing enough information to the reader to allow them to check your results is pretty universal, I think.
 -->
+=======
+> I utvalget gjettet $X = 45$ deltagere riktig farge på kortet, som ikke var statistisk signifikant $p = 0{,}368$.
+>>>>>>> 7290743c375dd1a260f598ef57243ce4863b3733
 
 ## Å utføre hypotesetesten i praksis
 
