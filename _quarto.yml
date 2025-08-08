@@ -33,7 +33,7 @@ book:
       #<a href="https://learnstatswithjamovi.com">learning statistics with jamovi</a>
     right: |
       Denne boka ble laget i <a href="https://quarto.org/">Quarto</a> 
-  site-url: "https://roarstovner.github.io/kvant_for_laerere/"
+  site-url: "kvant.roarstovner.no"
   repo-url: "https://github.com/roarstovner/kvant_for_laerere"
   #repo-actions: [edit,issue]
   open-graph: true
