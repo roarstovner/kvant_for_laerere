@@ -69,7 +69,7 @@ La oss anta at jeg vil tippe på en fotballkamp mellom to fotballlag, Rosenborg 
 
 Hver av disse virker fornuftige, men de er ikke identiske og gir forskjellig svar på mange statistiske spørsmål. I denne boken kommer vi kun til å presentere den første definisjonen av sannsynlighet, som kalles frekventisme, fordi dette er en den i vanligst bruk, selv om den tredje definisjonen, Bayesianisme, ses oftere og oftere i noen deler av utdanningsforskningen.
 
-### Det frekventistiske synet på sannsynlighet
+### Det frekventistiske synet på sannsynlighet {#sec-probability-frequentism}
 
 Den vanligste tilnærmingen til sannsynlighet kalles **frekventisme** og definerer sannsynlighet som en **langsiktig frekvens**. La oss si at vi kaster en rettferdig mynt om og om igjen og lurer på hva sjansen er for å få kron. Per definisjon er dette en mynt som har $P(K) = 0,5$. Hva ville vi observere? En mulighet er at de første 20 kastene kunne se slik ut:
 
@@ -122,9 +122,9 @@ En mer alvorlig uønsket egenskap ved den frekventistiske definisjonen er at den
 
 Frekventistisk sannsynlighet *forbyr* oss fra å lage sannsynlighetsuttalelser om en enkelt hendelse. Fra det frekventistiske perspektivet vil det enten regne i morgen eller så vil det ikke. Det er ingen "sannsynlighet" som knytter seg til en enkelt ikke-repeterbar hendelse. 
 
-Nå må det sies at frekventister har noen triks for å komme seg rundt dette. En mulighet er at det meteorologen mener er noe sånt som "Det finnes en kategori dager og steder som jeg predikerer 60% sjanse for regn for, og hvis vi bare ser på de dagene og stedene som jeg lager denne prediksjonen for, så vil det faktisk regne på 60% av de dagene og stedene. Kommende onsdag i Oslo er en slik dag og sted". Det er veldig rart og kontraintuitivt å tenke på det på denne måten, men du ser frekventister gjøre dette noen ganger. Og det vil komme opp senere i denne boken (f.eks. i @sec-Estimating-a-confidence-interval).
+Nå må det sies at frekventister har noen triks for å komme seg rundt dette. En mulighet er at det meteorologen mener er noe sånt som "Det finnes en kategori dager og steder som jeg predikerer 60% sjanse for regn for, og hvis vi bare ser på de dagene og stedene som jeg lager denne prediksjonen for, så vil det faktisk regne på 60% av de dagene og stedene. Kommende onsdag i Oslo er en slik dag og sted". Det er veldig rart og kontraintuitivt å tenke på det på denne måten, men du ser frekventister gjøre dette noen ganger. Og det vil komme opp senere i denne boken (f.eks. i @sec-estimation-CI).
 
-## Sannsynlighetsfordelinger
+## Sannsynlighetsfordelinger {#sec-probability-distributions}
 
 Selv om folk er rivende uenige i hva sannsynlighet er og hvordan sannsynligheter bør tolkes, så er folk stort sett enige om reglene som sannsynligheter følger. Vi skal ikke komme noe særlig inn på disse reglene, men reglene for sannynligheter er bakt inn i konseptet **sannsynlighetsfordeling**, og de må vi vite hva er.
 
@@ -174,7 +174,7 @@ Du tenker kanskje at dette er helt åpenbart og enkelt, og det er kanskje rett. 
 
 Som du kan tenke deg, varierer sannsynlighetsfordelinger enormt. Men de er ikke alle like viktige. Denne boken bygger på fem fordelinger: binomisk fordeling, normalfordeling, $t$-fordeling, $\chi^2$-("kjikvadrat")-fordeling og $F$-fordeling. Vi skal ikke lære noe om alle fem, men for å vise hva de går ut på og hvorfor normalfordelingen er så, vel, normal, skal jeg beskrive binomisk fordeling og hvordan den leder til normalfordelingen.
 
-### Binomialfordelingen
+### Binomialfordelingen {#sec-probability-binomial}
 
 Sannsynlighetsteorien oppstod i forsøket på å finne de beste strategiene i gambling-spill med terning eller kortstokk, så det er passende at vi diskuterer binomialfordelingen med terningkast. En **binomialfordeling** er sannsynlighetsfordelingen man får når man gjør et tilfeldig forsøk med to utfall (suksess og ikke suksses) mange ganger og teller opp antall suksesser man har fått. Man kaller sannsynligheten for suksess for for $\theta$ og antall ganger man gjør forsøket for $N$.
 
@@ -265,7 +265,7 @@ ggplot(data = data.frame(x = seq(-3, 3, 1)), aes(x)) +
 
 Legg merke til at i motsetning til figurene jeg tegnet for å illustrere binomialfordelingen, viser bildet av normalfordelingen i @fig-probability-standard-normal en jevn kurve i stedet for "histogram-lignende" søyler. Dette er fordi normalfordelingen er kontinuerlig mens binomialfordelingen ikke er det.
 ^[Det er et subtilt og noe frustrerende kjennetegn ved kontinuerlige fordelinger som gjør at y-aksen oppfører seg litt merkelig -- høyden på kurven her er faktisk ikke sannsynligheten for å observere en bestemt $x$-verdi. Men det _er_ sant at høydene på kurven forteller deg hvilke $x$-verdier som er mer sannsynlige (de høyere!). $y$-verdiene viser en "sannsynlighetstetthet", som du kan lese om et annet sted, hvis du er interessert.]
-For eksempel, i terningkast-eksemplet fra forrige seksjon var det mulig å få 3 kron eller 4 kron, men umulig å få 3,9 kron. Figurene jeg tegnet i forrige delkapittel reflekterte dette. I @fig-probability-binomial, for eksempel, er det en søyle plassert ved $X = 3$ og en annen ved $X = 4$, men det er ingenting imellom. Kontinuerlige fordelinger har ikke denne begrensningen. I praksis er normalfordelingen så praktisk at folk har en tendens til å bruke den selv når variabelen faktisk ikke er kontinuerlig. Så lenge det er nok kategorier (f.eks. en 5-punkts Likert-spørsmål på et spørreskjema), er det ganske standard praksis å bruke normalfordelingen som en tilnærming. Dette fungerer mye bedre enn du skulle.
+For eksempel, i terningkast-eksemplet fra forrige seksjon var det mulig å få 3 kron eller 4 kron, men umulig å få 3,9 kron. Figurene jeg tegnet i forrige delkapittel reflekterte dette. I @fig-probability-binomial, for eksempel, er det en søyle plassert ved $X = 3$ og en annen ved $X = 4$, men det er ingenting imellom. Kontinuerlige fordelinger har ikke denne begrensningen. I praksis er normalfordelingen så praktisk at folk har en tendens til å bruke den selv når variabelen faktisk ikke er kontinuerlig. Så lenge det er nok kategorier (f.eks. en 5-punkts Likert-spørsmål på et spørreskjema), er det ganske standard praksis å bruke normalfordelingen som en tilnærming. Dette fungerer mye bedre enn du skulle tro.
 
 La oss nå se om vi kan få en intuisjon for hvordan normalfordelingen fungerer. Først ser vi hva som skjer når vi leker med parametrene til fordelingen. @fig-probability-normals-mean viser derfor normalfordelinger som har forskjellige gjennomsnitt, men samme standardavvik. Alle disse fordelingene samme "bredde". Den eneste forskjellen mellom dem er at de har blitt forskjøvet til venstre eller høyre. På alle andrem åter er de identiske. Derimot, hvis vi øker standardavviket mens vi holder gjennomsnittet konstant, forblir fordelingen sentrert på samme sted, men fordelingen blir bredere, som du kan se i @fig-probability-normals-sd. Legg merke til at når vi utvider fordelingen, synker høyden på toppen. Dette må skje, for på samme måte som høydene på søylene vi brukte til å tegne en diskret binomialfordeling må summere til 1, må det totale arealet under kurven for normalfordelingen være lik 1.
 

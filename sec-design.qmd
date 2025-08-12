@@ -112,7 +112,9 @@ Men den "motsatte" regelen er ikke sann -- det er ikke slik at en korrelasjon me
 
 Korrelasjonen i @fig-spurious er mellom antall babyer i USA som heter Eleanor og antall kilowattimer vindkraft produsert i Polen. Det er ingen årsakssammenheng mellom variablene, for hvis alle i USA kalte jentebarna sine Eleanor ville ikke vindkraftutbyggingen i Polen skutt fart. Denne korrelasjonen er nok helt tilfeldig.
 
-Men de fleste korrelasjoner er ikke tilfeldige, man kan finne dem igjen i studie etter studie.  Det kan være helt tydelig at korrelasjonen alltid vil være der, men _likevel_ trenger det ikke være slik at den ene variabelen forårsaker den andre. Vi skal se på to problemer som gjør at man ikke kan konkludere med en årsakssammenheng mellom to variable selv om de er korrelerte, retningsproblemet og konfundere.
+Men de fleste korrelasjoner er ikke tilfeldige, man kan finne dem igjen i studie etter studie. Det kan være helt tydelig at korrelasjonen alltid vil være der, men _likevel_ trenger det ikke være slik at den ene variabelen forårsaker den andre. Vi skal se på to problemer som gjør at man ikke kan konkludere med en årsakssammenheng mellom to variable selv om de er korrelerte, retningsproblemet og konfundere.
+
+### Retningsproblemet
 
 **Retningsproblemet** er ganske enkelt at hvis man har en korrelasjon mellom $A$ og $B$, så kan det like gjerne være at $A$ påvirker $B$ som at $B$ påvirker $A$. Man kan rett og slett ikke finne ut av hvilken vei kausaliteten går -- hvilken av følgende piler som stemmer
 
@@ -132,7 +134,9 @@ Men de fleste korrelasjoner er ikke tilfeldige, man kan finne dem igjen i studie
 
 I eksempelet vårt betyr retningsproblemet at vi ikke vet om antall bøker hjemme fører til økt leseferdighet eller om elevens leseferdighet fører til mange bøker hjemme. Hvis et barn er veldig flink og interessert i å lese, så høres det jo sannsynlig ut at foreldrene kjøper flere bøker for å imøtekomme barnets interesse. Det trenger altså ikke være at å ha mange bøker hjemme gjør at eleven får mye god lesetrening.
 
-En **konfunder** til variablene $A$ og $B$ er en variabel $C$ som er slik at den påvirker både $A$ og $B$. Altså $C\rightarrow A$ og $C\rightarrow B$. Ofte tegner man dette i et diagram slik som dette:
+### Konfundere {#sec-design-konfunder}
+
+En **konfunder** [^sec-design-konfunder] til variablene $A$ og $B$ er en variabel $C$ som er slik at den påvirker både $A$ og $B$. Altså $C\rightarrow A$ og $C\rightarrow B$. Ofte tegner man dette i et diagram slik som dette:
 
 [^sec-design-konfunder]: "Konfunder" uttales med samme trykk som "vidunder". _Konfunder_ er en norsk oversettelse av det engelske _confounder_. Det finnes dessverre ingen vanlige oversettelser av _confounder_, og både tredjevariabel, forvirringsvariabel, forstyrrende variabel, og bakenforliggende faktor er i bruk, i tillegg til konfunder. Konfunder er like vanlige som disse, og jeg bruker konfunder slik at man lettere forstår ordet hvis man leser det på engelsk. Å konfundere [betyr egentlig å forvirre](https://naob.no/ordbok/konfundere).
 
