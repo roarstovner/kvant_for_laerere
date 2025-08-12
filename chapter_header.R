@@ -1,6 +1,5 @@
 
 library(tinytex)
-library(huxtable)
 library(dplyr)
 library(tibble)
 library(tinytable)
@@ -23,7 +22,7 @@ jamovi_qual_palette <- tibble(
 )
 jamovi_qual_palette <- deframe(jamovi_qual_palette)
 
-marquee_style <- classic_style(body_font = "Palatino")
+marquee_style <- classic_style()
 
 ## ggplot options ------
 theme_set(theme_minimal(base_size = 13))
