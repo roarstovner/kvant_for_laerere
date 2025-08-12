@@ -12,3 +12,5 @@ docs/**
 *.log
 *.aux
 *.tex
+*.toc
+sec-*_files/
