@@ -58,11 +58,8 @@ book:
     - part: Inferensiell statistikk
       chapters:
          - sec-categorical.qmd
-    #      - sec-ANOVA.qmd
+         - sec-means.qmd
     #      - sec-correlation.qmd
-    # - part: Endings, alternatives and prospects
-    #   chapters:
-    #      - 16-Bayesian-statistics.qmd
     # - Epilogue.qmd
     - sec-references.qmd
     #- obp-team.qmd
