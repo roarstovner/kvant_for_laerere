@@ -1,0 +1,1868 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.31">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>10&nbsp; Sammenlikne gjennomsnitt: ANOVA og paret t-test – Kvantitative metoder for lærere</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./sec-references.html" rel="next">
+<link href="./sec-categorical.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-8ef56b68f8fa1e9d2ba328e99e439f80.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-89d524cf73f3b2250d5e74ecba7e97ca.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-32c0091d9c65541b54b40246001d65bb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-89d524cf73f3b2250d5e74ecba7e97ca.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Ingen resultater",
+    "search-matching-documents-text": "Samsvarende dokumenter",
+    "search-copy-link-title": "Kopier link for å søke",
+    "search-hide-matches-text": "Skjul ytterlige resultater",
+    "search-more-match-text": "annet resultat i dette dokumentet",
+    "search-more-matches-text": "andre resultater i dette dokumentet",
+    "search-clear-button-title": "Tøm",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Avbryt",
+    "search-submit-button-title": "Send inn",
+    "search-label": "Søk"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-FRV7C65B01"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-FRV7C65B01', { 'anonymize_ip': true});
+</script>
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+
+    tex2jax: {
+
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+
+      displayMath: [ ['S$','S$'], ["\\[","\\]"] ]
+
+      processEscapes: true
+
+    }
+
+  });
+
+</script>
+
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
+<meta property="og:title" content="10&nbsp; Sammenlikne gjennomsnitt: ANOVA og paret \(t\)-test – Kvantitative metoder for lærere">
+<meta property="og:description" content="">
+<meta property="og:image" content="kvant.roarstovner.no/images/fig13-1.png">
+<meta property="og:site_name" content="Kvantitative metoder for lærere">
+<meta property="og:image:alt" content="Et jamovi-skjermbilde som viser resultater fra klinisk studie. Grensesnittet viser variabelvalg, deskriptive statistikker med gjennomsnitt og standardavvik for humørforbedring på tvers av tre medikamenter, og en boksplott-graf som sammenligner humørforbedringen for hvert medikament.">
+<meta property="og:image:height" content="708">
+<meta property="og:image:width" content="1146">
+</head>
+
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Slå av eller på sidebarnavigering" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sec-categorical.html">Inferensiell statistikk</a></li><li class="breadcrumb-item"><a href="./sec-means.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Sammenlikne gjennomsnitt: ANOVA og paret <span class="math inline">\(t\)</span>-test</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Slå av eller på sidebarnavigering" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Søk" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Kvantitative metoder for lærere</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/roarstovner/kvant_for_laerere" title="Kildekode" class="quarto-navigation-tool px-1" aria-label="Kildekode"><i class="bi bi-github"></i></a>
+    <a href="./Kvantitative-metoder-for-lærere.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Bytt mørk modus"><i class="bi"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Bytt lesermodus">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Søk"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Forord</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-why-statistics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Hvorfor lære statistikk?</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Studiedesign</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Slå på delen">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-measurement.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Måling i utdanningsforskning</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-design.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Forskningsdesign i kvantitativ metode</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Deskriptiv statistikk</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Slå på delen">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-descriptive.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Deskriptiv statistikk</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-diagram.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Visualisere data</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Statistisk teori</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Slå på delen">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-probability.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Sannsynlighet</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-estimation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Estimering av ukjente størrelser fra et utvalg</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-testing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Hypotesetesting</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Inferensiell statistikk</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Slå på delen">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-categorical.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Analyse av kategoriske data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-means.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Sammenlikne gjennomsnitt: ANOVA og paret <span class="math inline">\(t\)</span>-test</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Referanseliste</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Innholdsfortegnelse</h2>
+   
+  <ul>
+  <li><a href="#sammenlikne-gjennomsnitt-i-ulike-grupper-anova" id="toc-sammenlikne-gjennomsnitt-i-ulike-grupper-anova" class="nav-link active" data-scroll-target="#sammenlikne-gjennomsnitt-i-ulike-grupper-anova"><span class="header-section-number">10.1</span> Sammenlikne gjennomsnitt i ulike grupper: ANOVA</a>
+  <ul class="collapse">
+  <li><a href="#et-illustrerende-datasett" id="toc-et-illustrerende-datasett" class="nav-link" data-scroll-target="#et-illustrerende-datasett"><span class="header-section-number">10.1.1</span> Et illustrerende datasett</a></li>
+  <li><a href="#sec-ANOVA-hypotheses" id="toc-sec-ANOVA-hypotheses" class="nav-link" data-scroll-target="#sec-ANOVA-hypotheses"><span class="header-section-number">10.1.2</span> Nullhypotesen og alternativhypotesen</a></li>
+  <li><a href="#testobservatoren-f-og-dens-utvagsfordeling" id="toc-testobservatoren-f-og-dens-utvagsfordeling" class="nav-link" data-scroll-target="#testobservatoren-f-og-dens-utvagsfordeling"><span class="header-section-number">10.1.3</span> Testobservatoren <span class="math inline">\(F\)</span> og dens utvagsfordeling</a></li>
+  <li><a href="#å-gjennomføre-anova-i-jamovi" id="toc-å-gjennomføre-anova-i-jamovi" class="nav-link" data-scroll-target="#å-gjennomføre-anova-i-jamovi"><span class="header-section-number">10.1.4</span> Å gjennomføre ANOVA i jamovi</a></li>
+  </ul></li>
+  <li><a href="#sammenlikne-gjennomsnittlig-forbedring-paret-t-test" id="toc-sammenlikne-gjennomsnittlig-forbedring-paret-t-test" class="nav-link" data-scroll-target="#sammenlikne-gjennomsnittlig-forbedring-paret-t-test"><span class="header-section-number">10.2</span> Sammenlikne gjennomsnittlig forbedring: paret <span class="math inline">\(t\)</span>-test</a>
+  <ul class="collapse">
+  <li><a href="#dataene" id="toc-dataene" class="nav-link" data-scroll-target="#dataene"><span class="header-section-number">10.2.1</span> Dataene</a></li>
+  <li><a href="#nullhypotesen-og-alternativhypotesen" id="toc-nullhypotesen-og-alternativhypotesen" class="nav-link" data-scroll-target="#nullhypotesen-og-alternativhypotesen"><span class="header-section-number">10.2.2</span> Nullhypotesen og alternativhypotesen</a></li>
+  <li><a href="#testobservatoren-t-og-dens-utvalgsfordeling" id="toc-testobservatoren-t-og-dens-utvalgsfordeling" class="nav-link" data-scroll-target="#testobservatoren-t-og-dens-utvalgsfordeling"><span class="header-section-number">10.2.3</span> Testobservatoren <span class="math inline">\(t\)</span> og dens utvalgsfordeling</a></li>
+  <li><a href="#å-gjøre-testen-i-jamovi" id="toc-å-gjøre-testen-i-jamovi" class="nav-link" data-scroll-target="#å-gjøre-testen-i-jamovi"><span class="header-section-number">10.2.4</span> Å gjøre testen i jamovi</a></li>
+  </ul></li>
+  <li><a href="#sammendrag" id="toc-sammendrag" class="nav-link" data-scroll-target="#sammendrag"><span class="header-section-number">10.3</span> Sammendrag</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sec-categorical.html">Inferensiell statistikk</a></li><li class="breadcrumb-item"><a href="./sec-means.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Sammenlikne gjennomsnitt: ANOVA og paret <span class="math inline">\(t\)</span>-test</span></a></li></ol></nav><h1 class="title display-7"><span id="sec-means" class="quarto-section-identifier"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Sammenlikne gjennomsnitt: ANOVA og paret <span class="math inline">\(t\)</span>-test</span></span></h1></header>
+
+
+<header id="title-block-header">
+
+
+</header>
+
+
+<!-- \placetextbox{0.26}{0.06}{\scriptsize{©2025 D.R. Foxcroft and D.J. Navarro,}} -->
+<!-- \placetextbox{0.195}{0.05}{\scriptsize{CC BY-SA 4.0}} -->
+<!-- \placetextbox{0.70}{0.06}{\scriptsize{\url{https://doi.org/10.11647/OBP.0333.13}}} -->
+<p>Dette kapittelet introduserer to statistiske verktøy for å sammenlikne forskjeller i gjennomsnitt. Det første verktøyet, ANOVA, analyserer om gjennomsnittet er forskjellig i ulike grupper. Det andre verktøyet, paret <span class="math inline">\(t\)</span>-test, kan brukes til å undersøke om gjennomsnittet har forandret seg mellom en før-test og etter-test.</p>
+<section id="sammenlikne-gjennomsnitt-i-ulike-grupper-anova" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="sammenlikne-gjennomsnitt-i-ulike-grupper-anova"><span class="header-section-number">10.1</span> Sammenlikne gjennomsnitt i ulike grupper: ANOVA</h2>
+<p>Vi starter med <strong>ANOVA</strong>, som står for “ANalysis Of VAriance”. Teknikken ble utviklet av Sir Ronald Fisher tidlig på 1900-tallet, og det er ham vi har å takke for den noe forvirrende terminologien. Begrepet ANOVA kan være litt misvisende på to måter. For det første handler ANOVA faktisk om å undersøke forskjeller i gjennomsnitt, selv om navnet refererer til varianser. For det andre finnes det flere forskjellige metoder som kalles ANOVA og som bare er løselig beslektet. Men i denne boka skal vi kun møte den enkleste formen for ANOVA, hvor vi har flere grupper av observasjoner og ønsker å finne ut om gjennomsnittet av en utfallsvariabel er forskjellig mellom gruppene. Denne varianten kalles for en “enveis ANOVA”.</p>
+<p>Kapitlet er strukturert slik: Først introduserer jeg et fiktivt datasett som vi bruker som løpende eksempel. Deretter forklarer jeg hvordan en enveis ANOVA faktisk fungerer [Hvordan ANOVA fungerer], før jeg viser hvordan du kan kjøre analysen i jamovi [Kjøre en ANOVA i jamovi]. Disse to seksjonene utgjør kjernen i kapitlet.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Advarsel
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Fra og med dette kapittelet har jeg ikke rukket å gjøre eksemplene relevante for utdanningsvitenskap. Det er mye arbeid å finne relevante datasett far utdanningsvitenskap og forklare analysene ved hjelp av dem, og det rakk jeg ikke før semesterstart for dette kapittelet. Derfor er eksempelet hentet fra originalboka <span class="citation" data-cites="navarro2025">Navarro &amp; Foxcroft (<a href="sec-references.html#ref-navarro2025" role="doc-biblioref">2025</a>)</span>, og omhandler psykofarmakologi, altså læren om medisiner for å behandle psykisk sykdom.</p>
+</div>
+</div>
+<section id="et-illustrerende-datasett" class="level3" data-number="10.1.1">
+<h3 data-number="10.1.1" class="anchored" data-anchor-id="et-illustrerende-datasett"><span class="header-section-number">10.1.1</span> Et illustrerende datasett</h3>
+<p>Anta at du har blitt involvert i en klinisk studie hvor du tester et nytt antidepressivt legemiddel kalt <em>Joyzepam</em>. For å teste medisinens effektivitet, inkluderer studien tre separate medikamenter. Ett er et placebo, altså luretabletter som ikke inneholder medisin, og det andre er et eksisterende antidepressivt/angstdempende medikament kalt <em>Anxifree</em>. En samling av 18 deltakere med moderat til alvorlig depresjon er rekruttert til den innledende studien. Siden medikamentene noen ganger gis sammen med psykologisk terapi, inkluderer studien 9 personer som gjennomgår kognitiv atferdsterapi (<em>cognitive behavioral therapy</em>, CBT) og 9 som ikke gjør det. Deltakerne blir tilfeldig tildelt en behandling, slik at det er 3 CBT-personer og 3 personer uten terapi tildelt hver av de 3 medikamentene. Utfallsvariabelen er at en psykolog vurderer humøret til hver person før og etter en 3-måneders periode med hvert medikament, og den samlede forbedringen i hver persons humør vurderes på en skala fra <span class="math inline">\(-5\)</span> til <span class="math inline">\(+5\)</span>. Med dette som studiedesign, endte dataene opp som i datafilen <em><a href="data_and_tables/clinicaltrial.csv">clinicaltrial.csv</a></em>, se Vi kan se at dette datasettet inneholder de tre variablene <em>drug</em>, <em>therapy</em> og <em>mood.gain</em>.</p>
+<div class="cell" data-layout-align="center" data-tbl-alt="Et jamovi-skjermbilde som viser dataene fra den klinisk studien. Fire variable, `ID` (fra 1 til 18), `drug` (3 forskjellige), og `mood.gain` (verdiene varierer fra 0,1 til 1,8).">
+<div id="tbl-clinical-data" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center" data-tbl-alt="Et jamovi-skjermbilde som viser dataene fra den klinisk studien. Fire variable, `ID` (fra 1 til 18), `drug` (3 forskjellige), og `mood.gain` (verdiene varierer fra 0,1 til 1,8).">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-clinical-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabell&nbsp;10.1. Datafilen for den kliniske studien.
+</figcaption>
+<div aria-describedby="tbl-clinical-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<!-- preamble start -->
+
+    <!-- tinytable mathjax start -->
+    <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <!-- tinytable mathjax end -->
+
+    <script>
+
+      function styleCell_txgz1317ftylnsmm50a8(i, j, css_id) {
+          var table = document.getElementById("tinytable_txgz1317ftylnsmm50a8");
+          var cell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
+          if (cell) {
+              console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
+              cell.classList.add(css_id);
+          } else {
+              console.warn(`Cell at (${i}, ${j}) not found.`);
+          }
+      }
+      function insertSpanRow(i, colspan, content) {
+        var table = document.getElementById('tinytable_txgz1317ftylnsmm50a8');
+        // Find the row with data-row attribute matching i
+        var targetRow = table.querySelector(`tr [data-row="${i}"]`).closest('tr');
+        var newRow = table.insertRow(targetRow.rowIndex);
+        var newCell = newRow.insertCell(0);
+        newCell.setAttribute("colspan", colspan);
+        newCell.setAttribute("data-col", "0");
+        newCell.setAttribute("data-row", i - 1);
+        // newCell.innerText = content;
+        // this may be unsafe, but innerText does not interpret <br>
+        newCell.innerHTML = content;
+      }
+      function spanCell_txgz1317ftylnsmm50a8(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_txgz1317ftylnsmm50a8");
+        const targetCell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
+        if (!targetCell) {
+          console.warn(`Cell at (${i}, ${j}) not found.`);
+        }
+
+        // Get all cells that need to be removed
+        const cellsToRemove = [];
+        for (let r = 0; r < rowspan; r++) {
+          for (let c = 0; c < colspan; c++) {
+            if (r === 0 && c === 0) continue; // Skip the target cell
+            const cell = table.querySelector(`[data-row="${i + r}"][data-col="${j + c}"]`);
+            if (cell) {
+              cellsToRemove.push(cell);
+            }
+          }
+        }
+
+        // Remove all cells
+        cellsToRemove.forEach(cell => cell.remove());
+
+        // Set rowspan and colspan of the target cell if it exists
+        if (targetCell) {
+          targetCell.rowSpan = rowspan;
+          targetCell.colSpan = colspan;
+        }
+      }
+      // tinytable span after
+      window.addEventListener('load', function () {
+          var cellsToStyle = [
+            // tinytable style arrays after
+          { positions: [ { i: '18', j: 2 },  ], css_id: 'tinytable_css_99xgj74qbjzrt0ozrwr8',}, 
+          { positions: [ { i: '1', j: 2 }, { i: '2', j: 2 }, { i: '3', j: 2 }, { i: '4', j: 2 }, { i: '5', j: 2 }, { i: '6', j: 2 }, { i: '7', j: 2 }, { i: '8', j: 2 }, { i: '9', j: 2 }, { i: '10', j: 2 }, { i: '11', j: 2 }, { i: '12', j: 2 }, { i: '13', j: 2 }, { i: '14', j: 2 }, { i: '15', j: 2 }, { i: '16', j: 2 }, { i: '17', j: 2 },  ], css_id: 'tinytable_css_bawvcrkt6vdbzf3c2qxx',}, 
+          { positions: [ { i: '0', j: 2 },  ], css_id: 'tinytable_css_6am282wtwu7bmfsvbtxh',}, 
+          { positions: [ { i: '18', j: 0 }, { i: '18', j: 1 },  ], css_id: 'tinytable_css_68w10nuhppuxyqq31ykg',}, 
+          { positions: [ { i: '1', j: 0 }, { i: '3', j: 0 }, { i: '4', j: 0 }, { i: '5', j: 0 }, { i: '2', j: 0 }, { i: '7', j: 0 }, { i: '8', j: 0 }, { i: '9', j: 0 }, { i: '10', j: 0 }, { i: '11', j: 0 }, { i: '12', j: 0 }, { i: '13', j: 0 }, { i: '14', j: 0 }, { i: '15', j: 0 }, { i: '16', j: 0 }, { i: '17', j: 0 }, { i: '12', j: 1 }, { i: '6', j: 0 }, { i: '1', j: 1 }, { i: '2', j: 1 }, { i: '3', j: 1 }, { i: '4', j: 1 }, { i: '5', j: 1 }, { i: '6', j: 1 }, { i: '7', j: 1 }, { i: '8', j: 1 }, { i: '9', j: 1 }, { i: '10', j: 1 }, { i: '11', j: 1 }, { i: '16', j: 1 }, { i: '13', j: 1 }, { i: '14', j: 1 }, { i: '15', j: 1 }, { i: '17', j: 1 },  ], css_id: 'tinytable_css_i2fcpwqtn6of0p81njmk',}, 
+          { positions: [ { i: '0', j: 0 }, { i: '0', j: 1 },  ], css_id: 'tinytable_css_o49wjzm94gvy1dsjlb5k',}, 
+          ];
+
+          // Loop over the arrays to style the cells
+          cellsToStyle.forEach(function (group) {
+              group.positions.forEach(function (cell) {
+                  styleCell_txgz1317ftylnsmm50a8(cell.i, cell.j, group.css_id);
+              });
+          });
+      });
+    </script>
+
+    <style>
+      /* tinytable css entries after */
+      .table td.tinytable_css_99xgj74qbjzrt0ozrwr8, .table th.tinytable_css_99xgj74qbjzrt0ozrwr8 { border-bottom: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_bawvcrkt6vdbzf3c2qxx, .table th.tinytable_css_bawvcrkt6vdbzf3c2qxx { padding-bottom: 0.1em; }
+      .table td.tinytable_css_6am282wtwu7bmfsvbtxh, .table th.tinytable_css_6am282wtwu7bmfsvbtxh { border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; border-bottom: solid #d3d8dc 0.1em; padding-bottom: 0.1em; }
+      .table td.tinytable_css_68w10nuhppuxyqq31ykg, .table th.tinytable_css_68w10nuhppuxyqq31ykg { border-bottom: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.1em; padding-right: 0.5em; }
+      .table td.tinytable_css_i2fcpwqtn6of0p81njmk, .table th.tinytable_css_i2fcpwqtn6of0p81njmk { padding-right: 0.5em; padding-bottom: 0.1em; }
+      .table td.tinytable_css_o49wjzm94gvy1dsjlb5k, .table th.tinytable_css_o49wjzm94gvy1dsjlb5k { border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; border-bottom: solid #d3d8dc 0.1em; padding-right: 0.5em; padding-bottom: 0.1em; }
+    </style>
+    <div class="container">
+      <table class="table table-borderless" id="tinytable_txgz1317ftylnsmm50a8" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+        <thead>
+        
+              <tr>
+                <th scope="col" data-row="0" data-col="0">ID</th>
+                <th scope="col" data-row="0" data-col="1">drug</th>
+                <th scope="col" data-row="0" data-col="2">mood.gain</th>
+              </tr>
+        </thead>
+        
+        <tbody>
+                <tr>
+                  <td data-row="1" data-col="0">1</td>
+                  <td data-row="1" data-col="1">placebo</td>
+                  <td data-row="1" data-col="2">0.5</td>
+                </tr>
+                <tr>
+                  <td data-row="2" data-col="0">2</td>
+                  <td data-row="2" data-col="1">placebo</td>
+                  <td data-row="2" data-col="2">0.3</td>
+                </tr>
+                <tr>
+                  <td data-row="3" data-col="0">3</td>
+                  <td data-row="3" data-col="1">placebo</td>
+                  <td data-row="3" data-col="2">0.1</td>
+                </tr>
+                <tr>
+                  <td data-row="4" data-col="0">4</td>
+                  <td data-row="4" data-col="1">anxifree</td>
+                  <td data-row="4" data-col="2">0.6</td>
+                </tr>
+                <tr>
+                  <td data-row="5" data-col="0">5</td>
+                  <td data-row="5" data-col="1">anxifree</td>
+                  <td data-row="5" data-col="2">0.4</td>
+                </tr>
+                <tr>
+                  <td data-row="6" data-col="0">6</td>
+                  <td data-row="6" data-col="1">anxifree</td>
+                  <td data-row="6" data-col="2">0.2</td>
+                </tr>
+                <tr>
+                  <td data-row="7" data-col="0">7</td>
+                  <td data-row="7" data-col="1">joyzepam</td>
+                  <td data-row="7" data-col="2">1.4</td>
+                </tr>
+                <tr>
+                  <td data-row="8" data-col="0">8</td>
+                  <td data-row="8" data-col="1">joyzepam</td>
+                  <td data-row="8" data-col="2">1.7</td>
+                </tr>
+                <tr>
+                  <td data-row="9" data-col="0">9</td>
+                  <td data-row="9" data-col="1">joyzepam</td>
+                  <td data-row="9" data-col="2">1.3</td>
+                </tr>
+                <tr>
+                  <td data-row="10" data-col="0">10</td>
+                  <td data-row="10" data-col="1">placebo</td>
+                  <td data-row="10" data-col="2">0.6</td>
+                </tr>
+                <tr>
+                  <td data-row="11" data-col="0">11</td>
+                  <td data-row="11" data-col="1">placebo</td>
+                  <td data-row="11" data-col="2">0.9</td>
+                </tr>
+                <tr>
+                  <td data-row="12" data-col="0">12</td>
+                  <td data-row="12" data-col="1">placebo</td>
+                  <td data-row="12" data-col="2">0.3</td>
+                </tr>
+                <tr>
+                  <td data-row="13" data-col="0">13</td>
+                  <td data-row="13" data-col="1">anxifree</td>
+                  <td data-row="13" data-col="2">1.1</td>
+                </tr>
+                <tr>
+                  <td data-row="14" data-col="0">14</td>
+                  <td data-row="14" data-col="1">anxifree</td>
+                  <td data-row="14" data-col="2">0.8</td>
+                </tr>
+                <tr>
+                  <td data-row="15" data-col="0">15</td>
+                  <td data-row="15" data-col="1">anxifree</td>
+                  <td data-row="15" data-col="2">1.2</td>
+                </tr>
+                <tr>
+                  <td data-row="16" data-col="0">16</td>
+                  <td data-row="16" data-col="1">joyzepam</td>
+                  <td data-row="16" data-col="2">1.8</td>
+                </tr>
+                <tr>
+                  <td data-row="17" data-col="0">17</td>
+                  <td data-row="17" data-col="1">joyzepam</td>
+                  <td data-row="17" data-col="2">1.3</td>
+                </tr>
+                <tr>
+                  <td data-row="18" data-col="0">18</td>
+                  <td data-row="18" data-col="1">joyzepam</td>
+                  <td data-row="18" data-col="2">1.4</td>
+                </tr>
+        </tbody>
+      </table>
+    </div>
+<!-- hack to avoid NA insertion in last line -->
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>Vi er først og fremst interessert i effekten av <em>drug</em> på <em>mood.gain</em>. Slik vi lærte i <a href="sec-descriptive.html" class="quarto-xref"><span>Kapitel 4</span></a> er det alltid lurt å starte med å regne ut litt deskriptiv statistikk og tegne noen grafer for å skjønne dataene bedre, se <a href="#fig-fig13-1" class="quarto-xref">Figur&nbsp;<span>10.1</span></a>. Som plottet tydelig viser, er det en større forbedring i humør for deltakere i Joyzepam-gruppen enn for både Anxifree-gruppen og placebo-gruppen. Anxifree-gruppen viser en større humørforbedring enn kontrollgruppen, men forskjellen er ikke så stor. Spørsmålet vi ønsker å besvare er om disse forskjellene i gjennomsnitt er så store at det er usannsynlig å få så store forskjeller hvis gjennomsnittlig effekt egentlig er lik.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-fig13-1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Et jamovi-skjermbilde som viser resultater fra klinisk studie. Grensesnittet viser variabelvalg, deskriptive statistikker med gjennomsnitt og standardavvik for humørforbedring på tvers av tre medikamenter, og en boksplott-graf som sammenligner humørforbedringen for hvert medikament.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fig13-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/fig13-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figur&nbsp;10.1. Deskriptiv statistikk og boksplott for humørforbedring for hvert medikament"><img src="images/fig13-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="Et jamovi-skjermbilde som viser resultater fra klinisk studie. Grensesnittet viser variabelvalg, deskriptive statistikker med gjennomsnitt og standardavvik for humørforbedring på tvers av tre medikamenter, og en boksplott-graf som sammenligner humørforbedringen for hvert medikament."></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fig13-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figur&nbsp;10.1. Deskriptiv statistikk og boksplott for humørforbedring for hvert medikament
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="sec-ANOVA-hypotheses" class="level3" data-number="10.1.2">
+<h3 data-number="10.1.2" class="anchored" data-anchor-id="sec-ANOVA-hypotheses"><span class="header-section-number">10.1.2</span> Nullhypotesen og alternativhypotesen</h3>
+<p>Det eksperimentelle designet vi beskrev tidligere viser tydelig at vi ønsker å sammenligne den gjennomsnittlige humørforandringen mellom tre forskjellige medisiner. Det er akkurat slike forskningsspørsmål man undersøker med enveis ANOVA. Hvis vi analyserer dette oppsettet har vi to variable; vi har én variabel på forholdstallsnivå, <em>mood.gain</em>, og én kategorisk variabel, <em>drug</em>. En enveis ANOVA analyserer altså sammenhengen mellom en variabel på forholdstallsnivå og en kategorisk variabel. I vårt tilfelle har den kategoriske variabelen 3 kategorier, men den kan ha så få som 2 kategorier og det er ingen øvre grense for hvor mange kategorier den kan ha.</p>
+<p>Den noe pessimistiske nullhypotesen vi ønsker å teste er at gjennomsnittlig <em>mood.gain</em> er lik for alle de tre medisinene – altså at ingen av medisinene er mer effektive enn placebo:</p>
+<blockquote class="blockquote">
+<p><span class="math inline">\(H_0\)</span>: Gjennomsnittet av <code>mood.gain</code> er likt for de tre medisinene$$</p>
+</blockquote>
+<p>Den alternative hypotesen er at minst én av de tre behandlingene skiller seg fra de andre.</p>
+<blockquote class="blockquote">
+<p><span class="math inline">\(H_1\)</span>: Minst én av gjennomsnittene er ulik de andre</p>
+</blockquote>
+<p>Denne nullhypotesen er betydelig mer kompleks å teste enn de vi har sett tidligere. Gitt kapitteltittelen vil du kanskje gjette at løsningen er å “gjøre en ANOVA”, men det er ikke umiddelbart opplagt hvorfor “analyse av varianser” kan hjelpe oss å lære noe om gjennomsnitt. Men vi vet at det vi må gjøre er å konstruere en passende testobservator.</p>
+</section>
+<section id="testobservatoren-f-og-dens-utvagsfordeling" class="level3" data-number="10.1.3">
+<h3 data-number="10.1.3" class="anchored" data-anchor-id="testobservatoren-f-og-dens-utvagsfordeling"><span class="header-section-number">10.1.3</span> Testobservatoren <span class="math inline">\(F\)</span> og dens utvagsfordeling</h3>
+<p>For å forstå hvordan dette fungerer, la oss begynne med å snakke om varianser. I ANOVA skiller man mellom to typer varianser, variansen <em>mellom gruppene</em> og <em>innad i gruppene</em> (<a href="#fig-means-F-wide" class="quarto-xref">Figur&nbsp;<span>10.2</span></a>). Variansen mellom gruppene vises i <a href="#fig-means-F-wide-1" class="quarto-xref">Figur&nbsp;<span>10.2 (a)</span></a> som piler mellom gruppenes gjennomsnitt. Dess lengre piler, dess mer variasjon mellom gruppene. Variansen innad i gruppene vises i <a href="#fig-means-F-wide-2" class="quarto-xref">Figur&nbsp;<span>10.2 (b)</span></a> som bredden på hver gruppes fordeling; dess bredere fordeling (lengre piler), dess mer varians. I denne figuren er pilene for variansen mellom gruppene og innad i gruppene ca. like store. Legg også merke til at de tre gruppenes fordeling overlapper ganske masse. Det virker ikke helt usannsynlig at gruppenes gjennomsnitt er like i populasjonen, og at forskjellen mellom gruppene skyldes at man er litt uheldig med det utvalget.</p>
+<div class="cell" data-layout-align="center">
+<div id="fig-means-F-wide" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-means-F-wide-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div id="fig-means-F-wide-1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="To grafer. (a) &quot;Mellom-gruppe-variasjon&quot; viser tre overlappende klokke-kurver for gruppe 1, 2 og 3 med horisontale piler mellom toppene. (b) &quot;Innen-gruppe-variasjon&quot; har tre klokke-kurver i samme posisjon med horisontale piler innenfor hver kurves topp.">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-means-F-wide-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="sec-means_files/figure-html/fig-means-F-wide-1.png" class="lightbox" data-gallery="fig-means-F-wide" title="Figur&nbsp;10.2&nbsp;(a). Variasjonen mellom gruppene er et mål på avstanden mellom gjennomsnittene"><img src="sec-means_files/figure-html/fig-means-F-wide-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" data-ref-parent="fig-means-F-wide" alt="To grafer. (a) &quot;Mellom-gruppe-variasjon&quot; viser tre overlappende klokke-kurver for gruppe 1, 2 og 3 med horisontale piler mellom toppene. (b) &quot;Innen-gruppe-variasjon&quot; har tre klokke-kurver i samme posisjon med horisontale piler innenfor hver kurves topp."></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-means-F-wide-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Variasjonen mellom gruppene er et mål på avstanden mellom gjennomsnittene
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div id="fig-means-F-wide-2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="To grafer. (a) &quot;Mellom-gruppe-variasjon&quot; viser tre overlappende klokke-kurver for gruppe 1, 2 og 3 med horisontale piler mellom toppene. (b) &quot;Innen-gruppe-variasjon&quot; har tre klokke-kurver i samme posisjon med horisontale piler innenfor hver kurves topp.">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-means-F-wide-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="sec-means_files/figure-html/fig-means-F-wide-2.png" class="lightbox" data-gallery="fig-means-F-wide" title="Figur&nbsp;10.2&nbsp;(b). Variasjonen innad i gruppene er et mål på hvor bred fordelingen er i hver gruppe"><img src="sec-means_files/figure-html/fig-means-F-wide-2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" data-ref-parent="fig-means-F-wide" alt="To grafer. (a) &quot;Mellom-gruppe-variasjon&quot; viser tre overlappende klokke-kurver for gruppe 1, 2 og 3 med horisontale piler mellom toppene. (b) &quot;Innen-gruppe-variasjon&quot; har tre klokke-kurver i samme posisjon med horisontale piler innenfor hver kurves topp."></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-means-F-wide-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Variasjonen innad i gruppene er et mål på hvor bred fordelingen er i hver gruppe
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-means-F-wide-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figur&nbsp;10.2. Grafisk illustrasjon av variansen mellom gruppene og innad i gruppene. Til venstre viser pilene forskjellen mellom gruppenes gjennomsnitt. Til høyre viser pilene variabiliteten innen hver gruppe
+</figcaption>
+</figure>
+</div>
+</div>
+<p>Situasjonen er motsatt i <a href="#fig-means-F-narrow" class="quarto-xref">Figur&nbsp;<span>10.3</span></a>. I denne figuren har de tre gruppene samme gjennomsnitt, men variasjonen innad i hver gruppe er mye mindre. Variasjonen mellom gruppene er like stor som før, <a href="#fig-means-F-narrow-1" class="quarto-xref">Figur&nbsp;<span>10.3 (a)</span></a>, men variasjonen innad i gruppene er mye mindre, <a href="#fig-means-F-narrow-2" class="quarto-xref">Figur&nbsp;<span>10.3 (b)</span></a>. Derfor virker det helt usannsynlig at de tre gruppene har samme gjennomsnitt i populasjonen.</p>
+<div class="cell" data-layout-align="center">
+<div id="fig-means-F-narrow" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-means-F-narrow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div id="fig-means-F-narrow-1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="To grafer. (a) &quot;Mellom-gruppe-variasjon&quot; viser tre normalfordelinger som nesten ikke overlapper for gruppe 1, 2 og 3 med horisontale piler mellom toppene. (b) &quot;Innen-gruppe-variasjon&quot; har tre veldig smale normalfordelinger i samme posisjon med horisontale piler innenfor hver kurves topp.">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-means-F-narrow-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="sec-means_files/figure-html/fig-means-F-narrow-1.png" class="lightbox" data-gallery="fig-means-F-narrow" title="Figur&nbsp;10.3&nbsp;(a). Variasjonen mellom gruppene er uendret, men fremstår større siden variasjon innad i gruppene er mindre"><img src="sec-means_files/figure-html/fig-means-F-narrow-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" data-ref-parent="fig-means-F-narrow" alt="To grafer. (a) &quot;Mellom-gruppe-variasjon&quot; viser tre normalfordelinger som nesten ikke overlapper for gruppe 1, 2 og 3 med horisontale piler mellom toppene. (b) &quot;Innen-gruppe-variasjon&quot; har tre veldig smale normalfordelinger i samme posisjon med horisontale piler innenfor hver kurves topp."></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-means-F-narrow-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Variasjonen mellom gruppene er uendret, men fremstår større siden variasjon innad i gruppene er mindre
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div id="fig-means-F-narrow-2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="To grafer. (a) &quot;Mellom-gruppe-variasjon&quot; viser tre normalfordelinger som nesten ikke overlapper for gruppe 1, 2 og 3 med horisontale piler mellom toppene. (b) &quot;Innen-gruppe-variasjon&quot; har tre veldig smale normalfordelinger i samme posisjon med horisontale piler innenfor hver kurves topp.">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-means-F-narrow-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="sec-means_files/figure-html/fig-means-F-narrow-2.png" class="lightbox" data-gallery="fig-means-F-narrow" title="Figur&nbsp;10.3&nbsp;(b). Variasjonen innad i gruppene er mye mindre"><img src="sec-means_files/figure-html/fig-means-F-narrow-2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" data-ref-parent="fig-means-F-narrow" alt="To grafer. (a) &quot;Mellom-gruppe-variasjon&quot; viser tre normalfordelinger som nesten ikke overlapper for gruppe 1, 2 og 3 med horisontale piler mellom toppene. (b) &quot;Innen-gruppe-variasjon&quot; har tre veldig smale normalfordelinger i samme posisjon med horisontale piler innenfor hver kurves topp."></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-means-F-narrow-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Variasjonen innad i gruppene er mye mindre
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-means-F-narrow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figur&nbsp;10.3. Når variasjonen innad i gruppene er liten fremstår variasjonen mellom gruppene som veldig mye større. I dette eksempelet virker det helt usannsynlig at det ikke er noen forskjell mellom gruppene i populasjonen.
+</figcaption>
+</figure>
+</div>
+</div>
+<p>Moralen er at når man analyserer forskjeller i gruppers gjennomsnitt, så må man ikke bare ta hensyn til hvor forskjellig gruppenes gjennomsnitt er, man må også ta hensyn til hvor mye spredning det er innad i gruppene. Denne informasjonen fanges opp i <span class="math inline">\(F\)</span>-observatoren, som er testobservatoren til en ANOVA. Hvis man glatter over alle detaljene kan man si at den regnes ut slik:</p>
+<p><span class="math display">\[ F = \frac{\text{variasjonen mellom gruppene}}{\text{summen av variasjonene innad i gruppene}}. \]</span> Vi hopper over mange detaljer slik som spesifikke utregninger og at <span class="math inline">\(F\)</span>-fordelinger har to frihetsgrader, men vi viser en <span class="math inline">\(F\)</span>-fordeling der frihetsgrad nummer 1 er 10 og frihetsgrad nummer 2 10, se <a href="#fig-means-F-dist" class="quarto-xref">Figur&nbsp;<span>10.4</span></a>.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-means-F-dist" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="En F-fordeling som viser en høyreskjev kurve. En pil merket &quot;kritiske verdi&quot; peker på x-aksen, og området under grafen til høyre for pilen er skravert og markert med &quot;Kritisk område&quot;.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-means-F-dist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="sec-means_files/figure-html/fig-means-F-dist-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figur&nbsp;10.4. F-fordeling og forkastningsområdet for en F-test."><img src="sec-means_files/figure-html/fig-means-F-dist-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" alt="En F-fordeling som viser en høyreskjev kurve. En pil merket &quot;kritiske verdi&quot; peker på x-aksen, og området under grafen til høyre for pilen er skravert og markert med &quot;Kritisk område&quot;."></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-means-F-dist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figur&nbsp;10.4. <span class="math inline">\(F\)</span>-fordeling og forkastningsområdet for en <span class="math inline">\(F\)</span>-test.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="å-gjennomføre-anova-i-jamovi" class="level3" data-number="10.1.4">
+<h3 data-number="10.1.4" class="anchored" data-anchor-id="å-gjennomføre-anova-i-jamovi"><span class="header-section-number">10.1.4</span> Å gjennomføre ANOVA i jamovi</h3>
+<p>For å gjøre livet enklere kan jamovi utføre ANOVA for deg – hurra! Trykk på ‘ANOVA’ → ‘One-way ANOVA’, og flytt <em>mood.gain</em>-variabelen til ‘Dependent Variable’-boksen og deretter <em>drug</em>-variabelen over til ‘Fixed Factors’-boksen. Dette gir deg resultatene som vist i <a href="#fig-means-jamovi-ANOVA" class="quarto-xref">Figur&nbsp;<span>10.5</span></a>. Resultatene viser <span class="math inline">\(F\)</span>-verdien, samt begge frihetsgradene. Disse trenger ikke vi fokusere så mye på. Den oppgir også <span class="math inline">\(p\)</span>-verdien, som i dette tilfellet er <span class="math inline">\(p &lt; 0{,}001\)</span>.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-means-jamovi-ANOVA" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" data-fig-pos="H" alt="En tabell fra jamovi med tittelen &quot;ANOVA - mood.gain&quot; viser resultater for en ANOVA-test med kolonnene:- &quot;Sum of Squares,&quot; &quot;df,&quot; &quot;Mean Square,&quot; &quot;F,&quot; &quot;p,&quot; og &quot;η².&quot; Radene presenterer data for &quot;drug&quot; med verdiene (3.45, 2, 1.73, 18.61, 0.00009, 0.71) og &quot;Residuals&quot; med verdiene (1.39, 15, 0.09)">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-means-jamovi-ANOVA-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/fig-means-jamovi-ANOVA.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figur&nbsp;10.5. Resultater fra ANOVA i jamovi om humørforbedring etter å ha fått ulike medikamenter"><img src="images/fig-means-jamovi-ANOVA.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" data-fig-pos="H" alt="En tabell fra jamovi med tittelen &quot;ANOVA - mood.gain&quot; viser resultater for en ANOVA-test med kolonnene:- &quot;Sum of Squares,&quot; &quot;df,&quot; &quot;Mean Square,&quot; &quot;F,&quot; &quot;p,&quot; og &quot;η².&quot; Radene presenterer data for &quot;drug&quot; med verdiene (3.45, 2, 1.73, 18.61, 0.00009, 0.71) og &quot;Residuals&quot; med verdiene (1.39, 15, 0.09)"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-means-jamovi-ANOVA-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figur&nbsp;10.5. Resultater fra ANOVA i jamovi om humørforbedring etter å ha fått ulike medikamenter
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Vi kan rapportere denne analysen slik:</p>
+<blockquote class="blockquote">
+<p>Vi gjennomførte en ANOVA-analyse for effekten av medikament på humørforbedring og fant en signifikant effekt (<span class="math inline">\(F = 26.3, df1 = 2, df2 = 9{,}49, p &lt; 0{,}001\)</span>).</p>
+</blockquote>
+<p>Merk at disse resultatene ikke sier noe om hvilken av medikamentene som hadde størst og minst gjennomsnitt, den sier bare at vi forkaster hypotesen om at gjennomsnittet på utfallsvariabelen var lik i de tre gruppene. For å finne ut av hvilket medikament som var mest effektivt kan man titte på den deskriptive statistikken som jamovi tilbyr ved knappen “Descriptive table”. Vi ser at de som fikk anxifree hadde en humørbedring på 0,717; de som gikk på joyzepam 1,483; og de på placebo 0,450. Joyzepam var altså det mest effektive legemiddelet. Merk at jamovi oppgir både standardavviket (SD) og standardfeilen (SE). <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>Med disse tallene kan vi rapportere videre:</p>
+<blockquote class="blockquote">
+<p>Effekten av joyzepam ga en humørforbedring på 1,48 95% CI [1,31; 1,65], som var større enn både anxifree (0,72 95% CI [0,41; 1,03]) og placebo (0,45 95% CI [0.23; 0.67]).</p>
+</blockquote>
+<p>Det er lettere å sette seg inn i resultatene med en visualisering, så jeg viser også hva jamovi tilbyr under “Descriptives plots” i menyene til enveis ANOVA, se <a href="#fig-means-jamovi-ANOVA-plot" class="quarto-xref">Figur&nbsp;<span>10.6</span></a>. Her vises gjennomsnittene med en prikk og 95% konfidensintervall er vist med streker. Merk at konfidensintervallet er ca. 2 standardfeil, slik vi lærte i <a href="sec-estimation.html#sec-estimation-CI" class="quarto-xref"><span>Seksjon 7.5</span></a>.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-means-jamovi-ANOVA-plot" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" data-fig-pos="H">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-means-jamovi-ANOVA-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/fig-means-jamovi-ANOVA-plot.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Figur&nbsp;10.6. Et plot med gjennomsnitt og konfidensintervall for humørforbedring etter å ha fått ulike medikamenter"><img src="images/fig-means-jamovi-ANOVA-plot.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" data-fig-pos="H"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-means-jamovi-ANOVA-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figur&nbsp;10.6. Et plot med gjennomsnitt og konfidensintervall for humørforbedring etter å ha fått ulike medikamenter
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Hvis ANOVA-analysen er den sentrale analysen i artikkelen din bør du trolig legge ved en liknende visualisering.</p>
+</section>
+</section>
+<section id="sammenlikne-gjennomsnittlig-forbedring-paret-t-test" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="sammenlikne-gjennomsnittlig-forbedring-paret-t-test"><span class="header-section-number">10.2</span> Sammenlikne gjennomsnittlig forbedring: paret <span class="math inline">\(t\)</span>-test</h2>
+<p><strong>Paret <span class="math inline">\(t\)</span>-test</strong> sammenlikner gjennomsnitt på tvers av to grupper, men der hver observasjon i den første gruppen svarer til en observasjon i den andre gruppen. Dette er en litt tungvindt måte å snakke på, så vi skal begrense oss til kun én slik situasjon, endring mellom en før-test og ettertest. Her er observasjonene naturlig delt i to grupper, før og etter, og hver deltager har en måling for både før-testen og for etter-testen.</p>
+<section id="dataene" class="level3" data-number="10.2.1">
+<h3 data-number="10.2.1" class="anchored" data-anchor-id="dataene"><span class="header-section-number">10.2.1</span> Dataene</h3>
+<p>Datasettet vi skal bruke denne gangen kommer fra Dr.&nbsp;Chicos sin undervisning. I klassen hennes tar studentene to store tester – en tidlig i semesteret og en senere i semesteret. Dr.&nbsp;Chico sine timer er utfordrende og studentene bør jobbe mye. Hun mener at ved å gi vanskelige vurderinger oppmuntres studentene til å jobbe hardere. Teorien hennes er at den første testen fungerer som en slags “vekkerklokke” for studentene. Når de forstår hvor vanskelig klassen faktisk er, vil de jobbe hardere til den andre testen og få bedre karakter. Stemmer dette? For å teste dette åpner vi <a href="data_and_tables/chico.csv"><em>chico.csv</em></a>-filen inn i jamovi, se <a href="#tbl-chico-data" class="quarto-xref">Tabell&nbsp;<span>10.2</span></a>.</p>
+<p>Datasettet <em>chico</em> inneholder tre variabler: en <code>id</code>-variabel som identifiserer hver student i klassen, variabelen <code>grade_test1</code> med antall prosent riktig på den første testen, og variabelen <code>grade_test2</code> med antall prosent riktig på den andre testen.</p>
+<div class="cell" data-layout-align="center">
+<div id="tbl-chico-data" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-chico-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabell&nbsp;10.2. Dr.&nbsp;Chico sin datafil med resultater på før- og ettertesten
+</figcaption>
+<div aria-describedby="tbl-chico-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<!-- preamble start -->
+
+    <!-- tinytable mathjax start -->
+    <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <!-- tinytable mathjax end -->
+
+    <script>
+
+      function styleCell_lytd3jc5qzfd0hueitlw(i, j, css_id) {
+          var table = document.getElementById("tinytable_lytd3jc5qzfd0hueitlw");
+          var cell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
+          if (cell) {
+              console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
+              cell.classList.add(css_id);
+          } else {
+              console.warn(`Cell at (${i}, ${j}) not found.`);
+          }
+      }
+      function insertSpanRow(i, colspan, content) {
+        var table = document.getElementById('tinytable_lytd3jc5qzfd0hueitlw');
+        // Find the row with data-row attribute matching i
+        var targetRow = table.querySelector(`tr [data-row="${i}"]`).closest('tr');
+        var newRow = table.insertRow(targetRow.rowIndex);
+        var newCell = newRow.insertCell(0);
+        newCell.setAttribute("colspan", colspan);
+        newCell.setAttribute("data-col", "0");
+        newCell.setAttribute("data-row", i - 1);
+        // newCell.innerText = content;
+        // this may be unsafe, but innerText does not interpret <br>
+        newCell.innerHTML = content;
+      }
+      function spanCell_lytd3jc5qzfd0hueitlw(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_lytd3jc5qzfd0hueitlw");
+        const targetCell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
+        if (!targetCell) {
+          console.warn(`Cell at (${i}, ${j}) not found.`);
+        }
+
+        // Get all cells that need to be removed
+        const cellsToRemove = [];
+        for (let r = 0; r < rowspan; r++) {
+          for (let c = 0; c < colspan; c++) {
+            if (r === 0 && c === 0) continue; // Skip the target cell
+            const cell = table.querySelector(`[data-row="${i + r}"][data-col="${j + c}"]`);
+            if (cell) {
+              cellsToRemove.push(cell);
+            }
+          }
+        }
+
+        // Remove all cells
+        cellsToRemove.forEach(cell => cell.remove());
+
+        // Set rowspan and colspan of the target cell if it exists
+        if (targetCell) {
+          targetCell.rowSpan = rowspan;
+          targetCell.colSpan = colspan;
+        }
+      }
+      // tinytable span after
+      window.addEventListener('load', function () {
+          var cellsToStyle = [
+            // tinytable style arrays after
+          { positions: [ { i: '20', j: 2 },  ], css_id: 'tinytable_css_9u6fcrvlf19o5trxhpd1',}, 
+          { positions: [ { i: '1', j: 2 }, { i: '2', j: 2 }, { i: '3', j: 2 }, { i: '4', j: 2 }, { i: '5', j: 2 }, { i: '6', j: 2 }, { i: '7', j: 2 }, { i: '8', j: 2 }, { i: '9', j: 2 }, { i: '10', j: 2 }, { i: '11', j: 2 }, { i: '12', j: 2 }, { i: '13', j: 2 }, { i: '14', j: 2 }, { i: '15', j: 2 }, { i: '16', j: 2 }, { i: '17', j: 2 }, { i: '18', j: 2 }, { i: '19', j: 2 },  ], css_id: 'tinytable_css_x6on6do9wsxq2n1qo485',}, 
+          { positions: [ { i: '0', j: 2 },  ], css_id: 'tinytable_css_cdag6537qjoqrgog8vk9',}, 
+          { positions: [ { i: '20', j: 0 }, { i: '20', j: 1 },  ], css_id: 'tinytable_css_k0zukoc19zda65vlqorh',}, 
+          { positions: [ { i: '1', j: 0 }, { i: '2', j: 0 }, { i: '3', j: 0 }, { i: '5', j: 0 }, { i: '6', j: 0 }, { i: '7', j: 0 }, { i: '4', j: 0 }, { i: '9', j: 0 }, { i: '10', j: 0 }, { i: '11', j: 0 }, { i: '12', j: 0 }, { i: '13', j: 0 }, { i: '14', j: 0 }, { i: '15', j: 0 }, { i: '16', j: 0 }, { i: '17', j: 0 }, { i: '18', j: 0 }, { i: '19', j: 0 }, { i: '12', j: 1 }, { i: '8', j: 0 }, { i: '1', j: 1 }, { i: '2', j: 1 }, { i: '3', j: 1 }, { i: '4', j: 1 }, { i: '5', j: 1 }, { i: '6', j: 1 }, { i: '7', j: 1 }, { i: '8', j: 1 }, { i: '9', j: 1 }, { i: '10', j: 1 }, { i: '11', j: 1 }, { i: '16', j: 1 }, { i: '13', j: 1 }, { i: '14', j: 1 }, { i: '15', j: 1 }, { i: '17', j: 1 }, { i: '18', j: 1 }, { i: '19', j: 1 },  ], css_id: 'tinytable_css_t1no92mpbfvltwrwg1lg',}, 
+          { positions: [ { i: '0', j: 0 }, { i: '0', j: 1 },  ], css_id: 'tinytable_css_tvl1ve1vt9m5tlohnrbp',}, 
+          ];
+
+          // Loop over the arrays to style the cells
+          cellsToStyle.forEach(function (group) {
+              group.positions.forEach(function (cell) {
+                  styleCell_lytd3jc5qzfd0hueitlw(cell.i, cell.j, group.css_id);
+              });
+          });
+      });
+    </script>
+
+    <style>
+      /* tinytable css entries after */
+      .table td.tinytable_css_9u6fcrvlf19o5trxhpd1, .table th.tinytable_css_9u6fcrvlf19o5trxhpd1 { border-bottom: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_x6on6do9wsxq2n1qo485, .table th.tinytable_css_x6on6do9wsxq2n1qo485 { padding-bottom: 0.1em; }
+      .table td.tinytable_css_cdag6537qjoqrgog8vk9, .table th.tinytable_css_cdag6537qjoqrgog8vk9 { border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; border-bottom: solid #d3d8dc 0.1em; padding-bottom: 0.1em; }
+      .table td.tinytable_css_k0zukoc19zda65vlqorh, .table th.tinytable_css_k0zukoc19zda65vlqorh { border-bottom: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.1em; padding-right: 0.5em; }
+      .table td.tinytable_css_t1no92mpbfvltwrwg1lg, .table th.tinytable_css_t1no92mpbfvltwrwg1lg { padding-right: 0.5em; padding-bottom: 0.1em; }
+      .table td.tinytable_css_tvl1ve1vt9m5tlohnrbp, .table th.tinytable_css_tvl1ve1vt9m5tlohnrbp { border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; border-bottom: solid #d3d8dc 0.1em; padding-right: 0.5em; padding-bottom: 0.1em; }
+    </style>
+    <div class="container">
+      <table class="table table-borderless" id="tinytable_lytd3jc5qzfd0hueitlw" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+        <thead>
+        
+              <tr>
+                <th scope="col" data-row="0" data-col="0">id</th>
+                <th scope="col" data-row="0" data-col="1">test1</th>
+                <th scope="col" data-row="0" data-col="2">test2</th>
+              </tr>
+        </thead>
+        
+        <tbody>
+                <tr>
+                  <td data-row="1" data-col="0">student1</td>
+                  <td data-row="1" data-col="1">42.9</td>
+                  <td data-row="1" data-col="2">44.6</td>
+                </tr>
+                <tr>
+                  <td data-row="2" data-col="0">student2</td>
+                  <td data-row="2" data-col="1">51.8</td>
+                  <td data-row="2" data-col="2">54.0</td>
+                </tr>
+                <tr>
+                  <td data-row="3" data-col="0">student3</td>
+                  <td data-row="3" data-col="1">71.7</td>
+                  <td data-row="3" data-col="2">72.3</td>
+                </tr>
+                <tr>
+                  <td data-row="4" data-col="0">student4</td>
+                  <td data-row="4" data-col="1">51.6</td>
+                  <td data-row="4" data-col="2">53.4</td>
+                </tr>
+                <tr>
+                  <td data-row="5" data-col="0">student5</td>
+                  <td data-row="5" data-col="1">63.5</td>
+                  <td data-row="5" data-col="2">63.8</td>
+                </tr>
+                <tr>
+                  <td data-row="6" data-col="0">student6</td>
+                  <td data-row="6" data-col="1">58.0</td>
+                  <td data-row="6" data-col="2">59.3</td>
+                </tr>
+                <tr>
+                  <td data-row="7" data-col="0">student7</td>
+                  <td data-row="7" data-col="1">59.8</td>
+                  <td data-row="7" data-col="2">60.8</td>
+                </tr>
+                <tr>
+                  <td data-row="8" data-col="0">student8</td>
+                  <td data-row="8" data-col="1">50.8</td>
+                  <td data-row="8" data-col="2">51.6</td>
+                </tr>
+                <tr>
+                  <td data-row="9" data-col="0">student9</td>
+                  <td data-row="9" data-col="1">62.5</td>
+                  <td data-row="9" data-col="2">64.3</td>
+                </tr>
+                <tr>
+                  <td data-row="10" data-col="0">student10</td>
+                  <td data-row="10" data-col="1">61.9</td>
+                  <td data-row="10" data-col="2">63.2</td>
+                </tr>
+                <tr>
+                  <td data-row="11" data-col="0">student11</td>
+                  <td data-row="11" data-col="1">50.4</td>
+                  <td data-row="11" data-col="2">51.8</td>
+                </tr>
+                <tr>
+                  <td data-row="12" data-col="0">student12</td>
+                  <td data-row="12" data-col="1">52.6</td>
+                  <td data-row="12" data-col="2">52.2</td>
+                </tr>
+                <tr>
+                  <td data-row="13" data-col="0">student13</td>
+                  <td data-row="13" data-col="1">63.0</td>
+                  <td data-row="13" data-col="2">63.0</td>
+                </tr>
+                <tr>
+                  <td data-row="14" data-col="0">student14</td>
+                  <td data-row="14" data-col="1">58.3</td>
+                  <td data-row="14" data-col="2">60.5</td>
+                </tr>
+                <tr>
+                  <td data-row="15" data-col="0">student15</td>
+                  <td data-row="15" data-col="1">53.3</td>
+                  <td data-row="15" data-col="2">57.1</td>
+                </tr>
+                <tr>
+                  <td data-row="16" data-col="0">student16</td>
+                  <td data-row="16" data-col="1">58.7</td>
+                  <td data-row="16" data-col="2">60.1</td>
+                </tr>
+                <tr>
+                  <td data-row="17" data-col="0">student17</td>
+                  <td data-row="17" data-col="1">50.1</td>
+                  <td data-row="17" data-col="2">51.7</td>
+                </tr>
+                <tr>
+                  <td data-row="18" data-col="0">student18</td>
+                  <td data-row="18" data-col="1">64.2</td>
+                  <td data-row="18" data-col="2">65.6</td>
+                </tr>
+                <tr>
+                  <td data-row="19" data-col="0">student19</td>
+                  <td data-row="19" data-col="1">57.4</td>
+                  <td data-row="19" data-col="2">58.3</td>
+                </tr>
+                <tr>
+                  <td data-row="20" data-col="0">student20</td>
+                  <td data-row="20" data-col="1">57.1</td>
+                  <td data-row="20" data-col="2">60.1</td>
+                </tr>
+        </tbody>
+      </table>
+    </div>
+<!-- hack to avoid NA insertion in last line -->
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>Når vi ser på dataene virker det som om klassen virkelig er vanskelig (de fleste karakterene ligger mellom 50% og 60%), og det er ikke opplagt at det er en forbedring fra den første til den andre prøven.</p>
+<p>Tar vi en rask titt på den deskriptive analysen i <a href="#fig-means-jamovi-chico-descriptive-1" class="quarto-xref">Figur&nbsp;<span>10.7 (a)</span></a> får vi forsterket inntrykket av at det ikke er en opplagt forbedring. Blant alle 20 studenter er gjennomsnittskarakteren 57% for den første testen og 58% for den andre testen. Men gitt at standardavvikene er henholdsvis 6,6% og 6,4%, kan det virke som om man lett kunne fått disse resultatene også hvis det ikke var noen effekt. Og inntrykket er det samme hvis vi visualiserer gjennomsnittene og konfidensintervallene, slik som i <a href="#fig-means-jamovi-chico-descriptive-2" class="quarto-xref">Figur&nbsp;<span>10.7 (b)</span></a>. Hvis vi skulle stolt på denne figuren og bredden på disse konfidensintervallene, ville vi lett ha trodd at forbedringen i studentenes prestasjoner kunne være tilfeldige.</p>
+<div id="fig-means-jamovi-chico-descriptive" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-means-jamovi-chico-descriptive-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-means-jamovi-chico-descriptive" style="flex-basis: 100.0%;justify-content: center;">
+<div id="fig-means-jamovi-chico-descriptive-1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Et jamovi-skjermbilde som viser et datasett med studentkarakterer og et sammendrag av deskriptiv statistikk. Datasettabellen lister student-IDer og deres karakterer på to tester. Resultatpanelet viser deskriptiv statistikk inkludert N, gjennomsnitt, median, standardavvik, minimum- og maksimumsverdier.">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-means-jamovi-chico-descriptive-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/fig-means-jamovi-chico-descriptive.png" class="lightbox" data-gallery="fig-means-jamovi-chico-descriptive" title="Figur&nbsp;10.7&nbsp;(a). Deskriptiv statistikk for variablene"><img src="images/fig-means-jamovi-chico-descriptive.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" data-ref-parent="fig-means-jamovi-chico-descriptive" alt="Et jamovi-skjermbilde som viser et datasett med studentkarakterer og et sammendrag av deskriptiv statistikk. Datasettabellen lister student-IDer og deres karakterer på to tester. Resultatpanelet viser deskriptiv statistikk inkludert N, gjennomsnitt, median, standardavvik, minimum- og maksimumsverdier."></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-means-jamovi-chico-descriptive-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Deskriptiv statistikk for variablene
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-means-jamovi-chico-descriptive" style="flex-basis: 100.0%;justify-content: center;">
+<div id="fig-means-jamovi-chico-descriptive-2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Et jamovi-skjermbilde som viser et datasett med studentkarakterer og et sammendrag av deskriptiv statistikk. Datasettabellen lister student-IDer og deres karakterer på to tester. Resultatpanelet viser deskriptiv statistikk inkludert N, gjennomsnitt, median, standardavvik, minimum- og maksimumsverdier.">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-means-jamovi-chico-descriptive-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/fig11-13a.png" class="lightbox" data-gallery="fig-means-jamovi-chico-descriptive" title="Figur&nbsp;10.7&nbsp;(b). Gjennomsnitt og 95% konfidensintervaller for variablene"><img src="images/fig11-13a.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" data-ref-parent="fig-means-jamovi-chico-descriptive" alt="Et jamovi-skjermbilde som viser et datasett med studentkarakterer og et sammendrag av deskriptiv statistikk. Datasettabellen lister student-IDer og deres karakterer på to tester. Resultatpanelet viser deskriptiv statistikk inkludert N, gjennomsnitt, median, standardavvik, minimum- og maksimumsverdier."></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-means-jamovi-chico-descriptive-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Gjennomsnitt og 95% konfidensintervaller for variablene
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-means-jamovi-chico-descriptive-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figur&nbsp;10.7. Deskriptive analyser for de to variablene i chico-datasettet.
+</figcaption>
+</figure>
+</div>
+<p>Men dette inntrykket er feil! Grunnen er at vi kun har vist statistikk og grafer som ikke tar hensyn til at samme person har avlagt en før- og en etter-prøve. Vi har regnet ut gjennomsnittet for førtesten og ettertesten helt separat, og dette vil være en fin analyse hvis det er helt forskjellige folk som tar før-testen og etter-testen, men i vårt eksempel er det de samme studentene. For å illustrere at studentene faktisk har en fremgang kan vi regne ut hver students endring fra test 1 til test 2, altså regne ut differansen <span class="math inline">\(\text{endring} = \text{grade\_test2} - \text{grade\_test1}\)</span> og legge den til i datasettet. Jeg har visualisert denne variabelen i <a href="#fig-means-jamovi-chico-hist" class="quarto-xref">Figur&nbsp;<span>10.8</span></a>. Når vi ser på histogrammet blir det helt klart at det er en reell forbedring her. Det store flertallet av studentene scoret høyere på test 2 enn på test 1, noe som reflekteres i at nesten hele histogrammet ligger over null.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-means-jamovi-chico-hist" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Et histogram med &quot;Endring fra test 1 til test 2&quot; på x-aksen. Bare to små søyler er under null og veldig mange er over null.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-means-jamovi-chico-hist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="sec-means_files/figure-html/fig-means-jamovi-chico-hist-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="Figur&nbsp;10.8. Histogram som viser studentenes endring fra test 1 til test 2."><img src="sec-means_files/figure-html/fig-means-jamovi-chico-hist-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" alt="Et histogram med &quot;Endring fra test 1 til test 2&quot; på x-aksen. Bare to små søyler er under null og veldig mange er over null."></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-means-jamovi-chico-hist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figur&nbsp;10.8. Histogram som viser studentenes endring fra test 1 til test 2.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Derfor trenger man en paret <span class="math inline">\(t\)</span>-test. Man kunne sett for seg at man regnet ut en ANOVA med to grupper <em>før</em> og <em>etter</em>, men dette ville ikke tatt hensyn til at samme student befant seg i hver gruppe.</p>
+</section>
+<section id="nullhypotesen-og-alternativhypotesen" class="level3" data-number="10.2.2">
+<h3 data-number="10.2.2" class="anchored" data-anchor-id="nullhypotesen-og-alternativhypotesen"><span class="header-section-number">10.2.2</span> Nullhypotesen og alternativhypotesen</h3>
+<p>Nullhypotesen for en paret <span class="math inline">\(t\)</span>-test er</p>
+<blockquote class="blockquote">
+<p><span class="math inline">\(H_0\)</span>: gjennomsnittlig endring mellom de to testene er 0.</p>
+</blockquote>
+<p>Alternativhypotesen er</p>
+<blockquote class="blockquote">
+<p><span class="math inline">\(H_1\)</span>: gjennomsnittlig endring mellom de to testene er ulik 0.</p>
+</blockquote>
+<p>Paret <span class="math inline">\(t\)</span>-test gjøres ofte med en ensidet test, se <a href="sec-testing.html#sec-testing-one-sided" class="quarto-xref"><span>Seksjon 8.4.3</span></a>. For Dr.&nbsp;Chico, som tenkte at studentene ville få til mer på test 2, blir hypotesene:</p>
+<blockquote class="blockquote">
+<p><span class="math inline">\(H_0\)</span>: Gjennomsnittlig endring mellom de to testene er positiv, altså: <span class="math inline">\(text{endring} &gt; 0\)</span></p>
+<p><span class="math inline">\(H_1\)</span>: Gjennomsnittlig endring mellom de to testene er null eller negativ, altså: <span class="math inline">\(\text{endring} \leq 0\)</span></p>
+</blockquote>
+</section>
+<section id="testobservatoren-t-og-dens-utvalgsfordeling" class="level3" data-number="10.2.3">
+<h3 data-number="10.2.3" class="anchored" data-anchor-id="testobservatoren-t-og-dens-utvalgsfordeling"><span class="header-section-number">10.2.3</span> Testobservatoren <span class="math inline">\(t\)</span> og dens utvalgsfordeling</h3>
+<p>Nå skal vi konstruere en passende test. Løsningen er ganske enkel, siden vi allerede har gjort det meste av arbeidet tidligere. I stedet for å analysere <code>grade_test1</code> og <code>grade_test2</code> hver for seg, undersøker vi om endringsvariabelen <code>grade_test2 - grade_test1</code> er ulik null.</p>
+<p>Hvis studentene er plukket tilfeldig fra en populasjon, vet vi fra sentralgrenseteoremet, <a href="sec-estimation.html#sec-central-limit-theorem" class="quarto-xref"><span>Seksjon 7.3.3</span></a>, at endringsvariabelen er normalfordelt. Derfor er testobservatoren vår normalfordelt … nesten. Det eneste problemet er at vi ikke vet standardavviket til denne normalfordelingen, så den må estimeres. Dette gjør at testobservatoren vår er ekstremt lik normalfordelingen, men er bittelittegranne mer spredt fordi vi også må estimere standardavviket fra dataene våre. Den fordelingen som tar høyde for dette er <span class="math inline">\(t\)</span>-fordelingen, så testobservatoren vår er <span class="math inline">\(t\)</span>.</p>
+<div id="fig-means-T-dist" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-means-T-dist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-means-T-dist" style="flex-basis: 100.0%;justify-content: center;">
+<div id="fig-means-T-dist-1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-means-T-dist-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="sec-means_files/figure-html/fig-means-T-dist-1.png" class="lightbox" data-gallery="fig-means-T-dist" title="Figur&nbsp;10.9&nbsp;(a). Sammenlikning av t-fordeling og normalfordeling. t-fordeling er litt mindre presis, som vist ved at halene er bittelitt tykkere, altså at store verdier er vanligere."><img src="sec-means_files/figure-html/fig-means-T-dist-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" data-ref-parent="fig-means-T-dist"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-means-T-dist-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Sammenlikning av <span class="math inline">\(t\)</span>-fordeling og normalfordeling. <span class="math inline">\(t\)</span>-fordeling er litt mindre presis, som vist ved at halene er bittelitt tykkere, altså at store verdier er vanligere.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-means-T-dist" style="flex-basis: 100.0%;justify-content: center;">
+<div id="fig-means-T-dist-2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-means-T-dist-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="sec-means_files/figure-html/fig-means-T-dist-2.png" class="lightbox" data-gallery="fig-means-T-dist" title="Figur&nbsp;10.9&nbsp;(b). Forkastningsområdet til en tosidig t-test"><img src="sec-means_files/figure-html/fig-means-T-dist-2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" data-ref-parent="fig-means-T-dist"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-means-T-dist-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Forkastningsområdet til en tosidig <span class="math inline">\(t\)</span>-test
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-means-T-dist" style="flex-basis: 100.0%;justify-content: center;">
+<div id="fig-means-T-dist-3" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-means-T-dist-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="sec-means_files/figure-html/fig-means-T-dist-3.png" class="lightbox" data-gallery="fig-means-T-dist" title="Figur&nbsp;10.9&nbsp;(c). Forkastningsområdet til en ensidig t-test"><img src="sec-means_files/figure-html/fig-means-T-dist-3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" data-ref-parent="fig-means-T-dist"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-means-T-dist-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(c) Forkastningsområdet til en ensidig <span class="math inline">\(t\)</span>-test
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-means-T-dist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figur&nbsp;10.9
+</figcaption>
+</figure>
+</div>
+<p>Og det er faktisk alt! Konseptet er veldig enkelt. Trikset er å gjenkjenne <em>når</em> en parvis test er passende, og forstå <em>hvorfor</em> den er bedre enn en ANOVA i slike situasjoner.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Advarsel
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Jeg har gjennom dette kapittelet sammenliknet paret <span class="math inline">\(t\)</span>-test med ANOVA. De fleste lærebøker sammenlikner paret <span class="math inline">\(t\)</span>-test med “vanlig” <span class="math inline">\(t\)</span>-test. Jeg har valgt å ikke presentere den vanlige <span class="math inline">\(t\)</span>-testen siden den er identisk med ANOVA når man har 2 grupper. Vi har altså spart oss fra å lære én test uten å tape noe.</p>
+</div>
+</div>
+</section>
+<section id="å-gjøre-testen-i-jamovi" class="level3" data-number="10.2.4">
+<h3 data-number="10.2.4" class="anchored" data-anchor-id="å-gjøre-testen-i-jamovi"><span class="header-section-number">10.2.4</span> Å gjøre testen i jamovi</h3>
+<p>Du finner jamovi sin funksjon for paret <span class="math inline">\(t\)</span>-test under “T-tests” → “Paired samples t-tests”. Jeg valgte innstillinger som i <a href="#fig-means-jamovi-t-1" class="quarto-xref">Figur&nbsp;<span>10.10 (a)</span></a> og fikk resultatet i <a href="#fig-means-jamovi-t-2" class="quarto-xref">Figur&nbsp;<span>10.10 (b)</span></a>.</p>
+<div class="cell" data-layout-align="center">
+<div id="fig-means-jamovi-t" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-means-jamovi-t-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div id="fig-means-jamovi-t-1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Et bilde av en tabell som viser resultater fra en paret utvalg $t$-test. Den inkluderer kolonner for statistikk, df, p, gjennomsnittlig differanse, SE differanse, 95% konfidensintervall (nedre og øvre), og effektstørrelse. Eksempeldata for `grade_test2` og `grade_test1` er gitt.">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-means-jamovi-t-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/fig-means-jamovi-t-settings.png" class="lightbox" data-gallery="fig-means-jamovi-t" title="Figur&nbsp;10.10&nbsp;(a). Innstillingene for testen i jamovi"><img src="images/fig-means-jamovi-t-settings.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" data-ref-parent="fig-means-jamovi-t" alt="Et bilde av en tabell som viser resultater fra en paret utvalg $t$-test. Den inkluderer kolonner for statistikk, df, p, gjennomsnittlig differanse, SE differanse, 95% konfidensintervall (nedre og øvre), og effektstørrelse. Eksempeldata for `grade_test2` og `grade_test1` er gitt."></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-means-jamovi-t-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Innstillingene for testen i jamovi
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div id="fig-means-jamovi-t-2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Et bilde av en tabell som viser resultater fra en paret utvalg $t$-test. Den inkluderer kolonner for statistikk, df, p, gjennomsnittlig differanse, SE differanse, 95% konfidensintervall (nedre og øvre), og effektstørrelse. Eksempeldata for `grade_test2` og `grade_test1` er gitt.">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-means-jamovi-t-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/fig-means-jamovi-t-results.png" class="lightbox" data-gallery="fig-means-jamovi-t" title="Figur&nbsp;10.10&nbsp;(b). Resultatene fra jamovi"><img src="images/fig-means-jamovi-t-results.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" data-ref-parent="fig-means-jamovi-t" alt="Et bilde av en tabell som viser resultater fra en paret utvalg $t$-test. Den inkluderer kolonner for statistikk, df, p, gjennomsnittlig differanse, SE differanse, 95% konfidensintervall (nedre og øvre), og effektstørrelse. Eksempeldata for `grade_test2` og `grade_test1` er gitt."></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-means-jamovi-t-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Resultatene fra jamovi
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-means-jamovi-t-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figur&nbsp;10.10. Resultater som viser en paret <span class="math inline">\(t\)</span>-test i jamovi.
+</figcaption>
+</figure>
+</div>
+</div>
+<p>Vi ser at resultatet er statistisk signifikant, og man kan rapportere det slik:</p>
+<blockquote class="blockquote">
+<p>Endringen fra test 1 til test 2 var statistisk signifikant, <span class="math inline">\(t(19) = 6{,}48, p &lt; 0{;}001\)</span>. Gjennomsnittlig forskjell fra test 1 til 2 var 1,40 95% CI [0,951; 1,86].</p>
+</blockquote>
+<p>Man bør tenke over om forutsetningene for testen er oppfylt i dette tilfellet. Dr.&nbsp;Chico valgte ikke studentene tilfeldig fra en definert populasjon; hun valgte ganske enkelt alle studentene som tok faget hennes. Dr.&nbsp;Chico ønsker nok å generalisere til populasjonen over studenter som tar kurset sitt, ikke bare dette året, men alle år hun underviser det. Hun kan argumentere for at akkurat hvilke studenter som tok faget hennes dette året er ganske tilfeldig, slik at man kan betrakte studentene dette året som tilfeldig trukket. Er du enig i det? Det er ikke en helt usannsynlig antagelse, men det er viktig å tenke over om antagelsene virkelig er oppfylte og hvilke konsekvenser det eventuelt får om de ikke er det.</p>
+<p>I menyene i jamovi er også det muligheter for å velge ensidige tester. Akkurat i Dr.&nbsp;Chico sitt tilfellet blir resultatet det samme, men ensidige hypotesetester er sterkere og vil noen gange kunne forkaste nullhypoteser som tosidige hypoteser ikke kan.</p>
+</section>
+</section>
+<section id="sammendrag" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="sammendrag"><span class="header-section-number">10.3</span> Sammendrag</h2>
+<p>Her er hovedtemaene vi har dekket i dette kapittelet:</p>
+<ul>
+<li>For både ANOVA og paret <span class="math inline">\(t\)</span>-test har vi lært
+<ul>
+<li>Når de kan anvendes</li>
+<li>Hva nullhypotesen og alternativhypotesene er</li>
+<li>Ideen bak testobservatorene, henholdsvis <span class="math inline">\(F\)</span> og <span class="math inline">\(t\)</span>.</li>
+<li>Hvordan man utfører testen i jamovi</li>
+</ul></li>
+</ul>
+<p>Det viktigste som ikke er dekket er ulike forutsetninger for når man kan benytte testene. Noen av disse forutsetningene er ganske tekniske, så det vil være vanskelig å inkludere dem i et kurs på dette nivået. Den viktigste forutsetningen er at det bør være et enkelt tilfeldig utvalg fra en populasjon, hvis ikke kan det bli vanskelig å tolke testene.</p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
+<div id="ref-navarro2025" class="csl-entry" role="listitem">
+Navarro, D., &amp; Foxcroft, D. (2025). <em>Learning <span>Statistics</span> with jamovi: <span>A Tutorial</span> for <span>Beginners</span> in <span>Statistical Analysis</span></em> (1st ed.). Open Book Publishers. <a href="https://doi.org/10.11647/OBP.0333">https://doi.org/10.11647/OBP.0333</a>
+</div>
+</div>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Hvis du husker tilbake til <a href="sec-estimation.html#sec-central-limit-theorem" class="quarto-xref"><span>Seksjon 7.3.3</span></a> så var standardfeilen standardavviket til en observator, i dette tilfellet gjennomsnittet, så disse standardfeilene angir hvor mye vi estimerer at gjennomsnittene vil variere hvis vi gjør studien mange ganger.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Kopiert!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Kopiert!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("kvant\.roarstovner\.no");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./sec-categorical.html" class="pagination-link" aria-label="Analyse av kategoriske data">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Analyse av kategoriske data</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./sec-references.html" class="pagination-link" aria-label="Referanseliste">
+        <span class="nav-page-text">Referanseliste</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Denne boka ble laget i <a href="https://quarto.org/">Quarto</a></p>
+</div>
+  </div>
+</footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+
+
+</body></html>

@@ -161,7 +161,7 @@ window.Quarto = {
 <link rel="stylesheet" href="styles.css">
 <meta property="og:title" content="4&nbsp; Deskriptiv statistikk – Kvantitative metoder for lærere">
 <meta property="og:description" content="">
-<meta property="og:image" content="https://roarstovner.github.io/kvant_for_laerere/images/fig-descriptive-iccs-data.png">
+<meta property="og:image" content="kvant.roarstovner.no/images/fig-descriptive-iccs-data.png">
 <meta property="og:site_name" content="Kvantitative metoder for lærere">
 <meta property="og:image:alt" content="Et jamovi-skjermbilde viser et dataanalysegrensesnitt med 7 kolonner. Én kolonne med numeriske data er merket &quot;likestilling&quot;.">
 <meta property="og:image:height" content="521">
@@ -357,6 +357,7 @@ window.Quarto = {
       <a href="./">Kvantitative metoder for lærere</a> 
         <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/roarstovner/kvant_for_laerere" title="Kildekode" class="quarto-navigation-tool px-1" aria-label="Kildekode"><i class="bi bi-github"></i></a>
+    <a href="./Kvantitative-metoder-for-lærere.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Bytt mørk modus"><i class="bi"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Bytt lesermodus">
   <div class="quarto-reader-toggle-btn">
@@ -460,6 +461,29 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Inferensiell statistikk</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Slå på delen">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-categorical.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Analyse av kategoriske data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-means.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Sammenlikne gjennomsnitt: ANOVA og paret <span class="math inline">\(t\)</span>-test</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./sec-references.html" class="sidebar-item-text sidebar-link">
@@ -491,7 +515,7 @@ window.Quarto = {
   </ul></li>
   <li><a href="#sec-descriptive-dispersion" id="toc-sec-descriptive-dispersion" class="nav-link" data-scroll-target="#sec-descriptive-dispersion"><span class="header-section-number">4.4</span> Spredningsmål</a>
   <ul class="collapse">
-  <li><a href="#variasjonsbredde-sec-descriptive-range" id="toc-variasjonsbredde-sec-descriptive-range" class="nav-link" data-scroll-target="#variasjonsbredde-sec-descriptive-range"><span class="header-section-number">4.4.1</span> Variasjonsbredde <span class="quarto-unresolved-ref">sec-descriptive-range</span></a></li>
+  <li><a href="#sec-descriptive-range" id="toc-sec-descriptive-range" class="nav-link" data-scroll-target="#sec-descriptive-range"><span class="header-section-number">4.4.1</span> Variasjonsbredde</a></li>
   <li><a href="#kvartilbredde" id="toc-kvartilbredde" class="nav-link" data-scroll-target="#kvartilbredde"><span class="header-section-number">4.4.2</span> Kvartilbredde</a></li>
   <li><a href="#varians" id="toc-varians" class="nav-link" data-scroll-target="#varians"><span class="header-section-number">4.4.3</span> Varians</a></li>
   <li><a href="#sec-descriptive-sd" id="toc-sec-descriptive-sd" class="nav-link" data-scroll-target="#sec-descriptive-sd"><span class="header-section-number">4.4.4</span> Standardavvik</a></li>
@@ -514,7 +538,10 @@ window.Quarto = {
 </header>
 
 
-<p>Hver gang du skal analysere et nytt datasett, må du finne måter å beskrive dataene på en kompakt og lett forståelig måte. Dette kalles <strong>deskriptiv statistikk</strong>, eller beskrivende statistikk. Merk at når man beskriver dataene, så beskriver man kun utvalget, og statistikken som sier noe om populasjonen kommer senere i <span class="quarto-unresolved-ref">?sec-inferential</span>.</p>
+<!-- \placetextbox{0.26}{0.06}{\scriptsize{©2025 D.R. Foxcroft and D.J. Navarro,}} -->
+<!-- \placetextbox{0.195}{0.05}{\scriptsize{CC BY-SA 4.0}} -->
+<!-- \placetextbox{0.70}{0.06}{\scriptsize{\url{https://doi.org/10.11647/OBP.0333.04}}} -->
+<p>Hver gang du skal analysere et nytt datasett, må du finne måter å beskrive dataene på en kompakt og lett forståelig måte. Dette kalles <strong>deskriptiv statistikk</strong>, eller beskrivende statistikk. Merk at når man beskriver dataene, så beskriver man kun utvalget, og statistikken som sier noe om populasjonen kommer senere i <a href="sec-estimation.html" class="quarto-xref"><span>Kapitel 7</span></a>.</p>
 <p>Det har blitt ganske vanlig å høre begrunnelser som “det er det dataene viser” eller formaninger som “du må se på dataene, dummen!” Jeg tror ikke man kan lære så mye ved å se på dataene, men vi får vel prøve, da, og se hvor mye klokere vi blir. Jeg har forberedt et lite datasett fra den store internasjonale undersøkelsen ICCS, International Civic and Citizenship Education Study. Dette datasettet inneholder variable for kjønn, skole, land, trinn, forventet høyeste fullførte utdanning og en samlevariabel for hvor enig man er i at kjønnene bør ha like rettigheter. Datasettet har 8622 rader, én rad for hver elev, men vi viser bare 50 rader:</p>
 <div class="cell" data-layout-align="center">
 <div id="tbl-ICCS-data" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
@@ -1151,12 +1178,12 @@ Tabell&nbsp;4.1. Noen få av variablene fra ICCS-studien.
 </div>
 <p>Nå, ble du noe klokere? Jeg tipper du ikke ble noe klokere, og at du lengter etter å få dataene omarbeidet og presentert på en eller annen måte. Det er det som kalles deskriptiv statistikk.</p>
 <p>La oss åpne filen i et statistikkprogram. For å gjøre dette åpner vi filen <em><a href="data_and_tables/ICCS.csv">ICCS.csv</a></em> og ser hvilke variabler som er lagret i filen, se <a href="#fig-descriptive-ICCS-data" class="quarto-xref">Figur&nbsp;<span>4.1</span></a>.</p>
-<div class="cell enlarge-image" data-layout-align="center">
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-descriptive-ICCS-data" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Et jamovi-skjermbilde viser et dataanalysegrensesnitt med 7 kolonner. Én kolonne med numeriske data er merket &quot;likestilling&quot;." data-fig-align="center">
+<div id="fig-descriptive-ICCS-data" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Et jamovi-skjermbilde viser et dataanalysegrensesnitt med 7 kolonner. Én kolonne med numeriske data er merket &quot;likestilling&quot;.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-descriptive-ICCS-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/fig-descriptive-iccs-data.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figur&nbsp;4.1. Et skjermbilde av jamovi som viser variablene lagret i filen ICCS.csv"><img src="images/fig-descriptive-iccs-data.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" alt="Et jamovi-skjermbilde viser et dataanalysegrensesnitt med 7 kolonner. Én kolonne med numeriske data er merket &quot;likestilling&quot;."></a>
+<a href="images/fig-descriptive-iccs-data.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figur&nbsp;4.1. Et skjermbilde av jamovi som viser variablene lagret i filen ICCS.csv"><img src="images/fig-descriptive-iccs-data.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="Et jamovi-skjermbilde viser et dataanalysegrensesnitt med 7 kolonner. Én kolonne med numeriske data er merket &quot;likestilling&quot;."></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-descriptive-ICCS-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figur&nbsp;4.1. Et skjermbilde av jamovi som viser variablene lagret i filen <em>ICCS.csv</em>
@@ -1165,14 +1192,14 @@ Figur&nbsp;4.1. Et skjermbilde av jamovi som viser variablene lagret i filen <em
 </div>
 </div>
 </div>
-<p>For å få en forståelse av dataene, må vi beregne deskriptiv statistikk (dette kapittelet) og lage noen fine figurer (<span class="quarto-unresolved-ref">?sec-graphs</span>). Vi skal først beskrive de nominelle og ordinale dataene. Disse er markert med et symbol med tre prikker, og er altså <em>Land</em>, <em>Trinn</em>, <em>Kjønn</em> og <em>Forventet utdanning</em>.</p>
+<p>For å få en forståelse av dataene, må vi beregne deskriptiv statistikk (dette kapittelet) og lage noen fine figurer (<a href="sec-diagram.html" class="quarto-xref"><span>Kapitel 5</span></a>). Vi skal først beskrive de nominelle og ordinale dataene. Disse er markert med et symbol med tre prikker, og er altså <em>Land</em>, <em>Trinn</em>, <em>Kjønn</em> og <em>Forventet utdanning</em>.</p>
 <section id="frekvenstabeller-og-krysstabeller" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="frekvenstabeller-og-krysstabeller"><span class="header-section-number">4.1</span> Frekvenstabeller og krysstabeller</h2>
 <p>En av de mest grunnleggende oppgavene innen dataanalyse er telle opp hvor mange du har av de ulike verdiene for nominelle og ordinale variable. Heldigvis er dette enkelt i jamovi.</p>
 <section id="frekvenstabeller" class="level3" data-number="4.1.1">
 <h3 data-number="4.1.1" class="anchored" data-anchor-id="frekvenstabeller"><span class="header-section-number">4.1.1</span> Frekvenstabeller</h3>
 <p>En <strong>frekvenstabell</strong> viser hvor mange du har av hver verdi for én variabel. I statistikkprogrammet jamovi må man først trykke på Analyses, deretter på “Exploration” og “Descriptives. I menyen som dukker opp er det en avkryssingsboks som heter”Frequency tables”, se <a href="#fig-descriptive-jamovi-frequency" class="quarto-xref">Figur&nbsp;<span>4.2</span></a>. Vi laster inn <em>Forventet utdanning</em> i “Variables” og krysser av for “Frequency tables”.</p>
-<div class="cell enlarge-image" data-layout-align="center">
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-descriptive-jamovi-frequency" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
@@ -1192,9 +1219,9 @@ Figur&nbsp;4.2. Frekvenstabell for <em>Forventet utdanning</em>
 <h3 data-number="4.1.2" class="anchored" data-anchor-id="sec-descriptive-contingency"><span class="header-section-number">4.1.2</span> Krysstabeller</h3>
 <p>I jamovi lager avkrysningsboksen “Frequency tables” kun tabeller for enkeltvariabler. Hvis du ønsker en tabell med to variabler – for eksempel for å kombinere <em>Forventet utdanning</em> og <em>Land</em> for å se om det er forskjell i hvor lang utdanning elevene ser for seg i Norge og Spania -– trenger du en krysstabell (<em>contingency table</em> på engelsk).</p>
 <p>Du lager dette i jamovi ved å velge analysen “Frequencies” → “Contingency Tables” → “Independent Samples”. Flytt <em>Forventet utdanning</em> til “Rows”-boksen og <em>Land</em>-variabelen til “Columns”-boksen. Vi gjør et lite ekstra triks og trykker på “Cells” og krysser av for “Percentages: Columns”. Da får du en krysstabell som vist i <a href="#fig-descriptive-jamovi-contingency" class="quarto-xref">Figur&nbsp;<span>4.3</span></a>.</p>
-<div class="cell enlarge-image" data-layout-align="center">
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-descriptive-jamovi-contingency" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Et jamovi-skjermbilde som viser en krysstabell-analyse. Det venstre panelet viser alternativer for å velge rader, kolonner, antall og lag med &quot;Forventet utdanning&quot; og &quot;Land&quot; valgt. Det høyre panelet viser den resulterende krysstabellen." data-fig-align="center">
+<div id="fig-descriptive-jamovi-contingency" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Et jamovi-skjermbilde som viser en krysstabell-analyse. Det venstre panelet viser alternativer for å velge rader, kolonner, antall og lag med &quot;Forventet utdanning&quot; og &quot;Land&quot; valgt. Det høyre panelet viser den resulterende krysstabellen.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-descriptive-jamovi-contingency-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="images/fig-descriptive-jamovi-contingency.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figur&nbsp;4.3. Krysstabeluring av Forventet utdanning og Land"><img src="images/fig-descriptive-jamovi-contingency.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="Et jamovi-skjermbilde som viser en krysstabell-analyse. Det venstre panelet viser alternativer for å velge rader, kolonner, antall og lag med &quot;Forventet utdanning&quot; og &quot;Land&quot; valgt. Det høyre panelet viser den resulterende krysstabellen."></a>
@@ -1206,7 +1233,7 @@ Figur&nbsp;4.3. Krysstabeluring av <em>Forventet utdanning</em> og <em>Land</em>
 </div>
 </div>
 </div>
-<p>Ikke bekymre deg for “<span class="math inline">\(\chi^2\)</span> Tests”-tabellen som blir laget. Vi kommer tilbake til dette senere i <span class="quarto-unresolved-ref">?sec-Categorical-data-analysis</span>.</p>
+<p>Ikke bekymre deg for “<span class="math inline">\(\chi^2\)</span> Tests”-tabellen som blir laget. Vi kommer tilbake til dette senere i <a href="sec-categorical.html" class="quarto-xref"><span>Kapitel 9</span></a>.</p>
 <p>Når du tolker krysstabellen, husk at “Observed” viser antall observasjoner. For eksempel betyr verdien 550 i første rad at 550 av de spanske elevene i utvalget ser for seg å ta en kort utdanning (for eksempel ett- til to-årig fagskole). I kolonnen “% within columns” står det at dette utgjør 16,5% av et eller annet. Siden vi valgte “% within columns” er det prosentandelen innenfor landet, altså “16,5% av de spanske elevene ser for seg kort utdanning”. Hvis vi hadde valgt “% within rows” hadde det betydd “% av elevene som ser for seg kort utdanning er spanske.”</p>
 <p>Krysstabeller er nyttige! Se, langt større andel av de norske elevene ser for seg å avslutte utdanningen etter ungdomsskolen – hvorfor det, mon tro?</p>
 </section>
@@ -1227,7 +1254,7 @@ Figur&nbsp;4.3. Krysstabeluring av <em>Forventet utdanning</em> og <em>Land</em>
 <p>Å se på rådataene i tabellen på starten av kapittelet, <a href="#tbl-ICCS-data" class="quarto-xref">Tabell&nbsp;<span>4.1</span></a>, fortalte oss lite Likevel viser jeg et histogram av <em>likestilling</em>-dataene, slik at vi vet hva det er vi prøver å beskrive med deskriptiv statistikk, se <a href="#fig-descriptive-ICCS-histogram" class="quarto-xref">Figur&nbsp;<span>4.4</span></a>. Neste kapittel inneholder mye mer om histogrammer.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-descriptive-ICCS-histogram" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Histogram som viser variabelen _Likestilling_. Den horisontale aksen ($x$-aksen) strekker seg fra fra 15 til 70, og den vertikale aksen (y-aksen) viser tetthet, altså hvor mange svar som havner innad i hver søyle." data-fig-align="center">
+<div id="fig-descriptive-ICCS-histogram" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Histogram som viser variabelen _Likestilling_. Den horisontale aksen ($x$-aksen) strekker seg fra fra 15 til 70, og den vertikale aksen (y-aksen) viser tetthet, altså hvor mange svar som havner innad i hver søyle.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-descriptive-ICCS-histogram-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="sec-descriptive_files/figure-html/fig-descriptive-ICCS-histogram-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figur&nbsp;4.4. Et histogram av variabelen Likestilling fra ICCS 2022."><img src="sec-descriptive_files/figure-html/fig-descriptive-ICCS-histogram-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" alt="Histogram som viser variabelen _Likestilling_. Den horisontale aksen ($x$-aksen) strekker seg fra fra 15 til 70, og den vertikale aksen (y-aksen) viser tetthet, altså hvor mange svar som havner innad i hver søyle."></a>
@@ -1242,7 +1269,7 @@ Figur&nbsp;4.4. Et histogram av variabelen <em>Likestilling</em> fra ICCS 2022.
 <p>Histogrammet i <a href="#fig-descriptive-ICCS-histogram" class="quarto-xref">Figur&nbsp;<span>4.4</span></a> viser oss godt at de fleste svarer veldig høyt på <em>Likestilling</em>, men at en betydelig andel svarer mye lavere. Hvis man ønsker å undersøke videre, for eksempel å undersøke kjønnsforskjeller, så er det bare å lage et histogram for hvert kjønn, <a href="#fig-descriptive-ICCS-histogram-gender" class="quarto-xref">Figur&nbsp;<span>4.5</span></a>.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-descriptive-ICCS-histogram-gender" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Histogram som viser variabelen _Likestilling_ for de tre verdiene i variabelen Kjønn; gutt, jente og annet." data-fig-align="center">
+<div id="fig-descriptive-ICCS-histogram-gender" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Histogram som viser variabelen _Likestilling_ for de tre verdiene i variabelen Kjønn; gutt, jente og annet.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-descriptive-ICCS-histogram-gender-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="sec-descriptive_files/figure-html/fig-descriptive-ICCS-histogram-gender-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figur&nbsp;4.5. Et histogram av variabelen Likestilling for hver verdi av variabelen Kjønn."><img src="sec-descriptive_files/figure-html/fig-descriptive-ICCS-histogram-gender-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" alt="Histogram som viser variabelen _Likestilling_ for de tre verdiene i variabelen Kjønn; gutt, jente og annet."></a>
@@ -1277,9 +1304,9 @@ Figur&nbsp;4.5. Et histogram av variabelen <em>Likestilling</em> for hver verdi 
 <li>Klikk på høyre pil for å flytte den til ‘Variables’-boksen</li>
 </ol>
 <p>Straks du har gjort dette dukker en tabell med standard deskriptiv statistikk opp på høyre side av skjermen, som vist i <a href="#fig-descriptive-jamovi-mean" class="quarto-xref">Figur&nbsp;<span>4.6</span></a>. (Hvis du ikke finner ‘Exploration’-knappen må du trykke på “Analyses” først.)</p>
-<div class="cell enlarge-image" data-layout-align="center">
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-descriptive-jamovi-mean" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Et skjermbilde fra jamovi som viser resultater fra deskriptiv analyse. Til venstre kan man velge variable og dele opp dataene. Til høyre vises deskriptiv statistikk for &quot;Likestilling&quot; med verdier for N, Missing, Mean, Median, Standard deviation, Minimum og Maximum." data-fig-align="center">
+<div id="fig-descriptive-jamovi-mean" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Et skjermbilde fra jamovi som viser resultater fra deskriptiv analyse. Til venstre kan man velge variable og dele opp dataene. Til høyre vises deskriptiv statistikk for &quot;Likestilling&quot; med verdier for N, Missing, Mean, Median, Standard deviation, Minimum og Maximum.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-descriptive-jamovi-mean-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="images/fig-descriptive-jamovi-mean.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figur&nbsp;4.6. Standard deskriptiv statistikk for variabelen Likestilling."><img src="images/fig-descriptive-jamovi-mean.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="Et skjermbilde fra jamovi som viser resultater fra deskriptiv analyse. Til venstre kan man velge variable og dele opp dataene. Til høyre vises deskriptiv statistikk for &quot;Likestilling&quot; med verdier for N, Missing, Mean, Median, Standard deviation, Minimum og Maximum."></a>
@@ -1377,12 +1404,12 @@ Figur&nbsp;4.8. Et skjermbilde av jamovi som viser typetall og frekvenstabell fo
 </div>
 <p>I <a href="#fig-descriptive-jamovi-mode" class="quarto-xref">Figur&nbsp;<span>4.8</span></a> har jeg valgt variabelen “Kjønn” ved å dra den over i vinduet “Variables”. Det engelske ordet for typetall er “mode”, og derfor trykket jeg på “Mode”. Resultatet er skuffende, for jamovi velger å si at typetallet er 2. (Se i den rød håndtegnede ellipsen.) Hæ? Typetallet må jo være “Gutt”, “Jente” eller “Annet”! Dette er en beklagelig teknikalitet som er forårsaket av at nominelle variable sine verdier er lagret som heltall (noe de ikke er), men tolkes som kategorier (noe de er). Du kan se at jamovi tilogmed har regnet ut <em>Kjønn</em> sitt gjennomsnitt og funnet ut at det er 1,54. 💩</p>
 <p>For å finne ut av hva typetallet 2 betyr, må du trykke på ‘Variables’ → ‘Kjønn’ → ‘Edit’, se <a href="#fig-descriptive-jamovi-gender" class="quarto-xref">Figur&nbsp;<span>4.9</span></a>. Du kan se at “Jente” er lagret som 1, “Gutt” som 2 og “Annet” som 3. Typetallet 2 er altså “Gutt”, så det er flest gutter i datasettet.</p>
-<div class="cell enlarge-image" data-layout-align="center" data-out.wdith="100%">
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-descriptive-jamovi-gender" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Et jamovi-skjermbilde for analyse av variabelen Kjønn. Det står at _Kjønn_ er en nominell variabel der &quot;Jente&quot; er lagret som 1, &quot;Gutt&quot; er lagret som 2, og &quot;Annet&quot; er lagret som 3." data-fig-align="center" data-fig-pos="H">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-descriptive-jamovi-gender-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/fig-descriptive-jamovi-gender.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Figur&nbsp;4.9. Et skjermbilde av jamovi som viser informasjon om variabelen Kjønn."><img src="images/fig-descriptive-jamovi-gender.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" data-fig-pos="H" alt="Et jamovi-skjermbilde for analyse av variabelen Kjønn. Det står at _Kjønn_ er en nominell variabel der &quot;Jente&quot; er lagret som 1, &quot;Gutt&quot; er lagret som 2, og &quot;Annet&quot; er lagret som 3."></a>
+<a href="images/fig-descriptive-jamovi-gender.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Figur&nbsp;4.9. Et skjermbilde av jamovi som viser informasjon om variabelen Kjønn."><img src="images/fig-descriptive-jamovi-gender.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" data-fig-pos="H" alt="Et jamovi-skjermbilde for analyse av variabelen Kjønn. Det står at _Kjønn_ er en nominell variabel der &quot;Jente&quot; er lagret som 1, &quot;Gutt&quot; er lagret som 2, og &quot;Annet&quot; er lagret som 3."></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-descriptive-jamovi-gender-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figur&nbsp;4.9. Et skjermbilde av jamovi som viser informasjon om variabelen <em>Kjønn</em>.
@@ -1392,12 +1419,12 @@ Figur&nbsp;4.9. Et skjermbilde av jamovi som viser informasjon om variabelen <em
 </div>
 </div>
 <p>En mer tilfredsstillende måte å finne typetallet på er å telle opp antallet av alle verdiene. Dette kalles å lage en <strong>frekvenstabell</strong>. I jamovi kan man akkurat som før trykke på “Analyses” → “Exploration” → “Descriptives”, men nå kan man velge “Frequency table”, se <a href="#fig-descriptive-jamovi-frequency-table" class="quarto-xref">Figur&nbsp;<span>4.10</span></a>.</p>
-<div class="cell enlarge-image" data-layout-align="center" data-out.wdith="100%">
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-descriptive-jamovi-frequency-table" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Et skjermbilde av jamovi som viser frekvenstabell til _Kjønn_." data-fig-align="center" data-fig-pos="H">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-descriptive-jamovi-frequency-table-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/fig-descriptive-jamovi-frequency-table.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="Figur&nbsp;4.10. Et skjermbilde av jamovi som viser frekvenstabell til Kjønn."><img src="images/fig-descriptive-jamovi-frequency-table.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" data-fig-pos="H" alt="Et skjermbilde av jamovi som viser frekvenstabell til _Kjønn_."></a>
+<a href="images/fig-descriptive-jamovi-frequency-table.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="Figur&nbsp;4.10. Et skjermbilde av jamovi som viser frekvenstabell til Kjønn."><img src="images/fig-descriptive-jamovi-frequency-table.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" data-fig-pos="H" alt="Et skjermbilde av jamovi som viser frekvenstabell til _Kjønn_."></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-descriptive-jamovi-frequency-table-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figur&nbsp;4.10. Et skjermbilde av jamovi som viser frekvenstabell til <em>Kjønn</em>.
@@ -1413,15 +1440,15 @@ Figur&nbsp;4.10. Et skjermbilde av jamovi som viser frekvenstabell til <em>Kjøn
 <h2 data-number="4.4" class="anchored" data-anchor-id="sec-descriptive-dispersion"><span class="header-section-number">4.4</span> Spredningsmål</h2>
 <p>Alt vi har sett på så langt handler om sentraltendens, altså hvilke verdier som ligger “i midten” eller som er mest “typiske” i dataene våre. I tillegg trenger vi ofte å å forstå hvor spredt dataene er. Ligger de fleste observasjonene tett rundt gjennomsnittet, eller er de spredt jevnt utover? Dette kaller vi <strong>spredning</strong>.</p>
 <p>La oss utforske fire ulike måter å måle spredning på ved hjelp av ICCS-dataene. Hvert spredningsmål har sine egne fordeler og ulemper, så det er nyttig å kjenne til flere.</p>
-<section id="variasjonsbredde-sec-descriptive-range" class="level3" data-number="4.4.1">
-<h3 data-number="4.4.1" class="anchored" data-anchor-id="variasjonsbredde-sec-descriptive-range"><span class="header-section-number">4.4.1</span> Variasjonsbredde <span class="quarto-unresolved-ref">?sec-descriptive-range</span></h3>
+<section id="sec-descriptive-range" class="level3" data-number="4.4.1">
+<h3 data-number="4.4.1" class="anchored" data-anchor-id="sec-descriptive-range"><span class="header-section-number">4.4.1</span> Variasjonsbredde</h3>
 <p><strong>Variasjonsbredden</strong> er det aller enkleste spredningsmålet. Den regnes ut ved å ta den største verdien minus den minste verdien. I <a href="#fig-descriptive-jamovi-dispersion" class="quarto-xref">Figur&nbsp;<span>4.11</span></a></p>
 <div class="cell enlarge-image" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-descriptive-jamovi-dispersion" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Et skjermbilde av jamovi som likner på de foregående, men der boksene for &quot;Dispersion&quot; er krysset av; Std. deviation, Variance, Range, Minimum, Maximum" data-fig-align="center" data-fig-pos="H">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-descriptive-jamovi-dispersion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/fig-descriptive-jamovi-dispersion.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="Figur&nbsp;4.11. Et skjermbilde av hvordan man finner ulike spredningsmål i jamovi"><img src="images/fig-descriptive-jamovi-dispersion.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" data-fig-pos="H" alt="Et skjermbilde av jamovi som likner på de foregående, men der boksene for &quot;Dispersion&quot; er krysset av; Std. deviation, Variance, Range, Minimum, Maximum"></a>
+<a href="images/fig-descriptive-jamovi-dispersion.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="Figur&nbsp;4.11. Et skjermbilde av hvordan man finner ulike spredningsmål i jamovi"><img src="images/fig-descriptive-jamovi-dispersion.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" data-fig-pos="H" alt="Et skjermbilde av jamovi som likner på de foregående, men der boksene for &quot;Dispersion&quot; er krysset av; Std. deviation, Variance, Range, Minimum, Maximum"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-descriptive-jamovi-dispersion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figur&nbsp;4.11. Et skjermbilde av hvordan man finner ulike spredningsmål i jamovi
@@ -1751,7 +1778,7 @@ Tabell&nbsp;4.3. Noen verdier på variabelen <em>Likestilling</em> og deres avvi
 </div>
 </div>
 <p>Variansen er definert som gjennomsnittet av alle disse kvadratiske avvikene. Fra jamovi sine utregninger ser vi at variansen til <em>Likestilling</em> var 133. Hvis du husker histogrammet i <a href="#fig-descriptive-ICCS-histogram" class="quarto-xref">Figur&nbsp;<span>4.4</span></a>, så stusser du sikkert litt nå, for verdiene på <em>Likestilling</em> strakk seg fra ca. 15 til ca. 70. Hvordan kan det da gi mening at variansen er 133? Svaret er at det ikke gir mening og at variansen er vanskelig å tolke.</p>
-<p>Grunnen til at variansen er vanskelig å tolke er fordi vi kvadrerer alle verdiene. Hvis vi sier <em>Likestilling</em> blir målt i “likestillingspoeng”, så blir et avvik på 12,2 likestillingspoeng til et kvadratisk avvik på 148,84 “kvadratlikestillingspoeng”. Det er en enhet jeg ikke klarer å se for meg. For å vise hvor absurd det er: se for deg at gjennomfører en 12 minutters løpstest i kroppsøving – Cooper-testen – for alle elevene på skolen og regner du ut at gjennomsnittlig løpslengde er 2300 meter og at variansen er 16000 <em>kvadratmeter</em>. For meg er ikke et areal et meningsfullt mål for spredningen av elevenes løpsdistanser! Grunnen til at varians likevel er et viktig spredningsmål er fordi har så mange gode matematiske egenskaper, men de skal vi ikke gå inn på videre, men de gjør at varians er motoren i nesten all statistikk. <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<p>Grunnen til at variansen er vanskelig å tolke er fordi vi kvadrerer alle verdiene. Hvis vi sier <em>Likestilling</em> blir målt i “likestillingspoeng”, så blir et avvik på 12,2 likestillingspoeng til et kvadratisk avvik på 148,84 “kvadratlikestillingspoeng”. Det er en enhet jeg ikke klarer å se for meg. For å vise hvor absurd det er: se for deg at gjennomfører en 12 minutters løpstest i kroppsøving – Cooper-testen – for alle elevene på skolen og regner du ut at gjennomsnittlig løpslengde er 2300 meter og at variansen er 16000 <em>kvadratmeter</em>. For meg er ikke et areal et meningsfullt mål for spredningen av elevenes løpsdistanser! Grunnen til at varians likevel er et viktig spredningsmål er fordi har så mange gode matematiske egenskaper, men de skal vi ikke gå inn på videre, men de gjør at varians er motoren i nesten all statistikk. ::: {.callout-note} Hvis du er nysgjerrig på variansen sine matematiske kvaliteter: Den kanskje viktigste egenskapen er at <strong>varianser er additive</strong>. Det betyr at hvis du har to variabler <span class="math inline">\(X\)</span> og <span class="math inline">\(Y\)</span> med varianser <span class="math inline">\(Var(X)\)</span> og <span class="math inline">\(Var(Y)\)</span> og du lager en ny variabel <span class="math inline">\(Z = X + Y\)</span>, så blir variansen til <span class="math inline">\(Z\)</span> ganske enkelt <span class="math inline">\(Var(X) + Var(Y)\)</span>. Dette ligger bak utsagn som “foreldrenes utdanningsbakgrunn forklarer 30% av elevenes skoleresultater”. :::</p>
 <p>Så hvordan tolker du variansen? Deskriptiv statistikk skal tross alt beskrive ting og variansen virker bare som et meningsløst tall som er helt ubrukelig hvis du vil kommunisere med et faktisk menneske. Løsningen er standardavviket.</p>
 </section>
 <section id="sec-descriptive-sd" class="level3" data-number="4.4.4">
@@ -1828,7 +1855,7 @@ Figur&nbsp;4.12. Two figures, linked inextricably.
 <p>Skjevhet er et mål på asymmetri. En variabel er symmetrisk hvis høyre og venstre side er speilbilder av hverandre, og asymmetrisk hvis de ikke er speilbilder av hverandre. Vi sier at variabelen er venstreskjev hvis verdiene som ligger til venstre for gjennomsnittet ligger langt unna, altså at vi har lengre hale til venstre enn til høyre. Dette kalles også <strong>negativ skjevhet</strong>. Høyreskjevhet kalles <strong>positiv skjevhet</strong>. <a href="#fig-descriptive-skew" class="quarto-xref">Figur&nbsp;<span>4.13</span></a> er bildet du bør ha i hodet.</p>
 <div class="cell enlarge-image" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-descriptive-skew" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Tre stolpediagram demonstrerer henholdsvis negativ skjevhet, ingen skjevhet og positiv skjevhet. Diagrammet til venstre viser en lengre hale til venstre, det midterste diagrammet er symmetrisk, og diagrammet til høyre viser en lengre hale til høyre" data-fig-align="center">
+<div id="fig-descriptive-skew" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Tre stolpediagram demonstrerer henholdsvis negativ skjevhet, ingen skjevhet og positiv skjevhet. Diagrammet til venstre viser en lengre hale til venstre, det midterste diagrammet er symmetrisk, og diagrammet til høyre viser en lengre hale til høyre">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-descriptive-skew-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="sec-descriptive_files/figure-html/fig-descriptive-skew-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14" title="Figur&nbsp;4.13. En illustrasjon av skjevhet. Til venstre har vi et negativt skjevt datasett, i midten har vi et datasett uten skjevhet, og til høyre har vi et positivt skjevt datasett"><img src="sec-descriptive_files/figure-html/fig-descriptive-skew-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="Tre stolpediagram demonstrerer henholdsvis negativ skjevhet, ingen skjevhet og positiv skjevhet. Diagrammet til venstre viser en lengre hale til venstre, det midterste diagrammet er symmetrisk, og diagrammet til høyre viser en lengre hale til høyre"></a>
@@ -1844,8 +1871,14 @@ Figur&nbsp;4.13. En illustrasjon av skjevhet. Til venstre har vi et negativt skj
 <section id="deskriptiv-statistikk-separat-for-hver-gruppe" class="level2" data-number="4.6">
 <h2 data-number="4.6" class="anchored" data-anchor-id="deskriptiv-statistikk-separat-for-hver-gruppe"><span class="header-section-number">4.6</span> Deskriptiv statistikk separat for hver gruppe</h2>
 <p>Det er svært vanlig at du trenger å se på deskriptiv statistikk for forskjellige undergrupper i dataene dine. Det hadde for eksempel vært interessant å vite om de spanske og norske elevene svarer forskjellig på variabelen <em>Likestilling</em>. Eller kanskje om de som ser for seg høyere utdanning svarer forskjellig fra de som seg for seg å stoppe utdanningen etter videregående. Slike spørsmål er svært interessante, og derfor er undergruppeanalyser ofte det masterstudenter benytter til å besvare forskningsspørsmålene sine.</p>
-<p>Vi titter på noen rader fra ICCS-dataene våre igjen:</p>
+<p>Vi titter på noen rader fra ICCS-dataene våre igjen, se <a href="#tbl-ICCS-five-first" class="quarto-xref">Tabell&nbsp;<span>4.4</span></a>.</p>
 <div class="cell" data-layout-align="center">
+<div id="tbl-ICCS-five-first" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ICCS-five-first-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabell&nbsp;4.4. De fem første linjene fra ICCS-dataene, men uten variabelen “Sosioøkonomisk status”
+</figcaption>
+<div aria-describedby="tbl-ICCS-five-first-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
 <!-- preamble start -->
 
@@ -2011,17 +2044,20 @@ Figur&nbsp;4.13. En illustrasjon av skjevhet. Til venstre har vi et negativt skj
 <!-- hack to avoid NA insertion in last line -->
 </div>
 </div>
+</figure>
+</div>
+</div>
 <p>Vi ser at de undergruppene vi ønsker å undersøke (Norge/Spania, Høyere utdanning/VGS) er de forskjellige verdiene til nominelle eller ordinale variable (henholdsvis <em>Land</em> og <em>Forventet utdanning</em>. En måte å tenke på verdiene til nominelle og ordinale variable er altså som undergrupper.</p>
 <blockquote class="blockquote">
 <p>Å gjøre deskriptiv statistikk for undergrupper er å gjøre utregningene separat for hver verdi av en nominell variabel.</p>
 </blockquote>
 <p>Dette er ganske enkelt å gjøre i jamovi. For å regne ut deskriptiv statistikk separat for Gutt, Jente og Annet, må jeg dele opp dataene med verdiene i variabelen <em>Kjønn</em>. I jamovi går man nok en gang til menyen for deskriptiv statistikk (“Analyses” → “Exploration” → “Descriptives”). Deretter legger du til variabelen Kjønn i vinduet der det står “Split by”, se den røde markeringen i <a href="#fig-descriptive-jamovi-equality-x-gender" class="quarto-xref">Figur&nbsp;<span>4.14</span></a>.</p>
-<div class="cell enlarge-image" data-layout-align="center">
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-descriptive-jamovi-equality-x-gender" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Et jamovi-skjermbilde som viser at _Kjønn_ er lagt til i vinduet &quot;Split by&quot;. Da vises deskriptiv statistikk for Gutt, Jente og Annet i et vindu til høyre" data-fig-align="center">
+<div id="fig-descriptive-jamovi-equality-x-gender" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Et jamovi-skjermbilde som viser at _Kjønn_ er lagt til i vinduet &quot;Split by&quot;. Da vises deskriptiv statistikk for Gutt, Jente og Annet i et vindu til høyre">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-descriptive-jamovi-equality-x-gender-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/fig-descriptive-jamovi-equality-x-gender.png" class="lightbox" data-gallery="quarto-lightbox-gallery-15" title="Figur&nbsp;4.14. Et skjermbilde av jamovi som viser Likestilling for de forskjellige verdiene av Kjønn"><img src="images/fig-descriptive-jamovi-equality-x-gender.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" alt="Et jamovi-skjermbilde som viser at _Kjønn_ er lagt til i vinduet &quot;Split by&quot;. Da vises deskriptiv statistikk for Gutt, Jente og Annet i et vindu til høyre"></a>
+<a href="images/fig-descriptive-jamovi-equality-x-gender.png" class="lightbox" data-gallery="quarto-lightbox-gallery-15" title="Figur&nbsp;4.14. Et skjermbilde av jamovi som viser Likestilling for de forskjellige verdiene av Kjønn"><img src="images/fig-descriptive-jamovi-equality-x-gender.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="Et jamovi-skjermbilde som viser at _Kjønn_ er lagt til i vinduet &quot;Split by&quot;. Da vises deskriptiv statistikk for Gutt, Jente og Annet i et vindu til høyre"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-descriptive-jamovi-equality-x-gender-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figur&nbsp;4.14. Et skjermbilde av jamovi som viser <em>Likestilling</em> for de forskjellige verdiene av <em>Kjønn</em>
@@ -2032,12 +2068,12 @@ Figur&nbsp;4.14. Et skjermbilde av jamovi som viser <em>Likestilling</em> for de
 </div>
 <p>Fra <a href="#fig-descriptive-jamovi-equality-x-gender" class="quarto-xref">Figur&nbsp;<span>4.14</span></a> ser vi at jentene har mye høyere gjennomsnittskår på <em>Likestilling</em> enn guttene, 60,3 mot 49,7. De som oppga Annet har tilsvarende gjennomsnitt som gutta, 49,8. Jentene har dessuten vesentlig mindre standardavvik, 8,94 mot 11,2. De som oppga “Annet” har mer sprikende svar. Og tolkningen av dataene ser helt lik ut om vi heller ser på medianen og kvartilbredden enn gjennomsnittet og standardavviket.</p>
 <p>Vi kan også lure på om det er forskjell mellom Norge og Spania for hvert kjønn. Da legger vi til variabelen <em>Land</em> i “Split by”, se <a href="#fig-descriptive-jamovi-equality-x-gender-country" class="quarto-xref">Figur&nbsp;<span>4.15</span></a>. Vi ser at de norske jentene er mer for likestilling enn de spanske jentene (61,2 mot 58,8), men at de norske gutta er <em>mindre</em> for likestilling enn de spanske guttene (49,2 mot 50,5)! Skjerpings, gutter!</p>
-<div class="cell enlarge-image" data-layout-align="center">
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-descriptive-jamovi-equality-x-gender-country" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Et jamovi-skjermbilde som viser at _Kjønn_ og _Land_ er lagt til i vinduet &quot;Split by&quot;. Da vises deskriptiv statistikk for Gutt, Jente og Annet separat for hvert land i et vindu til høyre" data-fig-align="center">
+<div id="fig-descriptive-jamovi-equality-x-gender-country" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Et jamovi-skjermbilde som viser at _Kjønn_ og _Land_ er lagt til i vinduet &quot;Split by&quot;. Da vises deskriptiv statistikk for Gutt, Jente og Annet separat for hvert land i et vindu til høyre">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-descriptive-jamovi-equality-x-gender-country-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/fig-descriptive-jamovi-equality-x-gender-country.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16" title="Figur&nbsp;4.15. Et skjermbilde av jamovi som viser Likestilling for de forskjellige verdiene av Kjønn og Land"><img src="images/fig-descriptive-jamovi-equality-x-gender-country.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" alt="Et jamovi-skjermbilde som viser at _Kjønn_ og _Land_ er lagt til i vinduet &quot;Split by&quot;. Da vises deskriptiv statistikk for Gutt, Jente og Annet separat for hvert land i et vindu til høyre"></a>
+<a href="images/fig-descriptive-jamovi-equality-x-gender-country.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16" title="Figur&nbsp;4.15. Et skjermbilde av jamovi som viser Likestilling for de forskjellige verdiene av Kjønn og Land"><img src="images/fig-descriptive-jamovi-equality-x-gender-country.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="Et jamovi-skjermbilde som viser at _Kjønn_ og _Land_ er lagt til i vinduet &quot;Split by&quot;. Da vises deskriptiv statistikk for Gutt, Jente og Annet separat for hvert land i et vindu til høyre"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-descriptive-jamovi-equality-x-gender-country-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figur&nbsp;4.15. Et skjermbilde av jamovi som viser <em>Likestilling</em> for de forskjellige verdiene av <em>Kjønn</em> og <em>Land</em>
@@ -2083,7 +2119,6 @@ Fraillon, J., Friedman, T., &amp; Fraillon, J. (Eds.). (2024). <em><span>ICCS</s
 <ol>
 <li id="fn1"><p>Bokstaven <em>n</em>, enten den er stor eller liten, beskriver alltid utvalgsstørrelsen.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>Utregningen blir altså å ta “verdien minus gjennomsnittet og droppe fortegnet”. Første verdi på <em>Likestilling</em> er 42,6, så for å regne ut første avvik tar man 42,6 - 54,8 = -12,2, men så dropper man fortegnet og får 12,2.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>Hvis du er nysgjerrig: Den kanskje viktigste egenskapen er at <strong>varianser er additive</strong>. Det betyr at hvis du har to variabler <span class="math inline">\(X\)</span> og <span class="math inline">\(Y\)</span> med varianser <span class="math inline">\(Var(X)\)</span> og <span class="math inline">\(Var(Y)\)</span> og du lager en ny variabel <span class="math inline">\(Z = X + Y\)</span>, så blir variansen til <span class="math inline">\(Z\)</span> ganske enkelt <span class="math inline">\(Var(X) + Var(Y)\)</span>. Dette ligger bak utsagn som “foreldrenes utdanningsbakgrunn forklarer 30% av elevenes skoleresultater”. (Jeg fant på dette tallet, altså.)<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
@@ -2173,7 +2208,7 @@ Fraillon, J., Friedman, T., &amp; Fraillon, J. (Eds.). (2024). <em><span>ICCS</s
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/roarstovner\.github\.io\/kvant_for_laerere\/");
+        var filterRegex = new RegExp("kvant\.roarstovner\.no");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

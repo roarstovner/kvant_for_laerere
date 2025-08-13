@@ -7,7 +7,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Danielle Navarro, David Foxcroft og Roar Bakken Stovner">
-<meta name="dcterms.date" content="2025-08-06">
 
 <title>Kvantitative metoder for lærere</title>
 <style>
@@ -126,10 +125,39 @@ gtag('config', 'G-FRV7C65B01', { 'anonymize_ip': true});
 
 
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 <meta property="og:title" content="Kvantitative metoder for lærere">
-<meta property="og:description" content="">
+<meta property="og:description" content="Vitenskapsteori og metode, MGVM4100, OsloMet">
 <meta property="og:site_name" content="Kvantitative metoder for lærere">
 </head>
 
@@ -322,6 +350,7 @@ gtag('config', 'G-FRV7C65B01', { 'anonymize_ip': true});
       <a href="./">Kvantitative metoder for lærere</a> 
         <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/roarstovner/kvant_for_laerere" title="Kildekode" class="quarto-navigation-tool px-1" aria-label="Kildekode"><i class="bi bi-github"></i></a>
+    <a href="./Kvantitative-metoder-for-lærere.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Bytt mørk modus"><i class="bi"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Bytt lesermodus">
   <div class="quarto-reader-toggle-btn">
@@ -425,6 +454,29 @@ gtag('config', 'G-FRV7C65B01', { 'anonymize_ip': true});
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Inferensiell statistikk</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Slå på delen">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-categorical.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Analyse av kategoriske data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-means.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Sammenlikne gjennomsnitt: ANOVA og paret <span class="math inline">\(t\)</span>-test</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./sec-references.html" class="sidebar-item-text sidebar-link">
@@ -451,9 +503,10 @@ gtag('config', 'G-FRV7C65B01', { 'anonymize_ip': true});
 
 <header id="title-block-header">
 
+<p class="subtitle lead">Vitenskapsteori og metode, MGVM4100, OsloMet</p>
 <p class="author">Danielle Navarro, David Foxcroft og Roar Bakken Stovner</p>
 
-<p class="date">6 August 2025</p>
+<p class="date">August 2025</p>
 </header>
 
 
@@ -465,16 +518,16 @@ gtag('config', 'G-FRV7C65B01', { 'anonymize_ip': true});
 <li><strong>Tilpasset lærerstudenter</strong>: Jeg ville at stoffet og eksemplene skulle være fra utdanningsforskning og at de skulle være relevante for læreryrket.</li>
 <li><strong>Uten matematikk</strong>: Jeg vet at veldig mange lærerstudenter har så lite matematisk bakgrunn at å lære seg noe særlig av matematikken bak statistikken ville blitt rent pugg.</li>
 <li><strong>Kort</strong>: Boka er skrevet til et kurs på OsloMet som skal tilsvare 5 studiepoeng og tre forelesninger i kvantitativ metode. De fleste lærebøker for et innføringskurs i kvantitativ metode er tre ganger så lange og er skrevet slik at det er vanskelig å plukke bare noen deler.</li>
-<li><strong>Viser enkel og åpent tilgjengelig statistikk-programvare</strong>: Siden mange lærerstudenter skriver kvantitative masteroppgaver måtte boka ha med eksempler på hvordan man gjør statistisk analyse i en enkel programvare. Siden det finnes mye god statistikkprogramvare som er fritt tilgjengelig ønsket jeg å bruke noen av disse.</li>
+<li><strong>Viser analysene med en enkel og åpent tilgjengelig statistikk-programvare</strong>: Siden mange lærerstudenter skriver kvantitative masteroppgaver måtte boka ha med eksempler på hvordan man gjør statistisk analyse i en enkel programvare. Siden det finnes mye god statistikkprogramvare som er fritt tilgjengelig ønsket jeg å bruke noen av disse.</li>
 <li><strong>Fremhever forskningsdesign og deskriptiv analyse</strong>: Nesten alle statistikklærebøker benytter mye tid på hypotesetesting. Forutsetningene bak disse testene er nesten aldri oppfylt i praksis og de gir sjeldent gode svar på forskningsspørsmålene som stilles. Det er derfor bedre å bruke tiden til å lære mer om forskningsdesign og deskriptiv statistikk.</li>
 </ol>
 <p>Jeg fant ingen eksisterende bok som dekket disse punktene, så jeg valgte å tilpasse jeg en lærebok for psykologi-studenter som var gitt ut med en åpen lisens.</p>
 <p>Boka er en oversatt og omarbeidet versjon av Navarro og Foxcroft <span class="citation" data-cites="navarro2025">(<a href="sec-references.html#ref-navarro2025" role="doc-biblioref">2025</a>)</span> sin bok “Learning statistics with jamovi: A Tutorial for Beginners in Statistical Analysis” <a href="https://www.learnstatswithjamovi.com/">https://www.learnstatswithjamovi.com/</a>, som igjen er en omarbeidet versjon av Navarro <span class="citation" data-cites="navarro2011">(<a href="sec-references.html#ref-navarro2011" role="doc-biblioref">2011</a>)</span> sin bok “Learning statistics with R: A tutorial for psychology students and other beginners. (Version 0.6)” <a href="https://learningstatisticswithr.com/">https://learningstatisticswithr.com/</a>.</p>
 <p>Hvis du finner noen feil eller har forslag til forbedringer kan du melde inn et “issue” her <a href="https://github.com/roarstovner/kvant_for_laerere/issues">https://github.com/roarstovner/kvant_for_laerere/issues</a> eller sende meg en epost.</p>
-<p>Jeg håper dere setter pris på å ha en lærebok i kvantitativ metode som dekker de fem punktene i tillegg til å være gratis.</p>
+<p>Jeg håper dere setter pris på å ha en lærebok i kvantitativ metode som dekker de fem punktene i tillegg til å være gratis tilgjengelig på nett.</p>
 <p><em>Roar Stovner, 4. august, 2025</em></p>
 <p>(Hvis du ønsker å benytte boka i egen undervisning er det fritt frem, men send meg gjerne en epost, for det er gøy å vite at boka blir brukt! Hvis du ønsker å gjøre endringer i boka er det også lov, siden boka er gitt ut på lisensen CC-BY-SA, eneste krav er at du viser tilbake til de tidligere versjonene av boka (inkludert min versjon) og gjør den tilgjengelig med samme lisens. Bokas kildekode finner du på <a href="https://github.com/roarstovner/kvant_for_laerere">github</a>.)</p>
-<p><strong>Citation</strong>: Danielle J. Navarro, David R. Foxcroft, and Roar B. Stovner, <em>Kvantitativ metode for lærere</em>. 2025.</p>
+<p><strong>Sitering</strong>: Danielle J. Navarro, David R. Foxcroft, and Roar B. Stovner. (2025). <em>Kvantitativ metode for lærere</em>. <a href="https://kvant.roarstovner.no" class="uri">https://kvant.roarstovner.no</a> .</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
@@ -573,7 +626,7 @@ Navarro, D., &amp; Foxcroft, D. (2025). <em>Learning <span>Statistics</span> wit
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/roarstovner\.github\.io\/kvant_for_laerere\/");
+        var filterRegex = new RegExp("kvant\.roarstovner\.no");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

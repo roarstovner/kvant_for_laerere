@@ -161,7 +161,7 @@ window.Quarto = {
 <link rel="stylesheet" href="styles.css">
 <meta property="og:title" content="6&nbsp; Sannsynlighet – Kvantitative metoder for lærere">
 <meta property="og:description" content="">
-<meta property="og:image" content="https://roarstovner.github.io/kvant_for_laerere/sec-probability_files/figure-html/fig-probability-coin-simul-1.png">
+<meta property="og:image" content="kvant.roarstovner.no/sec-probability_files/figure-html/fig-probability-coin-simul-1.png">
 <meta property="og:site_name" content="Kvantitative metoder for lærere">
 <meta property="og:image:alt" content="Fire linjediagram som hver viser andelen kroner versus antall myntkast, fra 0 til 1000 kast. Alle diagrammene demonstrerer konvergens mot 0,5 når antall kast øker, med innledende svingninger som stabiliserer seg over tid">
 <meta property="og:image:height" content="1017">
@@ -357,6 +357,7 @@ window.Quarto = {
       <a href="./">Kvantitative metoder for lærere</a> 
         <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/roarstovner/kvant_for_laerere" title="Kildekode" class="quarto-navigation-tool px-1" aria-label="Kildekode"><i class="bi bi-github"></i></a>
+    <a href="./Kvantitative-metoder-for-lærere.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Bytt mørk modus"><i class="bi"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Bytt lesermodus">
   <div class="quarto-reader-toggle-btn">
@@ -460,6 +461,29 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Inferensiell statistikk</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Slå på delen">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-categorical.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Analyse av kategoriske data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-means.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Sammenlikne gjennomsnitt: ANOVA og paret <span class="math inline">\(t\)</span>-test</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./sec-references.html" class="sidebar-item-text sidebar-link">
@@ -502,6 +526,9 @@ window.Quarto = {
 </header>
 
 
+<!-- \placetextbox{0.26}{0.06}{\scriptsize{©2025 D.R. Foxcroft and D.J. Navarro,}} -->
+<!-- \placetextbox{0.195}{0.05}{\scriptsize{CC BY-SA 4.0}} -->
+<!-- \placetextbox{0.70}{0.06}{\scriptsize{\url{https://doi.org/10.11647/OBP.0333.07}}} -->
 <blockquote class="blockquote">
 <p><em>[God] has afforded us only the twilight … of Probability.</em><br>
 – John Locke</p>
@@ -801,7 +828,7 @@ Figur&nbsp;6.1. En illustrasjon av hvordan frekventistisk sannsynlighet fungerer
 <h2 data-number="6.3" class="anchored" data-anchor-id="sec-probability-distributions"><span class="header-section-number">6.3</span> Sannsynlighetsfordelinger</h2>
 <p>Selv om folk er rivende uenige i hva sannsynlighet er og hvordan sannsynligheter bør tolkes, så er folk stort sett enige om reglene som sannsynligheter følger. Vi skal ikke komme noe særlig inn på disse reglene, men reglene for sannynligheter er bakt inn i konseptet <strong>sannsynlighetsfordeling</strong>, og de må vi vite hva er.</p>
 <p>Vi bruker buksene mine for å illustrere hva sannsynlighetsfordelinger er. Jeg eier fem par bukser og de har jeg gitt navnene <span class="math inline">\(X_1\)</span>, <span class="math inline">\(X_2\)</span>, <span class="math inline">\(X_3\)</span>, <span class="math inline">\(X_4\)</span> og <span class="math inline">\(X_5\)</span>. Hver dag velger jeg ut nøyaktig ett par bukser å ha på meg. Med sannsynlighetsteoriens språk, ville jeg omtalt hver bukse (dvs. hver <span class="math inline">\(X_i\)</span>) som en elementær hendelse. En <strong>elementær hendelse</strong> er at hver gang vi gjør en observasjon (f.eks. hver gang jeg tar på meg et par bukser), så vil utfallet være én og bare én av disse hendelsene. Jeg har alltid på meg nøyaktig ett par bukser, så buksene mine tilfredsstiller denne begrensningen. På samme måte kalles mengden med alle mulige hendelser (altså <span class="math inline">\(X_1, X_2, ..., X_5\)</span>) for et <strong>utfallsrom</strong>. Andre ville kanskje kalt det et “garderobeskap”.</p>
-<p>OK, nå som vi vet at et utfallsrom er bygget opp av mange elementære hendelser ønsker vi å tildele en <strong>sannsynlighet</strong> til hver elementære hendelse. For en hendelse <span class="math inline">\(X_i\)</span> er sannsynligheten for den hendelsen <span class="math inline">\(P(X_i)\)</span> et tall som ligger mellom 0 og 1. Jo større verdien til <span class="math inline">\(P(X)\)</span> er, desto mer sannsynlig er det at hendelsen inntreffer. For eksempel, hvis <span class="math inline">\(P(X) = 0\)</span> betyr det at hendelsen <span class="math inline">\(X\)</span> er umulig (dvs. jeg har aldri på meg de buksene <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>). På den andre siden, hvis <span class="math inline">\(P(X) = 1\)</span> betyr det at hendelsen <span class="math inline">\(X\)</span> er sikker (dvs. jeg har alltid på meg de buksene)<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. For sannsynlighetsverdier i midten betyr det at jeg noen ganger har på meg de buksene. For eksempel, hvis <span class="math inline">\(P(X) = 0.5\)</span> betyr det at jeg har på meg de buksene halvparten av tiden.</p>
+<p>OK, nå som vi vet at et utfallsrom er bygget opp av mange elementære hendelser ønsker vi å tildele en <strong>sannsynlighet</strong> til hver elementære hendelse. For en hendelse <span class="math inline">\(X_i\)</span> er sannsynligheten for den hendelsen <span class="math inline">\(P(X_i)\)</span> et tall som ligger mellom 0 og 1. Jo større verdien til <span class="math inline">\(P(X)\)</span> er, desto mer sannsynlig er det at hendelsen inntreffer. For eksempel, hvis <span class="math inline">\(P(X) = 0\)</span> betyr det at hendelsen <span class="math inline">\(X\)</span> er umulig (dvs. jeg har aldri på meg de buksene <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> ). På den andre siden, hvis <span class="math inline">\(P(X) = 1\)</span> betyr det at hendelsen <span class="math inline">\(X\)</span> er sikker (dvs. jeg har alltid på meg de buksene)<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. For sannsynlighetsverdier i midten betyr det at jeg noen ganger har på meg de buksene. For eksempel, hvis <span class="math inline">\(P(X) = 0.5\)</span> betyr det at jeg har på meg de buksene halvparten av tiden.</p>
 <p>Til sist har vi <strong>loven om total sannsynlighet</strong>, som sier at sannsynligheten til de elementære hendelsene må summere til 1, altså at det er sikkert at en av hendelsene inntreffer. Hver gang jeg tar på meg bukser, ender jeg faktisk opp med å ha på meg bukser. Når disse kravene er oppfylt har vi det som kalles en <strong>sannsynlighetsfordeling</strong>. For eksempel viser <a href="#tbl-probability-pants" class="quarto-xref">Tabell&nbsp;<span>6.2</span></a> oet eksempel på en sannsynlighetsfordeling. Hver av hendelsene har en sannsynlighet som ligger mellom 0 og 1, og hvis vi adderer sannsynligheten for alle hendelsene summerer de seg til 1. Flott. Vi kan til og med tegne et fint stolpediagram (se <a href="sec-diagram.html#sec-diagram-bar" class="quarto-xref"><span>Seksjon 5.1</span></a>) for å visualisere denne fordelingen, som vist i <a href="#fig-probability-pants" class="quarto-xref">Figur&nbsp;<span>6.2</span></a>.</p>
 <div id="tbl-probability-pants" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -914,7 +941,20 @@ Figur&nbsp;6.5. Normalfordelingen med gjennomsnitt <span class="math inline">\(\
 </div>
 </div>
 </div>
-<p>Legg merke til at i motsetning til figurene jeg tegnet for å illustrere binomialfordelingen, viser bildet av normalfordelingen i <a href="#fig-probability-standard-normal" class="quarto-xref">Figur&nbsp;<span>6.5</span></a> en jevn kurve i stedet for “histogram-lignende” søyler. Dette er fordi normalfordelingen er kontinuerlig mens binomialfordelingen ikke er det. <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> For eksempel, i terningkast-eksemplet fra forrige seksjon var det mulig å få 3 kron eller 4 kron, men umulig å få 3,9 kron. Figurene jeg tegnet i forrige delkapittel reflekterte dette. I <a href="#fig-probability-binomial" class="quarto-xref">Figur&nbsp;<span>6.3</span></a>, for eksempel, er det en søyle plassert ved <span class="math inline">\(X = 3\)</span> og en annen ved <span class="math inline">\(X = 4\)</span>, men det er ingenting imellom. Kontinuerlige fordelinger har ikke denne begrensningen. I praksis er normalfordelingen så praktisk at folk har en tendens til å bruke den selv når variabelen faktisk ikke er kontinuerlig. Så lenge det er nok kategorier (f.eks. en 5-punkts Likert-spørsmål på et spørreskjema), er det ganske standard praksis å bruke normalfordelingen som en tilnærming. Dette fungerer mye bedre enn du skulle.</p>
+<p>Legg merke til at i motsetning til figurene jeg tegnet for å illustrere binomialfordelingen, viser bildet av normalfordelingen i <a href="#fig-probability-standard-normal" class="quarto-xref">Figur&nbsp;<span>6.5</span></a> en jevn kurve i stedet for “histogram-lignende” søyler. Dette er fordi normalfordelingen er kontinuerlig mens binomialfordelingen ikke er det. For eksempel, i terningkast-eksemplet fra forrige seksjon var det mulig å få 3 kron eller 4 kron, men umulig å få 3,9 kron. Figurene jeg tegnet i forrige delkapittel reflekterte dette. I <a href="#fig-probability-binomial" class="quarto-xref">Figur&nbsp;<span>6.3</span></a>, for eksempel, er det en søyle plassert ved <span class="math inline">\(X = 3\)</span> og en annen ved <span class="math inline">\(X = 4\)</span>, men det er ingenting imellom. Kontinuerlige fordelinger har ikke denne begrensningen. I praksis er normalfordelingen så praktisk at folk har en tendens til å bruke den selv når variabelen faktisk ikke er kontinuerlig. Så lenge det er nok kategorier (f.eks. en 5-punkts Likert-spørsmål på et spørreskjema), er det ganske standard praksis å bruke normalfordelingen som en tilnærming. Dette fungerer mye bedre enn du skulle tro.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Det er et subtilt og noe frustrerende kjennetegn ved kontinuerlige fordelinger som gjør at y-aksen oppfører seg litt merkelig – høyden på kurven her er faktisk ikke sannsynligheten for å observere en bestemt <span class="math inline">\(x\)</span>-verdi. Men det <em>er</em> sant at høydene på kurven forteller deg hvilke <span class="math inline">\(x\)</span>-verdier som er mer sannsynlige (de høyere!). <span class="math inline">\(y\)</span>-verdiene viser en “sannsynlighetstetthet”, som du kan lese om et annet sted, hvis du er interessert.</p>
+</div>
+</div>
 <p>La oss nå se om vi kan få en intuisjon for hvordan normalfordelingen fungerer. Først ser vi hva som skjer når vi leker med parametrene til fordelingen. <a href="#fig-probability-normals-mean" class="quarto-xref">Figur&nbsp;<span>6.6</span></a> viser derfor normalfordelinger som har forskjellige gjennomsnitt, men samme standardavvik. Alle disse fordelingene samme “bredde”. Den eneste forskjellen mellom dem er at de har blitt forskjøvet til venstre eller høyre. På alle andrem åter er de identiske. Derimot, hvis vi øker standardavviket mens vi holder gjennomsnittet konstant, forblir fordelingen sentrert på samme sted, men fordelingen blir bredere, som du kan se i <a href="#fig-probability-normals-sd" class="quarto-xref">Figur&nbsp;<span>6.7</span></a>. Legg merke til at når vi utvider fordelingen, synker høyden på toppen. Dette må skje, for på samme måte som høydene på søylene vi brukte til å tegne en diskret binomialfordeling må summere til 1, må det totale arealet under kurven for normalfordelingen være lik 1.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -1034,10 +1074,9 @@ McShane, B. B., &amp; Gal, D. (2015). Blinding <span>Us</span> to the <span>Obvi
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p>De som husker den frekventistiske definisjonen av sannsynlighet vil kanskje kverulere og si at andelen ganger <span class="math inline">\(X\)</span> inntreffer må gå mot null når <span class="math inline">\(N\)</span> går mot uendelig, og at det derfor <em>er</em> mulig. De har rett.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>De som husker den frekventistiske definisjonen av sannsynlighet vil kanskje kverulere og si at det bare er <em>andelen</em> ganger <span class="math inline">\(X\)</span> inntreffer som må gå mot null når <span class="math inline">\(N\)</span> går mot uendelig, og at det derfor <em>er</em> mulig. De har rett.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>Samme innvending gjelder her.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>Hvis dere ønsker en følelse for hvordan det matematiske uttrykket til normalfordelingen er, værsågod: <span class="math display">\[p(X|\mu, \sigma) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(X-\mu)^2}{2\sigma^2}}\]</span> Wow, hva gjør <span class="math inline">\(\pi\)</span> der?!<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4"><p>Det er et subtilt og noe frustrerende kjennetegn ved kontinuerlige fordelinger som gjør at y-aksen oppfører seg litt merkelig – høyden på kurven her er faktisk ikke sannsynligheten for å observere en bestemt <span class="math inline">\(x\)</span>-verdi. Men det <em>er</em> sant at høydene på kurven forteller deg hvilke <span class="math inline">\(x\)</span>-verdier som er mer sannsynlige (de høyere!). <span class="math inline">\(y\)</span>-verdiene viser en “sannsynlighetstetthet”, som du kan lese om et annet sted, hvis du er interessert.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Hvis dere ønsker en føling med hvordan det matematiske uttrykket til normalfordelingen er, værsågod: <span class="math display">\[p(X|\mu, \sigma) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(X-\mu)^2}{2\sigma^2}}\]</span> Wow, hva gjør <span class="math inline">\(\pi\)</span> der?!<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
@@ -1127,7 +1166,7 @@ McShane, B. B., &amp; Gal, D. (2015). Blinding <span>Us</span> to the <span>Obvi
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/roarstovner\.github\.io\/kvant_for_laerere\/");
+        var filterRegex = new RegExp("kvant\.roarstovner\.no");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

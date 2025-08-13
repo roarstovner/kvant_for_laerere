@@ -161,7 +161,7 @@ window.Quarto = {
 <link rel="stylesheet" href="styles.css">
 <meta property="og:title" content="3&nbsp; Forskningsdesign i kvantitativ metode – Kvantitative metoder for lærere">
 <meta property="og:description" content="">
-<meta property="og:image" content="https://roarstovner.github.io/kvant_for_laerere/images/fig-spurious.png">
+<meta property="og:image" content="kvant.roarstovner.no/images/fig-spurious.png">
 <meta property="og:site_name" content="Kvantitative metoder for lærere">
 <meta property="og:image:alt" content="To grafer som viser utviklingen fra 1995 til 2021 i antall babyer i USA som heter Eleanor og antall kilowattimer vindkraft generert i Polen. Grafene er nesten perfekt overlappende.">
 <meta property="og:image:height" content="392">
@@ -357,6 +357,7 @@ window.Quarto = {
       <a href="./">Kvantitative metoder for lærere</a> 
         <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/roarstovner/kvant_for_laerere" title="Kildekode" class="quarto-navigation-tool px-1" aria-label="Kildekode"><i class="bi bi-github"></i></a>
+    <a href="./Kvantitative-metoder-for-lærere.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Bytt mørk modus"><i class="bi"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Bytt lesermodus">
   <div class="quarto-reader-toggle-btn">
@@ -460,6 +461,29 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Inferensiell statistikk</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Slå på delen">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-categorical.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Analyse av kategoriske data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-means.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Sammenlikne gjennomsnitt: ANOVA og paret <span class="math inline">\(t\)</span>-test</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./sec-references.html" class="sidebar-item-text sidebar-link">
@@ -516,6 +540,9 @@ window.Quarto = {
 </header>
 
 
+<!-- \placetextbox{0.26}{0.06}{\scriptsize{©2025 D.R. Foxcroft and D.J. Navarro,}} -->
+<!-- \placetextbox{0.195}{0.05}{\scriptsize{CC BY-SA 4.0}} -->
+<!-- \placetextbox{0.70}{0.06}{\scriptsize{\url{https://doi.org/10.11647/OBP.0333.01}}} -->
 <section id="sec-purposes" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="sec-purposes"><span class="header-section-number">3.1</span> Formålet med forskningen</h2>
 <section id="beskrive" class="level3" data-number="3.1.1">
@@ -545,9 +572,9 @@ window.Quarto = {
 </section>
 <section id="finne-årsaksforhold" class="level3" data-number="3.1.3">
 <h3 data-number="3.1.3" class="anchored" data-anchor-id="finne-årsaksforhold"><span class="header-section-number">3.1.3</span> Finne årsaksforhold</h3>
-<p>Det tredje formålet med kvantitativ utdanningsforskning er å finne årsaksforhold, altså ikke bare beskrive eller predikere noe, men å forklare årsaken til at det er slik. Dette kalles å stadfeste <strong>kausalitet</strong>. Når vi kan etablere kausalitet, kan vi si at en variabel faktisk forårsaker endringer i en annen variabel. Man uttrykker ofte årsaker med piler. Hvis årsaken er <span class="math inline">\(A\)</span> og virkningen er <span class="math inline">\(B\)</span> kan man uttrykke “<span class="math inline">\(A\)</span> forårsaker <span class="math inline">\(B\)</span> som <span class="math inline">\(A \rightarrow B\)</span>. Man kaller <span class="math inline">\(A\)</span> for <strong>årsaken</strong> og <span class="math inline">\(B\)</span> for <strong>virkningen</strong> eller <strong>effekten</strong>.</p>
+<p>Det tredje formålet med kvantitativ utdanningsforskning er å finne årsaksforhold, altså ikke bare beskrive eller predikere noe, men å forklare årsaken til at det er slik. Dette kalles å stadfeste <strong>kausalitet</strong>. Når vi kan etablere kausalitet, kan vi si at en variabel faktisk forårsaker endringer i en annen variabel. Man uttrykker ofte årsaker med piler. Hvis årsaken er <span class="math inline">\(A\)</span> og virkningen er <span class="math inline">\(B\)</span> kan man uttrykke “<span class="math inline">\(A\)</span> forårsaker <span class="math inline">\(B\)</span>” som <span class="math inline">\(A \rightarrow B\)</span>. Man kaller <span class="math inline">\(A\)</span> for <strong>årsaken</strong> og <span class="math inline">\(B\)</span> for <strong>virkningen</strong> eller <strong>effekten</strong>.</p>
 <p>La oss se på et eksempel på kausalitet. På en skole sliter de med at elevene på femtetrinn har for dårlig engelsk ordforråd. De setter i gang en klassekonkurranse, der den klassen som får høyest gjennomsnitt på en stor gloseprøve på slutten av året vinner. På slutten av året finner de at femtetrinn skårer skyhøyt på ordforråd. Da har klassekonkurransen <strong>forårsaket</strong> en forbedring i ordforråd, altså <span class="math display">\[\text{klassekonkurranse}\rightarrow\text{økt ordforråd}\]</span> Vi kan si det er en <strong>kausal sammenheng</strong> mellom klassekonkurransen og ordforrådet; økt ordforråd var en <strong>virkning</strong> av klassekonkurransen.</p>
-<p>Årsaksforklaringer er viktige i utdanningsforskning fordi hvis vi vet hva som forårsaker noe, så har vi ofte kontroll over det og kan endre det. Hvis vi hadde visst hva som forårsaket det dårlige engelsk-ordforrådet kunne vi fjernet årsaken, og fordi vi vet at klassekonkurransen har en kausal effekt på ordforrådet kan vi utbedre det. Hvis vi hadde visst hva som forårsaket at gutter oftere ikke fullfører videregående enn jenter kunne vi kanskje gjort noe med det. Kunnskap om årsaker er viktige for lærere, rektorer, kommuner, politikere – rett og slett for alle som vil endre skolefeltet til det bedre. Hvis vi hadde visst hva som hadde fått norske elever til å trives enda bedre på skolen og skåre høyere på internasjonale undersøkelser er jeg temmelig sikker på at politikere kunne satt av penger til det. Problemet er å finne ut at noe forårsaker noe annet, å stadfeste kausalitet.</p>
+<p>Årsaksforklaringer er viktige i utdanningsforskning fordi hvis vi vet hva som forårsaker noe, så har vi ofte kontroll over det og kan endre det. Hvis vi hadde visst hva som forårsaket det dårlige engelsk-ordforrådet kunne vi fjernet årsaken, og fordi vi vet at klassekonkurransen har en kausal effekt på ordforrådet kan vi utbedre det. Hvis vi hadde visst hva som forårsaket at gutter oftere ikke fullfører videregående enn jenter kunne vi kanskje gjort noe med det. Kunnskap om årsaker er viktige for lærere, rektorer, kommuner, politikere – rett og slett for alle som vil endre skolefeltet til det bedre. Hvis vi hadde visst hva som hadde fått norske elever til å trives enda bedre på skolen og skåre høyere på internasjonale undersøkelser er jeg temmelig sikker på at politikere kunne satt av penger til det. Problemet er at å finne ut at noe forårsaker noe annet, altså å stadfeste kausalitet, er vanskelig.</p>
 </section>
 </section>
 <section id="variablenes-roller-avhengige-og-uavhengige-variable" class="level2" data-number="3.2">
@@ -636,8 +663,8 @@ Tabell&nbsp;3.1. Navn på variablenes roller
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: '2', j: 0 }, { i: '2', j: 1 }, { i: '2', j: 2 }, { i: '2', j: 3 }, { i: '2', j: 4 }, { i: '2', j: 5 },  ], css_id: 'tinytable_css_i2fcpwqtn6of0p81njmk',}, 
-          { positions: [ { i: '0', j: 0 }, { i: '0', j: 1 }, { i: '0', j: 2 }, { i: '0', j: 3 }, { i: '0', j: 4 }, { i: '0', j: 5 },  ], css_id: 'tinytable_css_o49wjzm94gvy1dsjlb5k',}, 
+          { positions: [ { i: '5', j: 0 }, { i: '5', j: 1 }, { i: '5', j: 2 },  ], css_id: 'tinytable_css_i2fcpwqtn6of0p81njmk',}, 
+          { positions: [ { i: '0', j: 0 }, { i: '0', j: 1 }, { i: '0', j: 2 },  ], css_id: 'tinytable_css_o49wjzm94gvy1dsjlb5k',}, 
           ];
 
           // Loop over the arrays to style the cells
@@ -659,31 +686,37 @@ Tabell&nbsp;3.1. Navn på variablenes roller
         <thead>
         
               <tr>
-                <th scope="col" data-row="0" data-col="0">variabelens rolle</th>
-                <th scope="col" data-row="0" data-col="1">matematisk symbol</th>
-                <th scope="col" data-row="0" data-col="2">klassisk navn</th>
-                <th scope="col" data-row="0" data-col="3">beskrivende navn</th>
-                <th scope="col" data-row="0" data-col="4">predikerende navn</th>
-                <th scope="col" data-row="0" data-col="5">årsaksforklarende navn</th>
+                <th scope="col" data-row="0" data-col="0">navn</th>
+                <th scope="col" data-row="0" data-col="1">skal forklares</th>
+                <th scope="col" data-row="0" data-col="2">skal forklare</th>
               </tr>
         </thead>
         
         <tbody>
                 <tr>
-                  <td data-row="1" data-col="0">skal forklares</td>
-                  <td data-row="1" data-col="1">$$Y$$</td>
-                  <td data-row="1" data-col="2">avhengig variabel</td>
-                  <td data-row="1" data-col="3">utfall</td>
-                  <td data-row="1" data-col="4">utfall</td>
-                  <td data-row="1" data-col="5">utfall</td>
+                  <td data-row="1" data-col="0">matematisk symbol</td>
+                  <td data-row="1" data-col="1">$Y$</td>
+                  <td data-row="1" data-col="2">$X$</td>
                 </tr>
                 <tr>
-                  <td data-row="2" data-col="0">skal forklare</td>
-                  <td data-row="2" data-col="1">$$X$$</td>
+                  <td data-row="2" data-col="0">klassisk navn</td>
+                  <td data-row="2" data-col="1">avhengig variabel</td>
                   <td data-row="2" data-col="2">uavhengig variabel</td>
-                  <td data-row="2" data-col="3">forklaringsvariabel</td>
-                  <td data-row="2" data-col="4">prediktor</td>
-                  <td data-row="2" data-col="5">årsaksvariabel</td>
+                </tr>
+                <tr>
+                  <td data-row="3" data-col="0">beskrivende navn</td>
+                  <td data-row="3" data-col="1">utfall</td>
+                  <td data-row="3" data-col="2">forklaringsvariabel</td>
+                </tr>
+                <tr>
+                  <td data-row="4" data-col="0">predikerende navn</td>
+                  <td data-row="4" data-col="1">utfall</td>
+                  <td data-row="4" data-col="2">prediktor</td>
+                </tr>
+                <tr>
+                  <td data-row="5" data-col="0">årsaksforklarende navn</td>
+                  <td data-row="5" data-col="1">utfall</td>
+                  <td data-row="5" data-col="2">årsaksvariabel</td>
                 </tr>
         </tbody>
       </table>
@@ -707,8 +740,21 @@ Tabell&nbsp;3.1. Navn på variablenes roller
 <p>En sentral innsikt i kvantitativ forskning er at korrelasjon ikke nødvendigvis er kausalitet. Vi skal lære mer presist senere hva korrelasjon er, men for nå holder det å vite at to variable er korrelert hvis den ene variabelen har en høy verdi når den andre variabelen har det, og omvendt, at de har lave verdier når den andre har det. Forskere vet at det er en sterk positiv korrelasjon mellom variabelen <em>antall bøker hjemme</em> og variabelen <em>elevers leseferdigheter</em>, altså at at elever med flere bøker hjemme har en tendens til å lese bedre.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> Man kunne lett tenke at det å ha mange bøker hjemme forårsaker bedre leseferdigheter. Tenk over dette – tror du at det stemmer? I så fall sier du deg enig i at en elevs leseferdighet hadde gått opp hvis du hadde kjøpt masse bøker og plassert i bokhylla hjemme.</p>
 <p>La oss analysere korrelasjonen i detalj. La oss kalle antall bøker for <span class="math inline">\(A\)</span> og leseferdighet for <span class="math inline">\(B\)</span>. Hvis det hadde vært en årsakssammenheng mellom <span class="math inline">\(A\)</span> og <span class="math inline">\(B\)</span>, altså <span class="math inline">\(A\rightarrow B\)</span>, så hadde <span class="math inline">\(A\)</span> og <span class="math inline">\(B\)</span> vært korrelerte, og korrelasjonen hadde oppstått på grunn av årsakssammenhengen mellom <span class="math inline">\(A\)</span> og <span class="math inline">\(B\)</span>. Vi kan oppsummere det i en regel</p>
 <blockquote class="blockquote">
-<p><em>En årsakssammenheng <span class="math inline">\(A\rightarrow B\)</span> skaper en korrelasjon mellom <span class="math inline">\(A\)</span> og <span class="math inline">\(B\)</span>.</em><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<p><em>En årsakssammenheng <span class="math inline">\(A\rightarrow B\)</span> skaper en korrelasjon mellom <span class="math inline">\(A\)</span> og <span class="math inline">\(B\)</span>.</em></p>
 </blockquote>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Advarsel
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Vel, regelen er sann i de fleste tilfeller. Men det <em>kan</em> være at <span class="math inline">\(A\)</span> har en årsakspåvirkning på <span class="math inline">\(B\)</span>, men så er det noe som hindrer <span class="math inline">\(B\)</span> fra å inntreffe. Det å utføre et vellykket ran, <span class="math inline">\(A\)</span>, kan gjør deg mer tilbøyelig til å utføre flere ran, <span class="math inline">\(B\)</span>, men <span class="math inline">\(B\)</span> vil ikke inntreffe hvis man blir arrestert først. I så tilfelle vil ikke <span class="math inline">\(A\)</span> og <span class="math inline">\(B\)</span> bli korrelert. Du kan sammenlikne det med å påføre kraft på en boks; det vil forårsake at boksen flytter seg (korrelasjon mellom <em>å påføre kraft</em> og <em>bevegelse</em>), men det gjelder ikke hvis boksen står inntil en vegg.</p>
+</div>
+</div>
 <p>Dette er et nyttig resultat som jeg tror er enkelt å skjønne.</p>
 <p>Men den “motsatte” regelen er ikke sann – det er ikke slik at en korrelasjon mellom <span class="math inline">\(A\)</span> og <span class="math inline">\(B\)</span> betyr at man kan konkludere med <span class="math inline">\(A\rightarrow B\)</span>. Dette er ikke like enkelt å skjønne. Hvorfor i huleste heiteste er det korrelasjon hvis den ene ikke forårsaker den andre? Hvis de var helt urelaterte burde det jo være ingen korrelasjon? Er korrelasjonen bare en tilfeldighet?</p>
 <p><strong>Tilfeldige korrelasjoner</strong> har blitt manges forklaring på hvorfor korrelasjon ikke er kausalitet. En tilfeldig korrelasjon er en korrelasjon som oppstår av, nettopp, tilfeldigheter. Hvis man hadde gjort samme studie om igjen hadde ikke korrelasjonen vært der, fordi den oppsto på grunn av tilfeldigheter med utvalget eller noe annet. Ideen om tilfeldige korrelasjoner har blitt popularisert gjennom det meget vittige nettstedet <a href="https://www.tylervigen.com/spurious-correlations" class="uri">https://www.tylervigen.com/spurious-correlations</a> som generer tusenvis av tilfeldige korrelasjoner som <a href="#fig-spurious" class="quarto-xref">Figur&nbsp;<span>3.1</span></a>.</p>
@@ -740,17 +786,30 @@ Figur&nbsp;3.1. En tilfeldig korrelasjon. Figuren er fra www.tylervigen.com og e
 </section>
 <section id="sec-design-konfunder" class="level3" data-number="3.4.2">
 <h3 data-number="3.4.2" class="anchored" data-anchor-id="sec-design-konfunder"><span class="header-section-number">3.4.2</span> Konfundere</h3>
-<p>En <strong>konfunder</strong> <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> til variablene <span class="math inline">\(A\)</span> og <span class="math inline">\(B\)</span> er en variabel <span class="math inline">\(C\)</span> som er slik at den påvirker både <span class="math inline">\(A\)</span> og <span class="math inline">\(B\)</span>. Altså <span class="math inline">\(C\rightarrow A\)</span> og <span class="math inline">\(C\rightarrow B\)</span>. Ofte tegner man dette i et diagram slik som dette:</p>
+<p>En <strong>konfunder</strong> til variablene <span class="math inline">\(A\)</span> og <span class="math inline">\(B\)</span> er en variabel <span class="math inline">\(C\)</span> som er slik at den påvirker både <span class="math inline">\(A\)</span> og <span class="math inline">\(B\)</span>. Altså <span class="math inline">\(C\rightarrow A\)</span> og <span class="math inline">\(C\rightarrow B\)</span>. Ofte tegner man dette i et diagram slik som dette:</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>“Konfunder” uttales med samme trykk som “vidunder”. <em>Konfunder</em> er en norsk oversettelse av det engelske <em>confounder</em>. Det finnes dessverre ingen vanlige oversettelser av <em>confounder</em>, og både tredjevariabel, forvirringsvariabel, forstyrrende variabel, og bakenforliggende faktor er i bruk, i tillegg til konfunder. Konfunder er like vanlige som disse, og jeg bruker konfunder slik at man lettere forstår ordet hvis man leser det på engelsk. Å konfundere <a href="https://naob.no/ordbok/konfundere">betyr egentlig å forvirre</a>.</p>
+</div>
+</div>
 <div id="fig-confounder" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-confounder-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
-<div class="cell quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-confounder" style="flex-basis: 30.0%;justify-content: flex-start;">
+<div class="cell quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-confounder" style="flex-basis: 100.0%;justify-content: flex-start;">
 <div class="cell-output-display quarto-layout-cell-subref" data-ref-parent="fig-confounder">
 <div id="fig-confounder-general" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-confounder-general-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="sec-design_files/figure-html/fig-confounder-general-1.png" class="lightbox" data-gallery="fig-confounder" title="Figur&nbsp;3.2&nbsp;(a). Her er C en konfunder for A og B."><img src="sec-design_files/figure-html/fig-confounder-general-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:6cm" data-ref-parent="fig-confounder"></a>
+<a href="sec-design_files/figure-html/fig-confounder-general-1.png" class="lightbox" data-gallery="fig-confounder" title="Figur&nbsp;3.2&nbsp;(a). Her er C en konfunder for A og B."><img src="sec-design_files/figure-html/fig-confounder-general-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" data-ref-parent="fig-confounder"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-confounder-general-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (a) Her er <span class="math inline">\(C\)</span> en konfunder for <span class="math inline">\(A\)</span> og <span class="math inline">\(B\)</span>.
@@ -759,12 +818,14 @@ Figur&nbsp;3.1. En tilfeldig korrelasjon. Figuren er fra www.tylervigen.com og e
 </div>
 </div>
 </div>
-<div class="cell quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-confounder" style="flex-basis: 70.0%;justify-content: flex-start;">
+</div>
+<div class="quarto-layout-row">
+<div class="cell quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-confounder" style="flex-basis: 100.0%;justify-content: flex-start;">
 <div class="cell-output-display quarto-layout-cell-subref" data-ref-parent="fig-confounder">
 <div id="fig-confounder-reading" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-confounder-reading-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="sec-design_files/figure-html/fig-confounder-reading-1.png" class="lightbox" data-gallery="fig-confounder" title="Figur&nbsp;3.2&nbsp;(b). Her er “foreldres leseinteresse” en konfunder for korrelasjonen mellom “antall bøker hjemme” og “leseforståelse”."><img src="sec-design_files/figure-html/fig-confounder-reading-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:12cm" data-ref-parent="fig-confounder"></a>
+<a href="sec-design_files/figure-html/fig-confounder-reading-1.png" class="lightbox" data-gallery="fig-confounder" title="Figur&nbsp;3.2&nbsp;(b). Her er “foreldres leseinteresse” en konfunder for korrelasjonen mellom “antall bøker hjemme” og “leseforståelse”."><img src="sec-design_files/figure-html/fig-confounder-reading-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" data-ref-parent="fig-confounder"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-confounder-reading-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (b) Her er “foreldres leseinteresse” en konfunder for korrelasjonen mellom “antall bøker hjemme” og “leseforståelse”.
@@ -782,7 +843,24 @@ Figur&nbsp;3.2
 </div>
 <p>Konfundere kan meget gjerne være grunnen til at det er en korrelasjon mellom antall bøker hjemme og en elevs leseferdighet. I <a href="#fig-confounder-reading" class="quarto-xref">Figur&nbsp;<span>3.2 (b)</span></a> har vi foreslått en mulig konfunder, nemlig foreldrenes leseinteresse. Foreldrene med høy leseinteresse har trolig mange bøker hjemme. Foreldrenes leseinteresse kan også påvirke barnas leseinteresse, kanskje fordi de har lest mye for barna eller fordi de har gener for leseinteresse som er brakt videre til barna, noe som gjør at barna også er interesserte i å lese. Da oppstår det en korrelasjon mellom antall bøker hjemme og elevens leseinteresse, men det er ikke fordi antall bøker hjemme påvirker leseinteressen, det er fordi foreldrenes leseinteresse påvirker <em>både</em> antall bøker hjemme og elevens leseinteresse.</p>
 <p>Det finnes statistiske teknikker for å fjerne påvirkningen til en konfunder. Dette kalles å “kontrollere for” eller å “ta hensyn til” variabelen, og er en av hovedgrunnene til å bruke, for eksempel, regresjonsanalyse, som du lærer om i <span class="quarto-unresolved-ref">?sec-regression</span>. Slike statistiske teknikker kan fungere fint, men er ofte utilstrekkelige. Et hovedproblem er at man bare kan kontrollere for variable man har målt. I en stor studie kan det være man har målt 8-10 variable, og disse variablene kan man kontrollere for, men det finnes uendelig antall variable man ikke har målt. Derfor kan det finnes flere viktige konfundere man ikke har målt. Dette kalles <strong>ikke-målt konfundering</strong> og er et problem det ikke finnes statistiske teknikker for å unnslippe. Hvis du har tviholdt rundt håpet om å lære en statistisk teknikk som lar deg finne kausalitet i korrelasjoner bør du slippe taket nå – dette håpet vil kun føre til skuffelse.</p>
-<p>At korrelasjon ikke betyr kausalitet høres enkelt ut, nesten banalt, men all erfaring viser at det ikke er enkelt – folk tråkker rett og slett feil for ofte. I avisoverskrift etter avisoverskrift hører man om “sammenhengen mellom tomater og kreft” og liknende. Uten unntak er dette aviser som hinter til kausalitet (tomater fører til kreft) ut fra korrelasjoner (folk som spiser tomater får oftere kreft). Også i utdanningsforskning er det mange eksempler. I mange (hver eneste?) av årgangene av PISA-studiene er variabelen “utforskende arbeidsformer i naturfag” korrelert med lavere skår på variabelen “naturfagskompetanse” <span class="citation" data-cites="jensen2024">(<a href="sec-references.html#ref-jensen2024" role="doc-biblioref">Jensen et al., 2024</a>)</span>. Hver eneste gang benytter grupper som ønsker mer lærerstyrt undervisning dette resultatet til å skrike høyt om at utforskende arbeidsformer i naturfag gir dårligere resultater, altså en kausal slutning. Man benytter ganske enkelt kvantitativ forskning til å bekrefte eksisterende oppfatninger. (En god øving kan være å forklare hvorfor denne kausale slutningen ikke nødvendigvis holder, altså komme opp med noen konfundere eller vise at retningsproblemet kan gjelde? Se i fotnoten for fasit.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>)</p>
+<p>At korrelasjon ikke betyr kausalitet høres enkelt ut, nesten banalt, men all erfaring viser at det ikke er enkelt – folk tråkker rett og slett feil for ofte. I avisoverskrift etter avisoverskrift hører man om “sammenhengen mellom tomater og kreft” og liknende. Uten unntak er dette aviser som hinter til kausalitet (tomater fører til kreft) ut fra korrelasjoner (folk som spiser tomater får oftere kreft). Også i utdanningsforskning er det mange eksempler. I mange (hver eneste?) av årgangene av PISA-studiene er variabelen “utforskende arbeidsformer i naturfag” korrelert med lavere skår på variabelen “naturfagskompetanse” <span class="citation" data-cites="jensen2024">(<a href="sec-references.html#ref-jensen2024" role="doc-biblioref">Jensen et al., 2024</a>)</span>. Hver eneste gang benytter grupper som ønsker mer lærerstyrt undervisning dette resultatet til å skrike høyt om at utforskende arbeidsformer i naturfag gir dårligere resultater, altså en kausal slutning. Man benytter ganske enkelt kvantitativ forskning til å bekrefte eksisterende oppfatninger. (En god øving kan være å forklare hvorfor denne kausale slutningen ikke nødvendigvis holder, altså komme opp med noen konfundere eller vise at retningsproblemet kan gjelde? Se i informasjonsboksen for fasit.)</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Retningsproblemet gjelder i hvert fall: Det kan være at hvis lærere har en elevgruppe som har lav naturfagskompetanse, så gjør man mye utforskende undervisning.</p>
+<p>En mulig konfunder kan være variabelen “læreren har spesialisering i naturfag”. Lærere med spesialisering i naturfag vil kanskje gi elevene høyere naturfagskompetanse. Hvis lærerne med spesialisering i naturfag gjør mindre utforskende undervisning, vil det oppstå en korrelasjon mellom høy naturfagskompetanse hos elevene og lite utforskende undervisning.</p>
+<p>Foreldrepress er en annen mulig konfunder. Kanskje ønsker foreldrene til de akademisk sterkeste barna tradisjonell undervisning, ikke noe sånn “nymotens utforskende nånnsens”, og legger press på læreren. I så fall vil “foreldrepress” konfundere korrelasjonen.</p>
+<p>Jeg må legge inn et tilbakeblikk til <a href="sec-measurement.html" class="quarto-xref"><span>Kapitel 2</span></a> også, fordi det er så nærliggende for meg å tro at korrelasjonen oppstår på grunn av svak måling av variabelen “utforskende undervisning”. Variabelen “naturfagskompetanse” tror jeg er glitrende målt av PISA, for PISAs hovedformål er å måle elevenes kompetanse. Jeg tror derimot at “utforskende undervisning” er målt dårligere. For det første er det målt med spørreskjema til elevene, og jeg tror ikke elevene er så presise informanter om hvorvidt de har hatt utforskende undervisning. Variabelen er målt med Likert-spørsmål som <em>Students are given opportunities to explain their ideas</em>, og jeg tror sterke og svake elever svarer forskjellig på dette spørsmålet. Det kan jo være at svaktpresterende elever synes de blir spurt om å forklare ting alt for ofte, mens de høytpresterende gjerne skulle forklart ting oftere. Da vil svakt- og høytpresterende elever svare forskjellig på spørsmålet, selv om de har blitt spurt om å forklare ideene sine like ofte. Da vil korrelasjonen oppstå på grunn av en målefeil!</p>
+<p>Måleproblemene er uendelige i dette tilfellet. Tror du at en norsk elev, en kinesisk elev og en estisk elev vil svare sammenliknbart på disse spørsmålene? Det <em>må</em> de gjøre hvis det skal være noen vits i å sammenlikne på tvers av land! Man kan kose seg en hel helg med å tenke over alle måleproblemene som kan få denne korrelasjonen til å oppstå, noe jeg vil anbefale på det sterkeste.</p>
+</div>
+</div>
 <p>Man kan også gå i motsatt felle, at man blankt avviser alle årsaksforklaringer basert på at to variable er korrelert. Men husk, en kausal sammenheng mellom to variable skaper en korrelasjon. En korrelasjon er derfor et sterkt hint om at det kan være en kausal sammenheng mellom variablene og bør ikke avvises blankt. Om det er lurt å konkludere med kausalitet basert på en korrelasjon bør vurderes fra tilfelle til tilfelle, og vurderingen kommer til å avhenge av det teoretiske ståstedet ditt.</p>
 </section>
 </section>
@@ -795,7 +873,7 @@ Figur&nbsp;3.2
 <p>Et eksempel på en randomisert kontrollert studie fra Norge er om lærende og låste tankesett <span class="citation" data-cites="bettinger2018">(<a href="sec-references.html#ref-bettinger2018" role="doc-biblioref">Bettinger et al., 2018</a>)</span>. Forskerne utviklet en intervensjon som ønsket å påvirke elevenes tankesett til å være mer lærende, altså slik at elevene får tro på at de kan lære. Intervensjon besto av en 45 minutters læringsmodul som elevene skulle fullføre individuelt på sin egen digitale enhet. Forskerne rekrutterte én videregående skole i Rogaland som tilbydde modulen til alle elevene og der elevene kunne samtykke til å delta i forskningen hvis de ville. Det var 458 elever den dagen modulen skulle gjennomføres, og 385 samtykket til å være med i forskningen. Da elevene samtykket ble de randomiserte til intervensjons- og kontrollgruppa. Intervensjonsgruppa ble vist en læringsmodul som forklarte med nevrovitenskap hvordan alle kan lære hvis de gjør en innsats. Kontrollgruppas læringsmodul forklarte andre ting om hjernen.</p>
 <p>Denne intervensjonen skulle påvirke forklaringsvariabelen <em>tankesett</em> til å være mer lærende. De hadde to utfallsvariable, <em>iherdighet</em> (perseverance) og <em>algebraferdighet</em>. Iherdighet ble målt ved om elevene valgte vanskeligere oppgaver på en algebratest, og algebraferdighet ble målt ved om de fikk til flere av oppgavene.</p>
 <p>Noen uker etterpå var andre økt. Da målte forskerne først forklaringsvariabelen (tankesett) for å finne ut om intervensjonen hadde virket. Tankesettet var langt mer lærende i intervensjonsgruppa enn i kontrollgruppa (faktisk 56% av et standardavvik høyere), så forskerne konkluderte med at intervensjonen hadde lyktes. Deretter ga de en algebratest for å måle <em>iherdighet</em> og <em>algebraferdighet</em>. Siden mange var fraværende fra den andre økta var det bare 289 elever som var til stede i begge øktene, altså 63% av de 458 elevene som ble spurt om å delta.</p>
-<p>Datafilen deres må da ha sett ca. slik ut:</p>
+<p>Datafilen deres må da ha sett ut omtrent som i <a href="#tbl-mindset-data" class="quarto-xref">Tabell&nbsp;<span>3.2</span></a>:</p>
 <div class="cell" data-layout-align="center">
 <div id="tbl-mindset-data" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -947,7 +1025,7 @@ Tabell&nbsp;3.2. De første radene på en tenkt datafil tilhørende Bettinger et
 </figure>
 </div>
 </div>
-<p>Resultatene viste at intervensjonsgruppa skåret høyere på iherdighet, de valgte altså vanskelige algebraspørsmål oftere enn kontrollgruppa. (Forskjellen var 24% av et standardavvik.) De skåret også litt høyere på algebraferdighet (rundt 12 % av et standardavvik), men disse forskjellene var <em>ikke signifikante</em>, som betyr at man vil få så store forskjeller ganske ofte selv hvis intervensjonen ikke har effekt. Mer om dette i <span class="quarto-unresolved-ref">?sec-tests</span>. Siden dette var en randomisert kontrollstudie er vi temmelig sikre på at forskjellene ikke skyldes at intervensjons- eller kontrollgruppa hadde annerledes gjennomsnittsverdi på iherdighet og algebraferdighet fra før av.</p>
+<p>Resultatene viste at intervensjonsgruppa skåret høyere på iherdighet, de valgte altså vanskelige algebraspørsmål oftere enn kontrollgruppa. (Forskjellen var 24% av et standardavvik.) De skåret også litt høyere på algebraferdighet (rundt 12 % av et standardavvik), men disse forskjellene var <em>ikke signifikante</em>, som betyr at man vil få så store forskjeller ganske ofte selv hvis intervensjonen ikke har effekt. Mer om dette i <a href="sec-testing.html" class="quarto-xref"><span>Kapitel 8</span></a>. Siden dette var en randomisert kontrollstudie er vi temmelig sikre på at forskjellene ikke skyldes at intervensjons- eller kontrollgruppa hadde annerledes gjennomsnittsverdi på iherdighet og algebraferdighet fra før av.</p>
 <p>Randomiserte kontrollstudier er ikke perfekte, og det er flere utfordringer vi bør være oppmerksomme på:</p>
 <ul>
 <li><strong>Effekten på individnivå er ukjent</strong> i randomiserte kontrollstudier. De gir kun et estimat av intervensjonens gjennomsnittlige effekt. Man kan samle inn mer data om deltagerne for å beskrive effekten i undergrupper, for eksempel effekten for forskjellige kjønn, men da finner man bare gjennomsnittseffekten for hvert kjønn. Du kan aldri finne ut hva effekten vil være for deg, barna dine, eller noen andre. Kanskje vil en intervensjon som ser ut til å ha positive effekter ha negative effekter for akkurat de du bryr deg om.</li>
@@ -983,8 +1061,8 @@ Figur&nbsp;3.3. Utvelgelse fra, og generalisering til, populasjonen.
 <p>Aller helst bør ikke utvalget bare være representativt med hensyn til én variabel, det bør være likt på alle andre mulige måter også. Hvis man ønsker å finne ut om elever med lave eller høye karakterer har forskjellig motivasjon, er det viktig at de elevene i utvalget med høye (eller lave) karakterer representerer elevene i populasjonen med høye (eller lave) karakterer. Hvis utvalget er representativt med hensyn på alle mulige variabler, kaller vi utvalget <strong>representativt</strong>. Hvis utvalget ikke er representativt er det <strong>skjevt</strong>.</p>
 <p>Det virker helt uoppnåelig å skaffe et representativt utvalg. Tenk på det, det finnes uendelig mange variable, og man må forsikre seg om at utvalget er likt populasjonen på alle sammen. Men det finnes et triks som fikser et representativt utvalg for deg, <strong>randomisering</strong>.</p>
 <p>For å holde ting enkle kan vi forestille oss at vi har en pose med 10 brikker. Hver brikke har sin egen unike bokstav, så vi kan skille dem fra hverandre. Brikkene kommer i to farger - svart og hvit. Dette settet med brikker er populasjonen vi er interessert i, og den er vist grafisk til venstre i <a href="#fig-design-unbiased" class="quarto-xref">Figur&nbsp;<span>3.4</span></a>. Som du kan se på bildet, er det 4 svarte brikker og 6 hvite brikker. Men i virkeligheten ville vi selvfølgelig ikke vite dette uten å kikke i posen først!</p>
-<p>La oss nå forestille oss at du kjører følgende “eksperiment”: Du rister posen godt, lukker øynene og trekker ut 4 brikker uten å legge noen av dem tilbake. Først kommer <span class="math inline">\(a\)</span>-brikken (svart), så <span class="math inline">\(c\)</span>-brikken (hvit), deretter <span class="math inline">\(j\)</span> (hvit) og til slutt <span class="math inline">\(b\)</span> (svart). Hvis du har lyst, kan du legge alle brikkene tilbake i posen og gjenta hele eksperimentet - akkurat som vist på høyre side av <a href="#fig-design-unbiased" class="quarto-xref">Figur&nbsp;<span>3.4</span></a>. Hver gang vil du få forskjellige resultater, selv om du følger nøyaktig samme prosedyre. Dette at samme utvalgsmetode kan gi forskjellige utvalg hver gang, kaller vi et <strong>tilfeldig utvalg</strong>. <a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p>
-<p>Siden vi ristet posen før vi trakk ut brikkene, virker det rimelig å anta at hver brikke har like stor sjanse for å bli valgt. En slik prosedyre - hvor hvert medlem av populasjonen har samme sjanse for å bli valgt - kalles et <strong>enkelt tilfeldig utvalg</strong>. Det at vi ikke legger brikkene tilbake etter å ha trukket dem, betyr at du ikke kan observere den samme brikken to ganger. I slike tilfeller sier vi at observasjonene er utvalgt.<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a></p>
+<p>La oss nå forestille oss at du kjører følgende “eksperiment”: Du rister posen godt, lukker øynene og trekker ut 4 brikker uten å legge noen av dem tilbake. Først kommer <span class="math inline">\(a\)</span>-brikken (svart), så <span class="math inline">\(c\)</span>-brikken (hvit), deretter <span class="math inline">\(j\)</span> (hvit) og til slutt <span class="math inline">\(b\)</span> (svart). Hvis du har lyst, kan du legge alle brikkene tilbake i posen og gjenta hele eksperimentet - akkurat som vist på høyre side av <a href="#fig-design-unbiased" class="quarto-xref">Figur&nbsp;<span>3.4</span></a>. Hver gang vil du få forskjellige resultater, selv om du følger nøyaktig samme prosedyre. Dette at samme utvalgsmetode kan gi forskjellige utvalg hver gang, kaller vi et <strong>tilfeldig utvalg</strong>.</p>
+<p>Siden vi ristet posen før vi trakk ut brikkene, virker det rimelig å anta at hver brikke har like stor sjanse for å bli valgt. En slik prosedyre – hvor hvert medlem av populasjonen har samme sjanse for å bli valgt – kalles et <strong>enkelt tilfeldig utvalg</strong>. Det at vi ikke legger brikkene tilbake etter å ha trukket dem, betyr at du ikke kan observere den samme brikken to ganger.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
 <div id="fig-design-unbiased" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Et diagram viser en populasjon bestående av 10 sirkler merket a til j. Piler peker fra denne populasjonen til tre grupper av sirkler, som demonstrerer enkle tilfeldige utvalg uten tilbakelegging. Gruppene er merket 'a, c, j, b,' 'i, e, a, f,' og 'g, c, f, d.'">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-design-unbiased-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -995,7 +1073,7 @@ Figur&nbsp;3.4. Enkelt tilfeldig utvalg uten tilbakelegging fra en endelig popul
 </figcaption>
 </figure>
 </div>
-<p>Hvis du studerer utvalgene i <a href="#fig-design-unbiased" class="quarto-xref">Figur&nbsp;<span>3.4</span></a> nøye ser du at ingen av dem gjengir populasjonen riktig. I populasjonen er 40% av brikkene svarte, og i utvalgene er 50%, 25% og 25% svarte. Så utvalgene er skjeve, altså ikke representative, men hvis man hadde repetert utvalgsmetoden mange, mange ganger, hadde man hatt 40% svarte brikker i utvalgene sine i gjennomsnitt. Derfor sier man at enkelt tilfeldig utvalg er en <strong>forventingsrett</strong> utvalgsmetode.<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a> Hvert enkelt utvalg er ikke nødvendigvis representativt, men hvis man repeterer utvalget mange ganger kan man forvente at gjennomsnittet er representativt, og hvis man gjør utvalget veldig veldig stort vil avviket fra et representativt utvalg være veldig lite, se [^sec-law-of-large-numbers].</p>
+<p>Hvis du studerer utvalgene i <a href="#fig-design-unbiased" class="quarto-xref">Figur&nbsp;<span>3.4</span></a> nøye ser du at ingen av dem gjengir populasjonen riktig. I populasjonen er 40% av brikkene svarte, og i utvalgene er 50%, 25% og 25% svarte. Så utvalgene er skjeve, altså ikke representative, men hvis man hadde repetert utvalgsmetoden mange, mange ganger, hadde man hatt 40% svarte brikker i utvalgene sine i gjennomsnitt. Derfor sier man at enkelt tilfeldig utvalg er en <strong>forventingsrett</strong> utvalgsmetode.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> Hvert enkelt utvalg er ikke nødvendigvis representativt, men hvis man repeterer utvalget mange ganger kan man forvente at gjennomsnittet er representativt, og hvis man gjør utvalget veldig veldig stort vil avviket fra et representativt utvalg være veldig lite, se [^sec-law-of-large-numbers].</p>
 <p>For å sikre at du forstår hvor viktig utvalgsprosedyren er, kan vi tenke på en alternativ måte å gjennomføre eksperimentet på. La oss si at min fem år gamle sønn hadde åpnet posen og bestemt seg for å bare trekke ut fire svarte brikker, uten å legge noen tilbake. Dette skjeve utvalget er illustrert i <a href="#fig-design-biased" class="quarto-xref">Figur&nbsp;<span>3.5</span></a>. Tenk nå på hvor mye vi kan lære av å se 4 svarte brikker og 0 hvite brikker. Det avhenger helt klart av hvordan utvalget ble gjort, ikke sant? Hvis du vet at prosedyren var skjev og bare valgte svarte brikker, forteller et utvalg med bare svarte brikker deg ikke særlig mye om populasjonen som helhet! Derfor liker statistikere virkelig godt når et datasett kan betraktes som et enkelt tilfeldig utvalg – det gjør dataanalysen <em>mye</em> enklere.</p>
 <div id="fig-design-biased" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Et diagram viser skjevt utvalg (uten tilbakelegging) fra en populasjon på 10 elementer merket a til j. Tre utvalg på fire elementer hver blir trukket: 'a, b, g, h', 'g, b, h, a', og 'a, h, b, g'. Svarte sirkler viser valgte elementer; hvite sirkler viser ikke-valgte elementer.">
 <figure class="quarto-float quarto-float-fig figure">
@@ -1007,6 +1085,7 @@ Figur&nbsp;3.5. Skjevt utvalg uten tilbakelegging fra en endelig populasjon.
 </figcaption>
 </figure>
 </div>
+<p>I utdanningsvitenskap er nesten alle utvalg uten tilbakelegging, siden samme person vanligvis ikke får lov til å delta i undersøkelsen to ganger. Men det meste av statistisk teori bygger på antakelsen om at dataene kommer fra et enkelt tilfeldig utvalg <strong>med tilbakelegging</strong>. I praksis spiller dette sjelden noen rolle. Hvis populasjonen vi er interessert i er stor (for eksempel har mer enn 10 enheter!), er forskjellen mellom utvalg med og uten tilbakelegging så liten at vi ikke trenger å bekymre oss for den. Forskjellen mellom enkle tilfeldige utvalg og skjeve utvalg derimot - det er ikke noe vi kan se bort fra så lett!</p>
 <p>Og så for å hamre inn et siste poeng: tilfeldige utvalg er forventningsrette med hensyn på alle mulige variable. I eksemplene tok vi frem variabelen svart/hvit, men brikkene kan variere i størrelse, materiale, eller alder også. Enkle tilfeldige utvalg er forventningsrette med hensyn på disse variablene og alle andre variable du kan tenke deg, også. Du bør dvele ved dette, for det er det nærmeste man kommer magi i forskningsdesign. Ved et enkelt triks kan velge et utvalg som representerer populasjonen på alle mulige måter – wow! Men det er med enkle tilfeldige utvalg som med magi – de finnes ikke på ordentlig.</p>
 <p>Vi ramser opp noen grunner til at enkle tilfeldige utvalg ikke finnes:</p>
 <ul>
@@ -1020,7 +1099,7 @@ Figur&nbsp;3.5. Skjevt utvalg uten tilbakelegging fra en endelig populasjon.
 <h3 data-number="3.6.3" class="anchored" data-anchor-id="tilfeldige-klyngeutvalg"><span class="header-section-number">3.6.3</span> Tilfeldige klyngeutvalg</h3>
 <p>Et tilfeldig klyngeutvalg brukes der populasjonen er samlet i naturlige klynger som er fysisk nær hverandre. I utdanningsforskning er de desidert vanligste klyngene skoler eller klasser. Et <strong>tilfeldig klyngeutvalg</strong> er et utvalg der man i steg 1 velger klynger tilfeldig og i steg 2 velger deltagere innad i hver klynge. Dette betyr at man først velger klasser tilfeldig, og deretter bestemmer seg for hvilke elever man skal velge. Man kan enten velge alle deltagerne i klyngen eller velge tilfeldig innenfor hver klynge.</p>
 <p>Tilfeldige klyngeutvalg gir også representative utvalg, slik som enkle tilfeldige utvalg, men man må bruke mer avanserte statistiske teknikker i utregningene og man får mer variasjon i svarene. Fordelene med klyngeutvalg er enklere å utføre, og i mange tilfeller der enkle tilfeldige utvalg er umulige å gjennomføre er klyngeutvalg mulige! Vi nevnte tidligere at det ville være umulig å gjøre et enkelt tilfeldig utvalg med norske musikklærere på ungdomstrinnet, fordi det ikke finnes noen liste over norske musikklærere på ungdomstrinnet. Derfor er et enkelt tilfeldig utvalg umulig. Men det finnes lister over alle ungdomsskoler i landet, så et klyngeutvalg er mulig! Man velger først ungdomsskoler tilfeldig, og deretter spør man rektorene om hvem musikklærerne på skolen er.</p>
-<p>Store internasjonale undersøkelser benytter klyngeutvelgelse for å få representative utvalg, se <span class="quarto-unresolved-ref">?sec-ILSA</span>.</p>
+<p>Store internasjonale undersøkelser, som for eksempel PISA, benytter gjerne klyngeutvelgelse for å få representative utvalg.</p>
 </section>
 <section id="ikke-tilfeldige-utvalg" class="level3" data-number="3.6.4">
 <h3 data-number="3.6.4" class="anchored" data-anchor-id="ikke-tilfeldige-utvalg"><span class="header-section-number">3.6.4</span> Ikke-tilfeldige utvalg</h3>
@@ -1054,7 +1133,7 @@ Figur&nbsp;3.5. Skjevt utvalg uten tilbakelegging fra en endelig populasjon.
 <p>Dette høres kanskje enkelt ut, men i praksis er det utfordrende å vurdere en studies gyldighet fordi det er så mange ting som spiller inn på om studiens slutninger er gyldige. Bare i løpet av dette kapittelet har vi møtt mange trusler mot en studies validitet, konfundere, retningsproblemet, skjeve utvalg, selektiv deltagelse og dropout, og flere. Derfor er det nyttig å bryte validitet ned i forskjellige undertyper. De viktigste er indre- og ytre validitet.</p>
 <section id="indre-validitet" class="level3" data-number="3.7.1">
 <h3 data-number="3.7.1" class="anchored" data-anchor-id="indre-validitet"><span class="header-section-number">3.7.1</span> Indre validitet</h3>
-<p><strong>Indre validitet</strong> er om slutningene dine er gyldige for utvalget ditt. Det inkluderer målevaliditet, se <span class="quarto-unresolved-ref">?sec-measurement-validity</span>, og i forskning med formål om å finne årsaksforklaringer, så inkluderer det om årsaksforklaringen er godt underbygget. Det kalles “indre” fordi det dreier seg om sammenhengene mellom ting som skjer innenfor selve studien.</p>
+<p><strong>Indre validitet</strong> er om slutningene dine er gyldige for utvalget ditt. Det inkluderer målevaliditet, se <a href="sec-measurement.html#sec-validity" class="quarto-xref"><span>Seksjon 2.3.2</span></a>, og i forskning med formål om å finne årsaksforklaringer, så inkluderer det om årsaksforklaringen er godt underbygget. Det kalles “indre” fordi det dreier seg om sammenhengene mellom ting som skjer innenfor selve studien.</p>
 <p>Et enkelt eksempel er en studie som ønsker å finne ut om universitetsutdanning gjør folk til bedre skribenter. Du samler en gruppe førsteårsstudenter, ber dem skrive et essay på 1000 ord, og teller opp stavefeil og grammatiske feil. Så gjør du det samme med tredjeårsstudenter, som jo har mer universitetsutdanning bak seg. Hvis tredjeårsstudentene gjør færre feil, kan du da konkludere med at universitetsutdanning forbedrer skriveferdighetene?</p>
 <p>Her ligger problemet: Tredjeårsstudentene er jo også eldre og har helt naturlig fått mer skriveerfaring over tid, så alder er en konfunder. Så hva er egentlig årsaken til at de skriver bedre? Er det alderen? Når man blir eldre får man jo skrevet mer, uavhengig av om man går på universitetet eller ikke. Eller er det universitetsutdanningen? Du kan rett og slett ikke vite årsken basert på denne studien. Dette er et klassisk eksempel på svak indre validitet -– studien klarer ikke å utelukke konfundere på en god nok måte.</p>
 </section>
@@ -1089,19 +1168,10 @@ Jensen, F., Kjærnsli, M., Knain, E., Løvgren, M., &amp; Pettersen, A. (2024). 
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p>Det finnes dessverre mange forskjellige navn som brukes i litteraturen. Jeg vil ikke liste alle - det ville ikke tjene noen hensikt - bortsett fra å nevne at “responsvariabel” noen ganger brukes der jeg har brukt “utfall”. Denne typen terminologisk forvirring er dessverre svært vanlig i forskningsfeltet.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Det finnes dessverre mange forskjellige navn som brukes i litteraturen. Jeg vil ikke liste alle – det ville ikke tjene noen hensikt – bortsett fra å nevne at “responsvariabel” noen ganger brukes der jeg har brukt “utfall”. Denne typen terminologisk forvirring er dessverre svært vanlig i forskningsfeltet.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>OK, jeg vet ikke om dette gjelder lenger nå som alle har digitale dingser. Men før var det i hvert fall sterk korrelasjon mellom antall bøker foreldrene hadde i bokhylla hjemme og alt mulig av positive utfall for elevene.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>Vel, dette er ikke helt sant. For eksempel kan noen prøve å hindre at <span class="math inline">\(B\)</span> inntreffer. Det å utføre et vellykket ran, <span class="math inline">\(A\)</span>, kan gjør deg mer tilbøyelig til å utføre flere ran, <span class="math inline">\(B\)</span>, men <span class="math inline">\(B\)</span> vil ikke inntreffe hvis man blir arrestert først. Et annet eksempel er at å påføre kraft på en boks vil forårsake at boksen flytter seg, men det gjelder ikke hvis boksen står inntil en vegg.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4"><p>“Konfunder” uttales med samme trykk som “vidunder”. <em>Konfunder</em> er en norsk oversettelse av det engelske <em>confounder</em>. Det finnes dessverre ingen vanlige oversettelser av <em>confounder</em>, og både tredjevariabel, forvirringsvariabel, forstyrrende variabel, og bakenforliggende faktor er i bruk, i tillegg til konfunder. Konfunder er like vanlige som disse, og jeg bruker konfunder slik at man lettere forstår ordet hvis man leser det på engelsk. Å konfundere <a href="https://naob.no/ordbok/konfundere">betyr egentlig å forvirre</a>.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn5"><p>Retningsproblemet gjelder i hvert fall: Det kan være at hvis lærere har en elevgruppe som har lav naturfagskompetanse, så gjør man mye utforskende undervisning.</p>
-<p>En mulig konfunder kan være variabelen “læreren har spesialisering i naturfag”. Lærere med spesialisering i naturfag vil kanskje gi elevene høyere naturfagskompetanse. Hvis lærerne med spesialisering i naturfag gjør mindre utforskende undervisning, vil det oppstå en korrelasjon mellom høy naturfagskompetanse hos elevene og lite utforskende undervisning.</p>
-<p>Foreldrepress er en annen mulig konfunder. Kanskje ønsker foreldrene til de akademisk sterkeste barna tradisjonell undervisning, ikke noe sånn “nymotens utforskende nånnsens”, og legger press på læreren. I så fall vil “foreldrepress” konfundere korrelasjonen.</p>
-<p>Jeg må legge inn et tilbakeblikk til <a href="sec-measurement.html" class="quarto-xref"><span>Kapitel 2</span></a> også, fordi det er så nærliggende for meg å tro at korrelasjonen oppstår på grunn av svak måling av variabelen “utforskende undervisning”. Variabelen “naturfagskompetanse” tror jeg er glitrende målt av PISA, for PISAs hovedformål er å måle elevenes kompetanse. Jeg tror derimot at “utforskende undervisning” er målt dårligere. For det første er det målt med spørreskjema til elevene, og jeg tror ikke elevene er så presise informanter om hvorvidt de har hatt utforskende undervisning. Variabelen er målt med Likert-spørsmål som <em>Students are given opportunities to explain their ideas</em>, og jeg tror sterke og svake elever svarer forskjellig på dette spørsmålet. Det kan jo være at svaktpresterende elever synes de blir spurt om å forklare ting alt for ofte, mens de høytpresterende gjerne skulle forklart ting oftere. Da vil svakt- og høytpresterende elever svare forskjellig på spørsmålet, selv om de har blitt spurt om å forklare ideene sine like ofte. Da vil korrelasjonen oppstå på grunn av en målefeil!</p>
-<p>Måleproblemene er uendelige i dette tilfellet. Tror du at en norsk elev, en kinesisk elev og en estisk elev vil svare sammenliknbart på disse spørsmålene? Det <em>må</em> de gjøre hvis det skal være noen vits i å sammenlikne på tvers av land! Man kan kose seg en hel helg med å tenke over alle måleproblemene som kan få denne korrelasjonen til å oppstå, noe jeg vil anbefale på det sterkeste.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn6"><p>Den matematisk korrekte definisjonen av tilfeldighet er ekstraordinært teknisk og langt utenfor det vi dekker i denne boken. For oss holder det å si at utvalget er tilfeldig hvis vi vil forvente å få forskjellig utvalg selv hvis vi repeterer utvagsmetoden nøyaktig.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn7"><p>Det er også verdt å nevne en tredje prosedyre. Denne gangen lukker vi øynene, rister posen og trekker ut en brikke. Men nå registrerer vi observasjonen og <em>legger så brikken tilbake i posen</em> før vi trekker neste brikke. Vi gjentar denne prosessen til vi har 4 brikker. Datasett som genereres på denne måten er fortsatt enkle tilfeldige utvalg, men siden vi legger brikkene tilbake umiddelbart etter at vi har trukket dem, kalles det et utvalg <strong>med tilbakelegging</strong>. Forskjellen mellom denne situasjonen og den første er at det nå er mulig å observere samme brikke flere ganger.</p>
-<p>I utdanningsvitenskap er nesten alle utvalg uten tilbakelegging, siden samme person vanligvis ikke får lov til å delta i undersøkelsen to ganger. Men det meste av statistisk teori bygger på antakelsen om at dataene kommer fra et enkelt tilfeldig utvalg <strong>med tilbakelegging</strong>. I praksis spiller dette sjelden noen rolle. Hvis populasjonen vi er interessert i er stor (for eksempel har mer enn 10 enheter!), er forskjellen mellom utvalg med og uten tilbakelegging så liten at vi ikke trenger å bekymre oss for den. Forskjellen mellom enkle tilfeldige utvalg og skjeve utvalg derimot - det er ikke noe vi kan se bort fra så lett!<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn8"><p>På engelsk heter forventningsrett “unbiased”. Mange har begynt å bruke biased og unbiased på norsk også, men jeg vil utfordre deg til å si at “utvalget er forventningsskjevt” eller “dommeren er partisk” i stedet for å bare bruke “biased” om alt mulig.<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Det er også verdt å nevne en tredje prosedyre. Denne gangen lukker vi øynene, rister posen og trekker ut en brikke. Men nå registrerer vi observasjonen og <em>legger så brikken tilbake i posen</em> før vi trekker neste brikke. Vi gjentar denne prosessen til vi har 4 brikker. Datasett som genereres på denne måten er fortsatt enkle tilfeldige utvalg, men siden vi legger brikkene tilbake umiddelbart etter at vi har trukket dem, kalles det et utvalg <strong>med tilbakelegging</strong>. Forskjellen mellom denne situasjonen og den første er at det nå er mulig å observere samme brikke flere ganger.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>På engelsk heter forventningsrett “unbiased”. Mange har begynt å bruke biased og unbiased på norsk også, men jeg vil utfordre deg til å si at “utvalget er forventningsskjevt” eller “dommeren er partisk” i stedet for å bare bruke “biased”.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
@@ -1191,7 +1261,7 @@ Jensen, F., Kjærnsli, M., Knain, E., Løvgren, M., &amp; Pettersen, A. (2024). 
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/roarstovner\.github\.io\/kvant_for_laerere\/");
+        var filterRegex = new RegExp("kvant\.roarstovner\.no");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

@@ -161,7 +161,7 @@ window.Quarto = {
 <link rel="stylesheet" href="styles.css">
 <meta property="og:title" content="5&nbsp; Visualisere data – Kvantitative metoder for lærere">
 <meta property="og:description" content="">
-<meta property="og:image" content="https://roarstovner.github.io/kvant_for_laerere/sec-diagram_files/figure-html/fig-diagram-snow-1.png">
+<meta property="og:image" content="kvant.roarstovner.no/sec-diagram_files/figure-html/fig-diagram-snow-1.png">
 <meta property="og:site_name" content="Kvantitative metoder for lærere">
 <meta property="og:image:alt" content="Et kart med tittelen &quot;Snows kolerakart over London&quot; viser oransje firkanter som indikerer kolerafaller klynget rundt Broad St. Blå prikker angir plasseringer av vannpumper, inkludert Castle St, Oxford St, Gt Marlborough, Crown Chapel og andre.">
 <meta property="og:image:height" content="1152">
@@ -357,6 +357,7 @@ window.Quarto = {
       <a href="./">Kvantitative metoder for lærere</a> 
         <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/roarstovner/kvant_for_laerere" title="Kildekode" class="quarto-navigation-tool px-1" aria-label="Kildekode"><i class="bi bi-github"></i></a>
+    <a href="./Kvantitative-metoder-for-lærere.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Bytt mørk modus"><i class="bi"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Bytt lesermodus">
   <div class="quarto-reader-toggle-btn">
@@ -460,6 +461,29 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Inferensiell statistikk</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Slå på delen">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-categorical.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Analyse av kategoriske data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-means.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Sammenlikne gjennomsnitt: ANOVA og paret <span class="math inline">\(t\)</span>-test</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./sec-references.html" class="sidebar-item-text sidebar-link">
@@ -477,7 +501,7 @@ window.Quarto = {
    
   <ul>
   <li><a href="#sec-diagram-bar" id="toc-sec-diagram-bar" class="nav-link active" data-scroll-target="#sec-diagram-bar"><span class="header-section-number">5.1</span> Stolpediagram</a></li>
-  <li><a href="#sec-diagram-stacked-bar" id="toc-sec-diagram-stacked-bar" class="nav-link" data-scroll-target="#sec-diagram-stacked-bar"><span class="header-section-number">5.2</span> Stablede stolpediagrammer</a></li>
+  <li><a href="#sec-diagram-stacked-bar" id="toc-sec-diagram-stacked-bar" class="nav-link" data-scroll-target="#sec-diagram-stacked-bar"><span class="header-section-number">5.2</span> Stablede stolpediagram</a></li>
   <li><a href="#sec-histogram" id="toc-sec-histogram" class="nav-link" data-scroll-target="#sec-histogram"><span class="header-section-number">5.3</span> Histogrammer</a></li>
   <li><a href="#boksplott" id="toc-boksplott" class="nav-link" data-scroll-target="#boksplott"><span class="header-section-number">5.4</span> Boksplott</a>
   <ul class="collapse">
@@ -500,6 +524,9 @@ window.Quarto = {
 </header>
 
 
+<!-- \placetextbox{0.26}{0.06}{\scriptsize{©2025 D.R. Foxcroft and D.J. Navarro,}} -->
+<!-- \placetextbox{0.195}{0.05}{\scriptsize{CC BY-SA 4.0}} -->
+<!-- \placetextbox{0.70}{0.06}{\scriptsize{\url{https://doi.org/10.11647/OBP.0333.05}}} -->
 <blockquote class="blockquote">
 <p><em>Above all else show the data.</em><br>
 – Edward Tufte <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
@@ -509,10 +536,10 @@ window.Quarto = {
 <li><strong>For å forstå dataene dine</strong>: å tegne grafer hjelper deg med å forstå dataene dine bedre. Grafene kan brukes for å besvare forskningsspørsmål, de kan hjelpe deg med å oppdage interessante trekk ved dataene du ikke hadde forventet og de kan vise deg hvis noe er galt med dataene dine.</li>
 <li><strong>For å kommunisere resultatene dine</strong>: Ved å vise data på en ryddig og visuelt tiltalende måte gjør du det lettere for leserne å forstå budskapet ditt, og kanskje å overbevise dem.</li>
 </ul>
-<p>Det klassiske eksempelet for å vise hvor overbevisende og kraftfulle grafer kan være, er vist i <span class="quarto-unresolved-ref">?fig-diagrams-snow</span>. Det er en stilisert versjon av en av de mest berømte grafene gjennom tidene – legen John Snow sitt kart over koleradødsfall fra 1854. Bakgrunnen er et kolerautbrudd som hadde tatt livet av over 500 personer. På den tiden forklarte man hvordan sykdommer smittet med <em>miasme</em>-teorien. Denne teorien hadde vært til stor hjelp og hjalp leger med gode tiltak mot mange sykdommer, for eksempel bruk av munnbind og begraving av lik langt unna folk. At sykdom kunne smitte via vann var uhørt, og John Snow vant ikke gjennom med argumentene sine om at kolera smittet fra vannpumpen på Broad Street. Derfor lagde han en figur. Figuren er elegant, det er rett og slett et gatekart som viser vannpumper (blå stor prikk) og addressen til personer som døde av kolera (gul liten prikk). Selv et kjapt blikk på grafen gjør det klart at vannpumpen i Broad Street er en mistenkt. Med figuren klarte han å overbevise myndighetene om å fjerne håndtaket på pumpen, noe som stoppet utbruddet. Slik er kraften i en god datavisualisering.</p>
+<p>Det klassiske eksempelet for å vise hvor overbevisende og kraftfulle grafer kan være, er vist i <a href="#fig-diagram-snow" class="quarto-xref">Figur&nbsp;<span>5.1</span></a>. Det er en stilisert versjon av en av de mest berømte grafene gjennom tidene – legen John Snow sitt kart over koleradødsfall fra 1854. Bakgrunnen er et kolerautbrudd som hadde tatt livet av over 500 personer. På den tiden forklarte man hvordan sykdommer smittet med <em>miasme</em>-teorien. Denne teorien hadde vært til stor hjelp og hjalp leger med gode tiltak mot mange sykdommer, for eksempel bruk av munnbind og begraving av lik langt unna folk. At sykdom kunne smitte via vann var uhørt, og John Snow vant ikke gjennom med argumentene sine om at kolera smittet fra vannpumpen på Broad Street. Derfor lagde han en figur. Figuren er elegant, det er rett og slett et gatekart som viser vannpumper (blå stor prikk) og addressen til personer som døde av kolera (gul liten prikk). Selv et kjapt blikk på grafen gjør det klart at vannpumpen i Broad Street er en mistenkt. Med figuren klarte han å overbevise myndighetene om å fjerne håndtaket på pumpen, noe som stoppet utbruddet. Slik er kraften i en god datavisualisering.</p>
 <div class="cell enlarge-image" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-diagram-snow" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Et kart med tittelen &quot;Snows kolerakart over London&quot; viser oransje firkanter som indikerer kolerafaller klynget rundt Broad St. Blå prikker angir plasseringer av vannpumper, inkludert Castle St, Oxford St, Gt Marlborough, Crown Chapel og andre." data-fig-align="center">
+<div id="fig-diagram-snow" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Et kart med tittelen &quot;Snows kolerakart over London&quot; viser oransje firkanter som indikerer kolerafaller klynget rundt Broad St. Blå prikker angir plasseringer av vannpumper, inkludert Castle St, Oxford St, Gt Marlborough, Crown Chapel og andre.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-diagram-snow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="sec-diagram_files/figure-html/fig-diagram-snow-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figur&nbsp;5.1. En stilisert omtegning av John Snows originale kolerakart over London. Hver lille oransje firkant representerer plasseringen av et koleradødsfall og hver blå sirkel viser plasseringen av en vannpumpe. Som plottet tydelig viser, er kolerautbruddet sentrert svært nært Broad St-pumpen"><img src="sec-diagram_files/figure-html/fig-diagram-snow-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" alt="Et kart med tittelen &quot;Snows kolerakart over London&quot; viser oransje firkanter som indikerer kolerafaller klynget rundt Broad St. Blå prikker angir plasseringer av vannpumper, inkludert Castle St, Oxford St, Gt Marlborough, Crown Chapel og andre."></a>
@@ -696,12 +723,12 @@ Figur&nbsp;5.1. En stilisert omtegning av John Snows originale kolerakart over L
 </div>
 </div>
 <p>For å tegne et stolpediagram i jamovi trykker du “Analyses” → “Exploration” → “Descriptives” slik vi har gjort mange ganger før. Nå, derimot, må du trykke på “Plots” og krysse av for “Bar plot”, se <a href="#fig-diagram-jamovi-bar" class="quarto-xref">Figur&nbsp;<span>5.2</span></a>. I figuren har vi lagt til “Forventet utdanning” i variabelvinduet. Voilá, et flott stolpediagram. Siden “Forventet utdanning” er en ordinal variabel er stolpene tilogmed sortert i riktig rekkefølge.</p>
-<div class="cell enlarge-image" data-layout-align="center">
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-diagram-jamovi-bar" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-pos="H" data-fig-align="center">
+<div id="fig-diagram-jamovi-bar" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-diagram-jamovi-bar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/fig-diagram-jamovi-bar.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figur&nbsp;5.2. Et stolpediagram over “Forventet utdanning” i jamovi."><img src="images/fig-diagram-jamovi-bar.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" data-fig-pos="H"></a>
+<a href="images/fig-diagram-jamovi-bar.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figur&nbsp;5.2. Et stolpediagram over “Forventet utdanning” i jamovi."><img src="images/fig-diagram-jamovi-bar.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-diagram-jamovi-bar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figur&nbsp;5.2. Et stolpediagram over “Forventet utdanning” i jamovi.
@@ -716,7 +743,7 @@ Figur&nbsp;5.2. Et stolpediagram over “Forventet utdanning” i jamovi.
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-diagram-bar-subgroups-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
-<div class="cell enlarge-image quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-diagram-bar-subgroups" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div class="cell quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-diagram-bar-subgroups" style="flex-basis: 100.0%;justify-content: flex-start;">
 <div class="cell-output-display quarto-layout-cell-subref" data-ref-parent="fig-diagram-bar-subgroups">
 <div id="fig-diagram-edu-x-country" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-subfloat-fig figure">
@@ -732,7 +759,7 @@ Figur&nbsp;5.2. Et stolpediagram over “Forventet utdanning” i jamovi.
 </div>
 </div>
 <div class="quarto-layout-row">
-<div class="cell enlarge-image quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-diagram-bar-subgroups" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div class="cell quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-diagram-bar-subgroups" style="flex-basis: 100.0%;justify-content: flex-start;">
 <div class="cell-output-display quarto-layout-cell-subref" data-ref-parent="fig-diagram-bar-subgroups">
 <div id="fig-diagram-country-x-edu" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-subfloat-fig figure">
@@ -755,7 +782,7 @@ Figur&nbsp;5.3. Undergruppeanalyse av <em>Forventet utdanning</em> for hvert <em
 </div>
 <p>Dette begynner allerede å se ganske bra ut!</p>
 <p>OK, nå fikk jeg blod på tann. Jeg vil gjøre undergruppeanalyse med <em>enda en variabel</em>! Jeg ønsker å se om det er kjønnsforskjeller i om elever ser for seg høyere utdanning i Spania og Norge, altså <em>Forventet utdanning</em> per <em>Kjønn</em> og <em>Land</em>. Vi legger ganske enkelt til enda en variabel i enten “Variables” eller “Split by”. På dette punktet bare sjonglerer jeg variable rundt mellom vinduene inntil jeg finner den figuren jeg liker best. I <a href="#fig-diagram-jamovi-bar-threeway" class="quarto-xref">Figur&nbsp;<span>5.4</span></a> ser du resultatet av <em>Land</em> i “Variables” og <em>Forventet utdanning</em> og <em>Kjønn</em> i “Split by”.</p>
-<div class="cell enlarge-image" data-layout-align="center">
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-diagram-jamovi-bar-threeway" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
@@ -772,7 +799,7 @@ Figur&nbsp;5.4. Undergruppeanalyse av <em>Forventet utdanning</em> for hvert <em
 <p>Uff, det ble en koloss av en figur! Hvis du klarer å lese skriften vil du likevel se at den er ganske informativ. Vi skal forbedre den i neste delkapittel.</p>
 </section>
 <section id="sec-diagram-stacked-bar" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="sec-diagram-stacked-bar"><span class="header-section-number">5.2</span> Stablede stolpediagrammer</h2>
+<h2 data-number="5.2" class="anchored" data-anchor-id="sec-diagram-stacked-bar"><span class="header-section-number">5.2</span> Stablede stolpediagram</h2>
 <p>Stolpediagrammer kan stables oppå hverandre, noe som gjør dem mer kompakte og lettere å forstå, i noen sammenhenger. Vi trykker oss inn på en annen meny denne gangen, “Analyses” → “Frequencies” → “Independent samples (<span class="math inline">\(\chi^2\)</span> test of association)”. Her må du trykke deg inn på “Plots”, krysse av for “Bar plot”. I denne menyen er det mange flere innstillingsmuligheter enn før, se <a href="#fig-diagram-jamovi-stacked-bar" class="quarto-xref">Figur&nbsp;<span>5.5</span></a>:</p>
 <ul>
 <li>Jeg legger inn <em>Forventet utdanning</em> på “Rows” og <em>Land</em> på “Columns”. Dette er smak og behag for hvordan tabellen “Contingency Tables”, som også genereres, blir seende ut.</li>
@@ -780,12 +807,12 @@ Figur&nbsp;5.4. Undergruppeanalyse av <em>Forventet utdanning</em> for hvert <em
 <li>Jeg velger “Percentages” på “Y-axis”, fordi jeg ønsker å se andelen fra hvert land som ser for seg ulike utdanninger.</li>
 <li>Siden jeg ønsker å se andelen av hvert land, og jeg satte <em>Land</em> på “Columns”, må jeg velge “Percentages within column” for å regne prosenter for hvert land.</li>
 </ul>
-<div class="cell enlarge-image" data-layout-align="center">
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-diagram-jamovi-stacked-bar" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-diagram-jamovi-stacked-bar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/fig-diagram-jamovi-stacked-bar.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figur&nbsp;5.5. Innstillinger i jamovi for å få et stablet stolpediagram for Forventet utdanning for hvert Land"><img src="images/fig-diagram-jamovi-stacked-bar.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></a>
+<a href="images/fig-diagram-jamovi-stacked-bar.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figur&nbsp;5.5. Innstillinger i jamovi for å få et stablet stolpediagram for Forventet utdanning for hvert Land"><img src="images/fig-diagram-jamovi-stacked-bar.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-diagram-jamovi-stacked-bar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figur&nbsp;5.5. Innstillinger i jamovi for å få et stablet stolpediagram for <em>Forventet utdanning</em> for hvert <em>Land</em>
@@ -795,12 +822,12 @@ Figur&nbsp;5.5. Innstillinger i jamovi for å få et stablet stolpediagram for <
 </div>
 </div>
 <p>Resultatet ser du i <a href="#fig-diagram-stacked-bar" class="quarto-xref">Figur&nbsp;<span>5.6</span></a>. Dette viser samme informasjon som <a href="#fig-diagram-edu-x-country" class="quarto-xref">Figur&nbsp;<span>5.3 (a)</span></a>, så du kan sammenligne og se hvilken du liker best. Forskjellen er at det stablede stolpediagrammet viser “andel innad i hvert land”. Her ser vi for eksempel at en noe større andel av de norske elevene planlegger høyere utdanning sammenlignet med de spanske elevene, men forskjellen er ganske liten. Hvis vi sammenligner med det vanlige stolpediagrammet, ser vi at dette viser absolutte tall. Der virker forskjellen mye større -– nesten dobbelt så mange norske som spanske elever ser for seg høyere utdanning! Grunnen til denne store forskjellen i stolpediagrammet er imidlertid at det er betydelig flere norske enn spanske elever i utvalget vårt (5317 mot 3355). Sannsynligvis er vi mer interessert i andelen elever som ser for seg høyere utdanning.</p>
-<div class="cell enlarge-image" data-layout-align="center">
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-diagram-stacked-bar" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-diagram-stacked-bar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/fig-diagram-stacked-bar.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figur&nbsp;5.6. Stablet stolpediagram av Forventet utdanning for hvert Land"><img src="images/fig-diagram-stacked-bar.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></a>
+<a href="images/fig-diagram-stacked-bar.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figur&nbsp;5.6. Stablet stolpediagram av Forventet utdanning for hvert Land"><img src="images/fig-diagram-stacked-bar.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-diagram-stacked-bar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figur&nbsp;5.6. Stablet stolpediagram av <em>Forventet utdanning</em> for hvert <em>Land</em>
@@ -809,7 +836,7 @@ Figur&nbsp;5.6. Stablet stolpediagram av <em>Forventet utdanning</em> for hvert 
 </div>
 </div>
 </div>
-<p>Nå kan vi igjen prøve å gjøre en undergruppeanalyse på tvers av to variable, <em>Kjønn</em> og <em>Land</em>. <em>Kjønn</em> ligger allerede under “Columns”, så vi legger inn <em>Land</em> under “Layers_. Resultatet blir som i <a href="#fig-diagram-stacked-bar-threeway" class="quarto-xref">Figur&nbsp;<span>5.7</span></a>. Her skinner virkelig det stablede stolpediagrammet – se så kompakt og lesbart det ble i forhold til samme informasjon vist som et stolpediagram (<span class="quarto-unresolved-ref">?fig-diagram-bar-threeway</span>). Den største forskjellen mellom disse to diagrammene er at”Annet” var umulig å lese med det vanlige stolpediagrammet fordi stolpene ble så små, men med stablede stolper gikk det an å se at de de norske elevene som valgte annet i veldig stor grad ikke ser for seg mer skole etter ungdomsskolen. (Men husk at disse stolpene er basert på veldig få elever.)</p>
+<p>Nå kan vi igjen prøve å gjøre en undergruppeanalyse på tvers av to variable, <em>Kjønn</em> og <em>Land</em>. <em>Kjønn</em> ligger allerede under “Columns”, så vi legger inn <em>Land</em> under “Layers_. Resultatet blir som i <a href="#fig-diagram-stacked-bar-threeway" class="quarto-xref">Figur&nbsp;<span>5.7</span></a>. Her skinner virkelig det stablede stolpediagrammet – se så kompakt og lesbart det ble i forhold til samme informasjon vist som et stolpediagram (<a href="#fig-diagram-stacked-bar-threeway" class="quarto-xref">Figur&nbsp;<span>5.7</span></a>). Den største forskjellen mellom disse to diagrammene er at”Annet” var umulig å lese med det vanlige stolpediagrammet fordi stolpene ble så små, men med stablede stolper gikk det an å se at de de norske elevene som valgte annet i veldig stor grad ikke ser for seg mer skole etter ungdomsskolen. (Men husk at disse stolpene er basert på veldig få elever.)</p>
 <div class="cell enlarge-image" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-diagram-stacked-bar-threeway" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
@@ -832,7 +859,7 @@ Figur&nbsp;5.7. Stablet stolpediagram av <em>Forventet utdanning</em> for hvert 
 <p>Prinsippet er enkelt: Du deler opp de mulige verdiene i <strong>intervaller</strong> og teller hvor mange observasjoner som faller innenfor hvert intervall. Denne tellingen kalles frekvensen eller tettheten til intervallet og vises som en vertikal stolpe. Jeg tror noe av grunnen til at de oppfattes som så enkle er at de minner om stolpediagrammer. For variabelen <em>Likestilling</em> finner vi for eksempel rundt 4000 elever som fikk max poengsum, noe som representeres av høyden på den høyre stolpen i histogrammet <a href="#fig-diagram-ICCS-histogram" class="quarto-xref">Figur&nbsp;<span>5.8</span></a>, som vi også viste på starten av <a href="sec-descriptive.html#fig-descriptive-ICCS-histogram" class="quarto-xref">Figur&nbsp;<span>4.4</span></a>.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-diagram-ICCS-histogram" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Histogram som viser variabelen _Likestilling_. Den horisontale aksen ($x$-aksen) strekker seg fra fra 15 til 70, og den vertikale aksen (y-aksen) viser &quot;count&quot;, altså hvor mange svar som havner innad i hver søyle." data-fig-align="center">
+<div id="fig-diagram-ICCS-histogram" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Histogram som viser variabelen _Likestilling_. Den horisontale aksen ($x$-aksen) strekker seg fra fra 15 til 70, og den vertikale aksen (y-aksen) viser &quot;count&quot;, altså hvor mange svar som havner innad i hver søyle.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-diagram-ICCS-histogram-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="sec-diagram_files/figure-html/fig-diagram-ICCS-histogram-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Figur&nbsp;5.8. Et histogram av variabelen Likestilling fra ICCS 2022."><img src="sec-diagram_files/figure-html/fig-diagram-ICCS-histogram-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" alt="Histogram som viser variabelen _Likestilling_. Den horisontale aksen ($x$-aksen) strekker seg fra fra 15 til 70, og den vertikale aksen (y-aksen) viser &quot;count&quot;, altså hvor mange svar som havner innad i hver søyle."></a>
@@ -845,12 +872,12 @@ Figur&nbsp;5.8. Et histogram av variabelen <em>Likestilling</em> fra ICCS 2022.
 </div>
 </div>
 <p>For å lage dette histogrammet i jamovi trykker vi “Analyses” → “Exploration” → “Descriptives” og velger “Plots” og “Histogram”, se <a href="#fig-diagram-jamovi-ICCS-histogram" class="quarto-xref">Figur&nbsp;<span>5.9</span></a>.</p>
-<div class="cell enlarge-image" data-layout-align="center">
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-diagram-jamovi-ICCS-histogram" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-diagram-jamovi-ICCS-histogram-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/fig-diagram-jamovi-ICCS-histogram.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="Figur&nbsp;5.9. Innstillingene man trenger for å få frem histogrammet i jamovi"><img src="images/fig-diagram-jamovi-ICCS-histogram.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></a>
+<a href="images/fig-diagram-jamovi-ICCS-histogram.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="Figur&nbsp;5.9. Innstillingene man trenger for å få frem histogrammet i jamovi"><img src="images/fig-diagram-jamovi-ICCS-histogram.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-diagram-jamovi-ICCS-histogram-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figur&nbsp;5.9. Innstillingene man trenger for å få frem histogrammet i jamovi
@@ -896,10 +923,10 @@ Figur&nbsp;5.11. Det er ikke lett å si hva som er korrekt antall stolper i et h
 <p>Et flott alternativ til histogrammer er <strong>boksplott</strong>. Ideen bak et boksplott er å gi deg en rask og tydelig visuell oversikt over medianen, kvartilbredden og variasjonsbredden i dataene dine. Siden denne informasjonen var enkel å regne ut også før datamaskiner ble vanlig, og fordi boksplott presenterer all denne informasjonen på en kompakt måte, er boksplott blitt populære – spesielt når du utforsker dataene for første gang og prøver å forstå hva de forteller deg. Vi tar en titt på variabelen <em>Likestilling</em>, se i <a href="#fig-diagram-boxplot-equality" class="quarto-xref">Figur&nbsp;<span>5.12</span></a>. For å lage et boksplott i jamovi trykker du på akkurat de samme knappene som for et histogram, du bare krysser av for “Box plot” i stedet for.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-diagram-boxplot-equality" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-pos="H" data-fig-align="center">
+<div id="fig-diagram-boxplot-equality" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-diagram-boxplot-equality-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/fig-diagram-boxplot-equality.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13" title="Figur&nbsp;5.12. Et boksplott av variabelen _Likestilling plottet med jamovi"><img src="images/fig-diagram-boxplot-equality.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" data-fig-pos="H"></a>
+<a href="images/fig-diagram-boxplot-equality.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13" title="Figur&nbsp;5.12. Et boksplott av variabelen _Likestilling plottet med jamovi"><img src="images/fig-diagram-boxplot-equality.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-diagram-boxplot-equality-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figur&nbsp;5.12. Et boksplott av variabelen _Likestilling plottet med jamovi
@@ -908,14 +935,14 @@ Figur&nbsp;5.12. Et boksplott av variabelen _Likestilling plottet med jamovi
 </div>
 </div>
 </div>
-<p>Den tykke linjen midt i boksen viser medianen. Av og til er det en firkantet stor prikk, og da viser den gjennomsnittet. Selve boksen dekker området fra 25. persentil til 75. persentil. De tynne linjene viser variasjonsbredden ved at de strekker seg ut til de mest ekstreme datapunktene i hver retning, i hvert fall nesten. Som vi skrev i <span class="quarto-unresolved-ref">?sec-descriptive-range</span>, så er variasjonsbredden veldig følsom for hvor ekstreme de mest ekstreme verdiene er. Derfor viser de fleste boksplott ikke variasjonsbredden, men kutter strekene ved en eller annen grense. Som standard er denne grensen satt til 1,5 ganger kvartilbredden (IQR). Hvis noen observasjoner faller utenfor dette området, vises de som prikker eller sirkler i stedet for. Disse kalles <strong>avviksverdier</strong> (<em>outliers</em> på engelsk). <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<p>Den tykke linjen midt i boksen viser medianen. Av og til er det en firkantet stor prikk, og da viser den gjennomsnittet. Selve boksen dekker området fra 25. persentil til 75. persentil. De tynne linjene viser variasjonsbredden ved at de strekker seg ut til de mest ekstreme datapunktene i hver retning, i hvert fall nesten. Som vi skrev i <a href="sec-descriptive.html#sec-descriptive-range" class="quarto-xref"><span>Seksjon 4.4.1</span></a>, så er variasjonsbredden veldig følsom for hvor ekstreme de mest ekstreme verdiene er. Derfor viser de fleste boksplott ikke variasjonsbredden, men kutter strekene ved en eller annen grense. Som standard er denne grensen satt til 1,5 ganger kvartilbredden (IQR). Hvis noen observasjoner faller utenfor dette området, vises de som prikker eller sirkler i stedet for. Disse kalles <strong>avviksverdier</strong> (<em>outliers</em> på engelsk). <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 <p>I våre <em>Likestilling</em>-data er det ingen observasjoner som faller utenfor normalområdet, så det er ingen avviksverdier og derfor ingen prikker. En annen spesiell egenskap ved plottet er at det ikke er noen strek som går oppover. Grunnen til det er at det er ingen verdier som er høyere enn 75. persentil fordi det var så mange elever som fikk toppskår på <em>Likestilling</em>.</p>
 <p>Du er kanskje ikke så imponert over boksplottet og synes histogrammet ga mer informasjon, og jeg er litt enig. Boksplottet viser riktignok medianen og kvartilbredden, men histogrammet viste mer nøyaktig hvordan verdiene fordelte. Boksplottet kommer til sin rett når man gjør en undergruppeanalyse, slik som i <a href="#fig-diagram-equ-x-edu" class="quarto-xref">Figur&nbsp;<span>5.13</span></a>. Det er rett og slett vanskelig å se forskjell på undergruppene med histogrammet, men med boksplottet er det lett å se at dess høyere utdanning eleven ser for seg, dess mer er eleven for likestilling mellom kjønnene. (Men merk at dette gjelder på gruppenivå og at det er mange unntak.) For å lage slike boksplott i jamovi er det bare å legge til en variabel i vinduet “Split by”.</p>
 <div id="fig-diagram-equ-x-edu" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-diagram-equ-x-edu-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
-<div class="cell enlarge-image quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-diagram-equ-x-edu" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="cell quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-diagram-equ-x-edu" style="flex-basis: 100.0%;justify-content: flex-start;">
 <div class="cell-output-display quarto-layout-cell-subref" data-ref-parent="fig-diagram-equ-x-edu">
 <div id="fig-diagram-histogram-equ-x-edu" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-subfloat-fig figure">
@@ -929,7 +956,9 @@ Figur&nbsp;5.12. Et boksplott av variabelen _Likestilling plottet med jamovi
 </div>
 </div>
 </div>
-<div class="cell enlarge-image quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-diagram-equ-x-edu" style="flex-basis: 50.0%;justify-content: flex-start;">
+</div>
+<div class="quarto-layout-row">
+<div class="cell quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-diagram-equ-x-edu" style="flex-basis: 100.0%;justify-content: flex-start;">
 <div class="cell-output-display quarto-layout-cell-subref" data-ref-parent="fig-diagram-equ-x-edu">
 <div id="fig-diagram-boxplot-equ-x-edu" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-subfloat-fig figure">
@@ -954,12 +983,12 @@ Figur&nbsp;5.13. Sammenlikning av histogram og boksplott for å vise variabelen 
 <section id="fiolinplott" class="level3" data-number="5.4.1">
 <h3 data-number="5.4.1" class="anchored" data-anchor-id="fiolinplott"><span class="header-section-number">5.4.1</span> Fiolinplott</h3>
 <p>En moderne variant av det tradisjonelle boksplottet er fiolinplottet. Fiolinplott likner på tetthetskurver, men de er speilet slik at de ofte ser ut som en fiolinkropp. I jamovi kan du lage fiolinplott ved å krysse av for “Violin” i stedet for “Histogram”. Se <a href="#fig-diagram-violin" class="quarto-xref">Figur&nbsp;<span>5.14</span></a> for en undergruppeanalyse med fiolinplott. Her har vi også krysset av for at gjennomsnittet skal vises (på knappen står det “Mean”).</p>
-<div class="cell enlarge-image" data-layout-align="center">
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-diagram-violin" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Et fiolinplott som viser fordelingen av _Likestilling_ for hver verdi av _Forventet utdanning_." data-fig-pos="h!" data-fig-align="center">
+<div id="fig-diagram-violin" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Et fiolinplott som viser fordelingen av _Likestilling_ for hver verdi av _Forventet utdanning_." data-fig-pos="h!">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-diagram-violin-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/fig-diagram-violin.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16" title="Figur&nbsp;5.14. Et fiolinplott av Likestilling per Forventet utdanning"><img src="images/fig-diagram-violin.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" data-fig-pos="h!" alt="Et fiolinplott som viser fordelingen av _Likestilling_ for hver verdi av _Forventet utdanning_."></a>
+<a href="images/fig-diagram-violin.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16" title="Figur&nbsp;5.14. Et fiolinplott av Likestilling per Forventet utdanning"><img src="images/fig-diagram-violin.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" data-fig-pos="h!" alt="Et fiolinplott som viser fordelingen av _Likestilling_ for hver verdi av _Forventet utdanning_."></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-diagram-violin-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figur&nbsp;5.14. Et fiolinplott av <em>Likestilling</em> per <em>Forventet utdanning</em>
@@ -980,9 +1009,9 @@ Figur&nbsp;5.14. Et fiolinplott av <em>Likestilling</em> per <em>Forventet utdan
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-scatter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
-<div class="cell enlarge-image quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-scatter" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="cell quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-scatter" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="cell-output-display quarto-layout-cell-subref" data-ref-parent="fig-scatter">
-<div id="fig-diagram-jamovi-scatter" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Menyen der man velger innstillinger for &quot;Scatter plot&quot; i jamovi" data-fig-align="center">
+<div id="fig-diagram-jamovi-scatter" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Menyen der man velger innstillinger for &quot;Scatter plot&quot; i jamovi">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-diagram-jamovi-scatter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="images/fig-diagram-jamovi-scatter.png" class="lightbox" data-gallery="fig-scatter" title="Figur&nbsp;5.15&nbsp;(a). Trykk på “Analyses” → “Exploration” → “Scatter plot” for å få opp denne menyen."><img src="images/fig-diagram-jamovi-scatter.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" data-ref-parent="fig-scatter" alt="Menyen der man velger innstillinger for &quot;Scatter plot&quot; i jamovi"></a>
@@ -994,9 +1023,9 @@ Figur&nbsp;5.14. Et fiolinplott av <em>Likestilling</em> per <em>Forventet utdan
 </div>
 </div>
 </div>
-<div class="cell enlarge-image quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-scatter" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="cell quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-scatter" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="cell-output-display quarto-layout-cell-subref" data-ref-parent="fig-scatter">
-<div id="fig-diagram-scatter" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Et spredningsplott med Likestilling på y-aksen og Sosioøkonomisk status på x-aksen. Veldig mange punkter er samlet i en linje horisontal linje langs hele toppen, og ellers er punktene jevnt spredt utover." data-fig-align="center">
+<div id="fig-diagram-scatter" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Et spredningsplott med Likestilling på y-aksen og Sosioøkonomisk status på x-aksen. Veldig mange punkter er samlet i en linje horisontal linje langs hele toppen, og ellers er punktene jevnt spredt utover.">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-diagram-scatter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="images/fig-diagram-scatter.png" class="lightbox" data-gallery="fig-scatter" title="Figur&nbsp;5.15&nbsp;(b). Spredningsplott over Likestilling og Sosioøkonomisk status."><img src="images/fig-diagram-scatter.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" data-ref-parent="fig-scatter" alt="Et spredningsplott med Likestilling på y-aksen og Sosioøkonomisk status på x-aksen. Veldig mange punkter er samlet i en linje horisontal linje langs hele toppen, og ellers er punktene jevnt spredt utover."></a>
@@ -1015,10 +1044,10 @@ Figur&nbsp;5.15. Spredningsplott med jamovi
 </figcaption>
 </figure>
 </div>
-<p>For å gjøre sammenhengen tydeligere er det vanlig å legge en linje over spredningsplottet, slik som i <a href="#fig-diagram-scatter-line" class="quarto-xref">Figur&nbsp;<span>5.16</span></a>. Den viser at det er en svak positiv tendens, altså at elever med høy sosioøkonomisk status svarer høyere på spørsmålene om likestilling. Du lærer mer om slike linjer, regresjonslinjer, i <span class="quarto-unresolved-ref">?sec-regression</span>.</p>
+<p>For å gjøre sammenhengen tydeligere er det vanlig å legge en linje over spredningsplottet, slik som i <a href="#fig-diagram-scatter-line" class="quarto-xref">Figur&nbsp;<span>5.16</span></a>. Den viser at det er en svak positiv tendens, altså at elever med høy sosioøkonomisk status svarer høyere på spørsmålene om likestilling. Du lærer mer om slike linjer, regresjonslinjer, senere i boken. <!-- !!! --></p>
 <div class="cell enlarge-image" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-diagram-scatter-line" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Samme figur som det forrige spredningsplottet, men med en linje lagt oppå punktene. Linja heller svakt oppover mot høyre." data-fig-align="center">
+<div id="fig-diagram-scatter-line" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Samme figur som det forrige spredningsplottet, men med en linje lagt oppå punktene. Linja heller svakt oppover mot høyre.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-diagram-scatter-line-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="images/fig-diagram-scatter-line.png" class="lightbox" data-gallery="quarto-lightbox-gallery-19" title="Figur&nbsp;5.16. Spredningsplott med en regresjonslinje lagt til"><img src="images/fig-diagram-scatter-line.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" alt="Samme figur som det forrige spredningsplottet, men med en linje lagt oppå punktene. Linja heller svakt oppover mot høyre."></a>
@@ -1082,7 +1111,7 @@ Figur&nbsp;5.18. Et profesjonelt linjediagram. Legg merke til forklarende tekst 
 <p>Hjernen vår har en fantastisk kapasitet til å analysere data, men bare så lenge vi kan se på dataene i form av en graf. Hvis vi presenter informasjonen på riktig måte, gir vi leseren mye kunnskap på kort tid. Og den aller viktigste leseren av grafene du lager er deg selv – ved å lage mange grafer av dataene dine vil du skjønne dem bedre, oftere trekke velbegrunnede konklusjoner og sjeldnere trekke dårlig begrunnede konklusjoner. Derfor mener jeg dette er det viktigste kapittelet i boken hvis du skal gjøre kvantitativ forskning, i tillegg til <a href="sec-measurement.html" class="quarto-xref"><span>Kapitel 2</span></a> og <a href="sec-design.html" class="quarto-xref"><span>Kapitel 3</span></a>.</p>
 <p>I dette kapitlet har vi dekket:</p>
 <ul>
-<li><strong>Vanlige plott</strong>: Vi har fokusert på standardgrafer som statistikere ofte bruker, som <a href="#sec-diagram-bar">Stolpediagram</a>, [Stablede stolpediagram], <a href="#sec-histogram">Histogrammer</a>, <a href="#boksplott">Boksplott</a> og <a href="#spredningsplott">Spredningsplott</a>. Det er verdt å vite hvilke variabeltyper som passer til hver type plott, i tillegg til å kunne tolke dem.</li>
+<li><strong>Vanlige plott</strong>: Vi har fokusert på standardgrafer som statistikere ofte bruker, som <a href="#sec-diagram-bar">Stolpediagram</a>, <a href="#sec-diagram-stacked-bar">Stablede stolpediagram</a>, <a href="#sec-histogram">Histogrammer</a>, <a href="#boksplott">Boksplott</a> (samt <a href="#fiolinplott">Fiolinplott</a>) og <a href="#spredningsplott">Spredningsplott</a>. Det er verdt å vite hvilke variabeltyper som passer til hver type plott, i tillegg til å kunne tolke dem.</li>
 </ul>
 
 
@@ -1186,7 +1215,7 @@ Roser, M. (2022). Millions of children learn only very little. <span>How</span> 
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/roarstovner\.github\.io\/kvant_for_laerere\/");
+        var filterRegex = new RegExp("kvant\.roarstovner\.no");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

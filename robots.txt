@@ -1,1 +1,1 @@
-Sitemap: https://roarstovner.github.io/kvant_for_laerere/sitemap.xml
+Sitemap: kvant.roarstovner.no/sitemap.xml

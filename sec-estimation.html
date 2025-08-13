@@ -161,7 +161,7 @@ window.Quarto = {
 <link rel="stylesheet" href="styles.css">
 <meta property="og:title" content="7&nbsp; Estimering av ukjente størrelser fra et utvalg – Kvantitative metoder for lærere">
 <meta property="og:description" content="">
-<meta property="og:image" content="https://roarstovner.github.io/kvant_for_laerere/sec-estimation_files/figure-html/fig-estimation-IQ-1.png">
+<meta property="og:image" content="kvant.roarstovner.no/sec-estimation_files/figure-html/fig-estimation-IQ-1.png">
 <meta property="og:site_name" content="Kvantitative metoder for lærere">
 <meta property="og:image:alt" content="Bildet inneholder tre grafer av IQ-skårer. Grafen til venstre er en sannsynlighetstetthetskurve, den midterste grafen er et histogram med frekvenser, og grafen til høyre er et annet histogram med høyere frekvenser. Alle diagrammene viser IQ-skårer på x-aksen.">
 <meta property="og:image:height" content="711">
@@ -357,6 +357,7 @@ window.Quarto = {
       <a href="./">Kvantitative metoder for lærere</a> 
         <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/roarstovner/kvant_for_laerere" title="Kildekode" class="quarto-navigation-tool px-1" aria-label="Kildekode"><i class="bi bi-github"></i></a>
+    <a href="./Kvantitative-metoder-for-lærere.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Bytt mørk modus"><i class="bi"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Bytt lesermodus">
   <div class="quarto-reader-toggle-btn">
@@ -460,6 +461,29 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Inferensiell statistikk</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Slå på delen">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-categorical.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Analyse av kategoriske data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-means.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Sammenlikne gjennomsnitt: ANOVA og paret <span class="math inline">\(t\)</span>-test</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./sec-references.html" class="sidebar-item-text sidebar-link">
@@ -498,7 +522,7 @@ window.Quarto = {
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sec-probability.html">Statistisk teori</a></li><li class="breadcrumb-item"><a href="./sec-estimation.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Estimering av ukjente størrelser fra et utvalg</span></a></li></ol></nav><h1 class="title display-7"><span id="sec-Estimating-unknown-quantities-from-a-sample" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Estimering av ukjente størrelser fra et utvalg</span></span></h1></header>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sec-probability.html">Statistisk teori</a></li><li class="breadcrumb-item"><a href="./sec-estimation.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Estimering av ukjente størrelser fra et utvalg</span></a></li></ol></nav><h1 class="title display-7"><span id="sec-estimation" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Estimering av ukjente størrelser fra et utvalg</span></span></h1></header>
 
 
 <header id="title-block-header">
@@ -507,6 +531,9 @@ window.Quarto = {
 </header>
 
 
+<!-- \placetextbox{0.26}{0.06}{\scriptsize{©2025 D.R. Foxcroft and D.J. Navarro,}} -->
+<!-- \placetextbox{0.195}{0.05}{\scriptsize{CC BY-SA 4.0}} -->
+<!-- \placetextbox{0.70}{0.06}{\scriptsize{\url{https://doi.org/10.11647/OBP.0333.08}}} -->
 <p>Husk at vi er på vei mot å lære om <em>inferensiell statistikk</em>. I kapittelet om deskriptiv statistikk, <a href="sec-descriptive.html" class="quarto-xref"><span>Kapitel 4</span></a>, lærte vi å sammenfatte og vise dataene på en kortfattet måte. Inferensiell statistikk har derimot som mål å lære om noe som går utover dataene, for eksempel populasjonen. Nå som vi vet litt om sannsynlighetsteori, er vi endelig klare til å ta fatt på problemstillingen rundt statistisk inferens. Vi skal lære to ting om inferensiell statistikk, estimering og hypotesetesting.</p>
 <p>I dette kapittelet vil vi utforske den første av disse store ideene – estimering. Vi kommer til å benytte oss av mye av kunnskapen om utvalg, og spesielt enkle tilfeldige utvalg. Se <a href="sec-design.html#sec-design-simple-random" class="quarto-xref"><span>Seksjon 3.6.2</span></a> hvis du trenger en oppfriskning.</p>
 <section id="populasjonsparametre-og-utvalgsobservatorer" class="level2" data-number="7.1">
@@ -617,8 +644,15 @@ Tabell&nbsp;7.1. Forskjellen på populasjonsparametre og utvalgsobservatorer, og
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: '2', j: 0 }, { i: '2', j: 1 }, { i: '2', j: 2 },  ], css_id: 'tinytable_css_7j351cepvrcgihvigyju',}, 
-          { positions: [ { i: '0', j: 0 }, { i: '0', j: 1 }, { i: '0', j: 2 },  ], css_id: 'tinytable_css_ln7cxtruqzfvwx1q3h3e',}, 
+          { positions: [ { i: '2', j: 2 },  ], css_id: 'tinytable_css_em9klag8k52u1r8bzg0d',}, 
+          { positions: [ { i: '1', j: 2 },  ], css_id: 'tinytable_css_bx5qwebrmyp08mrrzn4d',}, 
+          { positions: [ { i: '0', j: 2 },  ], css_id: 'tinytable_css_lskjqjdj126dldgfnagh',}, 
+          { positions: [ { i: '2', j: 1 },  ], css_id: 'tinytable_css_43m2kgp0tq4obdtq2a4a',}, 
+          { positions: [ { i: '1', j: 1 },  ], css_id: 'tinytable_css_8ak8gxx8vnlka588h28x',}, 
+          { positions: [ { i: '0', j: 1 },  ], css_id: 'tinytable_css_ujxaiz9yed1slseo0i8f',}, 
+          { positions: [ { i: '2', j: 0 },  ], css_id: 'tinytable_css_nvvsuiqlac07pd1jnhr4',}, 
+          { positions: [ { i: '1', j: 0 },  ], css_id: 'tinytable_css_7j351cepvrcgihvigyju',}, 
+          { positions: [ { i: '0', j: 0 },  ], css_id: 'tinytable_css_ln7cxtruqzfvwx1q3h3e',}, 
           ];
 
           // Loop over the arrays to style the cells
@@ -632,8 +666,15 @@ Tabell&nbsp;7.1. Forskjellen på populasjonsparametre og utvalgsobservatorer, og
 
     <style>
       /* tinytable css entries after */
-      .table td.tinytable_css_7j351cepvrcgihvigyju, .table th.tinytable_css_7j351cepvrcgihvigyju { border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_ln7cxtruqzfvwx1q3h3e, .table th.tinytable_css_ln7cxtruqzfvwx1q3h3e { border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_em9klag8k52u1r8bzg0d, .table th.tinytable_css_em9klag8k52u1r8bzg0d { border-bottom: solid #d3d8dc 0.1em; width: 54.5454545454545%; }
+      .table td.tinytable_css_bx5qwebrmyp08mrrzn4d, .table th.tinytable_css_bx5qwebrmyp08mrrzn4d { width: 54.5454545454545%; }
+      .table td.tinytable_css_lskjqjdj126dldgfnagh, .table th.tinytable_css_lskjqjdj126dldgfnagh { border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; width: 54.5454545454545%; }
+      .table td.tinytable_css_43m2kgp0tq4obdtq2a4a, .table th.tinytable_css_43m2kgp0tq4obdtq2a4a { border-bottom: solid #d3d8dc 0.1em; width: 27.2727272727273%; }
+      .table td.tinytable_css_8ak8gxx8vnlka588h28x, .table th.tinytable_css_8ak8gxx8vnlka588h28x { width: 27.2727272727273%; }
+      .table td.tinytable_css_ujxaiz9yed1slseo0i8f, .table th.tinytable_css_ujxaiz9yed1slseo0i8f { border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; width: 27.2727272727273%; }
+      .table td.tinytable_css_nvvsuiqlac07pd1jnhr4, .table th.tinytable_css_nvvsuiqlac07pd1jnhr4 { border-bottom: solid #d3d8dc 0.1em; width: 18.1818181818182%; }
+      .table td.tinytable_css_7j351cepvrcgihvigyju, .table th.tinytable_css_7j351cepvrcgihvigyju { width: 18.1818181818182%; }
+      .table td.tinytable_css_ln7cxtruqzfvwx1q3h3e, .table th.tinytable_css_ln7cxtruqzfvwx1q3h3e { border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; width: 18.1818181818182%; }
     </style>
     <div class="container">
       <table class="table table-borderless" id="tinytable_43db7e7m4uc8s8cbvz07" style="table-layout: fixed; width: 100% !important; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
@@ -680,10 +721,10 @@ Utvalgets variasjonsbredde</td>
 <p>La oss anta at vi gjennomførte en mye større studie, denne gangen hvor vi målte IQ-en til 10 000 personer. Jeg simulerer nok en gang tilfeldige trekk fra en normalfordeling med gjennomsnitt 100 og standardavvik 15. I <a href="#fig-estimation-IQ" class="quarto-xref">Figur&nbsp;<span>7.1</span></a> (c) ser du et histogram som viser at dette større utvalget gir en bedre tilnærming til den sanne populasjonsfordelingen enn det mindre utvalget. Dette gjenspeiles også i observatorene. Gjennomsnittlig IQ for det større utvalget er 100.0731 og standardavviket er 15.0313. Disse verdiene er nå svært nære den sanne populasjonen.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-fig8-5" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Et jamovi-skjermbilde vises. Det inkluderer menyer for variabelmanipulering og dataanalyse. En beregnet variabel &quot;IQsim&quot; vises med en formel. En tabell lister opp numeriske IQsim-verdier, og et histogram med deskriptiv statistikk vises til høyre" data-fig-pos="h!" data-fig-align="center">
+<div id="fig-fig8-5" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Et jamovi-skjermbilde vises. Det inkluderer menyer for variabelmanipulering og dataanalyse. En beregnet variabel &quot;IQsim&quot; vises med en formel. En tabell lister opp numeriske IQsim-verdier, og et histogram med deskriptiv statistikk vises til høyre" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-fig8-5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/fig8-5.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figur&nbsp;7.2. Et tilfeldig utvalg trukket fra en normalfordeling ved hjelp av jamovi"><img src="images/fig8-5.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" data-fig-pos="h!" alt="Et jamovi-skjermbilde vises. Det inkluderer menyer for variabelmanipulering og dataanalyse. En beregnet variabel &quot;IQsim&quot; vises med en formel. En tabell lister opp numeriske IQsim-verdier, og et histogram med deskriptiv statistikk vises til høyre"></a>
+<a href="images/fig8-5.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figur&nbsp;7.2. Et tilfeldig utvalg trukket fra en normalfordeling ved hjelp av jamovi"><img src="images/fig8-5.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="Et jamovi-skjermbilde vises. Det inkluderer menyer for variabelmanipulering og dataanalyse. En beregnet variabel &quot;IQsim&quot; vises med en formel. En tabell lister opp numeriske IQsim-verdier, og et histogram med deskriptiv statistikk vises til høyre"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fig8-5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figur&nbsp;7.2. Et tilfeldig utvalg trukket fra en normalfordeling ved hjelp av jamovi
@@ -711,11 +752,11 @@ Figur&nbsp;7.2. Et tilfeldig utvalg trukket fra en normalfordeling ved hjelp av 
 <p>Nå skal vi forstå at estimatene av populasjonsparametrene (slik som populasjonens gjennomsnitt og standardavvik) også har en sannsynlighetsfordeling. Dette er viktig og erfaringsmessig er det vanskelig å forstå, så spenn deg godt fast før du leser videre.</p>
 <p>For å forklare tenker vi oss en mer beskjeden studie. Denne gangen tar vi et utvalg på <span class="math inline">\(N = 5\)</span> personer og måler deres IQ-skårer, vel, i hvert fall simulerer jeg IQ-skårer ved hjelp av datamaskinen. Her er de fem IQ-skårene:</p>
 <blockquote class="blockquote">
-<p>100, 85, 81, 87, 109</p>
+<p>99, 117, 81, 97, 107</p>
 </blockquote>
 <p>Gjennomsnittlig IQ i dette utvalget er nøyaktig 95. Som forventet er dette mye mindre nøyaktig enn den forrige studien, fordi utvalget bare har 5 personer. Tenk deg nå at jeg bestemmer meg for å <strong>replikere</strong> studien. Det vil si, jeg gjentar studien så nøye som mulig og tar tilfeldig et utvalg på 5 nye personer og måler deres IQ. Derfor simulerer jeg fem nye tilfeldige verdier:</p>
 <blockquote class="blockquote">
-<p>119, 110, 128, 103, 102</p>
+<p>87, 82, 141, 105, 111</p>
 </blockquote>
 <p>Denne gangen er gjennomsnittlig IQ i mitt utvalg 101. Hvis jeg gjentar eksperimentet 10 ganger, får jeg resultatene vist i <a href="#tbl-IQ-simuls" class="quarto-xref">Tabell&nbsp;<span>7.2</span></a>. Som du kan se, varierer utvalgets gjennomsnitt fra en replikasjon til den neste.</p>
 <div class="cell" data-layout-align="center">
@@ -744,8 +785,8 @@ Tabell&nbsp;7.2. Ti replikasjoner av IQ-eksperimentet, hver med en utvalgsstørr
 
     <script>
 
-      function styleCell_webrmyp08mrrzn4dem9k(i, j, css_id) {
-          var table = document.getElementById("tinytable_webrmyp08mrrzn4dem9k");
+      function styleCell_qduubp9fee8ppn7ua5vd(i, j, css_id) {
+          var table = document.getElementById("tinytable_qduubp9fee8ppn7ua5vd");
           var cell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
           if (cell) {
               console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
@@ -755,7 +796,7 @@ Tabell&nbsp;7.2. Ti replikasjoner av IQ-eksperimentet, hver med en utvalgsstørr
           }
       }
       function insertSpanRow(i, colspan, content) {
-        var table = document.getElementById('tinytable_webrmyp08mrrzn4dem9k');
+        var table = document.getElementById('tinytable_qduubp9fee8ppn7ua5vd');
         // Find the row with data-row attribute matching i
         var targetRow = table.querySelector(`tr [data-row="${i}"]`).closest('tr');
         var newRow = table.insertRow(targetRow.rowIndex);
@@ -767,8 +808,8 @@ Tabell&nbsp;7.2. Ti replikasjoner av IQ-eksperimentet, hver med en utvalgsstørr
         // this may be unsafe, but innerText does not interpret <br>
         newCell.innerHTML = content;
       }
-      function spanCell_webrmyp08mrrzn4dem9k(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_webrmyp08mrrzn4dem9k");
+      function spanCell_qduubp9fee8ppn7ua5vd(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_qduubp9fee8ppn7ua5vd");
         const targetCell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
         if (!targetCell) {
           console.warn(`Cell at (${i}, ${j}) not found.`);
@@ -799,14 +840,14 @@ Tabell&nbsp;7.2. Ti replikasjoner av IQ-eksperimentet, hver med en utvalgsstørr
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: '10', j: 0 }, { i: '10', j: 1 }, { i: '10', j: 2 }, { i: '10', j: 3 }, { i: '10', j: 4 }, { i: '10', j: 5 }, { i: '10', j: 6 },  ], css_id: 'tinytable_css_gw0nq94d32n3wlfzyfbt',}, 
-          { positions: [ { i: '0', j: 0 }, { i: '0', j: 1 }, { i: '0', j: 2 }, { i: '0', j: 3 }, { i: '0', j: 4 }, { i: '0', j: 5 }, { i: '0', j: 6 },  ], css_id: 'tinytable_css_lag8k52u1r8bzg0d2h5h',}, 
+          { positions: [ { i: '10', j: 0 }, { i: '10', j: 1 }, { i: '10', j: 2 }, { i: '10', j: 3 }, { i: '10', j: 4 }, { i: '10', j: 5 }, { i: '10', j: 6 },  ], css_id: 'tinytable_css_4aw2oazdouln3xg5rc7t',}, 
+          { positions: [ { i: '0', j: 0 }, { i: '0', j: 1 }, { i: '0', j: 2 }, { i: '0', j: 3 }, { i: '0', j: 4 }, { i: '0', j: 5 }, { i: '0', j: 6 },  ], css_id: 'tinytable_css_g311x9l67zmetcf1p7ku',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  styleCell_webrmyp08mrrzn4dem9k(cell.i, cell.j, group.css_id);
+                  styleCell_qduubp9fee8ppn7ua5vd(cell.i, cell.j, group.css_id);
               });
           });
       });
@@ -814,11 +855,11 @@ Tabell&nbsp;7.2. Ti replikasjoner av IQ-eksperimentet, hver med en utvalgsstørr
 
     <style>
       /* tinytable css entries after */
-      .table td.tinytable_css_gw0nq94d32n3wlfzyfbt, .table th.tinytable_css_gw0nq94d32n3wlfzyfbt { border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_lag8k52u1r8bzg0d2h5h, .table th.tinytable_css_lag8k52u1r8bzg0d2h5h { border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_4aw2oazdouln3xg5rc7t, .table th.tinytable_css_4aw2oazdouln3xg5rc7t { border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_g311x9l67zmetcf1p7ku, .table th.tinytable_css_g311x9l67zmetcf1p7ku { border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
     </style>
     <div class="container">
-      <table class="table table-borderless" id="tinytable_webrmyp08mrrzn4dem9k" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+      <table class="table table-borderless" id="tinytable_qduubp9fee8ppn7ua5vd" style="table-layout: fixed; width: 100% !important; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
         <thead>
         
               <tr>
@@ -835,93 +876,93 @@ Tabell&nbsp;7.2. Ti replikasjoner av IQ-eksperimentet, hver med en utvalgsstørr
         <tbody>
                 <tr>
                   <td data-row="1" data-col="0">Replikasjon 1</td>
-                  <td data-row="1" data-col="1">100</td>
-                  <td data-row="1" data-col="2">85</td>
+                  <td data-row="1" data-col="1">99</td>
+                  <td data-row="1" data-col="2">117</td>
                   <td data-row="1" data-col="3">81</td>
-                  <td data-row="1" data-col="4">87</td>
-                  <td data-row="1" data-col="5">109</td>
-                  <td data-row="1" data-col="6">100</td>
+                  <td data-row="1" data-col="4">97</td>
+                  <td data-row="1" data-col="5">107</td>
+                  <td data-row="1" data-col="6">103</td>
                 </tr>
                 <tr>
                   <td data-row="2" data-col="0">Replikasjon 2</td>
-                  <td data-row="2" data-col="1">119</td>
-                  <td data-row="2" data-col="2">110</td>
-                  <td data-row="2" data-col="3">128</td>
-                  <td data-row="2" data-col="4">103</td>
-                  <td data-row="2" data-col="5">102</td>
-                  <td data-row="2" data-col="6">100</td>
+                  <td data-row="2" data-col="1">87</td>
+                  <td data-row="2" data-col="2">82</td>
+                  <td data-row="2" data-col="3">141</td>
+                  <td data-row="2" data-col="4">105</td>
+                  <td data-row="2" data-col="5">111</td>
+                  <td data-row="2" data-col="6">103</td>
                 </tr>
                 <tr>
                   <td data-row="3" data-col="0">Replikasjon 3</td>
-                  <td data-row="3" data-col="1">84</td>
-                  <td data-row="3" data-col="2">107</td>
-                  <td data-row="3" data-col="3">113</td>
-                  <td data-row="3" data-col="4">122</td>
-                  <td data-row="3" data-col="5">85</td>
-                  <td data-row="3" data-col="6">100</td>
+                  <td data-row="3" data-col="1">101</td>
+                  <td data-row="3" data-col="2">98</td>
+                  <td data-row="3" data-col="3">116</td>
+                  <td data-row="3" data-col="4">100</td>
+                  <td data-row="3" data-col="5">76</td>
+                  <td data-row="3" data-col="6">103</td>
                 </tr>
                 <tr>
                   <td data-row="4" data-col="0">Replikasjon 4</td>
-                  <td data-row="4" data-col="1">113</td>
-                  <td data-row="4" data-col="2">83</td>
-                  <td data-row="4" data-col="3">95</td>
-                  <td data-row="4" data-col="4">107</td>
-                  <td data-row="4" data-col="5">106</td>
-                  <td data-row="4" data-col="6">100</td>
+                  <td data-row="4" data-col="1">98</td>
+                  <td data-row="4" data-col="2">107</td>
+                  <td data-row="4" data-col="3">118</td>
+                  <td data-row="4" data-col="4">99</td>
+                  <td data-row="4" data-col="5">94</td>
+                  <td data-row="4" data-col="6">103</td>
                 </tr>
                 <tr>
                   <td data-row="5" data-col="0">Replikasjon 5</td>
-                  <td data-row="5" data-col="1">94</td>
-                  <td data-row="5" data-col="2">78</td>
-                  <td data-row="5" data-col="3">109</td>
-                  <td data-row="5" data-col="4">112</td>
-                  <td data-row="5" data-col="5">99</td>
-                  <td data-row="5" data-col="6">100</td>
+                  <td data-row="5" data-col="1">103</td>
+                  <td data-row="5" data-col="2">103</td>
+                  <td data-row="5" data-col="3">120</td>
+                  <td data-row="5" data-col="4">111</td>
+                  <td data-row="5" data-col="5">116</td>
+                  <td data-row="5" data-col="6">103</td>
                 </tr>
                 <tr>
                   <td data-row="6" data-col="0">Replikasjon 6</td>
-                  <td data-row="6" data-col="1">86</td>
+                  <td data-row="6" data-col="1">115</td>
                   <td data-row="6" data-col="2">92</td>
-                  <td data-row="6" data-col="3">111</td>
-                  <td data-row="6" data-col="4">81</td>
-                  <td data-row="6" data-col="5">86</td>
-                  <td data-row="6" data-col="6">100</td>
+                  <td data-row="6" data-col="3">84</td>
+                  <td data-row="6" data-col="4">89</td>
+                  <td data-row="6" data-col="5">83</td>
+                  <td data-row="6" data-col="6">103</td>
                 </tr>
                 <tr>
                   <td data-row="7" data-col="0">Replikasjon 7</td>
-                  <td data-row="7" data-col="1">87</td>
-                  <td data-row="7" data-col="2">113</td>
-                  <td data-row="7" data-col="3">117</td>
-                  <td data-row="7" data-col="4">96</td>
-                  <td data-row="7" data-col="5">116</td>
-                  <td data-row="7" data-col="6">100</td>
+                  <td data-row="7" data-col="1">115</td>
+                  <td data-row="7" data-col="2">140</td>
+                  <td data-row="7" data-col="3">106</td>
+                  <td data-row="7" data-col="4">107</td>
+                  <td data-row="7" data-col="5">86</td>
+                  <td data-row="7" data-col="6">103</td>
                 </tr>
                 <tr>
                   <td data-row="8" data-col="0">Replikasjon 8</td>
-                  <td data-row="8" data-col="1">94</td>
-                  <td data-row="8" data-col="2">100</td>
-                  <td data-row="8" data-col="3">96</td>
-                  <td data-row="8" data-col="4">95</td>
-                  <td data-row="8" data-col="5">95</td>
-                  <td data-row="8" data-col="6">100</td>
+                  <td data-row="8" data-col="1">87</td>
+                  <td data-row="8" data-col="2">81</td>
+                  <td data-row="8" data-col="3">91</td>
+                  <td data-row="8" data-col="4">97</td>
+                  <td data-row="8" data-col="5">96</td>
+                  <td data-row="8" data-col="6">103</td>
                 </tr>
                 <tr>
                   <td data-row="9" data-col="0">Replikasjon 9</td>
-                  <td data-row="9" data-col="1">107</td>
-                  <td data-row="9" data-col="2">105</td>
-                  <td data-row="9" data-col="3">94</td>
-                  <td data-row="9" data-col="4">96</td>
-                  <td data-row="9" data-col="5">86</td>
-                  <td data-row="9" data-col="6">100</td>
+                  <td data-row="9" data-col="1">97</td>
+                  <td data-row="9" data-col="2">131</td>
+                  <td data-row="9" data-col="3">113</td>
+                  <td data-row="9" data-col="4">118</td>
+                  <td data-row="9" data-col="5">105</td>
+                  <td data-row="9" data-col="6">103</td>
                 </tr>
                 <tr>
                   <td data-row="10" data-col="0">Replikasjon 10</td>
-                  <td data-row="10" data-col="1">134</td>
-                  <td data-row="10" data-col="2">95</td>
-                  <td data-row="10" data-col="3">91</td>
-                  <td data-row="10" data-col="4">113</td>
-                  <td data-row="10" data-col="5">70</td>
-                  <td data-row="10" data-col="6">100</td>
+                  <td data-row="10" data-col="1">91</td>
+                  <td data-row="10" data-col="2">107</td>
+                  <td data-row="10" data-col="3">97</td>
+                  <td data-row="10" data-col="4">114</td>
+                  <td data-row="10" data-col="5">98</td>
+                  <td data-row="10" data-col="6">103</td>
                 </tr>
         </tbody>
       </table>
@@ -934,13 +975,13 @@ Tabell&nbsp;7.2. Ti replikasjoner av IQ-eksperimentet, hver med en utvalgsstørr
 </div>
 <p>Tenk deg nå at jeg bestemte meg for å fortsette på denne måten, og replikere dette “fem IQ-skårer” eksperimentet om og om igjen. Hver gang jeg replikerer eksperimentet, skriver jeg ned utvalgets gjennomsnitt. Over tid ville jeg samle opp et nytt datasett, der hvert eksperiment genererer et enkelt datapunkt. De første 10 observasjonene fra datasettet mitt er utvalgsgjennomsnittene listet opp i <a href="#tbl-IQ-simuls" class="quarto-xref">Tabell&nbsp;<span>7.2</span></a>, så datasettet mitt starter slik:</p>
 <blockquote class="blockquote">
-<p>100, 100, 100, 100, 100, 100, 100, 100, 100, 100</p>
+<p>103, 103, 103, 103, 103, 103, 103, 103, 103, 103</p>
 </blockquote>
 <p>Hva om jeg fortsatte slik i 10 000 replikasjoner og deretter tegnet et histogram? Vel, det er nøyaktig det jeg gjorde, og du kan se resultatene i <a href="#fig-estimation-IQ-simuls" class="quarto-xref">Figur&nbsp;<span>7.3</span></a>. Som dette bildet illustrerer, ligger gjennomsnittet av 5 IQ-skårer vanligvis mellom 90 og 110. Men enda viktigere: figuren viser er at hvis vi replikerer et eksperiment om og om igjen, så ender vi opp med en fordeling av utvalgsgjennomsnitt! Denne fordelingen har et spesielt navn i statistikk – den kalles <strong>utvalgsgjennomsnittets fordeling</strong>.</p>
-<p>Utvalgsfordelinger er blant de viktigste idéene i statistikk, og de er avgjørende for å forstå usikkerheten i estimater. For eksempel, da jeg kjørte den aller første “fem IQ-skårer”-studien, viste utvalgets gjennomsnitt seg å være 99.7383988. Det som utvalgsfordelingen i <a href="#fig-estimation-IQ-simuls" class="quarto-xref">Figur&nbsp;<span>7.3</span></a> forteller oss, er imidlertid at “fem IQ-skårer” eksperimentet ikke er særlig nøyaktig. Hvis jeg gjentar eksperimentet, forteller utvalgsfordelingen meg at jeg kan forvente å se et utvalgsgjennomsnitt hvor som helst mellom 80 og 120.</p>
+<p>Utvalgsfordelinger er blant de viktigste idéene i statistikk, og de er avgjørende for å forstå usikkerheten i estimater. For eksempel, da jeg kjørte den aller første “fem IQ-skårer”-studien, viste utvalgets gjennomsnitt seg å være 102.5420705. Det som utvalgsfordelingen i <a href="#fig-estimation-IQ-simuls" class="quarto-xref">Figur&nbsp;<span>7.3</span></a> forteller oss, er imidlertid at “fem IQ-skårer” eksperimentet ikke er særlig nøyaktig. Hvis jeg gjentar eksperimentet, forteller utvalgsfordelingen meg at jeg kan forvente å se et utvalgsgjennomsnitt hvor som helst mellom 80 og 120.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-estimation-IQ-simuls" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Et histogram av IQ-skårer med en pålagt normalfordelingskurve. X-aksen spenner fra 60 til 140, med en topp rundt 100. Y-aksen viser frekvens. Histogramstolpene er blå, og normalfordelingskurven er svart" data-fig-pos="h!" data-fig-align="center">
+<div id="fig-estimation-IQ-simuls" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Et histogram av IQ-skårer med en pålagt normalfordelingskurve. X-aksen spenner fra 60 til 140, med en topp rundt 100. Y-aksen viser frekvens. Histogramstolpene er blå, og normalfordelingskurven er svart" data-fig-align="center" data-fig-pos="h!">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-estimation-IQ-simuls-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="sec-estimation_files/figure-html/fig-estimation-IQ-simuls-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figur&nbsp;7.3. Utvalgsfordelingen av gjennomsnittet for “fem IQ-skårer”-studiene. Hvis du tar et utvalg på 5 personer tilfeldig og beregner deres gjennomsnittlige IQ, vil du nesten helt sikkert få et tall mellom 80 og 120, selv om det er ganske mange individer som har IQ-er over 120 eller under 80. Til sammenligning viser den svarte linjen populasjonsfordelingen av IQ-skårer"><img src="sec-estimation_files/figure-html/fig-estimation-IQ-simuls-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" data-fig-pos="h!" alt="Et histogram av IQ-skårer med en pålagt normalfordelingskurve. X-aksen spenner fra 60 til 140, med en topp rundt 100. Y-aksen viser frekvens. Histogramstolpene er blå, og normalfordelingskurven er svart"></a>
@@ -964,12 +1005,12 @@ Figur&nbsp;7.3. Utvalgsfordelingen av gjennomsnittet for “fem IQ-skårer”-st
 <p>Noe viktig å huske på når vi jobber med utvalgsfordelinger: enhver statistikk du beregner fra et utvalg har sin egen utvalgsfordeling. La meg vise deg et eksempel.</p>
 <p>Tenk deg at hver gang jeg gjentar “fem IQ-skårer”-eksperimentet, skriver jeg ned den høyeste IQ-skåren i gruppen. Dette gir meg et datasett som starter slik:</p>
 <blockquote class="blockquote">
-<p>99.7383988, 99.7383988, 99.7383988, 99.7383988, 99.7383988</p>
+<p>102.5420705, 102.5420705, 102.5420705, 102.5420705, 102.5420705</p>
 </blockquote>
 <p>Hvis jeg gjør dette mange ganger, får jeg en helt annen utvalgsfordeling - nemlig utvalgsfordelingen til maksimumsverdien. Du kan se denne fordelingen i <a href="#fig-estimation-IQ-max" class="quarto-xref">Figur&nbsp;<span>7.4</span></a>. Resultatet er egentlig som man kan forvente: De blå søylene viser at når du plukker 5 personer tilfeldig og finner den med høyest IQ-skåre, vil denne personen ha en over gjennomsnittlig IQ. Mesteparten av tiden ender du opp med noen som har en IQ-skåre mellom 100 og 140.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-estimation-IQ-max" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Et histogram av IQ-skårer vises med blå søyler som indikerer frekvensen av hver skåregruppe. En svart klokkekurve ligger over som representerer normalfordelingen, med skårer fra 60 til 140 på x-aksen" data-fig-pos="H" data-fig-align="center">
+<div id="fig-estimation-IQ-max" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Et histogram av IQ-skårer vises med blå søyler som indikerer frekvensen av hver skåregruppe. En svart klokkekurve ligger over som representerer normalfordelingen, med skårer fra 60 til 140 på x-aksen" data-fig-align="center" data-fig-pos="H">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-estimation-IQ-max-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="sec-estimation_files/figure-html/fig-estimation-IQ-max-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figur&nbsp;7.4. Utvalgsfordelingen til maksimum for “fem IQ-skårer eksperimentet”. Hvis du tar et utvalg av 5 personer tilfeldig og velger den med høyest IQ-skåre vil du sannsynligvis se noen med en IQ mellom 100 og 140"><img src="sec-estimation_files/figure-html/fig-estimation-IQ-max-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" data-fig-pos="H" alt="Et histogram av IQ-skårer vises med blå søyler som indikerer frekvensen av hver skåregruppe. En svart klokkekurve ligger over som representerer normalfordelingen, med skårer fra 60 til 140 på x-aksen"></a>
@@ -1155,7 +1196,7 @@ Figur&nbsp;7.6. En demonstrasjon av sentralgrenseteoremet ved å simulere at man
 <p>Husk at i en frekventistisk forståelse av sannsynlighet er utsagn enten riktige eller gale, så det sanne gjennomsnittet ligger innenfor konfidensintervallet eller det gjør det ikke. Punktum. Når man skal tolke en sannsynlighet om konfidensintervaller må man se for seg at man replikerer hele studien helt likt og under akkurat samme omstendigheter uendelig mange ganger. Konfidensintervallet betyr at i 95% av disse studiene vil konfidensintervallet inneholde det sanne gjennomsnittet, men det sier ingenting om akkurat den studien du er interessert i. Den kan ha bomma grovt.</p>
 <p>Denne ideen blir vanligvis illustrert slik som i <a href="#fig-estimation-CI-interpretation" class="quarto-xref">Figur&nbsp;<span>7.7</span></a>, som viser konfidensintervallene til 50 replikasjoner av studier. Legg merke til at det sanne gjennomsnittet ligger fast på 100, mens estimatene fra de forskjellige studiene hopper opp og ned. Likevel er det slik at 95% av konfidensintervallene inneholder det sanne gjennomsnittet. Dessverre vet man ikke om den studien man selv har gjennomført er blant de som “traff” eller om den er blant de som “bommet” som er markert med en blå stjerne. <a href="#fig-estimation-CI-interpretation-1" class="quarto-xref">Figur&nbsp;<span>7.7 (a)</span></a> viser replikasjoner av studier med <span class="math inline">\(n = 10\)</span> og <a href="#fig-estimation-CI-interpretation-2" class="quarto-xref">Figur&nbsp;<span>7.7 (b)</span></a> viser for <span class="math inline">\(n = 100\)</span>.</p>
 <div class="cell" data-layout-align="center">
-<div id="fig-estimation-CI-interpretation" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center" data-fig-pos="H">
+<div id="fig-estimation-CI-interpretation" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-fig-pos="H" data-layout-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-estimation-CI-interpretation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
@@ -1239,8 +1280,8 @@ Stigler, S. M. (1986). <em>The history of statistics</em>. Harvard University Pr
 <ol>
 <li id="fn1"><p>Ja, IQ-tester blir normert (altså regnet om) slik at dette stemmer.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>Men husk også at vi i <a href="sec-probability.html#sec-probability-binomial" class="quarto-xref"><span>Seksjon 6.4.1</span></a> så hvordan normalfordelingen dukket opp fra en binomisk fordeling. I statistikken er det slik at nesten alle veier fører til en normalfordeling.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>Dette sitatet dukker opp på svært mange t-skjorter og nettsteder, og får til og med omtale i noen akademiske artikler (f.eks. <a href="https://jse.amstat.org/v10n3/friedman.html">https://jse.amstat.org/v10n3/friedman.html</a>), men jeg har aldri funnet den opprinnelige kilden.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4"><p>Selvfølgelig er det ingenting spesielt med tallet <span class="math inline">\(1.96\)</span>. Det er bare tilfeldigvis multiplikatoren du trenger å bruke hvis du vil ha et <span class="math inline">\(95\%\)</span> konfidensintervall. Hvis jeg hadde ønsket et <span class="math inline">\(70\%\)</span> konfidensintervall, ville jeg ha brukt <span class="math inline">\(1.04\)</span> som det magiske tallet i stedet for <span class="math inline">\(1.96\)</span>.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Dette sitatet dukker opp på svært mange t-skjorter, nettsteder og enkelte akademiske artikler (f.eks. <a href="https://jse.amstat.org/v10n3/friedman.html">https://jse.amstat.org/v10n3/friedman.html</a>), men jeg har aldri funnet den opprinnelige kilden.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Selvfølgelig er det ingenting spesielt med tallet <span class="math inline">\(1{,}96\)</span>. Det er bare tilfeldigvis multiplikatoren du trenger å bruke hvis du vil ha et <span class="math inline">\(95\%\)</span> konfidensintervall. Hvis jeg hadde ønsket et <span class="math inline">\(70\%\)</span> konfidensintervall, ville jeg ha brukt <span class="math inline">\(1{,}04\)</span> som det magiske tallet i stedet for <span class="math inline">\(1{,}96\)</span>.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
@@ -1330,7 +1371,7 @@ Stigler, S. M. (1986). <em>The history of statistics</em>. Harvard University Pr
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/roarstovner\.github\.io\/kvant_for_laerere\/");
+        var filterRegex = new RegExp("kvant\.roarstovner\.no");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
