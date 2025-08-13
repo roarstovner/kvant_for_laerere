@@ -1,1 +1,1 @@
-Sitemap: kvant.roarstovner.no/sitemap.xml
+Sitemap: https://kvant.roarstovner.no/sitemap.xml

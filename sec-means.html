@@ -161,7 +161,7 @@ window.Quarto = {
 <link rel="stylesheet" href="styles.css">
 <meta property="og:title" content="10&nbsp; Sammenlikne gjennomsnitt: ANOVA og paret \(t\)-test – Kvantitative metoder for lærere">
 <meta property="og:description" content="">
-<meta property="og:image" content="kvant.roarstovner.no/images/fig13-1.png">
+<meta property="og:image" content="https://kvant.roarstovner.no/images/fig13-1.png">
 <meta property="og:site_name" content="Kvantitative metoder for lærere">
 <meta property="og:image:alt" content="Et jamovi-skjermbilde som viser resultater fra klinisk studie. Grensesnittet viser variabelvalg, deskriptive statistikker med gjennomsnitt og standardavvik for humørforbedring på tvers av tre medikamenter, og en boksplott-graf som sammenligner humørforbedringen for hvert medikament.">
 <meta property="og:image:height" content="708">
@@ -895,7 +895,7 @@ Figur&nbsp;10.4. <span class="math inline">\(F\)</span>-fordeling og forkastning
 <p>For å gjøre livet enklere kan jamovi utføre ANOVA for deg – hurra! Trykk på ‘ANOVA’ → ‘One-way ANOVA’, og flytt <em>mood.gain</em>-variabelen til ‘Dependent Variable’-boksen og deretter <em>drug</em>-variabelen over til ‘Fixed Factors’-boksen. Dette gir deg resultatene som vist i <a href="#fig-means-jamovi-ANOVA" class="quarto-xref">Figur&nbsp;<span>10.5</span></a>. Resultatene viser <span class="math inline">\(F\)</span>-verdien, samt begge frihetsgradene. Disse trenger ikke vi fokusere så mye på. Den oppgir også <span class="math inline">\(p\)</span>-verdien, som i dette tilfellet er <span class="math inline">\(p &lt; 0{,}001\)</span>.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-means-jamovi-ANOVA" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" data-fig-pos="H" alt="En tabell fra jamovi med tittelen &quot;ANOVA - mood.gain&quot; viser resultater for en ANOVA-test med kolonnene:- &quot;Sum of Squares,&quot; &quot;df,&quot; &quot;Mean Square,&quot; &quot;F,&quot; &quot;p,&quot; og &quot;η².&quot; Radene presenterer data for &quot;drug&quot; med verdiene (3.45, 2, 1.73, 18.61, 0.00009, 0.71) og &quot;Residuals&quot; med verdiene (1.39, 15, 0.09)">
+<div id="fig-means-jamovi-ANOVA" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-pos="H" data-fig-align="center" alt="En tabell fra jamovi med tittelen &quot;ANOVA - mood.gain&quot; viser resultater for en ANOVA-test med kolonnene:- &quot;Sum of Squares,&quot; &quot;df,&quot; &quot;Mean Square,&quot; &quot;F,&quot; &quot;p,&quot; og &quot;η².&quot; Radene presenterer data for &quot;drug&quot; med verdiene (3.45, 2, 1.73, 18.61, 0.00009, 0.71) og &quot;Residuals&quot; med verdiene (1.39, 15, 0.09)">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-means-jamovi-ANOVA-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="images/fig-means-jamovi-ANOVA.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figur&nbsp;10.5. Resultater fra ANOVA i jamovi om humørforbedring etter å ha fått ulike medikamenter"><img src="images/fig-means-jamovi-ANOVA.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" data-fig-pos="H" alt="En tabell fra jamovi med tittelen &quot;ANOVA - mood.gain&quot; viser resultater for en ANOVA-test med kolonnene:- &quot;Sum of Squares,&quot; &quot;df,&quot; &quot;Mean Square,&quot; &quot;F,&quot; &quot;p,&quot; og &quot;η².&quot; Radene presenterer data for &quot;drug&quot; med verdiene (3.45, 2, 1.73, 18.61, 0.00009, 0.71) og &quot;Residuals&quot; med verdiene (1.39, 15, 0.09)"></a>
@@ -1471,7 +1471,7 @@ Navarro, D., &amp; Foxcroft, D. (2025). <em>Learning <span>Statistics</span> wit
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("kvant\.roarstovner\.no");
+        var filterRegex = new RegExp("https:\/\/kvant\.roarstovner\.no");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
