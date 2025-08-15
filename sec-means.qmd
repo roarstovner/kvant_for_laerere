@@ -1,6 +1,6 @@
-\placetextbox{0.26}{0.06}{\scriptsize{©2025 D.R. Foxcroft and D.J. Navarro,}}
-\placetextbox{0.195}{0.05}{\scriptsize{CC BY-SA 4.0}}
-\placetextbox{0.70}{0.06}{\scriptsize{\url{https://doi.org/10.11647/OBP.0333.13}}}
+<!-- \placetextbox{0.26}{0.06}{\scriptsize{©2025 D.R. Foxcroft and D.J. Navarro,}} -->
+<!-- \placetextbox{0.195}{0.05}{\scriptsize{CC BY-SA 4.0}} -->
+<!-- \placetextbox{0.70}{0.06}{\scriptsize{\url{https://doi.org/10.11647/OBP.0333.13}}} -->
 
 # Sammenlikne gjennomsnitt: ANOVA og paret $t$-test {#sec-means}
 
@@ -15,11 +15,10 @@ Dette kapittelet introduserer to statistiske verktøy for å sammenlikne forskje
 
 Vi starter med **ANOVA**, som står for "ANalysis Of VAriance". Teknikken ble utviklet av Sir Ronald Fisher tidlig på 1900-tallet, og det er ham vi har å takke for den noe forvirrende terminologien. Begrepet ANOVA kan være litt misvisende på to måter. For det første handler ANOVA faktisk om å undersøke forskjeller i gjennomsnitt, selv om navnet refererer til varianser. For det andre finnes det flere forskjellige metoder som kalles ANOVA og som bare er løselig beslektet. Men i denne boka skal vi kun møte den enkleste formen for ANOVA, hvor vi har flere grupper av observasjoner og ønsker å finne ut om gjennomsnittet av en utfallsvariabel er forskjellig mellom gruppene. Denne varianten kalles for en "enveis ANOVA".
 
-Kapitlet er strukturert slik: Først introduserer jeg et fiktivt datasett som vi bruker som løpende eksempel. Deretter forklarer jeg hvordan en enveis ANOVA faktisk fungerer [Hvordan ANOVA fungerer], før jeg viser hvordan du kan kjøre analysen i jamovi [Kjøre en ANOVA i jamovi]. Disse to seksjonene utgjør kjernen i kapitlet.
+Kapitlet er strukturert slik: Først introduserer jeg et fiktivt datasett som vi bruker som løpende eksempel. Deretter forklarer jeg hvordan en enveis ANOVA faktisk fungerer, før jeg viser hvordan du kan kjøre analysen i jamovi. Disse to seksjonene utgjør kjernen i kapitlet.
 
 ::: {.callout-warning}
-
-Fra og med dette kapittelet har jeg ikke rukket å gjøre eksemplene relevante for utdanningsvitenskap. Det er mye arbeid å finne relevante datasett far utdanningsvitenskap og forklare analysene ved hjelp av dem, og det rakk jeg ikke før semesterstart for dette kapittelet. Derfor er eksempelet hentet fra originalboka @navarro2025, og omhandler psykofarmakologi, altså læren om medisiner for å behandle psykisk sykdom.
+Fra og med dette kapittelet har jeg ikke rukket å gjøre eksemplene relevante for utdanningsvitenskap. Det er mye arbeid å finne relevante datasett fra utdanningsvitenskap og forklare analysene ved hjelp av dem, og det rakk jeg ikke før semesterstart for dette kapittelet. Derfor er eksempelet hentet fra originalboka @navarro2025, og omhandler psykofarmakologi, altså læren om medisiner for å behandle psykisk sykdom.
 :::
 
 ### Et illustrerende datasett
@@ -29,7 +28,7 @@ Anta at du har blitt involvert i en klinisk studie hvor du tester et nytt antide
 ```{r}
 #| label: tbl-clinical-data
 #| tbl-cap: Datafilen for den kliniske studien. 
-#| tbl-alt: Et jamovi-skjermbilde som viser dataene fra den klinisk studien. Fire variable, ID (fra 1 til 18), drug (3 forskjellige), therapy (ingen og CBT) og mood gain (verdiene varierer fra 0,1 til 1,8).
+#| tbl-alt: Et jamovi-skjermbilde som viser dataene fra den klinisk studien. Fire variable, `ID` (fra 1 til 18), `drug` (3 forskjellige), og `mood.gain` (verdiene varierer fra 0,1 til 1,8).
 
 clinical <- readr::read_csv("data_and_tables/clinicaltrial.csv")
 clinical |> 
@@ -53,11 +52,11 @@ Det eksperimentelle designet vi beskrev tidligere viser tydelig at vi ønsker å
 
 Den noe pessimistiske nullhypotesen vi ønsker å teste er at gjennomsnittlig *mood.gain* er lik for alle de tre medisinene -- altså at ingen av medisinene er mer effektive enn placebo:
 
-$$H_0: \text{Gjennomsnittet av *mood.gain* er likt for de tre medisinene} $$
+> $H_0$: Gjennomsnittet av `mood.gain` er likt for de tre medisinene
 
 Den alternative hypotesen er at minst én av de tre behandlingene skiller seg fra de andre.
 
-$$H_1: \text{Minst én av gjennomsnittene er ulik de andre} $$
+> $H_1$: Minst én av gjennomsnittene er ulik de andre
 
 Denne nullhypotesen er betydelig mer kompleks å teste enn de vi har sett tidligere. Gitt kapitteltittelen vil du kanskje gjette at løsningen er å "gjøre en ANOVA", men det er ikke umiddelbart opplagt hvorfor "analyse av varianser" kan hjelpe oss å lære noe om gjennomsnitt. Men vi vet at det vi må gjøre er å konstruere en passende testobservator.
 
@@ -228,7 +227,7 @@ theme(
 ```
 ### Å gjennomføre ANOVA i jamovi
 
-For å gjøre livet enklere kan jamovi utføre ANOVA for deg – hurra! Trykk på 'ANOVA' → 'One-way ANOVA', og flytt *mood.gain*-variabelen til 'Dependent Variable'-boksen og deretter *drug*-variabelen over til 'Fixed Factors'-boksen. Dette gir deg resultatene som vist i @fig-means-jamovi-ANOVA. Resultatene viser $F$verdien, samt begge frihetsgradene. Disse trenger ikke vi fokusere så mye på. Den oppgir også $p$-verdien, som i dette tilfellet er $p < 0{,}001.
+For å gjøre livet enklere kan jamovi utføre ANOVA for deg – hurra! Trykk på 'ANOVA' → 'One-way ANOVA', og flytt *mood.gain*-variabelen til 'Dependent Variable'-boksen og deretter *drug*-variabelen over til 'Fixed Factors'-boksen. Dette gir deg resultatene som vist i @fig-means-jamovi-ANOVA. Resultatene viser $F$-verdien, samt begge frihetsgradene. Disse trenger ikke vi fokusere så mye på. Den oppgir også $p$-verdien, som i dette tilfellet er $p < 0{,}001$.
 
 
 ```{r}
@@ -236,6 +235,7 @@ For å gjøre livet enklere kan jamovi utføre ANOVA for deg – hurra! Trykk p�
 #| fig-cap: Resultater fra ANOVA i jamovi om humørforbedring etter å ha fått ulike medikamenter
 #| fig-alt: En tabell fra jamovi med tittelen "ANOVA - mood.gain" viser resultater for en ANOVA-test med kolonnene:- "Sum of Squares," "df," "Mean Square," "F," "p," og "η²." Radene presenterer data for "drug" med verdiene (3.45, 2, 1.73, 18.61, 0.00009, 0.71) og "Residuals" med verdiene (1.39, 15, 0.09)
 #| fig-pos: 'H'
+#| out-width: "100%"
 knitr::include_graphics("images/fig-means-jamovi-ANOVA.png")
 ```
 
@@ -254,8 +254,7 @@ Det er lettere å sette seg inn i resultatene med en visualisering, så jeg vise
 
 ```{r}
 #| label: fig-means-jamovi-ANOVA-plot
-#| fig-cap: Resultater fra ANOVA i jamovi om humørforbedring etter å ha fått ulike medikamenter
-#| fig-alt: En tabell fra jamovi med tittelen "ANOVA - mood.gain" viser resultater for en ANOVA-test med kolonnene:- "Sum of Squares," "df," "Mean Square," "F," "p," og "η²." Radene presenterer data for "drug" med verdiene (3.45, 2, 1.73, 18.61, 0.00009, 0.71) og "Residuals" med verdiene (1.39, 15, 0.09)
+#| fig-cap: Et plot med gjennomsnitt og konfidensintervall for humørforbedring etter å ha fått ulike medikamenter
 #| fig-pos: 'H'
 knitr::include_graphics("images/fig-means-jamovi-ANOVA-plot.png")
 ```
@@ -269,15 +268,19 @@ Hvis ANOVA-analysen er den sentrale analysen i artikkelen din bør du trolig leg
 
 Datasettet vi skal bruke denne gangen kommer fra Dr. Chicos sin undervisning. I klassen hennes tar studentene to store tester -- en tidlig i semesteret og en senere i semesteret. Dr. Chico sine timer er utfordrende og studentene bør jobbe mye. Hun mener at ved å gi vanskelige vurderinger oppmuntres studentene til å jobbe hardere. Teorien hennes er at den første testen fungerer som en slags "vekkerklokke" for studentene. Når de forstår hvor vanskelig klassen faktisk er, vil de jobbe hardere til den andre testen og få bedre karakter. Stemmer dette? For å teste dette åpner vi [*chico.csv*](data_and_tables/chico.csv)-filen inn i jamovi, se @tbl-chico-data. 
 
-Datasettet *chico* inneholder tre variabler: en *id*-variabel som identifiserer hver student i klassen, variabelen *grade_test1* med antall prosent riktig på den første testen, og variabelen *grade_test2* med antall prosent riktig på den andre testen.
+Datasettet *chico* inneholder tre variabler: en `id`-variabel som identifiserer hver student i klassen, variabelen `grade_test1` med antall prosent riktig på den første testen, og variabelen `grade_test2` med antall prosent riktig på den andre testen.
 
 ```{r}
 #| label: tbl-chico-data
-#| tbl-cap: Chico sin datafil med resultater på før- og ettertesten
-#| tbl-alt: Et jamovi-skjermbilde som viser Dr. Chico sine data. Tre variable, id (fra student1 til student20), grade_test1 (fra ca. 42 til 72) og grade_test2 (fra ca. 42 til 72) .
+#| tbl-cap: Dr. Chico sin datafil med resultater på før- og ettertesten
 
+# !!! MERKELIG bug her. Får ikke til latex-output
 chico <- readr::read_csv("data_and_tables/chico.csv")
 chico |> 
+  rename(
+    test1 = grade_test1,
+    test2 = grade_test2,
+  ) |> 
   tt() |> 
   theme_tt("spacing")
 ```
@@ -288,23 +291,24 @@ Tar vi en rask titt på den deskriptive analysen i @fig-means-jamovi-chico-descr
 
 ```{r}
 #| label: fig-means-jamovi-chico-descriptive
-#| fig-cap: Deskriptive analyser av de to testene i chico-datasettet.
+#| fig-cap: Deskriptive analyser for de to variablene i chico-datasettet.
 #| fig-subcap:
-#|   - Deskriptiv statistikk for testene
-#|   - Gjennomsnitt og 95% konfidensintervaller for testene
-#| fig-alt: Et jamovi-skjermbilde som viser et datasett med studentkarakterer og et sammendrag av deskriptiv statistikk. Datasettabellen lister student-IDer og deres karakterer for to tester. Resultatpanelet viser deskriptiv statistikk inkludert N, gjennomsnitt, median, standardavvik, minimum- og maksimumsverdier.
-#| layout-ncol: 2
+#|   - Deskriptiv statistikk for variablene
+#|   - Gjennomsnitt og 95\% konfidensintervaller for variablene
+#| fig-alt: Et jamovi-skjermbilde som viser et datasett med studentkarakterer og et sammendrag av deskriptiv statistikk. Datasettabellen lister student-IDer og deres karakterer på to tester. Resultatpanelet viser deskriptiv statistikk inkludert N, gjennomsnitt, median, standardavvik, minimum- og maksimumsverdier.
+#| out-width: "100%"
+#| layout-ncol: 1
 
 knitr::include_graphics("images/fig-means-jamovi-chico-descriptive.png")
 knitr::include_graphics("images/fig11-13a.png")
 ```
 
-Men dette inntrykket er feil! Grunnen er at vi kun har vist statistikk og grafer som ikke tar hensyn til at samme person har avlagt en før- og en etter-prøve. Vi har regnet ut gjennomsnittet for førtesten og ettertesten helt separat, og dette vil være en fin analyse hvis det er helt forskjellige folk som tar før-testen og etter-testen, men i vårt eksempel er det de samme studentene. For å illustrere at studentene faktisk har en fremgang kan vi regne ut hver students endring fra test 1 til test 2, altså regne ut differansen $\text{endring} = \text{grade_test2} - \text{grade_test1}$ og legge den til i datasettet. Jeg har visualisert denne variabelen i @fig-means-jamovi-chico-hist. Når vi ser på histogrammet blir det helt klart at det er en reell forbedring her. Det store flertallet av studentene scoret høyere på test 2 enn på test 1, noe som reflekteres i at nesten hele histogrammet ligger over null.
+Men dette inntrykket er feil! Grunnen er at vi kun har vist statistikk og grafer som ikke tar hensyn til at samme person har avlagt en før- og en etter-prøve. Vi har regnet ut gjennomsnittet for førtesten og ettertesten helt separat, og dette vil være en fin analyse hvis det er helt forskjellige folk som tar før-testen og etter-testen, men i vårt eksempel er det de samme studentene. For å illustrere at studentene faktisk har en fremgang kan vi regne ut hver students endring fra test 1 til test 2, altså regne ut differansen $\text{endring} = \text{grade\_test2} - \text{grade\_test1}$ og legge den til i datasettet. Jeg har visualisert denne variabelen i @fig-means-jamovi-chico-hist. Når vi ser på histogrammet blir det helt klart at det er en reell forbedring her. Det store flertallet av studentene scoret høyere på test 2 enn på test 1, noe som reflekteres i at nesten hele histogrammet ligger over null.
 
 ```{r}
 #| label: fig-means-jamovi-chico-hist
 #| fig-cap: Histogram som viser studentenes endring fra test 1 til test 2.
-#| fig-alt: Et histogram med "Endring fra test1 til test2" på x-aksen. Bare to små søyler er under null og veldig mange er over null.
+#| fig-alt: Et histogram med "Endring fra test 1 til test 2" på x-aksen. Bare to små søyler er under null og veldig mange er over null.
 chico <- chico |> 
   mutate(
     change_score = chico$grade_test2 - chico$grade_test1
@@ -323,17 +327,19 @@ Derfor trenger man en paret $t$-test. Man kunne sett for seg at man regnet ut en
 
 Nullhypotesen for en paret $t$-test er
 
-> $H_0$: gjennomsnittlig endring mellom de to testene er 0
+> $H_0$: gjennomsnittlig endring mellom de to testene er 0.
 
-Og alternativhypotesen er
+Alternativhypotesen er
 
-> $H_1$: gjennomsnittlig endring mellom de to testene er ulik 0
+> $H_1$: gjennomsnittlig endring mellom de to testene er ulik 0.
 
 Paret $t$-test gjøres ofte med en ensidet test, se @sec-testing-one-sided. For Dr. Chico, som tenkte at studentene ville få til mer på test 2, blir hypotesene:
 
-> $H_0: \text{Gjennomsnittlig endring mellom de to testene er positiv, altså:}\ \text{endring} > 0$
+> $H_0$: Gjennomsnittlig endring mellom de to testene er positiv, altså:
+>     $text{endring} > 0$
 >
-> $H_1: \text{Gjennomsnittlig endring mellom de to testene er null eller negativ, altså:}\ \text{endring} \leq 0$
+> $H_1$: Gjennomsnittlig endring mellom de to testene er null eller negativ, altså:
+>     $\text{endring} \leq 0$
 
 ### Testobservatoren $t$ og dens utvalgsfordeling
 
@@ -345,7 +351,7 @@ Hvis studentene er plukket tilfeldig fra en populasjon, vet vi fra sentralgrense
 #| label: fig-means-T-dist
 #| fig-cap: ""
 #| fig-subcap: 
-#|   - Sammenlikning av $t$-fordeling og normalfordeling. $t$-fordeling er litt mindre presis, som vist ved at halene er tykkere, altså at store verdier er vanligere.
+#|   - Sammenlikning av $t$-fordeling og normalfordeling. $t$-fordeling er litt mindre presis, som vist ved at halene er bittelitt tykkere, altså at store verdier er vanligere.
 #|   - Forkastningsområdet til en tosidig $t$-test
 #|   - Forkastningsområdet til en ensidig $t$-test
 #| layout-ncol: 1
@@ -416,9 +422,10 @@ Du finner jamovi sin funksjon for paret $t$-test under "T-tests" → "Paired sam
 #| label: fig-means-jamovi-t
 #| fig-cap: Resultater som viser en paret $t$-test i jamovi.
 #| fig-subcap:
-#|   - Innstillingene
-#|   - Resultatene
-#| fig-alt: Et bilde av en tabell som viser resultater fra en paret utvalg $t$-test. Den inkluderer kolonner for statistikk, df, p, middel differanse, SE differanse, 95% konfidensintervall (nedre og øvre), og effektstørrelse. Eksempeldata for grade_test2 og grade_test1 er gitt.
+#|   - Innstillingene for testen i jamovi
+#|   - Resultatene fra jamovi
+#| fig-alt: Et bilde av en tabell som viser resultater fra en paret utvalg $t$-test. Den inkluderer kolonner for statistikk, df, p, gjennomsnittlig differanse, SE differanse, 95\% konfidensintervall (nedre og øvre), og effektstørrelse. Eksempeldata for `grade_test2` og `grade_test1` er gitt.
+#| out-width: "100%"
 knitr::include_graphics("images/fig-means-jamovi-t-settings.png")
 knitr::include_graphics("images/fig-means-jamovi-t-results.png")
 ```

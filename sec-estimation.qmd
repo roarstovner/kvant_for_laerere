@@ -1,8 +1,8 @@
-\placetextbox{0.26}{0.06}{\scriptsize{©2025 D.R. Foxcroft and D.J. Navarro,}}
-\placetextbox{0.195}{0.05}{\scriptsize{CC BY-SA 4.0}}
-\placetextbox{0.70}{0.06}{\scriptsize{\url{https://doi.org/10.11647/OBP.0333.08}}}
+<!-- \placetextbox{0.26}{0.06}{\scriptsize{©2025 D.R. Foxcroft and D.J. Navarro,}} -->
+<!-- \placetextbox{0.195}{0.05}{\scriptsize{CC BY-SA 4.0}} -->
+<!-- \placetextbox{0.70}{0.06}{\scriptsize{\url{https://doi.org/10.11647/OBP.0333.08}}} -->
 
-# Estimering av ukjente størrelser fra et utvalg {#sec-Estimating-unknown-quantities-from-a-sample}
+# Estimering av ukjente størrelser fra et utvalg {#sec-estimation}
 
 ```{r}
 #| include: FALSE
@@ -31,8 +31,13 @@ Disse verdiene omtales som **populasjonsparametre** fordi de er kjennetegn ved p
 plota <- ggplot(data = data.frame(x = seq(60, 140, 1)), aes(x)) +
   stat_function(fun = dnorm, n = 1000, args = list(mean = 100, sd = 15), col=blueshade, linewidth=1) +
   scale_x_continuous(breaks = seq(60, 140, 20)) +
-  ylab("Sannsynlighetstetthet\n") +
-  xlab("\nIQ-skår") 
+  xlab("\nIQ-skår") +
+  theme(
+    axis.title.y = element_blank(),
+    axis.text.y = element_blank(),
+    axis.ticks.y = element_blank(),
+    axis.line.y = element_blank()
+  )
 
 set.seed(99)
 IQ_simul <- rnorm(100, 100, 15)
@@ -46,14 +51,24 @@ IQ_simul_big_sd <- round(sd(IQ_simul_big), digits = 4)
 plotb <- ggplot(data = data.frame(x = IQ_simul), aes(x)) +
   geom_histogram(binwidth=6, col=blueshade, fill=blueshade, alpha=0.6) +
   scale_x_continuous(breaks = seq(60, 140, 20)) +
-  ylab("Frekvens\n") +
-  xlab("\nIQ-skår") 
+  xlab("\nIQ-skår") +
+  theme(
+    axis.title.y = element_blank(),
+    axis.text.y = element_blank(),
+    axis.ticks.y = element_blank(),
+    axis.line.y = element_blank()
+  )
 
 plotc <- ggplot(data = data.frame(x = IQ_simul_big), aes(x)) +
   geom_histogram(binwidth=6, col=blueshade, fill=blueshade, alpha=0.6) +
   scale_x_continuous(breaks = seq(60, 140, 20)) +
-  ylab("Frekvens\n") +
-  xlab("\nIQ-skår") 
+  xlab("\nIQ-skår") +
+  theme(
+    axis.title.y = element_blank(),
+    axis.text.y = element_blank(),
+    axis.ticks.y = element_blank(),
+    axis.line.y = element_blank()
+  )
 
 gridExtra::grid.arrange(plota, plotb, plotc, ncol = 3)
 ```
@@ -77,8 +92,7 @@ tibble(
   "Navn på utregnede størrelser" = c("Populasjonsparametre", "Observatorer"),
   "Eksempler på utregnede størrelser" = c("Populasjonens gjennomsnitt,\nPopulasjonens standardavvik,\nPopulasjonens maksimumsverdi,\nPopulasjonens variasjonsbredde","Utvalgets gjennomsnitt,\nUtvalgets standardavvik,\nUtvalgets maksimumsverdi,\nUtvalgets variasjonsbredde")
 ) |> 
-  tt(width = 1)
-
+  tt(width = c(2,3,6))
 ```
 
 
@@ -95,9 +109,7 @@ La oss anta at vi gjennomførte en mye større studie, denne gangen hvor vi mål
 #| 
 #| fig-cap: Et tilfeldig utvalg trukket fra en normalfordeling ved hjelp av jamovi
 #| fig-alt: Et jamovi-skjermbilde vises. Det inkluderer menyer for variabelmanipulering og dataanalyse. En beregnet variabel "IQsim" vises med en formel. En tabell lister opp numeriske IQsim-verdier, og et histogram med deskriptiv statistikk vises til høyre
-#| fig-height: 4
-#| fig-width: 8
-#| fig-pos: 'h!'
+#| out-width: "100%"
 knitr::include_graphics("images/fig8-5.png")
 ```
 
@@ -151,7 +163,7 @@ simuls <- simuls |>
 simul_means <- simuls |> pull("Utvalgets gjennomsnitt")
 
 simuls |> 
-  tt() |> 
+  tt(width = 1) |> 
   format_tt(digits = 1, num_mark_dec = ",", num_zero = TRUE)
 ```
 
@@ -242,7 +254,7 @@ ggplot(data = sdm_data_max, aes(x = sample_max )) +
     axis.text.y = element_blank())
 ```
 
-@fig-estimatio-IQ-max viser oss også noe annet: å regne ut maksimumsverdien til utvalget vil ikke være noe godt estimat for maksimumsverdien i populasjonen -- det vil nesten garantert gi et for lavt estimat! Dette betyr at utvalgsobservatoren for maksimumsverdien _ikke_ er noe godt estimat på populasjonsparameteren. Man kan altså ikke forvente at hvis man regner ut en verdi for utvalget ditt, så vil dette være et godt estimat på den tilsvarende populasjonsparameteren. At det gjaldt for gjennomsnittet, slik vi så i @fig-estimation-IQ-simuls, er altså ganske spesielt.
+@fig-estimation-IQ-max viser oss også noe annet: å regne ut maksimumsverdien til utvalget vil ikke være noe godt estimat for maksimumsverdien i populasjonen -- det vil nesten garantert gi et for lavt estimat! Dette betyr at utvalgsobservatoren for maksimumsverdien _ikke_ er noe godt estimat på populasjonsparameteren. Man kan altså ikke forvente at hvis man regner ut en verdi for utvalget ditt, så vil dette være et godt estimat på den tilsvarende populasjonsparameteren. At det gjaldt for gjennomsnittet, slik vi så i @fig-estimation-IQ-simuls, er altså ganske spesielt.
 
 ### Sentralgrenseteoremet og standardfeilen {#sec-central-limit-theorem}
 
@@ -430,12 +442,12 @@ En siste innvending: I @sec-descriptive-sd regnet vi ut standardavviket med jamo
 > *Statistics means never having to say you're certain*\
 > -- Ukjent opprinnelse[^08-estimating-unknown-quantities-from-a-sample-8]
 
-[^08-estimating-unknown-quantities-from-a-sample-8]: Dette sitatet dukker opp på svært mange t-skjorter og nettsteder, og får til og med omtale i noen akademiske artikler (f.eks. [https://jse.amstat.org/v10n3/friedman.html](https://jse.amstat.org/v10n3/friedman.html)), men jeg har aldri funnet den opprinnelige kilden.
+[^08-estimating-unknown-quantities-from-a-sample-8]: Dette sitatet dukker opp på svært mange t-skjorter, nettsteder og enkelte akademiske artikler (f.eks. [https://jse.amstat.org/v10n3/friedman.html](https://jse.amstat.org/v10n3/friedman.html)), men jeg har aldri funnet den opprinnelige kilden.
 
 Våre estimater av populasjonsparametre blir aldri helt nøyaktige, og vi trenger en måte å uttrykke usikkerheten i estimatene på. For eksempel ville det vært fint å kunne si at det er en $95\%$ sjanse for at det sanne gjennomsnittet ligger i _dette_ intervallet. Navnet på dette er et **konfidensintervall** for gjennomsnittet.
 
 Siden vi skjønner utvalgsfordelinger er det ganske enkelt å konstruere et konfidensintervall for gjennomsnittet. Vi vet fra [sentralgrenseteoremet](#sec-central-limit-theorem) at utvalgsfordelingen til gjennomsnittet er omtrent normal. Vi vet fra [kapittelet om normalfordelinger](sec-probability-normal) at det er en $95\%$ sjanse for at en normalfordelt størrelse vil falle innenfor omtrent to standardavvik fra det sanne gjennomsnittet. Eller, for å være helt presis, det er en $95\%$ sjanse for at en normalfordelt størrelse vil falle innenfor $1.96$ standardavvik fra det sanne gjennomsnittet. Husk at standardavviket til utvalgsfordelingen omtales som standardfeilen. Når vi setter sammen disse tre ingrediensene får vi at det er 95% sannsynlighet for at utvalgets gjennomsnitt, som vi faktisk har observert, ligger innenfor $1.96$ standardfeil fra populasjonsgjennomsnittet.
-^[Selvfølgelig er det ingenting spesielt med tallet $1.96$. Det er bare tilfeldigvis multiplikatoren du trenger å bruke hvis du vil ha et $95\%$ konfidensintervall. Hvis jeg hadde ønsket et $70\%$ konfidensintervall, ville jeg ha brukt $1.04$ som det magiske tallet i stedet for $1.96$.]
+^[Selvfølgelig er det ingenting spesielt med tallet $1{,}96$. Det er bare tilfeldigvis multiplikatoren du trenger å bruke hvis du vil ha et $95\%$ konfidensintervall. Hvis jeg hadde ønsket et $70\%$ konfidensintervall, ville jeg ha brukt $1{,}04$ som det magiske tallet i stedet for $1{,}96$.]
 
 I [eksempelet om IQen i Upssala]{#sec-estimation-population-mean} var estimatet på populasjonens gjennomsnitt $107$ og standardfeilen $1,6$. Da regner vi nedre grense for konfidensintervallet slik $107 - 1{,}6*1{,}96 = 103,9$ og øvre grense slik $107 + 1{,}6*1{,}96 = 110,1$. Da er 95% konfidensintervall fra 103,9 til 110,1. Man ser dette skrevet i artikler slik som dette:
 
@@ -534,7 +546,7 @@ knitr::include_graphics("images/fig-estimation-jamovi-CI.png")
 
 Svaret blir at gjennomsnittet er 54,9 95% CI [54,6; 55,1], men vær obs, utvalget i ICCS er ikke et enkelt tilfeldig utvalg, det er et tilfeldig klyngeutvalg, så dette konfidensintervallet er for lite.
 
-Du kan også visualisere konfidensintervaller i jamovi, men dessverre kun når du sammenlikner flere gjennomsnitt. Det skal vi gjøre i @sec-Comparing-several-means-one-way-ANOVA.
+Du kan også visualisere konfidensintervaller i jamovi, men dessverre kun når du sammenlikner flere gjennomsnitt. Det skal vi gjøre i @sec-means.
 
 ## Sammendrag
 

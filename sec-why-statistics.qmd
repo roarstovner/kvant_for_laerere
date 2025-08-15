@@ -1,6 +1,6 @@
-\placetextbox{0.26}{0.06}{\scriptsize{©2025 D.R. Foxcroft and D.J. Navarro,}}
-\placetextbox{0.195}{0.05}{\scriptsize{CC BY-SA 4.0}}
-\placetextbox{0.70}{0.06}{\scriptsize{\url{https://doi.org/10.11647/OBP.0333.01}}}
+<!-- \placetextbox{0.26}{0.06}{\scriptsize{©2025 D.R. Foxcroft and D.J. Navarro,}} -->
+<!-- \placetextbox{0.195}{0.05}{\scriptsize{CC BY-SA 4.0}} -->
+<!-- \placetextbox{0.70}{0.06}{\scriptsize{\url{https://doi.org/10.11647/OBP.0333.01}}} -->
 
 # Hvorfor lære statistikk?
 
@@ -19,7 +19,7 @@ $$ $$ <!---- bug...need this here otherwise tables don't render latex in html ou
 > *A social science*\
 > -- W.H. Auden[^why-do-we-learn-statistics-1]
 
-[^why-do-we-learn-statistics-1]: Sitatet kommer fra Audens dikt fra 1946, *Under Which Lyre: A Reactionary Tract for the Times*, som ble fremført som en del av avslutningstalen ved Harvard University. Historien bak diktet er ganske interessant, se Adam Kirschs analyse i *Harvard Magazine*, [https://www.harvardmagazine.com/2007/11/a-poets-warning.html](https://www.harvardmagazine.com/2007/11/a-poets-warning.html)
+[^why-do-we-learn-statistics-1]: Sitatet kommer fra Audens dikt fra 1946, *Under Which Lyre: A Reactionary Tract for the Times*, som var en advarsel om samfunnsutviklingen etter andre verdenskrig.
 
 Mange blir overrasket over at de skal lære seg kvantitativ metode i lærerutdanninga. Hvis du virkelig digget statistikk ville du sannsynligvis vært påmeldt et statistikkurs nå, ikke et obligatorisk kurs i vitenskapsteori og metode for lærere. Likevel er studentmassen på OsloMet, hvor jeg jobber, delt på midten i synet på kvantitativ metode; mange ser ikke vitsen, mens mange setter pris på å ha blitt tvunget gjennom stoffet, fordi de setter pris på at de bedre kan forholde seg til utdanningsforskning etterpå. Dessuten er mange nysgjerrige på hvordan man har funnet ut av alt som er blitt undervist på lærerutdanninga, og for å vite det må man vite noe om forskningsmetode, blant annet kvantitativ metode.
 
@@ -27,7 +27,7 @@ Jeg tror mange forskere som bruker statistikk glemmer å begrunne for andre og, 
 
 Det fremste formålet med boka er å gi kunnskapen som trengs for å vurdere slike påstander som Duckworth kom med. Lærere blir bombardert med påstander begrunnet med kvantitative data hele tiden, påstander om elevers lesekompetanse fra PISA-undersøkelsen, om læringseffekten av et nytt IKT-verktøy fra de som ønsker å selge det, og så videre. Hvis man kan vurdere kvantitativ forskning står man bedre rustet til å forholde deg kritisk til alt dette. Et tilleggsformål er å gi et grunnlag i hvordan man utfører kvantitativ metode for de som kan tenke seg å benytte kvantitative metoder i mastergraden sin.
 
-### En advarsel mot sunn fornuft: Forbannelsen ved eksisterende oppfatninger
+## En advarsel mot sunn fornuft: Forbannelsen ved eksisterende oppfatninger
 
 Vi starter med et underkapittel for å svare på følgende spørsmål: 
 
@@ -124,9 +124,8 @@ tt(
 )
 ```
 
-På grunn av kjønnsfordelingen var de bekymret for å bli saksøkt![^why-do-we-learn-statistics-4] Med nesten 13,000 søkere er en forskjell på 9 % i opptaksratene mellom menn og kvinner altfor stor til å være tilfeldig. Ganske overbevisende data, ikke sant? Vi trenger ikke noe fancy statistikk, det er nok med litt sunn fornuft for å skjønne at kvinner ble diskriminert, man må jo lytte til dataene. Men hva hvis jeg sa til deg at disse dataene *faktisk* reflekterte en svak skjevhet til fordel for kvinner (på en måte!)? Du ville antakelig trodd at jeg var gal, kvinnefiendtlig eller begge.
+På grunn av kjønnsfordelingen var de bekymret for å bli saksøkt! Med nesten 13,000 søkere er en forskjell på 9 % i opptaksratene mellom menn og kvinner altfor stor til å være tilfeldig. Ganske overbevisende data, ikke sant? Vi trenger ikke noe fancy statistikk, det er nok med litt sunn fornuft for å skjønne at kvinner ble diskriminert, man må jo lytte til dataene. Men hva hvis jeg sa til deg at disse dataene *faktisk* reflekterte en svak skjevhet til fordel for kvinner (på en måte!)? Du ville antakelig trodd at jeg var gal, kvinnefiendtlig eller begge.
 
-[^why-do-we-learn-statistics-4]: Tidligere versjoner av denne boka foreslo feilaktig at University of California faktisk ble saksøkt, men det er ikke sant. Alex Reinhart skrev en fin kommentar om dette her: [https://www.refsmmat.com/posts/2016-05-08-simpsons-paradox-berkeley.html](https://www.refsmmat.com/posts/2016-05-08-simpsons-paradox-berkeley.html) En stor takk til Wilfried Van Hirtum for å påpeke dette.
 
 Merkelig nok er dette faktisk delvis sant. Da folk så nærmere på opptaksdataene, viste de en litt annen historie [@Bickel1975]. Spesielt da de så på opptakene fakultet for fakultet viste det seg at de fleste fakultetene faktisk hadde en litt *høyere* suksessrate for kvinnelige søkere enn for mannlige søkere. @tbl-tab1-5 viser opptaksdata for de seks største fakultetene (med navnene på fakultetene fjernet av personvernhensyn):
 
@@ -198,7 +197,7 @@ Jeg håper at eksemplene ovenfor hjalp med å forstå hvorfor kvantitative metod
 
 Kvantitative undersøkelser og statistikk danner ofte grunnlaget for beslutninger i utdanningssektoren.
 
-- PISA-undersøkelser og andre internasjonale komparative studier brukes som argument for reformer og endringer i skolesystemet !!!@sec-ILSA.
+- PISA-undersøkelser og andre internasjonale komparative studier brukes som argument for reformer og endringer i skolesystemet.
 - Nasjonale prøver påvirker prioriteringer og ressursfordeling i skolen.
 - Elevundersøkelser om trivsel, mobbing og læringsmiljø danner grunnlag for tiltak for å bedre elevenes kår.
 - Statistikk om karakterer og gjennomføring brukes til å vurdere skolekvalitet og elevprestasjoner. 

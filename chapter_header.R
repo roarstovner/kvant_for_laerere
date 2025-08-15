@@ -25,7 +25,7 @@ jamovi_qual_palette <- deframe(jamovi_qual_palette)
 marquee_style <- classic_style()
 
 ## ggplot options ------
-theme_set(theme_minimal(base_size = 13))
+theme_set(theme_minimal(base_size = 14))
 theme_update(
   panel.grid.major = element_blank(),
   panel.grid.minor = element_blank(),

@@ -1,6 +1,6 @@
-\placetextbox{0.26}{0.06}{\scriptsize{©2025 D.R. Foxcroft and D.J. Navarro,}}
-\placetextbox{0.195}{0.05}{\scriptsize{CC BY-SA 4.0}}
-\placetextbox{0.70}{0.06}{\scriptsize{\url{https://doi.org/10.11647/OBP.0333.07}}}
+<!-- \placetextbox{0.26}{0.06}{\scriptsize{©2025 D.R. Foxcroft and D.J. Navarro,}} -->
+<!-- \placetextbox{0.195}{0.05}{\scriptsize{CC BY-SA 4.0}} -->
+<!-- \placetextbox{0.70}{0.06}{\scriptsize{\url{https://doi.org/10.11647/OBP.0333.07}}} -->
 
 # Sannsynlighet {#sec-probability}
 
@@ -131,7 +131,8 @@ Selv om folk er rivende uenige i hva sannsynlighet er og hvordan sannsynligheter
 Vi bruker buksene mine for å illustrere hva sannsynlighetsfordelinger er. Jeg eier fem par bukser og de har jeg gitt navnene $X_1$, $X_2$, $X_3$, $X_4$ og $X_5$. Hver dag velger jeg ut nøyaktig ett par bukser å ha på meg. Med sannsynlighetsteoriens språk, ville jeg omtalt hver bukse (dvs. hver $X_i$) som en elementær hendelse. En **elementær hendelse** er at hver gang vi gjør en observasjon (f.eks. hver gang jeg tar på meg et par bukser), så vil utfallet være én og bare én av disse hendelsene. Jeg har alltid på meg nøyaktig ett par bukser, så buksene mine tilfredsstiller denne begrensningen. På samme måte kalles mengden med alle mulige hendelser (altså $X_1, X_2, ..., X_5$) for et **utfallsrom**. Andre ville kanskje kalt det et "garderobeskap".
 
 OK, nå som vi vet at et utfallsrom er bygget opp av mange elementære hendelser ønsker vi å tildele en **sannsynlighet** til hver elementære hendelse. For en hendelse $X_i$ er sannsynligheten for den hendelsen $P(X_i)$ et tall som ligger mellom 0 og 1. Jo større verdien til $P(X)$ er, desto mer sannsynlig er det at hendelsen inntreffer. For eksempel, hvis $P(X) = 0$ betyr det at hendelsen $X$ er umulig (dvs. jeg har aldri på meg de buksene
-^[De som husker den frekventistiske definisjonen av sannsynlighet vil kanskje kverulere og si at andelen ganger $X$ inntreffer må gå mot null når $N$ går mot uendelig, og at det derfor _er_ mulig. De har rett.]). På den andre siden, hvis $P(X) = 1$ betyr det at hendelsen $X$ er sikker (dvs. jeg har alltid på meg de buksene)^[Samme innvending gjelder her.]. For sannsynlighetsverdier i midten betyr det at jeg noen ganger har på meg de buksene. For eksempel, hvis $P(X) = 0.5$ betyr det at jeg har på meg de buksene halvparten av tiden.
+^[De som husker den frekventistiske definisjonen av sannsynlighet vil kanskje kverulere og si at det bare er *andelen* ganger $X$ inntreffer som må gå mot null når $N$ går mot uendelig, og at det derfor _er_ mulig. De har rett.]
+). På den andre siden, hvis $P(X) = 1$ betyr det at hendelsen $X$ er sikker (dvs. jeg har alltid på meg de buksene)^[Samme innvending gjelder her.]. For sannsynlighetsverdier i midten betyr det at jeg noen ganger har på meg de buksene. For eksempel, hvis $P(X) = 0.5$ betyr det at jeg har på meg de buksene halvparten av tiden.
 
 Til sist har vi **loven om total sannsynlighet**, som sier at sannsynligheten til de elementære hendelsene må summere til 1, altså at det er sikkert at en av hendelsene inntreffer. Hver gang jeg tar på meg bukser, ender jeg faktisk opp med å ha på meg bukser. Når disse kravene er oppfylt har vi det som kalles en **sannsynlighetsfordeling**. For eksempel viser @tbl-probability-pants oet eksempel på en sannsynlighetsfordeling. Hver av hendelsene har en sannsynlighet som ligger mellom 0 og 1, og hvis vi adderer sannsynligheten for alle hendelsene summerer de seg til 1. Flott. Vi kan til og med tegne et fint stolpediagram (se @sec-diagram-bar) for å visualisere denne fordelingen, som vist i @fig-probability-pants.
 
@@ -243,7 +244,7 @@ Fordelingene i disse figurene ser kanskje kjente ut, og det er nok fordi de likn
 ### Normalfordelingen {#sec-probability-normal}
 
 Selv om binomialfordelingen er den enkleste fordelingen å forstå, er den ikke den viktigste. Den spesielle æren tilhører normalfordelingen, også omtalt som "the bell curve", siden den likner litt på en bjelle, eller en "Gausskurve", etter Carl Friedrich Gauss, som utledet fordelingen for å beskrive feilene i astronomiske observasjoner. En **normalfordeling** beskrives ved hjelp av to parametere: gjennomsnittet til fordelingen $\mu$, "my", og standardavviket til fordelingen $\sigma$, "sigma".
-^[Hvis dere ønsker en følelse for hvordan det matematiske uttrykket til normalfordelingen er, værsågod: $$p(X|\mu, \sigma) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(X-\mu)^2}{2\sigma^2}}$$ Wow, hva gjør $\pi$ der?!]
+^[Hvis dere ønsker en føling med hvordan det matematiske uttrykket til normalfordelingen er, værsågod: $$p(X|\mu, \sigma) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(X-\mu)^2}{2\sigma^2}}$$ Wow, hva gjør $\pi$ der?!]
 Notasjonen som vi noen ganger bruker for å si at en variabel $X$ er normalfordelt er som følger:
 $$X \sim Normal(\mu,\sigma)$$
 
@@ -263,9 +264,11 @@ ggplot(data = data.frame(x = seq(-3, 3, 1)), aes(x)) +
 
 ```
 
-Legg merke til at i motsetning til figurene jeg tegnet for å illustrere binomialfordelingen, viser bildet av normalfordelingen i @fig-probability-standard-normal en jevn kurve i stedet for "histogram-lignende" søyler. Dette er fordi normalfordelingen er kontinuerlig mens binomialfordelingen ikke er det.
-^[Det er et subtilt og noe frustrerende kjennetegn ved kontinuerlige fordelinger som gjør at y-aksen oppfører seg litt merkelig -- høyden på kurven her er faktisk ikke sannsynligheten for å observere en bestemt $x$-verdi. Men det _er_ sant at høydene på kurven forteller deg hvilke $x$-verdier som er mer sannsynlige (de høyere!). $y$-verdiene viser en "sannsynlighetstetthet", som du kan lese om et annet sted, hvis du er interessert.]
-For eksempel, i terningkast-eksemplet fra forrige seksjon var det mulig å få 3 kron eller 4 kron, men umulig å få 3,9 kron. Figurene jeg tegnet i forrige delkapittel reflekterte dette. I @fig-probability-binomial, for eksempel, er det en søyle plassert ved $X = 3$ og en annen ved $X = 4$, men det er ingenting imellom. Kontinuerlige fordelinger har ikke denne begrensningen. I praksis er normalfordelingen så praktisk at folk har en tendens til å bruke den selv når variabelen faktisk ikke er kontinuerlig. Så lenge det er nok kategorier (f.eks. en 5-punkts Likert-spørsmål på et spørreskjema), er det ganske standard praksis å bruke normalfordelingen som en tilnærming. Dette fungerer mye bedre enn du skulle tro.
+Legg merke til at i motsetning til figurene jeg tegnet for å illustrere binomialfordelingen, viser bildet av normalfordelingen i @fig-probability-standard-normal en jevn kurve i stedet for "histogram-lignende" søyler. Dette er fordi normalfordelingen er kontinuerlig mens binomialfordelingen ikke er det. For eksempel, i terningkast-eksemplet fra forrige seksjon var det mulig å få 3 kron eller 4 kron, men umulig å få 3,9 kron. Figurene jeg tegnet i forrige delkapittel reflekterte dette. I @fig-probability-binomial, for eksempel, er det en søyle plassert ved $X = 3$ og en annen ved $X = 4$, men det er ingenting imellom. Kontinuerlige fordelinger har ikke denne begrensningen. I praksis er normalfordelingen så praktisk at folk har en tendens til å bruke den selv når variabelen faktisk ikke er kontinuerlig. Så lenge det er nok kategorier (f.eks. en 5-punkts Likert-spørsmål på et spørreskjema), er det ganske standard praksis å bruke normalfordelingen som en tilnærming. Dette fungerer mye bedre enn du skulle tro.
+
+::: {.callout-note}
+Det er et subtilt og noe frustrerende kjennetegn ved kontinuerlige fordelinger som gjør at y-aksen oppfører seg litt merkelig -- høyden på kurven her er faktisk ikke sannsynligheten for å observere en bestemt $x$-verdi. Men det _er_ sant at høydene på kurven forteller deg hvilke $x$-verdier som er mer sannsynlige (de høyere!). $y$-verdiene viser en "sannsynlighetstetthet", som du kan lese om et annet sted, hvis du er interessert.
+:::
 
 La oss nå se om vi kan få en intuisjon for hvordan normalfordelingen fungerer. Først ser vi hva som skjer når vi leker med parametrene til fordelingen. @fig-probability-normals-mean viser derfor normalfordelinger som har forskjellige gjennomsnitt, men samme standardavvik. Alle disse fordelingene samme "bredde". Den eneste forskjellen mellom dem er at de har blitt forskjøvet til venstre eller høyre. På alle andrem åter er de identiske. Derimot, hvis vi øker standardavviket mens vi holder gjennomsnittet konstant, forblir fordelingen sentrert på samme sted, men fordelingen blir bredere, som du kan se i @fig-probability-normals-sd. Legg merke til at når vi utvider fordelingen, synker høyden på toppen. Dette må skje, for på samme måte som høydene på søylene vi brukte til å tegne en diskret binomialfordeling må summere til 1, må det totale arealet under kurven for normalfordelingen være lik 1.
 
@@ -410,9 +413,9 @@ ggplot(data = data.frame(x = seq(0, 10, 1)), aes(x)) +
   xlab("\nObservert Verdi") 
 ```
 
-**$\chi^2$-fordelingen** dukker opp mange steder i statistikk. Vi vil se den når vi analyserer kategoriske variable i @sec-Categorical-data-analysis, men den er faktisk svært vanlig. Matematisk sett oppstår $\chi^2$-fordelingen når vi har flere normalfordelte variabler, kvadrerer verdiene deres og legger dem sammen (en "sum av kvadrater"). Dette viser seg å være utrolig nyttig! @fig-probability-chi-square viser hvordan en $\chi^2$-fordeling ser ut.
+**$\chi^2$-fordelingen** dukker opp mange steder i statistikk. Vi vil se den når vi analyserer kategoriske variable i @sec-categorical, men den er faktisk svært vanlig. Matematisk sett oppstår $\chi^2$-fordelingen når vi har flere normalfordelte variabler, kvadrerer verdiene deres og legger dem sammen (en "sum av kvadrater"). Dette viser seg å være utrolig nyttig! @fig-probability-chi-square viser hvordan en $\chi^2$-fordeling ser ut.
 
-**$F$-fordelingen** ligner litt på $\chi^2$-fordelingen og brukes når vi skal sammenligne to $\chi^2$-fordelinger. Dette høres kanskje rart ut, men er faktisk svært viktig i dataanalyse. Siden $\chi^2$ er nøkkelfordelingen for "summer av kvadrater", bruker vi $F$-fordelingen når vi vil sammenligne to forskjellige "summer av kvadrater". Vi skal se eksempler på dette i @sec-Comparing-several-means-one-way-ANOVA. @fig-probability-F viser hvordan $F$-fordelingen ser ut.
+**$F$-fordelingen** ligner litt på $\chi^2$-fordelingen og brukes når vi skal sammenligne to $\chi^2$-fordelinger. Dette høres kanskje rart ut, men er faktisk svært viktig i dataanalyse. Siden $\chi^2$ er nøkkelfordelingen for "summer av kvadrater", bruker vi $F$-fordelingen når vi vil sammenligne to forskjellige "summer av kvadrater". Vi skal se eksempler på dette i @sec-means. @fig-probability-F viser hvordan $F$-fordelingen ser ut.
 
 La oss oppsummere: Vi har nå møtt to nye fordelinger - $\chi^2$ og $F$. Disse er kontinuerlige fordelinger og er nært beslektet med normalfordelingen. Det viktigste å forstå er at disse fordelingene henger tett sammen med hverandre og med normalfordelingen. Senere i boken vil vi støte på data som er normalfordelt, eller som vi antar er normalfordelt. Når du gjør denne antagelsen, vil du ofte se $\chi^2$-, $t$- og $F$-fordelinger dukke opp naturlig i dataanalysen din.
 

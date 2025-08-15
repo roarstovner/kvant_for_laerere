@@ -13,11 +13,11 @@ lightbox:
 book: 
   title: Kvantitative metoder for lærere
   author: "Danielle Navarro, David Foxcroft og Roar Bakken Stovner"
-  #subtitle: A Tutorial for Beginners in Statistical Analysis
+  subtitle: Vitenskapsteori og metode, MGVM4100, OsloMet
   date: last-modified
-  date-format: "D MMMM YYYY"
+  date-format: "MMMM YYYY"
   # cover-image: images/cover.png
-  # downloads: pdf
+  downloads: pdf
   reader-mode: true
   sidebar:
     align: left
@@ -33,13 +33,13 @@ book:
       #<a href="https://learnstatswithjamovi.com">learning statistics with jamovi</a>
     right: |
       Denne boka ble laget i <a href="https://quarto.org/">Quarto</a> 
-  site-url: "kvant.roarstovner.no"
+  site-url: "https://kvant.roarstovner.no"
   repo-url: "https://github.com/roarstovner/kvant_for_laerere"
   #repo-actions: [edit,issue]
   open-graph: true
   google-analytics: "G-FRV7C65B01"
 
-  chapters: 
+  chapters:
     - index.qmd
     - sec-why-statistics.qmd
     - part: Studiedesign
@@ -59,10 +59,7 @@ book:
       chapters:
          - sec-categorical.qmd
          - sec-means.qmd
-    #      - sec-correlation.qmd
-    # - Epilogue.qmd
     - sec-references.qmd
-    #- obp-team.qmd
 
 bibliography: refs.bib
 csl: apa.csl
@@ -110,25 +107,26 @@ format:
   #   fig-align: left
   #   include-in-header: header-includes.html
   #   epub-cover-image: images/cover.pdf
-  # pdf:
-  #   title: Kvantitativ metode for lærere
-  #   #mainfont: "TeX Gyre Pagella"
-  #   documentclass: book
-  #   papersize: a4
-  #   #params:
-  #       #endnotes: true
-  #   include-in-header:
-  #     - preamble.tex
-  #   include-before-body:
-  #     - first.tex
-  #     - before-body.tex
-  #   # include-after-body:
-  #   #    text: \printendnotes
-  #   toc: true
-  #   colorlinks: true
-  #   #fig-align: left
-  #   fig-pos: 'h!'
-  #   reference-location: margin
+  pdf:
+    title: Kvantitativ metode for lærere
+    #mainfont: "TeX Gyre Pagella"
+    documentclass: book
+    papersize: a4
+    keep-tex: true
+    #params:
+        #endnotes: true
+    include-in-header:
+      - preamble.tex
+    #include-before-body:
+    # - first.tex
+    # - before-body.tex
+    # include-after-body:
+    #    text: \printendnotes
+    toc: true
+    colorlinks: true
+    #fig-align: left
+    fig-pos: 'h!'
+    reference-location: margin
 
 crossref:
   title-delim: "."

@@ -1,6 +1,6 @@
-\placetextbox{0.26}{0.06}{\scriptsize{©2025 D.R. Foxcroft and D.J. Navarro,}}
-\placetextbox{0.195}{0.05}{\scriptsize{CC BY-SA 4.0}}
-\placetextbox{0.70}{0.06}{\scriptsize{\url{https://doi.org/10.11647/OBP.0333.09}}}
+<!-- \placetextbox{0.26}{0.06}{\scriptsize{©2025 D.R. Foxcroft and D.J. Navarro,}} -->
+<!-- \placetextbox{0.195}{0.05}{\scriptsize{CC BY-SA 4.0}} -->
+<!-- \placetextbox{0.70}{0.06}{\scriptsize{\url{https://doi.org/10.11647/OBP.0333.09}}} -->
 
 # Hypotesetesting {#sec-testing}
 
@@ -416,9 +416,9 @@ Testen finnes i jamovi som en av de statistiske analysene som er tilgjengelige n
 
 ```{r}
 #| label: fig-fig9-4
-#| classes: .enlarge-image
 #| fig-cap: Resultater av binomialtest-analyse i jamovi
 #| fig-alt: Et jamovi-skjermbilde av en binomialtest med to utfall. Grensesnittet inkluderer en seksjoner for å velge variabler, justere hypoteser, se resultater og vise referanser. Resultat-seksjonen viser andeler, p-verdier og konfidensintervaller.
+#| out-width: "100%"
 knitr::include_graphics("images/fig9-4.png")
 ```
 

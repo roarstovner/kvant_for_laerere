@@ -1,6 +1,6 @@
-\placetextbox{0.26}{0.06}{\scriptsize{©2025 D.R. Foxcroft and D.J. Navarro,}}
-\placetextbox{0.195}{0.05}{\scriptsize{CC BY-SA 4.0}}
-\placetextbox{0.70}{0.06}{\scriptsize{\url{https://doi.org/10.11647/OBP.0333.10}}}
+<!-- \placetextbox{0.26}{0.06}{\scriptsize{©2025 D.R. Foxcroft and D.J. Navarro,}} -->
+<!-- \placetextbox{0.195}{0.05}{\scriptsize{CC BY-SA 4.0}} -->
+<!-- \placetextbox{0.70}{0.06}{\scriptsize{\url{https://doi.org/10.11647/OBP.0333.10}}} -->
 
 ```{r}
 #| include: FALSE
@@ -68,12 +68,12 @@ Uffda, det var ikke så lett å se ut fra tabellen om dataene var relatert eller
 
 ```{r}
 #| label: tbl-categorical-contingency-pct
-#| tbl-cap: Krysstabell med prosenter for _Forventet utdanning_ og _Kjønn_. Prosentene er regnet ut per kjønn, slik at tallet øverst til venstre betyr 9,7% av jentene ser for seg ungdomsskole som høyeste utdanning.
+#| tbl-cap: Krysstabell med prosenter for *Forventet utdanning* og *Kjønn*. Prosentene er regnet ut per kjønn, slik at tallet øverst til venstre betyr 9,7\% av jentene ser for seg ungdomsskole som høyeste utdanning.
 
-ICCS |>
-  tabyl(`Forventet utdanning`, Kjønn, show_missing_levels = FALSE, show_na = FALSE) |> adorn_percentages("col") |>
-  adorn_pct_formatting(affix_sign = TRUE, digits = 1) |> 
-  tt()
+# ICCS |>
+#   tabyl(`Forventet utdanning`, Kjønn, show_missing_levels = FALSE, show_na = FALSE) |> adorn_percentages("col") |>
+#   adorn_pct_formatting(affix_sign = TRUE, digits = 1) |> 
+#   tt()
 ```
 
 Denne tabellen gjør det mye lettere å se om det er en sammenheng mellom variablene, og det ser det kanskje ut til at det er? For eksempel er det mye større andel av jentene som ser for seg å ta høyere utdanning. Spørsmålet som stilles i hypotesetesten er om forskjellene vi ser i tabellen er store nok til å kunne forkaste nullhypotesen om at det ikke er noen sammenheng mellom _Kjønn_ og _Forventet utdanning_.
@@ -82,23 +82,13 @@ Denne tabellen gjør det mye lettere å se om det er en sammenheng mellom variab
 
 Nå må vi konstruere en testobservator, altså et tall som vi regner ut på bakgrunn av dataene, som er egnet til å uttale seg om nullhypotesen kan falsifiseres. Idéen bak testobservatoren er at under nullhypotesen har vi en forventning om hvor mange deltagere som skulle vært i hver celle i krysstabellen. Hvis den forventede verdien avviker mye fra den observerte verdien har vi dårlig samsvar med nullhypotesen, så disse avvikene kan brukes til å lage en testobservator. I @tbl-categorical-contingency-expected har jeg vist de forventede verdiene for hver celle i krysstabellen, sammen med de verdiene vi faktisk observerte.
 
-::: {#tbl-categorical-contingency-expected}
+```{r}
+#| label: tbl-categorical-contingency-expected
+#| tbl-cap: Krysstabell for _Forventet utdanning_ og _Kjønn_ som viser både de observerte og de verdiene vi hadde forventet om nullhypotesen var korrekt.
+#| out-width: "100%"
 
-| Forventet utdanning | | | Jente | | Gutt | | Annet | | Total | |
-|---|---|---|---|---|---|---|---|---|---|---|
-| **Ungdomsskole** | | Observert | 407 | | 512 | | 47 | | 966 | |
-| | | Forventet | 470 | | 473 | | 22.3 | | 966 | |
-| **VGS** | | Observert | 787 | | 1088 | | 36 | | 1911 | |
-| | | Forventet | 930 | | 937 | | 44.1 | | 1911 | |
-| **Kort utdanning** | | Observert | 531 | | 836 | | 38 | | 1405 | |
-| | | Forventet | 684 | | 689 | | 32.4 | | 1405 | |
-| **Høyere utdanning** | | Observert | 2453 | | 1771 | | 77 | | 4301 | |
-| | | Forventet | 2094 | | 2108 | | 99.2 | | 4301 | |
-| **Total** | | Observert | 4178 | | 4207 | | 198 | | 8583 | |
-| | | Forventet | 4178 | | 4207 | | 198.0 | | 8583 | |
-
-Krysstabell for _Forventet utdanning_ og _Kjønn_ som viser både de observerte og de verdiene vi hadde forventet om nullhypotesen var korrekt.
-:::
+knitr::include_graphics("images/fig-categorical-contingency-expected.png")
+```
 
 For å regne ut de forventede verdiene gjør man følgende. For ruten øverst til venstre, antall jenter som ser for seg ungdomsskole som høyeste utdanning, regnet jeg først ut hvor stor andel av hele utvalget som ser for seg ungdomsskole som høyeste utdanning. Dette er 966 elever av totalt 8583 elever, som gir at $\frac{966}{8583} = 11{,}3\%$. Det er 4178 jenter i utvalget og nullhypotesen forventer at jentene har samme andel som ser for seg ungdomsskole som høyeste utdanning, 11,3%, altså $4178\cdot 0{,}113 = 470$ jenter.
 

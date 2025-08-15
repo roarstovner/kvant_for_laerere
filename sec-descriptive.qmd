@@ -1,6 +1,6 @@
-\placetextbox{0.26}{0.06}{\scriptsize{©2025 D.R. Foxcroft and D.J. Navarro,}}
-\placetextbox{0.195}{0.05}{\scriptsize{CC BY-SA 4.0}}
-\placetextbox{0.70}{0.06}{\scriptsize{\url{https://doi.org/10.11647/OBP.0333.04}}}
+<!-- \placetextbox{0.26}{0.06}{\scriptsize{©2025 D.R. Foxcroft and D.J. Navarro,}} -->
+<!-- \placetextbox{0.195}{0.05}{\scriptsize{CC BY-SA 4.0}} -->
+<!-- \placetextbox{0.70}{0.06}{\scriptsize{\url{https://doi.org/10.11647/OBP.0333.04}}} -->
 
 # Deskriptiv statistikk {#sec-descriptive}
 
@@ -9,7 +9,7 @@
 source("chapter_header.R")
 ```
 
-Hver gang du skal analysere et nytt datasett, må du finne måter å beskrive dataene på en kompakt og lett forståelig måte. Dette kalles **deskriptiv statistikk**, eller beskrivende statistikk. Merk at når man beskriver dataene, så beskriver man kun utvalget, og statistikken som sier noe om populasjonen kommer senere i @sec-inferential.
+Hver gang du skal analysere et nytt datasett, må du finne måter å beskrive dataene på en kompakt og lett forståelig måte. Dette kalles **deskriptiv statistikk**, eller beskrivende statistikk. Merk at når man beskriver dataene, så beskriver man kun utvalget, og statistikken som sier noe om populasjonen kommer senere i @sec-estimation.
 
 ```{r}
 ICCS <- readRDS("data_and_tables/ICCS.RDS")
@@ -18,7 +18,7 @@ n_elever <- nrow(ICCS)
 ```
 
 
-Det har blitt ganske vanlig å høre begrunnelser som "det er det dataene viser" eller formaninger som "du må se på dataene, dummen!" Jeg tror ikke man kan lære så mye ved å se på dataene, men vi får vel prøve, da, og se hvor mye klokere vi blir. Jeg har forberedt et lite datasett fra den store internasjonale undersøkelsen ICCS, International Civic and Citizenship Education Study. Dette datasettet inneholder variable for kjønn, skole, land, trinn, forventet høyeste fullførte utdanning og en samlevariabel for hvor enig man er i at kjønnene bør ha like rettigheter. Datasettet har `r n_elever` rader, én rad for hver elev, men vi viser bare 50 rader:
+Det har blitt ganske vanlig å høre begrunnelser som "det er det dataene viser" eller formaninger som "du må se på dataene, dummen!" Jeg tror ikke man kan lære så mye ved å se på dataene, men vi får vel prøve, da, og se hvor mye klokere vi blir. Jeg har forberedt et lite datasett fra den store internasjonale undersøkelsen ICCS, International Civic and Citizenship Education Study. Dette datasettet inneholder variable for kjønn, skole, land, trinn, forventet høyeste fullførte utdanning og en samlevariabel for hvor enig man er i at kjønnene bør ha like rettigheter. Datasettet har `r n_elever` rader, én rad for hver elev, men vi viser bare 50 rader. Se i @tbl-ICCS-data for å se hva dataene viser.
 
 ```{r}
 #| label: tbl-ICCS-data
@@ -39,11 +39,11 @@ La oss åpne filen i et statistikkprogram. For å gjøre dette åpner vi filen *
 #| label: fig-descriptive-ICCS-data
 #| fig-cap: Et skjermbilde av jamovi som viser variablene lagret i filen *ICCS.csv*
 #| fig-alt: Et jamovi-skjermbilde viser et dataanalysegrensesnitt med 7 kolonner. Én kolonne med numeriske data er merket "likestilling".
-#| classes: .enlarge-image
+#| out-width: "100%"
 knitr::include_graphics("images/fig-descriptive-iccs-data.png")
 ```
 
-For å få en forståelse av dataene, må vi beregne deskriptiv statistikk (dette kapittelet) og lage noen fine figurer (@sec-graphs). Vi skal først beskrive de nominelle og ordinale dataene. Disse er markert med et symbol med tre prikker, og er altså _Land_, _Trinn_, _Kjønn_ og _Forventet utdanning_.
+For å få en forståelse av dataene, må vi beregne deskriptiv statistikk (dette kapittelet) og lage noen fine figurer (@sec-diagram). Vi skal først beskrive de nominelle og ordinale dataene. Disse er markert med et symbol med tre prikker, og er altså _Land_, _Trinn_, _Kjønn_ og _Forventet utdanning_.
 
 ## Frekvenstabeller og krysstabeller
 
@@ -57,7 +57,6 @@ En **frekvenstabell** viser hvor mange du har av hver verdi for én variabel. I 
 #| label: fig-descriptive-jamovi-frequency
 #| fig-cap: Frekvenstabell for _Forventet utdanning_
 #| out-width: "100%"
-#| classes: .enlarge-image
 
 knitr::include_graphics("images/fig-descriptive-jamovi-frequency.png")
 ```
@@ -72,14 +71,13 @@ Du lager dette i jamovi ved å velge analysen "Frequencies" → "Contingency Tab
 
 ```{r}
 #| label: fig-descriptive-jamovi-contingency
-#| classes: .enlarge-image
 #| fig-cap: Krysstabeluring av _Forventet utdanning_ og _Land_
 #| out-width: "100%"
 #| fig-alt: Et jamovi-skjermbilde som viser en krysstabell-analyse. Det venstre panelet viser alternativer for å velge rader, kolonner, antall og lag med "Forventet utdanning" og "Land" valgt. Det høyre panelet viser den resulterende krysstabellen.
 knitr::include_graphics("images/fig-descriptive-jamovi-contingency.png")
 ```
 
-Ikke bekymre deg for "$\chi^2$ Tests"-tabellen som blir laget. Vi kommer tilbake til dette senere i @sec-Categorical-data-analysis. 
+Ikke bekymre deg for "$\chi^2$ Tests"-tabellen som blir laget. Vi kommer tilbake til dette senere i @sec-categorical. 
 
 Når du tolker krysstabellen, husk at "Observed" viser antall observasjoner. For eksempel betyr verdien 550 i første rad at 550 av de spanske elevene i utvalget ser for seg å ta en kort utdanning (for eksempel ett- til to-årig fagskole). I kolonnen "% within columns" står det at dette utgjør 16,5% av et eller annet. Siden vi valgte "% within columns" er det prosentandelen innenfor landet, altså "16,5% av de spanske elevene ser for seg kort utdanning". Hvis vi hadde valgt "% within rows" hadde det betydd "% av elevene som ser for seg kort utdanning er spanske."
 
@@ -105,7 +103,7 @@ Alle spørsmålene virker jo å måle likestilling på en fin måte, men i Norge
 ```{r}
 #| label: fig-descriptive-ICCS-histogram
 #| fig-cap: Et histogram av variabelen _Likestilling_ fra ICCS 2022.
-#| fig-alt: Histogram som viser variabelen _Likestilling_. Den horisontale aksen ($x$-aksen) strekker seg fra fra 15 til 70, og den vertikale aksen (y-aksen) viser tetthet, altså hvor mange svar som havner innad i hver søyle.
+#| fig-alt: Histogram som viser variabelen _Likestilling_. Den horisontale aksen (x-aksen) strekker seg fra fra 15 til 70, og den vertikale aksen (y-aksen) viser tetthet, altså hvor mange svar som havner innad i hver søyle.
 
 source("R/jamovi-histogram.R")
 ICCS |> 
@@ -164,7 +162,6 @@ Straks du har gjort dette dukker en tabell med standard deskriptiv statistikk op
 
 ```{r}
 #| label: fig-descriptive-jamovi-mean
-#| classes: .enlarge-image
 #| fig-cap: Standard deskriptiv statistikk for variabelen _Likestilling_.
 #| out-width: "100%"
 #| fig-alt: Et skjermbilde fra jamovi som viser resultater fra deskriptiv analyse. Til venstre kan man velge variable og dele opp dataene. Til høyre vises deskriptiv statistikk for "Likestilling" med verdier for N, Missing, Mean, Median, Standard deviation, Minimum og Maximum.
@@ -280,23 +277,23 @@ I @fig-descriptive-jamovi-mode har jeg valgt variabelen "Kjønn" ved å dra den 
 
 For å finne ut av hva typetallet 2 betyr, må du trykke på 'Variables' → 'Kjønn' → 'Edit', se @fig-descriptive-jamovi-gender. Du kan se at "Jente" er lagret som 1, "Gutt" som 2 og "Annet" som 3. Typetallet 2 er altså "Gutt", så det er flest gutter i datasettet.
 
-```{r out.wdith="100%"}
+```{r}
 #| label: fig-descriptive-jamovi-gender
-#| classes: .enlarge-image
 #| fig-cap: Et skjermbilde av jamovi som viser informasjon om variabelen _Kjønn_.
 #| fig-alt: Et jamovi-skjermbilde for analyse av variabelen Kjønn. Det står at _Kjønn_ er en nominell variabel der \"Jente\" er lagret som 1, \"Gutt\" er lagret som 2, og \"Annet\" er lagret som 3.
 #| fig-pos: 'H'
+#| out-width: "100%"
 knitr::include_graphics("images/fig-descriptive-jamovi-gender.png")
 ```
 
 En mer tilfredsstillende måte å finne typetallet på er å telle opp antallet av alle verdiene. Dette kalles å lage en **frekvenstabell**. I jamovi kan man akkurat som før trykke på "Analyses" → "Exploration" → "Descriptives", men nå kan man velge "Frequency table", se @fig-descriptive-jamovi-frequency-table.
 
-```{r out.wdith="100%"}
+```{r}
 #| label: fig-descriptive-jamovi-frequency-table
-#| classes: .enlarge-image
 #| fig-cap: Et skjermbilde av jamovi som viser frekvenstabell til _Kjønn_.
 #| fig-alt: Et skjermbilde av jamovi som viser frekvenstabell til _Kjønn_.
 #| fig-pos: 'H'
+#| out-width: "100%"
 knitr::include_graphics("images/fig-descriptive-jamovi-frequency-table.png")
 ```
 
@@ -308,7 +305,7 @@ Alt vi har sett på så langt handler om sentraltendens, altså hvilke verdier s
 
 La oss utforske fire ulike måter å måle spredning på ved hjelp av ICCS-dataene. Hvert spredningsmål har sine egne fordeler og ulemper, så det er nyttig å kjenne til flere. 
 
-### Variasjonsbredde @sec-descriptive-range
+### Variasjonsbredde {#sec-descriptive-range}
 
 **Variasjonsbredden** er det aller enkleste spredningsmålet. Den regnes ut ved å ta den største verdien minus den minste verdien. I @fig-descriptive-jamovi-dispersion
 
@@ -318,6 +315,7 @@ La oss utforske fire ulike måter å måle spredning på ved hjelp av ICCS-datae
 #| fig-cap: Et skjermbilde av hvordan man finner ulike spredningsmål i jamovi
 #| fig-alt: Et skjermbilde av jamovi som likner på de foregående, men der boksene for "Dispersion" er krysset av; Std. deviation, Variance, Range, Minimum, Maximum
 #| fig-pos: 'H'
+#| out-width: "100%"
 knitr::include_graphics("images/fig-descriptive-jamovi-dispersion.png")
 ```
 
@@ -397,7 +395,10 @@ avvik |>
 Variansen er definert som gjennomsnittet av alle disse kvadratiske avvikene. Fra jamovi sine utregninger ser vi at variansen til _Likestilling_ var 133. Hvis du husker histogrammet i @fig-descriptive-ICCS-histogram, så stusser du sikkert litt nå, for verdiene på _Likestilling_ strakk seg fra ca. 15 til ca. 70. Hvordan kan det da gi mening at variansen er 133? Svaret er at det ikke gir mening og at variansen er vanskelig å tolke.
 
 Grunnen til at variansen er vanskelig å tolke er fordi vi kvadrerer alle verdiene. Hvis vi sier _Likestilling_ blir målt i "likestillingspoeng", så blir et avvik på 12,2 likestillingspoeng til et kvadratisk avvik på 148,84 "kvadratlikestillingspoeng". Det er en enhet jeg ikke klarer å se for meg. For å vise hvor absurd det er: se for deg at gjennomfører en 12 minutters løpstest i kroppsøving -- Cooper-testen -- for alle elevene på skolen og regner du ut at gjennomsnittlig løpslengde er 2300 meter og at variansen er 16000 _kvadratmeter_. For meg er ikke et areal et meningsfullt mål for spredningen av elevenes løpsdistanser! Grunnen til at varians likevel er et viktig spredningsmål er fordi har så mange gode matematiske egenskaper, men de skal vi ikke gå inn på videre, men de gjør at varians er motoren i nesten all statistikk.
-^[Hvis du er nysgjerrig: Den kanskje viktigste egenskapen er at **varianser er additive**. Det betyr at hvis du har to variabler $X$ og $Y$ med varianser $Var(X)$ og $Var(Y)$ og du lager en ny variabel $Z = X + Y$, så blir variansen til $Z$ ganske enkelt $Var(X) + Var(Y)$. Dette ligger bak utsagn som "foreldrenes utdanningsbakgrunn forklarer 30% av elevenes skoleresultater". (Jeg fant på dette tallet, altså.)]
+
+::: {.callout-note}
+Hvis du er nysgjerrig på variansen sine matematiske kvaliteter: Den kanskje viktigste egenskapen er at **varianser er additive**. Det betyr at hvis du har to variabler $X$ og $Y$ med varianser $Var(X)$ og $Var(Y)$ og du lager en ny variabel $Z = X + Y$, så blir variansen til $Z$ ganske enkelt $Var(X) + Var(Y)$. Dette ligger bak utsagn som "foreldrenes utdanningsbakgrunn forklarer 30% av elevenes skoleresultater". 
+:::
 
 Så hvordan tolker du variansen? Deskriptiv statistikk skal tross alt beskrive ting og variansen virker bare som et meningsløst tall som er helt ubrukelig hvis du vil kommunisere med et faktisk menneske. Løsningen er standardavviket.
 
@@ -521,7 +522,7 @@ skewplots <- lapply(1:3, function(i) {
         axis.text.y = element_blank(),
         axis.ticks.y = element_blank(),
         axis.line.y = element_blank(),
-        plot.title = element_text(hjust = 0.5, size = rel(0.6)))
+        plot.title = element_text(hjust = 0.5, size = rel(1))) #fra 0.6
   })
 library(patchwork)
 skewplots[[1]] + skewplots[[2]] + skewplots[[3]]
@@ -531,9 +532,11 @@ skewplots[[1]] + skewplots[[2]] + skewplots[[3]]
 
 Det er svært vanlig at du trenger å se på deskriptiv statistikk for forskjellige undergrupper i dataene dine. Det hadde for eksempel vært interessant å vite om de spanske og norske elevene svarer forskjellig på variabelen _Likestilling_. Eller kanskje om de som ser for seg høyere utdanning svarer forskjellig fra de som seg for seg å stoppe utdanningen etter videregående. Slike spørsmål er svært interessante, og derfor er undergruppeanalyser ofte det masterstudenter benytter til å besvare forskningsspørsmålene sine.
 
-Vi titter på noen rader fra ICCS-dataene våre igjen:
+Vi titter på noen rader fra ICCS-dataene våre igjen, se @tbl-ICCS-five-first.
 
 ```{r}
+#| label: tbl-ICCS-five-first
+#| tbl-cap: De fem første linjene fra ICCS-dataene, men uten variabelen "Sosioøkonomisk status"
 five_first |> tt()
 ```
 Vi ser at de undergruppene vi ønsker å undersøke (Norge/Spania, Høyere utdanning/VGS) er de forskjellige verdiene til nominelle eller ordinale variable (henholdsvis _Land_ og _Forventet utdanning_. En måte å tenke på verdiene til nominelle og ordinale variable er altså som undergrupper.
@@ -544,9 +547,9 @@ Dette er ganske enkelt å gjøre i jamovi. For å regne ut deskriptiv statistikk
 
 ```{r}
 #| label: fig-descriptive-jamovi-equality-x-gender
-#| classes: .enlarge-image
 #| fig-cap: Et skjermbilde av jamovi som viser _Likestilling_ for de forskjellige verdiene av _Kjønn_
 #| fig-alt: Et jamovi-skjermbilde som viser at _Kjønn_ er lagt til i vinduet "Split by". Da vises deskriptiv statistikk for Gutt, Jente og Annet i et vindu til høyre
+#| out-width: "100%"
 knitr::include_graphics("images/fig-descriptive-jamovi-equality-x-gender.png")
 ```
 
@@ -556,9 +559,9 @@ Vi kan også lure på om det er forskjell mellom Norge og Spania for hvert kjøn
 
 ```{r}
 #| label: fig-descriptive-jamovi-equality-x-gender-country
-#| classes: .enlarge-image
 #| fig-cap: Et skjermbilde av jamovi som viser _Likestilling_ for de forskjellige verdiene av _Kjønn_ og _Land_
 #| fig-alt: Et jamovi-skjermbilde som viser at _Kjønn_ og _Land_ er lagt til i vinduet "Split by". Da vises deskriptiv statistikk for Gutt, Jente og Annet separat for hvert land i et vindu til høyre
+#| out-width: "100%"
 knitr::include_graphics("images/fig-descriptive-jamovi-equality-x-gender-country.png")
 ```
 
@@ -572,14 +575,14 @@ Hittil har alt dreid seg om å beskrive dataene som helhet, men dette delkapitte
 
 Det er ofte nødvendig å regne ut en standardskår fordi måleenheten i seg selv ikke sier så mye. Hvis jeg svarte på spørreskjemaet i ICCS-studien, kunne jeg spurt forskerne "Hvor mye var jeg for likestilling?" og de kunne svart "58", men svaret ville ikke vært særlig informativt. Det ville vært mye mer informativt hvis de svarte "Du skåret `r sprintf("%1.0f%%", (58 - likestilling_mean)/likestilling_sd*100)` over gjennomsnittet." Det er akkurat dette en standardskår er.
 
-En **standardskår** (også kalt en _z_-skår) er definert til å være antall standardavvik unna gjennomsnittet. Jeg fikk standardskåren $z = 0,58$, mens en mer vanlig norsk gutt i ICCS-studien hadde kanskje fått $z = -0,3$, som betyr at han svarte 30% av et standardavvik under gjennomsnittet. Man kan regne det ut slik:
+En **standardskår** (også kalt en _z_-skår) er definert til å være antall standardavvik unna gjennomsnittet. Jeg fikk standardskåren $z = 0{,}58$, mens en mer vanlig norsk gutt i ICCS-studien hadde kanskje fått $z = -0,3$, som betyr at han svarte 30% av et standardavvik under gjennomsnittet. Man kan regne det ut slik:
 $$\text{standardskår} = \frac{\text{opprinnelig skår} - \text{gjennomsnitt}}{\text{standardavvik}}$$
 
-Man kan tolke denne verdien på ca. samme måte som standardavviket. Hvis du husker tommelfingerregelen om standardavviket (68% av verdiene er innenfor ett standardavvik av gjennomsnittet), så skjønner du at 68% av verdiene er mellom $z = -1$og $z = 1$, 95% av verdiene ligger mellom $z = -2$ og $z = 2$ og 99% av verdiene ligger mellom $z = -3$ og $z = 3$.
+Man kan tolke denne verdien på ca. samme måte som standardavviket. Hvis du husker tommelfingerregelen om standardavviket (68% av verdiene er innenfor ett standardavvik av gjennomsnittet), så skjønner du at 68% av verdiene er mellom $z = -1$ og $z = 1$, 95% av verdiene ligger mellom $z = -2$ og $z = 2$ og 99% av verdiene ligger mellom $z = -3$ og $z = 3$.
 
-Du har sett standardskår en gang tidligere i kapittelet. I figur @fig-descriptive-sd-rule var det to x-akser, en på bunn og en på topp. x-aksen på bunnen viste de opprinnelige skårene på _Likestilling_, mens x-aksen på topp viste standardskårene. Dette er det indre blikket jeg har på standardskårer; standardskåren $z = 0,58$ ser jeg for meg som en verdi litt til høyre for gjennomsnittet på et fint normalfordelt histogram.
+Du har sett standardskår en gang tidligere i kapittelet. I figur @fig-descriptive-sd-rule var det to x-akser, en på bunn og en på topp. x-aksen på bunnen viste de opprinnelige skårene på _Likestilling_, mens x-aksen på topp viste standardskårene. Dette er det indre blikket jeg har på standardskårer; standardskåren $z = 0{,}58$ ser jeg for meg som en verdi litt til høyre for gjennomsnittet på et fint normalfordelt histogram.
 
-I tillegg til å la deg tolke en verdi i forhold til resten av dataene dine (som dermed lar deg forstå variabler på skalaer, slik som _Likestilling_), har standardskårer en annen nyttig funksjon. De kan sammenlignes med hverandre i noen situasjoner der de opprinnelige skårene ikke kan det. Anta for eksempel at vennen min, Bård, svarte på et annet spørreskjema som målte holdning til likestilling mellom kjønnene, og han fikk skår 4. Verdien jeg fikk på ICCS sitt spørreskjema, 58, er overhodet ikke sammenliknbar med verdien han fikk på det andre spørreskjemaet, 4. Men hvis vi vet at Bård sin standardskår var $z = 3,1$ kan vi sammenlikne verdiene. Siden jeg fikk $z = 0,58$ var Bård sin skår mye høyere. Min skår betyr at jeg skårte over gjennomsnittet i min studie, men ikke veldig langt over. Bård sin skår betyr at han svarte himmelhøyt over, han må være likestillingens fanebærer! I hvert fall lå den mange flere standardavvik over gjennomsnittet i hans studie. Hvis utvalget i Bårds studie var medlemmene i "Norsk Forening for Tradisjonelle Kjønnsrolle", så ville det ikke betydd så mye at han skåret himmelhøytover gjennomsnittet. Derfor er standardskårene kun sammenliknbare hvis utvalgene er det.
+I tillegg til å la deg tolke en verdi i forhold til resten av dataene dine (som dermed lar deg forstå variabler på skalaer, slik som _Likestilling_), har standardskårer en annen nyttig funksjon. De kan sammenlignes med hverandre i noen situasjoner der de opprinnelige skårene ikke kan det. Anta for eksempel at vennen min, Bård, svarte på et annet spørreskjema som målte holdning til likestilling mellom kjønnene, og han fikk skår 4. Verdien jeg fikk på ICCS sitt spørreskjema, 58, er overhodet ikke sammenliknbar med verdien han fikk på det andre spørreskjemaet, 4. Men hvis vi vet at Bård sin standardskår var $z = 3{,}1$ kan vi sammenlikne verdiene. Siden jeg fikk $z = 0{,}58$ var Bård sin skår mye høyere. Min skår betyr at jeg skårte over gjennomsnittet i min studie, men ikke veldig langt over. Bård sin skår betyr at han svarte himmelhøyt over, han må være likestillingens fanebærer! I hvert fall lå den mange flere standardavvik over gjennomsnittet i hans studie. Hvis utvalget i Bårds studie var medlemmene i "Norsk Forening for Tradisjonelle Kjønnsrolle", så ville det ikke betydd så mye at han skåret himmelhøytover gjennomsnittet. Derfor er standardskårene kun sammenliknbare hvis utvalgene er det.
 
 ## Oppsummering
 

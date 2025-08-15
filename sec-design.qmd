@@ -1,6 +1,6 @@
-\placetextbox{0.26}{0.06}{\scriptsize{©2025 D.R. Foxcroft and D.J. Navarro,}}
-\placetextbox{0.195}{0.05}{\scriptsize{CC BY-SA 4.0}}
-\placetextbox{0.70}{0.06}{\scriptsize{\url{https://doi.org/10.11647/OBP.0333.01}}}
+<!-- \placetextbox{0.26}{0.06}{\scriptsize{©2025 D.R. Foxcroft and D.J. Navarro,}} -->
+<!-- \placetextbox{0.195}{0.05}{\scriptsize{CC BY-SA 4.0}} -->
+<!-- \placetextbox{0.70}{0.06}{\scriptsize{\url{https://doi.org/10.11647/OBP.0333.01}}} -->
 
 # Forskningsdesign i kvantitativ metode {#sec-design}
 
@@ -42,13 +42,13 @@ Et sentralt problem med prediksjonsmodeller er at de forutsigelsene man ønsker 
 
 ### Finne årsaksforhold
 
-Det tredje formålet med kvantitativ utdanningsforskning er å finne årsaksforhold, altså ikke bare beskrive eller predikere noe, men å forklare årsaken til at det er slik. Dette kalles å stadfeste **kausalitet**. Når vi kan etablere kausalitet, kan vi si at en variabel faktisk forårsaker endringer i en annen variabel. Man uttrykker ofte årsaker med piler. Hvis årsaken er $A$ og virkningen er $B$ kan man uttrykke "$A$ forårsaker $B$ som $A \rightarrow B$. Man kaller $A$ for **årsaken** og $B$ for **virkningen** eller **effekten**.
+Det tredje formålet med kvantitativ utdanningsforskning er å finne årsaksforhold, altså ikke bare beskrive eller predikere noe, men å forklare årsaken til at det er slik. Dette kalles å stadfeste **kausalitet**. Når vi kan etablere kausalitet, kan vi si at en variabel faktisk forårsaker endringer i en annen variabel. Man uttrykker ofte årsaker med piler. Hvis årsaken er $A$ og virkningen er $B$ kan man uttrykke "$A$ forårsaker $B$" som $A \rightarrow B$. Man kaller $A$ for **årsaken** og $B$ for **virkningen** eller **effekten**.
 
 La oss se på et eksempel på kausalitet. På en skole sliter de med at elevene på femtetrinn har for dårlig engelsk ordforråd. De setter i gang en klassekonkurranse, der den klassen som får høyest gjennomsnitt på en stor gloseprøve på slutten av året vinner. På slutten av året finner de at femtetrinn skårer skyhøyt på ordforråd. Da har klassekonkurransen **forårsaket** en forbedring i ordforråd, altså
 $$\text{klassekonkurranse}\rightarrow\text{økt ordforråd}$$
 Vi kan si det er en **kausal sammenheng** mellom klassekonkurransen og ordforrådet; økt ordforråd var en **virkning** av klassekonkurransen.
 
-Årsaksforklaringer er viktige i utdanningsforskning fordi hvis vi vet hva som forårsaker noe, så har vi ofte kontroll over det og kan endre det. Hvis vi hadde visst hva som forårsaket det dårlige engelsk-ordforrådet kunne vi fjernet årsaken, og fordi vi vet at klassekonkurransen har en kausal effekt på ordforrådet kan vi utbedre det. Hvis vi hadde visst hva som forårsaket at gutter oftere ikke fullfører videregående enn jenter kunne vi kanskje gjort noe med det. Kunnskap om årsaker er viktige for lærere, rektorer, kommuner, politikere -- rett og slett for alle som vil endre skolefeltet til det bedre. Hvis vi hadde visst hva som hadde fått norske elever til å trives enda bedre på skolen og skåre høyere på internasjonale undersøkelser er jeg temmelig sikker på at politikere kunne satt av penger til det. Problemet er å finne ut at noe forårsaker noe annet, å stadfeste kausalitet.
+Årsaksforklaringer er viktige i utdanningsforskning fordi hvis vi vet hva som forårsaker noe, så har vi ofte kontroll over det og kan endre det. Hvis vi hadde visst hva som forårsaket det dårlige engelsk-ordforrådet kunne vi fjernet årsaken, og fordi vi vet at klassekonkurransen har en kausal effekt på ordforrådet kan vi utbedre det. Hvis vi hadde visst hva som forårsaket at gutter oftere ikke fullfører videregående enn jenter kunne vi kanskje gjort noe med det. Kunnskap om årsaker er viktige for lærere, rektorer, kommuner, politikere -- rett og slett for alle som vil endre skolefeltet til det bedre. Hvis vi hadde visst hva som hadde fått norske elever til å trives enda bedre på skolen og skåre høyere på internasjonale undersøkelser er jeg temmelig sikker på at politikere kunne satt av penger til det. Problemet er at å finne ut at noe forårsaker noe annet, altså å stadfeste kausalitet, er vanskelig.
 
 ## Variablenes roller: avhengige og uavhengige variable
 
@@ -61,22 +61,35 @@ Jeg må innrømme at jeg synes disse navnene er problematiske. De er vanskelige 
 ```{r}
 #| label: tbl-design-var-names
 #| tbl-cap: "Navn på variablenes roller"
-
 tt(
   tibble(
     `variabelens rolle` = c("skal forklares", "skal forklare"),
-    `matematisk symbol` = c("$Y$", "$X$"),
+    `matematisk symbol` = c("Y", "X"),
     `klassisk navn` = c("avhengig variabel", "uavhengig variabel"),
     `beskrivende navn` = c("utfall", "forklaringsvariabel"),
     `predikerende navn` = c("utfall", "prediktor"),
     `årsaksforklarende navn` = c("utfall", "årsaksvariabel")
-  )
+  ) |>
+    pivot_longer(-`variabelens rolle`, names_to = "navn", values_to = "verdi") |>
+    pivot_wider(names_from = `variabelens rolle`, values_from = verdi)
 ) |> 
-  format_tt(j = 2, math = TRUE)
+  format_tt(i = 1, j = 2:3, math = TRUE)
+
+# tt(
+#   tibble(
+#     `variabelens rolle` = c("skal forklares", "skal forklare"),
+#     `matematisk symbol` = c("$Y$", "$X$"),
+#     `klassisk navn` = c("avhengig variabel", "uavhengig variabel"),
+#     `beskrivende navn` = c("utfall", "forklaringsvariabel"),
+#     `predikerende navn` = c("utfall", "prediktor"),
+#     `årsaksforklarende navn` = c("utfall", "årsaksvariabel")
+#   )
+# ) |> 
+#   format_tt(j = 2, math = TRUE)
 ```
 
 
-[^02-a-brief-introduction-to-research-design-6]: Det finnes dessverre mange forskjellige navn som brukes i litteraturen. Jeg vil ikke liste alle - det ville ikke tjene noen hensikt - bortsett fra å nevne at "responsvariabel" noen ganger brukes der jeg har brukt "utfall". Denne typen terminologisk forvirring er dessverre svært vanlig i forskningsfeltet.
+[^02-a-brief-introduction-to-research-design-6]: Det finnes dessverre mange forskjellige navn som brukes i litteraturen. Jeg vil ikke liste alle -- det ville ikke tjene noen hensikt -- bortsett fra å nevne at "responsvariabel" noen ganger brukes der jeg har brukt "utfall". Denne typen terminologisk forvirring er dessverre svært vanlig i forskningsfeltet.
 
 ## Eksperimentelle studier og observasjonsstudier
 
@@ -96,9 +109,11 @@ En sentral innsikt i kvantitativ forskning er at korrelasjon ikke nødvendigvis 
 
 La oss analysere korrelasjonen i detalj. La oss kalle antall bøker for $A$ og leseferdighet for $B$. Hvis det hadde vært en årsakssammenheng mellom $A$ og $B$, altså $A\rightarrow B$, så hadde $A$ og $B$ vært korrelerte, og korrelasjonen hadde oppstått på grunn av årsakssammenhengen mellom $A$ og $B$. Vi kan oppsummere det i en regel
 
-> *En årsakssammenheng $A\rightarrow B$ skaper en korrelasjon mellom $A$ og $B$.*[^design-regel]
+> *En årsakssammenheng $A\rightarrow B$ skaper en korrelasjon mellom $A$ og $B$.*
 
-[^design-regel]: Vel, dette er ikke helt sant. For eksempel kan noen prøve å hindre at $B$ inntreffer. Det å utføre et vellykket ran, $A$, kan gjør deg mer tilbøyelig til å utføre flere ran, $B$, men $B$ vil ikke inntreffe hvis man blir arrestert først. Et annet eksempel er at å påføre kraft på en boks vil forårsake at boksen flytter seg, men det gjelder ikke hvis boksen står inntil en vegg.
+::: {.callout-warning}
+Vel, regelen er sann i de fleste tilfeller. Men det *kan* være at $A$ har en årsakspåvirkning på $B$, men så er det noe som hindrer $B$ fra å inntreffe. Det å utføre et vellykket ran, $A$, kan gjør deg mer tilbøyelig til å utføre flere ran, $B$, men $B$ vil ikke inntreffe hvis man blir arrestert først. I så tilfelle vil ikke $A$ og $B$ bli korrelert. Du kan sammenlikne det med å påføre kraft på en boks; det vil forårsake at boksen flytter seg (korrelasjon mellom _å påføre kraft_ og _bevegelse_), men det gjelder ikke hvis boksen står inntil en vegg.
+:::
 
 Dette er et nyttig resultat som jeg tror er enkelt å skjønne.
 
@@ -136,17 +151,18 @@ I eksempelet vårt betyr retningsproblemet at vi ikke vet om antall bøker hjemm
 
 ### Konfundere {#sec-design-konfunder}
 
-En **konfunder** [^sec-design-konfunder] til variablene $A$ og $B$ er en variabel $C$ som er slik at den påvirker både $A$ og $B$. Altså $C\rightarrow A$ og $C\rightarrow B$. Ofte tegner man dette i et diagram slik som dette:
+En **konfunder** til variablene $A$ og $B$ er en variabel $C$ som er slik at den påvirker både $A$ og $B$. Altså $C\rightarrow A$ og $C\rightarrow B$. Ofte tegner man dette i et diagram slik som dette:
 
-[^sec-design-konfunder]: "Konfunder" uttales med samme trykk som "vidunder". _Konfunder_ er en norsk oversettelse av det engelske _confounder_. Det finnes dessverre ingen vanlige oversettelser av _confounder_, og både tredjevariabel, forvirringsvariabel, forstyrrende variabel, og bakenforliggende faktor er i bruk, i tillegg til konfunder. Konfunder er like vanlige som disse, og jeg bruker konfunder slik at man lettere forstår ordet hvis man leser det på engelsk. Å konfundere [betyr egentlig å forvirre](https://naob.no/ordbok/konfundere).
+::: {.callout-note}
+"Konfunder" uttales med samme trykk som "vidunder". _Konfunder_ er en norsk oversettelse av det engelske _confounder_. Det finnes dessverre ingen vanlige oversettelser av _confounder_, og både tredjevariabel, forvirringsvariabel, forstyrrende variabel, og bakenforliggende faktor er i bruk, i tillegg til konfunder. Konfunder er like vanlige som disse, og jeg bruker konfunder slik at man lettere forstår ordet hvis man leser det på engelsk. Å konfundere [betyr egentlig å forvirre](https://naob.no/ordbok/konfundere).
+:::
 
-::: {#fig-confounder layout=[30,70]}
+::: {#fig-confounder  layout-ncol=1}
 
 ```{tikz}
 #| label: fig-confounder-general
 #| fig-cap: "Her er $C$ en konfunder for $A$ og $B$."
 #| fig-align: "center"
-#| out-width: 6cm
 \begin{tikzpicture}
   \node (A) at (0,0) {$A$};
   \node (B) at (2,0) {$B$};
@@ -161,7 +177,6 @@ En **konfunder** [^sec-design-konfunder] til variablene $A$ og $B$ er en variabe
 #| label: fig-confounder-reading
 #| fig-cap: "Her er \"foreldres leseinteresse\" en konfunder for korrelasjonen mellom \"antall bøker hjemme\" og \"leseforståelse\"."
 #| fig-align: "center"
-#| out-width: 12cm
 \begin{tikzpicture}
   \node (A) at (0,0) {antall bøker hjemme};
   \node (B) at (4,0) {leseforståelse};
@@ -177,19 +192,21 @@ Konfundere kan meget gjerne være grunnen til at det er en korrelasjon mellom an
 
 Det finnes statistiske teknikker for å fjerne påvirkningen til en konfunder. Dette kalles å "kontrollere for" eller å "ta hensyn til" variabelen, og er en av hovedgrunnene til å bruke, for eksempel, regresjonsanalyse, som du lærer om i @sec-regression. Slike statistiske teknikker kan fungere fint, men er ofte utilstrekkelige. Et hovedproblem er at man bare kan kontrollere for variable man har målt. I en stor studie kan det være man har målt 8-10 variable, og disse variablene kan man kontrollere for, men det finnes uendelig antall variable man ikke har målt. Derfor kan det finnes flere viktige konfundere man ikke har målt. Dette kalles **ikke-målt konfundering** og er et problem det ikke finnes statistiske teknikker for å unnslippe. Hvis du har tviholdt rundt håpet om å lære en statistisk teknikk som lar deg finne kausalitet i korrelasjoner bør du slippe taket nå -- dette håpet vil kun føre til skuffelse.
 
-At korrelasjon ikke betyr kausalitet høres enkelt ut, nesten banalt, men all erfaring viser at det ikke er enkelt -- folk tråkker rett og slett feil for ofte. I avisoverskrift etter avisoverskrift hører man om "sammenhengen mellom tomater og kreft" og liknende. Uten unntak er dette aviser som hinter til kausalitet (tomater fører til kreft) ut fra korrelasjoner (folk som spiser tomater får oftere kreft). Også i utdanningsforskning er det mange eksempler. I mange (hver eneste?) av årgangene av PISA-studiene er variabelen "utforskende arbeidsformer i naturfag" korrelert med lavere skår på variabelen "naturfagskompetanse" [@jensen2024]. Hver eneste gang benytter grupper som ønsker mer lærerstyrt undervisning dette resultatet til å skrike høyt om at utforskende arbeidsformer i naturfag gir dårligere resultater, altså en kausal slutning. Man benytter ganske enkelt kvantitativ forskning til å bekrefte eksisterende oppfatninger. (En god øving kan være å forklare hvorfor denne kausale slutningen ikke nødvendigvis holder, altså komme opp med noen konfundere eller vise at retningsproblemet kan gjelde? Se i fotnoten for fasit.[^design-confounder-fasit])
+At korrelasjon ikke betyr kausalitet høres enkelt ut, nesten banalt, men all erfaring viser at det ikke er enkelt -- folk tråkker rett og slett feil for ofte. I avisoverskrift etter avisoverskrift hører man om "sammenhengen mellom tomater og kreft" og liknende. Uten unntak er dette aviser som hinter til kausalitet (tomater fører til kreft) ut fra korrelasjoner (folk som spiser tomater får oftere kreft). Også i utdanningsforskning er det mange eksempler. I mange (hver eneste?) av årgangene av PISA-studiene er variabelen "utforskende arbeidsformer i naturfag" korrelert med lavere skår på variabelen "naturfagskompetanse" [@jensen2024]. Hver eneste gang benytter grupper som ønsker mer lærerstyrt undervisning dette resultatet til å skrike høyt om at utforskende arbeidsformer i naturfag gir dårligere resultater, altså en kausal slutning. Man benytter ganske enkelt kvantitativ forskning til å bekrefte eksisterende oppfatninger. (En god øving kan være å forklare hvorfor denne kausale slutningen ikke nødvendigvis holder, altså komme opp med noen konfundere eller vise at retningsproblemet kan gjelde? Se i informasjonsboksen for fasit.)
+
+::: {.callout-note}
+Retningsproblemet gjelder i hvert fall: Det kan være at hvis lærere har en elevgruppe som har lav naturfagskompetanse, så gjør man mye utforskende undervisning.
+
+En mulig konfunder kan være variabelen "læreren har spesialisering i naturfag". Lærere med spesialisering i naturfag vil kanskje gi elevene høyere naturfagskompetanse. Hvis lærerne med spesialisering i naturfag gjør mindre utforskende undervisning, vil det oppstå en korrelasjon mellom høy naturfagskompetanse hos elevene og lite utforskende undervisning.
+
+Foreldrepress er en annen mulig konfunder. Kanskje ønsker foreldrene til de akademisk sterkeste barna tradisjonell undervisning, ikke noe sånn "nymotens utforskende nånnsens", og legger press på læreren. I så fall vil "foreldrepress" konfundere korrelasjonen.
+
+Jeg må legge inn et tilbakeblikk til @sec-measurement også, fordi det er så nærliggende for meg å tro at korrelasjonen oppstår på grunn av svak måling av variabelen "utforskende undervisning". Variabelen "naturfagskompetanse" tror jeg er glitrende målt av PISA, for PISAs hovedformål er å måle elevenes kompetanse. Jeg tror derimot at "utforskende undervisning" er målt dårligere. For det første er det målt med spørreskjema til elevene, og jeg tror ikke elevene er så presise informanter om hvorvidt de har hatt utforskende undervisning. Variabelen er målt med Likert-spørsmål som _Students are given opportunities to explain their ideas_, og jeg tror sterke og svake elever svarer forskjellig på dette spørsmålet. Det kan jo være at svaktpresterende elever synes de blir spurt om å forklare ting alt for ofte, mens de høytpresterende gjerne skulle forklart ting oftere. Da vil svakt- og høytpresterende elever svare forskjellig på spørsmålet, selv om de har blitt spurt om å forklare ideene sine like ofte. Da vil korrelasjonen oppstå på grunn av en målefeil! 
+
+Måleproblemene er uendelige i dette tilfellet. Tror du at en norsk elev, en kinesisk elev og en estisk elev vil svare sammenliknbart på disse spørsmålene? Det _må_ de gjøre hvis det skal være noen vits i å sammenlikne på tvers av land! Man kan kose seg en hel helg med å tenke over alle måleproblemene som kan få denne korrelasjonen til å oppstå, noe jeg vil anbefale på det sterkeste.
+:::
 
 Man kan også gå i motsatt felle, at man blankt avviser alle årsaksforklaringer basert på at to variable er korrelert. Men husk, en kausal sammenheng mellom to variable skaper en korrelasjon. En korrelasjon er derfor et sterkt hint om at det kan være en kausal sammenheng mellom variablene og bør ikke avvises blankt. Om det er lurt å konkludere med kausalitet basert på en korrelasjon bør vurderes fra tilfelle til tilfelle, og vurderingen kommer til å avhenge av det teoretiske ståstedet ditt.
-
-[^design-confounder-fasit]: Retningsproblemet gjelder i hvert fall: Det kan være at hvis lærere har en elevgruppe som har lav naturfagskompetanse, så gjør man mye utforskende undervisning.
-
-    En mulig konfunder kan være variabelen "læreren har spesialisering i naturfag". Lærere med spesialisering i naturfag vil kanskje gi elevene høyere naturfagskompetanse. Hvis lærerne med spesialisering i naturfag gjør mindre utforskende undervisning, vil det oppstå en korrelasjon mellom høy naturfagskompetanse hos elevene og lite utforskende undervisning.
-  
-    Foreldrepress er en annen mulig konfunder. Kanskje ønsker foreldrene til de akademisk sterkeste barna tradisjonell undervisning, ikke noe sånn "nymotens utforskende nånnsens", og legger press på læreren. I så fall vil "foreldrepress" konfundere korrelasjonen.
-  
-    Jeg må legge inn et tilbakeblikk til @sec-measurement også, fordi det er så nærliggende for meg å tro at korrelasjonen oppstår på grunn av svak måling av variabelen "utforskende undervisning". Variabelen "naturfagskompetanse" tror jeg er glitrende målt av PISA, for PISAs hovedformål er å måle elevenes kompetanse. Jeg tror derimot at "utforskende undervisning" er målt dårligere. For det første er det målt med spørreskjema til elevene, og jeg tror ikke elevene er så presise informanter om hvorvidt de har hatt utforskende undervisning. Variabelen er målt med Likert-spørsmål som _Students are given opportunities to explain their ideas_, og jeg tror sterke og svake elever svarer forskjellig på dette spørsmålet. Det kan jo være at svaktpresterende elever synes de blir spurt om å forklare ting alt for ofte, mens de høytpresterende gjerne skulle forklart ting oftere. Da vil svakt- og høytpresterende elever svare forskjellig på spørsmålet, selv om de har blitt spurt om å forklare ideene sine like ofte. Da vil korrelasjonen oppstå på grunn av en målefeil! 
-  
-    Måleproblemene er uendelige i dette tilfellet. Tror du at en norsk elev, en kinesisk elev og en estisk elev vil svare sammenliknbart på disse spørsmålene? Det _må_ de gjøre hvis det skal være noen vits i å sammenlikne på tvers av land! Man kan kose seg en hel helg med å tenke over alle måleproblemene som kan få denne korrelasjonen til å oppstå, noe jeg vil anbefale på det sterkeste.
     
 ## Randomiserte kontrollstudier
 
@@ -208,7 +225,7 @@ Denne intervensjonen skulle påvirke forklaringsvariabelen _tankesett_ til å v�
 Noen uker etterpå var andre økt. Da målte forskerne først forklaringsvariabelen (tankesett) for å finne ut om intervensjonen hadde virket. Tankesettet var langt mer lærende i intervensjonsgruppa enn i kontrollgruppa (faktisk 56% av et standardavvik høyere), så forskerne konkluderte med at intervensjonen hadde lyktes. Deretter ga de en algebratest for å måle _iherdighet_ og _algebraferdighet_. Siden mange var fraværende fra den andre økta var det bare 289 elever som var til stede i begge øktene, altså 63% av de 458 elevene som ble spurt om å delta.
 
 
-Datafilen deres må da ha sett ca. slik ut:
+Datafilen deres må da ha sett ut omtrent som i @tbl-mindset-data:
 
 ```{r}
 #| label: tbl-mindset-data
@@ -225,7 +242,7 @@ tribble(
 
 ```
 
-Resultatene viste at intervensjonsgruppa skåret høyere på iherdighet, de valgte altså vanskelige algebraspørsmål oftere enn kontrollgruppa. (Forskjellen var 24% av et standardavvik.) De skåret også litt høyere på algebraferdighet (rundt 12 % av et standardavvik), men disse forskjellene var _ikke signifikante_, som betyr at man vil få så store forskjeller ganske ofte selv hvis intervensjonen ikke har effekt. Mer om dette i @sec-tests. Siden dette var en randomisert kontrollstudie er vi temmelig sikre på at forskjellene ikke skyldes at intervensjons- eller kontrollgruppa hadde annerledes gjennomsnittsverdi på iherdighet og algebraferdighet fra før av.
+Resultatene viste at intervensjonsgruppa skåret høyere på iherdighet, de valgte altså vanskelige algebraspørsmål oftere enn kontrollgruppa. (Forskjellen var 24% av et standardavvik.) De skåret også litt høyere på algebraferdighet (rundt 12 % av et standardavvik), men disse forskjellene var _ikke signifikante_, som betyr at man vil få så store forskjeller ganske ofte selv hvis intervensjonen ikke har effekt. Mer om dette i @sec-testing. Siden dette var en randomisert kontrollstudie er vi temmelig sikre på at forskjellene ikke skyldes at intervensjons- eller kontrollgruppa hadde annerledes gjennomsnittsverdi på iherdighet og algebraferdighet fra før av.
 
 Randomiserte kontrollstudier er ikke perfekte, og det er flere utfordringer vi bør være oppmerksomme på:
 
@@ -267,27 +284,24 @@ Det virker helt uoppnåelig å skaffe et representativt utvalg. Tenk på det, de
 
 For å holde ting enkle kan vi forestille oss at vi har en pose med 10 brikker. Hver brikke har sin egen unike bokstav, så vi kan skille dem fra hverandre. Brikkene kommer i to farger - svart og hvit. Dette settet med brikker er populasjonen vi er interessert i, og den er vist grafisk til venstre i @fig-design-unbiased. Som du kan se på bildet, er det 4 svarte brikker og 6 hvite brikker. Men i virkeligheten ville vi selvfølgelig ikke vite dette uten å kikke i posen først!
 
-La oss nå forestille oss at du kjører følgende "eksperiment": Du rister posen godt, lukker øynene og trekker ut 4 brikker uten å legge noen av dem tilbake. Først kommer $a$-brikken (svart), så $c$-brikken (hvit), deretter $j$ (hvit) og til slutt $b$ (svart). Hvis du har lyst, kan du legge alle brikkene tilbake i posen og gjenta hele eksperimentet - akkurat som vist på høyre side av @fig-design-unbiased. Hver gang vil du få forskjellige resultater, selv om du følger nøyaktig samme prosedyre. Dette at samme utvalgsmetode kan gi forskjellige utvalg hver gang, kaller vi et **tilfeldig utvalg**. [^08-estimating-unknown-quantities-from-a-sample-1]
+La oss nå forestille oss at du kjører følgende "eksperiment": Du rister posen godt, lukker øynene og trekker ut 4 brikker uten å legge noen av dem tilbake. Først kommer $a$-brikken (svart), så $c$-brikken (hvit), deretter $j$ (hvit) og til slutt $b$ (svart). Hvis du har lyst, kan du legge alle brikkene tilbake i posen og gjenta hele eksperimentet - akkurat som vist på høyre side av @fig-design-unbiased. Hver gang vil du få forskjellige resultater, selv om du følger nøyaktig samme prosedyre. Dette at samme utvalgsmetode kan gi forskjellige utvalg hver gang, kaller vi et **tilfeldig utvalg**.
 
-Siden vi ristet posen før vi trakk ut brikkene, virker det rimelig å anta at hver brikke har like stor sjanse for å bli valgt. En slik prosedyre - hvor hvert medlem av populasjonen har samme sjanse for å bli valgt - kalles et **enkelt tilfeldig utvalg**. Det at vi ikke legger brikkene tilbake etter å ha trukket dem, betyr at du ikke kan observere den samme brikken to ganger. I slike tilfeller sier vi at observasjonene er utvalgt.[^sec-design-with-replacement]
+Siden vi ristet posen før vi trakk ut brikkene, virker det rimelig å anta at hver brikke har like stor sjanse for å bli valgt. En slik prosedyre -- hvor hvert medlem av populasjonen har samme sjanse for å bli valgt -- kalles et **enkelt tilfeldig utvalg**. Det at vi ikke legger brikkene tilbake etter å ha trukket dem, betyr at du ikke kan observere den samme brikken to ganger.[^sec-design-with-replacement]
 
+[^sec-design-with-replacement]: Det er også verdt å nevne en tredje prosedyre. Denne gangen lukker vi øynene, rister posen og trekker ut en brikke. Men nå registrerer vi observasjonen og _legger så brikken tilbake i posen_ før vi trekker neste brikke. Vi gjentar denne prosessen til vi har 4 brikker. Datasett som genereres på denne måten er fortsatt enkle tilfeldige utvalg, men siden vi legger brikkene tilbake umiddelbart etter at vi har trukket dem, kalles det et utvalg **med tilbakelegging**. Forskjellen mellom denne situasjonen og den første er at det nå er mulig å observere samme brikke flere ganger.
 
 ![Enkelt tilfeldig utvalg uten tilbakelegging fra en endelig populasjon](images/fig-design-unbiased.png){#fig-design-unbiased fig-alt="Et diagram viser en populasjon bestående av 10 sirkler merket a til j. Piler peker fra denne populasjonen til tre grupper av sirkler, som demonstrerer enkle tilfeldige utvalg uten tilbakelegging. Gruppene er merket 'a, c, j, b,' 'i, e, a, f,' og 'g, c, f, d.'"}
 
-
 Hvis du studerer utvalgene i @fig-design-unbiased nøye ser du at ingen av dem gjengir populasjonen riktig. I populasjonen er 40% av brikkene svarte, og i utvalgene er 50%, 25% og 25% svarte. Så utvalgene er skjeve, altså ikke representative, men hvis man hadde repetert utvalgsmetoden mange, mange ganger, hadde man hatt 40% svarte brikker i utvalgene sine i gjennomsnitt. Derfor sier man at enkelt tilfeldig utvalg er en **forventingsrett** utvalgsmetode.[^sec-design-forventningsrett] Hvert enkelt utvalg er ikke nødvendigvis representativt, men hvis man repeterer utvalget mange ganger kan man forvente at gjennomsnittet er representativt, og hvis man gjør utvalget veldig veldig stort vil avviket fra et representativt utvalg være veldig lite, se [^sec-law-of-large-numbers].
 
-[^sec-design-forventningsrett]: På engelsk heter forventningsrett "unbiased". Mange har begynt å bruke biased og unbiased på norsk også, men jeg vil utfordre deg til å si at "utvalget er forventningsskjevt" eller "dommeren er partisk" i stedet for å bare bruke "biased" om alt mulig.
-
-[^08-estimating-unknown-quantities-from-a-sample-1]: Den matematisk korrekte definisjonen av tilfeldighet er ekstraordinært teknisk og langt utenfor det vi dekker i denne boken. For oss holder det å si at utvalget er tilfeldig hvis vi vil forvente å få forskjellig utvalg selv hvis vi repeterer utvagsmetoden nøyaktig.
+[^sec-design-forventningsrett]: På engelsk heter forventningsrett "unbiased". Mange har begynt å bruke biased og unbiased på norsk også, men jeg vil utfordre deg til å si at "utvalget er forventningsskjevt" eller "dommeren er partisk" i stedet for å bare bruke "biased".
 
 For å sikre at du forstår hvor viktig utvalgsprosedyren er, kan vi tenke på en alternativ måte å gjennomføre eksperimentet på. La oss si at min fem år gamle sønn hadde åpnet posen og bestemt seg for å bare trekke ut fire svarte brikker, uten å legge noen tilbake. Dette skjeve utvalget er illustrert i @fig-design-biased. Tenk nå på hvor mye vi kan lære av å se 4 svarte brikker og 0 hvite brikker. Det avhenger helt klart av hvordan utvalget ble gjort, ikke sant? Hvis du vet at prosedyren var skjev og bare valgte svarte brikker, forteller et utvalg med bare svarte brikker deg ikke særlig mye om populasjonen som helhet! Derfor liker statistikere virkelig godt når et datasett kan betraktes som et enkelt tilfeldig utvalg -- det gjør dataanalysen *mye* enklere.
 
 ![Skjevt utvalg uten tilbakelegging fra en endelig populasjon.](images/fig-design-biased.png){#fig-design-biased fig-alt="Et diagram viser skjevt utvalg (uten tilbakelegging) fra en populasjon på 10 elementer merket a til j. Tre utvalg på fire elementer hver blir trukket: 'a, b, g, h', 'g, b, h, a', og 'a, h, b, g'. Svarte sirkler viser valgte elementer; hvite sirkler viser ikke-valgte elementer."}
 
-[^sec-design-with-replacement]: Det er også verdt å nevne en tredje prosedyre. Denne gangen lukker vi øynene, rister posen og trekker ut en brikke. Men nå registrerer vi observasjonen og _legger så brikken tilbake i posen_ før vi trekker neste brikke. Vi gjentar denne prosessen til vi har 4 brikker. Datasett som genereres på denne måten er fortsatt enkle tilfeldige utvalg, men siden vi legger brikkene tilbake umiddelbart etter at vi har trukket dem, kalles det et utvalg **med tilbakelegging**. Forskjellen mellom denne situasjonen og den første er at det nå er mulig å observere samme brikke flere ganger.
 
-    I utdanningsvitenskap er nesten alle utvalg uten tilbakelegging, siden samme person vanligvis ikke får lov til å delta i undersøkelsen to ganger. Men det meste av statistisk teori bygger på antakelsen om at dataene kommer fra et enkelt tilfeldig utvalg **med tilbakelegging**. I praksis spiller dette sjelden noen rolle. Hvis populasjonen vi er interessert i er stor (for eksempel har mer enn 10 enheter!), er forskjellen mellom utvalg med og uten tilbakelegging så liten at vi ikke trenger å bekymre oss for den. Forskjellen mellom enkle tilfeldige utvalg og skjeve utvalg derimot - det er ikke noe vi kan se bort fra så lett!
+I utdanningsvitenskap er nesten alle utvalg uten tilbakelegging, siden samme person vanligvis ikke får lov til å delta i undersøkelsen to ganger. Men det meste av statistisk teori bygger på antakelsen om at dataene kommer fra et enkelt tilfeldig utvalg **med tilbakelegging**. I praksis spiller dette sjelden noen rolle. Hvis populasjonen vi er interessert i er stor (for eksempel har mer enn 10 enheter!), er forskjellen mellom utvalg med og uten tilbakelegging så liten at vi ikke trenger å bekymre oss for den. Forskjellen mellom enkle tilfeldige utvalg og skjeve utvalg derimot - det er ikke noe vi kan se bort fra så lett!
 
 Og så for å hamre inn et siste poeng: tilfeldige utvalg er forventningsrette med hensyn på alle mulige variable. I eksemplene tok vi frem variabelen svart/hvit, men brikkene kan variere i størrelse, materiale, eller alder også. Enkle tilfeldige utvalg er forventningsrette med hensyn på disse variablene og alle andre variable du kan tenke deg, også. Du bør dvele ved dette, for det er det nærmeste man kommer magi i forskningsdesign. Ved et enkelt triks kan velge et utvalg som representerer populasjonen på alle mulige måter -- wow! Men det er med enkle tilfeldige utvalg som med magi -- de finnes ikke på ordentlig.
 
@@ -305,7 +319,7 @@ Et tilfeldig klyngeutvalg brukes der populasjonen er samlet i naturlige klynger 
 
 Tilfeldige klyngeutvalg gir også representative utvalg, slik som enkle tilfeldige utvalg, men man må bruke mer avanserte statistiske teknikker i utregningene og man får mer variasjon i svarene. Fordelene med klyngeutvalg er enklere å utføre, og i mange tilfeller der enkle tilfeldige utvalg er umulige å gjennomføre er klyngeutvalg mulige! Vi nevnte tidligere at det ville være umulig å gjøre et enkelt tilfeldig utvalg med norske musikklærere på ungdomstrinnet, fordi det ikke finnes noen liste over norske musikklærere på ungdomstrinnet. Derfor er et enkelt tilfeldig utvalg umulig. Men det finnes lister over alle ungdomsskoler i landet, så et klyngeutvalg er mulig! Man velger først ungdomsskoler tilfeldig, og deretter spør man rektorene om hvem musikklærerne på skolen er.
 
-Store internasjonale undersøkelser benytter klyngeutvelgelse for å få representative utvalg, se @sec-ILSA.
+Store internasjonale undersøkelser, som for eksempel PISA, benytter gjerne klyngeutvelgelse for å få representative utvalg.
 
 ### Ikke-tilfeldige utvalg
 
@@ -358,7 +372,7 @@ Dette høres kanskje enkelt ut, men i praksis er det utfordrende å vurdere en s
 
 ### Indre validitet
 
-**Indre validitet** er om slutningene dine er gyldige for utvalget ditt. Det inkluderer målevaliditet, se @sec-measurement-validity, og i forskning med formål om å finne årsaksforklaringer, så inkluderer det om årsaksforklaringen er godt underbygget. Det kalles "indre" fordi det dreier seg om sammenhengene mellom ting som skjer innenfor selve studien. 
+**Indre validitet** er om slutningene dine er gyldige for utvalget ditt. Det inkluderer målevaliditet, se @sec-validity, og i forskning med formål om å finne årsaksforklaringer, så inkluderer det om årsaksforklaringen er godt underbygget. Det kalles "indre" fordi det dreier seg om sammenhengene mellom ting som skjer innenfor selve studien. 
 
 Et enkelt eksempel er en studie som ønsker å finne ut om universitetsutdanning gjør folk til bedre skribenter. Du samler en gruppe førsteårsstudenter, ber dem skrive et essay på 1000 ord, og teller opp stavefeil og grammatiske feil. Så gjør du det samme med tredjeårsstudenter, som jo har mer universitetsutdanning bak seg. Hvis tredjeårsstudentene gjør færre feil, kan du da konkludere med at universitetsutdanning forbedrer skriveferdighetene?
 

@@ -1,6 +1,6 @@
-\placetextbox{0.26}{0.06}{\scriptsize{©2025 D.R. Foxcroft and D.J. Navarro,}}
-\placetextbox{0.195}{0.05}{\scriptsize{CC BY-SA 4.0}}
-\placetextbox{0.70}{0.06}{\scriptsize{\url{https://doi.org/10.11647/OBP.0333.05}}}
+<!-- \placetextbox{0.26}{0.06}{\scriptsize{©2025 D.R. Foxcroft and D.J. Navarro,}} -->
+<!-- \placetextbox{0.195}{0.05}{\scriptsize{CC BY-SA 4.0}} -->
+<!-- \placetextbox{0.70}{0.06}{\scriptsize{\url{https://doi.org/10.11647/OBP.0333.05}}} -->
 
 # Visualisere data {#sec-diagram}
 
@@ -18,7 +18,7 @@ Når du skal analysere data er en av de viktigste oppgavene å visualisere dem. 
 - **For å forstå dataene dine**: å tegne grafer hjelper deg med å forstå dataene dine bedre. Grafene kan brukes for å besvare forskningsspørsmål, de kan hjelpe deg med å oppdage interessante trekk ved dataene du ikke hadde forventet og de kan vise deg hvis noe er galt med dataene dine.
 - **For å kommunisere resultatene dine**: Ved å vise data på en ryddig og visuelt tiltalende måte gjør du det lettere for leserne å forstå budskapet ditt, og kanskje å overbevise dem.
 
-Det klassiske eksempelet for å vise hvor overbevisende og kraftfulle grafer kan være, er vist i @fig-diagrams-snow. Det er en stilisert versjon av en av de mest berømte grafene gjennom tidene -- legen John Snow sitt kart over koleradødsfall fra 1854. Bakgrunnen er et kolerautbrudd som hadde tatt livet av over 500 personer. På den tiden forklarte man hvordan sykdommer smittet med _miasme_-teorien. Denne teorien hadde vært til stor hjelp og hjalp leger med gode tiltak mot mange sykdommer, for eksempel bruk av munnbind og begraving av lik langt unna folk. At sykdom kunne smitte via vann var uhørt, og John Snow vant ikke gjennom med argumentene sine om at kolera smittet fra vannpumpen på Broad Street. Derfor lagde han en figur. Figuren er elegant, det er rett og slett et gatekart som viser vannpumper (blå stor prikk) og addressen til personer som døde av kolera (gul liten prikk). Selv et kjapt blikk på grafen gjør det klart at vannpumpen i Broad Street er en mistenkt. Med figuren klarte han å overbevise myndighetene om å fjerne håndtaket på pumpen, noe som stoppet utbruddet. Slik er kraften i en god datavisualisering.
+Det klassiske eksempelet for å vise hvor overbevisende og kraftfulle grafer kan være, er vist i @fig-diagram-snow. Det er en stilisert versjon av en av de mest berømte grafene gjennom tidene -- legen John Snow sitt kart over koleradødsfall fra 1854. Bakgrunnen er et kolerautbrudd som hadde tatt livet av over 500 personer. På den tiden forklarte man hvordan sykdommer smittet med _miasme_-teorien. Denne teorien hadde vært til stor hjelp og hjalp leger med gode tiltak mot mange sykdommer, for eksempel bruk av munnbind og begraving av lik langt unna folk. At sykdom kunne smitte via vann var uhørt, og John Snow vant ikke gjennom med argumentene sine om at kolera smittet fra vannpumpen på Broad Street. Derfor lagde han en figur. Figuren er elegant, det er rett og slett et gatekart som viser vannpumper (blå stor prikk) og addressen til personer som døde av kolera (gul liten prikk). Selv et kjapt blikk på grafen gjør det klart at vannpumpen i Broad Street er en mistenkt. Med figuren klarte han å overbevise myndighetene om å fjerne håndtaket på pumpen, noe som stoppet utbruddet. Slik er kraften i en god datavisualisering.
 
 ```{r}
 #| label: fig-diagram-snow
@@ -87,8 +87,7 @@ For å tegne et stolpediagram i jamovi trykker du "Analyses" → "Exploration" �
 ```{r}
 #| label: fig-diagram-jamovi-bar
 #| fig-cap: Et stolpediagram over "Forventet utdanning" i jamovi.
-#| classes: .enlarge-image
-#| fig-pos: "H"
+#| out-width: "100%"
 knitr::include_graphics("images/fig-diagram-jamovi-bar.png")
 ```
 
@@ -100,7 +99,6 @@ Hva med en undergruppe-analyse med stolpediagrammer? Da må vi legge til en vari
 ```{r}
 #| label: fig-diagram-edu-x-country
 #| fig-cap: _Land_ i "Split by"
-#| classes: .enlarge-image
 #| out.width: "100%"
 knitr::include_graphics("images/fig-diagram-jamovi-edu-x-country.png")
 ```
@@ -108,7 +106,6 @@ knitr::include_graphics("images/fig-diagram-jamovi-edu-x-country.png")
 ```{r}
 #| label: fig-diagram-country-x-edu
 #| fig-cap: _Forventet utdanning_ i "Split by"
-#| classes: .enlarge-image
 #| out.width: "100%"
 knitr::include_graphics("images/fig-diagram-jamovi-country-x-edu.png")
 ```
@@ -122,14 +119,13 @@ OK, nå fikk jeg blod på tann. Jeg vil gjøre undergruppeanalyse med _enda en v
 ```{r}
 #| label: fig-diagram-jamovi-bar-threeway
 #| fig-cap: Undergruppeanalyse av _Forventet utdanning_ for hvert _Land_ og _Kjønn_
-#| classes: .enlarge-image
 #| out.width: "100%"
 knitr::include_graphics("images/fig-diagram-jamovi-bar-threeway.png")
 ```
 
 Uff, det ble en koloss av en figur! Hvis du klarer å lese skriften vil du likevel se at den er ganske informativ. Vi skal forbedre den i neste delkapittel.
 
-## Stablede stolpediagrammer {#sec-diagram-stacked-bar}
+## Stablede stolpediagram {#sec-diagram-stacked-bar}
 
 Stolpediagrammer kan stables oppå hverandre, noe som gjør dem mer kompakte og lettere å forstå, i noen sammenhenger.  Vi trykker oss inn på en annen meny denne gangen, "Analyses" → "Frequencies" → "Independent samples ($\chi^2$ test of association)". Her må du trykke deg inn på "Plots", krysse av for "Bar plot". I denne menyen er det mange flere innstillingsmuligheter enn før, se @fig-diagram-jamovi-stacked-bar:
 
@@ -141,7 +137,7 @@ Stolpediagrammer kan stables oppå hverandre, noe som gjør dem mer kompakte og 
 ```{r}
 #| label: fig-diagram-jamovi-stacked-bar
 #| fig-cap: Innstillinger i jamovi for å få et stablet stolpediagram for _Forventet utdanning_ for hvert _Land_
-#| classes: .enlarge-image
+#| out-width: "100%"
 knitr::include_graphics("images/fig-diagram-jamovi-stacked-bar.png")
 ```
 
@@ -150,11 +146,11 @@ Resultatet ser du i @fig-diagram-stacked-bar. Dette viser samme informasjon som 
 ```{r}
 #| label: fig-diagram-stacked-bar
 #| fig-cap: Stablet stolpediagram av _Forventet utdanning_ for hvert _Land_
-#| classes: .enlarge-image
+#| out-width: "100%"
 knitr::include_graphics("images/fig-diagram-stacked-bar.png")
 ```
 
-Nå kan vi igjen prøve å gjøre en undergruppeanalyse på tvers av to variable, _Kjønn_ og _Land_. _Kjønn_ ligger allerede under "Columns", så vi legger inn _Land_ under "Layers_. Resultatet blir som i @fig-diagram-stacked-bar-threeway. Her skinner virkelig det stablede stolpediagrammet -- se så kompakt og lesbart det ble i forhold til samme informasjon vist som et stolpediagram (@fig-diagram-bar-threeway). Den største forskjellen mellom disse to diagrammene er at "Annet" var umulig å lese med det vanlige stolpediagrammet fordi stolpene ble så små, men med stablede stolper gikk det an å se at de de norske elevene som valgte annet i veldig stor grad ikke ser for seg mer skole etter ungdomsskolen. (Men husk at disse stolpene er basert på veldig få elever.)
+Nå kan vi igjen prøve å gjøre en undergruppeanalyse på tvers av to variable, _Kjønn_ og _Land_. _Kjønn_ ligger allerede under "Columns", så vi legger inn _Land_ under "Layers_. Resultatet blir som i @fig-diagram-stacked-bar-threeway. Her skinner virkelig det stablede stolpediagrammet -- se så kompakt og lesbart det ble i forhold til samme informasjon vist som et stolpediagram (@fig-diagram-stacked-bar-threeway). Den største forskjellen mellom disse to diagrammene er at "Annet" var umulig å lese med det vanlige stolpediagrammet fordi stolpene ble så små, men med stablede stolper gikk det an å se at de de norske elevene som valgte annet i veldig stor grad ikke ser for seg mer skole etter ungdomsskolen. (Men husk at disse stolpene er basert på veldig få elever.)
 
 ```{r}
 #| label: fig-diagram-stacked-bar-threeway
@@ -187,7 +183,7 @@ For å lage dette histogrammet i jamovi trykker vi "Analyses" → "Exploration" 
 ```{r}
 #| label: fig-diagram-jamovi-ICCS-histogram
 #| fig-cap: Innstillingene man trenger for å få frem histogrammet i jamovi
-#| classes: .enlarge-image
+#| out-width: "100%"
 knitr::include_graphics("images/fig-diagram-jamovi-ICCS-histogram.png")
 ```
 
@@ -234,7 +230,6 @@ Et flott alternativ til histogrammer er **boksplott**. Ideen bak et boksplott er
 ```{r}
 #| label: fig-diagram-boxplot-equality
 #| fig-cap: Et boksplott av variabelen _Likestilling plottet med jamovi
-#| fig-pos: 'H'
 knitr::include_graphics("images/fig-diagram-boxplot-equality.png")
 ```
 
@@ -245,11 +240,10 @@ I våre _Likestilling_-data er det ingen observasjoner som faller utenfor normal
 
 Du er kanskje ikke så imponert over boksplottet og synes histogrammet ga mer informasjon, og jeg er litt enig. Boksplottet viser riktignok medianen og kvartilbredden, men histogrammet viste mer nøyaktig hvordan verdiene fordelte. Boksplottet kommer til sin rett når man gjør en undergruppeanalyse, slik som i @fig-diagram-equ-x-edu. Det er rett og slett vanskelig å se forskjell på undergruppene med histogrammet, men med boksplottet er det lett å se at dess høyere utdanning eleven ser for seg, dess mer er eleven for likestilling mellom kjønnene. (Men merk at dette gjelder på gruppenivå og at det er mange unntak.) For å lage slike boksplott i jamovi er det bare å legge til en variabel i vinduet "Split by".
 
-:::{#fig-diagram-equ-x-edu out.width="100%" layout-ncol=2}
+:::{#fig-diagram-equ-x-edu out.width="100%" layout-ncol=1}
 ```{r}
 #| label: fig-diagram-histogram-equ-x-edu
 #| fig-cap: Med histogrammet er det vanskelig å se forskjell på gruppene.
-#| classes: .enlarge-image
 #| out.width: "100%"
 knitr::include_graphics("images/fig-diagram-histogram-equ-x-edu.png")
 ```
@@ -257,7 +251,6 @@ knitr::include_graphics("images/fig-diagram-histogram-equ-x-edu.png")
 ```{r}
 #| label: fig-diagram-boxplot-equ-x-edu
 #| fig-cap: Med boksplott kommer forskjellen tydelig frem, kanskje spesielt ved medianen og nedre kvartil.
-#| classes: .enlarge-image
 #| out.width: "100%"
 knitr::include_graphics("images/fig-diagram-boxplot-equ-x-edu.png")
 ```
@@ -274,8 +267,8 @@ En moderne variant av det tradisjonelle boksplottet er fiolinplottet. Fiolinplot
 #| label: fig-diagram-violin
 #| fig-cap: Et fiolinplott av _Likestilling_ per _Forventet utdanning_
 #| fig-alt: Et fiolinplott som viser fordelingen av _Likestilling_ for hver verdi av _Forventet utdanning_.
-#| classes: .enlarge-image
 #| fig-pos: 'h!'
+#| out-width: "100%"
 knitr::include_graphics("images/fig-diagram-violin.png")
 ```
 
@@ -296,7 +289,6 @@ Løsningen er å legge hver sin variabel på hver sin akse og plotte hvert punkt
 #| label: fig-diagram-jamovi-scatter
 #| fig-cap: Trykk på "Analyses" → "Exploration" → "Scatter plot" for å få opp denne menyen.
 #| fig-alt: Menyen der man velger innstillinger for "Scatter plot" i jamovi
-#| classes: .enlarge-image
 #| out-width: "100%"
 knitr::include_graphics("images/fig-diagram-jamovi-scatter.png")
 ```
@@ -306,14 +298,13 @@ knitr::include_graphics("images/fig-diagram-jamovi-scatter.png")
 #| label: fig-diagram-scatter
 #| fig-cap: Spredningsplott over _Likestilling_ og _Sosioøkonomisk status_.
 #| fig-alt: Et spredningsplott med Likestilling på y-aksen og Sosioøkonomisk status på x-aksen. Veldig mange punkter er samlet i en linje horisontal linje langs hele toppen, og ellers er punktene jevnt spredt utover.
-#| classes: .enlarge-image
 #| out-width: "100%"
 knitr::include_graphics("images/fig-diagram-scatter.png")
 ```
 Spredningsplott med jamovi
 :::
 
-For å gjøre sammenhengen tydeligere er det vanlig å legge en linje over spredningsplottet, slik som i @fig-diagram-scatter-line. Den viser at det er en svak positiv tendens, altså at elever med høy sosioøkonomisk status svarer høyere på spørsmålene om likestilling. Du lærer mer om slike linjer, regresjonslinjer, i @sec-regression.
+For å gjøre sammenhengen tydeligere er det vanlig å legge en linje over spredningsplottet, slik som i @fig-diagram-scatter-line. Den viser at det er en svak positiv tendens, altså at elever med høy sosioøkonomisk status svarer høyere på spørsmålene om likestilling. Du lærer mer om slike linjer, regresjonslinjer, senere i boken. <!-- !!! -->
 
 ```{r}
 #| label: fig-diagram-scatter-line
@@ -366,4 +357,4 @@ Hjernen vår har en fantastisk kapasitet til å analysere data, men bare så len
 
 I dette kapitlet har vi dekket:
 
-- **Vanlige plott**: Vi har fokusert på standardgrafer som statistikere ofte bruker, som [Stolpediagram], [Stablede stolpediagram], [Histogrammer], [Boksplott] og [Spredningsplott]. Det er verdt å vite hvilke variabeltyper som passer til hver type plott, i tillegg til å kunne tolke dem.
+- **Vanlige plott**: Vi har fokusert på standardgrafer som statistikere ofte bruker, som [Stolpediagram], [Stablede stolpediagram], [Histogrammer], [Boksplott] (samt [Fiolinplott]) og [Spredningsplott]. Det er verdt å vite hvilke variabeltyper som passer til hver type plott, i tillegg til å kunne tolke dem.

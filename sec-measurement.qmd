@@ -1,6 +1,6 @@
-\placetextbox{0.26}{0.06}{\scriptsize{©2025 D.R. Foxcroft and D.J. Navarro,}}
-\placetextbox{0.195}{0.05}{\scriptsize{CC BY-SA 4.0}}
-\placetextbox{0.70}{0.06}{\scriptsize{\url{https://doi.org/10.11647/OBP.0333.02}}}
+<!-- \placetextbox{0.26}{0.06}{\scriptsize{©2025 D.R. Foxcroft and D.J. Navarro,}} -->
+<!-- \placetextbox{0.195}{0.05}{\scriptsize{CC BY-SA 4.0}} -->
+<!-- \placetextbox{0.70}{0.06}{\scriptsize{\url{https://doi.org/10.11647/OBP.0333.02}}} -->
 
 # Måling i utdanningsforskning {#sec-measurement}
 
@@ -17,7 +17,7 @@ source("chapter_header.R")
 Sitatet fra Lord Kelvin, en av attenhundretallets store vitenskapsmenn, viser en stor tro på verdien av å måle ting. Hvis man ikke kan måle noe, vet man ikke noe vitenskapelig om det. Nuvel, i samfunnsvitenskapene, og dermed i utdanningsforskning, gjelder nok ikke dette. Kanskje gjelder heller det motsatte, at hvis noe er målt, så bør vi være ekstra skeptiske til det:
 
 > *We're seeing that the published literature--you know, in some of our best journals--features measures that have little or no validity evidence. Measurement, schmeasurement. Applied researchers are, as a norm, not engaged in this process of construct validation.*\
-> -- Jessica Kay Flake[^measurement-flake]
+> -- Professor Jessica Kay Flake[^measurement-flake]
 
 [^measurement-flake]: Foredrag til _RIOT Science Club_, 23. november, 2020. Kilde: <https://youtu.be/Cq6n7AS_r8w?si=PSLqDe2VGExXp2qV&t=637>
 
@@ -51,6 +51,7 @@ Alle tingene vi ønsker å måle (slik som alder, motivasjon, læring, undervisn
 #| label: fig-operasjonalisering
 #| fig-cap: "Operasjonalisering av konstruktet _alder_. Lengst til høyre er 'Alder' en variabel i datasettet som har verdiene 21, 38 og 72 for de tre første forskningsdeltagerne."
 #| fig-alt: "Lengst til venstre er 'Teoretisk konstrukt: Alder' med en pil til 'Målemetode: Selvrapportering fra nettspørreskjema: 'hvilket år ble du født?''. Det står 'operasjonalisering' på pila. Derfra går det en pil, 'datainnsamling', til 'Variabel'. Ved 'Variabel' er det et datasett med 'Fødselsår' og 'Alder'. Fra 'Fødselsår' til 'Alder' går det en liten pil, 'Etterbehandling av data'."
+#| out-width: "100%"
 knitr::include_graphics("images/fig-operasjonalisering.png")
 ```
 
@@ -162,9 +163,7 @@ Et vanlig eksempel på en ordinal variabel i utdanningsforskning er "høyeste fu
 
 ### Intervallvariabel
 
-I motsetning til variabler på nominellt og ordinalt målenivå, er **intervallvariable** og **forholdstallsvariable** variabler der tallverdien er meningsfull. For variabler med intervallskala er *forskjellene* mellom tallene tolkbare, men variabelen har ikke en "naturlig" nullverdi. Et godt eksempel på en variabel med intervallskala er temperaturmåling i grader celsius. Hvis det for eksempel var 15$^{\circ}$ i går og 18$^{\circ}$ i dag, så er differansen mellom dem, 3$^{\circ}$, meningsfull og måler en forskjell i temperatur. Dessuten er disse tre gradene i forskjell *nøyaktig den samme forskjellen* som mellom 7$^{\circ}$ og 10$^{\circ}$.[^02-a-brief-introduction-to-research-design-3] Kort sagt er addisjon og subtraksjon meningsfulle for variabler med intervallskala. Merk at dette *ikke* var tilfelle for ordinale variabler.
-
-[^02-a-brief-introduction-to-research-design-3]: 02-a-brief-introduction-to-research-design-2
+I motsetning til variabler på nominellt og ordinalt målenivå, er **intervallvariable** og **forholdstallsvariable** variabler der tallverdien er meningsfull. For variabler med intervallskala er *forskjellene* mellom tallene tolkbare, men variabelen har ikke en "naturlig" nullverdi. Et godt eksempel på en variabel med intervallskala er temperaturmåling i grader celsius. Hvis det for eksempel var 15$^{\circ}$ i går og 18$^{\circ}$ i dag, så er differansen mellom dem, 3$^{\circ}$, meningsfull og måler en forskjell i temperatur. Dessuten er disse tre gradene i forskjell *nøyaktig den samme forskjellen* som mellom 7$^{\circ}$ og 10$^{\circ}$. Kort sagt er addisjon og subtraksjon meningsfulle for variabler med intervallskala. Merk at dette *ikke* var tilfelle for ordinale variabler.
 
 Men legg merke til at 0$^{\circ}$ ikke betyr "ingen temperatur i det hele tatt". Det betyr faktisk "temperaturen der vann fryser", noe som er ganske vilkårlig. Mangelen på et naturlig nullpunkt gjør meningsløst å multiplisere og dividere temperaturer. Det er feil å si at 20$^{\circ}$ er dobbelt så varmt som 10$^{\circ}$, akkurat som det er rart og meningsløst å hevde at 20$^{\circ}$ er negativ to ganger så varmt som -10$^{\circ}$.
 
@@ -183,9 +182,7 @@ Her er noen flere variabler på forholdstallsnivå:
 -   antall år avlagt utdanning (0 år betyr ingen utdanning)
 -   antall riktige på matematikkprøven (0 riktig betyr ingen riktig)
 
-Det siste eksempelet krever en analyse. Ofte måles "kompetanse", "ferdighet" eller liknende ut fra antall riktige svar på en prøve eller annen ferdighetstest. La oss ta matematikkompetanse som et eksempel. Hvis Bård besvarer 20 spørsmål riktig på en matematikkprøve og Roar besvarer 10 riktig, kan man si at Bård fikk dobbelt så mange riktige. Man kan også si at han fikk 10 flere riktig. Addisjon, subtraksjon, multiplikasjon og divisjon gir mening, altså er det en forholdstallsvariabel. Men er det riktig å si at Bård har dobbelt så høy *matematikkompetanse* som Roar? Det kommer kanskje an på prøven og hvilke spørsmål man svarte riktig på? Hva hvis Roar svarte riktig på 10 vanskelige spørsmål mens Bård raste gjennom de 20 enkleste spørsmålene på prøven uten å få til noe mer? Eller hva hvis Roar ikke hadde besvart noen spørsmål riktig, hadde det vært riktig å si at han har null matematikkompetanse? Dette viser at hva som er riktig målenivå kan avhenge av hvilket konstrukt man operasjonaliserer; hvis forskeren operasjonaliserer *antall riktige på prøven* er variabelen på forholdstallsnivå, men hvis forskeren operasjonaliserer *matematikkompetanse* er saken en annen.[^02-a-brief-introduction-to-research-design-4]
-
-[^02-a-brief-introduction-to-research-design-4]: 02-IRT
+Det siste eksempelet krever en analyse. Ofte måles "kompetanse", "ferdighet" eller liknende ut fra antall riktige svar på en prøve eller annen ferdighetstest. La oss ta matematikkompetanse som et eksempel. Hvis Bård besvarer 20 spørsmål riktig på en matematikkprøve og Roar besvarer 10 riktig, kan man si at Bård fikk dobbelt så mange riktige. Man kan også si at han fikk 10 flere riktig. Addisjon, subtraksjon, multiplikasjon og divisjon gir mening, altså er det en forholdstallsvariabel. Men er det riktig å si at Bård har dobbelt så høy *matematikkompetanse* som Roar? Det kommer kanskje an på prøven og hvilke spørsmål man svarte riktig på? Hva hvis Roar svarte riktig på 10 vanskelige spørsmål mens Bård raste gjennom de 20 enkleste spørsmålene på prøven uten å få til noe mer? Eller hva hvis Roar ikke hadde besvart noen spørsmål riktig, hadde det vært riktig å si at han har null matematikkompetanse? Dette viser at hva som er riktig målenivå kan avhenge av hvilket konstrukt man operasjonaliserer; hvis forskeren operasjonaliserer *antall riktige på prøven* er variabelen på forholdstallsnivå, men hvis forskeren operasjonaliserer *matematikkompetanse* er saken en annen.
 
 ### Kontinuerlige og diskrete variabler
 
@@ -198,12 +195,12 @@ Disse definisjonene virker sannsynligvis litt abstrakte, men de er ganske enkle 
 
 ```{r}
 #| label: tbl-tab2-4
-#| tbl-cap: Forholdet mellom målenivåene og skillet mellom diskret/kontinuerlig. Celler med et hakemerke tilsvarer en kombinasjon som er mulig
+#| tbl-cap: Forholdet mellom målenivåene og skillet mellom diskret/kontinuerlig. Celler med en x tilsvarer en kombinasjon som er mulig
 tt(
   tibble(
     Målenivå = c("nominal", "ordinal", "intervall", "forholdstall"),
-    kontinuerlig = c(" ", " ", "✓", "✓"),
-    diskret = c("✓", "✓", "✓", "✓")
+    kontinuerlig = c(" ", " ", "x", "x"),
+    diskret = c("x", "x", "x", "x")
   )
 )
 ```
@@ -302,6 +299,7 @@ Det finnes flere måter en måling kan ha svak konstruktvaliditet på. For eksem
 #| label: fig-construct
 #| fig-cap: "At målemetoder fanger for lite eller for mye kalles underrepresentasjon og irrelevans"
 #| fig-alt: "En ellipse det står \"Konstruktet som skal måles\" i. En anne ellipse, som delvis overlapper, er markert med \"Hva målemetoden måler\". Området inne i konstrukt-ellipsen som ikke overlapper er underrepresentasjon og området utenfor konstrukt-ellipsen, men inne i målemetode-ellipsen, er irrelevans."
+#| out-width: "100%"
 knitr::include_graphics("images/fig-construct.png")
 ```
 

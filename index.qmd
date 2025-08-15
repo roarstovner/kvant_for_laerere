@@ -5,16 +5,29 @@ source("chapter_header.R")
 
 ## Forord {.unnumbered}
 
-I denne læreboken dekker vi innholdet i et innføringskurs i kvantitative metoder for lærere. Boka er basert på et vanlig grunnkurs slik det vanligvis undervises for bachelorstudenter innen psykologi, helse eller samfunnsvitenskap, men er endret slik at det forutsetter lite matematikkunnskap og er gjort relevant for arbeid i skolen.
+I denne læreboken dekker vi innholdet i et innføringskurs i kvantitative metoder. Boka er basert på et vanlig grunnkurs slik det vanligvis undervises for bachelorstudenter innen psykologi, helse eller samfunnsvitenskap, men er endret slik at det passer for studenter på femårige grunnskolelærerutdanninger.
 
-Boken er en oversatt og omarbeidet versjon av Navarro og Foxcroft (2025) sin bok "Learning statistics with jamovi: A Tutorial for Beginners in Statistical Analysis" [https://www.learnstatswithjamovi.com/](https://www.learnstatswithjamovi.com/), som igjen er en omarbeidet versjon av DJ Navarro (2018). Learning statistics with R: A tutorial for psychology students and other beginners. (Version 0.6). [https://learningstatisticswithr.com/](https://learningstatisticswithr.com/).
+Jeg hadde følgende krav til boka:
 
-Hvis du finner noen feil eller har forslag til forbedringer kan du "raise an issue" her [https://github.com/roarstovner/kvant_for_laerere/issues](https://github.com/roarstovner/kvant_for_laerere/issues) eller sende meg en epost.
+  1. **Tilpasset lærerstudenter**: Jeg ville at stoffet og eksemplene skulle være fra utdanningsforskning og at de skulle være relevante for læreryrket.
+  2. **Uten matematikk**: Jeg vet at veldig mange lærerstudenter har så lite matematisk bakgrunn at å lære seg noe særlig av matematikken bak statistikken ville blitt rent pugg.
+  3. **Kort**: Boka er skrevet til et kurs på OsloMet som skal tilsvare 5 studiepoeng og tre forelesninger i kvantitativ metode. De fleste lærebøker for et innføringskurs i kvantitativ metode er tre ganger så lange og er skrevet slik at det er vanskelig å plukke bare noen deler.
+  4. **Viser analysene med en enkel og åpent tilgjengelig statistikk-programvare**: Siden mange lærerstudenter skriver kvantitative masteroppgaver måtte boka ha med eksempler på hvordan man gjør statistisk analyse i en enkel programvare. Siden det finnes mye god statistikkprogramvare som er fritt tilgjengelig ønsket jeg å bruke noen av disse.
+  5. **Fremhever forskningsdesign og deskriptiv analyse**: Nesten alle statistikklærebøker benytter mye tid på hypotesetesting. Forutsetningene bak disse testene er nesten aldri oppfylt i praksis og de gir sjeldent gode svar på forskningsspørsmålene som stilles. Det er derfor bedre å bruke tiden til å lære mer om forskningsdesign og deskriptiv statistikk.
+  
+Jeg fant ingen eksisterende bok som dekket disse punktene, så jeg valgte å tilpasse jeg en lærebok for psykologi-studenter som var gitt ut med en åpen lisens.
 
-*Roar Stovner
-1. august, 2025*
+Boka er en oversatt og omarbeidet versjon av Navarro og Foxcroft [-@navarro2025] sin bok "Learning statistics with jamovi: A Tutorial for Beginners in Statistical Analysis" [https://www.learnstatswithjamovi.com/](https://www.learnstatswithjamovi.com/), som igjen er en omarbeidet versjon av Navarro [-@navarro2011] sin bok "Learning statistics with R: A tutorial for psychology students and other beginners. (Version 0.6)" [https://learningstatisticswithr.com/](https://learningstatisticswithr.com/).
+
+Hvis du finner noen feil eller har forslag til forbedringer kan du melde inn et "issue" her [https://github.com/roarstovner/kvant_for_laerere/issues](https://github.com/roarstovner/kvant_for_laerere/issues) eller sende meg en epost.
+
+Jeg håper dere setter pris på å ha en lærebok i kvantitativ metode som dekker de fem punktene i tillegg til å være gratis tilgjengelig på nett.
+ 
+*Roar Stovner, 4. august, 2025*
+
+(Hvis du ønsker å benytte boka i egen undervisning er det fritt frem, men send meg gjerne en epost, for det er gøy å vite at boka blir brukt! Hvis du ønsker å gjøre endringer i boka er det også lov, siden boka er gitt ut på lisensen CC-BY-SA, eneste krav er at du viser tilbake til de tidligere versjonene av boka (inkludert min versjon) og gjør den tilgjengelig med samme lisens. Bokas kildekode finner du på [github](https://github.com/roarstovner/kvant_for_laerere).)
 
 
 :::{.content-visible when-format="html"}
-**Citation**: Danielle J. Navarro, David R. Foxcroft, and Roar B. Stovner, *Kvantitativ metode for lærere*. 2025. 
+**Sitering**: Danielle J. Navarro, David R. Foxcroft, and Roar B. Stovner. (2025). *Kvantitativ metode for lærere*. <https://kvant.roarstovner.no> . 
 :::
