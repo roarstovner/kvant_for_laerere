@@ -535,7 +535,7 @@ window.Quarto = {
 <section id="sammenlikne-gjennomsnitt-i-ulike-grupper-anova" class="level2" data-number="10.1">
 <h2 data-number="10.1" class="anchored" data-anchor-id="sammenlikne-gjennomsnitt-i-ulike-grupper-anova"><span class="header-section-number">10.1</span> Sammenlikne gjennomsnitt i ulike grupper: ANOVA</h2>
 <p>Vi starter med <strong>ANOVA</strong>, som står for “ANalysis Of VAriance”. Teknikken ble utviklet av Sir Ronald Fisher tidlig på 1900-tallet, og det er ham vi har å takke for den noe forvirrende terminologien. Begrepet ANOVA kan være litt misvisende på to måter. For det første handler ANOVA faktisk om å undersøke forskjeller i gjennomsnitt, selv om navnet refererer til varianser. For det andre finnes det flere forskjellige metoder som kalles ANOVA og som bare er løselig beslektet. Men i denne boka skal vi kun møte den enkleste formen for ANOVA, hvor vi har flere grupper av observasjoner og ønsker å finne ut om gjennomsnittet av en utfallsvariabel er forskjellig mellom gruppene. Denne varianten kalles for en “enveis ANOVA”.</p>
-<p>Kapitlet er strukturert slik: Først introduserer jeg et fiktivt datasett som vi bruker som løpende eksempel. Deretter forklarer jeg hvordan en enveis ANOVA faktisk fungerer [Hvordan ANOVA fungerer], før jeg viser hvordan du kan kjøre analysen i jamovi [Kjøre en ANOVA i jamovi]. Disse to seksjonene utgjør kjernen i kapitlet.</p>
+<p>Kapitlet er strukturert slik: Først introduserer jeg et fiktivt datasett som vi bruker som løpende eksempel. Deretter forklarer jeg hvordan en enveis ANOVA faktisk fungerer, før jeg viser hvordan du kan kjøre analysen i jamovi. Disse to seksjonene utgjør kjernen i kapitlet.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -546,7 +546,7 @@ Advarsel
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Fra og med dette kapittelet har jeg ikke rukket å gjøre eksemplene relevante for utdanningsvitenskap. Det er mye arbeid å finne relevante datasett far utdanningsvitenskap og forklare analysene ved hjelp av dem, og det rakk jeg ikke før semesterstart for dette kapittelet. Derfor er eksempelet hentet fra originalboka <span class="citation" data-cites="navarro2025">Navarro &amp; Foxcroft (<a href="sec-references.html#ref-navarro2025" role="doc-biblioref">2025</a>)</span>, og omhandler psykofarmakologi, altså læren om medisiner for å behandle psykisk sykdom.</p>
+<p>Fra og med dette kapittelet har jeg ikke rukket å gjøre eksemplene relevante for utdanningsvitenskap. Det er mye arbeid å finne relevante datasett fra utdanningsvitenskap og forklare analysene ved hjelp av dem, og det rakk jeg ikke før semesterstart for dette kapittelet. Derfor er eksempelet hentet fra originalboka <span class="citation" data-cites="navarro2025">Navarro &amp; Foxcroft (<a href="sec-references.html#ref-navarro2025" role="doc-biblioref">2025</a>)</span>, og omhandler psykofarmakologi, altså læren om medisiner for å behandle psykisk sykdom.</p>
 </div>
 </div>
 <section id="et-illustrerende-datasett" class="level3" data-number="10.1.1">
@@ -791,7 +791,7 @@ Figur&nbsp;10.1. Deskriptiv statistikk og boksplott for humørforbedring for hve
 <p>Det eksperimentelle designet vi beskrev tidligere viser tydelig at vi ønsker å sammenligne den gjennomsnittlige humørforandringen mellom tre forskjellige medisiner. Det er akkurat slike forskningsspørsmål man undersøker med enveis ANOVA. Hvis vi analyserer dette oppsettet har vi to variable; vi har én variabel på forholdstallsnivå, <em>mood.gain</em>, og én kategorisk variabel, <em>drug</em>. En enveis ANOVA analyserer altså sammenhengen mellom en variabel på forholdstallsnivå og en kategorisk variabel. I vårt tilfelle har den kategoriske variabelen 3 kategorier, men den kan ha så få som 2 kategorier og det er ingen øvre grense for hvor mange kategorier den kan ha.</p>
 <p>Den noe pessimistiske nullhypotesen vi ønsker å teste er at gjennomsnittlig <em>mood.gain</em> er lik for alle de tre medisinene – altså at ingen av medisinene er mer effektive enn placebo:</p>
 <blockquote class="blockquote">
-<p><span class="math inline">\(H_0\)</span>: Gjennomsnittet av <code>mood.gain</code> er likt for de tre medisinene$$</p>
+<p><span class="math inline">\(H_0\)</span>: Gjennomsnittet av <code>mood.gain</code> er likt for de tre medisinene</p>
 </blockquote>
 <p>Den alternative hypotesen er at minst én av de tre behandlingene skiller seg fra de andre.</p>
 <blockquote class="blockquote">
@@ -919,7 +919,7 @@ Figur&nbsp;10.5. Resultater fra ANOVA i jamovi om humørforbedring etter å ha f
 <p>Det er lettere å sette seg inn i resultatene med en visualisering, så jeg viser også hva jamovi tilbyr under “Descriptives plots” i menyene til enveis ANOVA, se <a href="#fig-means-jamovi-ANOVA-plot" class="quarto-xref">Figur&nbsp;<span>10.6</span></a>. Her vises gjennomsnittene med en prikk og 95% konfidensintervall er vist med streker. Merk at konfidensintervallet er ca. 2 standardfeil, slik vi lærte i <a href="sec-estimation.html#sec-estimation-CI" class="quarto-xref"><span>Seksjon 7.5</span></a>.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-means-jamovi-ANOVA-plot" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" data-fig-pos="H">
+<div id="fig-means-jamovi-ANOVA-plot" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-pos="H" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-means-jamovi-ANOVA-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="images/fig-means-jamovi-ANOVA-plot.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Figur&nbsp;10.6. Et plot med gjennomsnitt og konfidensintervall for humørforbedring etter å ha fått ulike medikamenter"><img src="images/fig-means-jamovi-ANOVA-plot.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" data-fig-pos="H"></a>
