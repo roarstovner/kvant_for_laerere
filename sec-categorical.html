@@ -108,8 +108,22 @@ gtag('config', 'G-FRV7C65B01', { 'anonymize_ip': true});
 
 
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -458,7 +472,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./sec-means.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Sammenlikne gjennomsnitt: ANOVA og paret <span class="math inline">\(t\)</span>-test</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Sammenlikne gjennomsnitt: ANOVA og paret <span class="math inline">t</span>-test</span></span></a>
   </div>
 </li>
       </ul>
@@ -479,10 +493,10 @@ window.Quarto = {
     <h2 id="toc-title">Innholdsfortegnelse</h2>
    
   <ul>
-  <li><a href="#sammenheng-mellom-to-kategoriske-variable-chi2-test-for-uavhengighet" id="toc-sammenheng-mellom-to-kategoriske-variable-chi2-test-for-uavhengighet" class="nav-link active" data-scroll-target="#sammenheng-mellom-to-kategoriske-variable-chi2-test-for-uavhengighet"><span class="header-section-number">9.1</span> Sammenheng mellom to kategoriske variable: <span class="math inline">\(\chi^2\)</span>-test for uavhengighet</a>
+  <li><a href="#sammenheng-mellom-to-kategoriske-variable-chi2-test-for-uavhengighet" id="toc-sammenheng-mellom-to-kategoriske-variable-chi2-test-for-uavhengighet" class="nav-link active" data-scroll-target="#sammenheng-mellom-to-kategoriske-variable-chi2-test-for-uavhengighet"><span class="header-section-number">9.1</span> Sammenheng mellom to kategoriske variable: <span class="math inline">\chi^2</span>-test for uavhengighet</a>
   <ul class="collapse">
   <li><a href="#nullhypotesen-og-alternativhypotesen" id="toc-nullhypotesen-og-alternativhypotesen" class="nav-link" data-scroll-target="#nullhypotesen-og-alternativhypotesen"><span class="header-section-number">9.1.1</span> Nullhypotesen og alternativhypotesen</a></li>
-  <li><a href="#testobservatoren-chi2-og-dens-utvalgsfordeling" id="toc-testobservatoren-chi2-og-dens-utvalgsfordeling" class="nav-link" data-scroll-target="#testobservatoren-chi2-og-dens-utvalgsfordeling"><span class="header-section-number">9.1.2</span> Testobservatoren <span class="math inline">\(\chi^2\)</span> og dens utvalgsfordeling</a></li>
+  <li><a href="#testobservatoren-chi2-og-dens-utvalgsfordeling" id="toc-testobservatoren-chi2-og-dens-utvalgsfordeling" class="nav-link" data-scroll-target="#testobservatoren-chi2-og-dens-utvalgsfordeling"><span class="header-section-number">9.1.2</span> Testobservatoren <span class="math inline">\chi^2</span> og dens utvalgsfordeling</a></li>
   <li><a href="#å-gjennomføre-testen-i-jamovi" id="toc-å-gjennomføre-testen-i-jamovi" class="nav-link" data-scroll-target="#å-gjennomføre-testen-i-jamovi"><span class="header-section-number">9.1.3</span> Å gjennomføre testen i jamovi</a></li>
   </ul></li>
   <li><a href="#sammendrag" id="toc-sammendrag" class="nav-link" data-scroll-target="#sammendrag"><span class="header-section-number">9.2</span> Sammendrag</a></li>
@@ -515,27 +529,27 @@ Hvert kapittel har med
 - hvordan man gjør testen i jamovi
 - antagelser
 -->
-<p>Nå som vi har dekket den grunnleggende teorien bak hypotesetesting, er det på tide å se på spesifikke tester som brukes ofte i utdanningsforskning. Hvor skal vi begynne? Lærebøker er ikke alltid enige om hva man bør starte med, men jeg velger å starte med kategoriske data og <span class="math inline">\(\chi^2\)</span>-tester, som uttales “kji-kvadrat”, som kanskje er det letteste å forstå.</p>
+<p>Nå som vi har dekket den grunnleggende teorien bak hypotesetesting, er det på tide å se på spesifikke tester som brukes ofte i utdanningsforskning. Hvor skal vi begynne? Lærebøker er ikke alltid enige om hva man bør starte med, men jeg velger å starte med kategoriske data og <span class="math inline">\chi^2</span>-tester, som uttales “kji-kvadrat”, som kanskje er det letteste å forstå.</p>
 <p>Husk at begrepet “kategoriske data” er bare et annet navn for “data på nominalnivå” som ble presentert i <a href="sec-measurement.html#sec-Scales-of-measurement" class="quarto-xref"><span>Seksjon 2.2</span></a>. I sammenheng med dataanalyse brukes begrepet “kategoriske data” oftere enn “nominalnivådata”. <strong>Analyse av kategoriske data</strong> refererer til en samling verktøy du kan bruke når dataene dine er på nominalnivå. De brukes også ofte for data på ordinalnivå, men da tar ikke analysen hensyn til at verdiene har en rekkefølge.</p>
 <section id="sammenheng-mellom-to-kategoriske-variable-chi2-test-for-uavhengighet" class="level2" data-number="9.1">
-<h2 data-number="9.1" class="anchored" data-anchor-id="sammenheng-mellom-to-kategoriske-variable-chi2-test-for-uavhengighet"><span class="header-section-number">9.1</span> Sammenheng mellom to kategoriske variable: <span class="math inline">\(\chi^2\)</span>-test for uavhengighet</h2>
-<p><span class="math inline">\(\chi^2-testen\)</span> tester om det er en sammenheng mellom to kategoriske variable. Den kalles en “test for uavhengighet”, fordi nullhypotesen sier at det <em>ikke</em> er en sammenheng mellom variablene, altså at de er uavhengige av hverandre. Vi benytter oss av dataene fra ICCS-studien som ble presentert i kapittelet om deskriptiv statistikk, <a href="sec-descriptive.html" class="quarto-xref"><span>Kapitel 4</span></a>. Vi skal spesielt benytte oss av to variable, <em>Forventet utdanning</em> og <em>Kjønn</em>.</p>
+<h2 data-number="9.1" class="anchored" data-anchor-id="sammenheng-mellom-to-kategoriske-variable-chi2-test-for-uavhengighet"><span class="header-section-number">9.1</span> Sammenheng mellom to kategoriske variable: <span class="math inline">\chi^2</span>-test for uavhengighet</h2>
+<p><span class="math inline">\chi^2-testen</span> tester om det er en sammenheng mellom to kategoriske variable. Den kalles en “test for uavhengighet”, fordi nullhypotesen sier at det <em>ikke</em> er en sammenheng mellom variablene, altså at de er uavhengige av hverandre. Vi benytter oss av dataene fra ICCS-studien som ble presentert i kapittelet om deskriptiv statistikk, <a href="sec-descriptive.html" class="quarto-xref"><span>Kapitel 4</span></a>. Vi skal spesielt benytte oss av to variable, <em>Forventet utdanning</em> og <em>Kjønn</em>.</p>
 <section id="nullhypotesen-og-alternativhypotesen" class="level3" data-number="9.1.1">
 <h3 data-number="9.1.1" class="anchored" data-anchor-id="nullhypotesen-og-alternativhypotesen"><span class="header-section-number">9.1.1</span> Nullhypotesen og alternativhypotesen</h3>
 <p>Først må vi uttrykke nullhypotesen for at det ikke er en sammenheng mellom variablene. For at det ikke skulle være noen sammenheng mellom variablene måtte hver verdi av <em>Kjønn</em> (gutt, jente, annet) ha like stor andel som så for seg hver type utdanning (ungdomsskole, VGS, kort utdanning, høyere utdanning).</p>
 <blockquote class="blockquote">
-<p><span class="math inline">\(H_0\)</span>: Andelen som valgte hver type utdanning er lik mellom kjønnene</p>
-<p><span class="math inline">\(H_0\)</span> (alternativ): <em>Forventet utdanning</em> er uavhengig av <em>Kjønn</em></p>
+<p><span class="math inline">H_0</span>: Andelen som valgte hver type utdanning er lik mellom kjønnene</p>
+<p><span class="math inline">H_0</span> (alternativ): <em>Forventet utdanning</em> er uavhengig av <em>Kjønn</em></p>
 </blockquote>
-<p>Hvis man skal uttrykke dette generelt for to variable <span class="math inline">\(X_1\)</span> og <span class="math inline">\(X_2\)</span>, lyder det:</p>
+<p>Hvis man skal uttrykke dette generelt for to variable <span class="math inline">X_1</span> og <span class="math inline">X_2</span>, lyder det:</p>
 <blockquote class="blockquote">
-<p><span class="math inline">\(H_0\)</span>: Andelen av <span class="math inline">\(X_1\)</span> sine verdier er lik på tvers av <span class="math inline">\(X_2\)</span> sine verdier.</p>
+<p><span class="math inline">H_0</span>: Andelen av <span class="math inline">X_1</span> sine verdier er lik på tvers av <span class="math inline">X_2</span> sine verdier.</p>
 </blockquote>
-<p>Alternativhypotesen blir som alltid bare “alt annet enn <span class="math inline">\(H_0\)</span>:</p>
+<p>Alternativhypotesen blir som alltid bare “alt annet enn <span class="math inline">H_0</span>:</p>
 <blockquote class="blockquote">
-<p><span class="math inline">\(H_1\)</span>: <em>Forventet utdanning</em> er ikke uavhengig av <em>Kjønn</em></p>
+<p><span class="math inline">H_1</span>: <em>Forventet utdanning</em> er ikke uavhengig av <em>Kjønn</em></p>
 </blockquote>
-<p>For å belyse en <span class="math inline">\(\chi^2\)</span>-test for uavhengighet er det naturlig å først titte på en krysstabell (se <a href="sec-descriptive.html#sec-descriptive-contingency" class="quarto-xref"><span>Seksjon 4.1.2</span></a>) med variablene, se <a href="#tbl-categorical-contingency" class="quarto-xref">Tabell&nbsp;<span>9.1</span></a>.</p>
+<p>For å belyse en <span class="math inline">\chi^2</span>-test for uavhengighet er det naturlig å først titte på en krysstabell (se <a href="sec-descriptive.html#sec-descriptive-contingency" class="quarto-xref"><span>Seksjon 4.1.2</span></a>) med variablene, se <a href="#tbl-categorical-contingency" class="quarto-xref">Tabell&nbsp;<span>9.1</span></a>.</p>
 <div class="cell" data-layout-align="center">
 <div id="tbl-categorical-contingency" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -697,7 +711,7 @@ Tabell&nbsp;9.2. Krysstabell med prosenter for <em>Forventet utdanning</em> og <
 <p>Denne tabellen gjør det mye lettere å se om det er en sammenheng mellom variablene, og det ser det kanskje ut til at det er? For eksempel er det mye større andel av jentene som ser for seg å ta høyere utdanning. Spørsmålet som stilles i hypotesetesten er om forskjellene vi ser i tabellen er store nok til å kunne forkaste nullhypotesen om at det ikke er noen sammenheng mellom <em>Kjønn</em> og <em>Forventet utdanning</em>.</p>
 </section>
 <section id="testobservatoren-chi2-og-dens-utvalgsfordeling" class="level3" data-number="9.1.2">
-<h3 data-number="9.1.2" class="anchored" data-anchor-id="testobservatoren-chi2-og-dens-utvalgsfordeling"><span class="header-section-number">9.1.2</span> Testobservatoren <span class="math inline">\(\chi^2\)</span> og dens utvalgsfordeling</h3>
+<h3 data-number="9.1.2" class="anchored" data-anchor-id="testobservatoren-chi2-og-dens-utvalgsfordeling"><span class="header-section-number">9.1.2</span> Testobservatoren <span class="math inline">\chi^2</span> og dens utvalgsfordeling</h3>
 <p>Nå må vi konstruere en testobservator, altså et tall som vi regner ut på bakgrunn av dataene, som er egnet til å uttale seg om nullhypotesen kan falsifiseres. Idéen bak testobservatoren er at under nullhypotesen har vi en forventning om hvor mange deltagere som skulle vært i hver celle i krysstabellen. Hvis den forventede verdien avviker mye fra den observerte verdien har vi dårlig samsvar med nullhypotesen, så disse avvikene kan brukes til å lage en testobservator. I <a href="#tbl-categorical-contingency-expected" class="quarto-xref">Tabell&nbsp;<span>9.3</span></a> har jeg vist de forventede verdiene for hver celle i krysstabellen, sammen med de verdiene vi faktisk observerte.</p>
 <div class="cell" data-layout-align="center">
 <div id="tbl-categorical-contingency-expected" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
@@ -717,11 +731,11 @@ Tabell&nbsp;9.3. Krysstabell for <em>Forventet utdanning</em> og <em>Kjønn</em>
 </figure>
 </div>
 </div>
-<p>For å regne ut de forventede verdiene gjør man følgende. For ruten øverst til venstre, antall jenter som ser for seg ungdomsskole som høyeste utdanning, regnet jeg først ut hvor stor andel av hele utvalget som ser for seg ungdomsskole som høyeste utdanning. Dette er 966 elever av totalt 8583 elever, som gir at <span class="math inline">\(\frac{966}{8583} = 11{,}3\%\)</span>. Det er 4178 jenter i utvalget og nullhypotesen forventer at jentene har samme andel som ser for seg ungdomsskole som høyeste utdanning, 11,3%, altså <span class="math inline">\(4178\cdot 0{,}113 = 470\)</span> jenter.</p>
-<p>Avviket mellom den observerte verdien (407) og den forventede verdien (470) blir altså <span class="math inline">\(407 - 470 = -63\)</span>, som betyr at 63 elever jenter mindre enn forventet så for seg ungdomsskole. Man kunne tenkt at å summere opp disse avvikene ville gitt <span class="math inline">\(\chi^2\)</span>-verdien, men man gå gjøre to ting til. Først må man kvadrere avvikene, akkurat som når man regner ut variansen. Jeg forklarte i kapittelet om varians, <a href="sec-descriptive.html#sec-descriptive-dispersion" class="quarto-xref"><span>Seksjon 4.4</span></a>, hvorfor man ofte kvadrerte. Deretter må man dele på den forventede verdien. Grunnen til dette er at et avvik på 63 er veldig lite hvis man forventet 1 000 000, men det er ganske masse hvis man forventet 470. Så utregningen for den første cellen blir</p>
-<p><span class="math display">\[ \frac{(407-470)^2}{470} = 8{,}44.\]</span></p>
-<p>Hvis man gjør en slik utregning for hver celle og summerer opp alle resultatene får man testobservatoren <span class="math inline">\(\chi^2\)</span>.</p>
-<p>Det som gjør at <span class="math inline">\(\chi^2\)</span> er egnet som en testobservator er at den måler et avvik fra nullhypotesen og at vi kjenner utvalgsfordelingen, den følger <span class="math inline">\(\chi^2\)</span>-fordelingen som vi viste i <a href="sec-probability.html#sec-probability-other-distributions" class="quarto-xref"><span>Seksjon 6.4.3</span></a>.</p>
+<p>For å regne ut de forventede verdiene gjør man følgende. For ruten øverst til venstre, antall jenter som ser for seg ungdomsskole som høyeste utdanning, regnet jeg først ut hvor stor andel av hele utvalget som ser for seg ungdomsskole som høyeste utdanning. Dette er 966 elever av totalt 8583 elever, som gir at <span class="math inline">\frac{966}{8583} = 11{,}3\%</span>. Det er 4178 jenter i utvalget og nullhypotesen forventer at jentene har samme andel som ser for seg ungdomsskole som høyeste utdanning, 11,3%, altså <span class="math inline">4178\cdot 0{,}113 = 470</span> jenter.</p>
+<p>Avviket mellom den observerte verdien (407) og den forventede verdien (470) blir altså <span class="math inline">407 - 470 = -63</span>, som betyr at 63 elever jenter mindre enn forventet så for seg ungdomsskole. Man kunne tenkt at å summere opp disse avvikene ville gitt <span class="math inline">\chi^2</span>-verdien, men man gå gjøre to ting til. Først må man kvadrere avvikene, akkurat som når man regner ut variansen. Jeg forklarte i kapittelet om varians, <a href="sec-descriptive.html#sec-descriptive-dispersion" class="quarto-xref"><span>Seksjon 4.4</span></a>, hvorfor man ofte kvadrerte. Deretter må man dele på den forventede verdien. Grunnen til dette er at et avvik på 63 er veldig lite hvis man forventet 1 000 000, men det er ganske masse hvis man forventet 470. Så utregningen for den første cellen blir</p>
+<p><span class="math display"> \frac{(407-470)^2}{470} = 8{,}44.</span></p>
+<p>Hvis man gjør en slik utregning for hver celle og summerer opp alle resultatene får man testobservatoren <span class="math inline">\chi^2</span>.</p>
+<p>Det som gjør at <span class="math inline">\chi^2</span> er egnet som en testobservator er at den måler et avvik fra nullhypotesen og at vi kjenner utvalgsfordelingen, den følger <span class="math inline">\chi^2</span>-fordelingen som vi viste i <a href="sec-probability.html#sec-probability-other-distributions" class="quarto-xref"><span>Seksjon 6.4.3</span></a>.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -732,7 +746,7 @@ Vi har forenklet litt
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Hvis du leser om kjikvadrat-fordelingen et hvilket som helst annet sted vil du se at den finnes i forskjellige versjoner ut fra hvor mange <strong>frihetsgrader</strong> du har. Vi dropper dette. Programvaren finner det ut for deg, og detaljnivået blir for høyt for denne boka. Intuisjonen bak frihetsgradene er at dess flere celler man har i krysstabellen tilhørende <span class="math inline">\(\chi^2\)</span>-testen, dess usikrere estimat av <span class="math inline">\(\chi^2\)</span> får man. Siden det er tre verdier av <em>Kjønn</em> og fire verdier av <em>Forventet utdanning</em> har krysstabellen 12 celler. Når utvalgsstørrelsen er 8583 vil det være veldig mange personer i hver celle, som gir et godt estimat. Hvis krystabbelen hadde hatt 500 celler hadde det bare vært noen få personer i hver celle, som ville gitt dårligere estimater. Det er dette frihetsgradene fanger opp.</p>
+<p>Hvis du leser om kjikvadrat-fordelingen et hvilket som helst annet sted vil du se at den finnes i forskjellige versjoner ut fra hvor mange <strong>frihetsgrader</strong> du har. Vi dropper dette. Programvaren finner det ut for deg, og detaljnivået blir for høyt for denne boka. Intuisjonen bak frihetsgradene er at dess flere celler man har i krysstabellen tilhørende <span class="math inline">\chi^2</span>-testen, dess usikrere estimat av <span class="math inline">\chi^2</span> får man. Siden det er tre verdier av <em>Kjønn</em> og fire verdier av <em>Forventet utdanning</em> har krysstabellen 12 celler. Når utvalgsstørrelsen er 8583 vil det være veldig mange personer i hver celle, som gir et godt estimat. Hvis krystabbelen hadde hatt 500 celler hadde det bare vært noen få personer i hver celle, som ville gitt dårligere estimater. Det er dette frihetsgradene fanger opp.</p>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
@@ -743,7 +757,7 @@ Vi har forenklet litt
 <a href="sec-categorical_files/figure-html/fig-categorical-chi-square-dist-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figur&nbsp;9.1. Illustrasjon av forkastningsområdet ved \chi^2-test."><img src="sec-categorical_files/figure-html/fig-categorical-chi-square-dist-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" alt="En kji-kvadrat-fordeling som viser en høyreskjev kurve. En pil peker på verdien 12,6 på x-aksen, merket &quot;Den kritiske verdien er 12,6.&quot; Området under grafen til høyre for 12,6 er skravert og markert med &quot;Kritisk område&quot;."></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-categorical-chi-square-dist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figur&nbsp;9.1. Illustrasjon av forkastningsområdet ved <span class="math inline">\(\chi^2\)</span>-test.
+Figur&nbsp;9.1. Illustrasjon av forkastningsområdet ved <span class="math inline">\chi^2</span>-test.
 </figcaption>
 </figure>
 </div>
@@ -752,7 +766,7 @@ Figur&nbsp;9.1. Illustrasjon av forkastningsområdet ved <span class="math inlin
 </section>
 <section id="å-gjennomføre-testen-i-jamovi" class="level3" data-number="9.1.3">
 <h3 data-number="9.1.3" class="anchored" data-anchor-id="å-gjennomføre-testen-i-jamovi"><span class="header-section-number">9.1.3</span> Å gjennomføre testen i jamovi</h3>
-<p>Nå som vi vet hvordan testen fungerer kan vi se hvordan den utføres i jamovi. Du må trykke på ‘Frequencies’ → ‘Contingency Tables’ → ‘Independent Samples’). Der fyller vi inn <em>Kjønn</em> og <em>Forventet utdanning</em> slik som i <a href="#fig-categorical-jamovi-independence" class="quarto-xref">Figur&nbsp;<span>9.2</span></a>. Resultatene viser en krysstabell og resultatene av <span class="math inline">\(\chi^2\)</span>-testen. Testobservatoren har verdien 274, og hvis vi sammenlikner med <a href="#fig-categorical-chi-square-dist" class="quarto-xref">Figur&nbsp;<span>9.1</span></a> ser vi at 274 er langt inne i forkastningsområdet. Dette samsvarer med <span class="math inline">\(p\)</span>-verdien som er mege lav, lavere enn 0,001.</p>
+<p>Nå som vi vet hvordan testen fungerer kan vi se hvordan den utføres i jamovi. Du må trykke på ‘Frequencies’ → ‘Contingency Tables’ → ‘Independent Samples’). Der fyller vi inn <em>Kjønn</em> og <em>Forventet utdanning</em> slik som i <a href="#fig-categorical-jamovi-independence" class="quarto-xref">Figur&nbsp;<span>9.2</span></a>. Resultatene viser en krysstabell og resultatene av <span class="math inline">\chi^2</span>-testen. Testobservatoren har verdien 274, og hvis vi sammenlikner med <a href="#fig-categorical-chi-square-dist" class="quarto-xref">Figur&nbsp;<span>9.1</span></a> ser vi at 274 er langt inne i forkastningsområdet. Dette samsvarer med <span class="math inline">p</span>-verdien som er mege lav, lavere enn 0,001.</p>
 <p>Det var enkelt, ikke sant! Du kan også be jamovi om å vise deg de forventede verdiene - bare klikk på avkrysningsboksen for ‘Counts’ – ‘Expected’ i ‘Cells’-alternativene, så vil de forventede verdiene vises i krysstabellen.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -762,7 +776,7 @@ Figur&nbsp;9.1. Illustrasjon av forkastningsområdet ved <span class="math inlin
 <a href="images/fig-categorical-jamovi-independence.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figur&nbsp;9.2. \chi^2-test for uavhengighet i jamovi"><img src="images/fig-categorical-jamovi-independence.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" data-fig-pos="H" alt="Et jamovi-skjermbilde som viser Krysstabell. Grensesnittet inkluderer alternativer for å velge rader, kolonner og lag for tabellene, samt visning av statistikk, celler og plot. En tabell med observerte og forventede verdier vises til høyre"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-categorical-jamovi-independence-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figur&nbsp;9.2. <span class="math inline">\(\chi^2\)</span>-test for uavhengighet i jamovi
+Figur&nbsp;9.2. <span class="math inline">\chi^2</span>-test for uavhengighet i jamovi
 </figcaption>
 </figure>
 </div>
@@ -770,7 +784,7 @@ Figur&nbsp;9.2. <span class="math inline">\(\chi^2\)</span>-test for uavhengighe
 </div>
 <p>Denne utskriften gir oss nok informasjon til å rapportere resultatet:</p>
 <blockquote class="blockquote">
-<p>Testen for uavhengighet viser en signifikant sammenheng mellom hvilke utdanninger kjønnene ser for seg <span class="math inline">\((\chi^2(6) = 274, p&lt; 0{,}001)\)</span>.</p>
+<p>Testen for uavhengighet viser en signifikant sammenheng mellom hvilke utdanninger kjønnene ser for seg <span class="math inline">(\chi^2(6) = 274, p&lt; 0{,}001)</span>.</p>
 </blockquote>
 <p>Problemet med dette resultatet er at vi ikke aner hvilken vei sammenhengen går. Heldigvis inneholder jamovi en fin måte å visualisere testen på også, se <a href="#fig-categorical-jamovi-independence-diagram" class="quarto-xref">Figur&nbsp;<span>9.3</span></a>. Jeg har valgt et stablet stolpediagram der kolonnene er <em>Kjønn</em>.</p>
 <div class="cell" data-layout-align="center">
@@ -781,7 +795,7 @@ Figur&nbsp;9.2. <span class="math inline">\(\chi^2\)</span>-test for uavhengighe
 <a href="images/fig-categorical-jamovi-independence-diagram.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figur&nbsp;9.3. Et stablet stolpediagram fra jamovi som visualiserer \chi^2-testen"><img src="images/fig-categorical-jamovi-independence-diagram.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="Et jamovi-skjermbilde som viser et stablet stolpediagram. Kjønn på x-aksen, og vertikale stolper som viser andelen av hver verdi for _Forventet utdanning_."></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-categorical-jamovi-independence-diagram-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figur&nbsp;9.3. Et stablet stolpediagram fra jamovi som visualiserer <span class="math inline">\(\chi^2\)</span>-testen
+Figur&nbsp;9.3. Et stablet stolpediagram fra jamovi som visualiserer <span class="math inline">\chi^2</span>-testen
 </figcaption>
 </figure>
 </div>
@@ -794,8 +808,8 @@ Figur&nbsp;9.3. Et stablet stolpediagram fra jamovi som visualiserer <span class
 <h2 data-number="9.2" class="anchored" data-anchor-id="sammendrag"><span class="header-section-number">9.2</span> Sammendrag</h2>
 <p>Her er det viktigste vi har gått gjennom i dette kapittelet:</p>
 <ul>
-<li><strong><span class="math inline">\(\chi^2\)</span>-test for uavhengighet</strong> brukes for å teste om det er en sammenheng mellom to kategoriske variable. Nullhypotesen er at det ikke er noen sammenheng eller assosiasjon mellom variablene, altså at andelene er like i hele utvalget som i kategoriene til den uavhengige variabelen.</li>
-<li><strong>Testobservatoren <span class="math inline">\(\chi^2\)</span></strong> måler avviket mellom de observerte verdiene i krysstabellen og de verdiene vi hadde forventet under nullhypotesen.</li>
+<li><strong><span class="math inline">\chi^2</span>-test for uavhengighet</strong> brukes for å teste om det er en sammenheng mellom to kategoriske variable. Nullhypotesen er at det ikke er noen sammenheng eller assosiasjon mellom variablene, altså at andelene er like i hele utvalget som i kategoriene til den uavhengige variabelen.</li>
+<li><strong>Testobservatoren <span class="math inline">\chi^2</span></strong> måler avviket mellom de observerte verdiene i krysstabellen og de verdiene vi hadde forventet under nullhypotesen.</li>
 <li><strong>Utbroder testresultatene ved å visualisere med et stolpediagram.</strong></li>
 </ul>
 
@@ -1228,7 +1242,7 @@ Figur&nbsp;9.3. Et stablet stolpediagram fra jamovi som visualiserer <span class
   </div>
   <div class="nav-page nav-page-next">
       <a href="./sec-means.html" class="pagination-link" aria-label="Sammenlikne gjennomsnitt: ANOVA og paret $t$-test">
-        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Sammenlikne gjennomsnitt: ANOVA og paret <span class="math inline">\(t\)</span>-test</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Sammenlikne gjennomsnitt: ANOVA og paret <span class="math inline">t</span>-test</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

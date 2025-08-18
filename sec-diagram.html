@@ -128,8 +128,22 @@ gtag('config', 'G-FRV7C65B01', { 'anonymize_ip': true});
 
 
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -479,7 +493,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./sec-means.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Sammenlikne gjennomsnitt: ANOVA og paret <span class="math inline">\(t\)</span>-test</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Sammenlikne gjennomsnitt: ANOVA og paret <span class="math inline">t</span>-test</span></span></a>
   </div>
 </li>
       </ul>
@@ -800,7 +814,7 @@ Figur&nbsp;5.4. Undergruppeanalyse av <em>Forventet utdanning</em> for hvert <em
 </section>
 <section id="sec-diagram-stacked-bar" class="level2" data-number="5.2">
 <h2 data-number="5.2" class="anchored" data-anchor-id="sec-diagram-stacked-bar"><span class="header-section-number">5.2</span> Stablede stolpediagram</h2>
-<p>Stolpediagrammer kan stables oppå hverandre, noe som gjør dem mer kompakte og lettere å forstå, i noen sammenhenger. Vi trykker oss inn på en annen meny denne gangen, “Analyses” → “Frequencies” → “Independent samples (<span class="math inline">\(\chi^2\)</span> test of association)”. Her må du trykke deg inn på “Plots”, krysse av for “Bar plot”. I denne menyen er det mange flere innstillingsmuligheter enn før, se <a href="#fig-diagram-jamovi-stacked-bar" class="quarto-xref">Figur&nbsp;<span>5.5</span></a>:</p>
+<p>Stolpediagrammer kan stables oppå hverandre, noe som gjør dem mer kompakte og lettere å forstå, i noen sammenhenger. Vi trykker oss inn på en annen meny denne gangen, “Analyses” → “Frequencies” → “Independent samples (<span class="math inline">\chi^2</span> test of association)”. Her må du trykke deg inn på “Plots”, krysse av for “Bar plot”. I denne menyen er det mange flere innstillingsmuligheter enn før, se <a href="#fig-diagram-jamovi-stacked-bar" class="quarto-xref">Figur&nbsp;<span>5.5</span></a>:</p>
 <ul>
 <li>Jeg legger inn <em>Forventet utdanning</em> på “Rows” og <em>Land</em> på “Columns”. Dette er smak og behag for hvordan tabellen “Contingency Tables”, som også genereres, blir seende ut.</li>
 <li>Jeg velger “Bar Type: Stacked”, som altså betyr “Stolpetype: Stablet”.</li>
@@ -985,7 +999,7 @@ Figur&nbsp;5.13. Sammenlikning av histogram og boksplott for å vise variabelen 
 <p>En moderne variant av det tradisjonelle boksplottet er fiolinplottet. Fiolinplott likner på tetthetskurver, men de er speilet slik at de ofte ser ut som en fiolinkropp. I jamovi kan du lage fiolinplott ved å krysse av for “Violin” i stedet for “Histogram”. Se <a href="#fig-diagram-violin" class="quarto-xref">Figur&nbsp;<span>5.14</span></a> for en undergruppeanalyse med fiolinplott. Her har vi også krysset av for at gjennomsnittet skal vises (på knappen står det “Mean”).</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-diagram-violin" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Et fiolinplott som viser fordelingen av _Likestilling_ for hver verdi av _Forventet utdanning_." data-fig-pos="h!">
+<div id="fig-diagram-violin" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" data-fig-pos="h!" alt="Et fiolinplott som viser fordelingen av _Likestilling_ for hver verdi av _Forventet utdanning_.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-diagram-violin-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="images/fig-diagram-violin.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16" title="Figur&nbsp;5.14. Et fiolinplott av Likestilling per Forventet utdanning"><img src="images/fig-diagram-violin.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" data-fig-pos="h!" alt="Et fiolinplott som viser fordelingen av _Likestilling_ for hver verdi av _Forventet utdanning_."></a>
@@ -1004,7 +1018,7 @@ Figur&nbsp;5.14. Et fiolinplott av <em>Likestilling</em> per <em>Forventet utdan
 <h2 data-number="5.5" class="anchored" data-anchor-id="spredningsplott"><span class="header-section-number">5.5</span> Spredningsplott</h2>
 <p>Så til den aller siste typen basisplott som vi skal gå gjennom, <strong>spredningsplott</strong>. Spredningsplott viser sammenhengen mellom to tallvariable. Histogrammer, boksplott og fiolinplott visualiserte én tallvariabel. Da jeg analyserte tallvariabelen opp mot andre variable, kalte jeg det en “undergruppeanalyse” og undergruppene var definert av en nominell eller ordinal variabel. Hva hvis du ønsker å gjøre en slags undergruppeanalyse definert av en tall-variabel? Da må du bruke et spredningsplott. La meg forklare.</p>
 <p>Vi har to tallvariable i vår versjon av ICCS-datasettet, <em>Likestilling</em> og <em>Sosioøkonomisk status</em>. Et naturlig spørsmål å stille er om elevene med ulik sosioøkonomisk status har forskjellig syn på likestilling mellom kjønnene. Hvis man prøver å gjøre en undergruppeanalyse der undergruppene er definert av <em>Sosioøkonomisk status</em> støter man på problemer, fordi det er 2029 ulike verdier av <em>Sosioøkonomisk status</em>. Man kan ikke vise så mange undergrupper! (De fem første verdiene i datasettet er -1.68595, 1.03747, 0.3034, -1.71153, -0.22118, skjønner du problemet, eller?)</p>
-<p>Løsningen er å legge hver sin variabel på hver sin akse og plotte hvert punkt. Hvis jeg vil legge <em>Sosioøkonomisk status</em> på <span class="math inline">\(x\)</span>-aksen og <em>Likestilling</em> på <span class="math inline">\(y\)</span>-aksen legger jeg inn dette i jamovi slik som i <a href="#fig-diagram-jamovi-scatter" class="quarto-xref">Figur&nbsp;<span>5.15 (a)</span></a>. Resultatet er i <a href="#fig-diagram-scatter" class="quarto-xref">Figur&nbsp;<span>5.15 (b)</span></a>. Vi ser at uavhengig av sosioøkonomisk status virker den vanligste verdien på <em>Likestilling</em> å være den høyeste. Ut fra figuren er er det ikke klart om sosioøkonomisk status har noen sammenheng med syn på likestilling i det hele tatt.</p>
+<p>Løsningen er å legge hver sin variabel på hver sin akse og plotte hvert punkt. Hvis jeg vil legge <em>Sosioøkonomisk status</em> på <span class="math inline">x</span>-aksen og <em>Likestilling</em> på <span class="math inline">y</span>-aksen legger jeg inn dette i jamovi slik som i <a href="#fig-diagram-jamovi-scatter" class="quarto-xref">Figur&nbsp;<span>5.15 (a)</span></a>. Resultatet er i <a href="#fig-diagram-scatter" class="quarto-xref">Figur&nbsp;<span>5.15 (b)</span></a>. Vi ser at uavhengig av sosioøkonomisk status virker den vanligste verdien på <em>Likestilling</em> å være den høyeste. Ut fra figuren er er det ikke klart om sosioøkonomisk status har noen sammenheng med syn på likestilling i det hele tatt.</p>
 <div id="fig-scatter" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-scatter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">

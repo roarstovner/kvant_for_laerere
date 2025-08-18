@@ -128,8 +128,22 @@ gtag('config', 'G-FRV7C65B01', { 'anonymize_ip': true});
 
 
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -159,7 +173,7 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="10&nbsp; Sammenlikne gjennomsnitt: ANOVA og paret \(t\)-test – Kvantitative metoder for lærere">
+<meta property="og:title" content="10&nbsp; Sammenlikne gjennomsnitt: ANOVA og paret t-test – Kvantitative metoder for lærere">
 <meta property="og:description" content="">
 <meta property="og:image" content="https://kvant.roarstovner.no/images/fig13-1.png">
 <meta property="og:site_name" content="Kvantitative metoder for lærere">
@@ -339,7 +353,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Slå av eller på sidebarnavigering" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sec-categorical.html">Inferensiell statistikk</a></li><li class="breadcrumb-item"><a href="./sec-means.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Sammenlikne gjennomsnitt: ANOVA og paret <span class="math inline">\(t\)</span>-test</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sec-categorical.html">Inferensiell statistikk</a></li><li class="breadcrumb-item"><a href="./sec-means.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Sammenlikne gjennomsnitt: ANOVA og paret <span class="math inline">t</span>-test</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Slå av eller på sidebarnavigering" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Søk" onclick="window.quartoOpenSearch();">
@@ -479,7 +493,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./sec-means.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Sammenlikne gjennomsnitt: ANOVA og paret <span class="math inline">\(t\)</span>-test</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Sammenlikne gjennomsnitt: ANOVA og paret <span class="math inline">t</span>-test</span></span></a>
   </div>
 </li>
       </ul>
@@ -504,14 +518,14 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#et-illustrerende-datasett" id="toc-et-illustrerende-datasett" class="nav-link" data-scroll-target="#et-illustrerende-datasett"><span class="header-section-number">10.1.1</span> Et illustrerende datasett</a></li>
   <li><a href="#sec-ANOVA-hypotheses" id="toc-sec-ANOVA-hypotheses" class="nav-link" data-scroll-target="#sec-ANOVA-hypotheses"><span class="header-section-number">10.1.2</span> Nullhypotesen og alternativhypotesen</a></li>
-  <li><a href="#testobservatoren-f-og-dens-utvagsfordeling" id="toc-testobservatoren-f-og-dens-utvagsfordeling" class="nav-link" data-scroll-target="#testobservatoren-f-og-dens-utvagsfordeling"><span class="header-section-number">10.1.3</span> Testobservatoren <span class="math inline">\(F\)</span> og dens utvagsfordeling</a></li>
+  <li><a href="#testobservatoren-f-og-dens-utvagsfordeling" id="toc-testobservatoren-f-og-dens-utvagsfordeling" class="nav-link" data-scroll-target="#testobservatoren-f-og-dens-utvagsfordeling"><span class="header-section-number">10.1.3</span> Testobservatoren <span class="math inline">F</span> og dens utvagsfordeling</a></li>
   <li><a href="#å-gjennomføre-anova-i-jamovi" id="toc-å-gjennomføre-anova-i-jamovi" class="nav-link" data-scroll-target="#å-gjennomføre-anova-i-jamovi"><span class="header-section-number">10.1.4</span> Å gjennomføre ANOVA i jamovi</a></li>
   </ul></li>
-  <li><a href="#sammenlikne-gjennomsnittlig-forbedring-paret-t-test" id="toc-sammenlikne-gjennomsnittlig-forbedring-paret-t-test" class="nav-link" data-scroll-target="#sammenlikne-gjennomsnittlig-forbedring-paret-t-test"><span class="header-section-number">10.2</span> Sammenlikne gjennomsnittlig forbedring: paret <span class="math inline">\(t\)</span>-test</a>
+  <li><a href="#sammenlikne-gjennomsnittlig-forbedring-paret-t-test" id="toc-sammenlikne-gjennomsnittlig-forbedring-paret-t-test" class="nav-link" data-scroll-target="#sammenlikne-gjennomsnittlig-forbedring-paret-t-test"><span class="header-section-number">10.2</span> Sammenlikne gjennomsnittlig forbedring: paret <span class="math inline">t</span>-test</a>
   <ul class="collapse">
   <li><a href="#dataene" id="toc-dataene" class="nav-link" data-scroll-target="#dataene"><span class="header-section-number">10.2.1</span> Dataene</a></li>
   <li><a href="#nullhypotesen-og-alternativhypotesen" id="toc-nullhypotesen-og-alternativhypotesen" class="nav-link" data-scroll-target="#nullhypotesen-og-alternativhypotesen"><span class="header-section-number">10.2.2</span> Nullhypotesen og alternativhypotesen</a></li>
-  <li><a href="#testobservatoren-t-og-dens-utvalgsfordeling" id="toc-testobservatoren-t-og-dens-utvalgsfordeling" class="nav-link" data-scroll-target="#testobservatoren-t-og-dens-utvalgsfordeling"><span class="header-section-number">10.2.3</span> Testobservatoren <span class="math inline">\(t\)</span> og dens utvalgsfordeling</a></li>
+  <li><a href="#testobservatoren-t-og-dens-utvalgsfordeling" id="toc-testobservatoren-t-og-dens-utvalgsfordeling" class="nav-link" data-scroll-target="#testobservatoren-t-og-dens-utvalgsfordeling"><span class="header-section-number">10.2.3</span> Testobservatoren <span class="math inline">t</span> og dens utvalgsfordeling</a></li>
   <li><a href="#å-gjøre-testen-i-jamovi" id="toc-å-gjøre-testen-i-jamovi" class="nav-link" data-scroll-target="#å-gjøre-testen-i-jamovi"><span class="header-section-number">10.2.4</span> Å gjøre testen i jamovi</a></li>
   </ul></li>
   <li><a href="#sammendrag" id="toc-sammendrag" class="nav-link" data-scroll-target="#sammendrag"><span class="header-section-number">10.3</span> Sammendrag</a></li>
@@ -519,7 +533,7 @@ window.Quarto = {
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sec-categorical.html">Inferensiell statistikk</a></li><li class="breadcrumb-item"><a href="./sec-means.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Sammenlikne gjennomsnitt: ANOVA og paret <span class="math inline">\(t\)</span>-test</span></a></li></ol></nav><h1 class="title display-7"><span id="sec-means" class="quarto-section-identifier"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Sammenlikne gjennomsnitt: ANOVA og paret <span class="math inline">\(t\)</span>-test</span></span></h1></header>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sec-categorical.html">Inferensiell statistikk</a></li><li class="breadcrumb-item"><a href="./sec-means.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Sammenlikne gjennomsnitt: ANOVA og paret <span class="math inline">t</span>-test</span></a></li></ol></nav><h1 class="title display-7"><span id="sec-means" class="quarto-section-identifier"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Sammenlikne gjennomsnitt: ANOVA og paret <span class="math inline">t</span>-test</span></span></h1></header>
 
 
 <header id="title-block-header">
@@ -531,7 +545,7 @@ window.Quarto = {
 <!-- \placetextbox{0.26}{0.06}{\scriptsize{©2025 D.R. Foxcroft and D.J. Navarro,}} -->
 <!-- \placetextbox{0.195}{0.05}{\scriptsize{CC BY-SA 4.0}} -->
 <!-- \placetextbox{0.70}{0.06}{\scriptsize{\url{https://doi.org/10.11647/OBP.0333.13}}} -->
-<p>Dette kapittelet introduserer to statistiske verktøy for å sammenlikne forskjeller i gjennomsnitt. Det første verktøyet, ANOVA, analyserer om gjennomsnittet er forskjellig i ulike grupper. Det andre verktøyet, paret <span class="math inline">\(t\)</span>-test, kan brukes til å undersøke om gjennomsnittet har forandret seg mellom en før-test og etter-test.</p>
+<p>Dette kapittelet introduserer to statistiske verktøy for å sammenlikne forskjeller i gjennomsnitt. Det første verktøyet, ANOVA, analyserer om gjennomsnittet er forskjellig i ulike grupper. Det andre verktøyet, paret <span class="math inline">t</span>-test, kan brukes til å undersøke om gjennomsnittet har forandret seg mellom en før-test og etter-test.</p>
 <section id="sammenlikne-gjennomsnitt-i-ulike-grupper-anova" class="level2" data-number="10.1">
 <h2 data-number="10.1" class="anchored" data-anchor-id="sammenlikne-gjennomsnitt-i-ulike-grupper-anova"><span class="header-section-number">10.1</span> Sammenlikne gjennomsnitt i ulike grupper: ANOVA</h2>
 <p>Vi starter med <strong>ANOVA</strong>, som står for “ANalysis Of VAriance”. Teknikken ble utviklet av Sir Ronald Fisher tidlig på 1900-tallet, og det er ham vi har å takke for den noe forvirrende terminologien. Begrepet ANOVA kan være litt misvisende på to måter. For det første handler ANOVA faktisk om å undersøke forskjeller i gjennomsnitt, selv om navnet refererer til varianser. For det andre finnes det flere forskjellige metoder som kalles ANOVA og som bare er løselig beslektet. Men i denne boka skal vi kun møte den enkleste formen for ANOVA, hvor vi har flere grupper av observasjoner og ønsker å finne ut om gjennomsnittet av en utfallsvariabel er forskjellig mellom gruppene. Denne varianten kalles for en “enveis ANOVA”.</p>
@@ -551,9 +565,9 @@ Advarsel
 </div>
 <section id="et-illustrerende-datasett" class="level3" data-number="10.1.1">
 <h3 data-number="10.1.1" class="anchored" data-anchor-id="et-illustrerende-datasett"><span class="header-section-number">10.1.1</span> Et illustrerende datasett</h3>
-<p>Anta at du har blitt involvert i en klinisk studie hvor du tester et nytt antidepressivt legemiddel kalt <em>Joyzepam</em>. For å teste medisinens effektivitet, inkluderer studien tre separate medikamenter. Ett er et placebo, altså luretabletter som ikke inneholder medisin, og det andre er et eksisterende antidepressivt/angstdempende medikament kalt <em>Anxifree</em>. En samling av 18 deltakere med moderat til alvorlig depresjon er rekruttert til den innledende studien. Siden medikamentene noen ganger gis sammen med psykologisk terapi, inkluderer studien 9 personer som gjennomgår kognitiv atferdsterapi (<em>cognitive behavioral therapy</em>, CBT) og 9 som ikke gjør det. Deltakerne blir tilfeldig tildelt en behandling, slik at det er 3 CBT-personer og 3 personer uten terapi tildelt hver av de 3 medikamentene. Utfallsvariabelen er at en psykolog vurderer humøret til hver person før og etter en 3-måneders periode med hvert medikament, og den samlede forbedringen i hver persons humør vurderes på en skala fra <span class="math inline">\(-5\)</span> til <span class="math inline">\(+5\)</span>. Med dette som studiedesign, endte dataene opp som i datafilen <em><a href="data_and_tables/clinicaltrial.csv">clinicaltrial.csv</a></em>, se Vi kan se at dette datasettet inneholder de tre variablene <em>drug</em>, <em>therapy</em> og <em>mood.gain</em>.</p>
+<p>Anta at du har blitt involvert i en klinisk studie hvor du tester et nytt antidepressivt legemiddel kalt <em>Joyzepam</em>. For å teste medisinens effektivitet, inkluderer studien tre separate medikamenter. Ett er et placebo, altså luretabletter som ikke inneholder medisin, og det andre er et eksisterende antidepressivt/angstdempende medikament kalt <em>Anxifree</em>. En samling av 18 deltakere med moderat til alvorlig depresjon er rekruttert til den innledende studien. Siden medikamentene noen ganger gis sammen med psykologisk terapi, inkluderer studien 9 personer som gjennomgår kognitiv atferdsterapi (<em>cognitive behavioral therapy</em>, CBT) og 9 som ikke gjør det. Deltakerne blir tilfeldig tildelt en behandling, slik at det er 3 CBT-personer og 3 personer uten terapi tildelt hver av de 3 medikamentene. Utfallsvariabelen er at en psykolog vurderer humøret til hver person før og etter en 3-måneders periode med hvert medikament, og den samlede forbedringen i hver persons humør vurderes på en skala fra <span class="math inline">-5</span> til <span class="math inline">+5</span>. Med dette som studiedesign, endte dataene opp som i datafilen <em><a href="data_and_tables/clinicaltrial.csv">clinicaltrial.csv</a></em>, se Vi kan se at dette datasettet inneholder de tre variablene <em>drug</em>, <em>therapy</em> og <em>mood.gain</em>.</p>
 <div class="cell" data-layout-align="center" data-tbl-alt="Et jamovi-skjermbilde som viser dataene fra den klinisk studien. Fire variable, `ID` (fra 1 til 18), `drug` (3 forskjellige), og `mood.gain` (verdiene varierer fra 0,1 til 1,8).">
-<div id="tbl-clinical-data" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center" data-tbl-alt="Et jamovi-skjermbilde som viser dataene fra den klinisk studien. Fire variable, `ID` (fra 1 til 18), `drug` (3 forskjellige), og `mood.gain` (verdiene varierer fra 0,1 til 1,8).">
+<div id="tbl-clinical-data" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-tbl-alt="Et jamovi-skjermbilde som viser dataene fra den klinisk studien. Fire variable, `ID` (fra 1 til 18), `drug` (3 forskjellige), og `mood.gain` (verdiene varierer fra 0,1 til 1,8)." data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-clinical-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Tabell&nbsp;10.1. Datafilen for den kliniske studien.
@@ -791,16 +805,16 @@ Figur&nbsp;10.1. Deskriptiv statistikk og boksplott for humørforbedring for hve
 <p>Det eksperimentelle designet vi beskrev tidligere viser tydelig at vi ønsker å sammenligne den gjennomsnittlige humørforandringen mellom tre forskjellige medisiner. Det er akkurat slike forskningsspørsmål man undersøker med enveis ANOVA. Hvis vi analyserer dette oppsettet har vi to variable; vi har én variabel på forholdstallsnivå, <em>mood.gain</em>, og én kategorisk variabel, <em>drug</em>. En enveis ANOVA analyserer altså sammenhengen mellom en variabel på forholdstallsnivå og en kategorisk variabel. I vårt tilfelle har den kategoriske variabelen 3 kategorier, men den kan ha så få som 2 kategorier og det er ingen øvre grense for hvor mange kategorier den kan ha.</p>
 <p>Den noe pessimistiske nullhypotesen vi ønsker å teste er at gjennomsnittlig <em>mood.gain</em> er lik for alle de tre medisinene – altså at ingen av medisinene er mer effektive enn placebo:</p>
 <blockquote class="blockquote">
-<p><span class="math inline">\(H_0\)</span>: Gjennomsnittet av <code>mood.gain</code> er likt for de tre medisinene</p>
+<p><span class="math inline">H_0</span>: Gjennomsnittet av <code>mood.gain</code> er likt for de tre medisinene</p>
 </blockquote>
 <p>Den alternative hypotesen er at minst én av de tre behandlingene skiller seg fra de andre.</p>
 <blockquote class="blockquote">
-<p><span class="math inline">\(H_1\)</span>: Minst én av gjennomsnittene er ulik de andre</p>
+<p><span class="math inline">H_1</span>: Minst én av gjennomsnittene er ulik de andre</p>
 </blockquote>
 <p>Denne nullhypotesen er betydelig mer kompleks å teste enn de vi har sett tidligere. Gitt kapitteltittelen vil du kanskje gjette at løsningen er å “gjøre en ANOVA”, men det er ikke umiddelbart opplagt hvorfor “analyse av varianser” kan hjelpe oss å lære noe om gjennomsnitt. Men vi vet at det vi må gjøre er å konstruere en passende testobservator.</p>
 </section>
 <section id="testobservatoren-f-og-dens-utvagsfordeling" class="level3" data-number="10.1.3">
-<h3 data-number="10.1.3" class="anchored" data-anchor-id="testobservatoren-f-og-dens-utvagsfordeling"><span class="header-section-number">10.1.3</span> Testobservatoren <span class="math inline">\(F\)</span> og dens utvagsfordeling</h3>
+<h3 data-number="10.1.3" class="anchored" data-anchor-id="testobservatoren-f-og-dens-utvagsfordeling"><span class="header-section-number">10.1.3</span> Testobservatoren <span class="math inline">F</span> og dens utvagsfordeling</h3>
 <p>For å forstå hvordan dette fungerer, la oss begynne med å snakke om varianser. I ANOVA skiller man mellom to typer varianser, variansen <em>mellom gruppene</em> og <em>innad i gruppene</em> (<a href="#fig-means-F-wide" class="quarto-xref">Figur&nbsp;<span>10.2</span></a>). Variansen mellom gruppene vises i <a href="#fig-means-F-wide-1" class="quarto-xref">Figur&nbsp;<span>10.2 (a)</span></a> som piler mellom gruppenes gjennomsnitt. Dess lengre piler, dess mer variasjon mellom gruppene. Variansen innad i gruppene vises i <a href="#fig-means-F-wide-2" class="quarto-xref">Figur&nbsp;<span>10.2 (b)</span></a> som bredden på hver gruppes fordeling; dess bredere fordeling (lengre piler), dess mer varians. I denne figuren er pilene for variansen mellom gruppene og innad i gruppene ca. like store. Legg også merke til at de tre gruppenes fordeling overlapper ganske masse. Det virker ikke helt usannsynlig at gruppenes gjennomsnitt er like i populasjonen, og at forskjellen mellom gruppene skyldes at man er litt uheldig med det utvalget.</p>
 <div class="cell" data-layout-align="center">
 <div id="fig-means-F-wide" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
@@ -873,8 +887,8 @@ Figur&nbsp;10.3. Når variasjonen innad i gruppene er liten fremstår variasjone
 </figure>
 </div>
 </div>
-<p>Moralen er at når man analyserer forskjeller i gruppers gjennomsnitt, så må man ikke bare ta hensyn til hvor forskjellig gruppenes gjennomsnitt er, man må også ta hensyn til hvor mye spredning det er innad i gruppene. Denne informasjonen fanges opp i <span class="math inline">\(F\)</span>-observatoren, som er testobservatoren til en ANOVA. Hvis man glatter over alle detaljene kan man si at den regnes ut slik:</p>
-<p><span class="math display">\[ F = \frac{\text{variasjonen mellom gruppene}}{\text{summen av variasjonene innad i gruppene}}. \]</span> Vi hopper over mange detaljer slik som spesifikke utregninger og at <span class="math inline">\(F\)</span>-fordelinger har to frihetsgrader, men vi viser en <span class="math inline">\(F\)</span>-fordeling der frihetsgrad nummer 1 er 10 og frihetsgrad nummer 2 10, se <a href="#fig-means-F-dist" class="quarto-xref">Figur&nbsp;<span>10.4</span></a>.</p>
+<p>Moralen er at når man analyserer forskjeller i gruppers gjennomsnitt, så må man ikke bare ta hensyn til hvor forskjellig gruppenes gjennomsnitt er, man må også ta hensyn til hvor mye spredning det er innad i gruppene. Denne informasjonen fanges opp i <span class="math inline">F</span>-observatoren, som er testobservatoren til en ANOVA. Hvis man glatter over alle detaljene kan man si at den regnes ut slik:</p>
+<p><span class="math display"> F = \frac{\text{variasjonen mellom gruppene}}{\text{summen av variasjonene innad i gruppene}}. </span> Vi hopper over mange detaljer slik som spesifikke utregninger og at <span class="math inline">F</span>-fordelinger har to frihetsgrader, men vi viser en <span class="math inline">F</span>-fordeling der frihetsgrad nummer 1 er 10 og frihetsgrad nummer 2 10, se <a href="#fig-means-F-dist" class="quarto-xref">Figur&nbsp;<span>10.4</span></a>.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-means-F-dist" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="En F-fordeling som viser en høyreskjev kurve. En pil merket &quot;kritiske verdi&quot; peker på x-aksen, og området under grafen til høyre for pilen er skravert og markert med &quot;Kritisk område&quot;.">
@@ -883,7 +897,7 @@ Figur&nbsp;10.3. Når variasjonen innad i gruppene er liten fremstår variasjone
 <a href="sec-means_files/figure-html/fig-means-F-dist-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figur&nbsp;10.4. F-fordeling og forkastningsområdet for en F-test."><img src="sec-means_files/figure-html/fig-means-F-dist-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" alt="En F-fordeling som viser en høyreskjev kurve. En pil merket &quot;kritiske verdi&quot; peker på x-aksen, og området under grafen til høyre for pilen er skravert og markert med &quot;Kritisk område&quot;."></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-means-F-dist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figur&nbsp;10.4. <span class="math inline">\(F\)</span>-fordeling og forkastningsområdet for en <span class="math inline">\(F\)</span>-test.
+Figur&nbsp;10.4. <span class="math inline">F</span>-fordeling og forkastningsområdet for en <span class="math inline">F</span>-test.
 </figcaption>
 </figure>
 </div>
@@ -892,10 +906,10 @@ Figur&nbsp;10.4. <span class="math inline">\(F\)</span>-fordeling og forkastning
 </section>
 <section id="å-gjennomføre-anova-i-jamovi" class="level3" data-number="10.1.4">
 <h3 data-number="10.1.4" class="anchored" data-anchor-id="å-gjennomføre-anova-i-jamovi"><span class="header-section-number">10.1.4</span> Å gjennomføre ANOVA i jamovi</h3>
-<p>For å gjøre livet enklere kan jamovi utføre ANOVA for deg – hurra! Trykk på ‘ANOVA’ → ‘One-way ANOVA’, og flytt <em>mood.gain</em>-variabelen til ‘Dependent Variable’-boksen og deretter <em>drug</em>-variabelen over til ‘Fixed Factors’-boksen. Dette gir deg resultatene som vist i <a href="#fig-means-jamovi-ANOVA" class="quarto-xref">Figur&nbsp;<span>10.5</span></a>. Resultatene viser <span class="math inline">\(F\)</span>-verdien, samt begge frihetsgradene. Disse trenger ikke vi fokusere så mye på. Den oppgir også <span class="math inline">\(p\)</span>-verdien, som i dette tilfellet er <span class="math inline">\(p &lt; 0{,}001\)</span>.</p>
+<p>For å gjøre livet enklere kan jamovi utføre ANOVA for deg – hurra! Trykk på ‘ANOVA’ → ‘One-way ANOVA’, og flytt <em>mood.gain</em>-variabelen til ‘Dependent Variable’-boksen og deretter <em>drug</em>-variabelen over til ‘Fixed Factors’-boksen. Dette gir deg resultatene som vist i <a href="#fig-means-jamovi-ANOVA" class="quarto-xref">Figur&nbsp;<span>10.5</span></a>. Resultatene viser <span class="math inline">F</span>-verdien, samt begge frihetsgradene. Disse trenger ikke vi fokusere så mye på. Den oppgir også <span class="math inline">p</span>-verdien, som i dette tilfellet er <span class="math inline">p &lt; 0{,}001</span>.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-means-jamovi-ANOVA" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-pos="H" data-fig-align="center" alt="En tabell fra jamovi med tittelen &quot;ANOVA - mood.gain&quot; viser resultater for en ANOVA-test med kolonnene:- &quot;Sum of Squares,&quot; &quot;df,&quot; &quot;Mean Square,&quot; &quot;F,&quot; &quot;p,&quot; og &quot;η².&quot; Radene presenterer data for &quot;drug&quot; med verdiene (3.45, 2, 1.73, 18.61, 0.00009, 0.71) og &quot;Residuals&quot; med verdiene (1.39, 15, 0.09)">
+<div id="fig-means-jamovi-ANOVA" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="En tabell fra jamovi med tittelen &quot;ANOVA - mood.gain&quot; viser resultater for en ANOVA-test med kolonnene:- &quot;Sum of Squares,&quot; &quot;df,&quot; &quot;Mean Square,&quot; &quot;F,&quot; &quot;p,&quot; og &quot;η².&quot; Radene presenterer data for &quot;drug&quot; med verdiene (3.45, 2, 1.73, 18.61, 0.00009, 0.71) og &quot;Residuals&quot; med verdiene (1.39, 15, 0.09)" data-fig-pos="H">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-means-jamovi-ANOVA-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="images/fig-means-jamovi-ANOVA.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figur&nbsp;10.5. Resultater fra ANOVA i jamovi om humørforbedring etter å ha fått ulike medikamenter"><img src="images/fig-means-jamovi-ANOVA.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" data-fig-pos="H" alt="En tabell fra jamovi med tittelen &quot;ANOVA - mood.gain&quot; viser resultater for en ANOVA-test med kolonnene:- &quot;Sum of Squares,&quot; &quot;df,&quot; &quot;Mean Square,&quot; &quot;F,&quot; &quot;p,&quot; og &quot;η².&quot; Radene presenterer data for &quot;drug&quot; med verdiene (3.45, 2, 1.73, 18.61, 0.00009, 0.71) og &quot;Residuals&quot; med verdiene (1.39, 15, 0.09)"></a>
@@ -909,7 +923,7 @@ Figur&nbsp;10.5. Resultater fra ANOVA i jamovi om humørforbedring etter å ha f
 </div>
 <p>Vi kan rapportere denne analysen slik:</p>
 <blockquote class="blockquote">
-<p>Vi gjennomførte en ANOVA-analyse for effekten av medikament på humørforbedring og fant en signifikant effekt (<span class="math inline">\(F = 26.3, df1 = 2, df2 = 9{,}49, p &lt; 0{,}001\)</span>).</p>
+<p>Vi gjennomførte en ANOVA-analyse for effekten av medikament på humørforbedring og fant en signifikant effekt (<span class="math inline">F = 26.3, df1 = 2, df2 = 9{,}49, p &lt; 0{,}001</span>).</p>
 </blockquote>
 <p>Merk at disse resultatene ikke sier noe om hvilken av medikamentene som hadde størst og minst gjennomsnitt, den sier bare at vi forkaster hypotesen om at gjennomsnittet på utfallsvariabelen var lik i de tre gruppene. For å finne ut av hvilket medikament som var mest effektivt kan man titte på den deskriptive statistikken som jamovi tilbyr ved knappen “Descriptive table”. Vi ser at de som fikk anxifree hadde en humørbedring på 0,717; de som gikk på joyzepam 1,483; og de på placebo 0,450. Joyzepam var altså det mest effektive legemiddelet. Merk at jamovi oppgir både standardavviket (SD) og standardfeilen (SE). <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 <p>Med disse tallene kan vi rapportere videre:</p>
@@ -935,8 +949,8 @@ Figur&nbsp;10.6. Et plot med gjennomsnitt og konfidensintervall for humørforbed
 </section>
 </section>
 <section id="sammenlikne-gjennomsnittlig-forbedring-paret-t-test" class="level2" data-number="10.2">
-<h2 data-number="10.2" class="anchored" data-anchor-id="sammenlikne-gjennomsnittlig-forbedring-paret-t-test"><span class="header-section-number">10.2</span> Sammenlikne gjennomsnittlig forbedring: paret <span class="math inline">\(t\)</span>-test</h2>
-<p><strong>Paret <span class="math inline">\(t\)</span>-test</strong> sammenlikner gjennomsnitt på tvers av to grupper, men der hver observasjon i den første gruppen svarer til en observasjon i den andre gruppen. Dette er en litt tungvindt måte å snakke på, så vi skal begrense oss til kun én slik situasjon, endring mellom en før-test og ettertest. Her er observasjonene naturlig delt i to grupper, før og etter, og hver deltager har en måling for både før-testen og for etter-testen.</p>
+<h2 data-number="10.2" class="anchored" data-anchor-id="sammenlikne-gjennomsnittlig-forbedring-paret-t-test"><span class="header-section-number">10.2</span> Sammenlikne gjennomsnittlig forbedring: paret <span class="math inline">t</span>-test</h2>
+<p><strong>Paret <span class="math inline">t</span>-test</strong> sammenlikner gjennomsnitt på tvers av to grupper, men der hver observasjon i den første gruppen svarer til en observasjon i den andre gruppen. Dette er en litt tungvindt måte å snakke på, så vi skal begrense oss til kun én slik situasjon, endring mellom en før-test og ettertest. Her er observasjonene naturlig delt i to grupper, før og etter, og hver deltager har en måling for både før-testen og for etter-testen.</p>
 <section id="dataene" class="level3" data-number="10.2.1">
 <h3 data-number="10.2.1" class="anchored" data-anchor-id="dataene"><span class="header-section-number">10.2.1</span> Dataene</h3>
 <p>Datasettet vi skal bruke denne gangen kommer fra Dr.&nbsp;Chicos sin undervisning. I klassen hennes tar studentene to store tester – en tidlig i semesteret og en senere i semesteret. Dr.&nbsp;Chico sine timer er utfordrende og studentene bør jobbe mye. Hun mener at ved å gi vanskelige vurderinger oppmuntres studentene til å jobbe hardere. Teorien hennes er at den første testen fungerer som en slags “vekkerklokke” for studentene. Når de forstår hvor vanskelig klassen faktisk er, vil de jobbe hardere til den andre testen og få bedre karakter. Stemmer dette? For å teste dette åpner vi <a href="data_and_tables/chico.csv"><em>chico.csv</em></a>-filen inn i jamovi, se <a href="#tbl-chico-data" class="quarto-xref">Tabell&nbsp;<span>10.2</span></a>.</p>
@@ -1208,7 +1222,7 @@ Figur&nbsp;10.7. Deskriptive analyser for de to variablene i chico-datasettet.
 </figcaption>
 </figure>
 </div>
-<p>Men dette inntrykket er feil! Grunnen er at vi kun har vist statistikk og grafer som ikke tar hensyn til at samme person har avlagt en før- og en etter-prøve. Vi har regnet ut gjennomsnittet for førtesten og ettertesten helt separat, og dette vil være en fin analyse hvis det er helt forskjellige folk som tar før-testen og etter-testen, men i vårt eksempel er det de samme studentene. For å illustrere at studentene faktisk har en fremgang kan vi regne ut hver students endring fra test 1 til test 2, altså regne ut differansen <span class="math inline">\(\text{endring} = \text{grade\_test2} - \text{grade\_test1}\)</span> og legge den til i datasettet. Jeg har visualisert denne variabelen i <a href="#fig-means-jamovi-chico-hist" class="quarto-xref">Figur&nbsp;<span>10.8</span></a>. Når vi ser på histogrammet blir det helt klart at det er en reell forbedring her. Det store flertallet av studentene scoret høyere på test 2 enn på test 1, noe som reflekteres i at nesten hele histogrammet ligger over null.</p>
+<p>Men dette inntrykket er feil! Grunnen er at vi kun har vist statistikk og grafer som ikke tar hensyn til at samme person har avlagt en før- og en etter-prøve. Vi har regnet ut gjennomsnittet for førtesten og ettertesten helt separat, og dette vil være en fin analyse hvis det er helt forskjellige folk som tar før-testen og etter-testen, men i vårt eksempel er det de samme studentene. For å illustrere at studentene faktisk har en fremgang kan vi regne ut hver students endring fra test 1 til test 2, altså regne ut differansen <span class="math inline">\text{endring} = \text{grade\_test2} - \text{grade\_test1}</span> og legge den til i datasettet. Jeg har visualisert denne variabelen i <a href="#fig-means-jamovi-chico-hist" class="quarto-xref">Figur&nbsp;<span>10.8</span></a>. Når vi ser på histogrammet blir det helt klart at det er en reell forbedring her. Det store flertallet av studentene scoret høyere på test 2 enn på test 1, noe som reflekteres i at nesten hele histogrammet ligger over null.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-means-jamovi-chico-hist" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Et histogram med &quot;Endring fra test 1 til test 2&quot; på x-aksen. Bare to små søyler er under null og veldig mange er over null.">
@@ -1223,28 +1237,28 @@ Figur&nbsp;10.8. Histogram som viser studentenes endring fra test 1 til test 2.
 </div>
 </div>
 </div>
-<p>Derfor trenger man en paret <span class="math inline">\(t\)</span>-test. Man kunne sett for seg at man regnet ut en ANOVA med to grupper <em>før</em> og <em>etter</em>, men dette ville ikke tatt hensyn til at samme student befant seg i hver gruppe.</p>
+<p>Derfor trenger man en paret <span class="math inline">t</span>-test. Man kunne sett for seg at man regnet ut en ANOVA med to grupper <em>før</em> og <em>etter</em>, men dette ville ikke tatt hensyn til at samme student befant seg i hver gruppe.</p>
 </section>
 <section id="nullhypotesen-og-alternativhypotesen" class="level3" data-number="10.2.2">
 <h3 data-number="10.2.2" class="anchored" data-anchor-id="nullhypotesen-og-alternativhypotesen"><span class="header-section-number">10.2.2</span> Nullhypotesen og alternativhypotesen</h3>
-<p>Nullhypotesen for en paret <span class="math inline">\(t\)</span>-test er</p>
+<p>Nullhypotesen for en paret <span class="math inline">t</span>-test er</p>
 <blockquote class="blockquote">
-<p><span class="math inline">\(H_0\)</span>: gjennomsnittlig endring mellom de to testene er 0.</p>
+<p><span class="math inline">H_0</span>: gjennomsnittlig endring mellom de to testene er 0.</p>
 </blockquote>
 <p>Alternativhypotesen er</p>
 <blockquote class="blockquote">
-<p><span class="math inline">\(H_1\)</span>: gjennomsnittlig endring mellom de to testene er ulik 0.</p>
+<p><span class="math inline">H_1</span>: gjennomsnittlig endring mellom de to testene er ulik 0.</p>
 </blockquote>
-<p>Paret <span class="math inline">\(t\)</span>-test gjøres ofte med en ensidet test, se <a href="sec-testing.html#sec-testing-one-sided" class="quarto-xref"><span>Seksjon 8.4.3</span></a>. For Dr.&nbsp;Chico, som tenkte at studentene ville få til mer på test 2, blir hypotesene:</p>
+<p>Paret <span class="math inline">t</span>-test gjøres ofte med en ensidet test, se <a href="sec-testing.html#sec-testing-one-sided" class="quarto-xref"><span>Seksjon 8.4.3</span></a>. For Dr.&nbsp;Chico, som tenkte at studentene ville få til mer på test 2, blir hypotesene:</p>
 <blockquote class="blockquote">
-<p><span class="math inline">\(H_0\)</span>: Gjennomsnittlig endring mellom de to testene er positiv, altså: <span class="math inline">\(text{endring} &gt; 0\)</span></p>
-<p><span class="math inline">\(H_1\)</span>: Gjennomsnittlig endring mellom de to testene er null eller negativ, altså: <span class="math inline">\(\text{endring} \leq 0\)</span></p>
+<p><span class="math inline">H_0</span>: Gjennomsnittlig endring mellom de to testene er positiv, altså: <span class="math inline">text{endring} &gt; 0</span></p>
+<p><span class="math inline">H_1</span>: Gjennomsnittlig endring mellom de to testene er null eller negativ, altså: <span class="math inline">\text{endring} \leq 0</span></p>
 </blockquote>
 </section>
 <section id="testobservatoren-t-og-dens-utvalgsfordeling" class="level3" data-number="10.2.3">
-<h3 data-number="10.2.3" class="anchored" data-anchor-id="testobservatoren-t-og-dens-utvalgsfordeling"><span class="header-section-number">10.2.3</span> Testobservatoren <span class="math inline">\(t\)</span> og dens utvalgsfordeling</h3>
+<h3 data-number="10.2.3" class="anchored" data-anchor-id="testobservatoren-t-og-dens-utvalgsfordeling"><span class="header-section-number">10.2.3</span> Testobservatoren <span class="math inline">t</span> og dens utvalgsfordeling</h3>
 <p>Nå skal vi konstruere en passende test. Løsningen er ganske enkel, siden vi allerede har gjort det meste av arbeidet tidligere. I stedet for å analysere <code>grade_test1</code> og <code>grade_test2</code> hver for seg, undersøker vi om endringsvariabelen <code>grade_test2 - grade_test1</code> er ulik null.</p>
-<p>Hvis studentene er plukket tilfeldig fra en populasjon, vet vi fra sentralgrenseteoremet, <a href="sec-estimation.html#sec-central-limit-theorem" class="quarto-xref"><span>Seksjon 7.3.3</span></a>, at endringsvariabelen er normalfordelt. Derfor er testobservatoren vår normalfordelt … nesten. Det eneste problemet er at vi ikke vet standardavviket til denne normalfordelingen, så den må estimeres. Dette gjør at testobservatoren vår er ekstremt lik normalfordelingen, men er bittelittegranne mer spredt fordi vi også må estimere standardavviket fra dataene våre. Den fordelingen som tar høyde for dette er <span class="math inline">\(t\)</span>-fordelingen, så testobservatoren vår er <span class="math inline">\(t\)</span>.</p>
+<p>Hvis studentene er plukket tilfeldig fra en populasjon, vet vi fra sentralgrenseteoremet, <a href="sec-estimation.html#sec-central-limit-theorem" class="quarto-xref"><span>Seksjon 7.3.3</span></a>, at endringsvariabelen er normalfordelt. Derfor er testobservatoren vår normalfordelt … nesten. Det eneste problemet er at vi ikke vet standardavviket til denne normalfordelingen, så den må estimeres. Dette gjør at testobservatoren vår er ekstremt lik normalfordelingen, men er bittelittegranne mer spredt fordi vi også må estimere standardavviket fra dataene våre. Den fordelingen som tar høyde for dette er <span class="math inline">t</span>-fordelingen, så testobservatoren vår er <span class="math inline">t</span>.</p>
 <div id="fig-means-T-dist" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-means-T-dist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -1256,7 +1270,7 @@ Figur&nbsp;10.8. Histogram som viser studentenes endring fra test 1 til test 2.
 <a href="sec-means_files/figure-html/fig-means-T-dist-1.png" class="lightbox" data-gallery="fig-means-T-dist" title="Figur&nbsp;10.9&nbsp;(a). Sammenlikning av t-fordeling og normalfordeling. t-fordeling er litt mindre presis, som vist ved at halene er bittelitt tykkere, altså at store verdier er vanligere."><img src="sec-means_files/figure-html/fig-means-T-dist-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" data-ref-parent="fig-means-T-dist"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-means-T-dist-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-(a) Sammenlikning av <span class="math inline">\(t\)</span>-fordeling og normalfordeling. <span class="math inline">\(t\)</span>-fordeling er litt mindre presis, som vist ved at halene er bittelitt tykkere, altså at store verdier er vanligere.
+(a) Sammenlikning av <span class="math inline">t</span>-fordeling og normalfordeling. <span class="math inline">t</span>-fordeling er litt mindre presis, som vist ved at halene er bittelitt tykkere, altså at store verdier er vanligere.
 </figcaption>
 </figure>
 </div>
@@ -1270,7 +1284,7 @@ Figur&nbsp;10.8. Histogram som viser studentenes endring fra test 1 til test 2.
 <a href="sec-means_files/figure-html/fig-means-T-dist-2.png" class="lightbox" data-gallery="fig-means-T-dist" title="Figur&nbsp;10.9&nbsp;(b). Forkastningsområdet til en tosidig t-test"><img src="sec-means_files/figure-html/fig-means-T-dist-2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" data-ref-parent="fig-means-T-dist"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-means-T-dist-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-(b) Forkastningsområdet til en tosidig <span class="math inline">\(t\)</span>-test
+(b) Forkastningsområdet til en tosidig <span class="math inline">t</span>-test
 </figcaption>
 </figure>
 </div>
@@ -1284,7 +1298,7 @@ Figur&nbsp;10.8. Histogram som viser studentenes endring fra test 1 til test 2.
 <a href="sec-means_files/figure-html/fig-means-T-dist-3.png" class="lightbox" data-gallery="fig-means-T-dist" title="Figur&nbsp;10.9&nbsp;(c). Forkastningsområdet til en ensidig t-test"><img src="sec-means_files/figure-html/fig-means-T-dist-3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" data-ref-parent="fig-means-T-dist"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-means-T-dist-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-(c) Forkastningsområdet til en ensidig <span class="math inline">\(t\)</span>-test
+(c) Forkastningsområdet til en ensidig <span class="math inline">t</span>-test
 </figcaption>
 </figure>
 </div>
@@ -1307,13 +1321,13 @@ Advarsel
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Jeg har gjennom dette kapittelet sammenliknet paret <span class="math inline">\(t\)</span>-test med ANOVA. De fleste lærebøker sammenlikner paret <span class="math inline">\(t\)</span>-test med “vanlig” <span class="math inline">\(t\)</span>-test. Jeg har valgt å ikke presentere den vanlige <span class="math inline">\(t\)</span>-testen siden den er identisk med ANOVA når man har 2 grupper. Vi har altså spart oss fra å lære én test uten å tape noe.</p>
+<p>Jeg har gjennom dette kapittelet sammenliknet paret <span class="math inline">t</span>-test med ANOVA. De fleste lærebøker sammenlikner paret <span class="math inline">t</span>-test med “vanlig” <span class="math inline">t</span>-test. Jeg har valgt å ikke presentere den vanlige <span class="math inline">t</span>-testen siden den er identisk med ANOVA når man har 2 grupper. Vi har altså spart oss fra å lære én test uten å tape noe.</p>
 </div>
 </div>
 </section>
 <section id="å-gjøre-testen-i-jamovi" class="level3" data-number="10.2.4">
 <h3 data-number="10.2.4" class="anchored" data-anchor-id="å-gjøre-testen-i-jamovi"><span class="header-section-number">10.2.4</span> Å gjøre testen i jamovi</h3>
-<p>Du finner jamovi sin funksjon for paret <span class="math inline">\(t\)</span>-test under “T-tests” → “Paired samples t-tests”. Jeg valgte innstillinger som i <a href="#fig-means-jamovi-t-1" class="quarto-xref">Figur&nbsp;<span>10.10 (a)</span></a> og fikk resultatet i <a href="#fig-means-jamovi-t-2" class="quarto-xref">Figur&nbsp;<span>10.10 (b)</span></a>.</p>
+<p>Du finner jamovi sin funksjon for paret <span class="math inline">t</span>-test under “T-tests” → “Paired samples t-tests”. Jeg valgte innstillinger som i <a href="#fig-means-jamovi-t-1" class="quarto-xref">Figur&nbsp;<span>10.10 (a)</span></a> og fikk resultatet i <a href="#fig-means-jamovi-t-2" class="quarto-xref">Figur&nbsp;<span>10.10 (b)</span></a>.</p>
 <div class="cell" data-layout-align="center">
 <div id="fig-means-jamovi-t" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-fig figure">
@@ -1344,14 +1358,14 @@ Advarsel
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-means-jamovi-t-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figur&nbsp;10.10. Resultater som viser en paret <span class="math inline">\(t\)</span>-test i jamovi.
+Figur&nbsp;10.10. Resultater som viser en paret <span class="math inline">t</span>-test i jamovi.
 </figcaption>
 </figure>
 </div>
 </div>
 <p>Vi ser at resultatet er statistisk signifikant, og man kan rapportere det slik:</p>
 <blockquote class="blockquote">
-<p>Endringen fra test 1 til test 2 var statistisk signifikant, <span class="math inline">\(t(19) = 6{,}48, p &lt; 0{;}001\)</span>. Gjennomsnittlig forskjell fra test 1 til 2 var 1,40 95% CI [0,951; 1,86].</p>
+<p>Endringen fra test 1 til test 2 var statistisk signifikant, <span class="math inline">t(19) = 6{,}48, p &lt; 0{;}001</span>. Gjennomsnittlig forskjell fra test 1 til 2 var 1,40 95% CI [0,951; 1,86].</p>
 </blockquote>
 <p>Man bør tenke over om forutsetningene for testen er oppfylt i dette tilfellet. Dr.&nbsp;Chico valgte ikke studentene tilfeldig fra en definert populasjon; hun valgte ganske enkelt alle studentene som tok faget hennes. Dr.&nbsp;Chico ønsker nok å generalisere til populasjonen over studenter som tar kurset sitt, ikke bare dette året, men alle år hun underviser det. Hun kan argumentere for at akkurat hvilke studenter som tok faget hennes dette året er ganske tilfeldig, slik at man kan betrakte studentene dette året som tilfeldig trukket. Er du enig i det? Det er ikke en helt usannsynlig antagelse, men det er viktig å tenke over om antagelsene virkelig er oppfylte og hvilke konsekvenser det eventuelt får om de ikke er det.</p>
 <p>I menyene i jamovi er også det muligheter for å velge ensidige tester. Akkurat i Dr.&nbsp;Chico sitt tilfellet blir resultatet det samme, men ensidige hypotesetester er sterkere og vil noen gange kunne forkaste nullhypoteser som tosidige hypoteser ikke kan.</p>
@@ -1361,11 +1375,11 @@ Figur&nbsp;10.10. Resultater som viser en paret <span class="math inline">\(t\)<
 <h2 data-number="10.3" class="anchored" data-anchor-id="sammendrag"><span class="header-section-number">10.3</span> Sammendrag</h2>
 <p>Her er hovedtemaene vi har dekket i dette kapittelet:</p>
 <ul>
-<li>For både ANOVA og paret <span class="math inline">\(t\)</span>-test har vi lært
+<li>For både ANOVA og paret <span class="math inline">t</span>-test har vi lært
 <ul>
 <li>Når de kan anvendes</li>
 <li>Hva nullhypotesen og alternativhypotesene er</li>
-<li>Ideen bak testobservatorene, henholdsvis <span class="math inline">\(F\)</span> og <span class="math inline">\(t\)</span>.</li>
+<li>Ideen bak testobservatorene, henholdsvis <span class="math inline">F</span> og <span class="math inline">t</span>.</li>
 <li>Hvordan man utfører testen i jamovi</li>
 </ul></li>
 </ul>
