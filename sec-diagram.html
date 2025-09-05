@@ -495,8 +495,20 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Sammenlikne gjennomsnitt: ANOVA og paret <span class="math inline">t</span>-test</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-correlation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Korrelasjon og lineær regresjon</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-epilogue.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Etterord</span></a>
+  </div>
+</li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./sec-references.html" class="sidebar-item-text sidebar-link">
@@ -520,7 +532,7 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#fiolinplott" id="toc-fiolinplott" class="nav-link" data-scroll-target="#fiolinplott"><span class="header-section-number">5.4.1</span> Fiolinplott</a></li>
   </ul></li>
-  <li><a href="#spredningsplott" id="toc-spredningsplott" class="nav-link" data-scroll-target="#spredningsplott"><span class="header-section-number">5.5</span> Spredningsplott</a></li>
+  <li><a href="#sec-scatter" id="toc-sec-scatter" class="nav-link" data-scroll-target="#sec-scatter"><span class="header-section-number">5.5</span> Spredningsplott</a></li>
   <li><a href="#profesjonelle-grafer" id="toc-profesjonelle-grafer" class="nav-link" data-scroll-target="#profesjonelle-grafer"><span class="header-section-number">5.6</span> Profesjonelle grafer</a></li>
   <li><a href="#lagre-bildefiler-med-jamovi" id="toc-lagre-bildefiler-med-jamovi" class="nav-link" data-scroll-target="#lagre-bildefiler-med-jamovi"><span class="header-section-number">5.7</span> Lagre bildefiler med jamovi</a></li>
   <li><a href="#sammendrag" id="toc-sammendrag" class="nav-link" data-scroll-target="#sammendrag"><span class="header-section-number">5.8</span> Sammendrag</a></li>
@@ -998,7 +1010,7 @@ Figur&nbsp;5.13. Sammenlikning av histogram og boksplott for å vise variabelen 
 <p>En moderne variant av det tradisjonelle boksplottet er fiolinplottet. Fiolinplott likner på tetthetskurver, men de er speilet slik at de ofte ser ut som en fiolinkropp. I jamovi kan du lage fiolinplott ved å krysse av for “Violin” i stedet for “Histogram”. Se <a href="#fig-diagram-violin" class="quarto-xref">Figur&nbsp;<span>5.14</span></a> for en undergruppeanalyse med fiolinplott. Her har vi også krysset av for at gjennomsnittet skal vises (på knappen står det “Mean”).</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-diagram-violin" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Et fiolinplott som viser fordelingen av _Likestilling_ for hver verdi av _Forventet utdanning_." data-fig-align="center" data-fig-pos="h!">
+<div id="fig-diagram-violin" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Et fiolinplott som viser fordelingen av _Likestilling_ for hver verdi av _Forventet utdanning_." data-fig-pos="h!" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-diagram-violin-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="images/fig-diagram-violin.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16" title="Figur&nbsp;5.14. Et fiolinplott av Likestilling per Forventet utdanning"><img src="images/fig-diagram-violin.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" data-fig-pos="h!" alt="Et fiolinplott som viser fordelingen av _Likestilling_ for hver verdi av _Forventet utdanning_."></a>
@@ -1013,8 +1025,8 @@ Figur&nbsp;5.14. Et fiolinplott av <em>Likestilling</em> per <em>Forventet utdan
 <p>Fiolinplottet viser tydelig og kompakt hvordan verdiene fordeler seg. Hvis man i tillegg legger på informasjon som medianen eller gjennomsnittet kan man enkelt se forskjellene i sentraltendens mellom gruppene.</p>
 </section>
 </section>
-<section id="spredningsplott" class="level2" data-number="5.5">
-<h2 data-number="5.5" class="anchored" data-anchor-id="spredningsplott"><span class="header-section-number">5.5</span> Spredningsplott</h2>
+<section id="sec-scatter" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="sec-scatter"><span class="header-section-number">5.5</span> Spredningsplott</h2>
 <p>Så til den aller siste typen basisplott som vi skal gå gjennom, <strong>spredningsplott</strong>. Spredningsplott viser sammenhengen mellom to tallvariable. Histogrammer, boksplott og fiolinplott visualiserte én tallvariabel. Da jeg analyserte tallvariabelen opp mot andre variable, kalte jeg det en “undergruppeanalyse” og undergruppene var definert av en nominell eller ordinal variabel. Hva hvis du ønsker å gjøre en slags undergruppeanalyse definert av en tall-variabel? Da må du bruke et spredningsplott. La meg forklare.</p>
 <p>Vi har to tallvariable i vår versjon av ICCS-datasettet, <em>Likestilling</em> og <em>Sosioøkonomisk status</em>. Et naturlig spørsmål å stille er om elevene med ulik sosioøkonomisk status har forskjellig syn på likestilling mellom kjønnene. Hvis man prøver å gjøre en undergruppeanalyse der undergruppene er definert av <em>Sosioøkonomisk status</em> støter man på problemer, fordi det er 2029 ulike verdier av <em>Sosioøkonomisk status</em>. Man kan ikke vise så mange undergrupper! (De fem første verdiene i datasettet er -1.68595, 1.03747, 0.3034, -1.71153, -0.22118, skjønner du problemet, eller?)</p>
 <p>Løsningen er å legge hver sin variabel på hver sin akse og plotte hvert punkt. Hvis jeg vil legge <em>Sosioøkonomisk status</em> på <span class="math inline">x</span>-aksen og <em>Likestilling</em> på <span class="math inline">y</span>-aksen legger jeg inn dette i jamovi slik som i <a href="#fig-diagram-jamovi-scatter" class="quarto-xref">Figur&nbsp;<span>5.15 (a)</span></a>. Resultatet er i <a href="#fig-diagram-scatter" class="quarto-xref">Figur&nbsp;<span>5.15 (b)</span></a>. Vi ser at uavhengig av sosioøkonomisk status virker den vanligste verdien på <em>Likestilling</em> å være den høyeste. Ut fra figuren er er det ikke klart om sosioøkonomisk status har noen sammenheng med syn på likestilling i det hele tatt.</p>
@@ -1124,7 +1136,7 @@ Figur&nbsp;5.18. Et profesjonelt linjediagram. Legg merke til forklarende tekst 
 <p>Hjernen vår har en fantastisk kapasitet til å analysere data, men bare så lenge vi kan se på dataene i form av en graf. Hvis vi presenter informasjonen på riktig måte, gir vi leseren mye kunnskap på kort tid. Og den aller viktigste leseren av grafene du lager er deg selv – ved å lage mange grafer av dataene dine vil du skjønne dem bedre, oftere trekke velbegrunnede konklusjoner og sjeldnere trekke dårlig begrunnede konklusjoner. Derfor mener jeg dette er det viktigste kapittelet i boken hvis du skal gjøre kvantitativ forskning, i tillegg til <a href="sec-measurement.html" class="quarto-xref"><span>Kapitel 2</span></a> og <a href="sec-design.html" class="quarto-xref"><span>Kapitel 3</span></a>.</p>
 <p>I dette kapitlet har vi dekket:</p>
 <ul>
-<li><strong>Vanlige plott</strong>: Vi har fokusert på standardgrafer som statistikere ofte bruker, som <a href="#sec-diagram-bar">Stolpediagram</a>, <a href="#sec-diagram-stacked-bar">Stablede stolpediagram</a>, <a href="#sec-histogram">Histogrammer</a>, <a href="#boksplott">Boksplott</a> (samt <a href="#fiolinplott">Fiolinplott</a>) og <a href="#spredningsplott">Spredningsplott</a>. Det er verdt å vite hvilke variabeltyper som passer til hver type plott, i tillegg til å kunne tolke dem.</li>
+<li><strong>Vanlige plott</strong>: Vi har fokusert på standardgrafer som statistikere ofte bruker, som <a href="#sec-diagram-bar">Stolpediagram</a>, <a href="#sec-diagram-stacked-bar">Stablede stolpediagram</a>, <a href="#sec-histogram">Histogrammer</a>, <a href="#boksplott">Boksplott</a> (samt <a href="#fiolinplott">Fiolinplott</a>) og <a href="#sec-scatter">Spredningsplott</a>. Det er verdt å vite hvilke variabeltyper som passer til hver type plott, i tillegg til å kunne tolke dem.</li>
 </ul>
 
 

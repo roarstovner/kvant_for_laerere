@@ -474,8 +474,20 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Sammenlikne gjennomsnitt: ANOVA og paret <span class="math inline">t</span>-test</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-correlation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Korrelasjon og lineær regresjon</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-epilogue.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Etterord</span></a>
+  </div>
+</li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./sec-references.html" class="sidebar-item-text sidebar-link">
@@ -538,7 +550,7 @@ Hvert kapittel har med
 <p>Først må vi uttrykke nullhypotesen for at det ikke er en sammenheng mellom variablene. For at det ikke skulle være noen sammenheng mellom variablene måtte hver verdi av <em>Kjønn</em> (gutt, jente, annet) ha like stor andel som så for seg hver type utdanning (ungdomsskole, VGS, kort utdanning, høyere utdanning).</p>
 <blockquote class="blockquote">
 <p><span class="math inline">H_0</span>: Andelen som valgte hver type utdanning er lik mellom kjønnene</p>
-<p><span class="math inline">H_0</span> (alternativ): <em>Forventet utdanning</em> er uavhengig av <em>Kjønn</em></p>
+<p><span class="math inline">H_0</span> (alternativ måte å uttrykke nullhypotesen på): <em>Forventet utdanning</em> er uavhengig av <em>Kjønn</em></p>
 </blockquote>
 <p>Hvis man skal uttrykke dette generelt for to variable <span class="math inline">X_1</span> og <span class="math inline">X_2</span>, lyder det:</p>
 <blockquote class="blockquote">
@@ -695,17 +707,150 @@ Tabell&nbsp;9.1. Krysstabell med <em>Forventet utdanning</em> og <em>Kjønn</em>
 </div>
 </div>
 <p>Uffda, det var ikke så lett å se ut fra tabellen om dataene var relatert eller ikke. Det er lettere å lese hvis vi lager tabellen med andeler, for eksempel prosenter, slik som i <a href="#tbl-categorical-contingency-pct" class="quarto-xref">Tabell&nbsp;<span>9.2</span></a>.</p>
+<div class="cell" data-layout-align="center">
 <div id="tbl-categorical-contingency-pct" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-categorical-contingency-pct-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Tabell&nbsp;9.2. Krysstabell med prosenter for <em>Forventet utdanning</em> og <em>Kjønn</em>. Prosentene er regnet ut per kjønn, slik at tallet øverst til venstre betyr 9,7% av jentene ser for seg ungdomsskole som høyeste utdanning.
 </figcaption>
 <div aria-describedby="tbl-categorical-contingency-pct-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div>
+<div class="cell-output-display">
+<!-- preamble start -->
 
+    <!-- tinytable mathjax start -->
+    <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <!-- tinytable mathjax end -->
+
+    <script>
+
+      function styleCell_bawvcrkt6vdbzf3c2qxx(i, j, css_id) {
+          var table = document.getElementById("tinytable_bawvcrkt6vdbzf3c2qxx");
+          var cell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
+          if (cell) {
+              console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
+              cell.classList.add(css_id);
+          } else {
+              console.warn(`Cell at (${i}, ${j}) not found.`);
+          }
+      }
+      function insertSpanRow(i, colspan, content) {
+        var table = document.getElementById('tinytable_bawvcrkt6vdbzf3c2qxx');
+        // Find the row with data-row attribute matching i
+        var targetRow = table.querySelector(`tr [data-row="${i}"]`).closest('tr');
+        var newRow = table.insertRow(targetRow.rowIndex);
+        var newCell = newRow.insertCell(0);
+        newCell.setAttribute("colspan", colspan);
+        newCell.setAttribute("data-col", "0");
+        newCell.setAttribute("data-row", i - 1);
+        // newCell.innerText = content;
+        // this may be unsafe, but innerText does not interpret <br>
+        newCell.innerHTML = content;
+      }
+      function spanCell_bawvcrkt6vdbzf3c2qxx(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_bawvcrkt6vdbzf3c2qxx");
+        const targetCell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
+        if (!targetCell) {
+          console.warn(`Cell at (${i}, ${j}) not found.`);
+        }
+
+        // Get all cells that need to be removed
+        const cellsToRemove = [];
+        for (let r = 0; r < rowspan; r++) {
+          for (let c = 0; c < colspan; c++) {
+            if (r === 0 && c === 0) continue; // Skip the target cell
+            const cell = table.querySelector(`[data-row="${i + r}"][data-col="${j + c}"]`);
+            if (cell) {
+              cellsToRemove.push(cell);
+            }
+          }
+        }
+
+        // Remove all cells
+        cellsToRemove.forEach(cell => cell.remove());
+
+        // Set rowspan and colspan of the target cell if it exists
+        if (targetCell) {
+          targetCell.rowSpan = rowspan;
+          targetCell.colSpan = colspan;
+        }
+      }
+      // tinytable span after
+      window.addEventListener('load', function () {
+          var cellsToStyle = [
+            // tinytable style arrays after
+          { positions: [ { i: '4', j: 0 }, { i: '4', j: 1 }, { i: '4', j: 2 }, { i: '4', j: 3 },  ], css_id: 'tinytable_css_obgj5j3h3h0aculoa2dq',}, 
+          { positions: [ { i: '0', j: 0 }, { i: '0', j: 1 }, { i: '0', j: 2 }, { i: '0', j: 3 },  ], css_id: 'tinytable_css_99xgj74qbjzrt0ozrwr8',}, 
+          ];
+
+          // Loop over the arrays to style the cells
+          cellsToStyle.forEach(function (group) {
+              group.positions.forEach(function (cell) {
+                  styleCell_bawvcrkt6vdbzf3c2qxx(cell.i, cell.j, group.css_id);
+              });
+          });
+      });
+    </script>
+
+    <style>
+      /* tinytable css entries after */
+      .table td.tinytable_css_obgj5j3h3h0aculoa2dq, .table th.tinytable_css_obgj5j3h3h0aculoa2dq { border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_99xgj74qbjzrt0ozrwr8, .table th.tinytable_css_99xgj74qbjzrt0ozrwr8 { border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
+    </style>
+    <div class="container">
+      <table class="table table-borderless" id="tinytable_bawvcrkt6vdbzf3c2qxx" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+        <thead>
+        
+              <tr>
+                <th scope="col" data-row="0" data-col="0">Forventet utdanning</th>
+                <th scope="col" data-row="0" data-col="1">Jente</th>
+                <th scope="col" data-row="0" data-col="2">Gutt</th>
+                <th scope="col" data-row="0" data-col="3">Annet</th>
+              </tr>
+        </thead>
+        
+        <tbody>
+                <tr>
+                  <td data-row="1" data-col="0">Ungdomsskole</td>
+                  <td data-row="1" data-col="1">9.7%</td>
+                  <td data-row="1" data-col="2">12.2%</td>
+                  <td data-row="1" data-col="3">23.7%</td>
+                </tr>
+                <tr>
+                  <td data-row="2" data-col="0">VGS</td>
+                  <td data-row="2" data-col="1">18.8%</td>
+                  <td data-row="2" data-col="2">25.9%</td>
+                  <td data-row="2" data-col="3">18.2%</td>
+                </tr>
+                <tr>
+                  <td data-row="3" data-col="0">Kort utdanning</td>
+                  <td data-row="3" data-col="1">12.7%</td>
+                  <td data-row="3" data-col="2">19.9%</td>
+                  <td data-row="3" data-col="3">19.2%</td>
+                </tr>
+                <tr>
+                  <td data-row="4" data-col="0">Høyere utdanning</td>
+                  <td data-row="4" data-col="1">58.7%</td>
+                  <td data-row="4" data-col="2">42.1%</td>
+                  <td data-row="4" data-col="3">38.9%</td>
+                </tr>
+        </tbody>
+      </table>
+    </div>
+<!-- hack to avoid NA insertion in last line -->
 </div>
 </div>
 </figure>
+</div>
 </div>
 <p>Denne tabellen gjør det mye lettere å se om det er en sammenheng mellom variablene, og det ser det kanskje ut til at det er? For eksempel er det mye større andel av jentene som ser for seg å ta høyere utdanning. Spørsmålet som stilles i hypotesetesten er om forskjellene vi ser i tabellen er store nok til å kunne forkaste nullhypotesen om at det ikke er noen sammenheng mellom <em>Kjønn</em> og <em>Forventet utdanning</em>.</p>
 </section>
@@ -750,7 +895,7 @@ Vi har forenklet litt
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-categorical-chi-square-dist" class="quarto-float quarto-figure quarto-figure-center anchored" alt="En kji-kvadrat-fordeling som viser en høyreskjev kurve. En pil peker på verdien 12,6 på x-aksen, merket &quot;Den kritiske verdien er 12,6.&quot; Området under grafen til høyre for 12,6 er skravert og markert med &quot;Kritisk område&quot;." data-fig-align="center">
+<div id="fig-categorical-chi-square-dist" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="En kji-kvadrat-fordeling som viser en høyreskjev kurve. En pil peker på verdien 12,6 på x-aksen, merket &quot;Den kritiske verdien er 12,6.&quot; Området under grafen til høyre for 12,6 er skravert og markert med &quot;Kritisk område&quot;.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-categorical-chi-square-dist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="sec-categorical_files/figure-html/fig-categorical-chi-square-dist-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figur&nbsp;9.1. Illustrasjon av forkastningsområdet ved \chi^2-test."><img src="sec-categorical_files/figure-html/fig-categorical-chi-square-dist-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" alt="En kji-kvadrat-fordeling som viser en høyreskjev kurve. En pil peker på verdien 12,6 på x-aksen, merket &quot;Den kritiske verdien er 12,6.&quot; Området under grafen til høyre for 12,6 er skravert og markert med &quot;Kritisk område&quot;."></a>
@@ -769,7 +914,7 @@ Figur&nbsp;9.1. Illustrasjon av forkastningsområdet ved <span class="math inlin
 <p>Det var enkelt, ikke sant! Du kan også be jamovi om å vise deg de forventede verdiene - bare klikk på avkrysningsboksen for ‘Counts’ – ‘Expected’ i ‘Cells’-alternativene, så vil de forventede verdiene vises i krysstabellen.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-categorical-jamovi-independence" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-pos="H" alt="Et jamovi-skjermbilde som viser Krysstabell. Grensesnittet inkluderer alternativer for å velge rader, kolonner og lag for tabellene, samt visning av statistikk, celler og plot. En tabell med observerte og forventede verdier vises til høyre" data-fig-align="center">
+<div id="fig-categorical-jamovi-independence" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-pos="H" data-fig-align="center" alt="Et jamovi-skjermbilde som viser Krysstabell. Grensesnittet inkluderer alternativer for å velge rader, kolonner og lag for tabellene, samt visning av statistikk, celler og plot. En tabell med observerte og forventede verdier vises til høyre">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-categorical-jamovi-independence-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="images/fig-categorical-jamovi-independence.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figur&nbsp;9.2. \chi^2-test for uavhengighet i jamovi"><img src="images/fig-categorical-jamovi-independence.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" data-fig-pos="H" alt="Et jamovi-skjermbilde som viser Krysstabell. Grensesnittet inkluderer alternativer for å velge rader, kolonner og lag for tabellene, samt visning av statistikk, celler og plot. En tabell med observerte og forventede verdier vises til høyre"></a>
@@ -788,7 +933,7 @@ Figur&nbsp;9.2. <span class="math inline">\chi^2</span>-test for uavhengighet i 
 <p>Problemet med dette resultatet er at vi ikke aner hvilken vei sammenhengen går. Heldigvis inneholder jamovi en fin måte å visualisere testen på også, se <a href="#fig-categorical-jamovi-independence-diagram" class="quarto-xref">Figur&nbsp;<span>9.3</span></a>. Jeg har valgt et stablet stolpediagram der kolonnene er <em>Kjønn</em>.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-categorical-jamovi-independence-diagram" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Et jamovi-skjermbilde som viser et stablet stolpediagram. Kjønn på x-aksen, og vertikale stolper som viser andelen av hver verdi for _Forventet utdanning_." data-fig-align="center">
+<div id="fig-categorical-jamovi-independence-diagram" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Et jamovi-skjermbilde som viser et stablet stolpediagram. Kjønn på x-aksen, og vertikale stolper som viser andelen av hver verdi for _Forventet utdanning_.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-categorical-jamovi-independence-diagram-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="images/fig-categorical-jamovi-independence-diagram.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figur&nbsp;9.3. Et stablet stolpediagram fra jamovi som visualiserer \chi^2-testen"><img src="images/fig-categorical-jamovi-independence-diagram.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="Et jamovi-skjermbilde som viser et stablet stolpediagram. Kjønn på x-aksen, og vertikale stolper som viser andelen av hver verdi for _Forventet utdanning_."></a>
