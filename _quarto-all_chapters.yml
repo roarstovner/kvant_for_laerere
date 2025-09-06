@@ -4,6 +4,7 @@ book:
     - sec-why-statistics.qmd
     - part: Studiedesign
       chapters:
+        - sec-jamovi.qmd
         - sec-measurement.qmd
         - sec-design.qmd
     - part: Deskriptiv statistikk
