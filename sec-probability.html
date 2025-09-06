@@ -410,6 +410,12 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./sec-jamovi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Komme i gang med jamovi</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./sec-measurement.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Måling i utdanningsforskning</span></span></a>
   </div>
@@ -431,6 +437,12 @@ window.Quarto = {
           </a> 
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-jamovi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Komme i gang med jamovi</span></a>
+  </div>
+</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./sec-descriptive.html" class="sidebar-item-text sidebar-link">
@@ -643,19 +655,6 @@ Tabell&nbsp;6.1. Myntkast og andel kron
               console.warn(`Cell at (${i}, ${j}) not found.`);
           }
       }
-      function insertSpanRow(i, colspan, content) {
-        var table = document.getElementById('tinytable_txgz1317ftylnsmm50a8');
-        // Find the row with data-row attribute matching i
-        var targetRow = table.querySelector(`tr [data-row="${i}"]`).closest('tr');
-        var newRow = table.insertRow(targetRow.rowIndex);
-        var newCell = newRow.insertCell(0);
-        newCell.setAttribute("colspan", colspan);
-        newCell.setAttribute("data-col", "0");
-        newCell.setAttribute("data-row", i - 1);
-        // newCell.innerText = content;
-        // this may be unsafe, but innerText does not interpret <br>
-        newCell.innerHTML = content;
-      }
       function spanCell_txgz1317ftylnsmm50a8(i, j, rowspan, colspan) {
         var table = document.getElementById("tinytable_txgz1317ftylnsmm50a8");
         const targetCell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
@@ -831,7 +830,7 @@ Tabell&nbsp;6.1. Myntkast og andel kron
 <p>Dessverre har jeg ikke et uendelig antall mynter eller den uendelige tålmodigheten som kreves for å kaste en mynt et uendelig antall ganger. Men jeg har en datamaskin, og datamaskiner er utmerkede til tankeløse repetitive oppgaver. Så jeg ba datamaskinen min simulere å kaste en mynt 1000 ganger og tegnet deretter et bilde av hva som skjer med andelen <span class="math inline">\frac{N_K}{N}</span> når <span class="math inline">N</span> øker. Faktisk gjorde jeg det fire ganger bare for å være sikker på at resultatet ikke var en tilfeldighet. Resultatene vises i <a href="#fig-probability-coin-simul" class="quarto-xref">Figur&nbsp;<span>6.1</span></a>. Som du kan se, slutter andelen observerte kroner til slutt å svinge og roer seg ned. Når det skjer, er tallet den til slutt slår seg til ro på den sanne sannsynligheten for kron.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-probability-coin-simul" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Fire linjediagram som hver viser andelen kroner versus antall myntkast, fra 0 til 1000 kast. Alle diagrammene demonstrerer konvergens mot 0,5 når antall kast øker, med innledende svingninger som stabiliserer seg over tid" data-fig-align="center" data-fig-pos="H">
+<div id="fig-probability-coin-simul" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" data-fig-pos="H" alt="Fire linjediagram som hver viser andelen kroner versus antall myntkast, fra 0 til 1000 kast. Alle diagrammene demonstrerer konvergens mot 0,5 når antall kast øker, med innledende svingninger som stabiliserer seg over tid">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-probability-coin-simul-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="sec-probability_files/figure-html/fig-probability-coin-simul-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figur&nbsp;6.1. En illustrasjon av hvordan frekventistisk sannsynlighet fungerer. Hvis du kaster en rettferdig mynt om og om igjen, vil andelen kroner du har sett til slutt stabilisere seg og konvergere mot den sanne sannsynligheten på 0,5. Hvert panel viser fire forskjellige simulerte eksperimenter. I hvert tilfelle later vi som om vi kastet en mynt 1000 ganger og holdt oversikt over andelen kast som var kroner underveis. Selv om ingen av disse sekvensene faktisk endte opp med en eksakt verdi på 0,5, ville de ha gjort det hvis vi hadde utvidet eksperimentet til et uendelig antall myntkast"><img src="sec-probability_files/figure-html/fig-probability-coin-simul-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%" data-fig-pos="H" alt="Fire linjediagram som hver viser andelen kroner versus antall myntkast, fra 0 til 1000 kast. Alle diagrammene demonstrerer konvergens mot 0,5 når antall kast øker, med innledende svingninger som stabiliserer seg over tid"></a>
@@ -869,7 +868,7 @@ Tabell&nbsp;6.2. En sannsynlighetsfordeling for buksebruk
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-probability-pants" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Stolpediagram som viser sannsynligheten for forskjellige hendelser. Blå jeans har høyest sannsynlighet på 0,5, fulgt av grå jeans rundt 0,3. Sorte jeans og blå joggebukse har samme sannsynlighet nær 0,1, mens den sorte dressen har en sannsynlighet på 0." data-fig-align="center" data-fig-pos="h!">
+<div id="fig-probability-pants" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" data-fig-pos="h!" alt="Stolpediagram som viser sannsynligheten for forskjellige hendelser. Blå jeans har høyest sannsynlighet på 0,5, fulgt av grå jeans rundt 0,3. Sorte jeans og blå joggebukse har samme sannsynlighet nær 0,1, mens den sorte dressen har en sannsynlighet på 0.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-probability-pants-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="sec-probability_files/figure-html/fig-probability-pants-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figur&nbsp;6.2. En visuell fremstilling av “bukse”-sannsynlighetsfordelingen. Det er fem “elementære hendelser”, som tilsvarer de fem parene bukser jeg eier. Hver hendelse har en viss sannsynlighet for å inntreffe – denne sannsynligheten er et tall mellom 0 og 1. Summen av disse sannsynlighetene er 1"><img src="sec-probability_files/figure-html/fig-probability-pants-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" data-fig-pos="h!" alt="Stolpediagram som viser sannsynligheten for forskjellige hendelser. Blå jeans har høyest sannsynlighet på 0,5, fulgt av grå jeans rundt 0,3. Sorte jeans og blå joggebukse har samme sannsynlighet nær 0,1, mens den sorte dressen har en sannsynlighet på 0."></a>
@@ -1026,7 +1025,7 @@ Figur&nbsp;6.8. Arealet under kurven forteller deg sannsynligheten for at en obs
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-probability-normal-shaded-tails" class="quarto-float quarto-figure quarto-figure-center anchored" alt="To klokkekurvediagrammer:- &quot;a&quot; viser en normalfordeling med et skravert område under kurven som strekker seg fra minus uendelig til omtrent -1, merket som 15,9%. &quot;b&quot; viser en normalfordeling med det skraverte området som strekker seg fra -1 til 1, merket som 34,1%" data-fig-align="center" data-fig-pos="H">
+<div id="fig-probability-normal-shaded-tails" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" data-fig-pos="H" alt="To klokkekurvediagrammer:- &quot;a&quot; viser en normalfordeling med et skravert område under kurven som strekker seg fra minus uendelig til omtrent -1, merket som 15,9%. &quot;b&quot; viser en normalfordeling med det skraverte området som strekker seg fra -1 til 1, merket som 34,1%">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-probability-normal-shaded-tails-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="sec-probability_files/figure-html/fig-probability-normal-shaded-tails-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="Figur&nbsp;6.9. To eksempler til på “arealet under kurven”-ideen. Det er 15,9% sjanse for at en observasjon er ett standardavvik under gjennomsnittet eller mindre (panel (a)), og 34,1% sjanse for at observasjonen er et sted mellom ett standardavvik under gjennomsnittet og gjennomsnittet (panel (b)). Legg merke til at hvis du legger disse to tallene sammen får du 15,9% + 34,1% = 50%. For normalfordelte data er det 50% sjanse for at en observasjon faller under gjennomsnittet. Og det innebærer selvfølgelig også at det er 50% sjanse for at den faller over gjennomsnittet"><img src="sec-probability_files/figure-html/fig-probability-normal-shaded-tails-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" data-fig-pos="H" alt="To klokkekurvediagrammer:- &quot;a&quot; viser en normalfordeling med et skravert område under kurven som strekker seg fra minus uendelig til omtrent -1, merket som 15,9%. &quot;b&quot; viser en normalfordeling med det skraverte området som strekker seg fra -1 til 1, merket som 34,1%"></a>
@@ -1044,7 +1043,7 @@ Figur&nbsp;6.9. To eksempler til på “arealet under kurven”-ideen. Det er 15
 <p>Normalfordelingen er den mest brukte fordelingen i statistikk (vi skal snart se hvorfor), og binomialfordelingen er svært nyttig for mange formål. Men statistikkens verden inneholder mange sannsynlighetsfordelinger, og vi vil møte to av dem, <span class="math inline">\chi^2</span>-fordelingen (uttales “kji-kvadrat”) og <span class="math inline">F</span>-fordelingen. Jeg vil ikke gå inn på formlene for disse, eller snakke om dem i stor detalj, men la oss se på hvordan de ser ut: <a href="#fig-probability-chi-square" class="quarto-xref">Figur&nbsp;<span>6.10</span></a> og <a href="#fig-probability-F" class="quarto-xref">Figur&nbsp;<span>6.11</span></a>.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-probability-chi-square" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Et linjediagram viser en sannsynlighetstetthetsfunksjon med &quot;Observert Verdi&quot; på x-aksen (0 til 10) og &quot;Sannsynlighetstetthet&quot; på y-aksen (0 til 0,25). Kurven når toppen nær &quot;Observert Verdi&quot; 1,5 og avtar asymptotisk mot x-aksen på begge sider" data-fig-align="center" data-fig-pos="H">
+<div id="fig-probability-chi-square" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" data-fig-pos="H" alt="Et linjediagram viser en sannsynlighetstetthetsfunksjon med &quot;Observert Verdi&quot; på x-aksen (0 til 10) og &quot;Sannsynlighetstetthet&quot; på y-aksen (0 til 0,25). Kurven når toppen nær &quot;Observert Verdi&quot; 1,5 og avtar asymptotisk mot x-aksen på begge sider">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-probability-chi-square-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="sec-probability_files/figure-html/fig-probability-chi-square-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="Figur&nbsp;6.10. \chi^2-fordeling med 3 frihetsgrader. Legg merke til at de observerte verdiene alltid må være større enn null, og at fordelingen er ganske skjev. Dette er nøkkelegenskapene til en kji-kvadrat-fordeling"><img src="sec-probability_files/figure-html/fig-probability-chi-square-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" data-fig-pos="H" alt="Et linjediagram viser en sannsynlighetstetthetsfunksjon med &quot;Observert Verdi&quot; på x-aksen (0 til 10) og &quot;Sannsynlighetstetthet&quot; på y-aksen (0 til 0,25). Kurven når toppen nær &quot;Observert Verdi&quot; 1,5 og avtar asymptotisk mot x-aksen på begge sider"></a>
@@ -1058,7 +1057,7 @@ Figur&nbsp;6.10. <span class="math inline">\chi^2</span>-fordeling med 3 frihets
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-probability-F" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Et sannsynlighetstetthetsfunksjonsgraf som viser en kurve som når skarpt topp nær y-aksen og deretter gradvis avtar, og nærmer seg x-aksen mens den beveger seg til høyre. X-aksen er merket &quot;Observert Verdi&quot; og y-aksen er merket &quot;Sannsynlighetstetthet&quot;" data-fig-align="center" data-fig-pos="H">
+<div id="fig-probability-F" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" data-fig-pos="H" alt="Et sannsynlighetstetthetsfunksjonsgraf som viser en kurve som når skarpt topp nær y-aksen og deretter gradvis avtar, og nærmer seg x-aksen mens den beveger seg til høyre. X-aksen er merket &quot;Observert Verdi&quot; og y-aksen er merket &quot;Sannsynlighetstetthet&quot;">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-probability-F-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="sec-probability_files/figure-html/fig-probability-F-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12" title="Figur&nbsp;6.11. En F-fordeling med 3 og 5 frihetsgrader. Kvalitativt sett ser den ganske lik ut som en kji-kvadrat-fordeling, men de er ikke helt like generelt sett"><img src="sec-probability_files/figure-html/fig-probability-F-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" data-fig-pos="H" alt="Et sannsynlighetstetthetsfunksjonsgraf som viser en kurve som når skarpt topp nær y-aksen og deretter gradvis avtar, og nærmer seg x-aksen mens den beveger seg til høyre. X-aksen er merket &quot;Observert Verdi&quot; og y-aksen er merket &quot;Sannsynlighetstetthet&quot;"></a>

@@ -389,6 +389,12 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./sec-jamovi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Komme i gang med jamovi</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./sec-measurement.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Måling i utdanningsforskning</span></span></a>
   </div>
@@ -410,6 +416,12 @@ window.Quarto = {
           </a> 
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-jamovi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Komme i gang med jamovi</span></a>
+  </div>
+</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./sec-descriptive.html" class="sidebar-item-text sidebar-link">
@@ -597,19 +609,6 @@ Tabell&nbsp;9.1. Krysstabell med <em>Forventet utdanning</em> og <em>Kjønn</em>
               console.warn(`Cell at (${i}, ${j}) not found.`);
           }
       }
-      function insertSpanRow(i, colspan, content) {
-        var table = document.getElementById('tinytable_txgz1317ftylnsmm50a8');
-        // Find the row with data-row attribute matching i
-        var targetRow = table.querySelector(`tr [data-row="${i}"]`).closest('tr');
-        var newRow = table.insertRow(targetRow.rowIndex);
-        var newCell = newRow.insertCell(0);
-        newCell.setAttribute("colspan", colspan);
-        newCell.setAttribute("data-col", "0");
-        newCell.setAttribute("data-row", i - 1);
-        // newCell.innerText = content;
-        // this may be unsafe, but innerText does not interpret <br>
-        newCell.innerHTML = content;
-      }
       function spanCell_txgz1317ftylnsmm50a8(i, j, rowspan, colspan) {
         var table = document.getElementById("tinytable_txgz1317ftylnsmm50a8");
         const targetCell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
@@ -742,19 +741,6 @@ Tabell&nbsp;9.2. Krysstabell med prosenter for <em>Forventet utdanning</em> og <
           } else {
               console.warn(`Cell at (${i}, ${j}) not found.`);
           }
-      }
-      function insertSpanRow(i, colspan, content) {
-        var table = document.getElementById('tinytable_bawvcrkt6vdbzf3c2qxx');
-        // Find the row with data-row attribute matching i
-        var targetRow = table.querySelector(`tr [data-row="${i}"]`).closest('tr');
-        var newRow = table.insertRow(targetRow.rowIndex);
-        var newCell = newRow.insertCell(0);
-        newCell.setAttribute("colspan", colspan);
-        newCell.setAttribute("data-col", "0");
-        newCell.setAttribute("data-row", i - 1);
-        // newCell.innerText = content;
-        // this may be unsafe, but innerText does not interpret <br>
-        newCell.innerHTML = content;
       }
       function spanCell_bawvcrkt6vdbzf3c2qxx(i, j, rowspan, colspan) {
         var table = document.getElementById("tinytable_bawvcrkt6vdbzf3c2qxx");
@@ -895,7 +881,7 @@ Vi har forenklet litt
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-categorical-chi-square-dist" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="En kji-kvadrat-fordeling som viser en høyreskjev kurve. En pil peker på verdien 12,6 på x-aksen, merket &quot;Den kritiske verdien er 12,6.&quot; Området under grafen til høyre for 12,6 er skravert og markert med &quot;Kritisk område&quot;.">
+<div id="fig-categorical-chi-square-dist" class="quarto-float quarto-figure quarto-figure-center anchored" alt="En kji-kvadrat-fordeling som viser en høyreskjev kurve. En pil peker på verdien 12,6 på x-aksen, merket &quot;Den kritiske verdien er 12,6.&quot; Området under grafen til høyre for 12,6 er skravert og markert med &quot;Kritisk område&quot;." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-categorical-chi-square-dist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="sec-categorical_files/figure-html/fig-categorical-chi-square-dist-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figur&nbsp;9.1. Illustrasjon av forkastningsområdet ved \chi^2-test."><img src="sec-categorical_files/figure-html/fig-categorical-chi-square-dist-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" alt="En kji-kvadrat-fordeling som viser en høyreskjev kurve. En pil peker på verdien 12,6 på x-aksen, merket &quot;Den kritiske verdien er 12,6.&quot; Området under grafen til høyre for 12,6 er skravert og markert med &quot;Kritisk område&quot;."></a>
@@ -914,7 +900,7 @@ Figur&nbsp;9.1. Illustrasjon av forkastningsområdet ved <span class="math inlin
 <p>Det var enkelt, ikke sant! Du kan også be jamovi om å vise deg de forventede verdiene - bare klikk på avkrysningsboksen for ‘Counts’ – ‘Expected’ i ‘Cells’-alternativene, så vil de forventede verdiene vises i krysstabellen.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-categorical-jamovi-independence" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-pos="H" data-fig-align="center" alt="Et jamovi-skjermbilde som viser Krysstabell. Grensesnittet inkluderer alternativer for å velge rader, kolonner og lag for tabellene, samt visning av statistikk, celler og plot. En tabell med observerte og forventede verdier vises til høyre">
+<div id="fig-categorical-jamovi-independence" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Et jamovi-skjermbilde som viser Krysstabell. Grensesnittet inkluderer alternativer for å velge rader, kolonner og lag for tabellene, samt visning av statistikk, celler og plot. En tabell med observerte og forventede verdier vises til høyre" data-fig-pos="H" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-categorical-jamovi-independence-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="images/fig-categorical-jamovi-independence.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figur&nbsp;9.2. \chi^2-test for uavhengighet i jamovi"><img src="images/fig-categorical-jamovi-independence.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" data-fig-pos="H" alt="Et jamovi-skjermbilde som viser Krysstabell. Grensesnittet inkluderer alternativer for å velge rader, kolonner og lag for tabellene, samt visning av statistikk, celler og plot. En tabell med observerte og forventede verdier vises til høyre"></a>
@@ -933,7 +919,7 @@ Figur&nbsp;9.2. <span class="math inline">\chi^2</span>-test for uavhengighet i 
 <p>Problemet med dette resultatet er at vi ikke aner hvilken vei sammenhengen går. Heldigvis inneholder jamovi en fin måte å visualisere testen på også, se <a href="#fig-categorical-jamovi-independence-diagram" class="quarto-xref">Figur&nbsp;<span>9.3</span></a>. Jeg har valgt et stablet stolpediagram der kolonnene er <em>Kjønn</em>.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-categorical-jamovi-independence-diagram" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Et jamovi-skjermbilde som viser et stablet stolpediagram. Kjønn på x-aksen, og vertikale stolper som viser andelen av hver verdi for _Forventet utdanning_.">
+<div id="fig-categorical-jamovi-independence-diagram" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Et jamovi-skjermbilde som viser et stablet stolpediagram. Kjønn på x-aksen, og vertikale stolper som viser andelen av hver verdi for _Forventet utdanning_." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-categorical-jamovi-independence-diagram-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="images/fig-categorical-jamovi-independence-diagram.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figur&nbsp;9.3. Et stablet stolpediagram fra jamovi som visualiserer \chi^2-testen"><img src="images/fig-categorical-jamovi-independence-diagram.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="Et jamovi-skjermbilde som viser et stablet stolpediagram. Kjønn på x-aksen, og vertikale stolper som viser andelen av hver verdi for _Forventet utdanning_."></a>

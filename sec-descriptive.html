@@ -353,7 +353,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Slå av eller på sidebarnavigering" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sec-descriptive.html">Deskriptiv statistikk</a></li><li class="breadcrumb-item"><a href="./sec-descriptive.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Deskriptiv statistikk</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sec-jamovi.html">Deskriptiv statistikk</a></li><li class="breadcrumb-item"><a href="./sec-descriptive.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Deskriptiv statistikk</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Slå av eller på sidebarnavigering" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Søk" onclick="window.quartoOpenSearch();">
@@ -410,6 +410,12 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./sec-jamovi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Komme i gang med jamovi</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./sec-measurement.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Måling i utdanningsforskning</span></span></a>
   </div>
@@ -431,6 +437,12 @@ window.Quarto = {
           </a> 
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-jamovi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Komme i gang med jamovi</span></a>
+  </div>
+</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./sec-descriptive.html" class="sidebar-item-text sidebar-link active">
@@ -554,7 +566,7 @@ window.Quarto = {
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sec-descriptive.html">Deskriptiv statistikk</a></li><li class="breadcrumb-item"><a href="./sec-descriptive.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Deskriptiv statistikk</span></a></li></ol></nav><h1 class="title display-7"><span id="sec-descriptive" class="quarto-section-identifier"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Deskriptiv statistikk</span></span></h1></header>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sec-jamovi.html">Deskriptiv statistikk</a></li><li class="breadcrumb-item"><a href="./sec-descriptive.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Deskriptiv statistikk</span></a></li></ol></nav><h1 class="title display-7"><span id="sec-descriptive" class="quarto-section-identifier"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Deskriptiv statistikk</span></span></h1></header>
 
 
 <header id="title-block-header">
@@ -604,19 +616,6 @@ Tabell&nbsp;4.1. Noen få av variablene fra ICCS-studien.
               console.warn(`Cell at (${i}, ${j}) not found.`);
           }
       }
-      function insertSpanRow(i, colspan, content) {
-        var table = document.getElementById('tinytable_kaziop86xci30ttofnaj');
-        // Find the row with data-row attribute matching i
-        var targetRow = table.querySelector(`tr [data-row="${i}"]`).closest('tr');
-        var newRow = table.insertRow(targetRow.rowIndex);
-        var newCell = newRow.insertCell(0);
-        newCell.setAttribute("colspan", colspan);
-        newCell.setAttribute("data-col", "0");
-        newCell.setAttribute("data-row", i - 1);
-        // newCell.innerText = content;
-        // this may be unsafe, but innerText does not interpret <br>
-        newCell.innerHTML = content;
-      }
       function spanCell_kaziop86xci30ttofnaj(i, j, rowspan, colspan) {
         var table = document.getElementById("tinytable_kaziop86xci30ttofnaj");
         const targetCell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
@@ -649,12 +648,8 @@ Tabell&nbsp;4.1. Noen få av variablene fra ICCS-studien.
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: '50', j: 7 },  ], css_id: 'tinytable_css_zqqym2u1m28tut8zxlrs',}, 
-          { positions: [ { i: '1', j: 7 }, { i: '2', j: 7 }, { i: '3', j: 7 }, { i: '4', j: 7 }, { i: '5', j: 7 }, { i: '6', j: 7 }, { i: '7', j: 7 }, { i: '8', j: 7 }, { i: '9', j: 7 }, { i: '10', j: 7 }, { i: '11', j: 7 }, { i: '12', j: 7 }, { i: '13', j: 7 }, { i: '14', j: 7 }, { i: '15', j: 7 }, { i: '16', j: 7 }, { i: '17', j: 7 }, { i: '18', j: 7 }, { i: '19', j: 7 }, { i: '20', j: 7 }, { i: '21', j: 7 }, { i: '22', j: 7 }, { i: '23', j: 7 }, { i: '24', j: 7 }, { i: '25', j: 7 }, { i: '26', j: 7 }, { i: '27', j: 7 }, { i: '28', j: 7 }, { i: '29', j: 7 }, { i: '30', j: 7 }, { i: '31', j: 7 }, { i: '32', j: 7 }, { i: '33', j: 7 }, { i: '34', j: 7 }, { i: '35', j: 7 }, { i: '36', j: 7 }, { i: '37', j: 7 }, { i: '38', j: 7 }, { i: '39', j: 7 }, { i: '40', j: 7 }, { i: '41', j: 7 }, { i: '42', j: 7 }, { i: '43', j: 7 }, { i: '44', j: 7 }, { i: '45', j: 7 }, { i: '46', j: 7 }, { i: '47', j: 7 }, { i: '48', j: 7 }, { i: '49', j: 7 },  ], css_id: 'tinytable_css_gr6jhsgw11cn2h1bc5fy',}, 
-          { positions: [ { i: '0', j: 7 },  ], css_id: 'tinytable_css_usgjyow139w4o7okhu56',}, 
-          { positions: [ { i: '50', j: 5 }, { i: '50', j: 1 }, { i: '50', j: 0 }, { i: '50', j: 2 }, { i: '50', j: 3 }, { i: '50', j: 4 }, { i: '50', j: 6 },  ], css_id: 'tinytable_css_vjn8md5q0pgspqk6pj5t',}, 
-          { positions: [ { i: '2', j: 0 }, { i: '4', j: 0 }, { i: '1', j: 0 }, { i: '10', j: 0 }, { i: '7', j: 0 }, { i: '8', j: 0 }, { i: '5', j: 0 }, { i: '14', j: 0 }, { i: '15', j: 0 }, { i: '12', j: 0 }, { i: '17', j: 0 }, { i: '18', j: 0 }, { i: '6', j: 0 }, { i: '16', j: 0 }, { i: '21', j: 0 }, { i: '9', j: 0 }, { i: '23', j: 0 }, { i: '20', j: 0 }, { i: '25', j: 0 }, { i: '26', j: 0 }, { i: '27', j: 0 }, { i: '28', j: 0 }, { i: '29', j: 0 }, { i: '30', j: 0 }, { i: '31', j: 0 }, { i: '19', j: 0 }, { i: '33', j: 0 }, { i: '34', j: 0 }, { i: '35', j: 0 }, { i: '36', j: 0 }, { i: '37', j: 0 }, { i: '38', j: 0 }, { i: '39', j: 0 }, { i: '40', j: 0 }, { i: '41', j: 0 }, { i: '42', j: 0 }, { i: '3', j: 0 }, { i: '44', j: 0 }, { i: '45', j: 0 }, { i: '46', j: 0 }, { i: '47', j: 0 }, { i: '48', j: 0 }, { i: '49', j: 0 }, { i: '18', j: 3 }, { i: '11', j: 0 }, { i: '1', j: 1 }, { i: '2', j: 1 }, { i: '3', j: 1 }, { i: '4', j: 1 }, { i: '5', j: 1 }, { i: '6', j: 1 }, { i: '7', j: 1 }, { i: '8', j: 1 }, { i: '9', j: 1 }, { i: '10', j: 1 }, { i: '22', j: 0 }, { i: '12', j: 1 }, { i: '24', j: 0 }, { i: '14', j: 1 }, { i: '15', j: 1 }, { i: '16', j: 1 }, { i: '17', j: 1 }, { i: '18', j: 1 }, { i: '19', j: 1 }, { i: '20', j: 1 }, { i: '21', j: 1 }, { i: '22', j: 1 }, { i: '23', j: 1 }, { i: '24', j: 1 }, { i: '25', j: 1 }, { i: '26', j: 1 }, { i: '27', j: 1 }, { i: '28', j: 1 }, { i: '29', j: 1 }, { i: '30', j: 1 }, { i: '31', j: 1 }, { i: '43', j: 0 }, { i: '33', j: 1 }, { i: '34', j: 1 }, { i: '35', j: 1 }, { i: '36', j: 1 }, { i: '37', j: 1 }, { i: '38', j: 1 }, { i: '39', j: 1 }, { i: '40', j: 1 }, { i: '41', j: 1 }, { i: '42', j: 1 }, { i: '43', j: 1 }, { i: '44', j: 1 }, { i: '45', j: 1 }, { i: '46', j: 1 }, { i: '47', j: 1 }, { i: '48', j: 1 }, { i: '49', j: 1 }, { i: '18', j: 4 }, { i: '11', j: 1 }, { i: '1', j: 2 }, { i: '2', j: 2 }, { i: '3', j: 2 }, { i: '4', j: 2 }, { i: '5', j: 2 }, { i: '6', j: 2 }, { i: '7', j: 2 }, { i: '8', j: 2 }, { i: '9', j: 2 }, { i: '10', j: 2 }, { i: '11', j: 2 }, { i: '12', j: 2 }, { i: '13', j: 2 }, { i: '14', j: 2 }, { i: '15', j: 2 }, { i: '16', j: 2 }, { i: '17', j: 2 }, { i: '18', j: 2 }, { i: '19', j: 2 }, { i: '20', j: 2 }, { i: '21', j: 2 }, { i: '22', j: 2 }, { i: '23', j: 2 }, { i: '24', j: 2 }, { i: '25', j: 2 }, { i: '26', j: 2 }, { i: '27', j: 2 }, { i: '28', j: 2 }, { i: '29', j: 2 }, { i: '30', j: 2 }, { i: '31', j: 2 }, { i: '13', j: 0 }, { i: '33', j: 2 }, { i: '34', j: 2 }, { i: '35', j: 2 }, { i: '36', j: 2 }, { i: '37', j: 2 }, { i: '38', j: 2 }, { i: '39', j: 2 }, { i: '40', j: 2 }, { i: '41', j: 2 }, { i: '42', j: 2 }, { i: '43', j: 2 }, { i: '44', j: 2 }, { i: '45', j: 2 }, { i: '46', j: 2 }, { i: '47', j: 2 }, { i: '48', j: 2 }, { i: '49', j: 2 }, { i: '18', j: 5 }, { i: '32', j: 0 }, { i: '1', j: 3 }, { i: '2', j: 3 }, { i: '3', j: 3 }, { i: '4', j: 3 }, { i: '5', j: 3 }, { i: '6', j: 3 }, { i: '7', j: 3 }, { i: '8', j: 3 }, { i: '9', j: 3 }, { i: '10', j: 3 }, { i: '11', j: 3 }, { i: '12', j: 3 }, { i: '13', j: 3 }, { i: '14', j: 3 }, { i: '15', j: 3 }, { i: '16', j: 3 }, { i: '17', j: 3 }, { i: '37', j: 5 }, { i: '19', j: 3 }, { i: '20', j: 3 }, { i: '21', j: 3 }, { i: '22', j: 3 }, { i: '23', j: 3 }, { i: '24', j: 3 }, { i: '25', j: 3 }, { i: '26', j: 3 }, { i: '27', j: 3 }, { i: '28', j: 3 }, { i: '29', j: 3 }, { i: '30', j: 3 }, { i: '31', j: 3 }, { i: '13', j: 1 }, { i: '33', j: 3 }, { i: '34', j: 3 }, { i: '35', j: 3 }, { i: '36', j: 3 }, { i: '37', j: 3 }, { i: '38', j: 3 }, { i: '39', j: 3 }, { i: '40', j: 3 }, { i: '41', j: 3 }, { i: '42', j: 3 }, { i: '43', j: 3 }, { i: '44', j: 3 }, { i: '45', j: 3 }, { i: '46', j: 3 }, { i: '47', j: 3 }, { i: '48', j: 3 }, { i: '49', j: 3 }, { i: '18', j: 6 }, { i: '32', j: 1 }, { i: '1', j: 4 }, { i: '2', j: 4 }, { i: '3', j: 4 }, { i: '4', j: 4 }, { i: '5', j: 4 }, { i: '6', j: 4 }, { i: '7', j: 4 }, { i: '8', j: 4 }, { i: '9', j: 4 }, { i: '10', j: 4 }, { i: '11', j: 4 }, { i: '12', j: 4 }, { i: '13', j: 4 }, { i: '14', j: 4 }, { i: '15', j: 4 }, { i: '16', j: 4 }, { i: '17', j: 4 }, { i: '37', j: 6 }, { i: '19', j: 4 }, { i: '20', j: 4 }, { i: '21', j: 4 }, { i: '22', j: 4 }, { i: '23', j: 4 }, { i: '24', j: 4 }, { i: '25', j: 4 }, { i: '26', j: 4 }, { i: '27', j: 4 }, { i: '28', j: 4 }, { i: '29', j: 4 }, { i: '30', j: 4 }, { i: '31', j: 4 }, { i: '32', j: 4 }, { i: '33', j: 4 }, { i: '34', j: 4 }, { i: '35', j: 4 }, { i: '36', j: 4 }, { i: '37', j: 4 }, { i: '38', j: 4 }, { i: '39', j: 4 }, { i: '40', j: 4 }, { i: '41', j: 4 }, { i: '42', j: 4 }, { i: '43', j: 4 }, { i: '44', j: 4 }, { i: '45', j: 4 }, { i: '46', j: 4 }, { i: '47', j: 4 }, { i: '48', j: 4 }, { i: '49', j: 4 }, { i: '39', j: 5 }, { i: '32', j: 2 }, { i: '1', j: 5 }, { i: '2', j: 5 }, { i: '3', j: 5 }, { i: '4', j: 5 }, { i: '5', j: 5 }, { i: '6', j: 5 }, { i: '7', j: 5 }, { i: '8', j: 5 }, { i: '9', j: 5 }, { i: '10', j: 5 }, { i: '11', j: 5 }, { i: '12', j: 5 }, { i: '13', j: 5 }, { i: '14', j: 5 }, { i: '15', j: 5 }, { i: '16', j: 5 }, { i: '17', j: 5 }, { i: '7', j: 6 }, { i: '19', j: 5 }, { i: '20', j: 5 }, { i: '21', j: 5 }, { i: '22', j: 5 }, { i: '23', j: 5 }, { i: '24', j: 5 }, { i: '25', j: 5 }, { i: '26', j: 5 }, { i: '27', j: 5 }, { i: '28', j: 5 }, { i: '29', j: 5 }, { i: '30', j: 5 }, { i: '31', j: 5 }, { i: '32', j: 5 }, { i: '33', j: 5 }, { i: '34', j: 5 }, { i: '35', j: 5 }, { i: '36', j: 5 }, { i: '26', j: 6 }, { i: '38', j: 5 }, { i: '28', j: 6 }, { i: '40', j: 5 }, { i: '41', j: 5 }, { i: '42', j: 5 }, { i: '43', j: 5 }, { i: '44', j: 5 }, { i: '45', j: 5 }, { i: '46', j: 5 }, { i: '47', j: 5 }, { i: '48', j: 5 }, { i: '49', j: 5 }, { i: '39', j: 6 }, { i: '32', j: 3 }, { i: '1', j: 6 }, { i: '2', j: 6 }, { i: '3', j: 6 }, { i: '4', j: 6 }, { i: '5', j: 6 }, { i: '6', j: 6 }, { i: '47', j: 6 }, { i: '8', j: 6 }, { i: '9', j: 6 }, { i: '10', j: 6 }, { i: '11', j: 6 }, { i: '12', j: 6 }, { i: '13', j: 6 }, { i: '14', j: 6 }, { i: '15', j: 6 }, { i: '16', j: 6 }, { i: '17', j: 6 }, { i: '31', j: 6 }, { i: '19', j: 6 }, { i: '20', j: 6 }, { i: '21', j: 6 }, { i: '22', j: 6 }, { i: '23', j: 6 }, { i: '24', j: 6 }, { i: '25', j: 6 }, { i: '30', j: 6 }, { i: '27', j: 6 }, { i: '41', j: 6 }, { i: '29', j: 6 }, { i: '34', j: 6 }, { i: '44', j: 6 }, { i: '32', j: 6 }, { i: '33', j: 6 }, { i: '38', j: 6 }, { i: '35', j: 6 }, { i: '36', j: 6 }, { i: '45', j: 6 }, { i: '42', j: 6 }, { i: '43', j: 6 }, { i: '40', j: 6 }, { i: '49', j: 6 }, { i: '46', j: 6 }, { i: '48', j: 6 },  ], css_id: 'tinytable_css_7h8669nmpws9caop6omp',}, 
-          { positions: [ { i: '0', j: 0 }, { i: '0', j: 2 }, { i: '0', j: 3 }, { i: '0', j: 4 }, { i: '0', j: 6 }, { i: '0', j: 5 }, { i: '0', j: 1 },  ], css_id: 'tinytable_css_2szlja7k1c57vzdfmw9o',}, 
+          { positions: [ { i: '50', j: 0 }, { i: '50', j: 1 }, { i: '50', j: 2 }, { i: '50', j: 3 }, { i: '50', j: 4 }, { i: '50', j: 5 }, { i: '50', j: 6 }, { i: '50', j: 7 },  ], css_id: 'tinytable_css_7h8669nmpws9caop6omp',}, 
+          { positions: [ { i: '0', j: 0 }, { i: '0', j: 1 }, { i: '0', j: 2 }, { i: '0', j: 3 }, { i: '0', j: 4 }, { i: '0', j: 5 }, { i: '0', j: 6 }, { i: '0', j: 7 },  ], css_id: 'tinytable_css_2szlja7k1c57vzdfmw9o',}, 
           ];
 
           // Loop over the arrays to style the cells
@@ -668,12 +663,8 @@ Tabell&nbsp;4.1. Noen få av variablene fra ICCS-studien.
 
     <style>
       /* tinytable css entries after */
-      .table td.tinytable_css_zqqym2u1m28tut8zxlrs, .table th.tinytable_css_zqqym2u1m28tut8zxlrs { border-bottom: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_gr6jhsgw11cn2h1bc5fy, .table th.tinytable_css_gr6jhsgw11cn2h1bc5fy { padding-bottom: 0.1em; }
-      .table td.tinytable_css_usgjyow139w4o7okhu56, .table th.tinytable_css_usgjyow139w4o7okhu56 { border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; border-bottom: solid #d3d8dc 0.1em; padding-bottom: 0.1em; }
-      .table td.tinytable_css_vjn8md5q0pgspqk6pj5t, .table th.tinytable_css_vjn8md5q0pgspqk6pj5t { border-bottom: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.1em; padding-right: 0.5em; }
-      .table td.tinytable_css_7h8669nmpws9caop6omp, .table th.tinytable_css_7h8669nmpws9caop6omp { padding-right: 0.5em; padding-bottom: 0.1em; }
-      .table td.tinytable_css_2szlja7k1c57vzdfmw9o, .table th.tinytable_css_2szlja7k1c57vzdfmw9o { border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; border-bottom: solid #d3d8dc 0.1em; padding-right: 0.5em; padding-bottom: 0.1em; }
+      .table td.tinytable_css_7h8669nmpws9caop6omp, .table th.tinytable_css_7h8669nmpws9caop6omp { border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_2szlja7k1c57vzdfmw9o, .table th.tinytable_css_2szlja7k1c57vzdfmw9o { border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
     </style>
     <div class="container">
       <table class="table table-borderless" id="tinytable_kaziop86xci30ttofnaj" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
@@ -1391,7 +1382,7 @@ Figur&nbsp;4.6. Standard deskriptiv statistikk for variabelen <em>Likestilling</
 <p>Dette illustreres også i <a href="#fig-descriptive-weight" class="quarto-xref">Figur&nbsp;<span>4.7</span></a>, hvor du kan se at når histogrammet er asymmetrisk, ligger medianen nærmere “hovedvekten” av dataene, mens gjennomsnittet blir trukket mot “halen” der de ekstreme verdiene befinner seg.</p>
 <div class="cell enlarge-image" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-descriptive-weight" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Et stolpediagram på venstre side har 48 observasjoner og ligner på et trappetrinnmønster med avtagende høyder fra venstre til høyre. Teksten lyder: &quot;Gjennomsnittet er 'balansepunktet' til dataene.&quot; Under diagrammet er det en horisontal linje merket &quot;balansepunkt&quot; med et trekantet støttepunkt som symboliserer balanse. Det samme stolpediagrammet vises på høyre side med dataene delt inn i to grupper på 24 observasjoner. Den venstre gruppen er skyggelagt i lys grå, og den høyre gruppen er skyggelagt i mørk grå. En pil peker på den 24. observasjonen med teksten &quot;Medianen er den 'midterste observasjonen' i datasettet&quot;" data-fig-pos="H">
+<div id="fig-descriptive-weight" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-pos="H" alt="Et stolpediagram på venstre side har 48 observasjoner og ligner på et trappetrinnmønster med avtagende høyder fra venstre til høyre. Teksten lyder: &quot;Gjennomsnittet er 'balansepunktet' til dataene.&quot; Under diagrammet er det en horisontal linje merket &quot;balansepunkt&quot; med et trekantet støttepunkt som symboliserer balanse. Det samme stolpediagrammet vises på høyre side med dataene delt inn i to grupper på 24 observasjoner. Den venstre gruppen er skyggelagt i lys grå, og den høyre gruppen er skyggelagt i mørk grå. En pil peker på den 24. observasjonen med teksten &quot;Medianen er den 'midterste observasjonen' i datasettet&quot;" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-descriptive-weight-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="images/fig-descriptive-weight.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figur&nbsp;4.7. En illustrasjon av forskjellen mellom hvordan gjennomsnittet og medianen bør tolkes. Gjennomsnittet er &quot;balansepunktet&quot; til datasettet. Hvis du forestiller deg at histogrammet av dataene er et klosser på et brett, så er gjennomsnittet balansepunktet. Medianen den midterste observasjonen, og halvparten av klossene lenger til venstre og halvparten og halvparten lenger til høyre."><img src="images/fig-descriptive-weight.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" data-fig-pos="H" alt="Et stolpediagram på venstre side har 48 observasjoner og ligner på et trappetrinnmønster med avtagende høyder fra venstre til høyre. Teksten lyder: &quot;Gjennomsnittet er 'balansepunktet' til dataene.&quot; Under diagrammet er det en horisontal linje merket &quot;balansepunkt&quot; med et trekantet støttepunkt som symboliserer balanse. Det samme stolpediagrammet vises på høyre side med dataene delt inn i to grupper på 24 observasjoner. Den venstre gruppen er skyggelagt i lys grå, og den høyre gruppen er skyggelagt i mørk grå. En pil peker på den 24. observasjonen med teksten &quot;Medianen er den 'midterste observasjonen' i datasettet&quot;"></a>
@@ -1415,7 +1406,7 @@ Figur&nbsp;4.7. En illustrasjon av forskjellen mellom hvordan gjennomsnittet og 
 <p>Hvis vi skal finne typetallet for <em>Kjønn</em> i hele datasettet må vi sette oss ned og telle hvor mange det er av Gutt, Jente og Annet. Selvsagt gjør vi det heller med programvare, altså jamovi. <a href="#fig-descriptive-jamovi-mode" class="quarto-xref">Figur&nbsp;<span>4.8</span></a> viser et skjermbilde av hvordan det ser ut.</p>
 <div class="cell enlarge-image" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-descriptive-jamovi-mode" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Et jamovi-skjermbilde for analyse av variabelen Kjønn. Et panel til venstre inkluderer alternativer for å velge variabler og hvilke sentraltendenser man ønsker å regne ut. Det høyre panelet viser resultatene" data-fig-pos="H">
+<div id="fig-descriptive-jamovi-mode" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-pos="H" alt="Et jamovi-skjermbilde for analyse av variabelen Kjønn. Et panel til venstre inkluderer alternativer for å velge variabler og hvilke sentraltendenser man ønsker å regne ut. Det høyre panelet viser resultatene" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-descriptive-jamovi-mode-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="images/fig-descriptive-jamovi-mode.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Figur&nbsp;4.8. Et skjermbilde av jamovi som viser typetall og frekvenstabell for variabelen Kjønn"><img src="images/fig-descriptive-jamovi-mode.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" data-fig-pos="H" alt="Et jamovi-skjermbilde for analyse av variabelen Kjønn. Et panel til venstre inkluderer alternativer for å velge variabler og hvilke sentraltendenser man ønsker å regne ut. Det høyre panelet viser resultatene"></a>
@@ -1431,7 +1422,7 @@ Figur&nbsp;4.8. Et skjermbilde av jamovi som viser typetall og frekvenstabell fo
 <p>For å finne ut av hva typetallet 2 betyr, må du trykke på ‘Variables’ → ‘Kjønn’ → ‘Edit’, se <a href="#fig-descriptive-jamovi-gender" class="quarto-xref">Figur&nbsp;<span>4.9</span></a>. Du kan se at “Jente” er lagret som 1, “Gutt” som 2 og “Annet” som 3. Typetallet 2 er altså “Gutt”, så det er flest gutter i datasettet.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-descriptive-jamovi-gender" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Et jamovi-skjermbilde for analyse av variabelen Kjønn. Det står at _Kjønn_ er en nominell variabel der &quot;Jente&quot; er lagret som 1, &quot;Gutt&quot; er lagret som 2, og &quot;Annet&quot; er lagret som 3." data-fig-pos="H">
+<div id="fig-descriptive-jamovi-gender" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-pos="H" alt="Et jamovi-skjermbilde for analyse av variabelen Kjønn. Det står at _Kjønn_ er en nominell variabel der &quot;Jente&quot; er lagret som 1, &quot;Gutt&quot; er lagret som 2, og &quot;Annet&quot; er lagret som 3." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-descriptive-jamovi-gender-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="images/fig-descriptive-jamovi-gender.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Figur&nbsp;4.9. Et skjermbilde av jamovi som viser informasjon om variabelen Kjønn."><img src="images/fig-descriptive-jamovi-gender.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" data-fig-pos="H" alt="Et jamovi-skjermbilde for analyse av variabelen Kjønn. Det står at _Kjønn_ er en nominell variabel der &quot;Jente&quot; er lagret som 1, &quot;Gutt&quot; er lagret som 2, og &quot;Annet&quot; er lagret som 3."></a>
@@ -1446,7 +1437,7 @@ Figur&nbsp;4.9. Et skjermbilde av jamovi som viser informasjon om variabelen <em
 <p>En mer tilfredsstillende måte å finne typetallet på er å telle opp antallet av alle verdiene. Dette kalles å lage en <strong>frekvenstabell</strong>. I jamovi kan man akkurat som før trykke på “Analyses” → “Exploration” → “Descriptives”, men nå kan man velge “Frequency table”, se <a href="#fig-descriptive-jamovi-frequency-table" class="quarto-xref">Figur&nbsp;<span>4.10</span></a>.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-descriptive-jamovi-frequency-table" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Et skjermbilde av jamovi som viser frekvenstabell til _Kjønn_." data-fig-pos="H">
+<div id="fig-descriptive-jamovi-frequency-table" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-pos="H" alt="Et skjermbilde av jamovi som viser frekvenstabell til _Kjønn_." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-descriptive-jamovi-frequency-table-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="images/fig-descriptive-jamovi-frequency-table.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="Figur&nbsp;4.10. Et skjermbilde av jamovi som viser frekvenstabell til Kjønn."><img src="images/fig-descriptive-jamovi-frequency-table.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" data-fig-pos="H" alt="Et skjermbilde av jamovi som viser frekvenstabell til _Kjønn_."></a>
@@ -1470,7 +1461,7 @@ Figur&nbsp;4.10. Et skjermbilde av jamovi som viser frekvenstabell til <em>Kjøn
 <p><strong>Variasjonsbredden</strong> er det aller enkleste spredningsmålet. Den regnes ut ved å ta den største verdien minus den minste verdien. I <a href="#fig-descriptive-jamovi-dispersion" class="quarto-xref">Figur&nbsp;<span>4.11</span></a></p>
 <div class="cell enlarge-image" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-descriptive-jamovi-dispersion" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Et skjermbilde av jamovi som likner på de foregående, men der boksene for &quot;Dispersion&quot; er krysset av; Std. deviation, Variance, Range, Minimum, Maximum" data-fig-pos="H">
+<div id="fig-descriptive-jamovi-dispersion" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-pos="H" alt="Et skjermbilde av jamovi som likner på de foregående, men der boksene for &quot;Dispersion&quot; er krysset av; Std. deviation, Variance, Range, Minimum, Maximum" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-descriptive-jamovi-dispersion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="images/fig-descriptive-jamovi-dispersion.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="Figur&nbsp;4.11. Et skjermbilde av hvordan man finner ulike spredningsmål i jamovi"><img src="images/fig-descriptive-jamovi-dispersion.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" data-fig-pos="H" alt="Et skjermbilde av jamovi som likner på de foregående, men der boksene for &quot;Dispersion&quot; er krysset av; Std. deviation, Variance, Range, Minimum, Maximum"></a>
@@ -1527,8 +1518,8 @@ Tabell&nbsp;4.2. Noen verdier på variabelen <em>Likestilling</em> og deres avvi
 
     <script>
 
-      function styleCell_wfrbr1b5fei2wwaz9nrh(i, j, css_id) {
-          var table = document.getElementById("tinytable_wfrbr1b5fei2wwaz9nrh");
+      function styleCell_gr6jhsgw11cn2h1bc5fy(i, j, css_id) {
+          var table = document.getElementById("tinytable_gr6jhsgw11cn2h1bc5fy");
           var cell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
           if (cell) {
               console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
@@ -1537,21 +1528,8 @@ Tabell&nbsp;4.2. Noen verdier på variabelen <em>Likestilling</em> og deres avvi
               console.warn(`Cell at (${i}, ${j}) not found.`);
           }
       }
-      function insertSpanRow(i, colspan, content) {
-        var table = document.getElementById('tinytable_wfrbr1b5fei2wwaz9nrh');
-        // Find the row with data-row attribute matching i
-        var targetRow = table.querySelector(`tr [data-row="${i}"]`).closest('tr');
-        var newRow = table.insertRow(targetRow.rowIndex);
-        var newCell = newRow.insertCell(0);
-        newCell.setAttribute("colspan", colspan);
-        newCell.setAttribute("data-col", "0");
-        newCell.setAttribute("data-row", i - 1);
-        // newCell.innerText = content;
-        // this may be unsafe, but innerText does not interpret <br>
-        newCell.innerHTML = content;
-      }
-      function spanCell_wfrbr1b5fei2wwaz9nrh(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_wfrbr1b5fei2wwaz9nrh");
+      function spanCell_gr6jhsgw11cn2h1bc5fy(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_gr6jhsgw11cn2h1bc5fy");
         const targetCell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
         if (!targetCell) {
           console.warn(`Cell at (${i}, ${j}) not found.`);
@@ -1582,18 +1560,14 @@ Tabell&nbsp;4.2. Noen verdier på variabelen <em>Likestilling</em> og deres avvi
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: '5', j: 1 },  ], css_id: 'tinytable_css_ntmvgpmpz7ez2wprpgm9',}, 
-          { positions: [ { i: '1', j: 1 }, { i: '2', j: 1 }, { i: '3', j: 1 }, { i: '4', j: 1 },  ], css_id: 'tinytable_css_aw2wtx1jdo6yulflswu7',}, 
-          { positions: [ { i: '0', j: 1 },  ], css_id: 'tinytable_css_5rvyrj04aj196zmxn3sm',}, 
-          { positions: [ { i: '5', j: 0 },  ], css_id: 'tinytable_css_f8at9xjd5h17ak6m79g5',}, 
-          { positions: [ { i: '1', j: 0 }, { i: '2', j: 0 }, { i: '3', j: 0 }, { i: '4', j: 0 },  ], css_id: 'tinytable_css_3nr25zt9ozo3elnefi7u',}, 
-          { positions: [ { i: '0', j: 0 },  ], css_id: 'tinytable_css_gj8a74s59p8a5vbiqvqt',}, 
+          { positions: [ { i: '5', j: 0 }, { i: '5', j: 1 },  ], css_id: 'tinytable_css_wibxkgbtyto2hvgvpcjj',}, 
+          { positions: [ { i: '0', j: 0 }, { i: '0', j: 1 },  ], css_id: 'tinytable_css_zqqym2u1m28tut8zxlrs',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  styleCell_wfrbr1b5fei2wwaz9nrh(cell.i, cell.j, group.css_id);
+                  styleCell_gr6jhsgw11cn2h1bc5fy(cell.i, cell.j, group.css_id);
               });
           });
       });
@@ -1601,15 +1575,11 @@ Tabell&nbsp;4.2. Noen verdier på variabelen <em>Likestilling</em> og deres avvi
 
     <style>
       /* tinytable css entries after */
-      .table td.tinytable_css_ntmvgpmpz7ez2wprpgm9, .table th.tinytable_css_ntmvgpmpz7ez2wprpgm9 { border-bottom: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_aw2wtx1jdo6yulflswu7, .table th.tinytable_css_aw2wtx1jdo6yulflswu7 { padding-bottom: 0.1em; }
-      .table td.tinytable_css_5rvyrj04aj196zmxn3sm, .table th.tinytable_css_5rvyrj04aj196zmxn3sm { border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; border-bottom: solid #d3d8dc 0.1em; padding-bottom: 0.1em; }
-      .table td.tinytable_css_f8at9xjd5h17ak6m79g5, .table th.tinytable_css_f8at9xjd5h17ak6m79g5 { border-bottom: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.1em; padding-right: 0.5em; }
-      .table td.tinytable_css_3nr25zt9ozo3elnefi7u, .table th.tinytable_css_3nr25zt9ozo3elnefi7u { padding-right: 0.5em; padding-bottom: 0.1em; }
-      .table td.tinytable_css_gj8a74s59p8a5vbiqvqt, .table th.tinytable_css_gj8a74s59p8a5vbiqvqt { border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; border-bottom: solid #d3d8dc 0.1em; padding-right: 0.5em; padding-bottom: 0.1em; }
+      .table td.tinytable_css_wibxkgbtyto2hvgvpcjj, .table th.tinytable_css_wibxkgbtyto2hvgvpcjj { border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_zqqym2u1m28tut8zxlrs, .table th.tinytable_css_zqqym2u1m28tut8zxlrs { border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
     </style>
     <div class="container">
-      <table class="table table-borderless" id="tinytable_wfrbr1b5fei2wwaz9nrh" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+      <table class="table table-borderless" id="tinytable_gr6jhsgw11cn2h1bc5fy" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
         <thead>
         
               <tr>
@@ -1675,8 +1645,8 @@ Tabell&nbsp;4.3. Noen verdier på variabelen <em>Likestilling</em> og deres avvi
 
     <script>
 
-      function styleCell_9g72dr58wix0rt3pa4zi(i, j, css_id) {
-          var table = document.getElementById("tinytable_9g72dr58wix0rt3pa4zi");
+      function styleCell_gj8a74s59p8a5vbiqvqt(i, j, css_id) {
+          var table = document.getElementById("tinytable_gj8a74s59p8a5vbiqvqt");
           var cell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
           if (cell) {
               console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
@@ -1685,21 +1655,8 @@ Tabell&nbsp;4.3. Noen verdier på variabelen <em>Likestilling</em> og deres avvi
               console.warn(`Cell at (${i}, ${j}) not found.`);
           }
       }
-      function insertSpanRow(i, colspan, content) {
-        var table = document.getElementById('tinytable_9g72dr58wix0rt3pa4zi');
-        // Find the row with data-row attribute matching i
-        var targetRow = table.querySelector(`tr [data-row="${i}"]`).closest('tr');
-        var newRow = table.insertRow(targetRow.rowIndex);
-        var newCell = newRow.insertCell(0);
-        newCell.setAttribute("colspan", colspan);
-        newCell.setAttribute("data-col", "0");
-        newCell.setAttribute("data-row", i - 1);
-        // newCell.innerText = content;
-        // this may be unsafe, but innerText does not interpret <br>
-        newCell.innerHTML = content;
-      }
-      function spanCell_9g72dr58wix0rt3pa4zi(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_9g72dr58wix0rt3pa4zi");
+      function spanCell_gj8a74s59p8a5vbiqvqt(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_gj8a74s59p8a5vbiqvqt");
         const targetCell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
         if (!targetCell) {
           console.warn(`Cell at (${i}, ${j}) not found.`);
@@ -1730,18 +1687,14 @@ Tabell&nbsp;4.3. Noen verdier på variabelen <em>Likestilling</em> og deres avvi
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: '5', j: 2 },  ], css_id: 'tinytable_css_whjq98uihrkszjm41hbc',}, 
-          { positions: [ { i: '1', j: 2 }, { i: '2', j: 2 }, { i: '3', j: 2 }, { i: '4', j: 2 },  ], css_id: 'tinytable_css_c715mgvd6c7ag6iedpqg',}, 
-          { positions: [ { i: '0', j: 2 },  ], css_id: 'tinytable_css_oel7sk8xa36awak92yxr',}, 
-          { positions: [ { i: '5', j: 0 }, { i: '5', j: 1 },  ], css_id: 'tinytable_css_9ny97v6gjw991emy158m',}, 
-          { positions: [ { i: '1', j: 0 }, { i: '3', j: 0 }, { i: '4', j: 0 }, { i: '3', j: 1 }, { i: '2', j: 0 }, { i: '1', j: 1 }, { i: '2', j: 1 }, { i: '4', j: 1 },  ], css_id: 'tinytable_css_oz263n32a9sm4nvoa9eu',}, 
-          { positions: [ { i: '0', j: 0 }, { i: '0', j: 1 },  ], css_id: 'tinytable_css_yw4mok4b1h3m70aaeeee',}, 
+          { positions: [ { i: '5', j: 0 }, { i: '5', j: 1 }, { i: '5', j: 2 },  ], css_id: 'tinytable_css_f8at9xjd5h17ak6m79g5',}, 
+          { positions: [ { i: '0', j: 0 }, { i: '0', j: 1 }, { i: '0', j: 2 },  ], css_id: 'tinytable_css_3nr25zt9ozo3elnefi7u',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  styleCell_9g72dr58wix0rt3pa4zi(cell.i, cell.j, group.css_id);
+                  styleCell_gj8a74s59p8a5vbiqvqt(cell.i, cell.j, group.css_id);
               });
           });
       });
@@ -1749,15 +1702,11 @@ Tabell&nbsp;4.3. Noen verdier på variabelen <em>Likestilling</em> og deres avvi
 
     <style>
       /* tinytable css entries after */
-      .table td.tinytable_css_whjq98uihrkszjm41hbc, .table th.tinytable_css_whjq98uihrkszjm41hbc { border-bottom: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_c715mgvd6c7ag6iedpqg, .table th.tinytable_css_c715mgvd6c7ag6iedpqg { padding-bottom: 0.1em; }
-      .table td.tinytable_css_oel7sk8xa36awak92yxr, .table th.tinytable_css_oel7sk8xa36awak92yxr { border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; border-bottom: solid #d3d8dc 0.1em; padding-bottom: 0.1em; }
-      .table td.tinytable_css_9ny97v6gjw991emy158m, .table th.tinytable_css_9ny97v6gjw991emy158m { border-bottom: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.1em; padding-right: 0.5em; }
-      .table td.tinytable_css_oz263n32a9sm4nvoa9eu, .table th.tinytable_css_oz263n32a9sm4nvoa9eu { padding-right: 0.5em; padding-bottom: 0.1em; }
-      .table td.tinytable_css_yw4mok4b1h3m70aaeeee, .table th.tinytable_css_yw4mok4b1h3m70aaeeee { border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; border-bottom: solid #d3d8dc 0.1em; padding-right: 0.5em; padding-bottom: 0.1em; }
+      .table td.tinytable_css_f8at9xjd5h17ak6m79g5, .table th.tinytable_css_f8at9xjd5h17ak6m79g5 { border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_3nr25zt9ozo3elnefi7u, .table th.tinytable_css_3nr25zt9ozo3elnefi7u { border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
     </style>
     <div class="container">
-      <table class="table table-borderless" id="tinytable_9g72dr58wix0rt3pa4zi" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+      <table class="table table-borderless" id="tinytable_gj8a74s59p8a5vbiqvqt" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
         <thead>
         
               <tr>
@@ -1945,19 +1894,6 @@ Tabell&nbsp;4.4. De fem første linjene fra ICCS-dataene, men uten variabelen �
           } else {
               console.warn(`Cell at (${i}, ${j}) not found.`);
           }
-      }
-      function insertSpanRow(i, colspan, content) {
-        var table = document.getElementById('tinytable_6t0jcnpy0zxa5tm93sug');
-        // Find the row with data-row attribute matching i
-        var targetRow = table.querySelector(`tr [data-row="${i}"]`).closest('tr');
-        var newRow = table.insertRow(targetRow.rowIndex);
-        var newCell = newRow.insertCell(0);
-        newCell.setAttribute("colspan", colspan);
-        newCell.setAttribute("data-col", "0");
-        newCell.setAttribute("data-row", i - 1);
-        // newCell.innerText = content;
-        // this may be unsafe, but innerText does not interpret <br>
-        newCell.innerHTML = content;
       }
       function spanCell_6t0jcnpy0zxa5tm93sug(i, j, rowspan, colspan) {
         var table = document.getElementById("tinytable_6t0jcnpy0zxa5tm93sug");

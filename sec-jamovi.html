@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Danielle Navarro, David Foxcroft og Roar Bakken Stovner">
 
-<title>Kvantitative metoder for lærere</title>
+<title>Komme i gang med jamovi – Kvantitative metoder for lærere</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,27 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -51,7 +30,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./sec-why-statistics.html" rel="next">
+<link href="./sec-measurement.html" rel="next">
+<link href="./sec-why-statistics.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -170,7 +150,7 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="Kvantitative metoder for lærere">
+<meta property="og:title" content="Komme i gang med jamovi – Kvantitative metoder for lærere">
 <meta property="og:description" content="">
 <meta property="og:site_name" content="Kvantitative metoder for lærere">
 </head>
@@ -346,7 +326,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Slå av eller på sidebarnavigering" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Forord</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sec-jamovi.html">Studiedesign</a></li><li class="breadcrumb-item"><a href="./sec-jamovi.html">Komme i gang med jamovi</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Slå av eller på sidebarnavigering" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Søk" onclick="window.quartoOpenSearch();">
@@ -382,7 +362,7 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Forord</span></a>
   </div>
 </li>
@@ -403,7 +383,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./sec-jamovi.html" class="sidebar-item-text sidebar-link">
+  <a href="./sec-jamovi.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Komme i gang med jamovi</span></a>
   </div>
 </li>
@@ -525,55 +505,36 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Innholdsfortegnelse</h2>
-   
-  <ul>
-  <li><a href="#forord" id="toc-forord" class="nav-link active" data-scroll-target="#forord">Forord</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 class="title display-7">Kvantitative metoder for lærere</h1></header>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sec-jamovi.html">Studiedesign</a></li><li class="breadcrumb-item"><a href="./sec-jamovi.html">Komme i gang med jamovi</a></li></ol></nav><h1 class="title display-7">Komme i gang med jamovi</h1></header>
 
 
 <header id="title-block-header">
 
-<p class="author">Danielle Navarro, David Foxcroft og Roar Bakken Stovner</p>
 
-<p class="date">August 2025</p>
 </header>
 
 
-<section id="forord" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="forord">Forord</h2>
-<p>I denne læreboken dekker vi innholdet i et innføringskurs i kvantitative metoder. Boka er basert på et vanlig grunnkurs slik det vanligvis undervises for bachelorstudenter innen psykologi, helse eller samfunnsvitenskap, men er endret slik at det passer for studenter på femårige grunnskolelærerutdanninger.</p>
-<p>Jeg hadde følgende krav til boka:</p>
-<ol type="1">
-<li><strong>Tilpasset lærerstudenter</strong>: Jeg ville at stoffet og eksemplene skulle være fra utdanningsforskning og at de skulle være relevante for læreryrket.</li>
-<li><strong>Uten matematikk</strong>: Jeg vet at veldig mange lærerstudenter har så lite matematisk bakgrunn at å lære seg noe særlig av matematikken bak statistikken ville blitt rent pugg.</li>
-<li><strong>Kort</strong>: Boka er skrevet til et kurs på OsloMet som skal tilsvare 5 studiepoeng og tre forelesninger i kvantitativ metode. De fleste lærebøker for et innføringskurs i kvantitativ metode er tre ganger så lange og er skrevet slik at det er vanskelig å plukke bare noen deler.</li>
-<li><strong>Viser analysene med en enkel og åpent tilgjengelig statistikk-programvare</strong>: Siden mange lærerstudenter skriver kvantitative masteroppgaver måtte boka ha med eksempler på hvordan man gjør statistisk analyse i en enkel programvare. Siden det finnes mye god statistikkprogramvare som er fritt tilgjengelig ønsket jeg å bruke noen av disse.</li>
-<li><strong>Fremhever forskningsdesign og deskriptiv analyse</strong>: Nesten alle statistikklærebøker benytter mye tid på hypotesetesting. Forutsetningene bak disse testene er nesten aldri oppfylt i praksis og de gir sjeldent gode svar på forskningsspørsmålene som stilles. Det er derfor bedre å bruke tiden til å lære mer om forskningsdesign og deskriptiv statistikk.</li>
+<!-- \placetextbox{0.26}{0.06}{\scriptsize{©2025 D.R. Foxcroft and D.J. Navarro,}}
+\placetextbox{0.195}{0.05}{\scriptsize{CC BY-SA 4.0}}
+\placetextbox{0.70}{0.06}{\scriptsize{\url{https://doi.org/10.11647/OBP.0333.03}}} -->
+<blockquote class="blockquote">
+<p><em>Robots are nice to work with.</em><br>
+– Roger Zelazny<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+</blockquote>
+<p>I dette kapittelet kommer jeg <em>ikke</em> til å vise deg hvordan man kommer i gang med statistikkprogramvaren jamovi. Siden jeg ønsket at boka skulle bli ferdig innen semesterstart høsten 2025 måtte jeg nedprioritere dette kapittelet. Det er uansett ikke så vanskelig og man trenger det ikke for å skjønne resten av boka.</p>
+<p>Jeg tror likevel mange kan ha fordel av å kjøre jamovi mens man leser boka, og det er et enkelt nok program til at det ikke bør by på noen utfordringer. Du trenger ikke å installere det engang, du kan kjøre en “Cloud”-versjon fra nettsiden: &lt;www.jamovi.org&gt;</p>
+<p>Hvis du ønsker en kjapp guide til hvordan man bruker jamovi kan man ganske enkelt søke på internett eller titte på kapittelet <a href="https://davidfoxcroft.github.io/lsj-book/03-Getting-started-with-jamovi.html">“Getting started with jamovi”</a> i boka jeg baserer meg på.</p>
+
+
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Kilde: <em>Dismal Light</em> (1968).<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
-<p>Jeg fant ingen eksisterende bok som dekket disse punktene, så jeg valgte å tilpasse jeg en lærebok for psykologi-studenter som var gitt ut med en åpen lisens.</p>
-<p>Boka er en oversatt og omarbeidet versjon av Navarro og Foxcroft <span class="citation" data-cites="navarro2025">(<a href="sec-references.html#ref-navarro2025" role="doc-biblioref">2025</a>)</span> sin bok “Learning statistics with jamovi: A Tutorial for Beginners in Statistical Analysis” <a href="https://www.learnstatswithjamovi.com/">https://www.learnstatswithjamovi.com/</a>, som igjen er en omarbeidet versjon av Navarro <span class="citation" data-cites="navarro2011">(<a href="sec-references.html#ref-navarro2011" role="doc-biblioref">2011</a>)</span> sin bok “Learning statistics with R: A tutorial for psychology students and other beginners. (Version 0.6)” <a href="https://learningstatisticswithr.com/">https://learningstatisticswithr.com/</a>.</p>
-<p>Hvis du finner noen feil eller har forslag til forbedringer kan du melde inn et “issue” her <a href="https://github.com/roarstovner/kvant_for_laerere/issues">https://github.com/roarstovner/kvant_for_laerere/issues</a> eller sende meg en epost.</p>
-<p>Jeg håper dere setter pris på å ha en lærebok i kvantitativ metode som dekker de fem punktene i tillegg til å være gratis tilgjengelig på nett.</p>
-<p><em>Roar Stovner, 4. august, 2025</em></p>
-<p>(Hvis du ønsker å benytte boka i egen undervisning er det fritt frem, men send meg gjerne en epost, for det er gøy å vite at boka blir brukt! Hvis du ønsker å gjøre endringer i boka er det også lov, siden boka er gitt ut på lisensen CC-BY-SA, eneste krav er at du viser tilbake til de tidligere versjonene av boka (inkludert min versjon) og gjør den tilgjengelig med samme lisens. Bokas kildekode finner du på <a href="https://github.com/roarstovner/kvant_for_laerere">github</a>.)</p>
-<p><strong>Sitering</strong>: Danielle J. Navarro, David R. Foxcroft, and Roar B. Stovner. (2025). <em>Kvantitativ metode for lærere</em>. <a href="https://kvant.roarstovner.no" class="uri">https://kvant.roarstovner.no</a> .</p>
-
-
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
-<div id="ref-navarro2011" class="csl-entry" role="listitem">
-Navarro, D. (2011). <em>Learning <span>Statistics</span> with <span>R</span></em> (0.6 ed.).
-</div>
-<div id="ref-navarro2025" class="csl-entry" role="listitem">
-Navarro, D., &amp; Foxcroft, D. (2025). <em>Learning <span>Statistics</span> with jamovi: <span>A Tutorial</span> for <span>Beginners</span> in <span>Statistical Analysis</span></em> (1st ed.). Open Book Publishers. <a href="https://doi.org/10.11647/OBP.0333">https://doi.org/10.11647/OBP.0333</a>
-</div>
-</div>
 </section>
 
 </main> <!-- /main -->
@@ -996,10 +957,13 @@ Navarro, D., &amp; Foxcroft, D. (2025). <em>Learning <span>Statistics</span> wit
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./sec-why-statistics.html" class="pagination-link" aria-label="Hvorfor lære statistikk?">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Hvorfor lære statistikk?</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./sec-why-statistics.html" class="pagination-link" aria-label="Hvorfor lære statistikk?">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Hvorfor lære statistikk?</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./sec-measurement.html" class="pagination-link" aria-label="Måling i utdanningsforskning">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Måling i utdanningsforskning</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

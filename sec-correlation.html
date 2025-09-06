@@ -410,6 +410,12 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./sec-jamovi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Komme i gang med jamovi</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./sec-measurement.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Måling i utdanningsforskning</span></span></a>
   </div>
@@ -431,6 +437,12 @@ window.Quarto = {
           </a> 
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-jamovi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Komme i gang med jamovi</span></a>
+  </div>
+</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./sec-descriptive.html" class="sidebar-item-text sidebar-link">
@@ -613,19 +625,6 @@ Tabell&nbsp;11.1. Data for korrelasjonsanalyse – deskriptiv statistikk for <em
           } else {
               console.warn(`Cell at (${i}, ${j}) not found.`);
           }
-      }
-      function insertSpanRow(i, colspan, content) {
-        var table = document.getElementById('tinytable_txgz1317ftylnsmm50a8');
-        // Find the row with data-row attribute matching i
-        var targetRow = table.querySelector(`tr [data-row="${i}"]`).closest('tr');
-        var newRow = table.insertRow(targetRow.rowIndex);
-        var newCell = newRow.insertCell(0);
-        newCell.setAttribute("colspan", colspan);
-        newCell.setAttribute("data-col", "0");
-        newCell.setAttribute("data-row", i - 1);
-        // newCell.innerText = content;
-        // this may be unsafe, but innerText does not interpret <br>
-        newCell.innerHTML = content;
       }
       function spanCell_txgz1317ftylnsmm50a8(i, j, rowspan, colspan) {
         var table = document.getElementById("tinytable_txgz1317ftylnsmm50a8");
@@ -867,7 +866,7 @@ Figur&nbsp;11.3. Spredningsplott fra jamovi som viser sammenhengen mellom <code>
 <p>Ta en titt på figur <a href="#fig-fig12-4" class="quarto-xref">Figur&nbsp;<span>11.4</span></a> for å se eksempler på hvordan ulike korrelasjoner ser ut.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-fig12-4" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Spredningsplott med varierende grad av positiv og negativ korrelasjon. Positive korrelasjoner: 0, 0.33, 0.66 og 1. Negative korrelasjoner: 0, -0.33, -0.66 og -1. 0 viser ingen korrelasjon, og 1 og -1 viser perfekte korrelasjoner.">
+<div id="fig-fig12-4" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Spredningsplott med varierende grad av positiv og negativ korrelasjon. Positive korrelasjoner: 0, 0.33, 0.66 og 1. Negative korrelasjoner: 0, -0.33, -0.66 og -1. 0 viser ingen korrelasjon, og 1 og -1 viser perfekte korrelasjoner." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-fig12-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="sec-correlation_files/figure-html/fig-fig12-4-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Figur&nbsp;11.4. Illustrasjon av effekten av å variere styrken og retningen på en korrelasjon. I venstre kolonne er korrelasjonene 0; 0{,}33; {,}66 og 1. I høyre kolonne er korrelasjonene 0; -0{,}33; -0{,}66 og -1."><img src="sec-correlation_files/figure-html/fig-fig12-4-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="Spredningsplott med varierende grad av positiv og negativ korrelasjon. Positive korrelasjoner: 0, 0.33, 0.66 og 1. Negative korrelasjoner: 0, -0.33, -0.66 og -1. 0 viser ingen korrelasjon, og 1 og -1 viser perfekte korrelasjoner."></a>
@@ -886,7 +885,7 @@ Figur&nbsp;11.4. Illustrasjon av effekten av å variere styrken og retningen på
 <p>For å beregne korrelasjoner i jamovi, klikker du på ‘Regression’ → ‘Correlation Matrix’-knappen. Flytt alle fire kontinuerlige variablene over i boksen til høyre for å få resultatet vist i <a href="#fig-fig12-5" class="quarto-xref">Figur&nbsp;<span>11.5</span></a>.</p>
 <div class="cell enlarge-image" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-fig12-5" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Et skjermbilde fra jamovi som viser dataanalyseverktøy. Hovedfokuset er på en korrelasjonsmatrise med variabelnavn som «dan.sleep», «baby.sleep» og «dan.grump». Valg for Pearson-korrelasjon, rapportering av signifikans og konfidensintervaller er synlige">
+<div id="fig-fig12-5" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Et skjermbilde fra jamovi som viser dataanalyseverktøy. Hovedfokuset er på en korrelasjonsmatrise med variabelnavn som «dan.sleep», «baby.sleep» og «dan.grump». Valg for Pearson-korrelasjon, rapportering av signifikans og konfidensintervaller er synlige" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-fig12-5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="images/fig12-5.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Figur&nbsp;11.5. Korrelasjoner mellom variablene i parenthood.csv-filen"><img src="images/fig12-5.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="Et skjermbilde fra jamovi som viser dataanalyseverktøy. Hovedfokuset er på en korrelasjonsmatrise med variabelnavn som «dan.sleep», «baby.sleep» og «dan.grump». Valg for Pearson-korrelasjon, rapportering av signifikans og konfidensintervaller er synlige"></a>
@@ -937,19 +936,6 @@ Tabell&nbsp;11.2. En omtrentlig veileder for tolkning av korrelasjoner (som noen
           } else {
               console.warn(`Cell at (${i}, ${j}) not found.`);
           }
-      }
-      function insertSpanRow(i, colspan, content) {
-        var table = document.getElementById('tinytable_r1egyi1yr6u7u7regyh3');
-        // Find the row with data-row attribute matching i
-        var targetRow = table.querySelector(`tr [data-row="${i}"]`).closest('tr');
-        var newRow = table.insertRow(targetRow.rowIndex);
-        var newCell = newRow.insertCell(0);
-        newCell.setAttribute("colspan", colspan);
-        newCell.setAttribute("data-col", "0");
-        newCell.setAttribute("data-row", i - 1);
-        // newCell.innerText = content;
-        // this may be unsafe, but innerText does not interpret <br>
-        newCell.innerHTML = content;
       }
       function spanCell_r1egyi1yr6u7u7regyh3(i, j, rowspan, colspan) {
         var table = document.getElementById("tinytable_r1egyi1yr6u7u7regyh3");
@@ -1086,7 +1072,7 @@ Tabell&nbsp;11.2. En omtrentlig veileder for tolkning av korrelasjoner (som noen
 </blockquote>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-fig12-6" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Fire spredningsplott som viser samme positive korrelasjon mellom x og y. De fire plottene illustrerer henholdsvis en lineær sammenheng, en ikke-lineær sammenheng, en avviksverdi og en innflytelsesrik observasjon.">
+<div id="fig-fig12-6" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Fire spredningsplott som viser samme positive korrelasjon mellom x og y. De fire plottene illustrerer henholdsvis en lineær sammenheng, en ikke-lineær sammenheng, en avviksverdi og en innflytelsesrik observasjon." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-fig12-6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="sec-correlation_files/figure-html/fig-fig12-6-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="Figur&nbsp;11.6. Spredningsplott for Anscombes kvartett. Alle fire datasettene har en Pearson-korrelasjon på r = 0,816, men de er likevel svært forskjellige fra hverandre."><img src="sec-correlation_files/figure-html/fig-fig12-6-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="Fire spredningsplott som viser samme positive korrelasjon mellom x og y. De fire plottene illustrerer henholdsvis en lineær sammenheng, en ikke-lineær sammenheng, en avviksverdi og en innflytelsesrik observasjon."></a>
@@ -1106,7 +1092,7 @@ Figur&nbsp;11.6. Spredningsplott for Anscombes kvartett. Alle fire datasettene h
 <p>Når vi ser på et slikt plott, er det naturlig å forestille seg en rett linje som går gjennom midten av datapunktene, slik som i <a href="#fig-fig12-11" class="quarto-xref">Figur&nbsp;<span>11.7</span></a>(a). I statistikken kalles en slik linje for en <strong>regresjonslinje</strong>. Intuisjonen vår forteller oss at linjen bør følge trenden i dataene. Vi ville neppe tegnet en linje som den i <a href="#fig-fig12-11" class="quarto-xref">Figur&nbsp;<span>11.7</span></a>(b), som åpenbart ikke passer til punktene i det hele tatt.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-fig12-11" class="quarto-float quarto-figure quarto-figure-center anchored" alt="To spredningsplott sammenligner tilpasningen av regresjonslinjer for sammenhengen mellom antall søvntimer og grettenhet. Det venstre plottet viser en sterk negativ korrelasjon med en bratt regresjonslinje; det høyre plottet viser en svakere tilpasning og en flatere regresjonslinje." data-fig-align="center" data-fig-pos="H">
+<div id="fig-fig12-11" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-pos="H" alt="To spredningsplott sammenligner tilpasningen av regresjonslinjer for sammenhengen mellom antall søvntimer og grettenhet. Det venstre plottet viser en sterk negativ korrelasjon med en bratt regresjonslinje; det høyre plottet viser en svakere tilpasning og en flatere regresjonslinje." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-fig12-11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="sec-correlation_files/figure-html/fig-fig12-11-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="Figur&nbsp;11.7. Panel (a) viser spredningsplottet for søvn–grettenhet med den best tilpassede regresjonslinjen tegnet inn. Ikke overraskende går linjen gjennom midten av dataene. Panel (b) de samme dataene, men med et svært dårlig valg av regresjonslinje."><img src="sec-correlation_files/figure-html/fig-fig12-11-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" data-fig-pos="H" alt="To spredningsplott sammenligner tilpasningen av regresjonslinjer for sammenhengen mellom antall søvntimer og grettenhet. Det venstre plottet viser en sterk negativ korrelasjon med en bratt regresjonslinje; det høyre plottet viser en svakere tilpasning og en flatere regresjonslinje."></a>
@@ -1130,7 +1116,7 @@ Figur&nbsp;11.7. Panel (a) viser spredningsplottet for søvn–grettenhet med de
 <p>Dette betyr at linja i <a href="#fig-fig12-12" class="quarto-xref">Figur&nbsp;<span>11.8</span></a> a) er regresjonslinja fordi residualene, de små grå linjene, er på sitt minste. Uansett hvilken annen linje du hadde valgt ville kvadratet av residualene vært større.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-fig12-12" class="quarto-float quarto-figure quarto-figure-center anchored" alt="To spredningsplott side om side, begge viser &quot;Grettenhet vs. Søvn&quot;. Timer søvn (x-akse) fra 0 til 9 og grettenhet (y-akse) fra 0 til 100. Hvert plott har en blå regresjonslinje som viser en negativ korrelasjon." data-fig-align="center" data-fig-pos="H">
+<div id="fig-fig12-12" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-pos="H" alt="To spredningsplott side om side, begge viser &quot;Grettenhet vs. Søvn&quot;. Timer søvn (x-akse) fra 0 til 9 og grettenhet (y-akse) fra 0 til 100. Hvert plott har en blå regresjonslinje som viser en negativ korrelasjon." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-fig12-12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="sec-correlation_files/figure-html/fig-fig12-12-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12" title="Figur&nbsp;11.8. En illustrasjon av residualene til den best tilpassede regresjonslinjen (panel a), og residualene til en dårlig regresjonslinje (panel b). Residualene er mye mindre for den gode regresjonslinjen. Dette er igjen ingen overraskelse, gitt at den gode linja er den som går midt gjennom dataene."><img src="sec-correlation_files/figure-html/fig-fig12-12-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" data-fig-pos="H" alt="To spredningsplott side om side, begge viser &quot;Grettenhet vs. Søvn&quot;. Timer søvn (x-akse) fra 0 til 9 og grettenhet (y-akse) fra 0 til 100. Hvert plott har en blå regresjonslinje som viser en negativ korrelasjon."></a>
@@ -1151,7 +1137,7 @@ Figur&nbsp;11.8. En illustrasjon av residualene til den best tilpassede regresjo
 <p><span class="math display"> \text{grettenhet} = 125{,}96 - 8{,}94 \cdot \text{timer søvn} </span></p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-fig12-13" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Et jamovi-skjermbilde som viser grensesnittet for å utføre lineær regresjonsanalyse. Grensesnittet inneholder seksjoner for valg av variabler, innstilling av kovariater og faktorer, og visning av resultater som mål på modelltilpasning og koeffisienter.">
+<div id="fig-fig12-13" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Et jamovi-skjermbilde som viser grensesnittet for å utføre lineær regresjonsanalyse. Grensesnittet inneholder seksjoner for valg av variabler, innstilling av kovariater og faktorer, og visning av resultater som mål på modelltilpasning og koeffisienter." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-fig12-13-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="images/fig12-13.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13" title="Figur&nbsp;11.9. Et jamovi-skjermbilde som viser en enkel lineær regresjonsanalyse"><img src="images/fig12-13.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="Et jamovi-skjermbilde som viser grensesnittet for å utføre lineær regresjonsanalyse. Grensesnittet inneholder seksjoner for valg av variabler, innstilling av kovariater og faktorer, og visning av resultater som mål på modelltilpasning og koeffisienter."></a>
@@ -1188,7 +1174,7 @@ Figur&nbsp;11.9. Et jamovi-skjermbilde som viser en enkel lineær regresjonsanal
 <p>Multippel regresjon i jamovi er ikke annerledes enn enkel regresjon. Alt vi trenger å gjøre er å legge til flere variabler i ‘Covariates’-boksen i jamovi. For eksempel, hvis vi ønsker å bruke både <code>dani.sleep</code> og <code>baby.sleep</code> som prediktorer i vårt forsøk på å forklare hvorfor jeg er så gretten, så flytter vi <code>baby.sleep</code> over til ‘Covariates’-boksen sammen med <code>dani.sleep</code>. Som standard antar jamovi at modellen skal inkludere et konstantledd. Resultatene viser vi i <a href="#fig-correlation-jamovi-multiple" class="quarto-xref">Figur&nbsp;<span>11.10</span></a>.</p>
 <div class="cell" data-layout-align="center" data-tbl-cap="Å legge til flere variabler som prediktorer i en regresjon i jamovi gir en multippel regresjon">
 <div class="cell-output-display">
-<div id="fig-correlation-jamovi-multiple" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="70%">
+<div id="fig-correlation-jamovi-multiple" class="quarto-float quarto-figure quarto-figure-center anchored" width="70%" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-correlation-jamovi-multiple-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="images/fig-correlation-jamovi-multiple.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14" title="Figur&nbsp;11.10. "><img src="images/fig-correlation-jamovi-multiple.png" id="fig-correlation-jamovi-multiple" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" style="width:70.0%"></a>
