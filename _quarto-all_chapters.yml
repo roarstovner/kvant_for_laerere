@@ -8,17 +8,18 @@ book:
         - sec-design.qmd
     - part: Deskriptiv statistikk
       chapters:
-         - sec-descriptive.qmd
-         - sec-diagram.qmd
+        - sec-jamovi.qmd
+        - sec-descriptive.qmd
+        - sec-diagram.qmd
     - part: Statistisk teori
       chapters:
-         - sec-probability.qmd
-         - sec-estimation.qmd
-         - sec-testing.qmd
+        - sec-probability.qmd
+        - sec-estimation.qmd
+        - sec-testing.qmd
     - part: Inferensiell statistikk
       chapters:
-         - sec-categorical.qmd
-         - sec-means.qmd
-         - sec-correlation.qmd
+        - sec-categorical.qmd
+        - sec-means.qmd
+        - sec-correlation.qmd
     - sec-epilogue.qmd
     - sec-references.qmd
