@@ -37,7 +37,7 @@ Først må vi uttrykke nullhypotesen for at det ikke er en sammenheng mellom var
 
 > $H_0$: Andelen som valgte hver type utdanning er lik mellom kjønnene
 > 
-> $H_0$ (alternativ): _Forventet utdanning_ er uavhengig av _Kjønn_
+> $H_0$ (alternativ måte å uttrykke nullhypotesen på): _Forventet utdanning_ er uavhengig av _Kjønn_
 
 Hvis man skal uttrykke dette generelt for to variable $X_1$ og $X_2$, lyder det:
 
@@ -70,10 +70,10 @@ Uffda, det var ikke så lett å se ut fra tabellen om dataene var relatert eller
 #| label: tbl-categorical-contingency-pct
 #| tbl-cap: Krysstabell med prosenter for *Forventet utdanning* og *Kjønn*. Prosentene er regnet ut per kjønn, slik at tallet øverst til venstre betyr 9,7\% av jentene ser for seg ungdomsskole som høyeste utdanning.
 
-# ICCS |>
-#   tabyl(`Forventet utdanning`, Kjønn, show_missing_levels = FALSE, show_na = FALSE) |> adorn_percentages("col") |>
-#   adorn_pct_formatting(affix_sign = TRUE, digits = 1) |> 
-#   tt()
+ICCS |>
+  tabyl(`Forventet utdanning`, Kjønn, show_missing_levels = FALSE, show_na = FALSE) |> adorn_percentages("col") |>
+  adorn_pct_formatting(affix_sign = TRUE, digits = 1) |>
+  tt(escape = TRUE)
 ```
 
 Denne tabellen gjør det mye lettere å se om det er en sammenheng mellom variablene, og det ser det kanskje ut til at det er? For eksempel er det mye større andel av jentene som ser for seg å ta høyere utdanning. Spørsmålet som stilles i hypotesetesten er om forskjellene vi ser i tabellen er store nok til å kunne forkaste nullhypotesen om at det ikke er noen sammenheng mellom _Kjønn_ og _Forventet utdanning_.

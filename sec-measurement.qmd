@@ -173,7 +173,7 @@ Tid på døgnet er en annen variabel på intervallskala. (Det gir mening å samm
 
 ### Forholdstallsvariabel
 
-Den fjerde og siste typen variabel er variabler på *forholdstallsnivå*. Dette er variabler med et nullpunkt der det er greit å multiplisere og dividere. Et godt eksempel på en variabel på forholdstallsnivå er tid. Når man måler elevers ferdigheter er det vanlig å registrere hvor lang tid elevene bruker på å løse en oppgave, fordi det er en indikator på hvor vanskelig oppgaven er. Anta at Roar bruker 2,3 sekunder på å svare på et spørsmål, mens Bård bruker 3,1 sekunder. Som med en intervallskalavariabel, er både addisjon og subtraksjon meningsfulle her. Bård brukte virkelig 3,1 - 2,3 = 0,8 sekunder lengre enn Roar. Men legg merke til at multiplikasjon og divisjon også gir mening her: Bård brukte $3,1/2,3 = 1,35$ ganger så lang tid som Roar på å svare på spørsmålet. Og grunnen til at du kan gjøre dette for en forholdstallsvariabel er at "null sekunder" virkelig betyr "ingen tid i det hele tatt".
+Den fjerde og siste typen variabel er variabler på *forholdstallsnivå*. Dette er variabler med et nullpunkt der det er greit å multiplisere og dividere. Et godt eksempel på en variabel på forholdstallsnivå er tid. Når man måler elevers ferdigheter er det vanlig å registrere hvor lang tid elevene bruker på å løse en oppgave, fordi det er en indikator på hvor vanskelig oppgaven er. Anta at Roar bruker 2,3 sekunder på å svare på et spørsmål, mens Bård bruker 3,1 sekunder. Som med en intervallskalavariabel, er både addisjon og subtraksjon meningsfulle her. Bård brukte virkelig $3{,}1 - 2{,}3 = 0{,}8$ sekunder lengre enn Roar. Men legg merke til at multiplikasjon og divisjon også gir mening her: Bård brukte $3{,}1/2{,}3 = 1{,}35$ ganger så lang tid som Roar på å svare på spørsmålet. Og grunnen til at du kan gjøre dette for en forholdstallsvariabel er at "null sekunder" virkelig betyr "ingen tid i det hele tatt".
 
 Her er noen flere variabler på forholdstallsnivå:
 
@@ -279,9 +279,9 @@ Reliabilitet betyr altså at målingen gir samme verdi på tvers av situasjoner.
     
 -   **Indre konsistens**. Hvis en samlevariabel er satt sammen av mange undervariable, har undervariablene en tendens til å gi lignende svar?
 
-   Målingen av indre motivasjon fra TIMSS (nevnt over) har høy indre konsistens hvis de forskjellige undervariablene, altså svarene på hver av de ni spørsmålene, gir mer eller mindre samme svar.
+    Målingen av indre motivasjon fra TIMSS (nevnt over) har høy indre konsistens hvis de forskjellige undervariablene, altså svarene på hver av de ni spørsmålene, gir mer eller mindre samme svar.
    
-   Ikke alle samlevariable trenger å ha høy indre konsistens. Hvis vi vil lage en samlevariabel for kvaliteten på en lærers skriveundervisning med undervariablene 'kvalitet på grammatikkundervisningen' og 'kvalitet på sjangerundervisningen' gjør det ikke noe om undervariablenes verdier avviker.
+    Ikke alle samlevariable trenger å ha høy indre konsistens. Hvis vi vil lage en samlevariabel for kvaliteten på en lærers skriveundervisning med undervariablene 'kvalitet på grammatikkundervisningen' og 'kvalitet på sjangerundervisningen' gjør det ikke noe om undervariablenes verdier avviker.
 
 Hvordan man bør vurdere en variabels reliabilitet avhenger av det teoretiske konstruktet. Anta at man skal måle konstruktet "elevers utagerende adferd" ved å observere én undervisningstime. Hvis formålet er å gi en generell vurdering av elevenes utagerende adferd vil målingen ha lav test-retest-reliabilitet, fordi den vil gi svært forskjellige svar avhenging av om du utfører målingen siste time fredag eller første time tirsdag. Hvis formålet derimot er å finne ut av hvordan elevenes adferd varierer i en undervisningsuke er hele poenget med målingen å fange opp disse variasjonene. Derfor må man tenke over det teoretiske konstruktet og forskningsformålet for å gi en vurdering av en målemetodes reliabilitet.
 

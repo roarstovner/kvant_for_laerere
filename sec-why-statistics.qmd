@@ -65,9 +65,9 @@ Hvis folk virkelig er i stand til å legge til side sine eksisterende oppfatning
 tt(
   tibble(
     ` ` = c("Argumentet er gyldig", "Argumentet er ugyldig"),
-    `konklusjonen føles sann` = c("100\\% sier \"gyldig\"", "0\\% sier \"gyldig\""),
-    `konklusjonen føles usann` = c("100\\% sier \"gyldig\"", "0\\% sier \"gyldig\"")
-  )
+    `konklusjonen føles sann` = c("100% sier 'gyldig'", "0% sier 'gyldig'"),
+    `konklusjonen føles usann` = c("100% sier 'gyldig'", "0% sier 'gyldig'")
+  ), escape = TRUE
 )
 ```
 
@@ -81,9 +81,9 @@ I en klassisk studie undersøkte @Evans1983 nettopp dette med et fiffig eksperim
 tt(
   tibble(
     ` ` = c("Argumentet er gyldig", "Argumentet er ugyldig"),
-    `konklusjonen føles sann` = c("92\\% sier 'gyldig'", ""),
-    `konklusjonen føles usann` = c("", "8\\% sier 'gyldig'")
-  )
+    `konklusjonen føles sann` = c("92% sier 'gyldig'", ""),
+    `konklusjonen føles usann` = c("", "8% sier 'gyldig'")
+  ), escape = TRUE
 )
 ```
 
@@ -98,9 +98,9 @@ tt(
 tt(
   tibble(
     ` ` = c("Argumentet er gyldig", "Argumentet er ugyldig"),
-    `konklusjonen føles sann` = c("92\\% sier 'gyldig'", "92\\% sier 'gyldig'"),
-    `konklusjon føles usann` = c("46\\% sier 'gyldig'", "8\\% sier 'gyldig'")
-  )
+    `konklusjonen føles sann` = c("92% sier 'gyldig'", "92% sier 'gyldig'"),
+    `konklusjon føles usann` = c("46% sier 'gyldig'", "8% sier 'gyldig'")
+  ), escape = TRUE
 )
 ```
 
@@ -119,8 +119,8 @@ tt(
   tibble(
     ` ` = c("Menn", "Kvinner"),
     `Antall søkere` = c(8442, 4321),
-    `Prosent tilbudt plass` = c("44\\%", "35\\%")
-  )
+    `Prosent tilbudt plass` = c("44%", "35%")
+  ), escape = TRUE
 )
 ```
 
@@ -137,12 +137,13 @@ tt(
   data.frame(
     fakultet = c("A", "B", "C", "D", "E", "F"),
     Søkere = c(825, 560, 325, 417, 191, 272),
-    `Prosent tilbudt plass` = c("62\\%", "63\\%", "37\\%", "33\\%", "28\\%", "6\\%"),
+    `Prosent tilbudt plass` = c("62%", "63%", "37%", "33%", "28%", "6%"),
     Søkere = c(108, 25, 593, 375, 393, 341),
-    `Prosent tilbudt plass` = c("82\\%", "68\\%", "34\\%", "35\\%", "24\\%", "7\\%"),
+    `Prosent tilbudt plass` = c("82%", "68%", "34%", "35%", "24%", "7%"),
     check.names = FALSE
-  )
-) |> 
+  ),
+  escape = TRUE
+) |>
   group_tt(
     j = list(
       "Menn" = 2:3,

@@ -274,7 +274,7 @@ knitr::include_graphics("images/fig-diagram-violin.png")
 
 Fiolinplottet viser tydelig og kompakt hvordan verdiene fordeler seg. Hvis man i tillegg legger på informasjon som medianen eller gjennomsnittet kan man enkelt se forskjellene i sentraltendens mellom gruppene.
 
-## Spredningsplott
+## Spredningsplott {#sec-scatter}
 
 Så til den aller siste typen basisplott som vi skal gå gjennom, **spredningsplott**. Spredningsplott viser sammenhengen mellom to tallvariable. Histogrammer, boksplott og fiolinplott visualiserte én tallvariabel. Da jeg analyserte tallvariabelen opp mot andre variable, kalte jeg det en "undergruppeanalyse" og undergruppene var definert av en nominell eller ordinal variabel. Hva hvis du ønsker å gjøre en slags undergruppeanalyse definert av en tall-variabel? Da må du bruke et spredningsplott. La meg forklare.
 
@@ -304,7 +304,7 @@ knitr::include_graphics("images/fig-diagram-scatter.png")
 Spredningsplott med jamovi
 :::
 
-For å gjøre sammenhengen tydeligere er det vanlig å legge en linje over spredningsplottet, slik som i @fig-diagram-scatter-line. Den viser at det er en svak positiv tendens, altså at elever med høy sosioøkonomisk status svarer høyere på spørsmålene om likestilling. Du lærer mer om slike linjer, regresjonslinjer, senere i boken. <!-- !!! -->
+For å gjøre sammenhengen tydeligere er det vanlig å legge en linje over spredningsplottet, slik som i @fig-diagram-scatter-line. Den viser at det er en svak positiv tendens, altså at elever med høy sosioøkonomisk status svarer høyere på spørsmålene om likestilling. Du lærer mer om slike linjer, regresjonslinjer, i kapittelet om regresjon. <!-- !!! -->
 
 ```{r}
 #| label: fig-diagram-scatter-line
