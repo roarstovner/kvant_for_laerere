@@ -1,0 +1,495 @@
+<!-- \placetextbox{0.26}{0.06}{\scriptsize{©2025 D.R. Foxcroft and D.J. Navarro,}} -->
+<!-- \placetextbox{0.195}{0.05}{\scriptsize{CC BY-SA 4.0}} -->
+<!-- \placetextbox{0.70}{0.06}{\scriptsize{\url{https://doi.org/10.11647/OBP.0333.12}}} -->
+
+# Korrelasjon og lineær regresjon {#sec-correlation}
+
+```{r}
+#| include: FALSE
+source("chapter_header.R")
+```
+
+Målet i dette kapittelet er å introdusere **korrelasjon** og **lineær regresjon**. Dette er standardverktøy som statistikere bruker når de analyserer sammenhengen mellom to kontinuerlige variable.
+
+::: {.callout-warning}
+Heller ikke i dette kapittelet har jeg ikke rukket å gjøre eksemplene relevante for utdanningsvitenskap. Det er mye arbeid å finne relevante datasett fra utdanningsvitenskap og forklare analysene ved hjelp av dem, og det rakk jeg ikke før semesterstart for dette kapittelet. Derfor er eksempelet hentet fra originalboka @navarro2025, og er nok oppkonstruert.
+:::
+
+
+## Korrelasjon {#sec-pearson}
+
+Hvordan kan vi beskrive sammenhengen mellom ulike variabler i et datasett? En vanlig og effektiv metode er å se på **korrelasjonen** mellom dem. For å illustrere dette, trenger vi et datasett å jobbe med (@tbl-tab12-1).
+
+### Dataene
+
+```{r}
+#| label: tbl-tab12-1
+#| tbl-cap: Data for korrelasjonsanalyse – deskriptiv statistikk for *foreldreskap*-dataene
+
+tibble(
+  variable = c(
+    "Danielles grettenhet",
+    "Danielles søvn (timer)",
+    "Babyens søvn (timer)"
+  ),
+  min = c(41, 4.84, 3.25),
+  max = c(91, 9.00, 12.07),
+  mean = c(63.71, 6.97, 8.05),
+  median = c(62, 7.03, 7.95),
+  `std. dev` = c(10.05, 1.02, 2.07),
+  IQR = c(14, 1.45, 3.21)
+) |>
+  tt()
+
+```
+
+La oss ta for oss et tema småbarnsforeldre kjenner seg igjen i: søvn. Tenk deg at jeg, Danielle, er nysgjerrig på hvordan søvnmønsteret til spedbarnet mitt påvirker mitt eget humør. Jeg har derfor samlet inn data om min egen og babyen min sin søvn over 100 dager. Datasettet er fiktivt, men inspirert av ekte småbarnsliv. Jeg har vurdert min egen grettenhet på en skala fra 0 (blid som en sol) til 100 (ekstremt gretten) og i tillegg registrert hvor mange timer både jeg og babyen har sovet. Som den datanerden jeg er, har jeg lagret alt i en fil kalt *[parenthood.csv](data_and_tables/parenthood.csv)*.
+
+Når vi laster inn filen, ser vi at den inneholder fire variabler: `dani.sleep`, `baby.sleep`, `dani.grump` og `day`.
+Når du laster inn data i jamovi, er det lurt å sjekke at programmet har tolket datatypene riktig. I dette tilfellet bør `dani.sleep`, `baby.sleep` og `dani.grump` settes som kontinuerlige variabler, markert med et linjal-ikon i jamovi, mens `ID`-variabelen kan være nominell, markert med tre sirkler.
+
+La oss starte med å se på deskriptiv statistikk og å visualisere variablene, siden det er god praksis. @fig-fig12-1 viser histogrammer for de tre mest interessante variablene, slik at vi får et visuelt inntrykk av fordelingen. Her er et godt råd: Selv om jamovi kan produsere en imponerende mengde statistikk uten at du trenger å gjøre noe som helst, bør du bare rapportere det som er relevant. I en rapport ville jeg valgt ut de viktigste tallene og presentert dem i en ryddig og lettlest tabell, slik som i @tbl-tab12-1.[^12-correlation-and-linear-regression-2] Legg merke til at jeg har gitt variablene «menneskevennlige» navn i tabellen -- det er alltid lurt. Du vil kanskje også legge merke til at jeg ikke får nok søvn. Det er neppe god praksis, men andre småbarnsforeldre forsikrer meg om at det er helt normalt.
+
+[^12-correlation-and-linear-regression-2]: Egentlig er selv den tabellen mer enn jeg ville giddet å lage. I praksis velger de fleste kun ett mål for sentraltendens og ett mål for variabilitet.
+
+::: {#fig-fig12-1 layout-ncol="3" layout-valign="bottom" width="100%"}
+![](images/fig12-1a.png){#fig-fig12-1a fig-align="left" fig-alt="Et histogram som viser fordelingen av babyens søvntid. Søylene spenner fra ca. 3,5 til 12,5 timer med søvn. Det er en høyere konsentrasjon av datapunkter mellom 7 og 10 timer. Y-aksen er merket 'tetthet' og x-aksen er merket 'baby.sleep'." width="100%"}
+
+![](images/fig12-1b.png){#fig-fig12-1b fig-align="left" fig-alt="Et histogram med aksene merket 'density' på y-aksen og 'dan.sleep' på x-aksen. Histogrammet har søyler med varierende høyde, med en topp mellom verdiene 6 og 7 på x-aksen. Søylene er lyseblå. Bakgrunnen er svart." width="100%"}
+
+![](images/fig12-1c.png){#fig-fig12-1c fig-align="left" fig-alt="Et histogram som viser tettheten av datapunkter for variabelen 'dan.grump'. X-aksen går fra 40 til 90, og y-aksen er merket 'density'. Søylene viser en fordeling med en topp rundt 60, som avtar mot de lavere og høyere endene." width="100%"}
+
+Histogrammer fra jamovi for de tre variablene i *parenthood*-datasettet
+:::
+
+### En korrelasjons styrke og retning
+
+Et spredningsplott gir oss en god pekepinn på hvordan to variabler henger sammen, men ofte vil vi gjerne si noe mer presist enn bare å se på et bilde.
+
+Ta en titt på de to plottene nedenfor. Det til venstre (@fig-fig12-2a) viser sammenhengen mellom hvor mye babyen sover (`baby.sleep`) og hvor gretten jeg er (`dani.grump`). Det til høyre (@fig-fig12-2b) viser sammenhengen mellom *min egen* søvn (`dani.sleep`) og grettenheten min. Når vi ser dem side om side, er det lett å se at begge forteller samme historie: mer søvn betyr mindre grettenhet! Men det er også tydelig at sammenhengen er mye *sterkere* i det høyre plottet. Punktene ligger tettere samlet, og plottet ser rett og slett mer «ryddig» ut. Det kjennes som om jeg kunne gjettet humøret mitt ganske greit om jeg visste hvor mye sønnen min hadde sovet, men jeg hadde truffet enda bedre om jeg visste hvor mye jeg hadde sovet selv.
+
+::: {#fig-fig12-2 layout-ncol="2" layout-valign="bottom" width="100%" fig-pos="H"}
+![](images/fig12-2a.png){#fig-fig12-2a fig-align="left" fig-alt="Spredningsplott som viser sammenhengen mellom 'Barnets søvn (timer)' på x-aksen og 'Min grettenhet' på y-aksen. Trenden indikerer at når barnet sover mer, avtar grettenheten." width="100%"}
+
+![](images/fig12-2b.png){#fig-fig12-2b fig-align="left" fig-alt="Et spredningsplott med tittelen 'Min grettenhet vs. Min søvn (timer)'. X-aksen er merket 'Min søvn (timer)' fra 5 til 9, og y-aksen er merket 'Min grettenhet' fra 40 til 90. Datapunktene viser en negativ korrelasjon mellom søvn og surhet." width="100%"}
+
+Spredningsplott fra jamovi som viser sammenhengen mellom `baby.sleep` og `dani.grump` (venstre) og sammenhengen mellom `dani.sleep` og `dani.grump` (høyre)
+:::
+
+Nå som vi har sett på *styrken* i en sammenheng, la oss se på *retningen*. Ta en titt på de to plottene i figur @fig-fig12-3. Her sammenligner vi sammenhengen mellom babyens søvn og min grettenhet (til venstre) med sammenhengen mellom babyens søvn og *min* søvn (til høyre). Denne gangen er styrken i de to sammenhengene ganske lik, men retningen er helt motsatt. Det betyr at når sønnen min sover mer, får også jeg mer søvn – en *positiv sammenheng* (plottet til høyre). Samtidig, når han sover mer, blir jeg mindre gretten – en *negativ sammenheng* (plottet til venstre).
+
+::: {#fig-fig12-3 layout-ncol="2" layout-valign="bottom" width="90%" fig-pos='h!'}
+
+![](images/fig12-2a.png){#fig-fig12-3a fig-align="left" fig-alt="Spredningsplott som viser sammenhengen mellom 'Barnets søvn (timer)' på x-aksen og 'Min surhet' på y-aksen. Trenden indikerer at når barnet sover mer, avtar surheten." width="100%"}
+
+![](images/fig12-3b.png){#fig-fig12-3b fig-align="left" fig-alt="Spredningsplott som viser sammenhengen mellom 'Barnets søvn (timer)' på x-aksen og 'Min søvn (timer)' på y-aksen. Datapunktene indikerer at når barnets søvn øker fra 5 til 12,5 timer, har forelderens søvn også en tendens til å øke fra 5 til 9 timer." width="100%"}
+
+Spredningsplott fra jamovi som viser sammenhengen mellom `baby.sleep` og `dani.grump` (venstre), sammenlignet med sammenhengen mellom `baby.sleep` og `dani.sleep` (høyre)
+:::
+
+### Korrelasjonskoeffisienten
+
+For å få et bedre grep om disse ideene, la oss introdusere **korrelasjonskoeffisienten**. Den kalles ofte Pearsons korrelasjonskoeffisient og skrives som $r$. Denne koeffisienten er et tall mellom -1 og 1 som måler styrken og retningen på sammenhengen mellom to variabler, $X$ og $Y$ (noen ganger skrevet $r_{XY}$).
+
+- En $r = 1$ betyr en perfekt positiv sammenheng.
+- En $r = -1$ betyr en perfekt negativ sammenheng.
+- En $r = 0$ betyr at det ikke er noen lineær sammenheng i det hele tatt.
+
+Ta en titt på figur @fig-fig12-4 for å se eksempler på hvordan ulike korrelasjoner ser ut.
+
+```{r}
+#| label: fig-fig12-4
+#| out-width: "100%"
+#| fig-width: 8.571429
+#| fig-asp: 1.5
+#| fig-cap: Illustrasjon av effekten av å variere styrken og retningen på en korrelasjon. I venstre kolonne er korrelasjonene $0; 0{,}33; {,}66$ og $1$. I høyre kolonne er korrelasjonene $0; -0{,}33; -0{,}66$ og $-1$.
+#| fig-alt: "Spredningsplott med varierende grad av positiv og negativ korrelasjon. Positive korrelasjoner: 0, 0.33, 0.66 og 1. Negative korrelasjoner: 0, -0.33, -0.66 og -1. 0 viser ingen korrelasjon, og 1 og -1 viser perfekte korrelasjoner."
+
+onePlot <- function(r, n = 100) {
+  sigma <- cbind(c(1, r), c(r, 1))
+  X <- MASS::mvrnorm(n, c(0, 0), sigma, empirical = FALSE)
+  ggplot(data.frame(X), aes(x = X[, 1], y = X[, 2])) +
+    geom_point(col = blueshade, size = .5) +
+    ylab(r) +
+    theme(
+      axis.text.y = element_blank(),
+      axis.title.y = element_text(vjust = 0.5, angle = 0, size = 16),
+      axis.ticks.y = element_blank(),
+      axis.line.y = element_blank(),
+      axis.text.x = element_blank(),
+      axis.title.x = element_blank(),
+      axis.ticks.x = element_blank(),
+      axis.line.x = element_blank(),
+      plot.background = element_rect(color = "lightgrey", linewidth = 0.4)
+    )
+}
+
+onePlot_out <- lapply(c(0, .33, -.33, .66, -.66, 1, -1), function(r) {
+  onePlot(r)
+})
+
+tgrob <- ggpubr::text_grob(
+  "Positive Correlations",
+  hjust = 0.7,
+  vjust = 0.7,
+  size = 16
+)
+plot_01 <- ggpubr::as_ggplot(tgrob)
+tgrob <- ggpubr::text_grob(
+  "Negative Correlations",
+  hjust = 0.7,
+  vjust = 0.7,
+  size = 16
+)
+plot_02 <- ggpubr::as_ggplot(tgrob)
+
+
+library(patchwork)
+
+theme_border <- theme_gray() +
+  theme(
+    plot.background = element_rect(fill = NA, colour = 'black', linewidth = 4)
+  )
+p1 <- plot_01 +
+  onePlot_out[[1]] +
+  onePlot_out[[2]] +
+  onePlot_out[[4]] +
+  onePlot_out[[6]] +
+  plot_layout(ncol = 1, heights = c(1, 4, 4, 4, 4)) +
+  plot_annotation(theme = theme_border)
+
+p2 <- plot_02 +
+  onePlot_out[[1]] +
+  onePlot_out[[3]] +
+  onePlot_out[[5]] +
+  onePlot_out[[7]] +
+  plot_layout(ncol = 1, heights = c(1, 4, 4, 4, 4)) +
+  plot_annotation(theme = theme_border)
+
+p3 <- p1 | p2 + plot_annotation(theme = theme_border)
+p3
+
+```
+
+Vi ser at korrelasjonen måler i hvor stor grad punktene faller på en rett linje i et spredningsplott. Dette er velegnet til å beskrive sammenhengen mellom kontinuerlige variable.
+
+### Beregne korrelasjoner i jamovi
+
+For å beregne korrelasjoner i jamovi, klikker du på 'Regression' → 'Correlation Matrix'-knappen. Flytt alle fire kontinuerlige variablene over i boksen til høyre for å få resultatet vist i @fig-fig12-5.
+
+```{r}
+#| label: fig-fig12-5
+#| classes: .enlarge-image
+#| fig-cap: Korrelasjoner mellom variablene i *parenthood.csv*-filen
+#| fig-alt: Et skjermbilde fra jamovi som viser dataanalyseverktøy. Hovedfokuset er på en korrelasjonsmatrise med variabelnavn som «dan.sleep», «baby.sleep» og «dan.grump». Valg for Pearson-korrelasjon, rapportering av signifikans og konfidensintervaller er synlige
+#| out-width: "100%"
+knitr::include_graphics("images/fig12-5.png")
+```
+
+### Tolkning av en korrelasjon
+
+I det virkelige liv ser man sjelden korrelasjoner på $1$. Så hvordan skal man tolke en korrelasjon på, si, $r = 0{,}4$? Det ærlige svaret er at det avhenger av hva du skal bruke dataene til, og hvor sterke korrelasjonene i fagfeltet ditt pleier å være. En ingeniørvenn av meg argumenterte en gang for at enhver korrelasjon under $0{,}95$ er helt ubrukelig (jeg tror han overdrev, selv for ingeniørfag). På den annen side finnes det reelle tilfeller, selv innen psykologi, hvor man bør forvente så sterke korrelasjoner. For eksempel er et av referansedatasettet som brukes til å teste teorier om hvordan folk bedømmer likheter så rent at studier som ikke oppnår en korrelasjon på minst $0{,}9$ ikke anses som vellykket. Men når man ser etter, for eksempel, korrelasjoner mellom undervisning og læring gjør man det svært bra hvis man får en korrelasjon på $0{,}3$. Men hvis man korrelerer hvor godt en elev gjør det på den samme rettskrivningprøven på mandag og på tirsdag, bør den vise svært høy korrelasjon. Kort sagt, tolkningen av en korrelasjon avhenger i stor grad av konteksten. Når det er sagt, er det mange som benytter veiledere som i @tbl-tab12-2. Tja, jo, hvorfor ikke.
+
+```{r}
+#| label: tbl-tab12-2
+#| tbl-cap: En omtrentlig veileder for tolkning av korrelasjoner (som noen gang vil være OK)
+
+tibble(
+  Korrelasjon = c(
+    "-1,0 til -0,9",
+    "-0,9 til -0,7",
+    "-0,7 til -0,4",
+    "-0,4 til -0,2",
+    "-0,2 til 0",
+    "0 til 0,2",
+    "0,2 til 0,4",
+    "0,4 til 0,7",
+    "0,7 til 0,9",
+    "0,9 til 1,0"
+  ),
+  Styrke = c(
+    "Veldig sterk",
+    "Sterk",
+    "Moderat",
+    "Svak",
+    "Ubetydelig",
+    "Ubetydelig",
+    "Svak",
+    "Moderat",
+    "Sterk",
+    "Veldig sterk"
+  ),
+  Retning = c(
+    "Negativ",
+    "Negativ",
+    "Negativ",
+    "Negativ",
+    "Negativ",
+    "Positiv",
+    "Positiv",
+    "Positiv",
+    "Positiv",
+    "Positiv"
+  )
+) |>
+  tt(
+    notes = "Merk at dette er en grov veiledning. Det finnes ingen nøyaktige regler for hva som er en sterk og svake sammenheng. Det avhenger av konteksten."
+  )
+```
+
+Vi kan ikke få sagt det nok: Se alltid på spredningsplottet før du begynner å tolke dataene. Grunnen er enkel: En korrelasjon betyr ikke alltid det du tror.
+
+Et klassisk eksempel som viser dette perfekt, er «Anscombes kvartett» [@Anscombe1973]. Kvartetten består av fire datasett, og hvert av dem har en $X$- og en $Y$-variabel. Kvartetten er laget slik at de deskriptive statistikkene er så å si identiske for alle fire:
+
+- Gjennomsnittet for alle $X$-variablene er $9{,}0$ og for alle $Y$-variablene er $7{,}5$.
+- Standardavvikene er også praktisk talt like for både $X$ og $Y$.
+- Og for å toppe det hele, er korrelasjonen mellom $X$ og $Y$ i *alle* de fire tilfellene $r = 0{,}816$.
+
+Dette kan du forresten enkelt sjekke selv, for dataene ligger klare i filen *[anscombe.csv](data_and_tables/anscombe.csv)*.
+
+Basert på kun disse tallene skulle man tro at datasettene er nokså like, men det er de absolutt ikke. Først når vi visualiserer dataene som spredningsplott, slik du ser i @fig-fig12-6, avsløres sannheten: De fire datasettene er helt ulike. Da skjønner vi hvorfor mange statistikere har følgende leveregel, som mange dessverre glemmer i praksis:
+
+> **Visualiser alltid dataene dine!**
+
+
+```{r}
+#| label: fig-fig12-6
+#| fig-cap: Spredningsplott for Anscombes kvartett. Alle fire datasettene har en Pearson-korrelasjon på $r = 0,816$, men de er likevel svært forskjellige fra hverandre.
+#| fig-alt: Fire spredningsplott som viser samme positive korrelasjon mellom x og y. De fire plottene illustrerer henholdsvis en lineær sammenheng, en ikke-lineær sammenheng, en avviksverdi og en innflytelsesrik observasjon.
+#| out-width: "100%"
+#| fig-width: 8.571428
+#| fig-asp: 1
+
+library(quartets)
+
+ggplot(anscombe_quartet, aes(x = x, y = y)) +
+  geom_point(colour = blueshade, size = 2) +
+  geom_smooth(method = "lm", formula = "y ~ x", se = FALSE, colour = 'gray90') +
+  xlab("\n\nx") +
+  ylab("y\n\n") +
+  #scale_x_continuous(limits=c(3,19)) +
+  #scale_y_continuous(limits=c(4,13)) +
+  theme(
+    strip.text = element_blank(),
+    axis.line = element_line(linewidth = .1),
+    panel.spacing = unit(3, "lines"),
+    axis.text.y = element_blank(),
+    axis.text.x = element_blank(),
+    axis.ticks.y = element_blank(),
+    axis.ticks.x = element_blank()
+  ) +
+  facet_wrap(~dataset, scales = 'free')
+
+```
+
+## Lineær regresjon {#sec-regression}
+
+Lineær regresjon kan ses på som en mer avansert og kraftfull versjon av Pearsons korrelasjon, som vi så på i forrige kapittel. For å se nærmere på dette, henter vi frem igjen datasettet *[parenthood.csv](data_and_tables/parenthood.csv)*. Husker du eksempelet? Vi prøvde å finne ut hvorfor Danielle var så gretten, og hypotesen var at det skyldtes for lite søvn. Vi lagde et spredningsplott som viste sammenhengen mellom antall timer søvn og graden av grettenhet dagen etter (@fig-fig12-2b), og fant en sterk negativ korrelasjon på $r = -0{,}90$.
+
+Når vi ser på et slikt plott, er det naturlig å forestille seg en rett linje som går gjennom midten av datapunktene, slik som i @fig-fig12-11(a). I statistikken kalles en slik linje for en **regresjonslinje**. Intuisjonen vår forteller oss at linjen bør følge trenden i dataene. Vi ville neppe tegnet en linje som den i @fig-fig12-11(b), som åpenbart ikke passer til punktene i det hele tatt.
+
+```{r}
+#| label: fig-fig12-11
+#| fig-cap: Panel (a) viser spredningsplottet for søvn--grettenhet med den best tilpassede regresjonslinjen tegnet inn. Ikke overraskende går linjen gjennom midten av dataene. Panel (b) de samme dataene, men med et svært dårlig valg av regresjonslinje.
+#| fig-alt: To spredningsplott sammenligner tilpasningen av regresjonslinjer for sammenhengen mellom antall søvntimer og grettenhet. Det venstre plottet viser en sterk negativ korrelasjon med en bratt regresjonslinje; det høyre plottet viser en svakere tilpasning og en flatere regresjonslinje.
+#| out-width: "100%"
+#| fig-width: 8.571429
+#| fig-pos: 'H'
+
+load("data_and_tables/parenthood.Rdata")
+
+p1 <- ggplot(parenthood, aes(dan.sleep, dan.grump)) +
+  geom_point(col = "darkgrey", size = 0.8) +
+  geom_smooth(method = 'lm', se = F, col = blueshade, linewidth = 0.5) +
+  ggtitle("Den best tilpassede\nregresjonslinja") +
+  xlab("My sleep (hours)\n\n(a)") +
+  ylab("My grumpiness (0-100)\n") +
+  theme(
+    plot.title = element_text(), #size = 8),
+    axis.title = element_text(), #size = 7),
+    axis.text = element_text(), #size = 6),
+    axis.line = element_line(size = 0.2),
+    axis.ticks = element_line(size = 0.2)
+  )
+
+p2 <- ggplot(parenthood, aes(dan.sleep, dan.grump)) +
+  geom_point(col = "darkgrey", size = 0.8) +
+  geom_abline(intercept = 80, slope = -3, col = blueshade, linewidth = 0.5) +
+  ggtitle("En dårlig tilpasset\nregresjonslinje") +
+  xlab("Danielles søvn (timer)\n\n(b)") +
+  ylab("Danielles grettenhet (0-100)\n") +
+  theme(
+    plot.title = element_text(), #size = 8),
+    axis.title = element_text(), #size = 7),
+    axis.text = element_text(), #size = 6),
+    axis.line = element_line(size = 0.2),
+    axis.ticks = element_line(size = 0.2)
+  )
+
+gridExtra::grid.arrange(p1, p2, ncol = 2)
+
+```
+
+
+Dette virker nok helt logisk. Linjen i @fig-fig12-11(b) passer rett og slett dårlig, så det gir liten mening å bruke den til å oppsummere dataene. Denne enkle observasjonen -- at noen linjer passer bedre enn andre -- er faktisk utrolig kraftfull når vi formaliserer den med matematikk.
+
+For å komme dit, starter vi med en rask repetisjon fra matematikktimene på ungdomsskolen og videregående. Formelen for en rett linje skrives vanligvis slik:
+
+$$y=ax + b$$
+
+De to variablene er $x$ og $y$, og vi har to koeffisienter, $a$ og $b$. Koeffisienten $b$ representerer konstantleddet, altså skjæringspunktet med $y$-aksen, og koeffisient $a$ representerer stigningstallet til linjen. Konstantleddet tolkes som "verdien av $y$ når $x = 0$". Tilsvarende betyr et stigningstall på $a$ at hvis du øker $x$-verdien med 1 enhet, øker $y$-verdien med $a$ enheter. Et negativt stigningstall betyr at $y$-verdien vil synke.
+
+Siden likningen $y = ax + b$ kan beskrive alle rette linjer, bruker vi nøyaktig samme formel for en regresjonslinje. Det store spørsmålet er hvordan man kommer frem til den riktige regresjonslinja. Vi skal ikke lære å regne den ut, men vi skal lære prinsippet som ligger bak.
+
+Prinsippet bygger på på avviket mellom linja og datapunktene, se @fig-fig12-12. Ser du at regresjonslinja ikke går gjennom de riktige $y$-verdiene, men at den bommer på alle punktene? Hvor mye linja bomma med har vi markert med mange grå linjer; hvis de grå linjene er lange, bomma regresjonslinja grovt, og hvis den er kort, bomma regresjonslinja lite. Lengden på de grå linjene markerer altså avviket mellom den $y$-verdien vi observerte og den $y$-verdien som regresjonslinja predikerer. Dette kalles *residualet*. Nå kan vi uttrykke prinsippet for hvordan man finner regresjonslinja: man finner den linja som totalt sett gir minst residualer. Og siden statistikere ser ut til å like å opphøye alt mulig i andre, av svært gode grunner, så blir definisjonen av regresjonslinja som følger:
+
+> Regresjonslinja $y = ax + b$ har verdier for $a$ og $b$ slik at kvadratet av residualene blir minst mulig.
+
+Dette betyr at linja i @fig-fig12-12 a) er regresjonslinja fordi residualene, de små grå linjene, er på sitt minste. Uansett hvilken annen linje du hadde valgt ville kvadratet av residualene vært større.
+
+```{r}
+#| label: fig-fig12-12
+#| fig-cap: En illustrasjon av residualene til den best tilpassede regresjonslinjen (panel a), og residualene til en dårlig regresjonslinje (panel b). Residualene er mye mindre for den gode regresjonslinjen. Dette er igjen ingen overraskelse, gitt at den gode linja er den som går midt gjennom dataene.
+#| fig-alt: To spredningsplott side om side, begge viser "Grettenhet vs. Søvn". Timer søvn (x-akse) fra 0 til 9 og grettenhet (y-akse) fra 0 til 100. Hvert plott har en blå regresjonslinje som viser en negativ korrelasjon.
+#| out-width: "100%"
+#| fig-width: 8.571429
+#| fig-pos: 'H'
+
+load("data_and_tables/parenthood.Rdata")
+fit <- lm(data = parenthood, dan.grump ~ dan.sleep)
+parenthood$predicted <- stats::predict(fit)
+parenthood$residuals <- stats::residuals(fit)
+parenthood <- parenthood |>
+  dplyr::select(dan.grump, dan.sleep, predicted, residuals)
+mydat <- parenthood |>
+  tidyr::gather(key = "grp", value = "x", -1, -predicted, -residuals)
+
+p1 <- ggplot(mydat, aes(x = x, y = dan.grump)) +
+  stat_smooth(method = "lm", colour = blueshade, se = F, size = 0.5) +
+  geom_segment(
+    aes(xend = x, yend = predicted),
+    colour = "grey50",
+    alpha = .7,
+    size = 0.3
+  ) +
+  geom_point(aes(fill = residuals), colour = "grey50", size = 0.8) +
+  ggtitle("Den best tilpassede\nregresjonslinja") +
+  xlab("Danielles søvn (timer)\n\n(a)") +
+  ylab("Danielles grettenhet (0-100)\n") +
+  guides(fill = "none") +
+  theme(
+    plot.title = element_text(),
+    axis.title = element_text(),
+    axis.text = element_text(),
+    axis.line = element_line(size = 0.2),
+    axis.ticks = element_line(size = 0.2)
+  )
+
+parenthood$predicted <- with(parenthood, predicted <- 80 + -3 * dan.sleep)
+parenthood$residuals <- with(parenthood, residuals <- dan.sleep - predicted)
+parenthood <- parenthood |>
+  dplyr::select(dan.grump, dan.sleep, predicted, residuals)
+mydat <- parenthood |>
+  tidyr::gather(key = "grp", value = "x", -1, -predicted, -residuals)
+
+p2 <- ggplot(mydat, aes(x = x, y = dan.grump)) +
+  geom_abline(intercept = 80, slope = -3, col = blueshade, linewidth = 0.5) +
+  geom_segment(
+    aes(xend = x, yend = predicted),
+    colour = "grey50",
+    alpha = .7,
+    size = 0.3
+  ) +
+  geom_point(aes(fill = residuals), colour = "grey50", size = 0.8) +
+  ggtitle("En dårlig tilpasset\nregresjonslinje") +
+  xlab("Danielles søvn (timer)\n\n(a)") +
+  ylab("Min grettenhet (0-100)\n") +
+  guides(fill = "none") +
+  theme(
+    plot.title = element_text(),
+    axis.title = element_text(),
+    axis.text = element_text(),
+    axis.line = element_line(size = 0.2),
+    axis.ticks = element_line(size = 0.2)
+  )
+
+gridExtra::grid.arrange(p1, p2, ncol = 2)
+
+```
+
+### Lineær regresjon i jamovi
+
+La oss utføre en enkel lineær regresjonsanalyse! For å gjøre dette, åpner du 'Regression' → 'Linear Regression'-analysen i jamovi, ved å bruke datafilen *[parenthood.csv](data_and_tables/parenthood.csv)*. Her spesifiserer du `dani.grump` som 'Dependent Variable' (avhengig variabel) og `dani.sleep` som 'Covariates'. En "covariate" er bare et annet ord for uavhengig variabel.^[Hmm, jeg glemte av "kovariat" som et annet ord for uavhengig variabel i @tbl-design-var-names. La oss ikke skrive det inn for å ikke overlesse leseren! 🤷]
+
+Dette gir resultatene vist i @fig-fig12-13. Vi ser vi har funnet et konstantledd ("intercept") $b = 125{,}96$ og et stigningstall $a = -8{,}94$. Med andre ord, den best tilpassede regresjonslinjen vi plottet i @fig-fig12-12 kan uttrykkes med denne formelen:
+
+$$ y = 125{,}96 -8{,}94 x$$
+
+Hvis man vil uttrykke det mer folkelig, kan man skrive:
+
+$$ \text{grettenhet} = 125{,}96 - 8{,}94 \cdot \text{timer søvn} $$
+
+```{r}
+#| label: fig-fig12-13
+#| out-width: "100%"
+#| fig-cap: Et jamovi-skjermbilde som viser en enkel lineær regresjonsanalyse
+#| fig-alt: Et jamovi-skjermbilde som viser grensesnittet for å utføre lineær regresjonsanalyse. Grensesnittet inneholder seksjoner for valg av variabler, innstilling av kovariater og faktorer, og visning av resultater som mål på modelltilpasning og koeffisienter.
+knitr::include_graphics("images/fig12-13.png")
+```
+
+Det er noen tall til vi bør være oppmerksomme på, nemlig de som står øverst og som beskriver "Model Fit Measures", altså mål på hvor godt denne modellen passer med dataene. Mer om disse i i neste delkapittel.
+
+### Å tolke resultatene fra regresjonen
+
+Nå skal vi se på hvordan vi tolker disse koeffisientene -- dette er en viktig del av analysen!
+
+La oss begynne med $a$, altså stigningstallet. Som vi husker fra definisjonen, betyr en regresjonskoeffisient på $a = -8{,}94$ at for hver enhets økning i $X$ (den uavhengige variabelen), forventer vi en reduksjon på $8{,}94$ i $Y$ (den avhengige variabelen). Overført til vårt eksempel betyr dette at for hver ekstra time søvn (`dani.sleep`) vi får, vil grettenheten (`dani.grump`) reduseres med $8{,}94$ poeng. Det høres jo ut som en god ting for humøret!
+
+Men hva med konstantleddet, $b = 125{,}96$? Siden $b$ representerer den forventede verdien av $y$ når $x$ er lik 0, er tolkningen ganske enkel. I vårt tilfelle betyr dette at hvis vi får null timer søvn ($X = 0$), forventes grettenheten å være hele $125{,}96$ poeng ($y = 125{,}96$). Dette er en ganske ekstrem verdi og understreker viktigheten av å få nok søvn -– best å unngå null timer, for humørets skyld! Mer seriøst understreker det at man i ikke bør spå verdier langt utenfor der man har data. Siden den minste verdien for $x$ var 5, så da bør man ikke tolke konstantleddet, siden det tilsvarer $x = 0$.
+
+Merk at jamovi også spytter ut en standardfeil (SE, "standard error"), en $t$-verdi og en $p$-verdi. Disse verdiene antar at datapunktene er hentet med enkelt tilfeldig utvalg fra en eller annen populasjon, og at man bruker dataene til å regne ut populasjonsparametre.
+
+Våre data er ikke trukket enkelt tilfeldig, men er Danielles 100 første netter med spedbarnet sitt. For å avgjøre om testen jamovi spytter ut har noen mening bør vi vurdere om dette vil være "likt" et enkelt tilfeldig utvalg fra en eller annen populasjon. For meg høres det OK ut å si at disse 100 nettene er omtrent tilfeldig trukket fra "alle netter Danielle kommer til å ha med et spedbarn". I så fall betyr $\text{SE} = 0{,}43$ at standardavviket til utvalgsfordelingen til $a$ er $0{,}43$, og at $a$ er signifikant forskjellig fra null ($t = -20{,}85, p < 0{,}00001$). Dette er altså utsagn om populasjonen; hvis det i populasjonen "alle Danielles netter med spedbarn" er slik at $a = 0$ er det ekstremt lite sannsynlig å observere utvalget i våre data.
+
+Du kan tilfreds legge merke til at denne testen også har $t$ som testobservator, så forståelsen av $t$-verdier du bygde fra @sec-means kan brukes flere steder.
+
+Siden konstantleddet ikke burde tolkes så nøye i dette tilfellet unnlater jeg å tolke dets tester.
+
+At vi har funnet en regresjonslinje betyr ikke at regresjonslinja passer godt til dataene. Det kan være observasjonene ligger tett rundt regresjonslinja, slik at den predikerer verdiene godt, eller det kan være observasjonene ligger langt unna regresjonslinja, slik at den predikerer dårlig. Vi trenger altså et mål på hvor tett rundt regresjonslinja punktene ligger. Heldigvis har vi det fra før av, det var det vi kalte (Pearsons) korrelasjon, $r$, se @sec-pearson.
+
+Når jamovi viser tallet $R$ under "Model Fit Measures", så er dette ingenting annet enn korrelasjonen. Vel, nesten. $R$ vil alltid være en positiv verdi, siden regresjonslinja passer like godt til dataene uansett om korrelasjonen er $+0{,}9$ eller $-0{,}9$. Det andre tallet, $R^2 = 0{,}816$, er bare kvadratet av $R$. Sukk, enda en kvadrering? Også denne kvadreringen er godt begrunnet, for $R^2$ har en veldig tilfredsstillende tolkning: den angir hvor stor andel av variansen i den avhengige variabelen som blir forklart av den uavhengige variabelen. I dette tilfellet: siden $R^2 = 0{,}816$, så blir 81,6% av variasjonen i Danielles grettenhet forklart av Danielles søvn. 
+
+## Multippel lineær regresjon
+
+Til nå har vi sett på den enkle lineære regresjonsmodellen, som typisk fokuserer på én enkelt prediktorvariabel -- som i vårt eksempel var `dani.sleep`. Mange av de statistiske verktøyene vi har utforsket har antatt at du arbeider med én prediktor og én utfallsvariabel. Men i den virkelige verden er det sjelden så enkelt! Ofte har du flere faktorer som kan påvirke utfallet du studerer.
+
+Heldigvis kan vi enkelt utvide den lineære regresjonen til å inkludere flere prediktorer. Dette er nettopp det **multippel regresjon** handler om! Konseptuelt er multippel regresjon overraskende enkelt. Alt vi gjør er å legge til flere ledd i regresjonsligningen vår. I stedet for $y = ax + b$ der $x$ er den eneste prediktoren, så kan man for eksempes inkludere tre prediktorer $x_1, x_2$ og $x_3$ slik:
+$$y = ax_1 + bx_2 + cx_3 + d$$
+
+La oss si at vi ønsker å forstå grettenheten min (`dani.grump`) bedre. Tidligere så vi kun på min egen søvn (`dani.sleep`), men hva om sønnen min sin søvn (`baby.sleep`) også spiller en rolle? Hvis vi utfører en slik regresjon vil man ha ett stigningstall for `dani.sleep` og ett stigningstall for `baby.sleep`. Gir ikke det mening? Hvis Danielle sover dårlig, men babyen sover godt, vil ikke Danielle være like gretten som om begge sov dårlig. Derfor ønsker vi å bruke både `dani.sleep` *og* `baby.sleep` for å predikere Danielles grettenhet.
+
+### Multippel lineær regresjon i jamovi {#sec-correlation-multiple}
+
+Multippel regresjon i jamovi er ikke annerledes enn enkel regresjon. Alt vi trenger å gjøre er å legge til flere variabler i 'Covariates'-boksen i jamovi. For eksempel, hvis vi ønsker å bruke både `dani.sleep` og `baby.sleep` som prediktorer i vårt forsøk på å forklare hvorfor jeg er så gretten, så flytter vi `baby.sleep` over til 'Covariates'-boksen sammen med `dani.sleep`. Som standard antar jamovi at modellen skal inkludere et konstantledd. Resultatene viser vi i @fig-correlation-jamovi-multiple.
+
+```{r}
+#| label: fig-correlation-jamovi-multiple
+#| tbl-cap: Å legge til flere variabler som prediktorer i en regresjon i jamovi gir en multippel regresjon
+
+knitr::include_graphics("images/fig-correlation-jamovi-multiple.png")
+```
+
+Stigningstallet knyttet til `dani.sleep` er ganske stor, $-8{,}9502$, noe som antyder at hver time jeg mister søvn gjør meg ordentlig gretten. Koeffisienten for `baby.sleep` er imidlertid veldig liten, noe som indikerer at det egentlig ikke spiller noen rolle for Danielle hvor mye søvn sønn hennes får. Hvis vi ser på den øverste tabellen, som viser hvor godt regresjonslinja passer til dataene, så ser vi at $R^2$ fremdeles er 0,816%, så regresjonsmodellen som inkluderer babyens søvn forklarte dessverre ikke noe mer av variasjonen i Danielles grettenhet.
+
+Det var det! Multippel lineær regresjon er blant de virkelig store arbeidshestene i statistikken og passer i svært mange ulike sammenhenger. 
+
+## Sammendrag
+
+I dette kapittelet har vi sånn grovt sett dekket følgende:
+
+-   Vil du vite hvor sterk sammenhengen er mellom to variabler? Beregn korrelasjoner.
+-   Husk å tegne spredningsdiagrammer.
+-   Noen grunnleggende ideer om hva en lineær regresjonsmodell er.
+-   Hvordan man utfører regresjonen i jamovi og tolker resultatet.
+-   Hvordan man utvider modellen til en multippel lineær regresjon.
+-   Hvordan man tallfester hvor godt regresjonsmodellen passer ved hjelp av $R^2$.
