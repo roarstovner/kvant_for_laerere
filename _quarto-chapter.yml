@@ -1,4 +1,4 @@
 book: 
   chapters: 
     - index.qmd
-    #- sec-design.qmd
+    - sec-correlation.qmd

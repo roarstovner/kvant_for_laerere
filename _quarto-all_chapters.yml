@@ -1,0 +1,24 @@
+book:
+  chapters:
+    - index.qmd
+    - sec-why-statistics.qmd
+    - part: Studiedesign
+      chapters:
+        - sec-measurement.qmd
+        - sec-design.qmd
+    - part: Deskriptiv statistikk
+      chapters:
+         - sec-descriptive.qmd
+         - sec-diagram.qmd
+    - part: Statistisk teori
+      chapters:
+         - sec-probability.qmd
+         - sec-estimation.qmd
+         - sec-testing.qmd
+    - part: Inferensiell statistikk
+      chapters:
+         - sec-categorical.qmd
+         - sec-means.qmd
+         - sec-correlation.qmd
+    - sec-epilogue.qmd
+    - sec-references.qmd

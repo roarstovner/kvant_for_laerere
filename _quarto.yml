@@ -10,11 +10,13 @@ execute:
 language: language.yml
 lightbox:
   match: auto
+profile:
+  group:
+    - [all_chapters,chapter]
 book: 
   title: Kvantitative metoder for lærere
   author: "Danielle Navarro, David Foxcroft og Roar Bakken Stovner"
-  subtitle: Vitenskapsteori og metode, MGVM4100, OsloMet
-  date: last-modified
+  date: 2025-08-12
   date-format: "MMMM YYYY"
   # cover-image: images/cover.png
   downloads: pdf
@@ -24,42 +26,17 @@ book:
     style: floating
     collapse-level: 2
     pinned: false
-    #tools:
-          #- icon: book 
-            #url: "https://www.openbookpublishers.com/books/10.11647/obp.0333"
-            #text: Order hard copy
   page-footer:
-    #left: |
-      #<a href="https://learnstatswithjamovi.com">learning statistics with jamovi</a>
+    left: |
+      <a href="https://kvant.roarstovner.no">Kvantitative metoder for lærere</a>
     right: |
       Denne boka ble laget i <a href="https://quarto.org/">Quarto</a> 
   site-url: "https://kvant.roarstovner.no"
-  repo-url: "https://github.com/roarstovner/kvant_for_laerere"
-  #repo-actions: [edit,issue]
+  # repo-url: "https://github.com/roarstovner/kvant_for_laerere"
+  # repo-actions: [edit,issue]
   open-graph: true
   google-analytics: "G-FRV7C65B01"
 
-  chapters:
-    - index.qmd
-    - sec-why-statistics.qmd
-    - part: Studiedesign
-      chapters:
-        - sec-measurement.qmd
-        - sec-design.qmd
-    - part: Deskriptiv statistikk
-      chapters:
-         - sec-descriptive.qmd
-         - sec-diagram.qmd
-    - part: Statistisk teori
-      chapters:
-         - sec-probability.qmd
-         - sec-estimation.qmd
-         - sec-testing.qmd
-    - part: Inferensiell statistikk
-      chapters:
-         - sec-categorical.qmd
-         - sec-means.qmd
-    - sec-references.qmd
 
 bibliography: refs.bib
 csl: apa.csl
@@ -78,7 +55,7 @@ format:
     title-block-style: none
     toc: true
     collapse: true
-    html-math-method: mathjax
+    html-math-method: katex
     include-in-header: header-includes.html
     css: styles.css
     theme:
@@ -108,11 +85,10 @@ format:
   #   include-in-header: header-includes.html
   #   epub-cover-image: images/cover.pdf
   pdf:
-    title: Kvantitativ metode for lærere
     #mainfont: "TeX Gyre Pagella"
     documentclass: book
     papersize: a4
-    keep-tex: true
+    # keep-tex: true
     #params:
         #endnotes: true
     include-in-header:
