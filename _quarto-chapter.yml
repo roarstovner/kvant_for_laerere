@@ -1,4 +1,4 @@
 book: 
   chapters: 
     - index.qmd
-    - sec-correlation.qmd
+    - sec-why-statistics.qmd

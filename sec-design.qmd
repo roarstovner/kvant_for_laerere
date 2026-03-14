@@ -136,8 +136,8 @@ Men de fleste korrelasjoner er ikke tilfeldige, man kan finne dem igjen i studie
 **Retningsproblemet** er ganske enkelt at hvis man har en korrelasjon mellom $A$ og $B$, så kan det like gjerne være at $A$ påvirker $B$ som at $B$ påvirker $A$. Man kan rett og slett ikke finne ut av hvilken vei kausaliteten går -- hvilken av følgende piler som stemmer
 
 ```{tikz}
-#| fig-align: "center"
-#| out-width: 10cm
+%| fig-align: "center"
+%| out-width: 10cm
 \begin{tikzpicture}
   \node (A) at (0,0) {A};
   \node (B) at (1,0) {B};
@@ -162,9 +162,9 @@ En **konfunder** til variablene $A$ og $B$ er en variabel $C$ som er slik at den
 ::: {#fig-confounder  layout-ncol=1}
 
 ```{tikz}
-#| label: fig-confounder-general
-#| fig-cap: "Her er $C$ en konfunder for $A$ og $B$."
-#| fig-align: "center"
+%| label: fig-confounder-general
+%| fig-cap: "Her er $C$ en konfunder for $A$ og $B$."
+%| fig-align: "center"
 \begin{tikzpicture}
   \node (A) at (0,0) {$A$};
   \node (B) at (2,0) {$B$};
@@ -176,9 +176,9 @@ En **konfunder** til variablene $A$ og $B$ er en variabel $C$ som er slik at den
 ```
 
 ```{tikz}
-#| label: fig-confounder-reading
-#| fig-cap: "Her er \"foreldres leseinteresse\" en konfunder for korrelasjonen mellom \"antall bøker hjemme\" og \"leseforståelse\"."
-#| fig-align: "center"
+%| label: fig-confounder-reading
+%| fig-cap: "Her er \"foreldres leseinteresse\" en konfunder for korrelasjonen mellom \"antall bøker hjemme\" og \"leseforståelse\"."
+%| fig-align: "center"
 \begin{tikzpicture}
   \node (A) at (0,0) {antall bøker hjemme};
   \node (B) at (4,0) {leseforståelse};

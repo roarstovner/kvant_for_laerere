@@ -40,7 +40,7 @@ La oss åpne filen i et statistikkprogram. For å gjøre dette åpner vi filen *
 #| fig-cap: Et skjermbilde av jamovi som viser variablene lagret i filen *ICCS.csv*
 #| fig-alt: Et jamovi-skjermbilde viser et dataanalysegrensesnitt med 7 kolonner. Én kolonne med numeriske data er merket "likestilling".
 #| out-width: "100%"
-knitr::include_graphics("images/fig-descriptive-iccs-data.png")
+knitr::include_graphics("images/fig-descriptive-ICCS-data.png")
 ```
 
 For å få en forståelse av dataene, må vi beregne deskriptiv statistikk (dette kapittelet) og lage noen fine figurer (@sec-diagram). Vi skal først beskrive de nominelle og ordinale dataene. Disse er markert med et symbol med tre prikker, og er altså _Land_, _Trinn_, _Kjønn_ og _Forventet utdanning_.

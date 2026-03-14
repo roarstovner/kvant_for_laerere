@@ -32,17 +32,6 @@ theme_update(
   axis.line = element_line(),
   axis.ticks = element_line()
 )
-# theme_set(theme_classic(base_size=30, base_family="Palatino Linotype"))
-# update_geom_defaults(
-#    geom = "text",
-#    aes(family = "Palatino Linotype",
-#        fontface = "plain",
-#        size = 3)
-# )
-# 
-# font_add(family = "Palatino Linotype",   
-#           regular = "pala.ttf") # Name you want to use to call the font
-# showtext_auto()
 
 #### knitr options -----------
 knitr::opts_chunk$set(
@@ -52,11 +41,3 @@ knitr::opts_chunk$set(
           fig.asp = 0.618,
           fig.align = "center"
           )
-# if (knitr::is_html_output()) options(huxtable.knitr_output_format = 'html')
-# options(knitr.table.format = function() {
-#   if (knitr::is_latex_output()) 'latex'
-#   if (knitr::is_html_output()) 'html' else pandoc
-# })
-
-# huxtabs <- readRDS("data_and_tables/lsj_chapter_huxtabs.rds")
-
