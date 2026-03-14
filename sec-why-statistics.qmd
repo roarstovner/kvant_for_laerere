@@ -2,7 +2,7 @@
 <!-- \placetextbox{0.195}{0.05}{\scriptsize{CC BY-SA 4.0}} -->
 <!-- \placetextbox{0.70}{0.06}{\scriptsize{\url{https://doi.org/10.11647/OBP.0333.01}}} -->
 
-# Hvorfor lære statistikk?
+# Hvorfor lære kvantitative metoder?
 
 ```{r}
 #| include: FALSE
@@ -21,96 +21,76 @@ $$ $$ <!---- bug...need this here otherwise tables don't render latex in html ou
 
 [^why-do-we-learn-statistics-1]: Sitatet kommer fra Audens dikt fra 1946, *Under Which Lyre: A Reactionary Tract for the Times*, som var en advarsel om samfunnsutviklingen etter andre verdenskrig.
 
-Mange blir overrasket over at de skal lære seg kvantitativ metode i lærerutdanninga. Hvis du virkelig digget statistikk ville du sannsynligvis vært påmeldt et statistikkurs nå, ikke et obligatorisk kurs i vitenskapsteori og metode for lærere. Likevel er studentmassen på OsloMet, hvor jeg jobber, delt på midten i synet på kvantitativ metode; mange ser ikke vitsen, mens mange setter pris på å ha blitt tvunget gjennom stoffet, fordi de setter pris på at de bedre kan forholde seg til utdanningsforskning etterpå. Dessuten er mange nysgjerrige på hvordan man har funnet ut av alt som er blitt undervist på lærerutdanninga, og for å vite det må man vite noe om forskningsmetode, blant annet kvantitativ metode.
+Mange blir overrasket over at de skal lære seg kvantitativ metode i lærerutdanninga. Hvis du virkelig digget kvantitative metoder eller statistikk ville du sannsynligvis vært påmeldt et statistikkurs nå, ikke et obligatorisk kurs i vitenskapsteori og metode for lærere. Likevel er studentmassen på OsloMet, hvor jeg jobber, delt på midten i synet på kvantitativ metode; mange ser ikke vitsen, mens mange setter pris på å ha blitt tvunget gjennom stoffet, fordi de setter pris på at de bedre kan forholde seg til utdanningsforskning etterpå. Dessuten er mange nysgjerrige på hvordan man har funnet ut av alt som er blitt undervist på lærerutdanninga, og for å vite det må man vite noe om forskningsmetode, blant annet kvantitativ metode.
 
-Jeg tror mange forskere som bruker statistikk glemmer å begrunne for andre og, kanskje verre, for seg selv, hvorfor de bruker det. Det er en tro blant mange forskere og mange vanlige folk at kvantitativ forskning er mer til å stole på enn kvalitativ forskning, kanskje fordi større studier er mer til å stole på. *"Bigger is better"*. Denne tanken kan ha stor samfunnsbetydning, fordi folk i viktige samfunnsposisjoner deler disse holdningene. Da Nicolai Tangen, lederen for oljefondet, intervjuet psykologen og forskeren Angela Duckworth til podcasten sin, spurte han om det var en sammenheng mellom alder eller kjønn og *grit* (pågangsmot) [@tangen2022, etter etter ca. 40m30s]. Angela svarte at man fikk mer *grit* ettersom man ble eldre, men at kjønn ikke så ut til å ha noen innvirkning, i hvert fall var utvalget hennes så stort at effekten måtte være kjempeliten. Tangen svarte at han var en "big believer in sample size" og virket fornøyd med Duckworth sitt svar, men, som du kommer til å lære i løpet av dette kurset, så var det en million ting som var viktigere å tenke på enn utvalgsstørrelsen for å vurdere Duckworth sine påstander, for eksempel at forskningsdeltagerne hadde oppgitt selv hvor mye *grit* de hadde ved å svare på noen flervalgsspørsmål.
+Jeg tenker det er fire grunner til at lærere bør lære seg noe om kvantitativ metode.
 
-Det fremste formålet med boka er å gi kunnskapen som trengs for å vurdere slike påstander som Duckworth kom med. Lærere blir bombardert med påstander begrunnet med kvantitative data hele tiden, påstander om elevers lesekompetanse fra PISA-undersøkelsen, om læringseffekten av et nytt IKT-verktøy fra de som ønsker å selge det, og så videre. Hvis man kan vurdere kvantitativ forskning står man bedre rustet til å forholde deg kritisk til alt dette. Et tilleggsformål er å gi et grunnlag i hvordan man utfører kvantitativ metode for de som kan tenke seg å benytte kvantitative metoder i mastergraden sin.
+## Kvantitativ metode hjelper deg å vurdere påstander du møter i læreryrket
 
-## En advarsel mot sunn fornuft: Forbannelsen ved eksisterende oppfatninger
+Som lærer møter du mange påstander som hevdes å være forskningsbaserte. Læreverk og IKT-verktøy markedsføres som evidensbasert, pedagogiske tilnærminger som er "dokumentert effektive", rektorer som kommer springende med en ny undervisningsmetode han hørte om på et forskningsseminar. Det er en tro blant forskere og andre at kvantitativ forskning er mer til å stole på enn kvalitativ forskning, kanskje fordi større studier er mer til å stole på. "*Bigger is better*". Med grunnleggende kunnskaper i kvantitativ metode trenger du ikke tro på slik nånnsens og kan heller kritisk vurdere kvantitativ forskning. 
 
-Vi starter med et underkapittel for å svare på følgende spørsmål: 
+Vi tar et eksempel: Da Nicolai Tangen, lederen for oljefondet, intervjuet psykologen og utdanningsforskeren Angela Duckworth til podcasten sin, spurte han om det var en sammenheng mellom kjønn og *grit*, altså pågangsmot [@tangen2022, etter etter ca. 40m30s]. Angela svarte at menn og kvinner hadde like mye pågangsmot, i hvert fall var utvalget hennes så stort at kjønnsforskjellen måtte være liten. Tangen svarte at han var en "big believer in sample size" og virket fornøyd med Duckworth sitt svar, men, som du kommer til å lære i løpet av dette kurset, så var det en million ting som var viktigere å tenke på enn utvalgsstørrelsen for å vurdere Duckworth sine påstander.
 
-> Hvorfor driver vi med statistikk? Hvorfor bruker ikke forskere bare **sunn fornuft** til å analysere kvantitative data?
+Du kommer for eksempel til å lære at du må undersøke hvordan målingene er gjort. Hvordan målte Angela hvor mye pågangsmot forskningsdeltagerne hadde? Jo, ved å la forskningsdeltagerne svare på noen flervalgsspørsmål. De skulle krysse av for "Very much like me" og ned til "Not like me at all":
 
-Det er naive spørsmål, men de fleste gode spørsmål er naive. Det finnes mange gode svar på spørsmålet,[^why-do-we-learn-statistics-2] men etter min mening er det beste svaret veldig enkelt: vi kan ikke stole på oss selv. Vi bekymrer oss for at vi er mennesker, og derfor utsatt for alle de skjevhetene, fristelsene og svakhetene som mennesker lider av. Mye av statistikken er egentlig en sikkerhetsmekanisme. Å bruke "sunn fornuft" for å vurdere bevis betyr å stole på magefølelsen, på verbale argumenter og på den menneskelige fornuftens kraft for å finne det riktige svaret. De fleste forskere tror ikke at denne tilnærmingen vil fungere.
+- New ideas and projects sometimes distract me from previous ones.
+- Setbacks don't discourage me.
+- I have been obsessed with a certain idea or project for a short time but later lost interest.
+- I am a hard worker.
+- I often set a goal but later choose to pursue a different one.
+- I have difficulty maintaining my focus on projects that take more than a few months to complete.
+- I finish whatever I begin.
+- I am diligent.
+  
+Nå når du vet hvordan deltagernes pågangsmot ble målt, hva synes du nå om konklusjonen om at menn og kvinner har like stort pågangsmot? Tenker du for eksempel at menn har en tendens til å svare høyere på noen av disse spørsmålene, selv om de egentlig ikke har så mye pågangsmot? I så fall er Angelas konklusjon gal, samme hvor mange deltagere hun spurte! Du lærer om dette i @sec-measurement.
 
-[^why-do-we-learn-statistics-2]: Et godt svar er at sunn fornuft er mangelvare blant forskere.
+Det fremste formålet med boka er å gi kunnskapen som trengs for å vurdere slike påstander som Duckworth kom med. Lærere blir bombardert med påstander begrunnet med kvantitative data hele tiden, påstander om elevers lesekompetanse fra PISA-undersøkelsen, om læringseffekten av et nytt IKT-verktøy fra de som ønsker å selge det, og så videre. Hvis man kan vurdere kvantitativ forskning står man bedre rustet til å forholde deg kritisk til alt dette.
 
-Mennesker er stort sett ganske smarte. Vi regnes som smartere enn mange andre arter vi deler planeten med (selv om noen kanskje vil være uenige). Vårt sinn er fascinerende, og vi ser ut til å være i stand til utrolig tanker og resonnementer. Vi er imidlertid langt fra perfekte. Psykologer har vist på et utall måter hvordan vi har vanskeligheter med å være nøytrale og vurdere bevis upartisk uten å påvirkes av våre eksisterende oppfatninger. Et godt eksempel på dette er **belief bias**: Hvis man ber folk avgjøre om et argument er logisk gyldig (det vil si, at konklusjonen ville vært sann hvis premissene var sanne), har de en tendens til å bli påvirket av hvor troverdig konklusjonen virker, selv når vi egentlig ikke burde bli det. For eksempel, her er et gyldig argument hvor konklusjonen er troverdig:
 
-> Alle sigaretter er dyre (Premiss 1)\
-> Noen avhengighetsskapende ting er billige (Premiss 2)\
-> Derfor er noen avhengighetsskapende ting ikke sigaretter (Konklusjon)
+## Kvantitativ metode er premissleverandør for utdanningspolitikk og utdanningsforskning
 
-Og her er et gyldig argument hvor konklusjonen ikke er troverdig:
+Kvantitative undersøkelser og statistikk danner ofte grunnlaget for beslutninger i utdanningssektoren. Det fremste eksempelet på dette er da Norge bestemte seg for å delta i en internasjonal undersøkelse som måler 15-åringers kompetanse i lesing, matematikk og naturfag, den såkalte PISA-undersøkelsen (*Programme for International Student Assessment*). Da de første norske resultatene kom i år 2000 ble det ramaskrik -- de norske elevene var helt gjennomsnittlige! Vi som trodde vi hadde blant verdens beste skolesystemer! Dette ble fort omdøpt "PISA-sjokket". Her måtte det ryddes opp og skolesystemet måtte utbedres, en politisk prosess som endte med etableringen av nasjonale prøver i 2004 og læreplanen Kunnskapsløftet, LK06, i 2006. 
 
-> Alle avhengighetsskapende ting er dyre (Premiss 1)\
-> Noen sigaretter er billige (Premiss 2)\
-> Derfor er noen sigaretter ikke avhengighetsskapende (Konklusjon)
+Kvantitative undersøkelser kan altså være så potente at de snur opp ned på hvilke mål vi har for skolen og hvordan vi styrer den. Her er en liten smørbrødliste over slike undersøkelser:
 
-Den logiske *strukturen* til argument #2 er identisk med strukturen til argument #1, så begge argumentene er gyldige. Men i det andre argumentet er det gode grunner til å tenke at premiss 1 er feil, og i så fall er konklusjonen også feil. Men dette er helt irrelevant i denne sammenhengen; et argument er deduktivt gyldig hvis konklusjonen logisk følger av premissene. Det betyr at et gyldig argument ikke nødvendigvis må inneholde sanne utsagn.
+- PISA-undersøkelser og andre internasjonale komparative studier brukes som argument for reformer og endringer i skolesystemet. I denne boka analyserer vi den såkalte PIRLS-studien i dybden, se @sec-PIRLS.
+- Nasjonale prøver, @sec-nasjonale-prover, påvirker prioriteringer og ressursfordelinger i skolen, og det er politisk omstridte spørsmål om skolers skår på nasjonale prøver skal være offentlig kjent og i hvordan ressurser skal fordeles basert på resultatene.
+- Randomiserte kontrollerte eksperimenter blir benyttet til å argumentere for at noen undervisningsmetoder er bedre enn andre. Vi skal analysere en norsk studie om lærertetthet i dybden, @sec-RCT-laerertetthet.
+- Elevundersøkelser om trivsel, mobbing og læringsmiljø danner grunnlag for tiltak for å bedre elevenes kår.
+- Statistikk om karakterer og gjennomføring brukes til å vurdere skolekvalitet og elevprestasjoner. 
 
-Og motsatt, her er et ugyldig argument med en troverdig konklusjon:
+Som lærer vil du måtte forholde deg til premissene for utdanningspolitikk som legges av slike undersøkelser, så hvorfor ikke forstå grunnlaget de bygger på?
 
-> Alle avhengighetsskapende ting er dyre (Premiss 1)\
-> Noen sigaretter er rimelige (Premiss 2)\
-> Derfor er noen avhengighetsskapende ting ikke sigaretter (Konklusjon)
+## Kvantitativ metode hjelper deg med _assessment literacy_, altså å forstå vurderinger
 
-Hvis folk virkelig er i stand til å legge til side sine eksisterende oppfatninger om hva som er sant og evaluerer argumenter basert logikk, ville vi forventet at 100% av folk sier at gyldige argumenter er gyldige og at 0% sier at ugyldige argumenter er gyldige. Så hvis du gjennomførte et eksperiment som undersøkte dette, ville du forventet å se data som vist i @tbl-tab1-1.
+Som lærer mottar du resultater om klassen din på nasjonale prøver, du sitter i evalueringsmøte med skoleledere som lurer på hvorfor klassen din skåret dårligere på tentamen, eller du lurer på hvordan du bør utforme spørsmålene for å kartlegge hvor mye elevene dine egentlig lærte om forrige tema. Kvantitativ metode kan gi en grunnleggende _assessment literacy_ som hjelper deg å forberede og tolke vurderingssituasjoner.
 
-```{r}
-#| label: tbl-tab1-1
-#| tbl-cap: Argumenters gyldighet
-tt(
-  tibble(
-    ` ` = c("Argumentet er gyldig", "Argumentet er ugyldig"),
-    `konklusjonen føles sann` = c("100% sier 'gyldig'", "0% sier 'gyldig'"),
-    `konklusjonen føles usann` = c("100% sier 'gyldig'", "0% sier 'gyldig'")
-  ), escape = TRUE
-)
-```
+Som lærer møter du vurderingssituasjoner hele tiden. Du mottar resultater om klassen din på nasjonale prøver, du sitter i evalueringsmøte med skoleledere som lurer på hvorfor klassen din skåret dårlig på tentamen, eller du lager vurderingssituasjoner for å finne ut hvor mye elevene har lært. Kvantitative metoder kan gi deg bedre forståelse for hva slike vurderinger betyr; du kan få en grunnleggende _assessment literacy_ som hjelper deg å forberede og tolke slike vurderingssituasjoner, se @sec-assessment-literacy.
 
-Hvis dataene så slik ut (eller var veldig nære), ville vi kanskje føle oss trygge nok til å stole på folks magefølelse. Det vil si, det ville vært helt greit å la forskere evaluere data basert på sunn fornuft, uten å bry seg med all denne statistikken. Men hvis du kan noe som helst om psykologi, skjønner du nok hvor dette bærer hen.
+## Kvantitativ metode hjelper deg som lærerstudent
 
-I en klassisk studie undersøkte @Evans1983 nettopp dette med et fiffig eksperiment. Det de fant var at når folk sine eksisterende oppfatninger var i samsvar det logiske argumentet gikk alt slik man skulle håpe, se @tbl-tab1-2. Folk resonnerte ikke perfekt, men ganske godt.
+Videre i studiet ditt kommer du til å møte forskningslitteratur som benytter kvantitative metoder. Hvis du kan noe om kvantitative metoder vil du forstå denne forskningen bedre. Du har også blitt fortalt mange ting tidligere på studiet; ved å kunne noe om forskningsmetode, deriblant kvantitativ metode, kan du lettere evaluere hva kunnskapen bygger på.
 
-```{r}
-#| label: tbl-tab1-2
-#| tbl-cap:  Forutinntatte holdninger og gyldighet av argument
-tt(
-  tibble(
-    ` ` = c("Argumentet er gyldig", "Argumentet er ugyldig"),
-    `konklusjonen føles sann` = c("92% sier 'gyldig'", ""),
-    `konklusjonen føles usann` = c("", "8% sier 'gyldig'")
-  ), escape = TRUE
-)
-```
+## Kvantitativ metode hjelper deg i hverdagen
 
- Men se hva som skjedde da de eksisterende oppfatningene gikk på tvers av det logiske argumentet, altså at det logiske argumentet konkluderte ulikt med folks eksisterende oppfatning (@tbl-tab1-3). Å huff, det er ikke like bra! Det ser ut til at når folk blir presentert for et sterkt argument som motsier våre eksisterende oppfatninger, så er det vanskelig å se at argumentet er sterkt (folk gjorde det bare 46% av tiden). Enda verre er det når folk blir presentert for et svakt argument som er i samsvar med våre eksisterende oppfatninger; nesten ingen klarer å se at argumentet er svakt -- folk tok feil 92% av tiden! [^why-do-we-learn-statistics-3]
- 
-[^why-do-we-learn-statistics-3]: I mine mer kyniske øyeblikk tenker jeg at dette forklarer 95% av det jeg leser på internett.
+Da jeg begynte å skrive forelesningsnotatene mine, tok jeg de 20 nyeste nyhetsartiklene publisert på ABC News-nettstedet. Av disse artiklene inkluderte åtte en diskusjon av et statistisk emne, og i seks av dem ble det gjort en feil. Den vanligste feilen var å ikke rapportere grunnlagsdata (f.eks. artikkelen nevner at 5 % av personer i situasjon X har en egenskap Y, men sier ikke hvor vanlig egenskapen er for alle andre!). Poenget jeg prøver å få frem her er ikke at journalister er dårlige i statistikk, men at en grunnleggende kunnskap om statistikk er svært nyttig for å finne ut når noen enten gjør en feil eller prøver å forlede deg. En bivirkning ved å kunne noe om kvantitativ metode er at du oftere blir irritert på aviser eller internett.
 
-```{r}
-#| label: tbl-tab1-3
-#| tbl-cap:  Intuisjon og gyldighet av argument
-#| tbl-pos: 'h!'
-tt(
-  tibble(
-    ` ` = c("Argumentet er gyldig", "Argumentet er ugyldig"),
-    `konklusjonen føles sann` = c("92% sier 'gyldig'", "92% sier 'gyldig'"),
-    `konklusjon føles usann` = c("46% sier 'gyldig'", "8% sier 'gyldig'")
-  ), escape = TRUE
-)
-```
+:::{.callout-warning}
 
-Om du tenker etter, er det ikke slik at disse resultatene er forferdelige. Totalt sett gjorde folk det bedre enn om de skulle svart helt tilfeldig, ettersom omtrent 60% av folks vurderinger var korrekte (du ville forvente 50% ved tilfeldig gjetning), så folk klarer i noen grad å se utover sine egne eksisterende oppfatninger. Likevel, hvis du var en profesjonell "bevisvurderer", og noen tilbød deg et magisk verktøy som forbedret sjansene dine for å ta riktig beslutning fra 60% til (for eksempel) 95%, ville du antagelig gripe muligheten, ikke sant? Selvfølgelig ville du det. Heldigvis har vi faktisk et verktøy som kan gjøre dette i én spesiell situasjon, som kan garantere at du ikke forkaster en hypotese galt med hele 95 % sikkerhet! Men det er ikke magi, det er statistikk. Så det er grunn nr. 1 til hvorfor forskere elsker statistikk. Det er altfor lett for oss å "tro det vi vil tro". Så istedenfor, hvis vi vil "tro på dataene", trenger vi litt hjelp til å holde våre personlige fordommer i sjakk. Det er det statistikk gjør, det er læren om hvordan man bør trekke slutninger fra data, så det hjelper oss å holde oppfatningene våre i sjakk. Sunn fornuft er ikke nok.
+Disse to korte delkapitlene får meg til å tro at delkapitler er feil inndeling av de fire grunnene?
 
-## En advarsel mot å "tro på dataene": Simpsons paradoks
+Også, skal vi kutte noen av dem? Jeg kan prøve å skrive noe mer treffende om "hverdagen". Det som står der nå er Danielle Navarro i Australia i 2012 ...
+:::
 
-I forrige avsnitt benyttet jeg uttrykket "å tro på dataene", et uttrykk jeg misliker sterkt. Du skal nå få høre en fortelling som belyser hvorfor også du bør slutte å "tro på dataene", "høre på det evidensen sier" og liknende, og heller tenke at enhver statistisk analyse er basert på et teoretisk ståsted. Det er ikke sant at "dataene snakker for seg selv", det som er sant er at "dataene snakker når du benytter et teoretisk ståsted til å la dem snakke".
+## Oppsummering
 
-Følgende er en sann historie (tror jeg!). I 1973 hadde University of California, Berkeley, noen bekymringer rundt opptakene av studenter til deres videreutdanningskurs. Mer spesifikt var det kjønnsfordelingen i opptakene som forårsaket problemer (@tbl-tab1-4).
+Ettersom årene går og flere og flere lærere i skolen har har mastergrad og noe kjennskap til kvantitativ forskning, får vi forhåpentligvis en lærerstand som kan benytte seg kritisk av kvantitativ forskning, en lærerstand som både kan avvise forskning som ikke er god nok og som kan samle seg om og implementere lærdom fra god forskning.
+
+## En advarsel mot å "tro på dataene"
+
+Kvantitativ forskning har en snedig makt over sinnene våre. Når man har tallfestet noe, fremstår det som autoritativt, sikkert, objektivt, krystallklart. Jeg tror det er bakgrunnen for at man sier "vi må stole på dataene" eller "vi må høre på det evidensen sier" og liknende. Dette er det reneste vrøvl, og jeg skal nå forklare hvorfor. Jeg forklarer med en halvlang anekdote for å illustrere at enhver statistisk analyse er basert på et teoretisk ståsted. Det er ikke sant at "dataene snakker for seg selv", det er alltid en teori inne i bildet. Et bedre utsagn er "hva dataene betyr avhenger av teorien du har".
+
+Anekdoten er jeg temmelig sikker på at er sann. I 1973 hadde University of California, Berkeley, noen bekymringer rundt hvilke studenter som slapp inn på utdanningene deres. De syntes kjønnsfordelingen var problematisk (@tbl-tab1-4).
 
 ```{r}
 #| label: tbl-tab1-4
@@ -124,10 +104,9 @@ tt(
 )
 ```
 
-På grunn av kjønnsfordelingen var de bekymret for å bli saksøkt! Med nesten 13,000 søkere er en forskjell på 9 % i opptaksratene mellom menn og kvinner altfor stor til å være tilfeldig. Ganske overbevisende data, ikke sant? Vi trenger ikke noe fancy statistikk, det er nok med litt sunn fornuft for å skjønne at kvinner ble diskriminert, man må jo lytte til dataene. Men hva hvis jeg sa til deg at disse dataene *faktisk* reflekterte en svak skjevhet til fordel for kvinner (på en måte!)? Du ville antakelig trodd at jeg var gal, kvinnefiendtlig eller begge.
+Berkeleg var rett og slett bekymret for å bli saksøkt fordi en mindre andel kvinner ble tilbudt plass på studiene deres! Med nesten 13,000 søkere er en forskjell på 9 % i opptaksratene mellom menn og kvinner altfor stor til å være tilfeldig. Ganske overbevisende data, ikke sant? Vi trenger ikke noe fancy statistikk, det er nok med litt sunn fornuft for å skjønne at kvinner ble diskriminert. Man må jo lytte til dataene og høre hva evidensen sier. Men hva hvis jeg sa til deg at disse dataene *faktisk* reflekterte en svak skjevhet til fordel for kvinner? Er jeg da gal, kvinnehatende eller begge?
 
-
-Merkelig nok er dette faktisk delvis sant. Da folk så nærmere på opptaksdataene, viste de en litt annen historie [@Bickel1975]. Spesielt da de så på opptakene fakultet for fakultet viste det seg at de fleste fakultetene faktisk hadde en litt *høyere* suksessrate for kvinnelige søkere enn for mannlige søkere. @tbl-tab1-5 viser opptaksdata for de seks største fakultetene (med navnene på fakultetene fjernet av personvernhensyn):
+Men dataene viser faktisk at kvinner ble foretrukket på Berkeley. Da folk så nærmere på opptaksdataene, viste de en litt annen historie [@Bickel1975]. Spesielt da de undersøkte opptakene på hvert fakultet viste det seg at de fleste fakultetene faktisk hadde høyere opptaksrate for kvinnelige søkere. @tbl-tab1-5 viser opptaksdataene for de seks største fakultetene. (Vi kaller bare fakultetene med bokstaver fra A til F.)
 
 ```{r}
 #| label: tbl-tab1-5
@@ -152,11 +131,13 @@ tt(
   )
 ```
 
-Det bemerkelsesverdige er at de fleste fakultetene hadde en *høyere* opptaksrate for kvinner enn for menn! Likevel var den totale opptaksraten ved universitetet lavere for kvinner enn for menn. Hvordan kan dette være mulig? Hvordan kan begge disse påstandene være sanne samtidig?
 
-Trekk pusten dypt, for du må trolig konsentrere deg litt for å henge med på forklaringen. For det første, merk at fakultetene ikke har like opptaksprosenter: noen fakulteter (f.eks. A og B) hadde en tendens til å ta opp en høy prosentandel kvalifiserte søkere, mens andre (f.eks. F) avslo de fleste kandidatene. Så blant de seks fakultetene som vises ovenfor er A er det mest sjenerøse, etterfulgt av B, C, D, E og F i den rekkefølgen. Videre, merk at menn og kvinner hadde en tendens til å søke ulike fakulteter. Hvis vi rangerer fakultetene etter det totale antallet mannlige søkere, får vi **A**\>**B**\>D\>C\>F\>E (de fakultetene som var enklere å komme inn på er uthevet). Generelt hadde menn en tendens til å søke til fakultetene som var enkle å komme inn på, altså de med høye opptaksrater. Når vi sammenligner dette med hvordan de kvinnelige søkerne fordelte seg, ser vi at bildet er ganske annerledes. Når vi rangere fakultetene etter det totale antallet kvinnelige søkere får vi rekkefølgen C\>E\>D\>F\>**A**\>**B**. Med andre ord, dataene ser ut til å vise at de kvinnelige søkerne søkte seg til "vanskeligere" fakulteter. Og faktisk, hvis vi ser på @fig-fig1-1, ser vi at denne trenden er systematisk, faktisk helt slående.
 
-Denne effekten, at sammenhenger som gjelder hele utvalget kan være annerledes i de fleste eller alle undergrupper, er kjent som **Simpsons paradoks**. Det er ikke vanlig, men det opptrer i virkeligheten, og de fleste blir svært overrasket når de først støter på det, og mange nekter til og med å tro at det er ekte. Det er veldig reelt. Og selv om det er mange veldig subtile statistiske lærdommer begravet i Simpsons paradoks, vil jeg heller bruke det til å gjøre et viktigere poeng: kvantitativ metode er vanskelig, og det er mange subtile, kontraintuitive fallgruver som lurer. Det er grunn #2 til at forskere elsker statistikk, og hvorfor vi lærer forskningsmetoder. Fordi vitenskap er vanskelig og sannheten ligger utspekulert i skjul i kroker og kriker av kompliserte data.
+Nå ser vi tydelig at de fleste fakultetene hadde en *høyere* opptaksrate for kvinner enn for menn! Likevel var den totale opptaksraten ved universitetet lavere for kvinner enn for menn. Hvordan kan dette være mulig? Hvordan kan begge disse påstandene være sanne samtidig? Trekk pusten dypt, for du må trolig konsentrere deg litt for å henge med på forklaringen.
+
+For det første, merk at fakultetene har ulike opptaksrater: fakultet A og B tok opp mange søkere, mens fakultet C, D, E og F avslo de fleste. For det andre, menn og kvinner søkte til ulike fakulteter. Menn søkte i størst grad til fakultet A og B,  altså de som var lettest å komme inn på. Kvinner søkte i størst grad til fakultet C, D, E og F, altså de som var vanskeligst å komme inn på. Dermed fikk kvinner en lavere opptaksrate totalt, selv om de hadde en høyere opptaksrate på de fleste fakultetene. Hvis vi ser på @fig-fig1-1, ser vi at denne trenden er systematisk, faktisk helt slående.
+
+Så faktisk sa dataene at kvinner hadde litt høyere sjanse til å komme inn på studiene på Berkeley. Forskerne hadde ikke tatt hensyn til en spesiell effekt, kjent som **Simpsons paradoks**, som innebærer at sammenhenger som gjelder hele utvalget kan være annerledes i de fleste eller alle undergrupper. De fleste synes dette er rart i starten, men det er veldig reelt. Og selv om det er mange veldig subtile statistiske lærdommer begravet i Simpsons paradoks, vil jeg heller bruke det til å gjøre et viktigere poeng: hvordan kan man vite om man skal stole på dataene når det kan lure rare statistiske paradokser rundt hver en sving? Dataene kan ikke snakke til deg med mindre du gjør analysen helt riktig.
 
 ```{r out.width="100%"}
 #| label: fig-fig1-1
@@ -179,47 +160,15 @@ ggplot() +
   ylab("Opptaksrate (begge kjønn)") +
   theme(legend.position="none")
 ```
+Hvis du nikket anerkjennende til avsnittet over har du ennå ikke lært poenget med dette delkapittelet. Samme hvor riktig du gjør den statistiske analysen ligger ikke sannheten gjemt i dataene, sier ikke evidensen noe, taler ikke dataene. Anekdoten virker å avsløre en ugyldig slutning gjennom et fiffig statistisk argument, for deretter å lede oss til sannheten. Historien virker å vise at det ikke var kjønnsdiskriminering ved opptak på Berkeley, men det er bare fra et teoretisk ståsted som kun tar hensyn til søkertallene. Dataene taler ikke for seg selv, det er bare gjennom et spesielt teoretisk ståsted at dataene ikke viser kjønnsdiskriminering.
 
-Historien er tilfredsstillende ved at den virker å avsløre en ugyldig slutning gjennom et fiffig statistisk argument, men det slutter ikke der. Historien virker å vise at det ikke var kjønnsdiskriminering ved opptak, men fra et samfunnsvitenskapelig eller psykologisk perspektiv bør vi spørre *hvorfor* det var markante kjønnsforskjeller i søknadsmønstre. Hvorfor søkte menn oftere til ingeniørfag, og kvinner til psykologi? Og hvorfor hadde fakulteter med flere kvinnelige søkere ofte lavere opptakstall enn de med flere mannlige søkere? Selv om hvert fakultet er upartisk, kan dette fortsatt indikere kjønnsforskjeller. 
+Andre forskere kan ha som teoretisk ståsted at kjønnsdiskriminering kan skje på helt andre steder i inntaksprosessen, for eksempel når man bestemmer hvor mange studenter det skal være plass til på hvert studium. Hvorfor var det plass til så mange flere studenter på utdanningene i ingeniørfag og i historie, som hadde mange mannlige søkere, enn til utdanningene i psykologi og kunstfag, som hadde mange kvinnelige søkere? Hva om administrasjonen på Berkeley anser klassiske manneyrker som ingeniørfag som mer verdt å finansiere enn utdanninger som blir sett på som mer feminine? Dette ville vært kjønnsdiskriminerende. Slike aspekter faller utenfor statistikken, men påvirker hvilke konklusjoner vi kan trekke fra forskningen.
 
-Anta at menn foretrekker "harde vitenskaper" og kvinner "humaniora". Hva om humaniora har lavere opptaksrate fordi staten ikke finansierer dem like mye som de "harde vitenskapene", kanskje fordi noen i staten mener humaniora er en "unyttig jenteting"? Dette ville vært kjønnsdiskriminerende. Slike aspekter faller utenfor statistikken, men påvirker hvilke konklusjoner vi kan trekke fra forskningen.
+Det anekdoten viser er at hvilke slutninger du kan trekke fra data eller statistiske undersøkelser er teoriavhengig. Basert på ditt teoretiske ståsted velger du hva slags data og metode som er relevant for å besvare forskningsspørsmålene dine. Hvis forskerne er bevisste sitt eget teoretiske ståsted, kan andre forskere kritisere resultatene ved at analysen ikke er gjort i tråd med teorien, eller ved at de er uenige i teorien i utgangspunktet. Hvis forskerne *ikke* har et bevisst forhold til sitt teoretiske ståsted er det mye verre; da skjer fortolkningen basert på forskernes eksisterende oppfatninger, og disse er uskrevne og diffuse. Da kan ikke andre forskere kritisere fortolkningene på en nyttig måte, og verre, forskerne vil med all sannsynlighet bare forsterke egne eksisterende oppfatninger og gå ut i verden med en ny klubbe de kan hamre inn argumentet sitt med: "dere må jo lytte til dataene!"  
 
-Det eksempelet viser er at hvilke slutninger du kan trekke fra data eller statistiske undersøkelser avhenger av en fortolkning. Forhåpentligvis har forskerne et bevisst forhold til sitt eget teoretiske ståsted og benytter dette til å fortolke dataene. I så fall kan andre kritisere fortolkningen enten ved at den ikke er i tråd med teorien, eller ved at de er uenige i teorien i utgangspunktet. Hvis forskerne *ikke* har et bevisst forhold til sitt teoretiske ståsted er det mye verre; da skjer fortolkningen basert på forskernes eksisterende oppfatninger, og disse er uskrevne og diffuse. Da kan ikke andre forskere kritisere fortolkningene på en nyttig måte. Og verre, forskerne vil med all sannsynlighet bare forsterke egne eksisterende oppfatninger og gå ut i verden med en ny klubbe de kan hamre inn argumentet sitt med: "dere må jo lytte til dataene!" Den kjente statistikeren Sander Greenland uttrykte dette godt:
+Den kjente statistikeren Sander Greenland uttrykte dette godt:
 
 > Den største illusjonen om forskning: "La dataene tale for seg selv" Men DATAENE SIER IKKE NOE SOM HELST! De er bare merker på papir eller bits [på en datamaskins harddisk] som bare ligger der og gjør ingenting. Hvis du hører dem snakke, bør du umiddelbart oppsøke psykiatrisk hjelp! [@greenland2022, s. 7, min oversettelse]
 
-Kort sagt er det mange kritiske spørsmål som du ikke kan besvare med statistikk, men svarene på disse spørsmålene vil ha stor innvirkning på hvordan du analyserer og tolker data. Og dette er grunnen til at du alltid bør tenke på statistikk som et verktøy for å hjelpe deg med å analysere data og *ikke* som et verktøy som gir deg svar på forskningsspørsmål. Statistikk er ingen erstatning for teori -- statistikken følger fra teorien og er avhengig av den.
+Du bør tenke på kvantitative metoder (og statistikk) som et verktøy for å hjelpe deg med å analysere data gitt ditt teoretiske ståsted og *ikke* som et verktøy som gir deg svar på forskningsspørsmål. Data og statistikk er ingen erstatning for teori -- statistikken følger fra teorien og er avhengig av den.
 
-## Kvantitative metoder for lærere
-
-Jeg håper at eksemplene ovenfor hjalp med å forstå hvorfor kvantitative metoder og statistikk er viktig i utdanningsvitenskap. Men jeg antar du lurer på hvorfor du som lærerstudent må lære deg noe om kvantitativ metode. Her er et forsøk på et svar: 
-
-**Kvantitativ metode er premissleverandør for utdanningspolitikk og utdanningsforskning**
-
-Kvantitative undersøkelser og statistikk danner ofte grunnlaget for beslutninger i utdanningssektoren.
-
-- PISA-undersøkelser og andre internasjonale komparative studier brukes som argument for reformer og endringer i skolesystemet.
-- Nasjonale prøver påvirker prioriteringer og ressursfordeling i skolen.
-- Elevundersøkelser om trivsel, mobbing og læringsmiljø danner grunnlag for tiltak for å bedre elevenes kår.
-- Statistikk om karakterer og gjennomføring brukes til å vurdere skolekvalitet og elevprestasjoner. 
-- Randomiserte kontrollerte eksperimenter blir benyttet til å argumentere for at noen undervisningsmetoder er bedre enn andre
-
-Som lærer vil du måtte forholde deg til premissene for utdanningspolitikk som legges av slike undersøkelser, så hvorfor ikke forstå grunnlaget de bygger på?
-
-**Kvantitativ metode hjelper deg å vurdere påstander du møter i læreryrket**
-
-Som lærer møter du mange påstander som hevdes å være forskningsbaserte. Læreverk og IKT-verktøy markedsføres som evidensbasert, pedagogiske tilnærminger som er "dokumentert effektive", rektorer som kommer springende med en ny undervisningsmetode han hørte om på et forskningsseminar. Med grunnleggende kunnskaper i kvantitativ metode kan du kritisk vurdere slike påstander, for eksempel kan du vurdere kvaliteten på utvalget, om målemetodene er pålitelige, om forskningsdesignet er hensiktsmessig, og så videre.
-
-**Kvantitativ metode hjelper deg å med _assessment literacy_, altså å forstå vurderinger**
-
-Som lærer mottar du resultater om klassen din på nasjonale prøver, du sitter i evalueringsmøte med skoleledere som lurer på hvorfor klassen din skåret dårligere på tentamen, eller du lurer på hvordan du bør utforme spørsmålene på tentamen. Kvantitativ metode kan gi en grunnleggende _assessment literacy_ som hjelper deg å forberede og tolke vurderingssituasjoner.
-
-**Kvantitativ metode hjelper deg som lærerstudent**
-
-I løpet av studiet ditt møter du forskningslitteratur som benytter kvantitative metoder. Hvis du kan noe om kvantitative metoder vil du forstå disse bedre.
-
-**Kvantitativ metode hjelper deg i hverdagen**
-
-Da jeg begynte å skrive forelesningsnotatene mine, tok jeg de 20 nyeste nyhetsartiklene publisert på ABC News-nettstedet. Av disse artiklene inkluderte åtte en diskusjon av et statistisk emne, og i seks av dem ble det gjort en feil. Den vanligste feilen var å ikke rapportere grunnlagsdata (f.eks. artikkelen nevner at 5 % av personer i situasjon X har en egenskap Y, men sier ikke hvor vanlig egenskapen er for alle andre!). Poenget jeg prøver å få frem her er ikke at journalister er dårlige i statistikk, men at en grunnleggende kunnskap om statistikk er svært nyttig for å finne ut når noen enten gjør en feil eller prøver å forlede deg. En bivirkning ved å kunne noe om kvantitativ metode er at du oftere blir irritert på aviser eller internett.
-
-Ettersom årene går og flere og flere lærere i skolen har kjennskap til kvantitativ forskning får vi forhåpentligvis en lærerstand som kan benytte seg kritisk av kvantitativ forskning, en lærerstand som både kan avvise forskning som ikke er god nok og som kan samle seg om og implementere lærdom fra god forskning.
