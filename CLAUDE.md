@@ -49,3 +49,11 @@ Forhåpentligvis klarer vi å bake inn den siste "Section" i de andre kapitlene.
 - **Aldri** legg til referanser i refs.bib selv.
 - Gi brukeren et BibTeX-utdrag som kan importeres fra utklippstavlen til Zotero-samlingen som genererer refs.bib. Ikke ha med Citation Key i denne, BetterBibtex lager den.
 - Aldri legg til in-text referanser uten å bruke @authorYYYY fra refs.bib.
+
+# Figurer
+
+Defaults fra header.R: `fig.width = 6`, `fig.asp = 0.618`, `out.width = 80%` (HTML) / `100%` (LaTeX). Se https://arelbundock.com/posts/quarto_figures/index.html
+
+Når en figur trenger annen bredde enn default, sett `out-width` til ønsket prosent og beregn `fig-width` med: `fig_width = 6 * (out_width / 0.7)`. F.eks. `out-width: 95%` gir `fig-width: 8.14`.
+
+

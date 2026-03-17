@@ -30,7 +30,7 @@ book:
     left: |
       <a href="https://kvant.roarstovner.no">Kvantitative metoder for lærere</a>
     right: |
-      Denne boka ble laget i <a href="https://quarto.org/">Quarto</a> 
+      Denne boka ble laget i <a href="https://quarto.org/">Quarto</a> og er utgitt under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY 4.0<\a>
   site-url: "https://kvant.roarstovner.no"
   # repo-url: "https://github.com/roarstovner/kvant_for_laerere"
   # repo-actions: [edit,issue]

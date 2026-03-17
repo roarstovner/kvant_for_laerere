@@ -50,3 +50,5 @@ sec-*_files/
 # === End crosslink managed ===
 
 **/*.quarto_ipynb
+
+.vscode/

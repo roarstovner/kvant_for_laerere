@@ -73,14 +73,15 @@ Videre i studiet ditt kommer du til å møte forskningslitteratur som benytter k
 
 Statistikk dukker opp overalt i nyhetsbildet, og norske medier er ikke immune mot å presentere tall på misvisende måter. I februar 2020 publiserte Aftenpostens A-magasinet en sak om at stadig flere nordmenn er uføretrygdede. Artikkelen inkluderte en graf over andelen uføretrygdede i befolkningen fra 2015 til 2018. I nettversjonen av artikkelen gikk y-aksen fra 9,7 % til 10,1 %, noe som fikk en økning på 0,4 prosentpoeng til å se dramatisk ut. Sjefredaktør Trine Eilertsen beklaget i etterkant og kalte det "misbruk av statistikk" [@eilertsen2020].
 
-@fig-fig1-0 illustrerer to grep som kan gjøre en graf misvisende. Det venstre panelet viser grafen omtrent slik A-magasinet presenterte den på nett, med en avkortet y-akse som overdriver økningen. Det midterste panelet viser de samme dataene med y-aksen fra null; nå er økningen knapt synlig. Men begge disse grafene viser bare fire år. Det høyre panelet viser hele tidsserien fra 2015 til 2024, og her ser vi at andelen uføretrygdede flatet ut etter 2019. A-magasinet viste altså bare den bratteste delen av kurven.
+@fig-aftenposten illustrerer to grep som kan gjøre en graf misvisende. Det venstre panelet viser grafen omtrent slik A-magasinet presenterte den på nett, med en avkortet y-akse som overdriver økningen. Det midterste panelet viser de samme dataene med y-aksen fra null; nå er økningen knapt synlig. Men begge disse grafene viser bare fire år. Det høyre panelet viser hele tidsserien fra 2015 til 2024, og her ser vi at andelen uføretrygdede flatet ut etter 2019. A-magasinet viste altså bare den bratteste delen av kurven.
 
 ```{r}
-#| label: fig-fig1-0
+#| label: fig-aftenposten
 #| fig-cap: "Andel uføretrygdede i befolkningen. Venstre panel viser 2015–2018 med avkortet y-akse, liknende slik A-magasinet presenterte det. Midtre panel viser det samme med y-akse fra null. Høyre panel viser hele tidsserien 2015–2024. Kilde: SSB, tabell 11714."
 #| fig-alt: "Tre linjediagrammer side om side. Venstre diagram har avkortet y-akse og viser bratt økning. Midtre diagram har y-akse fra null og viser at økningen er minimal. Høyre diagram viser hele tidsserien fra 2015 til 2024, der kurven flater ut etter 2019."
 #| fig-pos: 'H'
-#| fig-width: 10
+#| out-width: "100%"
+#| fig-width: 8.571429
 #| fig-asp: 0.4
 
 library(patchwork)
@@ -224,9 +225,9 @@ Det anekdoten viser er at hvilke slutninger du kan trekke fra data eller statist
 
 > Den største illusjonen om forskning: "La dataene tale for seg selv" Men DATAENE SIER IKKE NOE SOM HELST! De er bare merker på papir eller bits [på en datamaskins harddisk] som bare ligger der og gjør ingenting. Hvis du hører dem snakke bør du umiddelbart oppsøke hjelp! [@greenland2022, s. 7, min oversettelse]
 
-Men dette betyr ikke at alle tolkninger er like gode, eller at kvantitativ forskning bare er "meninger med tall". Tvert imot: nettopp fordi tolkninger bygger på antakelser, kan antakelsene gjøres eksplisitte, og da kan andre forskere kritisere dem. Forskere kan påpeke at analysen ikke er gjort i tråd med teorien, eller utfordre selve teorien. Denne åpenheten er det som gjør forskning *forbedringsdyktig*. Hvis forskerne derimot *ikke* er bevisste sine antakelser, risikerer de å forsterke egne eksisterende oppfatninger og gå ut i verden med en ny klubbe: "dere må jo lytte til dataene!"
+Men dette betyr ikke at alle tolkninger er like gode, eller at kvantitativ forskning bare er "meninger med tall". Tvert imot: nettopp fordi tolkninger bygger på antakelser, kan antakelsene gjøres eksplisitte, og da kan andre forskere kritisere dem. Forskere kan påpeke at analysen ikke er gjort i tråd med teorien, eller utfordre selve teorien. Hvis forskerne derimot *ikke* er bevisste sine antakelser, risikerer de å forsterke egne eksisterende oppfatninger og gå ut i verden med en ny klubbe og bare hamre løs: "dere må jo lytte til dataene!"
 
-Kvantitative metoder er altså ikke verktøy som gir deg ferdige svar. De er verktøy som undersøker data med et teoretisk blikk. Ulike antakelser gir ulike analyser, men ikke alle analyser er like gode. I eksempelet fra Berkeley vil jeg argumentere for at analysen som tar hensyn til fakulteter er bedre, men merk at dette er et argument som baserer seg på kunnskap om hvordan opptaksbeslutninger i USA fungerer, ikke noe dataene alene kan fortelle deg. Teorier kan vurderes etter hvor godt de henger sammen internt, hvor mye de klarer å forklare, og om de tåler å bli testet mot nye data. Når du leser en kvantitativ studie, kan du stille deg spørsmål som: Hvilke antakelser er gjort? Hva er inkludert og hva er utelatt? Hvilke andre forklaringer er mulige?
+Kvantitative metoder er altså ikke verktøy som gir deg ferdige svar. De er verktøy som undersøker data med et teoretisk blikk. Ulike antakelser gir ulike analyser, men det betyr ikke at alle analyser er like gode. I eksempelet fra Berkeley vil jeg argumentere for at analysen som tar hensyn til fakulteter er bedre, men merk at dette er et argument som baserer seg på kunnskap om hvordan opptaksbeslutninger i USA fungerer, ikke noe dataene alene kan fortelle deg. Teorier kan vurderes etter hvor godt de henger sammen internt, hvor mye de klarer å forklare, og om de tåler å bli testet mot nye data. Når du leser en kvantitativ studie, kan du stille deg spørsmål som: Hvilke antakelser er gjort? Hva er inkludert og hva er utelatt? Hvilke andre forklaringer er mulige?
 
 ## Oppsummering
 
