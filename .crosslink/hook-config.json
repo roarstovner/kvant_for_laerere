@@ -34,8 +34,7 @@
     "ls",
     "dir",
     "pwd",
-    "echo",
-    "Rscript "
+    "echo"
   ],
   "auto_steal_stale_locks": false,
   "blocked_git_commands": [

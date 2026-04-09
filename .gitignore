@@ -42,7 +42,6 @@ sec-*_files/
 .claude/hooks/
 .claude/commands/
 .claude/mcp/
-.claude/settings.local.json
 
 # .claude/ — DO track these (if manually configured):
 #   .claude/settings.json         — Claude Code project settings
@@ -52,3 +51,6 @@ sec-*_files/
 **/*.quarto_ipynb
 
 .vscode/
+tmp/
+.crosslink/.last-hydrated-ref
+.claude/settings.local.json

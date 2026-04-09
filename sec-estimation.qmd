@@ -548,6 +548,20 @@ Svaret blir at gjennomsnittet er 54,9 95% CI [54,6; 55,1], men vær obs, utvalge
 
 Du kan også visualisere konfidensintervaller i jamovi, men dessverre kun når du sammenlikner flere gjennomsnitt. Det skal vi gjøre i @sec-means.
 
+## Standardskår {#sec-standard-scores}
+
+Hittil har alt dreid seg om å beskrive dataene som helhet, men dette delkapittelet dreier seg om å beskrive et enkelt datapunkt i forhold til alle de andre. Dette gjør man ved å regne ut en **standardskår** for hver person.
+
+Det er ofte nødvendig å regne ut en standardskår fordi måleenheten i seg selv ikke sier så mye. Hvis jeg svarte på spørreskjemaet i ICCS-studien, kunne jeg spurt forskerne "Hvor mye var jeg for likestilling?" og de kunne svart "58", men svaret ville ikke vært særlig informativt. Det ville vært mye mer informativt hvis de svarte "Du skåret litt over gjennomsnittet." Det er akkurat dette en standardskår gir deg.
+
+En standardskår (også kalt en _z_-skår) er definert til å være antall standardavvik unna gjennomsnittet:
+
+$$z = \frac{\text{opprinnelig skår} - \text{gjennomsnitt}}{\text{standardavvik}}$$
+
+Hvis gjennomsnittet på _Likestilling_ var 54,8 og standardavviket var 11,5, ville en skår på 58 gitt $z = (58 - 54{,}8) / 11{,}5 = 0{,}28$. Det betyr at skåren ligger 0,28 standardavvik over gjennomsnittet. En skår på $z = -0{,}3$ betyr at personen svarte 0,3 standardavvik under gjennomsnittet.
+
+Standardskårer er spesielt nyttige for å sammenligne verdier på tvers av forskjellige skalaer. Anta at vennen min Bård svarte på et annet spørreskjema om likestilling og fikk skår 4. Verdien min fra ICCS, 58, er overhodet ikke sammenliknbar med verdien hans, 4, fordi skalaene er ulike. Men hvis vi vet at Bård sin standardskår var $z = 3{,}1$ og min var $z = 0{,}28$, kan vi sammenlikne: Bård skåret enormt langt over gjennomsnittet i sin studie, mens jeg skåret litt over i min. Merk at standardskårene kun er sammenliknbare hvis utvalgene er det.
+
 ## Sammendrag
 
 I dette kapittelet har vi vist hvordan man kan estimere populasjonsparametre. Vi har lært om
@@ -556,5 +570,6 @@ I dette kapittelet har vi vist hvordan man kan estimere populasjonsparametre. Vi
 - [Utvalgsfordelinger](sec-sampling-distribution-of-the-mean) og hvordan [sentralgrenseteoremet](#sec-central-limit-theorem) gir oss informasjonen vi trenger om utvalgsfordelingen til gjennomsnittet.
 - [Estimering av populasjonsparametere], spesielt gjennomsnitt og standardavvik.
 - [Estimering av konfidensintervall](sec-estimation-CI), i hvert fall gjennomsnittet sitt.
+- [Standardskår] (_z_-skår) som lar deg plassere enkeltobservasjoner i forhold til gjennomsnittet og sammenligne verdier på tvers av skalaer.
 
 Et viktig tema som ikke er behandlet her, er hvordan man håndterer situasjoner der man ikke har et enkelt tilfeldig utvalg. Det finnes omfattende statistisk teori for slike tilfeller, men dette faller utenfor rammen av denne boken.

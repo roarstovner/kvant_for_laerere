@@ -10,7 +10,7 @@ book:
       chapters:
         - sec-jamovi.qmd
         - sec-descriptive.qmd
-        - sec-diagram.qmd
+        - sec-associations.qmd
     - part: Statistisk teori
       chapters:
         - sec-probability.qmd
