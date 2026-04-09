@@ -7,6 +7,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [Unreleased]
 
 ### Added
+- Add lang: nb for Norwegian quotation marks (#13)
 - Restructure chapters 4-5 from numbers/diagrams to univariate/associations (#3)
 - Reorganize sec-descriptive into 'Describing a Single Variable' with integrated diagrams (#5)
 - Create new sec-associations chapter: 'Describing Associations Between Variables' (#6)
@@ -21,5 +22,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Fixed
 
 ### Changed
+- Use a lua filter to change quotation marks to Norwegian version. (#1)
 - Undergruppeanalyse må flyttes fra sec-descriptive til associations chapter. (#12)
 - Fix small problems in sec-descriptive and sec-diagram (#2)

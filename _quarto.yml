@@ -1,5 +1,6 @@
 filters:
   - diagram
+  - _extensions/pandoc-quotes/pandoc-quotes.lua
 project: 
   type: book
   output-dir: docs
@@ -7,6 +8,7 @@ execute:
   echo: false
   warning: false
   cache: false
+lang: nb
 language: language.yml
 lightbox:
   match: auto
