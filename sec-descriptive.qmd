@@ -11,7 +11,7 @@ source("chapter_header.R")
 
 Hver gang du skal analysere et nytt datasett, må du finne måter å beskrive dataene på en kompakt og lett forståelig måte. Dette kalles **deskriptiv statistikk**, eller beskrivende statistikk. I denne boka er det to kapitler om deskriptiv statistikk, dette kapittelet og det neste. I dette kapittelet beskriver vi én variabel, og i neste kapittel beskriver vi sammenhengen mellom flere variable.
 
-Videre kan man dele inn deskriptiv statistikk i to. For det første kan vi regne ut tall som skal beskrive dataene, for eksempel kan vi regne ut gjennomsnittet. Et slikt tall man regner ut basert på datamaterialet kalles en *observator*, og uttales med samme trykk som "alligator". For det andre kan vi lage et diagram som viser dataene, for eksempel et søylediagram. Diagrammer kan også kalles figurer eller plott. I de neste to kapitlene lærer du om vanlige observatorer og diagrammer man bruker for å beskrive data.
+Videre kan man dele inn deskriptiv statistikk i to. For det første kan vi regne ut tall som skal beskrive dataene, for eksempel kan vi regne ut gjennomsnittet. For det andre kan vi lage et diagram som viser dataene, for eksempel et søylediagram. Diagrammer kan også kalles figurer eller plott. I de neste to kapitlene lærer du om vanlige tall og diagrammer man bruker for å beskrive data.
 
 
 ::: {.callout-warning}
@@ -52,7 +52,7 @@ Nå til dags gjør man all statistikk på en datamaskin, så la oss vise dataene
 knitr::include_graphics("images/fig-descriptive-ICCS-data.png")
 ```
 
-For å få en forståelse av dataene, må vi beskrive dem med observatorer og diagrammer, altså tall og figurer. Vi organiserer kapittelet etter typen variabel vi analyserer: først kategoriske variable (nominelle og ordinale), deretter kontinuerlige variable (intervall- og forholdstallsnivå). De kategoriske variablene er markert med et symbol med tre fargede sirkler i jamovi, og er altså _Land_, _Trinn_, _Kjønn_ og _Forventet utdanning_.
+For å få en forståelse av dataene, må vi beskrive dem med tall og figurer. Vi organiserer kapittelet etter typen variabel vi analyserer: først kategoriske variable (nominelle og ordinale), deretter kontinuerlige variable (intervall- og forholdstallsnivå). De kategoriske variablene er markert med et symbol med tre fargede sirkler i jamovi, og er altså _Land_, _Trinn_, _Kjønn_ og _Forventet utdanning_.
 
 ## Kategoriske variable
 
@@ -96,42 +96,35 @@ Hvis du vil sammenligne stolpediagram mellom undergrupper -- for eksempel sammen
 ### Typetallet {#sec-mode}
 
 ```{r}
-five_first <- head(utvalg, 5)
-kjonn <- five_first |>
+forste_elever <- head(utvalg, 7)
+kjonn <- forste_elever |>
   dplyr::pull(`Kjønn`)
+typetall_kjonn_smaa <- names(which.max(table(droplevels(kjonn))))
+typetall_kjonn_full <- names(which.max(table(droplevels(ICCS$`Kjønn`))))
 ```
 
-Typetallet til en variabel er den verdien som forekommer hyppigst. Typetallet er det eneste sentraltendensmålet som fungerer for nominelle variable -- hverken median eller gjennomsnitt gir mening når verdiene ikke har noen naturlig rekkefølge eller tallverdi. En nominell variabel i ICCS-dataene er _Kjønn_, som har de tre mulige verdiene Jente, Gutt og Annet. Typetallet til _Kjønn_ vil si oss hvilket kjønn det er flest av i dataene. De fem første elevene i datasettet er:
+Typetallet til en variabel er den verdien som forekommer hyppigst. Typetallet er det eneste sentraltendensmålet som fungerer for nominelle variable -- hverken median eller gjennomsnitt gir mening når verdiene ikke har noen naturlig rekkefølge eller tallverdi. En nominell variabel i ICCS-dataene er _Kjønn_, som har de tre mulige verdiene Jente, Gutt og Annet. Typetallet til _Kjønn_ vil si oss hvilket kjønn det er flest av i dataene. De syv første elevene i datasettet er:
 
 > `r kjonn`.
 
-Typetallet til _Kjønn_ for disse 5 elevene er Gutt fordi det var flest av den verdien.
+Typetallet til _Kjønn_ for disse syv elevene er `r typetall_kjonn_smaa` fordi det var flest av den verdien.
 
-For å finne typetallet i hele datasettet må vi telle opp hvor mange det er av Jente, Gutt og Annet. Det gjør vi enklest med en **frekvenstabell**, slik vi laget tidligere i kapittelet. I jamovi trykker vi "Analyses" → "Exploration" → "Descriptives", legger _Kjønn_ i "Variables" og krysser av for "Frequency tables", se @fig-descriptive-jamovi-frequency-table.
-
-```{r}
-#| label: fig-descriptive-jamovi-frequency-table
-#| fig-cap: Et skjermbilde av jamovi som viser frekvenstabell til _Kjønn_.
-#| fig-alt: Et skjermbilde av jamovi som viser frekvenstabell til _Kjønn_.
-#| fig-pos: 'H'
-#| out-width: "100%"
-knitr::include_graphics("images/fig-descriptive-jamovi-frequency-table.png")
-```
-
-Av tabellen ser vi at Gutt er den hyppigste verdien, så typetallet til _Kjønn_ er Gutt.
+For å finne typetallet i hele datasettet lager vi en **frekvenstabell** for _Kjønn_ på samme måte som vi gjorde for _Forventet utdanning_ tidligere i kapittelet (se @fig-descriptive-jamovi-frequency). Frekvenstabellen viser at `r typetall_kjonn_full` er den hyppigste verdien -- med knapp margin -- så typetallet til _Kjønn_ er `r typetall_kjonn_full`. Legg merke til at de syv første elevene ga oss et annet svar enn hele datasettet: med så få observasjoner kan typetallet lett bomme på det vi ville fått av hele datasettet.
 
 Selv om typetallet er det eneste sentraltendensmålet som fungerer for nominelle variable, kan det også være nyttig å vite typetallet til en ordinal-, intervall- eller forholdstallsvariabel. For eksempel, hvis vi tenker oss tilbake til frekvenstabellen for _Forventet utdanning_ i @fig-descriptive-jamovi-frequency, så var _Høyere utdanning_ den hyppigste verdien. Typetallet til _Forventet utdanning_ er altså _Høyere utdanning_.
 
 ### Medianen for ordinale data {#sec-descriptive-median-ordinal}
 
 ```{r}
-forventet_utdanning <- five_first |>
+forventet_utdanning <- forste_elever |>
   dplyr::pull(`Forventet utdanning`)
+n_smaa <- length(forventet_utdanning)
+midten <- (n_smaa + 1) / 2
 ```
 
 For ordinale data kan vi i tillegg bruke **medianen**. Medianen er middelverdien når observasjonene er sortert i rekkefølge. Den fungerer når verdiene har en naturlig orden, selv uten tallverdier.
 
-La oss se på _Forventet utdanning_ for de fem første elevene i utvalget:
+La oss se på _Forventet utdanning_ for de `r n_smaa` første elevene i utvalget:
 
 > `r forventet_utdanning`.
 
@@ -139,13 +132,13 @@ Sorterer vi dem i rekkefølge får vi:
 
 > `r sort(forventet_utdanning)`.
 
-Middelverdien er `r sort(forventet_utdanning)[3]`, og det er altså medianen til _Forventet utdanning_ for disse fem elevene.
+Middelverdien er `r sort(forventet_utdanning)[midten]`, og det er altså medianen til _Forventet utdanning_ for disse `r n_smaa` elevene.
 
 Vi kommer tilbake til medianen i @sec-descriptive-median, der vi bruker den på tallvariable og ser hvordan den står seg mot gjennomsnittet.
 
-## Intermezzo: Variabelen _Likestilling_
+## Kontinuerlige variable
 
-I resten av kapittelet skal vi fokusere på variabelen _Likestilling_. Som du kanskje oppfattet fra @sec-measurement bør man først spørre seg hva variabelen egentlig måler. Dette er viktig nok til at vi bruker litt tid på det.
+Nå beveger vi oss over til tallvariable, altså data på intervall- eller forholdstallsnivå. For slike variable beskriver vi dataene med figurer (histogrammer, boksplott) og tall (sentraltendensmål og spredningsmål). I resten av kapittelet skal vi fokusere på variabelen _Likestilling_ fra ICCS-dataene. Som du kanskje oppfattet fra @sec-measurement bør man først spørre seg hva variabelen egentlig måler. Dette er viktig nok til at vi bruker litt tid på det.
 
 Jeg fant frem i dokumentasjonen til ICCS 2022 [@fraillon2024] at _Likestilling_  er en samlevariabel satt sammen av følgende Likert-spørsmål:
 
@@ -158,7 +151,13 @@ Jeg fant frem i dokumentasjonen til ICCS 2022 [@fraillon2024] at _Likestilling_ 
 
 Alle spørsmålene virker jo å måle likestilling på en fin måte, men i Norge virker konstruktet litt tamt. Jeg tipper jo at alle vil være enige i disse spørsmålene. I Norge ville man kanskje stilt spørsmål som det er uenighet om, slik som kjønnskvotering til høyere utdanning eller fordeling av foreldrepermisjon, men det hadde sikkert ikke vært så relevant i de andre landene der ICCS avholdes. Og kanskje har ikke ungdomsskoleelever gjort seg opp en mening om foreldrepermisjon, slår det meg!
 
-La oss se et diagram av variabelen før vi går videre, slik at vi skjønner hva det er vi skal beskrive, se @fig-diagram-ICCS-histogram.
+Vi starter beskrivelsen med histogrammer, slik at du ser hva du prøver å beskrive med tallene som følger.
+
+### Histogrammer {#sec-histogram}
+
+**Histogrammer** er blant de mest grunnleggende og nyttige måtene å visualisere data på. De fungerer best når du har tallvariable, altså data på intervall- eller forholdstallsnivå slik som variabelen _Likestilling_ fra ICCS-dataene, og ønsker å få et overordnet inntrykk. De fleste kjenner nok til histogrammer, siden de brukes så ofte, men la meg likevel forklare hvordan de fungerer.
+
+Prinsippet er enkelt: Du deler opp de mulige verdiene i intervaller og teller hvor mange observasjoner som faller innenfor hvert intervall. Denne tellingen kalles frekvensen eller tettheten til intervallet og vises som en vertikal stolpe. Jeg tror noe av grunnen til at de oppfattes som så enkle er at de minner om stolpediagrammer. @fig-diagram-ICCS-histogram viser et histogram av _Likestilling_. Vi ser at de fleste svarer veldig høyt, men at en betydelig andel svarer mye lavere. Stolpen helt til høyre representerer for eksempel rundt 4000 elever som fikk max poengsum; det kan du lese av på $y$-aksen.
 
 ```{r}
 #| label: fig-diagram-ICCS-histogram
@@ -169,18 +168,6 @@ source("R/jamovi-histogram.R")
 ICCS |>
   jamovi_histogram(Likestilling, 16)
 ```
-
-Vi ser at de fleste svarer veldig høyt på _Likestilling_, men at en betydelig andel svarer mye lavere.
-
-## Kontinuerlige variable
-
-Nå beveger vi oss over til tallvariable, altså data på intervall- eller forholdstallsnivå. For slike variable beskriver vi dataene med figurer (histogrammer, boksplott) og tall (sentraltendensmål og spredningsmål). Vi starter med histogrammer, slik at du ser hva du prøver å beskrive med tallene som følger.
-
-### Histogrammer {#sec-histogram}
-
-**Histogrammer** er blant de mest grunnleggende og nyttige måtene å visualisere data på. De fungerer best når du har tallvariable, altså data på intervall- eller forholdstallsnivå slik som variabelen _Likestilling_ fra ICCS-dataene, og ønsker å få et overordnet inntrykk. De fleste kjenner nok til histogrammer, siden de brukes så ofte, men la meg likevel forklare hvordan de fungerer.
-
-Prinsippet er enkelt: Du deler opp de mulige verdiene i **intervaller** og teller hvor mange observasjoner som faller innenfor hvert intervall. Denne tellingen kalles frekvensen eller tettheten til intervallet og vises som en vertikal stolpe. Jeg tror noe av grunnen til at de oppfattes som så enkle er at de minner om stolpediagrammer. For variabelen _Likestilling_ finner vi for eksempel rundt 4000 elever som fikk max poengsum, noe som representeres av høyden på den høyre stolpen i histogrammet vi så i Intermezzoen (@fig-diagram-ICCS-histogram).
 
 For å lage dette histogrammet i jamovi trykker vi "Analyses" → "Exploration" → "Descriptives" og velger "Plots" og "Histogram", se @fig-diagram-jamovi-ICCS-histogram.
 
@@ -225,21 +212,24 @@ Det finnes ingen fasit for antall stolper. Prøv flere alternativer og velg det 
 #### Gjennomsnittet
 
 ```{r}
-five_first <- head(utvalg, 5)
-likestilling <- five_first |>
+likestilling <- forste_elever |>
   dplyr::pull(Likestilling)
 likestilling <- sprintf("%.1f", likestilling) |>
   as.numeric()
+lik_sum <- sum(likestilling)
+lik_n <- length(likestilling)
+lik_mean <- round(lik_sum / lik_n, 2)
+lik_sum_str <- paste(likestilling, collapse = " + ")
 ```
 
 
-**Gjennomsnittet** er det vanlige gjennomsnittet du kjenner fra før. Du legger sammen alle verdiene og deler på antall verdier. De første fem verdiene på _Likestilling_ i @tbl-ICCS-data var
+**Gjennomsnittet** er det vanlige gjennomsnittet du kjenner fra før. Du legger sammen alle verdiene og deler på antall verdier. De første `r lik_n` verdiene på _Likestilling_ i @tbl-ICCS-data var
 
 > `r likestilling`,
 
 så gjennomsnittet blir:
 
-$$\frac{42.6 + 62.9 + 52.7 + 37.6 + 42.6}{5} = \frac{238.4}{5} = 47.68$$
+$$\frac{`r lik_sum_str`}{`r lik_n`} = \frac{`r lik_sum`}{`r lik_n`} = `r lik_mean`$$
 
 Dette er selvsagt ikke noe nytt for deg, siden du allerede er godt kjent med gjennomsnitt.
 
@@ -274,7 +264,7 @@ Hvordan skal man regne gjennomsnittet av dette? Det går ikke an, for man kan ik
 
 #### Medianen {#sec-descriptive-median}
 
-Du møtte **medianen** kort under ordinale data i @sec-descriptive-median-ordinal: middelverdien i sorterte observasjoner. For tallvariable regner vi den på akkurat samme måte. Hvis vi tar de fem første verdiene av _Likestilling_ fra @tbl-ICCS-data igjen, får vi
+Du møtte **medianen** kort under ordinale data i @sec-descriptive-median-ordinal: middelverdien i sorterte observasjoner. For tallvariable regner vi den på akkurat samme måte. Hvis vi tar de `r lik_n` første verdiene av _Likestilling_ fra @tbl-ICCS-data igjen, får vi
 
 > `r paste(likestilling, sep = "   ")`.
 
@@ -282,7 +272,7 @@ For å finne medianen sorterer vi disse tallene i stigende rekkefølge:
 
 > `r paste(sort(likestilling), sep = "   ")`.
 
-Da ser vi at `r sort(likestilling)[3]` står i midten, så `r sort(likestilling)[3]` er medianen.
+Da ser vi at `r sort(likestilling)[(lik_n + 1) / 2]` står i midten, så `r sort(likestilling)[(lik_n + 1) / 2]` er medianen.
 
 Av og til er det ingen verdier i midten, for eksempel her:
 
@@ -334,7 +324,7 @@ Dette illustreres også i @fig-descriptive-weight, hvor du kan se at når histog
 knitr::include_graphics("images/fig-descriptive-weight.png")
 ```
 
-Valget mellom gjennomsnitt og median er viktig når dataene har en hale som trekker opp eller ned gjennomsnittet. Et eksempel er at USA har høyere gjennomsnittsinntekt enn Norge, men lavere medianinntekt. Årsaken er at USA har flere superrikinger som trekker opp gjennomsnittet på samme måte som Erling Braut Haaland gjorde i eksempelet. Men den vanlige lønnstager sin inntekt er mer lik medianinntekten, og en vanlig lønnstager tjener mer i Norge.
+Valget mellom gjennomsnitt og median er viktig når dataene har en hale som trekker opp eller ned gjennomsnittet. Slike fordelinger med en lang hale på én side kalles **skjeve**, og du vil møte begrepet i forskningsartikler. Et eksempel er at USA har høyere gjennomsnittsinntekt enn Norge, men lavere medianinntekt. Årsaken er at USA har flere superrikinger som trekker opp gjennomsnittet på samme måte som Erling Braut Haaland gjorde i eksempelet. Men den vanlige lønnstager sin inntekt er mer lik medianinntekten, og en vanlig lønnstager tjener mer i Norge.
 
 ### Spredningsmål {#sec-descriptive-dispersion}
 
@@ -407,32 +397,7 @@ Standardavviket er uttrykt i de samme enhetene som de opprinnelige dataene, noe 
 
 Standardavviket bygger på **variansen**, som er gjennomsnittlig _kvadratisk_ avvik fra gjennomsnittet. Variansen er vanskelig å tolke direkte fordi den bruker kvadrerte enheter -- fra jamovi ser vi at variansen til _Likestilling_ er 133 "kvadratlikestillingspoeng", noe som gir lite mening. Standardavviket løser dette ved å ta kvadratroten av variansen, og dermed komme tilbake til de opprinnelige enhetene. Du vil sjelden se variansen rapportert direkte, men den er grunnlaget for mange statistiske metoder og dukker opp igjen i senere kapitler.
 
-En vanlig tommelfingerregel er at 68% av dataene faller innenfor 1 standardavvik fra gjennomsnittet og 95% innenfor 2 standardavvik. Denne regelen passer godt hvis histogrammet er symmetrisk og "klokkeformet", men kan være svært misvisende ellers. @fig-descriptive-sd-ICCS viser dette tydelig for de ekte ICCS-dataene.
-
-```{r}
-#| include: FALSE
-
-breaks <- c(-Inf, seq(likestilling_mean - 2*likestilling_sd, likestilling_mean + 2*likestilling_sd, likestilling_sd),Inf)
-category <- cut(ICCS$Likestilling, breaks)
-levels <- c(">2sd", "<2sd", "<1sd")
-levels(category) <- c(levels[1:3],levels[3:1])
-rule_of_thumb <- category |> table() |> prop.table() |> rev() |> cumsum()
-rule_of_thumb <- sprintf("%1.0f%%", rule_of_thumb*100)
-
-```
-
-```{r out.width="100%"}
-#| label: fig-descriptive-sd-ICCS
-#| classes: .enlarge-image
-#| fig-cap: Den faktiske variabelen _Likestilling_ fra ICCS-dataene med ett og to standardavvik markert. Denne variabelen er overhodet ikke normalfordelt, så tommelfingerregelen gjelder ikke -- `r rule_of_thumb[1]` av verdiene er innenfor ett standardavvik og `r rule_of_thumb[2]` innenfor to.
-#| fig-width: 8.571429
-
-source("R/two-sd-histogram.R")
-two_sd_histogram(ICCS$Likestilling, 10, 100, x_label = "Likestilling")
-
-```
-
-La dette være en advarsel mot å kun basere seg på sentraltendens og spredningsmål: figurer gir ofte et bedre bilde enn tallene alene.
+Husk likevel at standardavviket sammenfatter spredningen i ett enkelt tall og sier ingenting om _formen_ på fordelingen. To variable kan ha samme standardavvik selv om histogrammene deres ser helt forskjellige ut. La derfor dette være en advarsel mot å kun basere seg på sentraltendens og spredningsmål: figurer gir ofte et bedre bilde enn tallene alene.
 
 Når man rapporterer standardavviket i en forskningsartikkel gjøres det gjerne slik:
 
@@ -470,46 +435,6 @@ Den tykke linjen midt i boksen viser medianen. Av og til er det en firkantet sto
 I våre _Likestilling_-data er det ingen observasjoner som faller utenfor normalområdet, så det er ingen avviksverdier og derfor ingen prikker. En annen spesiell egenskap ved plottet er at det ikke er noen strek som går oppover. Grunnen til det er at det er ingen verdier som er høyere enn 75. persentil fordi det var så mange elever som fikk toppskår på _Likestilling_.
 
 Boksplottet kommer virkelig til sin rett når man sammenlikner undergrupper, slik du ser i @sec-associations-subgroup.
-
-## Skjevhet
-
-Skjevhet er et mål på asymmetri. En variabel er symmetrisk hvis høyre og venstre side av histogrammet er speilbilder av hverandre. Vi sier at variabelen er **negativt skjev** (venstreskjev) hvis den har en lengre hale til venstre, og **positivt skjev** (høyreskjev) hvis den har en lengre hale til høyre. @fig-descriptive-skew viser de tre tilfellene.
-
-```{r out.width="100%"}
-#| label: fig-descriptive-skew
-#| classes: .enlarge-image
-#| fig-cap: En illustrasjon av skjevhet. Til venstre har vi et negativt skjevt datasett, i midten har vi et datasett uten skjevhet, og til høyre har vi et positivt skjevt datasett
-#| fig-alt: Tre stolpediagram demonstrerer henholdsvis negativ skjevhet, ingen skjevhet og positiv skjevhet. Diagrammet til venstre viser en lengre hale til venstre, det midterste diagrammet er symmetrisk, og diagrammet til høyre viser en lengre hale til høyre
-#| fig-width: 8.571429
-
-x1 <- tidyr::as_tibble(rbeta(n = 100000, shape1= 10, shape2 = 2))
-x2 <- tidyr::as_tibble(rbeta(n = 100000, shape1= 10, shape2 = 10))
-x3 <- tidyr::as_tibble(rbeta(n = 100000, shape1= 2, shape2 = 10))
-X <- list(x1,x2,x3)
-X_labels <- c(
-  "Negativ skjevhet\nVenstreskjev fordeling",
-  "Ingen skjevhet\nSymmetrisk fordeling",
-  "Positiv skjevhet\nHøyreskjev fordeling")
-skewplots <- lapply(1:3, function(i) {
-  ggplot(X[[i]], aes(x=value)) +
-    geom_histogram(binwidth=0.04, col="white", fill=blueshade, alpha=0.6) +
-    ggtitle(X_labels[[i]]) +
-    theme(
-        axis.title.x = element_blank(),
-        axis.line.x = element_blank(),
-        axis.text.x = element_blank(),
-        axis.ticks.x = element_blank(),
-        axis.title.y = element_blank(),
-        axis.text.y = element_blank(),
-        axis.ticks.y = element_blank(),
-        axis.line.y = element_blank(),
-        plot.title = element_text(hjust = 0.5, size = rel(1))) #fra 0.6
-  })
-library(patchwork)
-skewplots[[1]] + skewplots[[2]] + skewplots[[3]]
-```
-
-Skjevhet har en praktisk konsekvens for valget mellom gjennomsnitt og median. Hvis dataene er skjeve, vil gjennomsnittet bli trukket mot den lange halen, mens medianen forblir nær "hovedvekten" av dataene. Derfor er medianen ofte et bedre valg for skjeve data, slik vi diskuterte i @sec-descriptive-mean-or-median.
 
 ## Profesjonelle grafer
 
@@ -558,4 +483,3 @@ Vi har dekket disse temaene:
 -   **Mål for sentraltendens**: [Gjennomsnittet][Sentraltendensmål] og [medianen][Sentraltendensmål] forteller deg hvor dataene dine har sin "kjerne". Bruk medianen hvis dataene er skjeve; bruk gjennomsnittet ellers.
 -   **Mål for spredning**: [Spredningsmål] viser deg hvor "spredt" dataene dine er. De viktigste målene er kvartilbredde og standardavvik, mens varians spiller en nøkkelrolle i videre statistikk.
 -   **Boksplott**: [Boksplott] er en kompakt måte å visualisere spredning og sentraltendens, spesielt nyttig for å sammenligne undergrupper.
--   **Skjevhet**: [Skjevhet] måler om variabelen er symmetrisk fordelt, og påvirker valget mellom gjennomsnitt og median.

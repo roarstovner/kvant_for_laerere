@@ -21,6 +21,8 @@ Ideen er ganske enkel. La oss si at vi snakker om IQ-skårer. For utdanningsfors
 ^[Ja, IQ-tester blir normert (altså regnet om) slik at dette stemmer.]
 Disse verdiene omtales som **populasjonsparametre** fordi de er kjennetegn ved populasjonen. Det vil si at populasjonsgjennomsnittet $\mu$ er 100 og populasjonsstandardavviket $\sigma$ er 15.
 
+Når en variabel er normalfordelt gjelder en nyttig tommelfingerregel: rundt 68 % av verdiene ligger innenfor ett standardavvik fra gjennomsnittet, og rundt 95 % innenfor to. For IQ vil det si at omtrent 68 % har en skår mellom 85 og 115, og omtrent 95 % mellom 70 og 130. Merk at regelen kun gjelder for normalfordelte variable -- for fordelinger med andre former, slik som _Likestilling_ i @fig-diagram-ICCS-histogram, kan den være svært misvisende.
+
 ```{r out.width="100%"}
 #| label: fig-estimation-IQ
 #| fig-cap: Populasjonsfordelingen av IQ-skårer (panel (a)) og to utvalg trukket tilfeldig fra den. I panel (b) har vi et utvalg på 100 observasjoner, og i panel (c) har vi et utvalg på 10 000 observasjoner
