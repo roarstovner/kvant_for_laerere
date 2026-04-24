@@ -22,6 +22,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Fixed
 
 ### Changed
+- Utvid ICCS-datasettet: fire land (Norge, Spania, Polen, Brasil), sivilkunnskap fra plausible values, nye skalaer (S_OPDISC, S_CITCON, S_POLPART) og nye kategoriske variable (IS4G10 bøker hjemme, S_IMMIG innvandringsstatus, S_SINT elevinteresse). N≈16 500. Legg til `ICCS.omv` som primærformat for jamovi (bevarer ordinale nivåer og etiketter). Reproduksjoner som avhenger av `data_and_tables/ICCS.*` må kjøres på nytt. (#21)
 - sec-descriptive: utvid skjevhet-seksjonen med praktisk veiledning eller kutt (#16)
 - sec-descriptive: stram inn typetall-seksjonen, fjern duplikat figur (#15)
 - sec-descriptive: fjern duplikat jamovi-prosedyre for frekvenstabell i typetall-seksjon (#14)
