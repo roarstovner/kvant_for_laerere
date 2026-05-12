@@ -50,6 +50,21 @@ Forhåpentligvis klarer vi å bake inn den siste "Section" i de andre kapitlene.
 - Gi brukeren et BibTeX-utdrag som kan importeres fra utklippstavlen til Zotero-samlingen som genererer refs.bib. Ikke ha med Citation Key i denne, BetterBibtex lager den.
 - Aldri legg til in-text referanser uten å bruke @authorYYYY fra refs.bib.
 
+# Jamovi-instruksjoner
+
+Hovedteksten skal være konseptuell og forklare hva og hvorfor, ikke hvor man klikker. Klikkinstruksjoner legges i sammenklappede callouts:
+
+```
+::: {.callout-tip collapse="true" title="I jamovi: <kort beskrivelse>"}
+Analyses → Exploration → Descriptives. ...
+:::
+```
+
+- Bruk konsekvent tittelformatet `I jamovi: <kort beskrivelse>` (f.eks. "I jamovi: lage et histogram").
+- `collapse="true"` gjør at de er sammenklappet i HTML.
+- Ikke krysshenvis til figurer eller andre seksjoner inni callouten -- den skal være selvstendig.
+- Grunnleggende jamovi-navigasjon (Analyses-knappen, Variables-boksen, layout) forutsettes kjent fra et eget jamovi-grunnlagskapittel før deskriptiv statistikk. Senere callouts trenger derfor ikke forklare grunnleggende UI-mønstre.
+
 # Figurer
 
 Defaults fra header.R: `fig.width = 6`, `fig.asp = 0.618`, `out.width = 80%` (HTML) / `100%` (LaTeX). Se https://arelbundock.com/posts/quarto_figures/index.html
