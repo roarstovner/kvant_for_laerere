@@ -27,7 +27,7 @@ ICCS <- readRDS("data_and_tables/ICCS.RDS")
 n_elever <- nrow(ICCS)
 ```
 
-Rå data er sjelden informative i seg selv. Jeg har forberedt et lite datasett fra den store internasjonale undersøkelsen ICCS, International Civic and Citizenship Education Study. Dette datasettet inneholder variable for kjønn, skole, land, trinn, forventet høyeste fullførte utdanning og en samlevariabel for hvor enig man er i at kjønnene bør ha like rettigheter. Datasettet har `r n_elever` rader, én rad for hver elev, men vi viser bare 50 rader. Se i @tbl-ICCS-data for å se hva dataene viser.
+Rå data er sjelden informative i seg selv. Jeg har forberedt et lite datasett fra den store internasjonale undersøkelsen ICCS, International Civic and Citizenship Education Study. Dette datasettet inneholder variable for kjønn, skole, land, forventet høyeste fullførte utdanning og en samlevariabel for hvor enig man er i at kjønnene bør ha like rettigheter. Datasettet har `r n_elever` rader, én rad for hver elev, men vi viser bare 50 rader. Se i @tbl-ICCS-data for å se hva dataene viser.
 
 ```{r}
 #| label: tbl-ICCS-data
@@ -36,8 +36,11 @@ set.seed(123)
 utvalg <- ICCS |>
   slice_sample(n = 50)
 utvalg |>
+  select(`Skole-ID`, Land, Kjønn, `Forventet utdanning`, Likestilling) |>
   tt() |>
-  theme_tt("spacing")
+  format_tt(j = "Likestilling", digits = 1, num_fmt = "decimal") |>
+  theme_tt("spacing") |>
+  style_tt(i = 0, bold = TRUE)
 ```
 
 Nå, ble du noe klokere? Jeg tipper du ikke ble noe klokere, og at du lengter etter å få dataene omarbeidet og presentert på en eller annen måte. Det er det som kalles deskriptiv statistikk -- å gjøre rå data om til tall og figurer som gir innsikt.
@@ -62,43 +65,68 @@ Hvis du titter på *Forventet utdanning* i @fig-descriptive-ICCS-data vil du se 
 
 En av de mest grunnleggende oppgavene innen dataanalyse er å telle opp hvor mange du har av de ulike verdiene for nominelle og ordinale variable. For variabelen *Forventet utdanning* vil dette si å telle opp hvor mange som ser for seg å ta høyere utdanning, en kort utdanning, kun VGS eller kanskje stoppe etter ungdomsskolen. Siden et slikt antall kalles en *frekvens* kalles tabellen der man viser opptellingen for en **frekvenstabell**. 
 
-Frekvenstabellen vises i @fig-descriptive-jamovi-frequency. Denne laget jeg i statistikkprogrammet jamovi. Jeg trykket først på "Analyses", deretter på "Exploration" og "Descriptives. I menyen som dukker opp er det en avkryssingsboks som heter "Frequency tables", se @fig-descriptive-jamovi-frequency. Jeg lastet inn _Forventet utdanning_ i "Variables" og krysser av for "Frequency tables".
+Frekvenstabellen vises i @tbl-descriptive-frequency.
+
+::: {.callout-tip collapse="true" title="I jamovi: lage en frekvenstabell"}
+Analyses → Exploration → Descriptives. Legg _Forventet utdanning_ i "Variables" og kryss av for "Frequency tables".
+:::
 
 ```{r}
-#| label: fig-descriptive-jamovi-frequency
-#| fig-cap: Frekvenstabell for _Forventet utdanning_
-#| out-width: "100%"
+#| label: tbl-descriptive-frequency
+#| tbl-cap: Frekvenstabell for _Forventet utdanning_
 
-knitr::include_graphics("images/fig-descriptive-jamovi-frequency.png")
+ICCS |>
+  dplyr::filter(!is.na(`Forventet utdanning`)) |>
+  dplyr::count(`Forventet utdanning`, name = "Antall") |>
+  dplyr::mutate(
+    Prosent = Antall / sum(Antall) * 100,
+    `Kumulativ prosent` = cumsum(Prosent)
+  ) |>
+  tt() |>
+  format_tt(j = c("Prosent", "Kumulativ prosent"), digits = 1, num_fmt = "decimal") |>
+  theme_tt("spacing") |>
+  style_tt(i = 0, bold = TRUE)
 ```
 
 ```{r}
-andel_hoy_kort <- ICCS |>
+andel_ingen_utdanning <- ICCS |>
   dplyr::filter(!is.na(`Forventet utdanning`)) |>
-  dplyr::summarise(p = mean(`Forventet utdanning` %in% c("Høyere utdanning", "Kort utdanning")) * 100) |>
+  dplyr::summarise(p = mean(`Forventet utdanning` %in% c("Ungdomsskole", "VGS")) * 100) |>
   dplyr::pull(p) |>
   round(1)
 ```
 
-Frekvenstabellen er til høyre i figuren. De viser en opptelling av _Forventet utdanning_-variabelen. Radene svarer til ulike verdier av _Forventet utdanning_. I "Counts"-kolonnen finner du hvor mange det var av hver verdi, altså frekvensen. I tillegg har tabellen litt ekstra snadder. Kolonnen "% of Total" viser hvor mange prosent av totalen dette antallet utgjør. I "Cumulative %" summerer man de foregående prosentene. Slik ser man at `r andel_hoy_kort` % av elevene skal ha "Høyere utdanning" eller "Kort utdanning".
+Tabellen viser en opptelling av _Forventet utdanning_-variabelen. Radene svarer til ulike verdier av _Forventet utdanning_. I _Antall_-kolonnen finner du hvor mange det var av hver verdi, altså frekvensen. I tillegg har tabellen litt ekstra snadder. Kolonnen _Prosent_ viser hvor mange prosent av totalen dette antallet utgjør. I _Kumulativ prosent_ summerer man de foregående prosentene. Slik ser man at `r andel_ingen_utdanning` % av elevene skal ha "Høyere utdanning" eller "Kort utdanning".
 
 Stort mer er det ikke å si om frekvenstabeller. Annet enn hvordan man lager et diagram for å illustrere.
 
 ### Stolpediagram {#sec-diagram-bar}
 
-Frekvenstabeller er enkle å lage og lese, men ofte er en visualisering enda mer slående. For nominelle og ordinale data er **stolpediagrammet** den vanligste visualiseringen. 
+Frekvenstabeller er enkle å lage og lese, men ofte er en visualisering enda mer slående. For nominelle og ordinale data er **stolpediagrammet** den vanligste visualiseringen. Et stolpediagram for _Forventet utdanning_ vises i @fig-diagram-jamovi-bar. Siden _Forventet utdanning_ er en ordinal variabel, er stolpene sortert i riktig rekkefølge.
 
-For å tegne et stolpediagram i jamovi trykker du på det samme som for frekvenstabellen, "Analyses" → "Exploration" → "Descriptives", akkurat som for frekvenstabellen. Nå, derimot, må du trykke på "Plots" og krysse av for "Bar plot". I figuren har vi lagt til "Forventet utdanning" i variabelvinduet. Voilá, et flott stolpediagram. Siden "Forventet utdanning" er en ordinal variabel er stolpene tilogmed sortert i riktig rekkefølge.
+::: {.callout-tip collapse="true" title="I jamovi: lage et stolpediagram"}
+Analyses → Exploration → Descriptives. Legg variabelen i "Variables", åpne "Plots" og kryss av for "Bar plot".
+:::
 
 ```{r}
 #| label: fig-diagram-jamovi-bar
-#| fig-cap: Et stolpediagram over "Forventet utdanning" i jamovi.
-knitr::include_graphics("images/fig-diagram-jamovi-bar.png")
+#| fig-cap: Et stolpediagram over _Forventet utdanning_. Venstre y-akse viser antall elever (Counts), høyre y-akse viser samme stolper avlest som andel i prosent (Percentages).
+#| fig-alt: Et stolpediagram med fire blå stolper for hver verdi av Forventet utdanning. Venstre y-akse er merket Counts og viser antall elever; høyre y-akse er merket Percentages og viser samme informasjon i prosent.
+
+source("R/jamovi-bar.R")
+ICCS |>
+  jamovi_bar(`Forventet utdanning`, dual_axis = TRUE)
 ```
 
-Som du ser av figuren er den langt fra optimal -- navnene på verdiene er så vide at de overlapper hverandre og blir uleselige! I jamovi er det ingen enkel måte å endre dette på. Det kanskje enkleste er å gå på "Variables" → "Edit" og skrive inn kortere navn på verdiene, for eksempel "Hø.Utd." i stedet for "Høyere utdanning". Der ser du med en gang at å lage figurer i jamovi er enkelt, men at å gjøre tilpasninger kan være klønete.
+Figuren har to y-akser med vilje. Venstre akse er den jamovi gir deg som default: antall elever (_Counts_), altså frekvensen fra _Antall_-kolonnen i frekvenstabellen. Høyre akse viser nøyaktig de samme stolpene, men avlest som andel i prosent (_Percentages_) -- de samme tallene som står i _Prosent_-kolonnen i @tbl-descriptive-frequency.
 
-Hvis du vil sammenligne stolpediagram mellom undergrupper -- for eksempel sammenligne forventet utdanning mellom land -- kan du bruke "Split by" i jamovi. Du lærer mer om slike undergruppeanalyser i neste kapittel, @sec-associations.
+Hvorfor vise begge? For én variabel er det egentlig samme bilde lest på to måter, men de to lesemåtene blir viktige når vi senere skal sammenligne grupper av ulik størrelse. Antallet er da misvisende: gruppen med flest elever vil få høyest stolpe uansett hva andelene er. Andelen gjør stolpene sammenliknbare på tvers av grupper og datasett av ulik størrelse, og er som regel det vi egentlig vil ha. Vi kommer tilbake til dette poenget i @sec-associations-stacked-bar.
+
+::: {.callout-tip collapse="true" title="I jamovi: stolpediagram med y-aksen i prosent"}
+Descriptives gir kun y-aksen i antall. For prosent-aksen: Analyses → Frequencies → N Outcomes -- $\chi^2$ goodness of fit. Legg variabelen i "Variable", åpne "Plots", kryss av for "Bar plot" og velg "Y-axis: Percentages". Jamovi viser én akse av gangen, ikke begge slik figuren over gjør.
+:::
+
+Hvis du vil sammenligne stolpediagram mellom undergrupper -- for eksempel sammenligne forventet utdanning mellom land -- kan du dele opp dataene i jamovi. Du lærer mer om slike undergruppeanalyser i neste kapittel, @sec-associations.
 
 ### Typetallet {#sec-mode}
 
@@ -116,9 +144,9 @@ Typetallet til en variabel er den verdien som forekommer hyppigst. Typetallet er
 
 Typetallet til _Kjønn_ for disse syv elevene er `r typetall_kjonn_smaa` fordi det var flest av den verdien.
 
-For å finne typetallet i hele datasettet lager vi en **frekvenstabell** for _Kjønn_ på samme måte som vi gjorde for _Forventet utdanning_ tidligere i kapittelet (se @fig-descriptive-jamovi-frequency). Frekvenstabellen viser at `r typetall_kjonn_full` er den hyppigste verdien -- med knapp margin -- så typetallet til _Kjønn_ er `r typetall_kjonn_full`. Legg merke til at de syv første elevene ga oss et annet svar enn hele datasettet: med så få observasjoner kan typetallet lett bomme på det vi ville fått av hele datasettet.
+For å finne typetallet i hele datasettet lager vi en **frekvenstabell** for _Kjønn_ på samme måte som vi gjorde for _Forventet utdanning_ tidligere i kapittelet (se @tbl-descriptive-frequency). Frekvenstabellen viser at `r typetall_kjonn_full` er den hyppigste verdien -- med knapp margin -- så typetallet til _Kjønn_ er `r typetall_kjonn_full`. Legg merke til at de syv første elevene ga oss et annet svar enn hele datasettet: med så få observasjoner kan typetallet lett bomme på det vi ville fått av hele datasettet.
 
-Selv om typetallet er det eneste sentraltendensmålet som fungerer for nominelle variable, kan det også være nyttig å vite typetallet til en ordinal-, intervall- eller forholdstallsvariabel. For eksempel, hvis vi tenker oss tilbake til frekvenstabellen for _Forventet utdanning_ i @fig-descriptive-jamovi-frequency, så var _Høyere utdanning_ den hyppigste verdien. Typetallet til _Forventet utdanning_ er altså _Høyere utdanning_.
+Selv om typetallet er det eneste sentraltendensmålet som fungerer for nominelle variable, kan det også være nyttig å vite typetallet til en ordinal-, intervall- eller forholdstallsvariabel. For eksempel, hvis vi tenker oss tilbake til frekvenstabellen for _Forventet utdanning_ i @tbl-descriptive-frequency, så var _Høyere utdanning_ den hyppigste verdien. Typetallet til _Forventet utdanning_ er altså _Høyere utdanning_.
 
 ### Medianen for ordinale data {#sec-descriptive-median-ordinal}
 
@@ -141,13 +169,19 @@ Sorterer vi dem i rekkefølge får vi:
 
 Middelverdien er `r sort(forventet_utdanning)[midten]`, og det er altså medianen til _Forventet utdanning_ for disse `r n_smaa` elevene.
 
-Vi kommer tilbake til medianen i @sec-descriptive-median, der vi bruker den på tallvariable og ser hvordan den står seg mot gjennomsnittet.
+For tallvariable regner vi medianen på akkurat samme måte: sorter, og finn middelverdien. Av og til er det ingen verdier helt i midten, for eksempel her:
 
-## Kontinuerlige variable
+> 1, 3, 5, 6, 10, 15
+
+Her er både 5 og 6 like nære midten. Da er medianen definert til å være gjennomsnittet av disse to verdiene, altså 5,5.
+
+Vi kommer tilbake til medianen i @sec-descriptive-mean-or-median, der vi ser hvordan den står seg mot gjennomsnittet.
+
+## Tallvariable
 
 Nå beveger vi oss over til tallvariable, altså data på intervall- eller forholdstallsnivå. For slike variable beskriver vi dataene med figurer (histogrammer, boksplott) og tall (sentraltendensmål og spredningsmål). I resten av kapittelet skal vi fokusere på variabelen _Likestilling_ fra ICCS-dataene. Som du kanskje oppfattet fra @sec-measurement bør man først spørre seg hva variabelen egentlig måler. Dette er viktig nok til at vi bruker litt tid på det.
 
-Jeg fant frem i dokumentasjonen til ICCS 2022 [@fraillon2024] at _Likestilling_  er en samlevariabel satt sammen av følgende Likert-spørsmål:
+Jeg fant frem i dokumentasjonen til ICCS 2022 [@fraillon2024] at _Likestilling_  er en samlevariabel satt sammen av følgende Likert-påstander:
 
 - Men and women should have equal opportunities to take part in government.
 - Men and women should have the same rights in every way.
@@ -156,7 +190,7 @@ Jeg fant frem i dokumentasjonen til ICCS 2022 [@fraillon2024] at _Likestilling_ 
 - Men and women should get equal pay when they are doing the same jobs.
 - Men are better qualified to be political leaders than women.
 
-Alle spørsmålene virker jo å måle likestilling på en fin måte, men i Norge virker konstruktet litt tamt. Jeg tipper jo at alle vil være enige i disse spørsmålene. I Norge ville man kanskje stilt spørsmål som det er uenighet om, slik som kjønnskvotering til høyere utdanning eller fordeling av foreldrepermisjon, men det hadde sikkert ikke vært så relevant i de andre landene der ICCS avholdes. Og kanskje har ikke ungdomsskoleelever gjort seg opp en mening om foreldrepermisjon, slår det meg!
+Alle påstandene virker jo å måle likestilling på en fin måte, men i Norge virker konstruktet litt tamt. Jeg tipper jo at alle vil være enige i disse påstandene. I Norge ville man kanskje valgt påstander som det er uenighet om, slik som kjønnskvotering til høyere utdanning eller fordeling av foreldrepermisjon, men det hadde sikkert ikke vært så relevant i de andre landene der ICCS avholdes. Og kanskje har ikke ungdomsskoleelever gjort seg opp en mening om foreldrepermisjon, slår det meg!
 
 Vi starter beskrivelsen med histogrammer, slik at du ser hva du prøver å beskrive med tallene som følger.
 
@@ -176,14 +210,9 @@ ICCS |>
   jamovi_histogram(Likestilling, 16)
 ```
 
-For å lage dette histogrammet i jamovi trykker vi "Analyses" → "Exploration" → "Descriptives" og velger "Plots" og "Histogram", se @fig-diagram-jamovi-ICCS-histogram.
-
-```{r}
-#| label: fig-diagram-jamovi-ICCS-histogram
-#| fig-cap: Innstillingene man trenger for å få frem histogrammet i jamovi
-#| out-width: "100%"
-knitr::include_graphics("images/fig-diagram-jamovi-ICCS-histogram.png")
-```
+::: {.callout-tip collapse="true" title="I jamovi: lage et histogram"}
+Analyses → Exploration → Descriptives. Legg variabelen i "Variables", åpne "Plots" og kryss av for "Histogram".
+:::
 
 Problemet med histogrammer er at utseende deres er veldig avhengig av hvor mange stolper man lager. I @fig-diagram-histogram-bins ser vi den samme variabelen med litt forskjellig valg av antall stolper. De blir seende helt forskjellige ut.
 
@@ -212,9 +241,9 @@ library(patchwork)
 
 Det finnes ingen fasit for antall stolper. Prøv flere alternativer og velg det som viser fordelingen tydeligst.
 
-### Sentraltendensmål
+### Sentraltendensmål for tallvariable
 
-Å tegne histogrammer er en flott måte å vise fram hovedbudskapet i dataene dine, men det kan også være nyttig å sammenfatte dataene med noen få enkle tall. Det første du som regel vil vite noe om, er **sentraltendensen**, altså hva som er "midten", "gjennomsnittet", "det typiske" av dataene. De to mest brukte sentraltendensmålene for tallvariable er gjennomsnitt og median.
+Å tegne histogrammer er en flott måte å vise fram hovedbudskapet i dataene dine, men det kan også være nyttig å sammenfatte dataene med noen få enkle tall. Det første du som regel vil vite noe om, er **sentraltendensen**, altså hva som er "midten", "gjennomsnittet", "det typiske" av dataene. Du har allerede møtt to sentraltendensmål -- typetallet i @sec-mode og medianen i @sec-descriptive-median-ordinal. Nå legger vi til gjennomsnittet, som krever tallvariable.
 
 #### Gjennomsnittet
 
@@ -240,56 +269,41 @@ $$\frac{`r lik_sum_str`}{`r lik_n`} = \frac{`r lik_sum`}{`r lik_n`} = `r lik_mea
 
 Dette er selvsagt ikke noe nytt for deg, siden du allerede er godt kjent med gjennomsnitt.
 
-Det som kanskje er nytt for deg er hvordan man kan få statistikk-programvare til å gjøre regnejobben for oss! Når du har mange observasjoner, vi hadde `r n_elever`, er det mye lettere å regne ut ting digitalt.
+Det som kanskje er nytt for deg er hvordan man kan få statistikk-programvare til å gjøre regnejobben for oss! Når du har mange observasjoner, vi hadde `r n_elever` elever i ICCS-dataene, er det mye lettere å regne ut ting digitalt. @tbl-descriptive-mean viser standard deskriptiv statistikk for _Likestilling_.
 
-Slik gjør man det i jamovi:
-
-1. Klikk på "Exploration"-knappen
-2. Velg "Descriptives"
-3. Merk variabelen _Likestilling_
-4. Klikk på høyre pil for å flytte den til 'Variables'-boksen
-
-Straks du har gjort dette dukker en tabell med standard deskriptiv statistikk opp på høyre side av skjermen, som vist i @fig-descriptive-jamovi-mean. (Hvis du ikke finner 'Exploration'-knappen må du trykke på "Analyses" først.)
+::: {.callout-tip collapse="true" title="I jamovi: regne ut gjennomsnitt og annen deskriptiv statistikk"}
+Analyses → Exploration → Descriptives. Legg _Likestilling_ i "Variables". En tabell med standard deskriptiv statistikk dukker opp på høyre side av skjermen.
+:::
 
 ```{r}
-#| label: fig-descriptive-jamovi-mean
-#| fig-cap: Standard deskriptiv statistikk for variabelen _Likestilling_.
-#| out-width: "100%"
-#| fig-alt: Et skjermbilde fra jamovi som viser resultater fra deskriptiv analyse. Til venstre kan man velge variable og dele opp dataene. Til høyre vises deskriptiv statistikk for "Likestilling" med verdier for N, Missing, Mean, Median, Standard deviation, Minimum og Maximum.
-knitr::include_graphics("images/fig-descriptive-jamovi-mean.png")
+#| label: tbl-descriptive-mean
+#| tbl-cap: Standard deskriptiv statistikk for variabelen _Likestilling_.
+
+tibble::tibble(
+  Mål = c("N", "Gjennomsnitt", "Median", "Standardavvik", "Minimumsverdi", "Maksimumsverdi"),
+  Likestilling = c(
+    format(nrow(ICCS), big.mark = " "),
+    format(round(mean(ICCS$Likestilling), 1), nsmall = 1),
+    format(round(median(ICCS$Likestilling), 1), nsmall = 1),
+    format(round(sd(ICCS$Likestilling), 1), nsmall = 1),
+    format(round(min(ICCS$Likestilling), 1), nsmall = 1),
+    format(round(max(ICCS$Likestilling), 1), nsmall = 1)
+  )
+) |>
+  tt() |>
+  theme_tt("spacing") |>
+  style_tt(i = 0, bold = TRUE)
 ```
 
-Som du kan se i den røde markeringen i @fig-descriptive-jamovi-mean, viser resultatet at gjennomsnittsverdien for _Likestilling_ er 54,8. I tillegg får du annen nyttig informasjon som det totale antallet observasjoner (N = `r n_elever`)
+Tabellen viser at gjennomsnittsverdien for _Likestilling_ er `r round(mean(ICCS$Likestilling), 1)`. I tillegg får du annen nyttig informasjon som det totale antallet observasjoner (N = `r n_elever`)
 ^[Bokstaven _n_, enten den er stor eller liten, beskriver alltid utvalgsstørrelsen.],
-antall manglende verdier, samt median-, minimum- og maksimumsverdier  og standardavviket for variabelen. ("Manglende verdier" er typisk at elever har unnlatt å svare på et spørsmål, eller at svaret var uleselig. Ingen verdier mangler i dette tilfellet, siden jeg fjernet manglende verdier da jeg forberedte dataene.)
+samt median-, minimumsverdi- og maksimumsverdi og standardavviket for variabelen.
 
 Hva hvis vi skal regne ut gjennomsnittet av variabelen _Forventet utdanning_? De fem første verdiene av denne variabelen er
 
 > `r forventet_utdanning`.
 
 Hvordan skal man regne gjennomsnittet av dette? Det går ikke an, for man kan ikke legge sammen verdiene. Derfor kan man bare regne gjennomsnitt for variable med tall, altså variable på intervall- og forholdstallskala.
-
-#### Medianen {#sec-descriptive-median}
-
-Du møtte **medianen** kort under ordinale data i @sec-descriptive-median-ordinal: middelverdien i sorterte observasjoner. For tallvariable regner vi den på akkurat samme måte. Hvis vi tar de `r lik_n` første verdiene av _Likestilling_ fra @tbl-ICCS-data igjen, får vi
-
-> `r paste(likestilling, sep = "   ")`.
-
-For å finne medianen sorterer vi disse tallene i stigende rekkefølge:
-
-> `r paste(sort(likestilling), sep = "   ")`.
-
-Da ser vi at `r sort(likestilling)[(lik_n + 1) / 2]` står i midten, så `r sort(likestilling)[(lik_n + 1) / 2]` er medianen.
-
-Av og til er det ingen verdier i midten, for eksempel her:
-
-> 1, 3, 5, 6, 10, 15
-
-Her er både 5 og 6 like nære midten. Da er medianen definert til å være gjennomsnittet av disse to verdiene, altså 5,5.
-
-Selvfølgelig er det uaktuelt å regne medianen for hånd med våre `r n_elever` verdier. Derfor bruker vi jamovi, som allerede har beregnet en medianverdi på `r median(ICCS$Likestilling) |> round(digits = 1)` for _Likestilling_, se i den røde markeringen i  @fig-descriptive-jamovi-mean.
-
-Tips: Sørg for at du finner ut hva som er medianens største styrke i neste delkapittel.
 
 #### Gjennomsnitt eller median? {#sec-descriptive-mean-or-median}
 
@@ -341,8 +355,13 @@ La oss utforske fire ulike måter å måle spredning på ved hjelp av ICCS-datae
 
 #### Variasjonsbredde {#sec-descriptive-range}
 
-**Variasjonsbredden** er det aller enkleste spredningsmålet. Den regnes ut ved å ta den største verdien minus den minste verdien. I @fig-descriptive-jamovi-dispersion ser du hvordan du finner variasjonsbredden i jamovi.
+**Variasjonsbredden** er det aller enkleste spredningsmålet. Den regnes ut ved å ta den største verdien minus den minste verdien. @fig-descriptive-jamovi-dispersion viser variasjonsbredden og andre spredningsmål slik de presenteres i jamovi.
 
+::: {.callout-tip collapse="true" title="I jamovi: regne ut spredningsmål"}
+Analyses → Exploration → Descriptives. Under "Statistics" finner du seksjonen "Dispersion" med avkryssingsbokser for "Std. deviation", "Variance", "Range", "Minimum" og "Maximum".
+:::
+
+<!-- TODO (jamovi-skjermbilde): Deskriptiv-tabell utvidet med spredningsmål (SD, Variance, Range, Min, Max) for Likestilling. Inneholder tallinnholdet leseren trenger -- erstatt med native tabell, eventuelt slått sammen med tabellen som erstatter @fig-descriptive-jamovi-mean. Refereres her og igjen i kvartilbredde-delkapittelet ("Som du kan se tilbake i @fig-descriptive-jamovi-dispersion ..."). -->
 ```{r}
 #| label: fig-descriptive-jamovi-dispersion
 #| classes: .enlarge-image
@@ -379,7 +398,11 @@ kvartilbredde <- sprintf(
 
 **Kvartilbredden** er litt som variasjonsbredden, men i stedet for å regne ut forskjellen mellom den største og minste verdien, regner vi ut forskjellen mellom tjuefemte persentil og syttifemte persentil. Ordet "kvartil" henspiller på "kvart" og "persentil", og som vi skal se må man regne ut hvor hver kvart av dataene ligger.
 
-Hvis du kjenner begrepet **persentil** fra før, kan du tenke på det slik: den 10. persentilen til en variabel er det minste tallet x slik at 10% av verdiene ligger under denne verdien. Dette er faktisk ikke helt nytt -– medianen er nemlig den femtiende persentilen siden femte prosent av verdiene ligger under denne verdien! I jamovi finner du enkelt hvilken som helst persentil ved å huke av for "Percentiles" under 'Exploration' → 'Descriptives' → 'Percentile Values'.
+Hvis du kjenner begrepet **persentil** fra før, kan du tenke på det slik: den 10. persentilen til en variabel er det minste tallet x slik at 10% av verdiene ligger under denne verdien. Dette er faktisk ikke helt nytt -– medianen er nemlig den femtiende persentilen siden femte prosent av verdiene ligger under denne verdien!
+
+::: {.callout-tip collapse="true" title="I jamovi: regne ut persentiler"}
+Analyses → Exploration → Descriptives → "Percentile Values" og kryss av for "Percentiles".
+:::
 
 Som du kan se tilbake i @fig-descriptive-jamovi-dispersion, tilsvarer kvartilbredden (_interquartile range, IQR_) for variabelen _Likestilling_ differansen mellom 25. og 75. persentil, altså `r quantiles[3]` - `r quantiles[1]` = `r kvartilbredde`. Siden 25% av dataene er mindre enn `r quantiles[1]` og 75% av dataene er mindre enn `r quantiles[3]`, ligger 50% av dataene i et intervall som er `r kvartilbredde` bredt. Legg også merke til at 50. persentil og medianen har samme verdi, `r quantiles[2]`, akkurat slik det skal være. I forskningsartikler oppsummeres alt dette slik:
 
@@ -428,8 +451,13 @@ Kort fortalt: kvartilbredde og standardavvik er de to klart mest populære valge
 
 ### Boksplott
 
-Et flott alternativ til histogrammer er **boksplott**. Ideen bak et boksplott er å gi deg en rask og tydelig visuell oversikt over medianen, kvartilbredden og variasjonsbredden i dataene dine. Siden denne informasjonen var enkel å regne ut også før datamaskiner ble vanlig, og fordi boksplott presenterer all denne informasjonen på en kompakt måte, er boksplott blitt populære -- spesielt når du utforsker dataene for første gang og prøver å forstå hva de forteller deg. Vi tar en titt på variabelen _Likestilling_, se i @fig-diagram-boxplot-equality. For å lage et boksplott i jamovi trykker du på akkurat de samme knappene som for et histogram, du bare krysser av for "Box plot" i stedet for.
+Et flott alternativ til histogrammer er **boksplott**. Ideen bak et boksplott er å gi deg en rask og tydelig visuell oversikt over medianen, kvartilbredden og variasjonsbredden i dataene dine. Siden denne informasjonen var enkel å regne ut også før datamaskiner ble vanlig, og fordi boksplott presenterer all denne informasjonen på en kompakt måte, er boksplott blitt populære -- spesielt når du utforsker dataene for første gang og prøver å forstå hva de forteller deg. Vi tar en titt på variabelen _Likestilling_, se i @fig-diagram-boxplot-equality.
 
+::: {.callout-tip collapse="true" title="I jamovi: lage et boksplott"}
+Analyses → Exploration → Descriptives. Legg variabelen i "Variables", åpne "Plots" og kryss av for "Box plot".
+:::
+
+<!-- TODO (jamovi-skjermbilde): Boksplott for Likestilling. Kan erstattes med native ggplot. Avsnittene under beskriver elementene (median-linje, eventuell gjennomsnitt-prikk, boksens kanter ved 25/75-persentil, whiskers, avviksverdier) -- den native versjonen må vise alle disse, eller teksten må tilpasses det som faktisk vises. -->
 ```{r}
 #| label: fig-diagram-boxplot-equality
 #| fig-cap: Et boksplott av variabelen _Likestilling plottet med jamovi
@@ -487,6 +515,6 @@ Vi har dekket disse temaene:
 
 -   **Kategoriske variable**: Vi viste hvordan man lager [Frekvenstabeller] og [Stolpediagram][Stolpediagram] for nominelle og ordinale data, og hvordan man finner [Typetallet].
 -   **Histogrammer**: [Histogrammer] viser fordelingen av tallvariable og er ofte det mest informative verktøyet.
--   **Mål for sentraltendens**: [Gjennomsnittet][Sentraltendensmål] og [medianen][Sentraltendensmål] forteller deg hvor dataene dine har sin "kjerne". Bruk medianen hvis dataene er skjeve; bruk gjennomsnittet ellers.
+-   **Mål for sentraltendens**: [Typetallet] fungerer for alle variabeltyper, [medianen][Medianen for ordinale data] krever ordinal- eller tallvariable, og [gjennomsnittet][Sentraltendensmål for tallvariable] krever tallvariable. Bruk medianen hvis dataene er skjeve; bruk gjennomsnittet ellers.
 -   **Mål for spredning**: [Spredningsmål] viser deg hvor "spredt" dataene dine er. De viktigste målene er kvartilbredde og standardavvik, mens varians spiller en nøkkelrolle i videre statistikk.
 -   **Boksplott**: [Boksplott] er en kompakt måte å visualisere spredning og sentraltendens, spesielt nyttig for å sammenligne undergrupper.
