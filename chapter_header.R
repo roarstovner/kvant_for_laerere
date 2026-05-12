@@ -16,6 +16,8 @@ library(scales)
 set.seed(1963)
 blueshade <- "#3d6da9" # match blue colour for plots to jamovi logo colour 
 
+options(OutDec = ",")
+
 jamovi_qual_palette <- tibble(
   names = c("red", "blue", "green", "purple", "orange", "yellow", "brown", "pink", "grey"),
   pal = RColorBrewer::brewer.pal(9, "Pastel1")
