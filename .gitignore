@@ -13,7 +13,10 @@ docs/**
 *.aux
 *.tex
 *.toc
+*.typ
 sec-*_files/
+data-raw/*.zip
+images/fig-national-*.png
 
 # === Crosslink managed (do not edit between markers) ===
 # .crosslink/ — machine-local state (never commit)
