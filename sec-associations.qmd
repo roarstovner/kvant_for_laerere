@@ -8,8 +8,6 @@
 source("chapter_header.R")
 ```
 
-<!-- TODO (kapittelnivå): ICCS er utvidet til fire land (Norge, Spania, Polen, Brasil) og har fått flere variable (Sivilkunnskap, Bøker hjemme, Innvandringsstatus, Elevinteresse, Åpen klasseromsdiskusjon, Tradisjonelt medborgerskap, Forventet politisk deltakelse). Alle jamovi-skjermbilder i kapittelet er fortsatt fra det gamle to-lands-utvalget (kun Norge/Spania) og må tas på nytt. Tallspesifikke tolkninger ("550 spanske elever", "16,5 %", "61,2 mot 58,8" osv.) må også oppdateres etter at figurene er regenerert. -->
-
 I forrige kapittel lærte du å beskrive én variabel om gangen -- med frekvenstabeller, histogram, gjennomsnitt, standardavvik og lignende. Det er nyttig for å forstå *hva* dataene inneholder, men i de fleste studier er vi mest interessert i *hvordan variable henger sammen*. Er det forskjell mellom elever fra ulike land? Henger sosioøkonomisk status sammen med holdninger til likestilling? Slike spørsmål krever at vi ser på to variable samtidig.
 
 ```{r}
@@ -47,9 +45,8 @@ ICCS |>
   theme_tt("spacing")
 ```
 
-::: {.callout-tip}
-## Slik gjør du i jamovi
-Velg "Frequencies" → "Contingency Tables" → "Independent Samples". Flytt _Forventet utdanning_ til "Rows"-boksen og _Land_ til "Columns"-boksen. Trykk på "Cells" og kryss av for "Counts" og "Percentages: Columns" for å få samme oppsett som i tabellen over.
+::: {.callout-tip collapse="true" title="I jamovi: lage en krysstabell"}
+Frequencies → Contingency Tables → Independent Samples. Legg _Forventet utdanning_ i "Rows" og _Land_ i "Columns". Under "Cells" kryss av for "Counts" og "Percentages: Columns".
 :::
 
 Når du tolker krysstabellen, kan du for eksempel se på cellen for spanske elever som ser for seg en kort utdanning (for eksempel ett- til to-årig fagskole). Tallet utenfor parentesen er antallet -- altså hvor mange spanske elever i utvalget som havner i den kategorien. Tallet i parentesen er kolonneprosenten, og siden _Land_ ligger på kolonnene betyr det "andel innenfor Spania som ser for seg kort utdanning". Hvis vi i stedet hadde valgt radprosenter, ville samme tall betydd "andelen av elevene som ser for seg kort utdanning, som er fra Spania". Det er to helt forskjellige spørsmål, så vær bevisst på hvilken prosent du regner ut.
@@ -58,88 +55,154 @@ Krysstabeller er nyttige! Se for eksempel at norske elever skiller seg ut ved at
 
 ### Stolpediagram for undergruppeanalyse {#sec-associations-bar-subgroup}
 
-Du lærte å lage stolpediagram i @sec-descriptive. Hvis du legger til en kategorisk variabel som "Split by", får du et stolpediagram der du kan sammenligne undergrupper. I @fig-associations-edu-x-country har vi _Forventet utdanning_ som hovedvariabel og _Land_ i "Split by"; i @fig-associations-country-x-edu har vi byttet rekkefølge. Hvis du lurer på hvilken du skal velge, må du tenke over "hvilken kommuniserer best det poenget jeg prøver å få frem?" eller "hvilken besvarer forskningspørsmålet best?"
+Du lærte å lage stolpediagram i @sec-descriptive. Et **gruppert stolpediagram** lar deg sammenligne undergrupper ved å dele opp dataene etter en ekstra kategorisk variabel. I @fig-associations-edu-x-country står _Forventet utdanning_ på x-aksen, og hvert utdanningsnivå har én stolpe per _Land_. I @fig-associations-country-x-edu er det byttet om, slik at _Land_ står på x-aksen og hvert land har én stolpe per utdanningsnivå. Hvis du lurer på hvilken du skal velge, må du tenke over "hvilken kommuniserer best det poenget jeg prøver å få frem?" eller "hvilken besvarer forskningsspørsmålet best?"
 
-::: {.callout-tip}
-## Slik gjør du i jamovi
-Lag først et vanlig stolpediagram som i @sec-descriptive. Legg så ønsket gruppevariabel inn i "Split by"-feltet for å få ett stolpediagram per gruppe.
+::: {.callout-tip collapse="true" title="I jamovi: stolpediagram for undergrupper"}
+Analyses → Exploration → Descriptives. Legg variabelen i "Variables", åpne "Plots" og kryss av for "Bar plot". Legg gruppevariabelen i "Split by".
 :::
 
 ::: {#fig-associations-bar-subgroups layout-ncol=1 fig-pos="H"}
 ```{r}
 #| label: fig-associations-edu-x-country
-#| fig-cap: _Land_ i "Split by"
-#| out.width: "100%"
-knitr::include_graphics("images/fig-diagram-jamovi-edu-x-country.png")
+#| fig-cap: _Forventet utdanning_ på x-aksen, gruppert etter _Land_.
+#| fig-alt: Gruppert stolpediagram. X-aksen viser de fire kategoriene av Forventet utdanning, og innenfor hver kategori er det fire stolper -- én for hvert land. Stolpene for Høyere utdanning er klart høyest i alle land.
+
+ICCS |>
+  dplyr::filter(!is.na(`Forventet utdanning`)) |>
+  dplyr::count(`Forventet utdanning`, Land) |>
+  ggplot() +
+  aes(x = `Forventet utdanning`, y = n, fill = Land) +
+  geom_col(
+    position = position_dodge2(preserve = "single"),
+    color = "black"
+  ) +
+  scale_fill_manual(
+    values = unname(jamovi_qual_palette[c("red", "blue", "green", "purple")])
+  ) +
+  labs(y = "Counts", x = NULL)
 ```
 
 ```{r}
 #| label: fig-associations-country-x-edu
-#| fig-cap: _Forventet utdanning_ i "Split by"
-#| out.width: "100%"
-knitr::include_graphics("images/fig-diagram-jamovi-country-x-edu.png")
+#| fig-cap: _Land_ på x-aksen, gruppert etter _Forventet utdanning_.
+#| fig-alt: Gruppert stolpediagram. X-aksen viser de fire landene, og innenfor hvert land er det fire stolper -- én for hvert utdanningsnivå. Stolpene for Høyere utdanning er klart høyest i alle land.
+
+ICCS |>
+  dplyr::filter(!is.na(`Forventet utdanning`)) |>
+  dplyr::count(`Forventet utdanning`, Land) |>
+  ggplot() +
+  aes(x = Land, y = n, fill = `Forventet utdanning`) +
+  geom_col(
+    position = position_dodge2(preserve = "single"),
+    color = "black"
+  ) +
+  scale_fill_manual(
+    values = unname(jamovi_qual_palette[c("red", "blue", "green", "purple")])
+  ) +
+  labs(y = "Counts", x = NULL)
 ```
-Undergruppeanalyse av _Forventet utdanning_ for hvert _Land_.
+Gruppert stolpediagram av _Forventet utdanning_ og _Land_, vist på to måter.
 :::
 
-Vi kan også legge til _enda en variabel_ ved å plassere flere variabler i "Split by". I @fig-associations-bar-threeway ser du resultatet med _Land_ som hovedvariabel og både _Forventet utdanning_ og _Kjønn_ som splittvariabler. Uff, det ble en koloss av en figur! Hvis du klarer å lese skriften, vil du likevel se at den er ganske informativ. Vi skal forbedre den med stablede stolpediagrammer i neste delkapittel.
+Vi kan også legge til _enda en variabel_, slik at vi sammenligner undergrupper langs to dimensjoner samtidig. I @fig-associations-bar-threeway ser du resultatet for _Land_, _Forventet utdanning_ og _Kjønn_, der hvert kjønn vises i sitt eget panel. Uff, det ble en koloss av en figur! Spesielt _Annet_-panelet blir vanskelig å lese fordi gruppen er mye mindre enn de to andre. Vi skal forbedre figuren med stablede stolpediagrammer i neste delkapittel.
 
 ```{r}
 #| label: fig-associations-bar-threeway
-#| fig-cap: Undergruppeanalyse av _Forventet utdanning_ for hvert _Land_ og _Kjønn_
-#| out.width: "100%"
-knitr::include_graphics("images/fig-diagram-jamovi-bar-threeway.png")
+#| fig-cap: Antall elever per _Forventet utdanning_ og _Land_, med ett panel per _Kjønn_.
+#| fig-alt: Tre paneler med grupperte stolpediagram, ett for hvert kjønn. Hvert panel viser antall elever fordelt på Land og Forventet utdanning. Stolpene for Jente og Gutt er tydelige, men stolpene i Annet-panelet er nesten ikke synlige fordi gruppen er så mye mindre.
+#| out-width: "100%"
+#| fig-width: 8.57
+#| fig-asp: 1.0
+#| classes: .enlarge-image
+
+ICCS |>
+  dplyr::filter(!is.na(`Forventet utdanning`)) |>
+  dplyr::count(Land, Kjønn, `Forventet utdanning`) |>
+  ggplot() +
+  aes(x = Land, y = n, fill = `Forventet utdanning`) +
+  geom_col(
+    position = position_dodge2(preserve = "single"),
+    color = "black"
+  ) +
+  scale_fill_manual(
+    values = unname(jamovi_qual_palette[c("red", "blue", "green", "purple")])
+  ) +
+  facet_wrap(~ Kjønn, ncol = 1) +
+  labs(y = "Counts", x = NULL)
 ```
 
 ### Stablede stolpediagram {#sec-associations-stacked-bar}
 
-Stolpediagrammer kan stables oppå hverandre, noe som gjør dem mer kompakte og lettere å forstå i noen sammenhenger. Resultatet for vårt eksempel ser du i @fig-associations-stacked-bar.
+I @sec-diagram-bar så du at andelen ofte er det vi egentlig vil ha visualisert, fordi antall blir misvisende når gruppene er ulike i størrelse. **Stablede stolpediagram** gjør dette eksplisitt: hver stolpe ekspanderes til 100 %, og segmentene viser sammensetningen innenfor den stolpen. Det blir både kompakt og direkte sammenliknbart mellom grupper, se @fig-associations-stacked-bar.
 
-::: {.callout-tip}
-## Slik gjør du i jamovi
-Velg "Analyses" → "Frequencies" → "Independent samples ($\chi^2$ test of association)". Trykk deg inn på "Plots" og kryss av for "Bar plot". Innstillingene vises i @fig-associations-jamovi-stacked-bar:
+::: {.callout-tip collapse="true" title="I jamovi: lage et stablet stolpediagram"}
+Frequencies → Independent samples ($\chi^2$ test of association). Legg _Forventet utdanning_ på "Rows" og _Land_ på "Columns". Under "Plots" kryss av for "Bar plot" og velg:
 
-- Legg _Forventet utdanning_ på "Rows" og _Land_ på "Columns". (Dette er smak og behag for hvordan "Contingency Tables", som også genereres, blir seende ut.)
-- Velg "Bar Type: Stacked" -- altså "Stolpetype: Stablet".
-- Velg "Percentages" på "Y-axis", siden vi vil se andelen fra hvert land som ser for seg ulike utdanninger.
-- Velg "Percentages within column" for å regne prosenter innenfor hvert land (siden _Land_ ligger på "Columns").
+- Bar Type: "Stacked"
+- Y-axis: "Percentages"
+- "Percentages within column" (regner prosenter innenfor hvert land)
 :::
-
-<!-- TODO: Vurder om skjermbildet av innstillingsmenyen (@fig-associations-jamovi-stacked-bar) bør flyttes ned i callout-boksen, eller eventuelt fjernes hvis bullet-listen er tilstrekkelig. -->
-
-```{r}
-#| label: fig-associations-jamovi-stacked-bar
-#| fig-cap: Innstillinger i jamovi for å få et stablet stolpediagram for _Forventet utdanning_ for hvert _Land_
-#| out-width: "100%"
-knitr::include_graphics("images/fig-diagram-jamovi-stacked-bar.png")
-```
-
-<!-- TODO: ICCS har nå fire land (Norge, Spania, Polen, Brasil). Tolkningen under sammenligner kun Norge og Spania og bør skrives om når den nye stablede stolpediagram-figuren foreligger. -->
-
-Det stablede diagrammet (@fig-associations-stacked-bar) viser at en noe større andel av de norske elevene planlegger høyere utdanning sammenlignet med de spanske elevene, men forskjellen er ganske liten. Sammenlign gjerne med stolpediagrammet i @fig-associations-edu-x-country, som viser absolutte tall. Der virker forskjellen mye større -- nesten dobbelt så mange norske som spanske elever ser for seg høyere utdanning! Grunnen til denne store forskjellen er imidlertid at det er betydelig flere norske enn spanske elever i utvalget vårt (`r sum(ICCS[["Land"]] == "Norge")` mot `r sum(ICCS[["Land"]] == "Spania")`). Sannsynligvis er vi mer interessert i andelen elever som ser for seg høyere utdanning, og det stablede stolpediagrammet viser dette tydeligere.
 
 ```{r}
 #| label: fig-associations-stacked-bar
-#| fig-cap: Stablet stolpediagram av _Forventet utdanning_ for hvert _Land_
-#| out-width: "100%"
-knitr::include_graphics("images/fig-diagram-stacked-bar.png")
+#| fig-cap: Stablet stolpediagram av _Forventet utdanning_ for hvert _Land_. Hver stolpe summerer til 100 %, og segmentene viser andelen innenfor landet.
+#| fig-alt: Fire stablede stolper, én per land, der hver stolpe er delt i fire fargede segmenter for verdiene av Forventet utdanning. Stolpene summerer alle til 100 prosent, slik at andelene kan sammenlignes direkte mellom landene.
+
+ICCS |>
+  dplyr::filter(!is.na(`Forventet utdanning`)) |>
+  dplyr::count(Land, `Forventet utdanning`) |>
+  ggplot() +
+  aes(x = Land, y = n, fill = `Forventet utdanning`) +
+  geom_col(position = position_fill(reverse = TRUE), color = "black") +
+  scale_fill_manual(
+    values = unname(jamovi_qual_palette[c("red", "blue", "green", "purple")])
+  ) +
+  scale_y_continuous(labels = scales::percent_format(suffix = " %")) +
+  guides(fill = guide_legend(reverse = TRUE)) +
+  labs(y = "Percentages", x = NULL)
 ```
 
-Nå kan vi igjen prøve å gjøre en analyse på tvers av to variable, _Kjønn_ og _Land_. Resultatet blir som i @fig-associations-stacked-bar-threeway. Her skinner virkelig det stablede stolpediagrammet -- se så kompakt og lesbart det ble i forhold til samme informasjon vist som et vanlig stolpediagram (@fig-associations-bar-threeway). Den største forskjellen mellom disse to diagrammene er at "Annet" var umulig å lese med det vanlige stolpediagrammet fordi stolpene ble så små, men med stablede stolper gikk det an å se at de norske elevene som valgte "Annet" i veldig stor grad ikke ser for seg mer skole etter ungdomsskolen. (Men husk at disse stolpene er basert på veldig få elever.)
+```{r}
+#| include: FALSE
+andel_hoy_land <- ICCS |>
+  dplyr::filter(!is.na(`Forventet utdanning`)) |>
+  dplyr::group_by(Land) |>
+  dplyr::summarise(
+    p_hoy = round(mean(`Forventet utdanning` == "Høyere utdanning") * 100, 0)
+  )
+p_hoy <- function(land) andel_hoy_land$p_hoy[andel_hoy_land$Land == land]
+```
 
-::: {.callout-tip}
-## Slik gjør du i jamovi
-For å splitte i tre variable: behold _Forventet utdanning_ på "Rows" og _Kjønn_ på "Columns", og legg _Land_ inn under "Layers".
+I @fig-associations-stacked-bar ser vi andelen elever som planlegger _Høyere utdanning_ i hvert land: `r p_hoy("Norge")` % i Norge, `r p_hoy("Spania")` % i Spania, `r p_hoy("Polen")` % i Polen og `r p_hoy("Brasil")` % i Brasil. Forskjellene er forholdsvis små. Sammenlign gjerne med stolpediagrammet i @fig-associations-edu-x-country, som viser absolutte tall. Der virker forskjellen mellom norske og spanske elever mye større -- vesentlig flere norske enn spanske elever ser for seg høyere utdanning. Grunnen er imidlertid at det er betydelig flere norske enn spanske elever i utvalget vårt (`r sum(ICCS[["Land"]] == "Norge")` mot `r sum(ICCS[["Land"]] == "Spania")`). Sannsynligvis er vi mer interessert i andelen elever som ser for seg høyere utdanning, og det stablede stolpediagrammet viser dette tydeligere.
+
+Nå kan vi igjen prøve å gjøre en analyse på tvers av to variable, _Kjønn_ og _Land_. Resultatet blir som i @fig-associations-stacked-bar-threeway. Her skinner virkelig det stablede stolpediagrammet -- se så kompakt og lesbart det ble i forhold til samme informasjon vist som et vanlig stolpediagram (@fig-associations-bar-threeway). Den største forskjellen mellom de to diagrammene er at _Annet_-panelet var nesten umulig å lese med det vanlige stolpediagrammet fordi stolpene ble så små. Med stablede stolper står hver stolpe like høyt (100 %), og vi ser sammensetningen innenfor hver liten gruppe. (Men husk at disse stolpene er basert på veldig få elever.)
+
+::: {.callout-tip collapse="true" title="I jamovi: stablet stolpediagram med tre variable"}
+Behold oppsettet for stablet stolpediagram, men legg den tredje variabelen i "Layers".
 :::
-
-<!-- TODO: ICCS har nå fire land. Vurder om "stablede stolper for hvert kjønn × land" fortsatt er lesbart med fire land, eller om eksempelet bør formuleres annerledes (f.eks. velge ut to land, eller bytte ut Land med en variabel med færre nivåer). Skjermbildet i fig-associations-stacked-bar-threeway må uansett tas på nytt. -->
 
 ```{r}
 #| label: fig-associations-stacked-bar-threeway
-#| fig-cap: Stablet stolpediagram av _Forventet utdanning_ for hvert _Land_ og _Kjønn_
+#| fig-cap: Stablet stolpediagram av _Forventet utdanning_ for hvert _Land_ og _Kjønn_. Hver stolpe summerer til 100 %.
+#| fig-alt: Tre paneler med stablede stolpediagram, ett for hvert kjønn. Hvert panel har fire stolper, én per land, som hver summerer til 100 prosent og er delt i fargede segmenter for verdiene av Forventet utdanning.
 #| classes: .enlarge-image
-#| out.width: "100%"
-knitr::include_graphics("images/fig-diagram-stacked-bar-threeway.png")
+#| out-width: "100%"
+#| fig-width: 8.57
+#| fig-asp: 1.0
+
+ICCS |>
+  dplyr::filter(!is.na(`Forventet utdanning`)) |>
+  dplyr::count(Land, Kjønn, `Forventet utdanning`) |>
+  ggplot() +
+  aes(x = Land, y = n, fill = `Forventet utdanning`) +
+  geom_col(position = position_fill(reverse = TRUE), color = "black") +
+  scale_fill_manual(
+    values = unname(jamovi_qual_palette[c("red", "blue", "green", "purple")])
+  ) +
+  scale_y_continuous(labels = scales::percent_format(suffix = " %")) +
+  guides(fill = guide_legend(reverse = TRUE)) +
+  facet_wrap(~ Kjønn, ncol = 1) +
+  labs(y = "Percentages", x = NULL)
 ```
 
 
@@ -158,70 +221,161 @@ Det er svært vanlig at du trenger å se på deskriptiv statistikk for forskjell
 Vi titter på noen rader fra ICCS-dataene våre igjen:
 
 ```{r}
-five_first |> tt()
+five_first |>
+  tt() |>
+  format_tt(
+    j = c(
+      "Likestilling", "Sivilkunnskap",
+      "Åpen klasseromsdiskusjon", "Tradisjonelt medborgerskap",
+      "Forventet politisk deltakelse"
+    ),
+    digits = 1, num_fmt = "decimal"
+  ) |>
+  format_tt(j = "Sosioøkonomisk status", digits = 2, num_fmt = "decimal")
 ```
 
 Vi ser at de undergruppene vi ønsker å undersøke (Norge/Spania, Høyere utdanning/VGS) er de forskjellige verdiene til nominelle eller ordinale variable (henholdsvis _Land_ og _Forventet utdanning_). En måte å tenke på verdiene til nominelle og ordinale variable er altså som undergrupper.
 
 > Å gjøre deskriptiv statistikk for undergrupper er å gjøre utregningene separat for hver verdi av en nominell variabel.
 
-For å regne ut deskriptiv statistikk separat for Gutt, Jente og Annet, må vi dele opp dataene med verdiene i variabelen _Kjønn_. Resultatet ser du i @fig-associations-equality-x-gender.
+For å regne ut deskriptiv statistikk separat for Gutt, Jente og Annet, må vi dele opp dataene etter verdiene i variabelen _Kjønn_. Resultatet ser du i @tbl-associations-equality-x-gender.
 
-::: {.callout-tip}
-## Slik gjør du i jamovi
-Gå til "Analyses" → "Exploration" → "Descriptives" som før. Legg variabelen du vil beskrive (her _Likestilling_) i "Variables", og legg gruppevariabelen (her _Kjønn_) inn i "Split by". Da får du deskriptiv statistikk for hver verdi av _Kjønn_.
+::: {.callout-tip collapse="true" title="I jamovi: deskriptiv statistikk per undergruppe"}
+Analyses → Exploration → Descriptives. Legg variabelen i "Variables" og gruppevariabelen i "Split by".
 :::
 
 ```{r}
-#| label: fig-associations-equality-x-gender
-#| classes: .enlarge-image
-#| fig-cap: Et skjermbilde av jamovi som viser _Likestilling_ for de forskjellige verdiene av _Kjønn_
-#| fig-alt: Et jamovi-skjermbilde som viser at _Kjønn_ er lagt til i vinduet "Split by". Da vises deskriptiv statistikk for Gutt, Jente og Annet i et vindu til høyre
-knitr::include_graphics("images/fig-descriptive-jamovi-equality-x-gender.png")
+#| include: FALSE
+
+stats_kjonn <- ICCS |>
+  dplyr::filter(!is.na(Likestilling), !is.na(Kjønn)) |>
+  dplyr::group_by(Kjønn) |>
+  dplyr::summarise(
+    N = dplyr::n(),
+    Gjennomsnitt = mean(Likestilling),
+    Median = median(Likestilling),
+    SD = sd(Likestilling),
+    .groups = "drop"
+  )
+
+mean_jente <- stats_kjonn$Gjennomsnitt[stats_kjonn$Kjønn == "Jente"]
+mean_gutt  <- stats_kjonn$Gjennomsnitt[stats_kjonn$Kjønn == "Gutt"]
+mean_annet <- stats_kjonn$Gjennomsnitt[stats_kjonn$Kjønn == "Annet"]
+sd_jente   <- stats_kjonn$SD[stats_kjonn$Kjønn == "Jente"]
+sd_gutt    <- stats_kjonn$SD[stats_kjonn$Kjønn == "Gutt"]
+sd_annet   <- stats_kjonn$SD[stats_kjonn$Kjønn == "Annet"]
+
+fmt1 <- function(x) format(round(x, 1), nsmall = 1)
 ```
-
-Fra @fig-associations-equality-x-gender ser vi at jentene har mye høyere gjennomsnittskår på _Likestilling_ enn guttene, 60,3 mot 49,7. De som oppga Annet har tilsvarende gjennomsnitt som gutta, 49,8. Jentene har dessuten vesentlig mindre standardavvik, 8,94 mot 11,2. De som oppga "Annet" har mer sprikende svar. Og tolkningen av dataene ser helt lik ut om vi heller ser på medianen og kvartilbredden enn gjennomsnittet og standardavviket.
-
-Vi kan også lure på om det er forskjell mellom landene for hvert kjønn. Da legger vi til variabelen _Land_ i "Split by" sammen med _Kjønn_, se @fig-associations-equality-x-gender-country. Vi ser at de norske jentene er mer for likestilling enn de spanske jentene (61,2 mot 58,8), men at de norske gutta er _mindre_ for likestilling enn de spanske guttene (49,2 mot 50,5)! Skjerpings, gutter!
-
-<!-- TODO: ICCS har nå fire land. Tallene over (61,2 / 58,8 / 49,2 / 50,5) gjelder bare Norge og Spania -- både skjermbildet @fig-associations-equality-x-gender-country og denne tolkningen må oppdateres. Vurder om poenget "skjerpings, gutter" fortsatt fungerer når Polen og Brasil er med, eller om eksemplet bør avgrenses eksplisitt til to land. -->
 
 ```{r}
-#| label: fig-associations-equality-x-gender-country
-#| classes: .enlarge-image
-#| fig-cap: Et skjermbilde av jamovi som viser _Likestilling_ for de forskjellige verdiene av _Kjønn_ og _Land_
-#| fig-alt: Et jamovi-skjermbilde som viser at _Kjønn_ og _Land_ er lagt til i vinduet "Split by". Da vises deskriptiv statistikk for Gutt, Jente og Annet separat for hvert land i et vindu til høyre
-knitr::include_graphics("images/fig-descriptive-jamovi-equality-x-gender-country.png")
+#| label: tbl-associations-equality-x-gender
+#| tbl-cap: Deskriptiv statistikk for _Likestilling_ separat for hver verdi av _Kjønn_.
+
+stats_kjonn |>
+  dplyr::mutate(
+    N = format(N, big.mark = " "),
+    Gjennomsnitt = fmt1(Gjennomsnitt),
+    Median = fmt1(Median),
+    SD = fmt1(SD)
+  ) |>
+  tt() |>
+  theme_tt("spacing") |>
+  style_tt(i = 0, bold = TRUE)
 ```
 
-PS: Når man deler inn i ulike undergrupper på denne måten, kan det være at enkelte undergrupper har svært få respondenter. Vi ser i @fig-associations-equality-x-gender-country at det er svært få som har oppgitt Annet kjønn i Spania, 78 respondenter. Dette er fremdeles mange nok til at det gir mening å regne gjennomsnitt, men andre ganger vil det være like greit å si at man ikke har mange nok respondenter til å gjøre en undergruppeanalyse for akkurat dem. Merk at dette er et etisk problem for forskere, for hvis forskning kan gagne mennesker er det et problem om noen grupper mennesker stadig vekk blir utelatt.
+Fra @tbl-associations-equality-x-gender ser vi at jentene har mye høyere gjennomsnittskår på _Likestilling_ enn guttene, `r fmt1(mean_jente)` mot `r fmt1(mean_gutt)`. De som oppga Annet ligger nærmere gutta, med et gjennomsnitt på `r fmt1(mean_annet)`. Jentene har dessuten litt mindre standardavvik enn guttene, `r fmt1(sd_jente)` mot `r fmt1(sd_gutt)`, mens de som oppga "Annet" har mer sprikende svar (SD = `r fmt1(sd_annet)`). Tolkningen ser helt lik ut om vi heller ser på medianen og kvartilbredden enn gjennomsnittet og standardavviket.
+
+Vi kan også lure på om det er forskjell mellom landene for hvert kjønn. Da gjør vi undergruppeanalysen stratifisert på både _Kjønn_ og _Land_, se @tbl-associations-equality-x-gender-country.
+
+```{r}
+#| include: FALSE
+
+stats_kjonn_land <- ICCS |>
+  dplyr::filter(!is.na(Likestilling), !is.na(Kjønn), !is.na(Land)) |>
+  dplyr::group_by(Land, Kjønn, .drop = FALSE) |>
+  dplyr::summarise(
+    N = dplyr::n(),
+    Gjennomsnitt = mean(Likestilling),
+    Median = median(Likestilling),
+    SD = sd(Likestilling),
+    .groups = "drop"
+  )
+
+fmt_or_dash <- function(x) {
+  ifelse(is.nan(x) | is.na(x), "—", format(round(x, 1), nsmall = 1))
+}
+
+mean_lk <- function(land, kjonn) {
+  fmt_or_dash(
+    stats_kjonn_land$Gjennomsnitt[stats_kjonn_land$Land == land & stats_kjonn_land$Kjønn == kjonn]
+  )
+}
+
+n_lk <- function(land, kjonn) {
+  stats_kjonn_land$N[stats_kjonn_land$Land == land & stats_kjonn_land$Kjønn == kjonn]
+}
+```
+
+```{r}
+#| label: tbl-associations-equality-x-gender-country
+#| tbl-cap: Deskriptiv statistikk for _Likestilling_ separat for hver kombinasjon av _Land_ og _Kjønn_. Polen og Brasil har ingen elever som har oppgitt _Annet_ kjønn.
+
+stats_kjonn_land |>
+  dplyr::mutate(
+    N = format(N, big.mark = " "),
+    Gjennomsnitt = fmt_or_dash(Gjennomsnitt),
+    Median = fmt_or_dash(Median),
+    SD = fmt_or_dash(SD)
+  ) |>
+  tt() |>
+  theme_tt("spacing") |>
+  style_tt(i = 0, bold = TRUE)
+```
+
+Mønsteret fra @tbl-associations-equality-x-gender går igjen i alle land: jentene har høyere gjennomsnittskår på _Likestilling_ enn guttene. Men det er noen interessante variasjoner. De norske jentene er mer for likestilling enn de spanske (`r mean_lk("Norge", "Jente")` mot `r mean_lk("Spania", "Jente")`), mens de norske gutta er _mindre_ for likestilling enn de spanske guttene (`r mean_lk("Norge", "Gutt")` mot `r mean_lk("Spania", "Gutt")`)! Polske gutter ligger lavest av alle med et gjennomsnitt på `r mean_lk("Polen", "Gutt")`. Skjerpings, gutter!
+
+PS: Når man stratifiserer på undergrupper på denne måten, kan det være at enkelte undergrupper har svært få -- eller ingen -- respondenter. ICCS-utvalget fra Polen og Brasil inneholder ingen elever som har oppgitt _Annet_ kjønn, og selv i Norge og Spania er gruppen liten (henholdsvis `r n_lk("Norge", "Annet")` og `r n_lk("Spania", "Annet")` respondenter). Det er fremdeles mange nok til at det gir mening å regne gjennomsnitt der vi har dem, men andre ganger vil det være like greit å si at man ikke har mange nok respondenter til å gjøre en undergruppeanalyse for akkurat dem. Merk at dette er et etisk problem for forskere, for hvis forskning kan gagne mennesker er det et problem om noen grupper mennesker stadig vekk blir utelatt.
 
 ### Side-by-side boksplott og histogrammer
 
-Undergruppeanalyse med tall er nyttig, men en visualisering gjør sammenhengen mye tydeligere. Du lærte i @sec-descriptive at boksplott og histogrammer egner seg godt for kontinuerlige variable, og det samme grepet med "Split by" gir oss automatisk ett plott per gruppe.
+Undergruppeanalyse med tall er nyttig, men en visualisering gjør sammenhengen mye tydeligere. Du lærte i @sec-descriptive at boksplott og histogrammer egner seg godt for kontinuerlige variable, og det samme grepet med stratifisering gir oss automatisk ett plott per gruppe.
 
-::: {.callout-tip}
-## Slik gjør du i jamovi
-Lag et boksplott eller histogram som beskrevet i @sec-descriptive (under "Plots" i "Descriptives"-menyen). Legg så gruppevariabelen i "Split by" -- du får ett plott per verdi av gruppevariabelen.
+::: {.callout-tip collapse="true" title="I jamovi: boksplott eller histogram per undergruppe"}
+Analyses → Exploration → Descriptives. Legg variabelen i "Variables", åpne "Plots" og kryss av for "Box plot" eller "Histogram". Legg gruppevariabelen i "Split by".
 :::
 
-Se @fig-associations-equ-x-edu for en sammenlikning. Det er rett og slett vanskelig å se forskjell på undergruppene med histogrammet, men med boksplottet er det lett å se at dess høyere utdanning eleven ser for seg, dess mer er eleven for likestilling mellom kjønnene. (Men merk at dette gjelder på gruppenivå og at det er mange unntak.)
+Se @fig-associations-equ-x-edu for en sammenlikning. Det er rett og slett vanskelig å se forskjell på undergruppene med histogrammet, men i boksplottet ser vi klart at elever som ser for seg _Høyere utdanning_ er mer for likestilling enn elever med lavere utdanningsambisjoner. Forskjellen kommer kanskje tydeligst frem ved medianen. (Merk at dette gjelder på gruppenivå og at det er mange unntak.)
 
 :::{#fig-associations-equ-x-edu out.width="100%" layout-ncol=1}
 ```{r}
 #| label: fig-associations-histogram-equ-x-edu
 #| fig-cap: Med histogrammet er det vanskelig å se forskjell på gruppene.
-#| out.width: "100%"
-knitr::include_graphics("images/fig-diagram-histogram-equ-x-edu.png")
+#| fig-alt: Fire histogrammer av Likestilling, ett for hvert forventet utdanningsnivå. Alle har omtrent samme form, med en lang hale av lave verdier og en topp i øvre del av skalaen.
+#| out-width: "100%"
+#| fig-asp: 0.5
+
+source("R/jamovi-histogram.R")
+ICCS |>
+  dplyr::filter(!is.na(Likestilling), !is.na(`Forventet utdanning`)) |>
+  jamovi_histogram(Likestilling, bins = 16) +
+  facet_wrap(~ `Forventet utdanning`, ncol = 2)
 ```
 
 ```{r}
 #| label: fig-associations-boxplot-equ-x-edu
-#| fig-cap: Med boksplott kommer forskjellen tydelig frem, kanskje spesielt ved medianen og nedre kvartil.
-#| out.width: "100%"
-knitr::include_graphics("images/fig-diagram-boxplot-equ-x-edu.png")
+#| fig-cap: Med boksplott kommer forskjellen tydelig frem -- særlig at _Høyere utdanning_ ligger høyere enn de andre gruppene.
+#| fig-alt: Fire vertikale boksplott av Likestilling, ett for hvert forventet utdanningsnivå. Medianen for Høyere utdanning ligger klart over de tre andre gruppene, som ligger på omtrent samme nivå.
+#| out-width: "100%"
+
+ICCS |>
+  dplyr::filter(!is.na(Likestilling), !is.na(`Forventet utdanning`)) |>
+  ggplot() +
+  aes(x = `Forventet utdanning`, y = Likestilling) +
+  geom_boxplot(fill = jamovi_qual_palette["blue"], color = "black") +
+  labs(x = NULL)
 ```
-Sammenlikning av histogram og boksplott for å vise variabelen _Likestilling_ for hvert forventede utdanningsnivå, plottet med jamovi
+Sammenlikning av histogram og boksplott for å vise variabelen _Likestilling_ for hvert forventede utdanningsnivå.
 :::
 
 Merk at krysstabellen (@sec-associations-contingency) også var en type undergruppeanalyse, bare at den var mellom to kategoriske variable. Undergruppeanalyse av deskriptiv statistikk handler om sammenhengen mellom en kategorisk og en kontinuerlig variabel.
@@ -237,46 +391,42 @@ Hva om begge variablene er kontinuerlige? Da kan vi ikke dele inn i grupper, sid
 
 Løsningen er å legge hver sin variabel på hver sin akse og plotte hvert punkt. Resultatet ser du i @fig-associations-scatter. Uavhengig av sosioøkonomisk status virker den vanligste verdien på _Likestilling_ å være den høyeste. Ut fra figuren er det ikke klart om sosioøkonomisk status har noen sammenheng med syn på likestilling i det hele tatt.
 
-::: {.callout-tip}
-## Slik gjør du i jamovi
-Velg "Analyses" → "Exploration" → "Scatterplot". Legg variabelen du vil ha på $x$-aksen (her _Sosioøkonomisk status_) i "X-Axis", og variabelen for $y$-aksen (her _Likestilling_) i "Y-Axis". Innstillingsmenyen er vist i @fig-associations-jamovi-scatter.
+::: {.callout-tip collapse="true" title="I jamovi: lage et spredningsplott"}
+Analyses → Exploration → Scatterplot. Legg én variabel i "X-Axis" og én i "Y-Axis".
 :::
-
-
-::: {#fig-associations-scatter-panel out.width="100%" layout-ncol=2}
-
-```{r}
-#| label: fig-associations-jamovi-scatter
-#| fig-cap: Trykk på "Analyses" → "Exploration" → "Scatter plot" for å få opp denne menyen.
-#| fig-alt: Menyen der man velger innstillinger for "Scatter plot" i jamovi
-#| out-width: "100%"
-knitr::include_graphics("images/fig-diagram-jamovi-scatter.png")
-```
 
 
 ```{r}
 #| label: fig-associations-scatter
-#| fig-cap: Spredningsplott over _Likestilling_ og _Sosioøkonomisk status_.
-#| fig-alt: Et spredningsplott med Likestilling på y-aksen og Sosioøkonomisk status på x-aksen. Veldig mange punkter er samlet i en linje horisontal linje langs hele toppen, og ellers er punktene jevnt spredt utover.
+#| fig-cap: Spredningsplott over _Likestilling_ og _Sosioøkonomisk status_. Hvert punkt er en elev; den mørke randen langs toppen viser at svært mange elever har høyest mulig skår på _Likestilling_.
+#| fig-alt: Et spredningsplott med Sosioøkonomisk status på x-aksen og Likestilling på y-aksen. En tett, mørk horisontal stripe ligger langs hele toppen, og ellers er punktene jevnt spredt utover skyen.
 #| out-width: "100%"
-knitr::include_graphics("images/fig-diagram-scatter.png")
+
+ICCS |>
+  dplyr::filter(!is.na(Likestilling), !is.na(`Sosioøkonomisk status`)) |>
+  ggplot() +
+  aes(x = `Sosioøkonomisk status`, y = Likestilling) +
+  geom_point(color = blueshade, alpha = 0.05, size = 0.5)
 ```
-Spredningsplott med jamovi
-:::
 
 For å gjøre sammenhengen tydeligere er det vanlig å legge en linje over spredningsplottet, slik som i @fig-associations-scatter-line. Den viser at det er en svak positiv tendens, altså at elever med høy sosioøkonomisk status svarer høyere på spørsmålene om likestilling. Du lærer mer om slike linjer, regresjonslinjer, i @sec-correlation.
 
-::: {.callout-tip}
-## Slik gjør du i jamovi
-I "Scatterplot"-menyen, kryss av for "Regression line" → "Linear" under "Regression" for å legge til en rett linje gjennom punktene.
+::: {.callout-tip collapse="true" title="I jamovi: legge til regresjonslinje i spredningsplott"}
+I "Scatterplot"-menyen, under "Regression": kryss av for "Linear".
 :::
 
 ```{r}
 #| label: fig-associations-scatter-line
-#| fig-cap: Spredningsplott med en regresjonslinje lagt til
-#| fig-alt: Samme figur som det forrige spredningsplottet, men med en linje lagt oppå punktene. Linja heller svakt oppover mot høyre.
-#| classes: .enlarge-image
-knitr::include_graphics("images/fig-diagram-scatter-line.png")
+#| fig-cap: Spredningsplott med en regresjonslinje lagt til. Linja heller svakt oppover, en svak positiv sammenheng.
+#| fig-alt: Samme figur som det forrige spredningsplottet, men med en svart linje lagt oppå punktene. Linja heller svakt oppover mot høyre.
+#| out-width: "100%"
+
+ICCS |>
+  dplyr::filter(!is.na(Likestilling), !is.na(`Sosioøkonomisk status`)) |>
+  ggplot() +
+  aes(x = `Sosioøkonomisk status`, y = Likestilling) +
+  geom_point(color = blueshade, alpha = 0.05, size = 0.5) +
+  geom_smooth(method = "lm", formula = y ~ x, se = FALSE, color = "black")
 ```
 
 
@@ -309,6 +459,7 @@ tibble(
 
 Ta en titt på de to plottene nedenfor. Det til venstre (@fig-associations-scatter-baby) viser sammenhengen mellom hvor mye babyen sover og hvor gretten Danielle er. Det til høyre (@fig-associations-scatter-dani) viser sammenhengen mellom *Danielles egen* søvn og grettenheten hennes. Når vi ser dem side om side, er det lett å se at begge forteller samme historie: mer søvn betyr mindre grettenhet! Men det er også tydelig at sammenhengen er mye *sterkere* i det høyre plottet. Punktene ligger tettere samlet, og plottet ser rett og slett mer "ryddig" ut.
 
+<!-- TODO (bilde): fig12-2a.png og fig12-2b.png er gamle jamovi-skjermbilder fra parenthood-eksempelet. Issue 22 skal bytte ut hele eksempelet med ICCS-data. Disse to figurene må enten regenereres med nytt datasett eller fjernes når eksempelet er omskrevet. -->
 ::: {#fig-associations-scatter-grump layout-ncol="2" layout-valign="bottom" width="100%" fig-pos="H"}
 ![](images/fig12-2a.png){#fig-associations-scatter-baby fig-align="left" fig-alt="Spredningsplott som viser sammenhengen mellom 'Barnets søvn (timer)' på x-aksen og 'Min grettenhet' på y-aksen. Trenden indikerer at når barnet sover mer, avtar grettenheten." width="100%"}
 
@@ -319,6 +470,7 @@ Spredningsplott fra jamovi som viser sammenhengen mellom babyens søvn og Daniel
 
 Nå som vi har sett på *styrken* i en sammenheng, la oss se på *retningen*. Ta en titt på de to plottene i @fig-associations-scatter-direction. Her sammenligner vi sammenhengen mellom babyens søvn og Danielles grettenhet (til venstre) med sammenhengen mellom babyens søvn og *Danielles* søvn (til høyre). Denne gangen er styrken i de to sammenhengene ganske lik, men retningen er helt motsatt. Det betyr at når babyen sover mer, får også Danielle mer søvn -- en *positiv sammenheng* (plottet til høyre). Samtidig, når babyen sover mer, blir Danielle mindre gretten -- en *negativ sammenheng* (plottet til venstre).
 
+<!-- TODO (bilde): fig12-2a.png og fig12-3b.png er gamle jamovi-skjermbilder fra parenthood-eksempelet. Knyttet til issue 22 -- regenereres eller fjernes sammen med fig-associations-scatter-grump-figurene. -->
 ::: {#fig-associations-scatter-direction layout-ncol="2" layout-valign="bottom" width="90%" fig-pos='h!'}
 
 ![](images/fig12-2a.png){#fig-associations-scatter-dir-neg fig-align="left" fig-alt="Spredningsplott som viser sammenhengen mellom 'Barnets søvn (timer)' på x-aksen og 'Min surhet' på y-aksen. Trenden indikerer at når barnet sover mer, avtar surheten." width="100%"}
@@ -418,9 +570,8 @@ Vi ser at korrelasjonen måler i hvor stor grad punktene faller på en rett linj
 
 Korrelasjonsmatrisen for *parenthood*-dataene er vist i @fig-associations-correlation-jamovi.
 
-::: {.callout-tip}
-## Slik gjør du i jamovi
-Velg "Analyses" → "Regression" → "Correlation Matrix". Flytt alle de kontinuerlige variablene du vil korrelere, over i boksen til høyre. Pearsons $r$ er valgt som standard.
+::: {.callout-tip collapse="true" title="I jamovi: lage en korrelasjonsmatrise"}
+Regression → Correlation Matrix. Legg de kontinuerlige variablene du vil korrelere i variabelboksen. Pearsons $r$ er valgt som standard.
 :::
 
 ```{r}
