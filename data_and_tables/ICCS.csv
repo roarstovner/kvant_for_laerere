@@ -1,4 +1,4 @@
-"Elev-ID";"Skole-ID";"Trinn";"Land";"Kjønn";"Forventet utdanning";"Likestilling";"Bøker hjemme";"Innvandringsstatus";"Elevinteresse";"Sivilkunnskap";"Sosioøkonomisk status";"Åpen klasseromsdiskusjon";"Tradisjonelt medborgerskap";"Forventet politisk deltakelse"
+"Elev-ID";"Skole-ID";"Trinn";"Land";"Kjønn";"Forventet utdanning";"Likestilling";"Bøker hjemme";"Innvandringsstatus";"Elevinteresse";"Demokratikunnskap";"Sosioøkonomisk status";"Åpen klasseromsdiskusjon";"Tradisjonelt medborgerskap";"Forventet politisk deltakelse"
 "50010101";"5001";9;"Norge";"Gutt";"VGS";49,42491;"101–200";"Født i landet, minst én forelder født i landet";"Ganske interessert";563,732;-0,19319;46,64615;46,52454;33,79093
 "50010103";"5001";9;"Norge";"Gutt";"Høyere utdanning";44,59585;"11–25";"Født i landet, minst én forelder født i landet";"Ganske interessert";522,88;-0,00542;59,10097;50,87064;50,30993
 "50010104";"5001";9;"Norge";"Gutt";"Ungdomsskole";37,63793;"0–10";"Født i landet, minst én forelder født i landet";"Lite interessert";401,882;-0,90487;50,84179;38,10836;50,30993

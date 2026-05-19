@@ -17,7 +17,7 @@ I @sec-associations lærte du om korrelasjon, som beskriver styrken og retningen
 
 ## Enkel lineær regresjon {#sec-regression}
 
-Lineær regresjon kan ses på som en mer avansert og kraftfull versjon av Pearsons korrelasjon, som vi så på i @sec-associations. For å se nærmere på dette, henter vi frem igjen datasettet *[parenthood.csv](data_and_tables/parenthood.csv)*. Husker du eksempelet? Vi prøvde å finne ut hvorfor Danielle var så gretten, og hypotesen var at det skyldtes for lite søvn. Vi lagde et spredningsplott som viste sammenhengen mellom antall timer søvn og graden av grettenhet dagen etter (@fig-associations-scatter-dani), og fant en sterk negativ korrelasjon på $r = -0{,}90$.
+Lineær regresjon kan ses på som en mer avansert og kraftfull versjon av Pearsons korrelasjon, som vi så på i @sec-associations. For å illustrere dette bruker vi datasettet *[parenthood.csv](data_and_tables/parenthood.csv)*. Datasettet er fiktivt, men inspirert av ekte småbarnsliv: Danielle, en småbarnsforelder, har samlet inn data om sin egen søvn og sitt eget humør over 100 dager. Hver dag har hun registrert hvor mange timer hun sov og vurdert sin egen grettenhet på en skala fra 0 (blid som en sol) til 100 (ekstremt gretten). Sammenhengen mellom de to viser seg å være en sterk negativ korrelasjon på $r = -0{,}90$.
 
 Når vi ser på et slikt plott, er det naturlig å forestille seg en rett linje som går gjennom midten av datapunktene, slik som i @fig-fig12-11(a). I statistikken kalles en slik linje for en **regresjonslinje**. Intuisjonen vår forteller oss at linjen bør følge trenden i dataene. Vi ville neppe tegnet en linje som den i @fig-fig12-11(b), som åpenbart ikke passer til punktene i det hele tatt.
 

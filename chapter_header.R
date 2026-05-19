@@ -12,6 +12,7 @@ library(knitr)
 library(showtext)
 library(marquee)
 library(scales)
+library(patchwork)
 
 set.seed(1963)
 blueshade <- "#3d6da9" # match blue colour for plots to jamovi logo colour 

@@ -8,9 +8,9 @@
 #
 # Variable:
 #   Kontinuerlige
-#     - Sivilkunnskap: gj.snitt av de fem plausible values (PV1CIV–PV5CIV).
+#     - Demokratikunnskap: gj.snitt av de fem plausible values (PV1CIV–PV5CIV).
 #       Gj.snitt er valgt framfor én enkelt PV for å dempe tilfeldig variasjon.
-#     - Likestilling (S_GENEQL): sterk positiv r mot Sivilkunnskap (pooled ~0.44).
+#     - Likestilling (S_GENEQL): sterk positiv r mot Demokratikunnskap (pooled ~0.44).
 #     - Sosioøkonomisk status (S_NISB): nasjonalt indeks.
 #     - Åpen klasseromsdiskusjon (S_OPDISC): moderat positiv r (~0.24),
 #       lærerrelevant.
@@ -51,7 +51,7 @@ ICCS <- raw |>
     `Bøker hjemme` = as_factor(IS4G10),
     `Innvandringsstatus` = as_factor(S_IMMIG),
     `Elevinteresse` = as_factor(S_SINT),
-    `Sivilkunnskap` = rowMeans(across(PV1CIV:PV5CIV), na.rm = FALSE),
+    `Demokratikunnskap` = rowMeans(across(PV1CIV:PV5CIV), na.rm = FALSE),
     `Likestilling` = as.double(S_GENEQL),
     `Sosioøkonomisk status` = as.double(S_NISB),
     `Åpen klasseromsdiskusjon` = as.double(S_OPDISC),

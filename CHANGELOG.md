@@ -22,6 +22,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Fixed
 
 ### Changed
+- Fjern regresjonslinje-figur fra sec-associations intro (#34)
+- Bytt Sivilkunnskap -> Demokratikunnskap og fiks utdatert Norge/Spania-prosa i cat×kont (#33)
+- Bytt ut parenthood med Sivilkunnskap som hovedeksempel i sec-associations (#32)
 - Flytt jamovi-klikkinstruksjoner til callout-bokser (#23)
 - Skriv om kont×kont-delen med nytt datasett (#22)
 - Erstatt jamovi-skjermbilder i sec-associations med native figurer/tabeller (#30)

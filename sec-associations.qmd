@@ -210,7 +210,7 @@ ICCS |>
 
 Hva om du vil se om en *kontinuerlig* variabel varierer mellom ulike grupper? For eksempel: svarer norske og spanske elever forskjellig på variabelen _Likestilling_? Da trenger du deskriptiv statistikk *separat for hver gruppe*.
 
-### Deskriptiv statistikk separat for hver gruppe {#sec-associations-subgroup}
+### Deskriptiv statistikk separat for hver undergruppe {#sec-associations-subgroup}
 
 ```{r}
 five_first <- head(utvalg, 5)
@@ -221,22 +221,26 @@ Det er svært vanlig at du trenger å se på deskriptiv statistikk for forskjell
 Vi titter på noen rader fra ICCS-dataene våre igjen:
 
 ```{r}
+#| label: tbl-associations-icss-sample
+#| tbl-cap: Fem tilfeldige rader fra ICCS-datasettet, med variablene vi bruker videre i kapittelet.
+
 five_first |>
+  dplyr::select(
+    Land, Kjønn, `Forventet utdanning`,
+    Likestilling, Demokratikunnskap, `Sosioøkonomisk status`,
+    `Forventet politisk deltakelse`
+  ) |>
   tt() |>
   format_tt(
-    j = c(
-      "Likestilling", "Sivilkunnskap",
-      "Åpen klasseromsdiskusjon", "Tradisjonelt medborgerskap",
-      "Forventet politisk deltakelse"
-    ),
+    j = c("Likestilling", "Demokratikunnskap", "Forventet politisk deltakelse"),
     digits = 1, num_fmt = "decimal"
   ) |>
   format_tt(j = "Sosioøkonomisk status", digits = 2, num_fmt = "decimal")
 ```
 
-Vi ser at de undergruppene vi ønsker å undersøke (Norge/Spania, Høyere utdanning/VGS) er de forskjellige verdiene til nominelle eller ordinale variable (henholdsvis _Land_ og _Forventet utdanning_). En måte å tenke på verdiene til nominelle og ordinale variable er altså som undergrupper.
+Undergruppene vi kan undersøke -- de fire landene, de fire utdanningsnivåene, eller de tre kjønnsverdiene -- er nettopp de forskjellige verdiene til nominelle eller ordinale variable (her _Land_, _Forventet utdanning_ og _Kjønn_). En måte å tenke på verdiene til nominelle og ordinale variable er altså som undergrupper.
 
-> Å gjøre deskriptiv statistikk for undergrupper er å gjøre utregningene separat for hver verdi av en nominell variabel.
+> Å gjøre deskriptiv statistikk for undergrupper er å gjøre utregningene separat for hver verdi av en kategorisk variabel.
 
 For å regne ut deskriptiv statistikk separat for Gutt, Jente og Annet, må vi dele opp dataene etter verdiene i variabelen _Kjønn_. Resultatet ser du i @tbl-associations-equality-x-gender.
 
@@ -286,7 +290,7 @@ stats_kjonn |>
 
 Fra @tbl-associations-equality-x-gender ser vi at jentene har mye høyere gjennomsnittskår på _Likestilling_ enn guttene, `r fmt1(mean_jente)` mot `r fmt1(mean_gutt)`. De som oppga Annet ligger nærmere gutta, med et gjennomsnitt på `r fmt1(mean_annet)`. Jentene har dessuten litt mindre standardavvik enn guttene, `r fmt1(sd_jente)` mot `r fmt1(sd_gutt)`, mens de som oppga "Annet" har mer sprikende svar (SD = `r fmt1(sd_annet)`). Tolkningen ser helt lik ut om vi heller ser på medianen og kvartilbredden enn gjennomsnittet og standardavviket.
 
-Vi kan også lure på om det er forskjell mellom landene for hvert kjønn. Da gjør vi undergruppeanalysen stratifisert på både _Kjønn_ og _Land_, se @tbl-associations-equality-x-gender-country.
+Vi kan også lure på om det er forskjell mellom landene for hvert kjønn. Da gjør vi undergruppeanalysen inndelt etter både _Kjønn_ og _Land_, se @tbl-associations-equality-x-gender-country.
 
 ```{r}
 #| include: FALSE
@@ -335,17 +339,17 @@ stats_kjonn_land |>
 
 Mønsteret fra @tbl-associations-equality-x-gender går igjen i alle land: jentene har høyere gjennomsnittskår på _Likestilling_ enn guttene. Men det er noen interessante variasjoner. De norske jentene er mer for likestilling enn de spanske (`r mean_lk("Norge", "Jente")` mot `r mean_lk("Spania", "Jente")`), mens de norske gutta er _mindre_ for likestilling enn de spanske guttene (`r mean_lk("Norge", "Gutt")` mot `r mean_lk("Spania", "Gutt")`)! Polske gutter ligger lavest av alle med et gjennomsnitt på `r mean_lk("Polen", "Gutt")`. Skjerpings, gutter!
 
-PS: Når man stratifiserer på undergrupper på denne måten, kan det være at enkelte undergrupper har svært få -- eller ingen -- respondenter. ICCS-utvalget fra Polen og Brasil inneholder ingen elever som har oppgitt _Annet_ kjønn, og selv i Norge og Spania er gruppen liten (henholdsvis `r n_lk("Norge", "Annet")` og `r n_lk("Spania", "Annet")` respondenter). Det er fremdeles mange nok til at det gir mening å regne gjennomsnitt der vi har dem, men andre ganger vil det være like greit å si at man ikke har mange nok respondenter til å gjøre en undergruppeanalyse for akkurat dem. Merk at dette er et etisk problem for forskere, for hvis forskning kan gagne mennesker er det et problem om noen grupper mennesker stadig vekk blir utelatt.
+PS: Når man deler inn i undergrupper på denne måten, kan det være at enkelte undergrupper har svært få -- eller ingen -- respondenter. ICCS-utvalget fra Polen og Brasil inneholder ingen elever som har oppgitt _Annet_ kjønn, og selv i Norge og Spania er gruppen liten (henholdsvis `r n_lk("Norge", "Annet")` og `r n_lk("Spania", "Annet")` respondenter). Det er fremdeles mange nok til at det gir mening å regne gjennomsnitt der vi har dem, men andre ganger vil det være like greit å si at man ikke har mange nok respondenter til å gjøre en undergruppeanalyse for akkurat dem. Merk at dette er et etisk problem for forskere, for hvis forskning kan gagne mennesker er det et problem om noen grupper mennesker stadig vekk blir utelatt.
 
-### Side-by-side boksplott og histogrammer
+### Boksplott og histogrammer separat for hver undergruppe
 
-Undergruppeanalyse med tall er nyttig, men en visualisering gjør sammenhengen mye tydeligere. Du lærte i @sec-descriptive at boksplott og histogrammer egner seg godt for kontinuerlige variable, og det samme grepet med stratifisering gir oss automatisk ett plott per gruppe.
+Undergruppeanalyse med tall er nyttig, men en visualisering gjør sammenhengen mye tydeligere. Du lærte i @sec-descriptive at boksplott og histogrammer egner seg godt for kontinuerlige variable, og det samme grepet med å dele inn i undergrupper gir oss automatisk ett plott per gruppe.
 
 ::: {.callout-tip collapse="true" title="I jamovi: boksplott eller histogram per undergruppe"}
 Analyses → Exploration → Descriptives. Legg variabelen i "Variables", åpne "Plots" og kryss av for "Box plot" eller "Histogram". Legg gruppevariabelen i "Split by".
 :::
 
-Se @fig-associations-equ-x-edu for en sammenlikning. Det er rett og slett vanskelig å se forskjell på undergruppene med histogrammet, men i boksplottet ser vi klart at elever som ser for seg _Høyere utdanning_ er mer for likestilling enn elever med lavere utdanningsambisjoner. Forskjellen kommer kanskje tydeligst frem ved medianen. (Merk at dette gjelder på gruppenivå og at det er mange unntak.)
+Se @fig-associations-equ-x-edu for en sammenlikning. Det er vanskelig å sammenlikne undergruppene med histogrammet fordi det er forskjellig antall observasjoner i hver søyle, men i boksplottet ser vi klart at elever som ser for seg _Høyere utdanning_ er mer for likestilling enn elever med lavere utdanningsambisjoner. Forskjellen kommer kanskje tydeligst frem ved å titte på medianen, den svarte streken i midten av boksen.
 
 :::{#fig-associations-equ-x-edu out.width="100%" layout-ncol=1}
 ```{r}
@@ -353,13 +357,13 @@ Se @fig-associations-equ-x-edu for en sammenlikning. Det er rett og slett vanske
 #| fig-cap: Med histogrammet er det vanskelig å se forskjell på gruppene.
 #| fig-alt: Fire histogrammer av Likestilling, ett for hvert forventet utdanningsnivå. Alle har omtrent samme form, med en lang hale av lave verdier og en topp i øvre del av skalaen.
 #| out-width: "100%"
-#| fig-asp: 0.5
+#| fig-asp: 0.8
 
 source("R/jamovi-histogram.R")
 ICCS |>
   dplyr::filter(!is.na(Likestilling), !is.na(`Forventet utdanning`)) |>
   jamovi_histogram(Likestilling, bins = 16) +
-  facet_wrap(~ `Forventet utdanning`, ncol = 2)
+  facet_wrap(~ `Forventet utdanning`, ncol = 4)
 ```
 
 ```{r}
@@ -378,8 +382,7 @@ ICCS |>
 Sammenlikning av histogram og boksplott for å vise variabelen _Likestilling_ for hvert forventede utdanningsnivå.
 :::
 
-Merk at krysstabellen (@sec-associations-contingency) også var en type undergruppeanalyse, bare at den var mellom to kategoriske variable. Undergruppeanalyse av deskriptiv statistikk handler om sammenhengen mellom en kategorisk og en kontinuerlig variabel.
-
+Merk at krysstabellen (@sec-associations-contingency) også var en type undergruppeanalyse, bare at den var mellom to kategoriske variable. Å finne sammenhengen mellom en kategorisk variabel og en annen variabel er altså det samme som å analysere undergrupper.
 
 ## Kontinuerlig × kontinuerlig {#sec-associations-cont-cont}
 
@@ -387,9 +390,9 @@ Hva om begge variablene er kontinuerlige? Da kan vi ikke dele inn i grupper, sid
 
 ### Spredningsplott {#sec-associations-scatter}
 
-**Spredningsplott** viser sammenhengen mellom to tallvariable. ICCS-datasettet vårt har flere tallvariable, blant annet _Likestilling_ og _Sosioøkonomisk status_. Et naturlig spørsmål å stille er om elevene med ulik sosioøkonomisk status har forskjellig syn på likestilling mellom kjønnene. Hvis man prøver å gjøre en undergruppeanalyse der undergruppene er definert av _Sosioøkonomisk status_, støter man på problemer, fordi det er `r length(unique(ICCS[["Sosioøkonomisk status"]]))` ulike verdier av _Sosioøkonomisk status_. Man kan ikke vise så mange undergrupper!
+**Spredningsplott** viser sammenhengen mellom to tallvariable. ICCS-datasettet vårt har flere tallvariable, blant annet _Demokratikunnskap_ og _Likestilling_. Et naturlig spørsmål å stille er om elever som kan mer om demokrati og samfunn også svarer annerledes på spørsmål om likestilling mellom kjønnene. Hvis man prøver å gjøre en undergruppeanalyse der undergruppene er definert av _Demokratikunnskap_, støter man på problemer, fordi det er `r length(unique(ICCS[["Demokratikunnskap"]]))` ulike verdier av _Demokratikunnskap_. Man kan ikke vise så mange undergrupper!
 
-Løsningen er å legge hver sin variabel på hver sin akse og plotte hvert punkt. Resultatet ser du i @fig-associations-scatter. Uavhengig av sosioøkonomisk status virker den vanligste verdien på _Likestilling_ å være den høyeste. Ut fra figuren er det ikke klart om sosioøkonomisk status har noen sammenheng med syn på likestilling i det hele tatt.
+Løsningen er å legge hver sin variabel på hver sin akse og plotte hvert punkt. Resultatet ser du i @fig-associations-scatter. Den mørke randen langs toppen viser at svært mange elever uansett kunnskapsnivå svarer det høyeste på _Likestilling_. Likevel ser vi en tendens: elever lengre til høyre (høyere _Demokratikunnskap_) ligger samtidig litt høyere på _Likestilling_.
 
 ::: {.callout-tip collapse="true" title="I jamovi: lage et spredningsplott"}
 Analyses → Exploration → Scatterplot. Legg én variabel i "X-Axis" og én i "Y-Axis".
@@ -398,97 +401,28 @@ Analyses → Exploration → Scatterplot. Legg én variabel i "X-Axis" og én i 
 
 ```{r}
 #| label: fig-associations-scatter
-#| fig-cap: Spredningsplott over _Likestilling_ og _Sosioøkonomisk status_. Hvert punkt er en elev; den mørke randen langs toppen viser at svært mange elever har høyest mulig skår på _Likestilling_.
-#| fig-alt: Et spredningsplott med Sosioøkonomisk status på x-aksen og Likestilling på y-aksen. En tett, mørk horisontal stripe ligger langs hele toppen, og ellers er punktene jevnt spredt utover skyen.
+#| fig-cap: Spredningsplott over _Demokratikunnskap_ og _Likestilling_. Hvert punkt er en elev; den mørke randen langs toppen viser at svært mange elever har høyest mulig skår på _Likestilling_.
+#| fig-alt: Et spredningsplott med Demokratikunnskap på x-aksen og Likestilling på y-aksen. En tett, mørk horisontal stripe ligger langs hele toppen, og ellers er punktene jevnt spredt utover skyen, med en svak tendens til at høyere Demokratikunnskap følges av høyere Likestilling.
 #| out-width: "100%"
 
 ICCS |>
-  dplyr::filter(!is.na(Likestilling), !is.na(`Sosioøkonomisk status`)) |>
+  dplyr::filter(!is.na(Likestilling), !is.na(Demokratikunnskap)) |>
   ggplot() +
-  aes(x = `Sosioøkonomisk status`, y = Likestilling) +
-  geom_point(color = blueshade, alpha = 0.05, size = 0.5)
+  aes(x = Demokratikunnskap, y = Likestilling) +
+  geom_jitter(color = blueshade, alpha = 0.10, size = 0.5, width = 0, height = 4.5)
 ```
 
-For å gjøre sammenhengen tydeligere er det vanlig å legge en linje over spredningsplottet, slik som i @fig-associations-scatter-line. Den viser at det er en svak positiv tendens, altså at elever med høy sosioøkonomisk status svarer høyere på spørsmålene om likestilling. Du lærer mer om slike linjer, regresjonslinjer, i @sec-correlation.
-
-::: {.callout-tip collapse="true" title="I jamovi: legge til regresjonslinje i spredningsplott"}
-I "Scatterplot"-menyen, under "Regression": kryss av for "Linear".
-:::
-
-```{r}
-#| label: fig-associations-scatter-line
-#| fig-cap: Spredningsplott med en regresjonslinje lagt til. Linja heller svakt oppover, en svak positiv sammenheng.
-#| fig-alt: Samme figur som det forrige spredningsplottet, men med en svart linje lagt oppå punktene. Linja heller svakt oppover mot høyre.
-#| out-width: "100%"
-
-ICCS |>
-  dplyr::filter(!is.na(Likestilling), !is.na(`Sosioøkonomisk status`)) |>
-  ggplot() +
-  aes(x = `Sosioøkonomisk status`, y = Likestilling) +
-  geom_point(color = blueshade, alpha = 0.05, size = 0.5) +
-  geom_smooth(method = "lm", formula = y ~ x, se = FALSE, color = "black")
-```
-
-
-### En korrelasjons styrke og retning {#sec-associations-correlation-strength}
-
-Et spredningsplott gir oss en god pekepinn på hvordan to variabler henger sammen, men ofte vil vi gjerne si noe mer presist enn bare å se på et bilde. Vi trenger et *tall* som forteller oss hvor sterk sammenhengen er, og om den er positiv eller negativ. Det tallet heter **korrelasjonskoeffisienten**.
-
-For å illustrere dette bruker vi et annet datasett. Tenk deg at Danielle, en småbarnsforelder, er nysgjerrig på hvordan søvnmønsteret til spedbarnet hennes påvirker hennes eget humør. Hun har samlet inn data om sin egen og babyens søvn over 100 dager (@tbl-associations-parenthood). Datasettet er fiktivt, men inspirert av ekte småbarnsliv. Danielle har vurdert sin egen grettenhet på en skala fra 0 (blid som en sol) til 100 (ekstremt gretten) og i tillegg registrert hvor mange timer både hun og babyen har sovet.
-
-```{r}
-#| label: tbl-associations-parenthood
-#| tbl-cap: Data for korrelasjonsanalyse -- deskriptiv statistikk for *foreldreskap*-dataene
-
-tibble(
-  variable = c(
-    "Danielles grettenhet",
-    "Danielles søvn (timer)",
-    "Babyens søvn (timer)"
-  ),
-  min = c(41, 4.84, 3.25),
-  max = c(91, 9.00, 12.07),
-  mean = c(63.71, 6.97, 8.05),
-  median = c(62, 7.03, 7.95),
-  `std. dev` = c(10.05, 1.02, 2.07),
-  IQR = c(14, 1.45, 3.21)
-) |>
-  tt()
-
-```
-
-Ta en titt på de to plottene nedenfor. Det til venstre (@fig-associations-scatter-baby) viser sammenhengen mellom hvor mye babyen sover og hvor gretten Danielle er. Det til høyre (@fig-associations-scatter-dani) viser sammenhengen mellom *Danielles egen* søvn og grettenheten hennes. Når vi ser dem side om side, er det lett å se at begge forteller samme historie: mer søvn betyr mindre grettenhet! Men det er også tydelig at sammenhengen er mye *sterkere* i det høyre plottet. Punktene ligger tettere samlet, og plottet ser rett og slett mer "ryddig" ut.
-
-<!-- TODO (bilde): fig12-2a.png og fig12-2b.png er gamle jamovi-skjermbilder fra parenthood-eksempelet. Issue 22 skal bytte ut hele eksempelet med ICCS-data. Disse to figurene må enten regenereres med nytt datasett eller fjernes når eksempelet er omskrevet. -->
-::: {#fig-associations-scatter-grump layout-ncol="2" layout-valign="bottom" width="100%" fig-pos="H"}
-![](images/fig12-2a.png){#fig-associations-scatter-baby fig-align="left" fig-alt="Spredningsplott som viser sammenhengen mellom 'Barnets søvn (timer)' på x-aksen og 'Min grettenhet' på y-aksen. Trenden indikerer at når barnet sover mer, avtar grettenheten." width="100%"}
-
-![](images/fig12-2b.png){#fig-associations-scatter-dani fig-align="left" fig-alt="Et spredningsplott med tittelen 'Min grettenhet vs. Min søvn (timer)'. X-aksen er merket 'Min søvn (timer)' fra 5 til 9, og y-aksen er merket 'Min grettenhet' fra 40 til 90. Datapunktene viser en negativ korrelasjon mellom søvn og surhet." width="100%"}
-
-Spredningsplott fra jamovi som viser sammenhengen mellom babyens søvn og Danielles grettenhet (venstre) og sammenhengen mellom Danielles søvn og grettenhet (høyre)
-:::
-
-Nå som vi har sett på *styrken* i en sammenheng, la oss se på *retningen*. Ta en titt på de to plottene i @fig-associations-scatter-direction. Her sammenligner vi sammenhengen mellom babyens søvn og Danielles grettenhet (til venstre) med sammenhengen mellom babyens søvn og *Danielles* søvn (til høyre). Denne gangen er styrken i de to sammenhengene ganske lik, men retningen er helt motsatt. Det betyr at når babyen sover mer, får også Danielle mer søvn -- en *positiv sammenheng* (plottet til høyre). Samtidig, når babyen sover mer, blir Danielle mindre gretten -- en *negativ sammenheng* (plottet til venstre).
-
-<!-- TODO (bilde): fig12-2a.png og fig12-3b.png er gamle jamovi-skjermbilder fra parenthood-eksempelet. Knyttet til issue 22 -- regenereres eller fjernes sammen med fig-associations-scatter-grump-figurene. -->
-::: {#fig-associations-scatter-direction layout-ncol="2" layout-valign="bottom" width="90%" fig-pos='h!'}
-
-![](images/fig12-2a.png){#fig-associations-scatter-dir-neg fig-align="left" fig-alt="Spredningsplott som viser sammenhengen mellom 'Barnets søvn (timer)' på x-aksen og 'Min surhet' på y-aksen. Trenden indikerer at når barnet sover mer, avtar surheten." width="100%"}
-
-![](images/fig12-3b.png){#fig-associations-scatter-dir-pos fig-align="left" fig-alt="Spredningsplott som viser sammenhengen mellom 'Barnets søvn (timer)' på x-aksen og 'Min søvn (timer)' på y-aksen. Datapunktene indikerer at når barnets søvn øker fra 5 til 12,5 timer, har forelderens søvn også en tendens til å øke fra 5 til 9 timer." width="100%"}
-
-Spredningsplott fra jamovi som viser sammenhengen mellom babyens søvn og Danielles grettenhet (venstre), sammenlignet med sammenhengen mellom babyens søvn og Danielles søvn (høyre)
-:::
+Spredningsplottet antyder en sammenheng -- punktskyen trekker svakt oppover mot høyre -- men det sier ikke *hvor sterk* sammenhengen er. Er den sterk, moderat eller svak? Å se på punktene alene er ofte ikke nok -- vi trenger et tall som oppsummerer styrken (og retningen) i én verdi. Det tallet er **korrelasjonskoeffisienten**.
 
 ### Korrelasjonskoeffisienten {#sec-associations-correlation-coefficient}
 
-For å få et bedre grep om disse ideene, la oss introdusere **korrelasjonskoeffisienten** mer formelt. Den kalles ofte Pearsons korrelasjonskoeffisient og skrives som $r$. Denne koeffisienten er et tall mellom -1 og 1 som måler styrken og retningen på sammenhengen mellom to variabler, $X$ og $Y$ (noen ganger skrevet $r_{XY}$).
+Korrelasjonskoeffisienten kalles ofte Pearsons korrelasjonskoeffisient og skrives som $r$. Det er et tall mellom $-1$ og $1$ som måler styrken og retningen på sammenhengen mellom to variable, $X$ og $Y$ (noen ganger skrevet $r_{XY}$).
 
 - En $r = 1$ betyr en perfekt positiv sammenheng.
 - En $r = -1$ betyr en perfekt negativ sammenheng.
 - En $r = 0$ betyr at det ikke er noen lineær sammenheng i det hele tatt.
 
-Ta en titt på @fig-associations-correlation-examples for å se eksempler på hvordan ulike korrelasjoner ser ut.
+Hvordan ser ulike korrelasjoner ut? @fig-associations-correlation-examples viser eksempler. Punktskyene er her *simulert* slik at vi kan vise nøyaktige verdier av $r$ -- en luksus vi ikke har i ekte data.
 
 ```{r}
 #| label: fig-associations-correlation-examples
@@ -522,22 +456,20 @@ onePlot_out <- lapply(c(0, .33, -.33, .66, -.66, 1, -1), function(r) {
 })
 
 tgrob <- ggpubr::text_grob(
-  "Positive Correlations",
+  "Positive korrelasjoner",
   hjust = 0.7,
   vjust = 0.7,
   size = 16
 )
 plot_01 <- ggpubr::as_ggplot(tgrob)
 tgrob <- ggpubr::text_grob(
-  "Negative Correlations",
+  "Negative korrelasjoner",
   hjust = 0.7,
   vjust = 0.7,
   size = 16
 )
 plot_02 <- ggpubr::as_ggplot(tgrob)
 
-
-library(patchwork)
 
 theme_border <- theme_gray() +
   theme(
@@ -564,26 +496,111 @@ p3
 
 ```
 
-Vi ser at korrelasjonen måler i hvor stor grad punktene faller på en rett linje i et spredningsplott. Dette er velegnet til å beskrive sammenhengen mellom kontinuerlige variable.
+Korrelasjonen måler altså i hvor stor grad punktene faller på en rett linje. Jo nærmere $r$ ligger $\pm 1$, jo tettere samler punktene seg rundt linja; jo nærmere $r$ er $0$, jo mer ser plottet ut som en sky uten retning.
 
-### Beregne korrelasjoner i jamovi {#sec-associations-correlation-jamovi}
+### Styrke og retning i ekte data {#sec-associations-correlation-strength}
 
-Korrelasjonsmatrisen for *parenthood*-dataene er vist i @fig-associations-correlation-jamovi.
+Stiliserte plott er rene og tydelige, men ekte data ser sjelden så pent ut. Nå vender vi tilbake til ICCS og bruker $r$ til å sammenligne ekte sammenhenger. I figurene som følger har vi lagt en rett linje gjennom punktene som best mulig følger trenden -- det gjør det lettere å se hellingen i en messy punktsky.
+
+**Styrken** ser vi best ved å sammenligne to plott der retningen er den samme. I @fig-associations-scatter-strength står _Sosioøkonomisk status_ × _Likestilling_ ($r = 0{,}18$) til venstre og _Demokratikunnskap_ × _Likestilling_ ($r = 0{,}44$) til høyre. Begge er positive, men korrelasjonen til høyre er omtrent dobbelt så sterk -- og det vises ved at punktene samler seg tettere rundt linja, og at linja heller brattere oppover. Sammenligner du med de stiliserte plottene i @fig-associations-correlation-examples, ser du raskt at *både* $0{,}18$ og $0{,}44$ er langt unna den rene formen for $r = 0{,}33$ og $r = 0{,}66$. Det er kostnaden ved ekte data.
+
+```{r}
+#| label: fig-associations-scatter-strength
+#| fig-cap: Sammenligning av to positive sammenhenger med ulik styrke. Til venstre _Sosioøkonomisk status_ × _Likestilling_; til høyre _Demokratikunnskap_ × _Likestilling_. Korrelasjonen for hvert plott står som undertittel.
+#| fig-alt: To spredningsplott side om side, begge med Likestilling på y-aksen. Det venstre har Sosioøkonomisk status på x-aksen, undertittel r = 0,18, og regresjonslinja heller bare svakt oppover. Det høyre har Demokratikunnskap på x-aksen, undertittel r = 0,44, og regresjonslinja heller tydelig brattere oppover.
+#| out-width: "100%"
+#| fig-width: 8.57
+#| fig-asp: 0.5
+
+p_strength_weak <- ICCS |>
+  dplyr::filter(!is.na(Likestilling), !is.na(`Sosioøkonomisk status`)) |>
+  ggplot() +
+  aes(x = `Sosioøkonomisk status`, y = Likestilling) +
+  geom_jitter(color = blueshade, alpha = 0.05, size = 0.5, width = 0, height = 4.5) +
+  geom_smooth(method = "lm", formula = y ~ x, se = FALSE, color = "black") +
+  labs(subtitle = "r = 0,18")
+
+p_strength_strong <- ICCS |>
+  dplyr::filter(!is.na(Likestilling), !is.na(Demokratikunnskap)) |>
+  ggplot() +
+  aes(x = Demokratikunnskap, y = Likestilling) +
+  geom_jitter(color = blueshade, alpha = 0.05, size = 0.5, width = 0, height = 4.5) +
+  geom_smooth(method = "lm", formula = y ~ x, se = FALSE, color = "black") +
+  labs(subtitle = "r = 0,44")
+
+p_strength_weak + p_strength_strong
+```
+
+**Retningen** ser vi best ved å bytte ut én av variablene. I @fig-associations-scatter-direction beholder vi _Demokratikunnskap_ på x-aksen, men sammenligner _Likestilling_ ($r = 0{,}44$) til venstre med _Forventet politisk deltakelse_ ($r = -0{,}23$) til høyre. Det viktige er fortegnet: til venstre heller linja oppover (positiv sammenheng), til høyre heller den nedover (negativ sammenheng). Den negative korrelasjonen er overraskende -- elever som kan mer om demokrati forventer å delta *mindre* politisk -- og det er et resultat vi kommer tilbake til.
+
+```{r}
+#| label: fig-associations-scatter-direction
+#| fig-cap: Sammenligning av en positiv og en negativ sammenheng, med _Demokratikunnskap_ på x-aksen i begge. Til venstre _Likestilling_ på y-aksen; til høyre _Forventet politisk deltakelse_. Korrelasjonen for hvert plott står som undertittel.
+#| fig-alt: To spredningsplott side om side, begge med Demokratikunnskap på x-aksen. Det venstre har Likestilling på y-aksen, undertittel r = 0,44, og linja heller oppover. Det høyre har Forventet politisk deltakelse på y-aksen, undertittel r = -0,23, og linja heller nedover.
+#| out-width: "100%"
+#| fig-width: 8.57
+#| fig-asp: 0.5
+
+p_dir_pos <- ICCS |>
+  dplyr::filter(!is.na(Likestilling), !is.na(Demokratikunnskap)) |>
+  ggplot() +
+  aes(x = Demokratikunnskap, y = Likestilling) +
+  geom_jitter(color = blueshade, alpha = 0.05, size = 0.5, width = 0, height = 4.5) +
+  geom_smooth(method = "lm", formula = y ~ x, se = FALSE, color = "black") +
+  labs(subtitle = "r = 0,44")
+
+p_dir_neg <- ICCS |>
+  dplyr::filter(!is.na(`Forventet politisk deltakelse`), !is.na(Demokratikunnskap)) |>
+  ggplot() +
+  aes(x = Demokratikunnskap, y = `Forventet politisk deltakelse`) +
+  geom_jitter(color = blueshade, alpha = 0.05, size = 0.5, width = 0, height = 4.5) +
+  geom_smooth(method = "lm", formula = y ~ x, se = FALSE, color = "black") +
+  labs(subtitle = "r = -0,23")
+
+p_dir_pos + p_dir_neg
+```
+
+### Korrelasjonsmatrise {#sec-associations-correlation-matrix}
+
+Vi har nå sett tre par av variable og lest av $r$ for hvert av dem. Når vi vil sammenligne mange variable samtidig, blir det fort uoversiktlig med ett spredningsplott per par. I stedet samler vi alle korrelasjonene i én tabell -- en **korrelasjonsmatrise**. @tbl-associations-correlation-matrix viser matrisen for de fire ICCS-variablene vi har jobbet med: _Demokratikunnskap_, _Likestilling_, _Sosioøkonomisk status_ og _Forventet politisk deltakelse_.
 
 ::: {.callout-tip collapse="true" title="I jamovi: lage en korrelasjonsmatrise"}
 Regression → Correlation Matrix. Legg de kontinuerlige variablene du vil korrelere i variabelboksen. Pearsons $r$ er valgt som standard.
 :::
 
 ```{r}
-#| label: fig-associations-correlation-jamovi
-#| classes: .enlarge-image
-#| fig-cap: Korrelasjoner mellom variablene i *parenthood.csv*-filen
-#| fig-alt: Et skjermbilde fra jamovi som viser dataanalyseverktøy. Hovedfokuset er på en korrelasjonsmatrise med variabelnavn som «dan.sleep», «baby.sleep» og «dan.grump». Valg for Pearson-korrelasjon, rapportering av signifikans og konfidensintervaller er synlige
-#| out-width: "100%"
-knitr::include_graphics("images/fig12-5.png")
+#| label: tbl-associations-correlation-matrix
+#| tbl-cap: Korrelasjonsmatrise for fire kontinuerlige ICCS-variable. Hver celle er Pearsons $r$ mellom variabelen i raden og variabelen i kolonnen.
+
+cor_vars <- c(
+  "Demokratikunnskap",
+  "Likestilling",
+  "Sosioøkonomisk status",
+  "Forventet politisk deltakelse"
+)
+
+cor_mat <- ICCS |>
+  dplyr::select(dplyr::all_of(cor_vars)) |>
+  cor(use = "pairwise.complete.obs")
+
+fmt_r <- function(x) {
+  ifelse(
+    is.na(x),
+    "",
+    formatC(round(x, 2), format = "f", digits = 2, decimal.mark = ",")
+  )
+}
+
+cor_mat[upper.tri(cor_mat, diag = FALSE)] <- NA
+
+tibble::as_tibble(cor_mat, rownames = " ") |>
+  dplyr::mutate(dplyr::across(-1, fmt_r)) |>
+  tt() |>
+  theme_tt("spacing") |>
+  style_tt(i = 0, bold = TRUE)
 ```
 
-<!-- TODO: Skjermbildet @fig-associations-correlation-jamovi viser fortsatt innstillingspanelet. Vurder å beskjære det til kun resultattabellen, siden klikk-instruksjonene nå ligger i callout-boksen. -->
+Matrisen bekrefter mønsteret fra figurene over og legger til to par vi ikke har sett. _Demokratikunnskap_ henger positivt sammen med både _Likestilling_ ($r = 0{,}44$) og _Sosioøkonomisk status_ ($r = 0{,}39$); det er de to sterkeste sammenhengene i tabellen. _Forventet politisk deltakelse_ skiller seg ut ved å henge negativt sammen med alle de tre andre variablene, sterkest med _Demokratikunnskap_ ($r = -0{,}23$) og svakest med _Sosioøkonomisk status_ ($r = -0{,}03$, så nær null at sammenhengen i praksis er fraværende).
 
 ### Tolkning av en korrelasjon {#sec-associations-correlation-interpretation}
 
@@ -687,5 +704,5 @@ ggplot(anscombe_quartet, aes(x = x, y = y)) +
 Deskriptiv statistikk for en enkelt variabel forteller deg *hva* dataene inneholder; å beskrive sammenhenger forteller deg *hvordan variable henger sammen*. I dette kapittelet har vi sett at framgangsmåten avhenger av hva slags variable du har:
 
 -   **Kategorisk × kategorisk**: Bruk [krysstabeller][Krysstabeller] for å se tallene og [stablede stolpediagram][Stablede stolpediagram] for å visualisere sammenhengen.
--   **Kategorisk × kontinuerlig**: Bruk [deskriptiv statistikk separat for hver gruppe][Deskriptiv statistikk separat for hver gruppe] for å sammenligne tall, og [side-by-side boksplott][Side-by-side boksplott og histogrammer] for å se forskjellene visuelt.
+-   **Kategorisk × kontinuerlig**: Bruk [deskriptiv statistikk separat for hver undergruppe][Deskriptiv statistikk separat for hver undergruppe] for å sammenligne tall, og [boksplott og histogrammer separat for hver undergruppe][Boksplott og histogrammer separat for hver undergruppe] for å se forskjellene visuelt.
 -   **Kontinuerlig × kontinuerlig**: Bruk [spredningsplott][Spredningsplott] for å visualisere sammenhengen, og [korrelasjonskoeffisienten][Korrelasjonskoeffisienten] for å beskrive styrken og retningen med et tall. Husk [Anscombes kvartett][Anscombes kvartett]: visualiser alltid dataene dine!
