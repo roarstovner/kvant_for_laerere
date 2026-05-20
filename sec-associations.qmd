@@ -15,9 +15,39 @@ ICCS <- readRDS("data_and_tables/ICCS.RDS")
 set.seed(123)
 utvalg <- ICCS |>
   slice_sample(n = 50)
+
+set.seed(2026)
+ICCS <- ICCS |>
+  dplyr::mutate(
+    Likestilling_jit = Likestilling + rnorm(dplyr::n(), 0, 1.5),
+    `Forventet politisk deltakelse_jit` =
+      `Forventet politisk deltakelse` + rnorm(dplyr::n(), 0, 1.5)
+  )
 ```
 
 Framgangsmåten avhenger av hva slags variable vi har. Derfor organiserer vi kapittelet etter variabeltype: først to kategoriske variable, deretter en kategorisk og en kontinuerlig variabel, og til slutt to kontinuerlige variable.
+
+Vi bruker syv variabler fra ICCS-datasettet gjennom kapittelet. @tbl-associations-codebook viser hvilket målenivå hver av dem har og hva verdiene betyr. Det kan være lurt å bla tilbake hit underveis i kapittelet hvis du lurer på noe om variablene.
+
+```{r}
+#| label: tbl-associations-codebook
+#| tbl-cap: Variablene fra ICCS-datasettet vi bruker i dette kapittelet. _Type_ (kategorisk/kontinuerlig) er den grupperingen kapittelet er organisert etter; _Målenivå_ er det mer presise vokabularet fra @sec-descriptive.
+
+tibble::tribble(
+  ~Variabel, ~Type, ~Målenivå, ~Verdier,
+  "Land", "Kategorisk", "Nominal", "Norge, Spania, Polen, Brasil",
+  "Kjønn", "Kategorisk", "Nominal", "Jente, Gutt, Annet",
+  "Forventet utdanning", "Kategorisk", "Ordinal", "Ungdomsskole < VGS < Kort utdanning < Høyere utdanning",
+  "Likestilling", "Kontinuerlig", "Intervall", "Høyere skår betyr mer positiv til likestilling",
+  "Demokratikunnskap", "Kontinuerlig", "Intervall", "Høyere skår betyr mer kunnskap om demokrati",
+  "Sosioøkonomisk status", "Kontinuerlig", "Intervall", "Standardisert indeks; 0 ≈ gjennomsnittet",
+  "Forventet politisk deltakelse", "Kontinuerlig", "Intervall", "Høyere skår betyr mer forventet politisk engasjement"
+) |>
+  tt() |>
+  theme_tt("spacing") |>
+  style_tt(i = 0, bold = TRUE)
+```
+
 
 ## Kategorisk × kategorisk {#sec-associations-cat-cat}
 
@@ -53,7 +83,7 @@ Når du tolker krysstabellen, kan du for eksempel se på cellen for spanske elev
 
 Krysstabeller er nyttige! Se for eksempel at norske elever skiller seg ut ved at en betydelig større andel ser for seg å avslutte utdanningen etter ungdomsskolen, mens brasilianske elever i datasettet i praksis ikke gjør det -- hvorfor det, mon tro?
 
-### Stolpediagram for undergruppeanalyse {#sec-associations-bar-subgroup}
+### Grupperte stolpediagram {#sec-associations-bar-subgroup}
 
 Du lærte å lage stolpediagram i @sec-descriptive. Et **gruppert stolpediagram** lar deg sammenligne undergrupper ved å dele opp dataene etter en ekstra kategorisk variabel. I @fig-associations-edu-x-country står _Forventet utdanning_ på x-aksen, og hvert utdanningsnivå har én stolpe per _Land_. I @fig-associations-country-x-edu er det byttet om, slik at _Land_ står på x-aksen og hvert land har én stolpe per utdanningsnivå. Hvis du lurer på hvilken du skal velge, må du tenke over "hvilken kommuniserer best det poenget jeg prøver å få frem?" eller "hvilken besvarer forskningsspørsmålet best?"
 
@@ -79,6 +109,7 @@ ICCS |>
   scale_fill_manual(
     values = unname(jamovi_qual_palette[c("red", "blue", "green", "purple")])
   ) +
+  scale_x_discrete(labels = scales::label_wrap(10)) +
   labs(y = "Counts", x = NULL)
 ```
 
@@ -104,7 +135,7 @@ ICCS |>
 Gruppert stolpediagram av _Forventet utdanning_ og _Land_, vist på to måter.
 :::
 
-Vi kan også legge til _enda en variabel_, slik at vi sammenligner undergrupper langs to dimensjoner samtidig. I @fig-associations-bar-threeway ser du resultatet for _Land_, _Forventet utdanning_ og _Kjønn_, der hvert kjønn vises i sitt eget panel. Uff, det ble en koloss av en figur! Spesielt _Annet_-panelet blir vanskelig å lese fordi gruppen er mye mindre enn de to andre. Vi skal forbedre figuren med stablede stolpediagrammer i neste delkapittel.
+Vi kan også legge til _enda en variabel_, slik at vi sammenligner undergrupper langs to dimensjoner samtidig. I @fig-associations-bar-threeway ser du resultatet for _Land_, _Forventet utdanning_ og _Kjønn_, der hvert kjønn vises i sitt eget panel. Uff, det ble en koloss av en figur! Spesielt _Annet_-panelet (nederst) blir vanskelig å lese fordi gruppen er mye mindre enn de to andre. Vi skal forbedre figuren med stablede stolpediagrammer i neste delkapittel.
 
 ```{r}
 #| label: fig-associations-bar-threeway
@@ -133,7 +164,7 @@ ICCS |>
 
 ### Stablede stolpediagram {#sec-associations-stacked-bar}
 
-I @sec-diagram-bar så du at andelen ofte er det vi egentlig vil ha visualisert, fordi antall blir misvisende når gruppene er ulike i størrelse. **Stablede stolpediagram** gjør dette eksplisitt: hver stolpe ekspanderes til 100 %, og segmentene viser sammensetningen innenfor den stolpen. Det blir både kompakt og direkte sammenliknbart mellom grupper, se @fig-associations-stacked-bar.
+I @sec-diagram-bar så du at vi ofte ikke ønsker å vise antallet i hver stolpe, men andelen, fordi antallet blir misvisende når gruppene har ulik størrelse. **Stablede stolpediagram** er en fin måte å vise andelene på: du stabler stolpene oppå hverandre slik at de summerer til 100 %, og hver stolpe viser sammensetningen innenfor den stolpen. Det blir både kompakt og direkte sammenliknbart mellom grupper, se @fig-associations-stacked-bar.
 
 ::: {.callout-tip collapse="true" title="I jamovi: lage et stablet stolpediagram"}
 Frequencies → Independent samples ($\chi^2$ test of association). Legg _Forventet utdanning_ på "Rows" og _Land_ på "Columns". Under "Plots" kryss av for "Bar plot" og velg:
@@ -173,9 +204,9 @@ andel_hoy_land <- ICCS |>
 p_hoy <- function(land) andel_hoy_land$p_hoy[andel_hoy_land$Land == land]
 ```
 
-I @fig-associations-stacked-bar ser vi andelen elever som planlegger _Høyere utdanning_ i hvert land: `r p_hoy("Norge")` % i Norge, `r p_hoy("Spania")` % i Spania, `r p_hoy("Polen")` % i Polen og `r p_hoy("Brasil")` % i Brasil. Forskjellene er forholdsvis små. Sammenlign gjerne med stolpediagrammet i @fig-associations-edu-x-country, som viser absolutte tall. Der virker forskjellen mellom norske og spanske elever mye større -- vesentlig flere norske enn spanske elever ser for seg høyere utdanning. Grunnen er imidlertid at det er betydelig flere norske enn spanske elever i utvalget vårt (`r sum(ICCS[["Land"]] == "Norge")` mot `r sum(ICCS[["Land"]] == "Spania")`). Sannsynligvis er vi mer interessert i andelen elever som ser for seg høyere utdanning, og det stablede stolpediagrammet viser dette tydeligere.
+I @fig-associations-stacked-bar ser vi et stablet stolpediagram som viser _Forventet utdanning_ for hvert land. Vi ser tydelig at en større andel elever i Brasil planlegger å ta høyere utdanning enn i Norge. Forskjellene er forholdsvis små, og i stolpediagrammene @fig-associations-edu-x-country og @fig-associations-country-x-edu, er det vanskelig å se at Brasilianere oftere ser for seg å ta høyere utdanning.
 
-Nå kan vi igjen prøve å gjøre en analyse på tvers av to variable, _Kjønn_ og _Land_. Resultatet blir som i @fig-associations-stacked-bar-threeway. Her skinner virkelig det stablede stolpediagrammet -- se så kompakt og lesbart det ble i forhold til samme informasjon vist som et vanlig stolpediagram (@fig-associations-bar-threeway). Den største forskjellen mellom de to diagrammene er at _Annet_-panelet var nesten umulig å lese med det vanlige stolpediagrammet fordi stolpene ble så små. Med stablede stolper står hver stolpe like høyt (100 %), og vi ser sammensetningen innenfor hver liten gruppe. (Men husk at disse stolpene er basert på veldig få elever.)
+Med vanlige stolpediagram var det vanskelig å gjøre en analyse på tvers av to variable, siden figuren @fig-associations-bar-threeway ble så stor. Vi kan prøve å lage en liknende figur med stablede stolper. Resultatet blir som i @fig-associations-stacked-bar-threeway. Her skinner virkelig det stablede stolpediagrammet -- se så kompakt og lesbart det ble i forhold til samme informasjon vist som et vanlig stolpediagram (@fig-associations-bar-threeway). Den største forskjellen mellom de to diagrammene er at _Annet_-panelet var nesten umulig å lese med det vanlige stolpediagrammet fordi stolpene ble så små. Med stablede stolper står hver stolpe like høyt (100 %), og vi ser sammensetningen innenfor hver liten gruppe. (Men husk at disse stolpene er basert på veldig få elever.)
 
 ::: {.callout-tip collapse="true" title="I jamovi: stablet stolpediagram med tre variable"}
 Behold oppsettet for stablet stolpediagram, men legg den tredje variabelen i "Layers".
@@ -205,40 +236,17 @@ ICCS |>
   labs(y = "Percentages", x = NULL)
 ```
 
+For å oppsummere: Å analysere sammenhengen mellom to kategoriske variable betyr å gjøre en undergruppeanalyse der en av variablene utgjør undergruppene. Dette kan man vise i en krysstabell eller som flere stolpediagram ved siden av hverandre. Stablede stolpediagram er en kompakt måte å vise andeler, som ofte er det man vil.
 
 ## Kategorisk × kontinuerlig {#sec-associations-cat-cont}
 
-Hva om du vil se om en *kontinuerlig* variabel varierer mellom ulike grupper? For eksempel: svarer norske og spanske elever forskjellig på variabelen _Likestilling_? Da trenger du deskriptiv statistikk *separat for hver gruppe*.
+Hva om du vil analysere sammenhengen mellom en *kontinuerlig* variabel og en kategorisk variabel? For eksempel vil en analyse av _Land_ og _Likestilling_ vise om elever fra ulike land svarer forskjellig på variabelen _Likestilling_. I likhet med forrige delkapittel er det bare å lage deskriptiv statistikk *separat for hver gruppe*, der gruppen er definert av den kategoriske variabelen.
 
-### Deskriptiv statistikk separat for hver undergruppe {#sec-associations-subgroup}
+### Sentraltendens og spredning per gruppe {#sec-associations-subgroup}
 
-```{r}
-five_first <- head(utvalg, 5)
-```
+Egentlig er dette samme grep som vi allerede gjorde med krysstabellen og det grupperte stolpediagrammet: vi splittet dataene etter en kategorisk variabel og så hvert utsnitt for seg. Forskjellen nå er at det vi regner ut innenfor hver gruppe er gjennomsnitt, median og standardavvik -- ikke antall. Det hadde for eksempel vært interessant å vite om de spanske og norske elevene svarer forskjellig på variabelen _Likestilling_, eller om de som ser for seg høyere utdanning svarer forskjellig fra de som ser for seg å stoppe utdanningen etter videregående. Slike spørsmål er svært interessante, og derfor er undergruppeanalyser ofte det masterstudenter benytter til å besvare forskningsspørsmålene sine.
 
-Det er svært vanlig at du trenger å se på deskriptiv statistikk for forskjellige undergrupper i dataene dine. Det hadde for eksempel vært interessant å vite om de spanske og norske elevene svarer forskjellig på variabelen _Likestilling_. Eller kanskje om de som ser for seg høyere utdanning svarer forskjellig fra de som ser for seg å stoppe utdanningen etter videregående. Slike spørsmål er svært interessante, og derfor er undergruppeanalyser ofte det masterstudenter benytter til å besvare forskningsspørsmålene sine.
-
-Vi titter på noen rader fra ICCS-dataene våre igjen:
-
-```{r}
-#| label: tbl-associations-icss-sample
-#| tbl-cap: Fem tilfeldige rader fra ICCS-datasettet, med variablene vi bruker videre i kapittelet.
-
-five_first |>
-  dplyr::select(
-    Land, Kjønn, `Forventet utdanning`,
-    Likestilling, Demokratikunnskap, `Sosioøkonomisk status`,
-    `Forventet politisk deltakelse`
-  ) |>
-  tt() |>
-  format_tt(
-    j = c("Likestilling", "Demokratikunnskap", "Forventet politisk deltakelse"),
-    digits = 1, num_fmt = "decimal"
-  ) |>
-  format_tt(j = "Sosioøkonomisk status", digits = 2, num_fmt = "decimal")
-```
-
-Undergruppene vi kan undersøke -- de fire landene, de fire utdanningsnivåene, eller de tre kjønnsverdiene -- er nettopp de forskjellige verdiene til nominelle eller ordinale variable (her _Land_, _Forventet utdanning_ og _Kjønn_). En måte å tenke på verdiene til nominelle og ordinale variable er altså som undergrupper.
+Undergruppene vi kan undersøke -- de fire landene, de fire utdanningsnivåene, eller de tre kjønnsverdiene -- er nettopp de forskjellige verdiene til de tre kategoriske variablene fra @tbl-associations-codebook: _Land_, _Forventet utdanning_ og _Kjønn_. En måte å tenke på verdiene til nominelle og ordinale variable er altså som undergrupper.
 
 > Å gjøre deskriptiv statistikk for undergrupper er å gjøre utregningene separat for hver verdi av en kategorisk variabel.
 
@@ -341,7 +349,7 @@ Mønsteret fra @tbl-associations-equality-x-gender går igjen i alle land: jente
 
 PS: Når man deler inn i undergrupper på denne måten, kan det være at enkelte undergrupper har svært få -- eller ingen -- respondenter. ICCS-utvalget fra Polen og Brasil inneholder ingen elever som har oppgitt _Annet_ kjønn, og selv i Norge og Spania er gruppen liten (henholdsvis `r n_lk("Norge", "Annet")` og `r n_lk("Spania", "Annet")` respondenter). Det er fremdeles mange nok til at det gir mening å regne gjennomsnitt der vi har dem, men andre ganger vil det være like greit å si at man ikke har mange nok respondenter til å gjøre en undergruppeanalyse for akkurat dem. Merk at dette er et etisk problem for forskere, for hvis forskning kan gagne mennesker er det et problem om noen grupper mennesker stadig vekk blir utelatt.
 
-### Boksplott og histogrammer separat for hver undergruppe
+### Boksplott og histogrammer per gruppe
 
 Undergruppeanalyse med tall er nyttig, men en visualisering gjør sammenhengen mye tydeligere. Du lærte i @sec-descriptive at boksplott og histogrammer egner seg godt for kontinuerlige variable, og det samme grepet med å dele inn i undergrupper gir oss automatisk ett plott per gruppe.
 
@@ -355,15 +363,16 @@ Se @fig-associations-equ-x-edu for en sammenlikning. Det er vanskelig å sammenl
 ```{r}
 #| label: fig-associations-histogram-equ-x-edu
 #| fig-cap: Med histogrammet er det vanskelig å se forskjell på gruppene.
-#| fig-alt: Fire histogrammer av Likestilling, ett for hvert forventet utdanningsnivå. Alle har omtrent samme form, med en lang hale av lave verdier og en topp i øvre del av skalaen.
+#| fig-alt: Fire histogrammer av Likestilling stablet vertikalt, ett for hvert forventet utdanningsnivå. Alle har omtrent samme form, med en lang hale av lave verdier og en topp i øvre del av skalaen, men panelene for Ungdomsskole og Kort utdanning er nesten flate fordi de deler y-akse med det mye større Høyere utdanning-panelet.
 #| out-width: "100%"
-#| fig-asp: 0.8
+#| fig-width: 8.57
+#| fig-asp: 1.0
 
 source("R/jamovi-histogram.R")
 ICCS |>
   dplyr::filter(!is.na(Likestilling), !is.na(`Forventet utdanning`)) |>
   jamovi_histogram(Likestilling, bins = 16) +
-  facet_wrap(~ `Forventet utdanning`, ncol = 4)
+  facet_wrap(~ `Forventet utdanning`, ncol = 1)
 ```
 
 ```{r}
@@ -377,12 +386,13 @@ ICCS |>
   ggplot() +
   aes(x = `Forventet utdanning`, y = Likestilling) +
   geom_boxplot(fill = jamovi_qual_palette["blue"], color = "black") +
+  scale_x_discrete(labels = scales::label_wrap(10)) +
   labs(x = NULL)
 ```
 Sammenlikning av histogram og boksplott for å vise variabelen _Likestilling_ for hvert forventede utdanningsnivå.
 :::
 
-Merk at krysstabellen (@sec-associations-contingency) også var en type undergruppeanalyse, bare at den var mellom to kategoriske variable. Å finne sammenhengen mellom en kategorisk variabel og en annen variabel er altså det samme som å analysere undergrupper.
+For å oppsummere: Også å analysere sammenhengen mellom en kategorisk og en kontinuerlig variabel er en undergruppeanalyse -- men det vi regner ut innenfor hver gruppe er sentraltendens og spredning, ikke antall. Resultatet kan vises som tabell eller som ett boksplott per gruppe. Boksplottet er som regel et bedre visuelt valg enn histogrammet, fordi det lar oss sammenligne medianer direkte og ikke drukner i forskjeller i gruppestørrelse.
 
 ## Kontinuerlig × kontinuerlig {#sec-associations-cont-cont}
 
@@ -390,9 +400,9 @@ Hva om begge variablene er kontinuerlige? Da kan vi ikke dele inn i grupper, sid
 
 ### Spredningsplott {#sec-associations-scatter}
 
-**Spredningsplott** viser sammenhengen mellom to tallvariable. ICCS-datasettet vårt har flere tallvariable, blant annet _Demokratikunnskap_ og _Likestilling_. Et naturlig spørsmål å stille er om elever som kan mer om demokrati og samfunn også svarer annerledes på spørsmål om likestilling mellom kjønnene. Hvis man prøver å gjøre en undergruppeanalyse der undergruppene er definert av _Demokratikunnskap_, støter man på problemer, fordi det er `r length(unique(ICCS[["Demokratikunnskap"]]))` ulike verdier av _Demokratikunnskap_. Man kan ikke vise så mange undergrupper!
+**Spredningsplott** viser sammenhengen mellom to tallvariable. ICCS-datasettet vårt har fire kontinuerlige variable (se @tbl-associations-codebook); to av dem er _Demokratikunnskap_ og _Likestilling_. _Demokratikunnskap_ er hovedvariabelen i ICCS, og måler elevenes kunnskap om demokrati og samfunn. Et naturlig spørsmål å stille er om elever som kan mer om demokrati og samfunn også svarer annerledes på spørsmål om likestilling mellom kjønnene. Hvis man prøver å gjøre en undergruppeanalyse der undergruppene er definert av _Demokratikunnskap_, støter man på problemer, fordi det er `r length(unique(ICCS[["Demokratikunnskap"]]))` ulike verdier av _Demokratikunnskap_. Man kan ikke vise så mange undergrupper!
 
-Løsningen er å legge hver sin variabel på hver sin akse og plotte hvert punkt. Resultatet ser du i @fig-associations-scatter. Den mørke randen langs toppen viser at svært mange elever uansett kunnskapsnivå svarer det høyeste på _Likestilling_. Likevel ser vi en tendens: elever lengre til høyre (høyere _Demokratikunnskap_) ligger samtidig litt høyere på _Likestilling_.
+Løsningen er å legge hver sin variabel på hver sin akse og plotte hvert punkt. Resultatet ser du i @fig-associations-scatter. Vi ser en tendens til at punkter som ligger lengre til høyre også ligger litt lenger opp. Dette betyr at elever med høyere _Demokratikunnskap_ i større grad mener det skal være _Likestilling_ mellom kjønnene.
 
 ::: {.callout-tip collapse="true" title="I jamovi: lage et spredningsplott"}
 Analyses → Exploration → Scatterplot. Legg én variabel i "X-Axis" og én i "Y-Axis".
@@ -408,11 +418,12 @@ Analyses → Exploration → Scatterplot. Legg én variabel i "X-Axis" og én i 
 ICCS |>
   dplyr::filter(!is.na(Likestilling), !is.na(Demokratikunnskap)) |>
   ggplot() +
-  aes(x = Demokratikunnskap, y = Likestilling) +
-  geom_jitter(color = blueshade, alpha = 0.10, size = 0.5, width = 0, height = 4.5)
+  aes(x = Demokratikunnskap, y = Likestilling_jit) +
+  geom_point(color = blueshade, alpha = 0.10, size = 0.5) +
+  labs(y = "Likestilling")
 ```
 
-Spredningsplottet antyder en sammenheng -- punktskyen trekker svakt oppover mot høyre -- men det sier ikke *hvor sterk* sammenhengen er. Er den sterk, moderat eller svak? Å se på punktene alene er ofte ikke nok -- vi trenger et tall som oppsummerer styrken (og retningen) i én verdi. Det tallet er **korrelasjonskoeffisienten**.
+Spredningsplottet antyder en sammenheng ved at punktskyen trekker svakt oppover mot høyre, men det er vanskelig å si *hvor sterk* sammenhengen er. Er den sterk, moderat eller svak? For å avgjøre slikt trenger vi et tall som oppsummerer styrken (og retningen) i én verdi. Det tallet er **korrelasjonskoeffisienten**.
 
 ### Korrelasjonskoeffisienten {#sec-associations-correlation-coefficient}
 
@@ -496,13 +507,13 @@ p3
 
 ```
 
-Korrelasjonen måler altså i hvor stor grad punktene faller på en rett linje. Jo nærmere $r$ ligger $\pm 1$, jo tettere samler punktene seg rundt linja; jo nærmere $r$ er $0$, jo mer ser plottet ut som en sky uten retning.
+Korrelasjonen måler altså i hvor stor grad punktene faller på en rett linje. Jo nærmere $r$ ligger $\pm 1$, jo tettere samler punktene seg rundt linja; jo nærmere $r$ er $0$, jo mer ser plottet ut som en sky uten retning. Merk at $r$ ikke viser hvor bratt linja er, den viser bare hvor tett punktene ligger rundt linja.
 
 ### Styrke og retning i ekte data {#sec-associations-correlation-strength}
 
-Stiliserte plott er rene og tydelige, men ekte data ser sjelden så pent ut. Nå vender vi tilbake til ICCS og bruker $r$ til å sammenligne ekte sammenhenger. I figurene som følger har vi lagt en rett linje gjennom punktene som best mulig følger trenden -- det gjør det lettere å se hellingen i en messy punktsky.
+Stiliserte plott er rene og tydelige, men ekte data ser sjelden så pene ut. Nå vender vi tilbake til ICCS og bruker korrelasjonskoeffisienten $r$ til å sammenligne ekte sammenhenger. I figurene som følger har vi regnet ut den rette linja som best viser sammenhengen mellom variablene fordi det gjør det lettere å se hellingen i en rotete punktsky. For å vise ulike sammenhenger henter vi inn enda en variabel fra ICCS, nemlig _Sosioøkonomisk status_ som er en samlevariabel for utdanningen, inntekten og yrket til elevenes foresatte.
 
-**Styrken** ser vi best ved å sammenligne to plott der retningen er den samme. I @fig-associations-scatter-strength står _Sosioøkonomisk status_ × _Likestilling_ ($r = 0{,}18$) til venstre og _Demokratikunnskap_ × _Likestilling_ ($r = 0{,}44$) til høyre. Begge er positive, men korrelasjonen til høyre er omtrent dobbelt så sterk -- og det vises ved at punktene samler seg tettere rundt linja, og at linja heller brattere oppover. Sammenligner du med de stiliserte plottene i @fig-associations-correlation-examples, ser du raskt at *både* $0{,}18$ og $0{,}44$ er langt unna den rene formen for $r = 0{,}33$ og $r = 0{,}66$. Det er kostnaden ved ekte data.
+**Styrken** ser vi best ved å sammenligne to plott der retningen er den samme. I @fig-associations-scatter-strength står _Sosioøkonomisk status_ × _Likestilling_ ($r = 0{,}18$) til venstre og _Demokratikunnskap_ × _Likestilling_ ($r = 0{,}44$) til høyre. Begge er positive, men korrelasjonen til høyre er omtrent dobbelt så sterk. Det vises ved at punktene samler seg tettere rundt linja. Sammenligner du med de stiliserte plottene i @fig-associations-correlation-examples, ser du raskt at *både* $0{,}18$ og $0{,}44$ er langt unna den rene formen for $r = 0{,}33$ og $r = 0{,}66$, så det er ikke enkelt å se i hvilket spredningsplott punktene faktisk ligger tettest om linja. Slik er det med ekte data, så da er det godt å ha et tall som kan måle det for oss.
 
 ```{r}
 #| label: fig-associations-scatter-strength
@@ -515,23 +526,23 @@ Stiliserte plott er rene og tydelige, men ekte data ser sjelden så pent ut. Nå
 p_strength_weak <- ICCS |>
   dplyr::filter(!is.na(Likestilling), !is.na(`Sosioøkonomisk status`)) |>
   ggplot() +
-  aes(x = `Sosioøkonomisk status`, y = Likestilling) +
-  geom_jitter(color = blueshade, alpha = 0.05, size = 0.5, width = 0, height = 4.5) +
+  aes(x = `Sosioøkonomisk status`, y = Likestilling_jit) +
+  geom_point(color = blueshade, alpha = 0.05, size = 0.5) +
   geom_smooth(method = "lm", formula = y ~ x, se = FALSE, color = "black") +
-  labs(subtitle = "r = 0,18")
+  labs(y = "Likestilling", subtitle = "r = 0,18")
 
 p_strength_strong <- ICCS |>
   dplyr::filter(!is.na(Likestilling), !is.na(Demokratikunnskap)) |>
   ggplot() +
-  aes(x = Demokratikunnskap, y = Likestilling) +
-  geom_jitter(color = blueshade, alpha = 0.05, size = 0.5, width = 0, height = 4.5) +
+  aes(x = Demokratikunnskap, y = Likestilling_jit) +
+  geom_point(color = blueshade, alpha = 0.05, size = 0.5) +
   geom_smooth(method = "lm", formula = y ~ x, se = FALSE, color = "black") +
-  labs(subtitle = "r = 0,44")
+  labs(y = "Likestilling", subtitle = "r = 0,44")
 
 p_strength_weak + p_strength_strong
 ```
 
-**Retningen** ser vi best ved å bytte ut én av variablene. I @fig-associations-scatter-direction beholder vi _Demokratikunnskap_ på x-aksen, men sammenligner _Likestilling_ ($r = 0{,}44$) til venstre med _Forventet politisk deltakelse_ ($r = -0{,}23$) til høyre. Det viktige er fortegnet: til venstre heller linja oppover (positiv sammenheng), til høyre heller den nedover (negativ sammenheng). Den negative korrelasjonen er overraskende -- elever som kan mer om demokrati forventer å delta *mindre* politisk -- og det er et resultat vi kommer tilbake til.
+**Retningen** ser vi best ved å bytte ut én av variablene. I @fig-associations-scatter-direction beholder vi _Demokratikunnskap_ på x-aksen, men sammenligner _Likestilling_ ($r = 0{,}44$) til venstre med _Forventet politisk deltakelse_ ($r = -0{,}23$) til høyre. Det viktige er fortegnet: til venstre heller linja oppover (positiv sammenheng), til høyre heller den nedover (negativ sammenheng). Den negative korrelasjonen er overraskende -- den betyr jo at elever som kan mer om demokrati forventer å delta *mindre* politisk! Det er et resultat vi kommer tilbake til i @sec-ref-ref.
 
 ```{r}
 #| label: fig-associations-scatter-direction
@@ -544,18 +555,18 @@ p_strength_weak + p_strength_strong
 p_dir_pos <- ICCS |>
   dplyr::filter(!is.na(Likestilling), !is.na(Demokratikunnskap)) |>
   ggplot() +
-  aes(x = Demokratikunnskap, y = Likestilling) +
-  geom_jitter(color = blueshade, alpha = 0.05, size = 0.5, width = 0, height = 4.5) +
+  aes(x = Demokratikunnskap, y = Likestilling_jit) +
+  geom_point(color = blueshade, alpha = 0.05, size = 0.5) +
   geom_smooth(method = "lm", formula = y ~ x, se = FALSE, color = "black") +
-  labs(subtitle = "r = 0,44")
+  labs(y = "Likestilling", subtitle = "r = 0,44")
 
 p_dir_neg <- ICCS |>
   dplyr::filter(!is.na(`Forventet politisk deltakelse`), !is.na(Demokratikunnskap)) |>
   ggplot() +
-  aes(x = Demokratikunnskap, y = `Forventet politisk deltakelse`) +
-  geom_jitter(color = blueshade, alpha = 0.05, size = 0.5, width = 0, height = 4.5) +
+  aes(x = Demokratikunnskap, y = `Forventet politisk deltakelse_jit`) +
+  geom_point(color = blueshade, alpha = 0.05, size = 0.5) +
   geom_smooth(method = "lm", formula = y ~ x, se = FALSE, color = "black") +
-  labs(subtitle = "r = -0,23")
+  labs(y = "Forventet politisk deltakelse", subtitle = "r = -0,23")
 
 p_dir_pos + p_dir_neg
 ```
@@ -704,5 +715,5 @@ ggplot(anscombe_quartet, aes(x = x, y = y)) +
 Deskriptiv statistikk for en enkelt variabel forteller deg *hva* dataene inneholder; å beskrive sammenhenger forteller deg *hvordan variable henger sammen*. I dette kapittelet har vi sett at framgangsmåten avhenger av hva slags variable du har:
 
 -   **Kategorisk × kategorisk**: Bruk [krysstabeller][Krysstabeller] for å se tallene og [stablede stolpediagram][Stablede stolpediagram] for å visualisere sammenhengen.
--   **Kategorisk × kontinuerlig**: Bruk [deskriptiv statistikk separat for hver undergruppe][Deskriptiv statistikk separat for hver undergruppe] for å sammenligne tall, og [boksplott og histogrammer separat for hver undergruppe][Boksplott og histogrammer separat for hver undergruppe] for å se forskjellene visuelt.
+-   **Kategorisk × kontinuerlig**: Bruk [sentraltendens og spredning per gruppe][Sentraltendens og spredning per gruppe] for å sammenligne tall, og [boksplott og histogrammer per gruppe][Boksplott og histogrammer per gruppe] for å se forskjellene visuelt.
 -   **Kontinuerlig × kontinuerlig**: Bruk [spredningsplott][Spredningsplott] for å visualisere sammenhengen, og [korrelasjonskoeffisienten][Korrelasjonskoeffisienten] for å beskrive styrken og retningen med et tall. Husk [Anscombes kvartett][Anscombes kvartett]: visualiser alltid dataene dine!
