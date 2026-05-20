@@ -57,3 +57,5 @@ images/fig-national-*.png
 tmp/
 .crosslink/.last-hydrated-ref
 .claude/settings.local.json
+
+/.luarc.json
