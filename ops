@@ -1,1 +1,1 @@
-{"author":{"id":"f28e0a65a3276d3cf6357f035a42884c6b3cf655caa27a2b232acc6d72696d90"},"ops":[{"type":5,"timestamp":1779264973,"nonce":"bzZS0AZazzL4PIGd6il2o/hYC2o=","added":["sec-associations","data"],"removed":null}]}
+{"author":{"id":"f28e0a65a3276d3cf6357f035a42884c6b3cf655caa27a2b232acc6d72696d90"},"ops":[{"type":3,"timestamp":1779264973,"nonce":"UykyfndD4exy34roCpoq4Hh+AYQ=","message":"_[handoff] 2026-04-24_\n\nSession auto-ended (stale after 251 minutes). No handoff notes provided.","files":null}]}
