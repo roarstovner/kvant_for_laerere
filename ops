@@ -1,1 +1,1 @@
-{"author":{"id":"f28e0a65a3276d3cf6357f035a42884c6b3cf655caa27a2b232acc6d72696d90"},"ops":[{"type":1,"timestamp":1779264973,"nonce":"zpAg4X/QW+s57ZOixoXE3M4JEf8=","title":"sec-descriptive: 68-95-regelen introduseres og undermineres - vurder flytting til sec-estimation","message":"_Migrert fra crosslink (issue #17, opprettet 2026-04-24)._","files":null}]}
+{"author":{"id":"f28e0a65a3276d3cf6357f035a42884c6b3cf655caa27a2b232acc6d72696d90"},"ops":[{"type":5,"timestamp":1779264973,"nonce":"6Nc9i3UUJ0/nnAX6jRc899jzGYY=","added":["revision"],"removed":null}]}
