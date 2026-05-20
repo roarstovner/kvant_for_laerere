@@ -1,1 +1,1 @@
-{"author":{"id":"f28e0a65a3276d3cf6357f035a42884c6b3cf655caa27a2b232acc6d72696d90"},"ops":[{"type":1,"timestamp":1779264970,"nonce":"OSwW2HZkKvaNvO33EKNofTN79ak=","title":"Restructure chapters 4-5 from numbers/diagrams to univariate/associations","message":"_Migrert fra crosslink (issue #3, opprettet 2026-03-31)._\n_Prioritet: high._","files":null}]}
+{"author":{"id":"f28e0a65a3276d3cf6357f035a42884c6b3cf655caa27a2b232acc6d72696d90"},"ops":[{"type":5,"timestamp":1779264970,"nonce":"JG/D2raV9phgw5UvZGksA3z90QU=","added":["enhancement"],"removed":null}]}
