@@ -9,6 +9,10 @@ library(magrittr)
 library(tidyr)
 library(ggplot2)
 library(knitr)
+# knitr Suggests these; the tikz engine needs them for HTML output. Loaded
+# explicitly so renv::snapshot() records them in the lockfile.
+library(magick)
+library(pdftools)
 library(showtext)
 library(marquee)
 library(scales)
@@ -18,6 +22,31 @@ set.seed(1963)
 blueshade <- "#3d6da9" # match blue colour for plots to jamovi logo colour 
 
 options(OutDec = ",")
+
+# tinytable's typst writer builds stroke widths and font sizes with
+# `sprintf("%sem", x)`, which goes through `as.character()` and therefore picks
+# up `OutDec`. With OutDec="," that emits e.g. `0,05em`, which typst parses as
+# the integer 0 followed by `05em` and refuses to compile. Wrap the affected
+# tinytable internals so they always emit a period for typst length literals,
+# while leaving cell content untouched (cells are already strings by then).
+local({
+  if (!requireNamespace("tinytable", quietly = TRUE)) return()
+  patch <- function(fname) {
+    orig <- getFromNamespace(fname, "tinytable")
+    wrapped <- function() {}
+    formals(wrapped) <- formals(orig)
+    body(wrapped) <- bquote({
+      .op <- options(OutDec = ".")
+      on.exit(options(.op), add = TRUE)
+      .(body(orig))
+    })
+    environment(wrapped) <- environment(orig)
+    assignInNamespace(fname, wrapped, ns = "tinytable")
+  }
+  for (fn in c("typst_hlines", "typst_vlines", "style_string_typst")) {
+    if (exists(fn, envir = asNamespace("tinytable"), inherits = FALSE)) patch(fn)
+  }
+})
 
 jamovi_qual_palette <- tibble(
   names = c("red", "blue", "green", "purple", "orange", "yellow", "brown", "pink", "grey"),

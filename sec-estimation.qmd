@@ -394,7 +394,7 @@ Sentralgrenseteoremet er ekstremt nyttig. Det forklarer hvorfor store studier er
 
 Som vanlig er jeg litt slurvete og upresis i dette delkapittelet, for sentralgrenseteoremet er mer generelt jeg har antydet. Jeg har bare diskutert én observator sentralgrenseteoremet gjelder for, gjennomsnitt. Imidlertid er sentralgrenseteoremet mye mer generelt enn dette.
 
-## Estimering av populasjonsparametere
+## Estimering av populasjonsparametere {#sec-estimation-parameters}
 
 I alle IQ-eksemplene i de forrige delkapitlene kjente vi populasjonsparametrene på forhånd. Som mange vet er IQ-skårer definert til å ha gjennomsnitt 100 og standardavvik 15, men dette er ikke hele sannheten. Hvordan vet vi at IQ-skårer har et sant populasjonsgjennomsnitt på 100? Vi vet dette fordi personene som utformet testene har gitt dem til svært store utvalg, og deretter justert poenggivningsreglene slik at utvalget deres har gjennomsnitt 100. Det er selvfølgelig ikke noe galt med dette -- det er en viktig del av å utforme en psykologisk måling. Det er imidlertid viktig å huske at dette teoretiske gjennomsnittet på 100 kun gjelder for populasjonen som testdesignerne brukte til å utforme testene. Gode testdesignere vil faktisk gjøre en innsats for å tilby "testnormer" som kan anvendes på mange forskjellige populasjoner (for eksempel ulike aldersgrupper, nasjonaliteter og så videre).
 
