@@ -1,4 +1,4 @@
-book: 
-  chapters: 
+book:
+  chapters:
     - index.qmd
-    - sec-measu.qmd
+    - sec-associations.qmd
