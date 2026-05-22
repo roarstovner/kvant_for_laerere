@@ -192,6 +192,8 @@ Jeg fant frem i dokumentasjonen til ICCS 2022 [@fraillon2024] at _Likestilling_ 
 
 Alle påstandene virker jo å måle likestilling på en fin måte, men i Norge virker konstruktet litt tamt. Jeg tipper jo at alle vil være enige i disse påstandene. I Norge ville man kanskje valgt påstander som det er uenighet om, slik som kjønnskvotering til høyere utdanning eller fordeling av foreldrepermisjon, men det hadde sikkert ikke vært så relevant i de andre landene der ICCS avholdes. Og kanskje har ikke ungdomsskoleelever gjort seg opp en mening om foreldrepermisjon, slår det meg!
 
+Det gjennomsnittet vi snart regner ut for _Likestilling_, har altså bare mening i lys av disse påstandene. Hadde påstandene vært andre, hadde tallet vært et annet og fortalt en litt annen historie. Hva et tall faktisk betyr, avhenger av hvordan variabelen er målt; se @sec-measurement.
+
 Vi starter beskrivelsen med histogrammer, slik at du ser hva du prøver å beskrive med tallene som følger.
 
 ### Histogrammer {#sec-histogram}

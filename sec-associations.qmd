@@ -8,7 +8,7 @@
 source("chapter_header.R")
 ```
 
-I forrige kapittel lærte du å beskrive én variabel om gangen -- med frekvenstabeller, histogram, gjennomsnitt, standardavvik og lignende. Det er nyttig for å forstå *hva* dataene inneholder, men i de fleste studier er vi mest interessert i *hvordan variable henger sammen*. Er det forskjell mellom elever fra ulike land? Henger sosioøkonomisk status sammen med holdninger til likestilling? Slike spørsmål krever at vi ser på to variable samtidig.
+I forrige kapittel lærte du å beskrive én variabel om gangen, med frekvenstabeller, histogram, gjennomsnitt, standardavvik og lignende. Det er nyttig for å forstå *hva* dataene inneholder, men i de fleste studier er vi mest interessert i *hvordan variable henger sammen*. Er det forskjell mellom elever fra ulike land? Henger sosioøkonomisk status sammen med holdninger til likestilling? Slike spørsmål krever at vi ser på to variable samtidig.
 
 ```{r}
 ICCS <- readRDS("data_and_tables/ICCS.RDS")
@@ -55,7 +55,7 @@ Når begge variablene er kategoriske (nominelle eller ordinale) bruker vi krysst
 
 ### Krysstabeller {#sec-associations-contingency}
 
-I @sec-descriptive lærte du å lage frekvenstabeller for enkeltvariabler. Hvis du ønsker en tabell med to variabler -- for eksempel for å kombinere _Forventet utdanning_ og _Land_ for å se om det er forskjell i hvor lang utdanning elevene ser for seg i de ulike landene -- trenger du en **krysstabell** (_contingency table_ på engelsk). Resultatet for vårt eksempel ser du i @tbl-associations-contingency. Tallene er antall elever, og prosentene i parentes er andelen innenfor hvert land (kolonneprosent).
+I @sec-descriptive lærte du å lage frekvenstabeller for enkeltvariabler. Hvis du ønsker en tabell med to variabler (for eksempel for å kombinere _Forventet utdanning_ og _Land_ for å se om det er forskjell i hvor lang utdanning elevene ser for seg i de ulike landene), trenger du en **krysstabell** (_contingency table_ på engelsk). Resultatet for vårt eksempel ser du i @tbl-associations-contingency. Tallene er antall elever, og prosentene i parentes er andelen innenfor hvert land (kolonneprosent).
 
 ```{r}
 #| label: tbl-associations-contingency
@@ -79,9 +79,9 @@ ICCS |>
 Frequencies → Contingency Tables → Independent Samples. Legg _Forventet utdanning_ i "Rows" og _Land_ i "Columns". Under "Cells" kryss av for "Counts" og "Percentages: Columns".
 :::
 
-Når du tolker krysstabellen, kan du for eksempel se på cellen for spanske elever som ser for seg en kort utdanning (for eksempel ett- til to-årig fagskole). Tallet utenfor parentesen er antallet -- altså hvor mange spanske elever i utvalget som havner i den kategorien. Tallet i parentesen er kolonneprosenten, og siden _Land_ ligger på kolonnene betyr det "andel innenfor Spania som ser for seg kort utdanning". Hvis vi i stedet hadde valgt radprosenter, ville samme tall betydd "andelen av elevene som ser for seg kort utdanning, som er fra Spania". Det er to helt forskjellige spørsmål, så vær bevisst på hvilken prosent du regner ut.
+Når du tolker krysstabellen, kan du for eksempel se på cellen for spanske elever som ser for seg en kort utdanning (for eksempel ett- til to-årig fagskole). Tallet utenfor parentesen er antallet, altså hvor mange spanske elever i utvalget som havner i den kategorien. Tallet i parentesen er kolonneprosenten, og siden _Land_ ligger på kolonnene betyr det "andel innenfor Spania som ser for seg kort utdanning". Hvis vi i stedet hadde valgt radprosenter, ville samme tall betydd "andelen av elevene som ser for seg kort utdanning, som er fra Spania". Det er to helt forskjellige spørsmål, så vær bevisst på hvilken prosent du regner ut.
 
-Krysstabeller er nyttige! Se for eksempel at norske elever skiller seg ut ved at en betydelig større andel ser for seg å avslutte utdanningen etter ungdomsskolen, mens brasilianske elever i datasettet i praksis ikke gjør det -- hvorfor det, mon tro?
+Krysstabeller er nyttige! Se for eksempel at norske elever skiller seg ut ved at en betydelig større andel ser for seg å avslutte utdanningen etter ungdomsskolen, mens brasilianske elever i datasettet i praksis ikke gjør det.
 
 ### Grupperte stolpediagram {#sec-associations-bar-subgroup}
 
@@ -95,7 +95,7 @@ Analyses → Exploration → Descriptives. Legg variabelen i "Variables", åpne 
 ```{r}
 #| label: fig-associations-edu-x-country
 #| fig-cap: _Forventet utdanning_ på x-aksen, gruppert etter _Land_.
-#| fig-alt: Gruppert stolpediagram. X-aksen viser de fire kategoriene av Forventet utdanning, og innenfor hver kategori er det fire stolper -- én for hvert land. Stolpene for Høyere utdanning er klart høyest i alle land.
+#| fig-alt: Gruppert stolpediagram. X-aksen viser de fire kategoriene av Forventet utdanning, og innenfor hver kategori er det fire stolper, én for hvert land. Stolpene for Høyere utdanning er klart høyest i alle land.
 
 ICCS |>
   dplyr::filter(!is.na(`Forventet utdanning`)) |>
@@ -116,7 +116,7 @@ ICCS |>
 ```{r}
 #| label: fig-associations-country-x-edu
 #| fig-cap: _Land_ på x-aksen, gruppert etter _Forventet utdanning_.
-#| fig-alt: Gruppert stolpediagram. X-aksen viser de fire landene, og innenfor hvert land er det fire stolper -- én for hvert utdanningsnivå. Stolpene for Høyere utdanning er klart høyest i alle land.
+#| fig-alt: Gruppert stolpediagram. X-aksen viser de fire landene, og innenfor hvert land er det fire stolper, én for hvert utdanningsnivå. Stolpene for Høyere utdanning er klart høyest i alle land.
 
 ICCS |>
   dplyr::filter(!is.na(`Forventet utdanning`)) |>
@@ -206,7 +206,7 @@ p_hoy <- function(land) andel_hoy_land$p_hoy[andel_hoy_land$Land == land]
 
 I @fig-associations-stacked-bar ser vi et stablet stolpediagram som viser _Forventet utdanning_ for hvert land. Vi ser tydelig at en større andel elever i Brasil planlegger å ta høyere utdanning enn i Norge. Forskjellene er forholdsvis små, og i stolpediagrammene @fig-associations-edu-x-country og @fig-associations-country-x-edu, er det vanskelig å se at Brasilianere oftere ser for seg å ta høyere utdanning.
 
-Med vanlige stolpediagram var det vanskelig å gjøre en analyse på tvers av to variable, siden figuren @fig-associations-bar-threeway ble så stor. Vi kan prøve å lage en liknende figur med stablede stolper. Resultatet blir som i @fig-associations-stacked-bar-threeway. Her skinner virkelig det stablede stolpediagrammet -- se så kompakt og lesbart det ble i forhold til samme informasjon vist som et vanlig stolpediagram (@fig-associations-bar-threeway). Den største forskjellen mellom de to diagrammene er at _Annet_-panelet var nesten umulig å lese med det vanlige stolpediagrammet fordi stolpene ble så små. Med stablede stolper står hver stolpe like høyt (100 %), og vi ser sammensetningen innenfor hver liten gruppe. (Men husk at disse stolpene er basert på veldig få elever.)
+Med vanlige stolpediagram var det vanskelig å gjøre en analyse på tvers av to variable, siden figuren @fig-associations-bar-threeway ble så stor. Vi kan prøve å lage en liknende figur med stablede stolper. Resultatet blir som i @fig-associations-stacked-bar-threeway, og det stablede stolpediagrammet er mye mer kompakt og lesbart enn samme informasjon vist som et vanlig stolpediagram (@fig-associations-bar-threeway). Den største forskjellen mellom de to diagrammene er at _Annet_-panelet var nesten umulig å lese med det vanlige stolpediagrammet fordi stolpene ble så små. Med stablede stolper står hver stolpe like høyt (100 %), og vi ser sammensetningen innenfor hver liten gruppe. (Men husk at disse stolpene er basert på veldig få elever.)
 
 ::: {.callout-tip collapse="true" title="I jamovi: stablet stolpediagram med tre variable"}
 Behold oppsettet for stablet stolpediagram, men legg den tredje variabelen i "Layers".
@@ -244,9 +244,9 @@ Hva om du vil analysere sammenhengen mellom en *kontinuerlig* variabel og en kat
 
 ### Sentraltendens og spredning per gruppe {#sec-associations-subgroup}
 
-Egentlig er dette samme grep som vi allerede gjorde med krysstabellen og det grupperte stolpediagrammet: vi splittet dataene etter en kategorisk variabel og så hvert utsnitt for seg. Forskjellen nå er at det vi regner ut innenfor hver gruppe er gjennomsnitt, median og standardavvik -- ikke antall. Det hadde for eksempel vært interessant å vite om de spanske og norske elevene svarer forskjellig på variabelen _Likestilling_, eller om de som ser for seg høyere utdanning svarer forskjellig fra de som ser for seg å stoppe utdanningen etter videregående. Slike spørsmål er svært interessante, og derfor er undergruppeanalyser ofte det masterstudenter benytter til å besvare forskningsspørsmålene sine.
+Egentlig er dette samme grep som vi allerede gjorde med krysstabellen og det grupperte stolpediagrammet: vi splittet dataene etter en kategorisk variabel og så hvert utsnitt for seg. Forskjellen nå er at det vi regner ut innenfor hver gruppe er gjennomsnitt, median og standardavvik, ikke antall. Det hadde for eksempel vært interessant å vite om de spanske og norske elevene svarer forskjellig på variabelen _Likestilling_, eller om de som ser for seg høyere utdanning svarer forskjellig fra de som ser for seg å stoppe utdanningen etter videregående. Slike spørsmål er svært interessante, og derfor er undergruppeanalyser ofte det masterstudenter benytter til å besvare forskningsspørsmålene sine.
 
-Undergruppene vi kan undersøke -- de fire landene, de fire utdanningsnivåene, eller de tre kjønnsverdiene -- er nettopp de forskjellige verdiene til de tre kategoriske variablene fra @tbl-associations-codebook: _Land_, _Forventet utdanning_ og _Kjønn_. En måte å tenke på verdiene til nominelle og ordinale variable er altså som undergrupper.
+Undergruppene vi kan undersøke (de fire landene, de fire utdanningsnivåene, eller de tre kjønnsverdiene) er nettopp de forskjellige verdiene til de tre kategoriske variablene fra @tbl-associations-codebook: _Land_, _Forventet utdanning_ og _Kjønn_. En måte å tenke på verdiene til nominelle og ordinale variable er altså som undergrupper.
 
 > Å gjøre deskriptiv statistikk for undergrupper er å gjøre utregningene separat for hver verdi av en kategorisk variabel.
 
@@ -345,9 +345,9 @@ stats_kjonn_land |>
   style_tt(i = 0, bold = TRUE)
 ```
 
-Mønsteret fra @tbl-associations-equality-x-gender går igjen i alle land: jentene har høyere gjennomsnittskår på _Likestilling_ enn guttene. Men det er noen interessante variasjoner. De norske jentene er mer for likestilling enn de spanske (`r mean_lk("Norge", "Jente")` mot `r mean_lk("Spania", "Jente")`), mens de norske gutta er _mindre_ for likestilling enn de spanske guttene (`r mean_lk("Norge", "Gutt")` mot `r mean_lk("Spania", "Gutt")`)! Polske gutter ligger lavest av alle med et gjennomsnitt på `r mean_lk("Polen", "Gutt")`. Skjerpings, gutter!
+Mønsteret fra @tbl-associations-equality-x-gender går igjen i alle land: jentene har høyere gjennomsnittskår på _Likestilling_ enn guttene. Men det er noen interessante variasjoner. De norske jentene er mer for likestilling enn de spanske (`r mean_lk("Norge", "Jente")` mot `r mean_lk("Spania", "Jente")`), mens de norske gutta er _mindre_ for likestilling enn de spanske guttene (`r mean_lk("Norge", "Gutt")` mot `r mean_lk("Spania", "Gutt")`)! Polske gutter ligger lavest av alle med et gjennomsnitt på `r mean_lk("Polen", "Gutt")`. Men vær forsiktig: dette er forskjeller mellom gjennomsnitt i ett utvalg, og noen av forskjellene kan være tilfeldige. Mer om dette i @sec-estimation.
 
-PS: Når man deler inn i undergrupper på denne måten, kan det være at enkelte undergrupper har svært få -- eller ingen -- respondenter. ICCS-utvalget fra Polen og Brasil inneholder ingen elever som har oppgitt _Annet_ kjønn, og selv i Norge og Spania er gruppen liten (henholdsvis `r n_lk("Norge", "Annet")` og `r n_lk("Spania", "Annet")` respondenter). Det er fremdeles mange nok til at det gir mening å regne gjennomsnitt der vi har dem, men andre ganger vil det være like greit å si at man ikke har mange nok respondenter til å gjøre en undergruppeanalyse for akkurat dem. Merk at dette er et etisk problem for forskere, for hvis forskning kan gagne mennesker er det et problem om noen grupper mennesker stadig vekk blir utelatt.
+Når man deler inn i undergrupper på denne måten, kan det være at enkelte undergrupper har svært få eller ingen respondenter. ICCS-utvalget fra Polen og Brasil inneholder ingen elever som har oppgitt _Annet_ kjønn, og selv i Norge og Spania er gruppen liten (henholdsvis `r n_lk("Norge", "Annet")` og `r n_lk("Spania", "Annet")` respondenter). Det er fremdeles mange nok til at det gir mening å regne gjennomsnitt der vi har dem, men andre ganger vil det være like greit å si at man ikke har mange nok respondenter til å gjøre en undergruppeanalyse for akkurat dem. Merk at dette er et etisk problem for forskere: hvis forskning kan gagne mennesker, er det et problem om noen grupper mennesker stadig vekk blir utelatt.
 
 ### Boksplott og histogrammer per gruppe
 
@@ -377,7 +377,7 @@ ICCS |>
 
 ```{r}
 #| label: fig-associations-boxplot-equ-x-edu
-#| fig-cap: Med boksplott kommer forskjellen tydelig frem -- særlig at _Høyere utdanning_ ligger høyere enn de andre gruppene.
+#| fig-cap: Med boksplott kommer forskjellen tydelig frem; særlig at _Høyere utdanning_ ligger høyere enn de andre gruppene.
 #| fig-alt: Fire vertikale boksplott av Likestilling, ett for hvert forventet utdanningsnivå. Medianen for Høyere utdanning ligger klart over de tre andre gruppene, som ligger på omtrent samme nivå.
 #| out-width: "100%"
 
@@ -392,7 +392,7 @@ ICCS |>
 Sammenlikning av histogram og boksplott for å vise variabelen _Likestilling_ for hvert forventede utdanningsnivå.
 :::
 
-For å oppsummere: Også å analysere sammenhengen mellom en kategorisk og en kontinuerlig variabel er en undergruppeanalyse -- men det vi regner ut innenfor hver gruppe er sentraltendens og spredning, ikke antall. Resultatet kan vises som tabell eller som ett boksplott per gruppe. Boksplottet er som regel et bedre visuelt valg enn histogrammet, fordi det lar oss sammenligne medianer direkte og ikke drukner i forskjeller i gruppestørrelse.
+For å oppsummere: Også å analysere sammenhengen mellom en kategorisk og en kontinuerlig variabel er en undergruppeanalyse, men det vi regner ut innenfor hver gruppe er sentraltendens og spredning i stedet for antall. Resultatet kan vises som tabell eller som ett boksplott per gruppe. Boksplottet er som regel et bedre visuelt valg enn histogrammet, fordi det lar oss sammenligne medianer direkte og ikke drukner i forskjeller i gruppestørrelse.
 
 ## Kontinuerlig × kontinuerlig {#sec-associations-cont-cont}
 
@@ -430,13 +430,13 @@ Spredningsplottet antyder en sammenheng ved at punktskyen trekker svakt oppover 
 
 ### Korrelasjonskoeffisienten {#sec-associations-correlation-coefficient}
 
-Korrelasjonskoeffisienten kalles ofte Pearsons korrelasjonskoeffisient og skrives som $r$. Det er et tall mellom $-1$ og $1$ som måler styrken og retningen på sammenhengen mellom to variable, $X$ og $Y$ (noen ganger skrevet $r_{XY}$).
+Korrelasjonskoeffisienten kalles mer presist Pearsons korrelasjonskoeffisient og skrives som $r$. Det er et tall mellom $-1$ og $1$ som måler styrken og retningen på sammenhengen mellom to variable, $X$ og $Y$.
 
 - En $r = 1$ betyr en perfekt positiv sammenheng.
 - En $r = -1$ betyr en perfekt negativ sammenheng.
 - En $r = 0$ betyr at det ikke er noen lineær sammenheng i det hele tatt.
 
-Hvordan ser ulike korrelasjoner ut? @fig-associations-correlation-examples viser eksempler. Punktskyene er her *simulert* slik at vi kan vise nøyaktige verdier av $r$ -- en luksus vi ikke har i ekte data.
+Hvordan ser ulike korrelasjoner ut? @fig-associations-correlation-examples viser eksempler. Disse punktskyene er *simulerte* slik at vi kan vise nøyaktige verdier av $r$ i pene spredningsplott.
 
 ```{r}
 #| label: fig-associations-correlation-examples
@@ -516,7 +516,7 @@ Korrelasjonen måler altså i hvor stor grad punktene faller på en rett linje. 
 
 Stiliserte plott er rene og tydelige, men ekte data ser sjelden så pene ut. Nå vender vi tilbake til ICCS og bruker korrelasjonskoeffisienten $r$ til å sammenligne ekte sammenhenger. I figurene som følger har vi regnet ut den rette linja som best viser sammenhengen mellom variablene fordi det gjør det lettere å se hellingen i en rotete punktsky. For å vise ulike sammenhenger henter vi inn enda en variabel fra ICCS, nemlig _Sosioøkonomisk status_ som er en samlevariabel for utdanningen, inntekten og yrket til elevenes foresatte.
 
-**Styrken** ser vi best ved å sammenligne to plott der retningen er den samme. I @fig-associations-scatter-strength står _Sosioøkonomisk status_ × _Likestilling_ ($r = 0{,}18$) til venstre og _Demokratikunnskap_ × _Likestilling_ ($r = 0{,}44$) til høyre. Begge er positive, men korrelasjonen til høyre er omtrent dobbelt så sterk. Det vises ved at punktene samler seg tettere rundt linja. Sammenligner du med de stiliserte plottene i @fig-associations-correlation-examples, ser du raskt at *både* $0{,}18$ og $0{,}44$ er langt unna den rene formen for $r = 0{,}33$ og $r = 0{,}66$, så det er ikke enkelt å se i hvilket spredningsplott punktene faktisk ligger tettest om linja. Slik er det med ekte data, så da er det godt å ha et tall som kan måle det for oss.
+**Styrken** ser vi best ved å sammenligne to plott der retningen er den samme. I @fig-associations-scatter-strength står _Sosioøkonomisk status_ × _Likestilling_ ($r = 0{,}18$) til venstre og _Demokratikunnskap_ × _Likestilling_ ($r = 0{,}44$) til høyre. Begge er positive, men korrelasjonen til høyre er omtrent dobbelt så sterk. Det vises ved at punktene samler seg tettere rundt linja. Sammenligner du med de stiliserte plottene i @fig-associations-correlation-examples, ser du raskt at de ekte dataene ser helt annerledes ut og at det ikke er enkelt å se i hvilket spredningsplott sammenhengen mellom variablene er sterkest. Slik er det med ekte data, så da er det godt å ha et tall som kan måle det for oss.
 
 ```{r}
 #| label: fig-associations-scatter-strength
@@ -551,7 +551,7 @@ p_strength_strong <- ICCS |>
 p_strength_weak + p_strength_strong
 ```
 
-**Retningen** ser vi best ved å bytte ut én av variablene. I @fig-associations-scatter-direction beholder vi _Demokratikunnskap_ på x-aksen, men sammenligner _Likestilling_ ($r = 0{,}44$) til venstre med _Forventet politisk deltakelse_ ($r = -0{,}23$) til høyre. Det viktige er fortegnet: til venstre heller linja oppover (positiv sammenheng), til høyre heller den nedover (negativ sammenheng). Den negative korrelasjonen er overraskende -- den betyr jo at elever som kan mer om demokrati forventer å delta *mindre* politisk! Det er et resultat vi kommer tilbake til i @sec-ref-ref.
+**Retningen** ser vi best ved å bytte ut én av variablene. I @fig-associations-scatter-direction beholder vi _Demokratikunnskap_ på x-aksen, men sammenligner _Likestilling_ ($r = 0{,}44$) til venstre med _Forventet politisk deltakelse_ ($r = -0{,}23$) til høyre. Det viktige er fortegnet: til venstre heller linja oppover (positiv sammenheng), til høyre heller den nedover (negativ sammenheng). Den negative korrelasjonen er overraskende -- den betyr jo at elever som kan mer om demokrati forventer å delta *mindre* politisk! Det er et resultat vi kommer tilbake til i @sec-associations-simpson.
 
 ```{r}
 #| label: fig-associations-scatter-direction
@@ -588,7 +588,7 @@ p_dir_pos + p_dir_neg
 
 ### Korrelasjonsmatrise {#sec-associations-correlation-matrix}
 
-Vi har nå sett tre par av variable og lest av $r$ for hvert av dem. Når vi vil sammenligne mange variable samtidig, blir det fort uoversiktlig med ett spredningsplott per par. I stedet samler vi alle korrelasjonene i én tabell -- en **korrelasjonsmatrise**. @tbl-associations-correlation-matrix viser matrisen for de fire ICCS-variablene vi har jobbet med: _Demokratikunnskap_, _Likestilling_, _Sosioøkonomisk status_ og _Forventet politisk deltakelse_.
+Vi har nå sett tre par av variable og lest av $r$ for hvert av dem. Når vi vil sammenligne korrelasjonene mange mange variable samtidig, er det vanlig å samle alle korrelasjonene i én tabell, en **korrelasjonsmatrise**. @tbl-associations-correlation-matrix viser matrisen for de fire ICCS-variablene vi har jobbet med: _Demokratikunnskap_, _Likestilling_, _Sosioøkonomisk status_ og _Forventet politisk deltakelse_.
 
 ::: {.callout-tip collapse="true" title="I jamovi: lage en korrelasjonsmatrise"}
 Regression → Correlation Matrix. Legg de kontinuerlige variablene du vil korrelere i variabelboksen. Pearsons $r$ er valgt som standard.
@@ -626,60 +626,21 @@ tibble::as_tibble(cor_mat, rownames = " ") |>
   style_tt(i = 0, bold = TRUE)
 ```
 
-Matrisen bekrefter mønsteret fra figurene over og legger til to par vi ikke har sett. _Demokratikunnskap_ henger positivt sammen med både _Likestilling_ ($r = 0{,}44$) og _Sosioøkonomisk status_ ($r = 0{,}39$); det er de to sterkeste sammenhengene i tabellen. _Forventet politisk deltakelse_ skiller seg ut ved å henge negativt sammen med alle de tre andre variablene, sterkest med _Demokratikunnskap_ ($r = -0{,}23$) og svakest med _Sosioøkonomisk status_ ($r = -0{,}03$, så nær null at sammenhengen i praksis er fraværende).
+Hver celle er korrelasjonen mellom variabelen i raden og variabelen i kolonnen. Diagonalen er $1{,}00$ fordi en variabel henger perfekt sammen med seg selv, og den øvre halvdelen er tom fordi den ville gjentatt den nedre: korrelasjonen mellom _Likestilling_ og _Demokratikunnskap_ er den samme som mellom _Demokratikunnskap_ og _Likestilling_.
 
-### Tolkning av en korrelasjon {#sec-associations-correlation-interpretation}
+Matrisen bekrefter mønsteret fra figurene over og legger til to par vi ikke har sett. _Demokratikunnskap_ henger positivt sammen med både _Likestilling_ ($r = 0{,}44$) og _Sosioøkonomisk status_ ($r = 0{,}39$); det er de to sterkeste sammenhengene i tabellen. _Forventet politisk deltakelse_ skiller seg ut ved å henge negativt sammen med alle de tre andre variablene, sterkest med _Demokratikunnskap_ ($r = -0{,}23$) og svakest med _Sosioøkonomisk status_ ($r = -0{,}03$, som er så nær null at sammenhengen i praksis er fraværende).
 
-I det virkelige liv ser man sjelden korrelasjoner på $1$. Så hvordan skal man tolke en korrelasjon på, si, $r = 0{,}4$? Det ærlige svaret er at det avhenger av hva du skal bruke dataene til, og hvor sterke korrelasjonene i fagfeltet ditt pleier å være. Når man ser etter, for eksempel, korrelasjoner mellom undervisning og læring gjør man det svært bra hvis man får en korrelasjon på $0{,}3$. Men hvis man korrelerer hvor godt en elev gjør det på den samme rettskrivningprøven på mandag og på tirsdag, bør den vise svært høy korrelasjon. Kort sagt, tolkningen av en korrelasjon avhenger i stor grad av konteksten. Når det er sagt, er det mange som benytter veiledere som i @tbl-associations-correlation-guide.
+## Tolkning av deskriptiv statistikk {#sec-associations-interpretation}
 
-```{r}
-#| label: tbl-associations-correlation-guide
-#| tbl-cap: En omtrentlig veileder for tolkning av korrelasjoner (som noen gang vil være OK)
+Vi har nå sett mange måter å beskrive data på: gjennomsnitt, andeler, krysstabeller, korrelasjoner. Men deskriptiv statistikk gir aldri svaret av seg selv; du må tolke. Resten av kapittelet handler om noen forhold du bør være bevisst på når du leser eller lager slike tall, og som gjelder både dette og forrige kapittel.
 
-tibble(
-  Korrelasjon = c(
-    "-1,0 til -0,9",
-    "-0,9 til -0,7",
-    "-0,7 til -0,4",
-    "-0,4 til -0,2",
-    "-0,2 til 0",
-    "0 til 0,2",
-    "0,2 til 0,4",
-    "0,4 til 0,7",
-    "0,7 til 0,9",
-    "0,9 til 1,0"
-  ),
-  Styrke = c(
-    "Veldig sterk",
-    "Sterk",
-    "Moderat",
-    "Svak",
-    "Ubetydelig",
-    "Ubetydelig",
-    "Svak",
-    "Moderat",
-    "Sterk",
-    "Veldig sterk"
-  ),
-  Retning = c(
-    "Negativ",
-    "Negativ",
-    "Negativ",
-    "Negativ",
-    "Negativ",
-    "Positiv",
-    "Positiv",
-    "Positiv",
-    "Positiv",
-    "Positiv"
-  )
-) |>
-  tt(
-    notes = "Merk at dette er en grov veiledning. Det finnes ingen nøyaktige regler for hva som er en sterk og svake sammenheng. Det avhenger av konteksten."
-  )
-```
+### Hvor stort er stort? Kontekst avgjør {#sec-associations-context}
 
-### Anscombes kvartett {#sec-associations-anscombe}
+I det virkelige liv ser man sjelden korrelasjoner på $1$, og det er sjelden opplagt om et gjennomsnitt eller en andel er "stor" eller "liten". Hvordan skal man tolke en korrelasjon på, si, $r = 0{,}4$? Det ærlige svaret er at det avhenger av hva du skal bruke dataene til, og hvor sterke sammenhengene i fagfeltet ditt pleier å være. Ser man for eksempel etter korrelasjoner mellom undervisning og læring, gjør man det svært bra hvis man får en korrelasjon på $0{,}3$. Men korrelerer man hvor godt en elev gjør det på den samme rettskrivningprøven på mandag og tirsdag, bør korrelasjonen være svært høy. Tolkningen avhenger i stor grad av konteksten.
+
+Måling er en del av denne konteksten. Hvis variablene er målt unøyaktig, blir sammenhengen mellom dem svakere enn den "egentlig" er. Det er en grunn til at korrelasjoner i utdanningsforskning sjelden er store; se @sec-measurement for mer om hva som påvirker målekvalitet.
+
+### Visualiser alltid {#sec-associations-anscombe}
 
 Vi kan ikke få sagt det nok: Se alltid på spredningsplottet før du begynner å tolke dataene. Grunnen er enkel: En korrelasjon betyr ikke alltid det du tror.
 
@@ -724,6 +685,64 @@ ggplot(anscombe_quartet, aes(x = x, y = y)) +
 
 ```
 
+### Sammenhenger kan endre seg i undergrupper {#sec-associations-simpson}
+
+I @sec-associations-correlation-strength så vi at korrelasjonen mellom _Demokratikunnskap_ og _Forventet politisk deltakelse_ var negativ ($r = -0{,}23$): elever som vet mer om demokrati, forventer å delta *mindre* politisk. Men hva skjer hvis vi regner korrelasjonen separat innenfor hvert land?
+
+```{r}
+#| label: tbl-associations-simpson
+#| tbl-cap: Korrelasjon mellom _Demokratikunnskap_ og _Forventet politisk deltakelse_ totalt og innenfor hvert land.
+
+simpson_stats <- ICCS |>
+  dplyr::filter(!is.na(Demokratikunnskap), !is.na(`Forventet politisk deltakelse`))
+
+r_total <- cor(
+  simpson_stats$Demokratikunnskap,
+  simpson_stats$`Forventet politisk deltakelse`
+)
+n_total <- nrow(simpson_stats)
+
+simpson_by_land <- simpson_stats |>
+  dplyr::group_by(Land) |>
+  dplyr::summarise(
+    N = dplyr::n(),
+    r = cor(Demokratikunnskap, `Forventet politisk deltakelse`),
+    .groups = "drop"
+  )
+
+fmt_r2 <- function(x) formatC(round(x, 2), format = "f", digits = 2, decimal.mark = ",")
+
+dplyr::bind_rows(
+  tibble::tibble(Land = "Alle land", N = n_total, r = r_total),
+  simpson_by_land
+) |>
+  dplyr::mutate(
+    N = format(N, big.mark = " "),
+    r = fmt_r2(r)
+  ) |>
+  tt() |>
+  theme_tt("spacing") |>
+  style_tt(i = 0, bold = TRUE)
+```
+
+Korrelasjonen er fortsatt svakt negativ overalt, men *mye svakere* innenfor hvert land enn totalt. Hvordan kan det henge sammen?
+
+Forklaringen ligger i Brasil. Brasilianske elever har lavest gjennomsnittlig _Demokratikunnskap_ av de fire landene, men *høyest* _Forventet politisk deltakelse_. Når vi blander alle elevene sammen, drar denne forskjellen *mellom* land korrelasjonen tydelig nedover. Sammenhengen *innenfor* hvert land (altså om en elev som vet mer enn klassekameraten sin også tenker hun skal delta mer politisk) er langt svakere.
+
+Dette er et eksempel på et mer generelt poeng: en samlet korrelasjon kan være drevet av forskjeller mellom undergrupper, ikke av sammenhengen innenfor undergruppene. I ekstreme tilfeller snur korrelasjonen fortegn når man splitter på riktig variabel; det kalles **Simpson-paradokset**, og du så et drastisk eksempel allerede i @sec-why-statistics med Berkeley-opptaket.
+
+### Sammenheng er ikke kausalitet {#sec-associations-causation}
+
+Etter forrige delseksjon vet du allerede at den negative korrelasjonen på $-0{,}23$ ikke uten videre betyr at en gjennomsnittsbrasiliansk elev "skulle ha visst mindre om demokrati" for å forvente å delta mer. Innenfor hvert land er sammenhengen mye svakere, og det vi egentlig ser, er at land med ulike skoletradisjoner og politiske kulturer skiller seg på flere ting samtidig.
+
+Mer generelt: en sammenheng i dataene er bare et utgangspunkt. Å si noe om årsak krever andre verktøy enn en korrelasjonskoeffisient: et godt forskningsdesign og en faglig begrunnet teori om hvilke variable som hører med i analysen. Det brukte du masse tid på i @sec-design.
+
+### Teorien velger hva vi ser etter {#sec-associations-theory}
+
+Det er ikke dataene som forteller oss hvilke par av variable det er interessant å sammenligne. Det gjør den faglige teorien vi har om verden: hvilke begreper kan tenkes å henge sammen, og hvorfor? Vi krysset _Forventet utdanning_ med _Land_ fordi vi har en forestilling om at landenes skoletradisjoner kan påvirke hva elevene ser for seg, ikke fordi datasettet ba oss om det. Tester man derimot "alt mot alt" i et stort datasett, finner man nesten alltid sammenhenger ved ren tilfeldighet, og slike funn betyr lite. Det var en av advarslene i @sec-why-statistics.
+
+Alle sammenhengene vi har beskrevet i dette kapittelet, er **induktive slutninger**: de sier noe om hva som *har* vært i dataene vi har samlet inn, ikke noe om hva som *må* være. Ny data kan justere konklusjonene. Du kommer tilbake til induksjon og hva forskning kan vite, i vitenskapsteoridelen av studiet ditt.
+
 
 ## Oppsummering
 
@@ -731,4 +750,6 @@ Deskriptiv statistikk for en enkelt variabel forteller deg *hva* dataene innehol
 
 -   **Kategorisk × kategorisk**: Bruk [krysstabeller][Krysstabeller] for å se tallene og [stablede stolpediagram][Stablede stolpediagram] for å visualisere sammenhengen.
 -   **Kategorisk × kontinuerlig**: Bruk [sentraltendens og spredning per gruppe][Sentraltendens og spredning per gruppe] for å sammenligne tall, og [boksplott og histogrammer per gruppe][Boksplott og histogrammer per gruppe] for å se forskjellene visuelt.
--   **Kontinuerlig × kontinuerlig**: Bruk [spredningsplott][Spredningsplott] for å visualisere sammenhengen, og [korrelasjonskoeffisienten][Korrelasjonskoeffisienten] for å beskrive styrken og retningen med et tall. Husk [Anscombes kvartett][Anscombes kvartett]: visualiser alltid dataene dine!
+-   **Kontinuerlig × kontinuerlig**: Bruk [spredningsplott][Spredningsplott] for å visualisere sammenhengen, og [korrelasjonskoeffisienten][Korrelasjonskoeffisienten] for å beskrive styrken og retningen med et tall.
+
+Et tall er bare en oppsummering. [Tolkning av deskriptiv statistikk][Tolkning av deskriptiv statistikk] minner deg om noen forhold som er lette å glemme: tolkningen avhenger av konteksten, du må alltid visualisere dataene, en samlet sammenheng kan endre seg i undergrupper, en sammenheng er ikke det samme som en årsakssammenheng, og det er teorien (ikke dataene) som styrer hvilke variable du sammenligner.
