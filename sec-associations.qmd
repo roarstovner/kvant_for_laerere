@@ -419,7 +419,10 @@ ICCS |>
   dplyr::filter(!is.na(Likestilling), !is.na(Demokratikunnskap)) |>
   ggplot() +
   aes(x = Demokratikunnskap, y = Likestilling_jit) +
-  geom_point(color = blueshade, alpha = 0.10, size = 0.5) +
+  ggrastr::rasterise(
+    geom_point(color = blueshade, alpha = 0.10, size = 0.5),
+    dpi = 450
+  ) +
   labs(y = "Likestilling")
 ```
 
@@ -527,7 +530,10 @@ p_strength_weak <- ICCS |>
   dplyr::filter(!is.na(Likestilling), !is.na(`Sosioøkonomisk status`)) |>
   ggplot() +
   aes(x = `Sosioøkonomisk status`, y = Likestilling_jit) +
-  geom_point(color = blueshade, alpha = 0.05, size = 0.5) +
+  ggrastr::rasterise(
+    geom_point(color = blueshade, alpha = 0.05, size = 0.5),
+    dpi = 450
+  ) +
   geom_smooth(method = "lm", formula = y ~ x, se = FALSE, color = "black") +
   labs(y = "Likestilling", subtitle = "r = 0,18")
 
@@ -535,7 +541,10 @@ p_strength_strong <- ICCS |>
   dplyr::filter(!is.na(Likestilling), !is.na(Demokratikunnskap)) |>
   ggplot() +
   aes(x = Demokratikunnskap, y = Likestilling_jit) +
-  geom_point(color = blueshade, alpha = 0.05, size = 0.5) +
+  ggrastr::rasterise(
+    geom_point(color = blueshade, alpha = 0.05, size = 0.5),
+    dpi = 450
+  ) +
   geom_smooth(method = "lm", formula = y ~ x, se = FALSE, color = "black") +
   labs(y = "Likestilling", subtitle = "r = 0,44")
 
@@ -556,7 +565,10 @@ p_dir_pos <- ICCS |>
   dplyr::filter(!is.na(Likestilling), !is.na(Demokratikunnskap)) |>
   ggplot() +
   aes(x = Demokratikunnskap, y = Likestilling_jit) +
-  geom_point(color = blueshade, alpha = 0.05, size = 0.5) +
+  ggrastr::rasterise(
+    geom_point(color = blueshade, alpha = 0.05, size = 0.5),
+    dpi = 450
+  ) +
   geom_smooth(method = "lm", formula = y ~ x, se = FALSE, color = "black") +
   labs(y = "Likestilling", subtitle = "r = 0,44")
 
@@ -564,7 +576,10 @@ p_dir_neg <- ICCS |>
   dplyr::filter(!is.na(`Forventet politisk deltakelse`), !is.na(Demokratikunnskap)) |>
   ggplot() +
   aes(x = Demokratikunnskap, y = `Forventet politisk deltakelse_jit`) +
-  geom_point(color = blueshade, alpha = 0.05, size = 0.5) +
+  ggrastr::rasterise(
+    geom_point(color = blueshade, alpha = 0.05, size = 0.5),
+    dpi = 450
+  ) +
   geom_smooth(method = "lm", formula = y ~ x, se = FALSE, color = "black") +
   labs(y = "Forventet politisk deltakelse", subtitle = "r = -0,23")
 
