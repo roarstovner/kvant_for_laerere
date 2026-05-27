@@ -11,10 +11,10 @@ jamovi_bar <- function(data, var, dual_axis = FALSE) {
   if (dual_axis) {
     total <- sum(d$n)
     p + scale_y_continuous(
-      name = "Counts",
-      sec.axis = sec_axis(~ . / total * 100, name = "Percentages")
+      name = "Antall",
+      sec.axis = sec_axis(~ . / total * 100, name = "Prosent")
     )
   } else {
-    p + labs(y = "Counts")
+    p + labs(y = "Antall")
   }
 }

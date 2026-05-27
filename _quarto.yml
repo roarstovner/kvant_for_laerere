@@ -4,6 +4,8 @@ filters:
 project: 
   type: book
   output-dir: docs
+  preview:
+    port: 4321
 execute: 
   echo: false
   warning: false

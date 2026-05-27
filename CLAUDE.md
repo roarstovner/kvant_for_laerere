@@ -71,4 +71,19 @@ Defaults fra header.R: `fig.width = 6`, `fig.asp = 0.618`, `out.width = 80%` (HT
 
 Når en figur trenger annen bredde enn default, sett `out-width` til ønsket prosent og beregn `fig-width` med: `fig_width = 6 * (out_width / 0.7)`. F.eks. `out-width: 95%` gir `fig-width: 8.14`.
 
+# Tall og desimaler
+
+Boka bruker norsk desimalkomma via `options(OutDec = ",")` (satt i `chapter_header.R`).
+
+- Tall som skal vises for leseren (i brødtekst eller figurtekst) må formateres slik at de respekterer `OutDec`. Bruk numeriske verdier eller `format(round(x, 1), nsmall = 1)`; da blir desimaltegnet komma automatisk.
+- **Ikke bruk `sprintf()`** for tall som skal vises. `sprintf()` ignorerer `OutDec` og gir alltid punktum.
+- Unntak: eksempler som etterligner engelske forskningsartikler (f.eks. "M = 3.4 (SD = 1.2)") skal ha punktum, som er engelsk konvensjon. Der er `sprintf("%.1f", x)` riktig.
+
+# Output-format: typst og HTML
+
+`chapter_header.R` har tilpasninger som avhenger av output-formatet. Vær obs på dem, og ikke fjern dem uten å teste begge byggene:
+
+- **Tabeller (tinytable) under typst:** tinytable velger output-writer etter format, og `OutDec = ","` bryter typst-writeren. Lengde-literaler (strektykkelser, skriftstørrelser) skrives da som f.eks. `0,05em`, som typst ikke kompilerer. `chapter_header.R` monkey-patcher derfor `typst_hlines`, `typst_vlines` og `style_string_typst` til å tvinge punktum i disse literalene, mens celleinnholdet beholder komma. HTML- og LaTeX-output går ikke gjennom disse funksjonene og påvirkes ikke.
+- **tikz under HTML:** `magick`, `pdftools`, `showtext` og `marquee` lastes eksplisitt fordi tikz-motoren trenger dem for HTML-output, og for at `renv::snapshot()` skal fange dem i lockfilen.
+
 

@@ -61,14 +61,16 @@ I @sec-descriptive lærte du å lage frekvenstabeller for enkeltvariabler. Hvis 
 #| label: tbl-associations-contingency
 #| tbl-cap: Krysstabell over _Forventet utdanning_ og _Land_. Cellene viser antall elever og kolonneprosent (andel innenfor hvert land).
 
-ICCS |>
+krysstabell_utdanning_land <- ICCS |>
   dplyr::count(`Forventet utdanning`, Land) |>
   dplyr::group_by(Land) |>
   dplyr::mutate(
     pct = formatC(n / sum(n) * 100, format = "f", digits = 1, decimal.mark = ","),
     celle = paste0(n, " (", pct, " %)")
   ) |>
-  dplyr::ungroup() |>
+  dplyr::ungroup()
+  
+krysstabell_utdanning_land |>
   dplyr::select(`Forventet utdanning`, Land, celle) |>
   tidyr::pivot_wider(names_from = Land, values_from = celle) |>
   tt() |>
@@ -632,17 +634,25 @@ Matrisen bekrefter mønsteret fra figurene over og legger til to par vi ikke har
 
 ## Tolkning av deskriptiv statistikk {#sec-associations-interpretation}
 
-Vi har nå sett mange måter å beskrive data på: gjennomsnitt, andeler, krysstabeller, korrelasjoner. Men deskriptiv statistikk gir aldri svaret av seg selv; du må tolke. Resten av kapittelet handler om noen forhold du bør være bevisst på når du leser eller lager slike tall, og som gjelder både dette og forrige kapittel.
+Vi har i disse to kapitlene sett mange måter å beskrive data på, som grovt sett kan deles opp i oppsummerende tall og diagrammer. Resten av kapittelet handler om noen forhold du bør være bevisst på når du leser eller lager slike tall og diagrammer.
 
-### Hvor stort er stort? Kontekst avgjør {#sec-associations-context}
+### Hvordan tolke størrelsen på oppsummerende tall? {#sec-associations-context}
 
-I det virkelige liv ser man sjelden korrelasjoner på $1$, og det er sjelden opplagt om et gjennomsnitt eller en andel er "stor" eller "liten". Hvordan skal man tolke en korrelasjon på, si, $r = 0{,}4$? Det ærlige svaret er at det avhenger av hva du skal bruke dataene til, og hvor sterke sammenhengene i fagfeltet ditt pleier å være. Ser man for eksempel etter korrelasjoner mellom undervisning og læring, gjør man det svært bra hvis man får en korrelasjon på $0{,}3$. Men korrelerer man hvor godt en elev gjør det på den samme rettskrivningprøven på mandag og tirsdag, bør korrelasjonen være svært høy. Tolkningen avhenger i stor grad av konteksten.
+```{r}
+norge_utdanning <- krysstabell_utdanning_land |>
+  filter("Forventet utdanning" == "Høyere utdanning", Land == "Norge") |>
+  pull(pct)
+```
 
-Måling er en del av denne konteksten. Hvis variablene er målt unøyaktig, blir sammenhengen mellom dem svakere enn den "egentlig" er. Det er en grunn til at korrelasjoner i utdanningsforskning sjelden er store; se @sec-measurement for mer om hva som påvirker målekvalitet.
+De fleste oppsummerende tall sier sier lite i seg selv. Tenk for eksempel over at `norge_utdanning` av norske elever i ICCS så for seg å ta høyere utdanning. Er dette tallet høyt eller lite? For å besvare dette må man tolke tallet i kontekst, for eksempel ved å sammenlikne med naboland eller opp mot en eller annen politisk målsetting om hvor mange vi ønsker at skal ta høyere utdanning
+
+Størrelsen på korrelasjoner kan i hvert fall være vanskelige å tolke. I det virkelige liv ser man sjelden korrelasjoner på $1$. Hvordan skal man tolke en korrelasjon på, si, $r = 0{,}4$? Det ærlige svaret er at det avhenger av hva du skal bruke dataene til, og hvor sterke sammenhengene i fagfeltet ditt pleier å være. Ser man for eksempel etter korrelasjoner mellom undervisning og læring, gjør man det svært bra hvis man får en korrelasjon på $0{,}3$. Men korrelerer man hvor godt en elev gjør det på den samme rettskrivningprøven på mandag og tirsdag, bør korrelasjonen være svært høy. Tolkningen avhenger i stor grad av konteksten.
+
+Egenskaper ved målingen er en del av denne konteksten. Hvis variablene er lite reliable, blir sammenhengen mellom dem svakere enn den "egentlig" er. Det er en av grunnene til at korrelasjoner i utdanningsforskning sjelden er store; se @sec-measurement for mer om hva som påvirker målekvalitet.
 
 ### Visualiser alltid {#sec-associations-anscombe}
 
-Vi kan ikke få sagt det nok: Se alltid på spredningsplottet før du begynner å tolke dataene. Grunnen er enkel: En korrelasjon betyr ikke alltid det du tror.
+Vi kan ikke få sagt det nok: Visualiser dataene før du tolker oppsummerende tall. Grunnen er enkel: Tallene betyr ikke alltid det du tror.
 
 Et klassisk eksempel som viser dette perfekt, er "Anscombes kvartett" [@Anscombe1973]. Kvartetten består av fire datasett, og hvert av dem har en $X$- og en $Y$-variabel. Kvartetten er laget slik at de deskriptive statistikkene er så å si identiske for alle fire:
 
@@ -729,19 +739,17 @@ Korrelasjonen er fortsatt svakt negativ overalt, men *mye svakere* innenfor hver
 
 Forklaringen ligger i Brasil. Brasilianske elever har lavest gjennomsnittlig _Demokratikunnskap_ av de fire landene, men *høyest* _Forventet politisk deltakelse_. Når vi blander alle elevene sammen, drar denne forskjellen *mellom* land korrelasjonen tydelig nedover. Sammenhengen *innenfor* hvert land (altså om en elev som vet mer enn klassekameraten sin også tenker hun skal delta mer politisk) er langt svakere.
 
-Dette er et eksempel på et mer generelt poeng: en samlet korrelasjon kan være drevet av forskjeller mellom undergrupper, ikke av sammenhengen innenfor undergruppene. I ekstreme tilfeller snur korrelasjonen fortegn når man splitter på riktig variabel; det kalles **Simpson-paradokset**, og du så et drastisk eksempel allerede i @sec-why-statistics med Berkeley-opptaket.
+Dette er et eksempel på et mer generelt poeng: en samlet korrelasjon kan være drevet av forskjeller mellom undergrupper, ikke av sammenhengen innenfor undergruppene. I ekstreme tilfeller snur korrelasjonen fortegn når man splitter på riktig variabel; det kalles **Simpson-paradokset**, og du så et drastisk eksempel på dette allerede i @sec-why-statistics fra opptaket til Berkeley.
 
 ### Sammenheng er ikke kausalitet {#sec-associations-causation}
 
-Etter forrige delseksjon vet du allerede at den negative korrelasjonen på $-0{,}23$ ikke uten videre betyr at en gjennomsnittsbrasiliansk elev "skulle ha visst mindre om demokrati" for å forvente å delta mer. Innenfor hvert land er sammenhengen mye svakere, og det vi egentlig ser, er at land med ulike skoletradisjoner og politiske kulturer skiller seg på flere ting samtidig.
+Etter forrige delseksjon vet du allerede at den negative korrelasjonen på $-0{,}23$ ikke uten videre betyr at en gjennomsnittsbrasiliansk elev "skulle ha visst mindre om demokrati" fordi eleven da hadde sett for seg større politisk deltagelse. Innenfor hvert land er sammenhengen mye svakere, og det vi egentlig ser, er at land med ulike skoletradisjoner og politiske kulturer skiller seg på flere ting samtidig.
 
-Mer generelt: en sammenheng i dataene er bare et utgangspunkt. Å si noe om årsak krever andre verktøy enn en korrelasjonskoeffisient: et godt forskningsdesign og en faglig begrunnet teori om hvilke variable som hører med i analysen. Det brukte du masse tid på i @sec-design.
+Mer generelt: Å si noe om årsak krever andre verktøy enn en korrelasjonskoeffisient, det krever i hvert fall et egnet forskningsdesign og en faglig begrunnet teori om hvilke variable som hører med i analysen. Det brukte du masse tid på i @sec-design.
 
 ### Teorien velger hva vi ser etter {#sec-associations-theory}
 
-Det er ikke dataene som forteller oss hvilke par av variable det er interessant å sammenligne. Det gjør den faglige teorien vi har om verden: hvilke begreper kan tenkes å henge sammen, og hvorfor? Vi krysset _Forventet utdanning_ med _Land_ fordi vi har en forestilling om at landenes skoletradisjoner kan påvirke hva elevene ser for seg, ikke fordi datasettet ba oss om det. Tester man derimot "alt mot alt" i et stort datasett, finner man nesten alltid sammenhenger ved ren tilfeldighet, og slike funn betyr lite. Det var en av advarslene i @sec-why-statistics.
-
-Alle sammenhengene vi har beskrevet i dette kapittelet, er **induktive slutninger**: de sier noe om hva som *har* vært i dataene vi har samlet inn, ikke noe om hva som *må* være. Ny data kan justere konklusjonene. Du kommer tilbake til induksjon og hva forskning kan vite, i vitenskapsteoridelen av studiet ditt.
+Det er ikke dataene som forteller oss hvilke par av variable det er interessant å sammenligne. Det gjør forskningsspørsmålet vårt og teorien vår: hvilke begreper kan tenkes å henge sammen, og hvorfor? Vi krysset _Forventet utdanning_ med _Land_ fordi vi har en forestilling om at landenes skoletradisjoner kan påvirke om elevene ser for seg å ta høyere utdanning, ikke fordi datasettet ba oss om det. Tester man derimot "alt mot alt" i et stort datasett, finner man nesten alltid sammenhenger ved ren tilfeldighet, og slike funn betyr lite. Det var en av advarslene i @sec-why-statistics.
 
 
 ## Oppsummering
