@@ -88,25 +88,7 @@ format:
   #   fig-align: left
   #   include-in-header: header-includes.html
   #   epub-cover-image: images/cover.pdf
-  pdf:
-    #mainfont: "TeX Gyre Pagella"
-    documentclass: book
-    papersize: a4
-    # keep-tex: true
-    #params:
-        #endnotes: true
-    include-in-header:
-      - preamble.tex
-    #include-before-body:
-    # - first.tex
-    # - before-body.tex
-    # include-after-body:
-    #    text: \printendnotes
-    toc: true
-    colorlinks: true
-    #fig-align: left
-    fig-pos: 'h!'
-    reference-location: margin
+  typst: default
 
 crossref:
   title-delim: "."
