@@ -67,9 +67,9 @@ Analyses → Exploration → Descriptives. ...
 
 # Figurer
 
-Defaults fra header.R: `fig.width = 6`, `fig.asp = 0.618`, `out.width = 80%` (HTML) / `100%` (LaTeX). Se https://arelbundock.com/posts/quarto_figures/index.html
+Defaults fra header.R: `fig.width = 6`, `fig.asp = 0.618`, `out.width = 80%` (HTML) / `100%` (LaTeX).
 
-Når en figur trenger annen bredde enn default, sett `out-width` til ønsket prosent og beregn `fig-width` med: `fig_width = 6 * (out_width / 0.7)`. F.eks. `out-width: 95%` gir `fig-width: 8.14`.
+Når en figur trenger annen bredde enn default, sett `out-width` til ønsket prosent og beregn `fig-width` med: `fig_width = 6 * (out_width / 0.7)`. F.eks. `out-width: 95%` gir `fig-width: 8.14`. Se https://arelbundock.com/posts/quarto_figures/index.html
 
 # Tall og desimaler
 

@@ -11,5 +11,9 @@ book:
         - sec-jamovi.qmd
         - sec-descriptive.qmd
         - sec-associations.qmd
+    - part: Inferensiell statistikk
+      chapters:
+        - sec-probability.qmd
+        - sec-estimation.qmd
     - sec-epilogue.qmd
     - sec-references.qmd

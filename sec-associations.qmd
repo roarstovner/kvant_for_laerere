@@ -402,7 +402,9 @@ Hva om begge variablene er kontinuerlige? Da kan vi ikke dele inn i grupper, sid
 
 ### Spredningsplott {#sec-associations-scatter}
 
-**Spredningsplott** viser sammenhengen mellom to tallvariable. ICCS-datasettet vårt har fire kontinuerlige variable (se @tbl-associations-codebook); to av dem er _Demokratikunnskap_ og _Likestilling_. _Demokratikunnskap_ er hovedvariabelen i ICCS, og måler elevenes kunnskap om demokrati og samfunn. Et naturlig spørsmål å stille er om elever som kan mer om demokrati og samfunn også svarer annerledes på spørsmål om likestilling mellom kjønnene. Hvis man prøver å gjøre en undergruppeanalyse der undergruppene er definert av _Demokratikunnskap_, støter man på problemer, fordi det er `r length(unique(ICCS[["Demokratikunnskap"]]))` ulike verdier av _Demokratikunnskap_. Man kan ikke vise så mange undergrupper!
+**Spredningsplott** viser sammenhengen mellom to tallvariable. ICCS-datasettet vårt har fire kontinuerlige variable (se @tbl-associations-codebook); to av dem er _Demokratikunnskap_ og _Likestilling_. _Demokratikunnskap_ er hovedvariabelen i ICCS, og måler elevenes kunnskap om demokrati og samfunn. Et naturlig spørsmål å stille er om elever som kan mer om demokrati og samfunn også svarer annerledes på spørsmål om likestilling mellom kjønnene.
+
+Hvis man skulle analysere dette på samme måte som for de kategoriske variablene, måtte man gjort en undergruppeanalyse av _Likestilling_ der gruppene er definert av de ulike verdiene av _Demokratikunnskap_. Da ville man støtt på på problemer, fordi det er `r length(unique(ICCS[["Demokratikunnskap"]]))` ulike verdier av _Demokratikunnskap_. Man kan ikke vise så mange undergrupper!
 
 Løsningen er å legge hver sin variabel på hver sin akse og plotte hvert punkt. Resultatet ser du i @fig-associations-scatter. Vi ser en tendens til at punkter som ligger lengre til høyre også ligger litt lenger opp. Dette betyr at elever med høyere _Demokratikunnskap_ i større grad mener det skal være _Likestilling_ mellom kjønnene.
 
@@ -428,11 +430,11 @@ ICCS |>
   labs(y = "Likestilling")
 ```
 
-Spredningsplottet antyder en sammenheng ved at punktskyen trekker svakt oppover mot høyre, men det er vanskelig å si *hvor sterk* sammenhengen er. Er den sterk, moderat eller svak? For å avgjøre slikt trenger vi et tall som oppsummerer styrken (og retningen) i én verdi. Det tallet er **korrelasjonskoeffisienten**.
+Spredningsplottet antyder en sammenheng ved at punktskyen trekker svakt oppover mot høyre, men det er vanskelig å si *hvor sterk* sammenhengen er. Er den sterk, moderat eller svak? For å avgjøre slikt trenger vi et tall som oppsummerer styrken (og retningen) i én verdi. Det tallet er korrelasjonskoeffisienten.
 
 ### Korrelasjonskoeffisienten {#sec-associations-correlation-coefficient}
 
-Korrelasjonskoeffisienten kalles mer presist Pearsons korrelasjonskoeffisient og skrives som $r$. Det er et tall mellom $-1$ og $1$ som måler styrken og retningen på sammenhengen mellom to variable, $X$ og $Y$.
+**Korrelasjonskoeffisienten** kalles mer presist Pearsons korrelasjonskoeffisient og skrives som $r$. Det er et tall mellom $-1$ og $1$ som måler styrken og retningen på sammenhengen mellom to variable, $X$ og $Y$.
 
 - En $r = 1$ betyr en perfekt positiv sammenheng.
 - En $r = -1$ betyr en perfekt negativ sammenheng.
@@ -695,6 +697,19 @@ ggplot(anscombe_quartet, aes(x = x, y = y)) +
 
 ```
 
+### Gruppestatistikk er ikke individstatistikk {#sec-associations-ecological}
+
+Når vi rapporterer et gjennomsnitt for en gruppe, er det fristende å lese tallet som om det beskriver den typiske personen i gruppa. Men gjennomsnittet er en oppsummering av mange ulike individer, ikke en beskrivelse av noen enkelt av dem. Å forveksle de to nivåene kalles en **økologisk feilslutning**.
+[^Ingen gir dårligere navn enn statistikere. Hvorfor kalle det en _økologisk_ feilslutning når det ikke har noe med økologi å gjøre? Hvor er økosystemene, liksom? Jeg velger å tenke at informasjon om økologien (økosystemet) ikke gir presis informasjon om individene, for da passer navnet litt.]
+
+Tenk på en setning som "Norge skårer rundt 490 på PISA i lesing". Det betyr ikke at "den typiske norske 15-åringen skårer rundt 490". Det betyr at *gjennomsnittet* over alle norske 15-åringer er omtrent 490, mens enkeltelevene fordeler seg over et stort spenn rundt det tallet. Standardavviket er nettopp et mål på hvor lite "typisk" gjennomsnittet er for et tilfeldig enkeltindivid.
+
+Samme logikk gjelder mange steder i utdanningssystemet. _Klasse_gjennomsnittet på en prøve forteller deg ikke karakteren hvert _individ_ fikk. _Skole_gjennomsnittet forteller deg ikke hvilken _klasse_ som drar opp eller ned. Det er greit å sammenligne grupper med grupper, men ikke å hente ut en påstand om enkeltindivider fra et grupperesultat.
+
+Vi har sett dette i ICCS-tallene allerede. Det norske *gjennomsnittet* på _Likestilling_ skjuler at jenter og gutter svarer ganske forskjellig (@tbl-associations-equality-x-gender-country). Stopper man ved landgjennomsnittet, mister man at norske elever er en heterogen gruppe.
+
+Og noen ganger blir det enda verre: selve *sammenhengen* mellom to variable kan endre seg, eller til og med snu, når vi splitter på en tredje. Det skal vi se på nå.
+
 ### Sammenhenger kan endre seg i undergrupper {#sec-associations-simpson}
 
 I @sec-associations-correlation-strength så vi at korrelasjonen mellom _Demokratikunnskap_ og _Forventet politisk deltakelse_ var negativ ($r = -0{,}23$): elever som vet mer om demokrati, forventer å delta *mindre* politisk. Men hva skjer hvis vi regner korrelasjonen separat innenfor hvert land?
@@ -743,21 +758,18 @@ Dette er et eksempel på et mer generelt poeng: en samlet korrelasjon kan være 
 
 ### Sammenheng er ikke kausalitet {#sec-associations-causation}
 
-Etter forrige delseksjon vet du allerede at den negative korrelasjonen på $-0{,}23$ ikke uten videre betyr at en gjennomsnittsbrasiliansk elev "skulle ha visst mindre om demokrati" fordi eleven da hadde sett for seg større politisk deltagelse. Innenfor hvert land er sammenhengen mye svakere, og det vi egentlig ser, er at land med ulike skoletradisjoner og politiske kulturer skiller seg på flere ting samtidig.
-
-Mer generelt: Å si noe om årsak krever andre verktøy enn en korrelasjonskoeffisient, det krever i hvert fall et egnet forskningsdesign og en faglig begrunnet teori om hvilke variable som hører med i analysen. Det brukte du masse tid på i @sec-design.
+Vi må minne om lærdommene fra @sec-design-correlation-causality: korrelasjon er ikke kausalitet. Selv om variabelen _Demokratikunnskap_ hang positivt sammen med _Likestilling_ ($r = 0{,}44$), betyr det ikke at vi kan endre elevers syn på likestilling ved å heve demokratikunnskapene deres. Faktisk bør du kunne navngi grunner til at vi ikke kan trekke den kausale slutningen.
 
 ### Teorien velger hva vi ser etter {#sec-associations-theory}
 
-Det er ikke dataene som forteller oss hvilke par av variable det er interessant å sammenligne. Det gjør forskningsspørsmålet vårt og teorien vår: hvilke begreper kan tenkes å henge sammen, og hvorfor? Vi krysset _Forventet utdanning_ med _Land_ fordi vi har en forestilling om at landenes skoletradisjoner kan påvirke om elevene ser for seg å ta høyere utdanning, ikke fordi datasettet ba oss om det. Tester man derimot "alt mot alt" i et stort datasett, finner man nesten alltid sammenhenger ved ren tilfeldighet, og slike funn betyr lite. Det var en av advarslene i @sec-why-statistics.
-
+Det er ikke dataene som forteller oss hvilke par av variable det er interessant å sammenligne, det gjør forskningsspørsmålet vårt og teorien vår. Hvilke begreper kan tenkes å henge sammen, og hvorfor? Vi krysset _Forventet utdanning_ med _Land_ fordi vi har en forestilling om at landenes skoletradisjoner kan påvirke om elevene ser for seg å ta høyere utdanning, ikke fordi datasettet ba oss om det. Tester man derimot "alt mot alt" i et stort datasett, finner man nesten alltid sammenhenger ved ren tilfeldighet, og slike funn betyr lite. Selv om det finnes i dataene, betyr ikke at det er sant; du må ikke lytte utelukkende til dataene, slik vi advarte i @sec-why-statistics, for teori spiller en avgjørende rolle.
 
 ## Oppsummering
 
-Deskriptiv statistikk for en enkelt variabel forteller deg *hva* dataene inneholder; å beskrive sammenhenger forteller deg *hvordan variable henger sammen*. I dette kapittelet har vi sett at framgangsmåten avhenger av hva slags variable du har:
+Deskriptiv statistikk kan fortelle deg om enkeltvariabler i dataene (@sec-descriptive), men også om sammenhenger mellom variable (dette kapittelet). I dette kapittelet har vi sett at man undersøker sammenhenger forskjellig avhengig av variabeltypen:
 
--   **Kategorisk × kategorisk**: Bruk [krysstabeller][Krysstabeller] for å se tallene og [stablede stolpediagram][Stablede stolpediagram] for å visualisere sammenhengen.
--   **Kategorisk × kontinuerlig**: Bruk [sentraltendens og spredning per gruppe][Sentraltendens og spredning per gruppe] for å sammenligne tall, og [boksplott og histogrammer per gruppe][Boksplott og histogrammer per gruppe] for å se forskjellene visuelt.
+-   **Kategorisk × kategorisk**: Bruk [krysstabeller][Krysstabeller] eller [stablede stolpediagram][Stablede stolpediagram].
+-   **Kategorisk × kontinuerlig**: Bruk [sentraltendens og spredningsmål per gruppe][Sentraltendens og spredning per gruppe], eller [boksplott og histogram per gruppe][Boksplott og histogrammer per gruppe] for å se forskjellene visuelt.
 -   **Kontinuerlig × kontinuerlig**: Bruk [spredningsplott][Spredningsplott] for å visualisere sammenhengen, og [korrelasjonskoeffisienten][Korrelasjonskoeffisienten] for å beskrive styrken og retningen med et tall.
 
-Et tall er bare en oppsummering. [Tolkning av deskriptiv statistikk][Tolkning av deskriptiv statistikk] minner deg om noen forhold som er lette å glemme: tolkningen avhenger av konteksten, du må alltid visualisere dataene, en samlet sammenheng kan endre seg i undergrupper, en sammenheng er ikke det samme som en årsakssammenheng, og det er teorien (ikke dataene) som styrer hvilke variable du sammenligner.
+Tallene og diagrammene er bare oppsummeringer [Tolkning av deskriptiv statistikk][Tolkning av deskriptiv statistikk] minner deg om noen forhold som er lette å glemme: tolkningen avhenger av konteksten, du må alltid visualisere dataene, et gruppegjennomsnitt sier lite om enkeltindivider, en sammenheng mellom variable kan endre seg i undergrupper, en sammenheng er ikke det samme som en årsakssammenheng, og det er teorien (ikke dataene) som bør styre hvilke variable du undersøker
