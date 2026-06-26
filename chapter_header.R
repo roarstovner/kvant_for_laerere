@@ -19,7 +19,24 @@ library(scales)
 library(patchwork)
 
 set.seed(1963)
-blueshade <- "#3d6da9" # match blue colour for plots to jamovi logo colour 
+blueshade <- "#3d6da9" # match blue colour for plots to jamovi logo colour
+# Utvalgsfordelinger (fordelingen til en observator) tegnes i grønt, til forskjell
+# fra rådata (populasjon/utvalg) i blueshade. Grønntonen velges etter outputformat:
+#  - HTML/skjerm (farge): mettet grønn med omtrent samme lyshet som blå, så de to
+#    skiller seg på kulør og danner et harmonisk par.
+#  - typst (PDF/trykk): lys grønn, så de to skiller seg i *lyshet* og dermed også
+#    fungerer i svart-hvitt. Lys nok til at en svart referanselinje (f.eks. en
+#    normalfordeling) fortsatt synes godt oppå søylene.
+# Standard er farge; typst slår automatisk om til den svart-hvitt-trygge paletten.
+# Overstyr eksplisitt med options(kvant.blackwhite = TRUE) (eller FALSE).
+blackwhite <- isTRUE(getOption("kvant.blackwhite", isTRUE(knitr::pandoc_to("typst"))))
+if (blackwhite) {
+  samplingfarge <- "#a1d99b" # lys grønn -> lys grå i gråtone (skiller seg fra blå)
+  samplingtekst <- "#238b45" # mørk grønn til etiketter, lesbar på hvitt
+} else {
+  samplingfarge <- "#2e8b57" # mettet grønn, ~samme lyshet som blå (skjerm)
+  samplingtekst <- "#1d6f44" # mørkere grønn til etiketter
+}
 
 options(OutDec = ",")
 
