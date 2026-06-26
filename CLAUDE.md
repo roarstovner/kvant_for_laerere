@@ -86,4 +86,6 @@ Boka bruker norsk desimalkomma via `options(OutDec = ",")` (satt i `chapter_head
 - **Tabeller (tinytable) under typst:** tinytable velger output-writer etter format, og `OutDec = ","` bryter typst-writeren. Lengde-literaler (strektykkelser, skriftstørrelser) skrives da som f.eks. `0,05em`, som typst ikke kompilerer. `chapter_header.R` monkey-patcher derfor `typst_hlines`, `typst_vlines` og `style_string_typst` til å tvinge punktum i disse literalene, mens celleinnholdet beholder komma. HTML- og LaTeX-output går ikke gjennom disse funksjonene og påvirkes ikke.
 - **tikz under HTML:** `magick`, `pdftools`, `showtext` og `marquee` lastes eksplisitt fordi tikz-motoren trenger dem for HTML-output, og for at `renv::snapshot()` skal fange dem i lockfilen.
 
+# Don't run full build after completion
 
+The user has a `quarto preview` running.

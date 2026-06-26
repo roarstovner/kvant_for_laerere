@@ -9,7 +9,6 @@ project:
 execute: 
   echo: false
   warning: false
-  cache: false
 lang: nb
 language: language.yml
 lightbox:
@@ -49,6 +48,7 @@ diagram:
   engine:
     tikz:
       header-includes:
+        - '\usepackage[T1]{fontenc}'
         - '\usepackage{color}'
         - '\usetikzlibrary{arrows, shapes,decorations,calc,arrows.meta,fit,positioning,automata}'
         - '\tikzset{-Latex,auto,node distance =1 cm and 1 cm, semithick,state/.style ={ellipse, draw, minimum width = 0.7 cm}'
