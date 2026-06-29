@@ -5,27 +5,27 @@ source("chapter_header.R")
 
 ## Forord {.unnumbered}
 
-I denne læreboken dekker vi innholdet i et innføringskurs i kvantitative metoder. Boka er basert på et vanlig grunnkurs slik det vanligvis undervises for bachelorstudenter innen psykologi, helse eller samfunnsvitenskap, men er endret slik at det passer for studenter på femårige grunnskolelærerutdanninger.
+I denne læreboken dekker vi innholdet i et innføringskurs i kvantitative metoder. Boka er basert på et vanlig grunnkurs slik det vanligvis undervises for bachelorstudenter innen psykologi, helse- eller samfunnsvitenskap, men er endret slik at det passer for studenter på femårige grunnskolelærerutdanninger.
 
 Jeg hadde følgende krav til boka:
 
-  1. **Tilpasset lærerstudenter**: Jeg ville at stoffet og eksemplene skulle være fra utdanningsforskning og at de skulle være relevante for læreryrket.
+  1. **Tilpasset lærerstudenter**: Jeg ville at stoffet og eksemplene skulle være fra utdanningsforskning, og at de skulle være relevante for læreryrket.
   2. **Uten matematikk**: Jeg vet at veldig mange lærerstudenter har så lite matematisk bakgrunn at å lære seg noe særlig av matematikken bak statistikken ville blitt rent pugg.
-  3. **Kort**: Boka er skrevet til et kurs på OsloMet som skal tilsvare 5 studiepoeng og tre forelesninger i kvantitativ metode. De fleste lærebøker for et innføringskurs i kvantitativ metode er tre ganger så lange og er skrevet slik at det er vanskelig å plukke bare noen deler.
-  4. **Viser analysene med en enkel og åpent tilgjengelig statistikk-programvare**: Siden mange lærerstudenter skriver kvantitative masteroppgaver måtte boka ha med eksempler på hvordan man gjør statistisk analyse i en enkel programvare. Siden det finnes mye god statistikkprogramvare som er fritt tilgjengelig ønsket jeg å bruke noen av disse.
-  5. **Fremhever forskningsdesign og deskriptiv analyse**: Nesten alle statistikklærebøker benytter mye tid på hypotesetesting. Forutsetningene bak disse testene er nesten aldri oppfylt i praksis og de gir sjeldent gode svar på forskningsspørsmålene som stilles. Det er derfor bedre å bruke tiden til å lære mer om forskningsdesign og deskriptiv statistikk.
+  3. **Kort**: Boka er skrevet til et kurs på OsloMet som skal tilsvare fem studiepoeng og tre forelesninger i kvantitativ metode. De fleste lærebøker for et innføringskurs i kvantitativ metode er tre ganger så lange og er skrevet slik at det er vanskelig å plukke bare noen deler.
+  4. **Viser analysene med en enkel og åpent tilgjengelig statistikk-programvare**: Siden flere lærerstudenter skriver masteroppgaver med kvantitativ metode måtte boka ha med eksempler på hvordan man gjør statistisk analyse i en enkel programvare. Siden det finnes mye god statistikkprogramvare som er fritt tilgjengelig, ønsket jeg å bruke noen av disse.
+  5. **Fremhever forskningsdesign og deskriptiv analyse**: Nesten alle statistikklærebøker legger stor vekt på hypotesetesting. Forutsetningene for disse testene er sjelden oppfylt i praksis og de gir ofte begrensede svar på forskningsspørsmålene som stilles. Det er derfor mer hensiktsmessig å prioritere opplæring i forskningsdesign og deskriptiv statistikk.
   
-Jeg fant ingen eksisterende bok som dekket disse punktene, så jeg valgte å tilpasse jeg en lærebok for psykologi-studenter som var gitt ut med en åpen lisens.
+Jeg fant ingen eksisterende bok som samlet sett dekket alle disse punktene, så jeg valgte å tilpasse en lærebok for psykologi-studenter som var gitt ut med åpen lisens.
 
-Boka er en oversatt og omarbeidet versjon av Navarro og Foxcroft [-@navarro2025] sin bok "Learning statistics with jamovi: A Tutorial for Beginners in Statistical Analysis" [https://www.learnstatswithjamovi.com/](https://www.learnstatswithjamovi.com/), som igjen er en omarbeidet versjon av Navarro [-@navarro2011] sin bok "Learning statistics with R: A tutorial for psychology students and other beginners. (Version 0.6)" [https://learningstatisticswithr.com/](https://learningstatisticswithr.com/).
+Tilpasningen er en oversatt og omarbeidet versjon av Navarro og Foxcroft [-@navarro2025] sin bok "Learning statistics with jamovi: A Tutorial for Beginners in Statistical Analysis" [https://www.learnstatswithjamovi.com/](https://www.learnstatswithjamovi.com/), som igjen er en omarbeidet versjon av Navarro [-@navarro2011] sin bok "Learning statistics with R: A tutorial for psychology students and other beginners. (Version 0.6)" [https://learningstatisticswithr.com/](https://learningstatisticswithr.com/).
 
-Hvis du finner noen feil eller har forslag til forbedringer kan du melde inn et "issue" her [https://github.com/roarstovner/kvant_for_laerere/issues](https://github.com/roarstovner/kvant_for_laerere/issues) eller sende meg en epost.
+Hvis du finner feil eller har forslag til forbedringer, kan du melde inn et "issue" her [https://github.com/roarstovner/kvant_for_laerere/issues](https://github.com/roarstovner/kvant_for_laerere/issues) eller ta kontakt med meg via [ansattsiden min](https://www.oslomet.no/om/ansatt/robast/).
 
 Jeg håper dere setter pris på å ha en lærebok i kvantitativ metode som dekker de fem punktene i tillegg til å være gratis tilgjengelig på nett.
  
 *Roar Stovner, 4. august, 2025*
 
-(Hvis du ønsker å benytte boka i egen undervisning er det fritt frem, men send meg gjerne en epost, for det er gøy å vite at boka blir brukt! Hvis du ønsker å gjøre endringer i boka er det også lov, siden boka er gitt ut på lisensen CC-BY-SA, eneste krav er at du viser tilbake til de tidligere versjonene av boka (inkludert min versjon) og gjør den tilgjengelig med samme lisens. Bokas kildekode finner du på [github](https://github.com/roarstovner/kvant_for_laerere).)
+(Hvis noen ønsker å benytte boka i egen undervisning er det fritt frem, men ta gjerne kontakt via [ansattsiden min](https://www.oslomet.no/om/ansatt/robast/), for det er gøy å vite at boka blir brukt! Å gjøre endringer i boka er tillatt, siden boka er utgitt under lisensen CC-BY-SA. Det eneste kravet er at de tidligere versjonene av boka (inkludert denne) krediteres, og at den nye versjonen gjøres tilgjengelig med samme lisens. Bokas kildekode ligger på [github](https://github.com/roarstovner/kvant_for_laerere).)
 
 
 :::{.content-visible when-format="html"}
