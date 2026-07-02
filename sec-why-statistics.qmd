@@ -2,7 +2,7 @@
 <!-- \placetextbox{0.195}{0.05}{\scriptsize{CC BY-SA 4.0}} -->
 <!-- \placetextbox{0.70}{0.06}{\scriptsize{\url{https://doi.org/10.11647/OBP.0333.01}}} -->
 
-# Hvorfor lære kvantitative metoder?
+# Hvorfor lære kvantitative metoder? {#sec-why-statistics}
 
 ```{r}
 #| include: FALSE
@@ -53,10 +53,10 @@ Kvantitative undersøkelser og statistikk danner ofte grunnlaget for beslutninge
 
 Kvantitative undersøkelser kan altså være så potente at de har en betydelig påvirkning på hvilke mål vi har for skolen og hvordan vi styrer den. Her er en liten smørbrødliste over undersøkelser som har hatt tydelig påvirkning på norsk utdanningspolitikk:
 
-- PISA-undersøkelser og andre internasjonale komparative studier brukes som argument for reformer og endringer i skolesystemet. I denne boka ser vi nærmere på noen variabler fra ICCS-undersøkelsen i kapittel 4 og 5.
-- Nasjonale prøver påvirker prioriteringer og ressursfordelinger i skolen, og det er politisk omstridte spørsmål om skolers skår på nasjonale prøver skal være offentlig kjent og hvordan ressurser skal fordeles basert på resultatene.
-- Randomiserte kontrollerte eksperimenter blir benyttet til å argumentere for at noen undervisningsmetoder er bedre enn andre.
-- Kvantitative elevundersøkelser om trivsel, mobbing og læringsmiljø danner grunnlag for tiltak for å bedre elevenes skolemiljø.
+- **PISA-undersøkelser** og andre **store internasjonale undersøkelser** brukes som argument for reformer og endringer i skolesystemet. I denne boka ser vi nærmere på noen variabler fra den store internasjonale ICCS-undersøkelsen i kapittel 4 og 5.
+- **Nasjonale prøver** påvirker prioriteringer og ressursfordelinger i skolen, og det er politisk omstridte spørsmål om skolers skår på nasjonale prøver skal være offentlig kjent og hvordan ressurser skal fordeles basert på resultatene.
+- **Randomiserte kontrollerte eksperimenter** blir benyttet til å argumentere for at noen undervisningsmetoder er bedre enn andre.
+- Kvantitative **elevundersøkelser** om trivsel, mobbing og læringsmiljø danner grunnlag for tiltak for å bedre elevenes skolemiljø.
 - Statistikk over karakterer og over hvor mange elever som gjennomfører videregående skole, brukes til å vurdere kvaliteten til den enkelte skole. 
 
 Som lærer vil du måtte forholde deg til premissene for en utdanningspolitikk som blant annet baserer seg på slike undersøkelser. Å forstå grunnlaget disse undersøkelsene hviler på, er derfor ikke bare viktig for profesjonsutøvelsen, men også for å kunne delta informert i debatten om hvordan skolen skal og bør utvikle seg.
@@ -151,7 +151,7 @@ tt(
 
 Berkeley var rett og slett bekymret for å bli saksøkt fordi en mindre andel kvinner ble tilbudt plass på studiene deres. I USA er det forbudt å forskjellsbehandle søkere etter kjønn, og når kvinner systematisk blir tatt opp i lavere grad enn menn, kan det se ut som ulovlig diskriminering. Av mennene fikk 44 % plass, mot 35 % av kvinnene, en forskjell på 9 prosentpoeng i opptaksraten. Med nesten 13 000 søkere er en så stor forskjell altfor stor til å være tilfeldig, og det er nok med litt sunn fornuft for å anta at kvinner ble diskriminert. *Man må jo lytte til dataene.*
 
-Men da folk så nærmere på opptaksdataene, viste de en litt annen historie [@Bickel1975]. Da de undersøkte opptakene på hvert fakultet, viste det seg at de fleste fakultetene hadde *høyere* opptaksrate for kvinnelige søkere. @tbl-tab1-5 viser opptaksdataene for de seks største fakultetene.
+Men da andre så nærmere på opptaksdataene, viste de en litt annen historie [@Bickel1975]. I stedet for å undersøke opptaksraten til universitetet som helhet, underøkte de opptaksraten på hvert fakultet. da viste det seg at de fleste fakultetene hadde *høyere* opptaksrate for kvinnelige søkere. @tbl-tab1-5 viser opptaksdataene for de seks største fakultetene.
 
 ```{r}
 #| label: tbl-tab1-5
@@ -217,15 +217,16 @@ ggplot() +
   ylab("Opptaksrate (begge kjønn)") +
   theme(legend.position="none")
 ```
-Men selv denne mer detaljerte analysen hviler på et valg. Simpsons paradoks handler egentlig om hvilke variabler vi tar hensyn til. Den første analysen så bare på _kjønn_ og _opptak_. Den andre tok i tillegg hensyn til _fakultet_. Men beslutningen om å inkludere fakultet er ikke noe dataene selv kan fortelle deg, den kommer fra en antakelse om at diskriminering skjer ved fakultetenes opptaksbeslutning.
 
-Andre kan tenke at kjønnsdiskriminering skjer på et annet sted i prosessen: Hvorfor var det plass til så mange flere studenter på utdanningene med mange mannlige søkere enn på utdanningene med mange kvinnelige søkere? Hva om administrasjonen prioriterte å finansiere studier som tiltrakk seg menn? Det ville også vært kjønnsdiskriminerende, men det fanges ikke opp av analysen som ser på fakultetsnivå. Denne alternative tolkningen er i seg selv en hypotese som trenger egne data for å undersøkes, for eksempel referater fra møter der det ble besluttet hvor mange plasser hvert studieprogram skal ha. Poenget er at valget av hva man analyserer, gjenspeiler hva man mener er viktig.
+Men selv denne mer detaljerte analysen hviler på et valg. Simpsons paradoks handler egentlig om hvilke variabler vi tar hensyn til. Den første analysen så bare på _kjønn_ og _opptak_. Den andre tok i tillegg hensyn til _fakultet_. Men beslutningen om å inkludere fakultet er ikke noe dataene selv kan fortelle deg, den kommer fra en antakelse om at diskriminering skjer ved _fakultetenes_ opptaksbeslutning, ikke universitetets.
+
+Andre kan tenke at kjønnsdiskriminering skjer på et annet sted i prosessen: Hvorfor var det plass til så mange flere studenter på utdanningene med mange mannlige søkere enn på utdanningene med mange kvinnelige søkere? Hva om administrasjonen prioriterte å finansiere mange studieplasser på studier som tiltrakk seg menn? Det ville også vært kjønnsdiskriminerende, men det fanges ikke opp av noen av disse analysene. Denne alternative tolkningen er i seg selv en hypotese som trenger egne data for å undersøkes, for eksempel referater fra møter der det ble besluttet hvor mange plasser hvert studieprogram skal ha. Poenget er at valget av hva man analyserer, gjenspeiler hva man mener er viktig.
 
 De tre måtene å lese Berkeley-tallene på hviler hver på sin antakelse om *hvor* en eventuell diskriminering skjer:
 
 1. Den første analysen (som bare ser på kjønn og opptak) antar at diskriminering viser seg i universitetets samlede opptaksrate. Universitetet behandles da som én beslutningstaker.
 2. Den andre analysen (som tar hensyn til fakultet) antar at diskriminering skjer i det enkelte fakultetets opptaksbeslutning. Kjønnene må derfor sammenlignes innenfor hvert fakultet.
-3. En tredje analyse (som ser på hvordan studieplassene er fordelt mellom fakulteter) antar at diskrimineringen ligger i denne fordelingen, ikke i selve opptaket.
+3. En tredje analyse (som ser på hvordan studieplassene er fordelt mellom fakulteter) antar at diskrimineringen ligger i finansieringen av antall studieplasser, ikke i selve opptaket.
 
 Det anekdoten viser, er at hvilke slutninger du kan trekke fra data eller statistiske undersøkelser er teoriavhengig. Basert på ditt teoretiske ståsted velger du hva slags data og metode som er relevant for å besvare forskningsspørsmålene dine. Den kjente statistikeren Sander Greenland har en minneverdig formulering:
 

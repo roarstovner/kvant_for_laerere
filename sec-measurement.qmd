@@ -25,7 +25,7 @@ I dette kapittelet skal vi lære hvorfor vi bør være skeptiske til kvantitativ
 
 ## Begreper om målinger {#sec-measurement-concepts}
 
-### Variable og verdier {#sec-variables-values}
+### Variabler og verdier {#sec-variables-values}
 
 Kvantitative analyser baserer seg på at man har gjort en spesifikk **måling** av mange forskjellige ting. I utdanningsforskning er tingene gjerne skoler, lærere, klasser, elever, rektorer, læreplaner, lærebøker, elevtekster eller liknende. Måling er å tildele tall, merkelapper eller andre veldefinerte beskrivelser til disse tingene. Så alle følgende eksempler vil regnes som målinger:
 
@@ -81,7 +81,7 @@ Hvilken type målemetode man benytter kommer først og fremst an på hvilket teo
 
 ## Målenivåer {#sec-Scales-of-measurement}
 
-Resultatet av en måling kalles altså en variabel. Vi skal lære fire forskjellige typer variable. Dette er de forskjellige **målenivåene** eller **måleskalaene**.
+Resultatet av en måling kalles altså en variabel. Vi skal lære fire forskjellige typer variabler. Dette er de forskjellige **målenivåene** eller **måleskalaene**.
 
 ### Nominell variabel
 
@@ -159,11 +159,11 @@ knitr::include_graphics("images/fig-ordinal.png")
 
 Når en ordinal variabel markeres med tall, som er helt vanlig, skal man altså ikke tolke tallstørrelsene bokstavelig og anta at man kan regne med dem -- tallene er der kun for å markere kategorienes rekkefølge.
 
-Et vanlig eksempel på en ordinal variabel i utdanningsforskning er "høyeste fullførte utdanningssnivå". Du *kan* si at en person som kun har fullført ungdomsskolen har mindre utdanning en en person som har fullført videregående, og så videre. Med ordinale variable vet man ikke *hvor mye* større en verdi er enn en annen. For eksempel gir det ikke mening å spørre om det er større forskjell mellom "ungdomsskole" og "videregående" enn mellom "videregående" og "bachelor". Er utdanningsnivået på en bachelor mye høyere eller litt høyere enn fullført videregående? Hvis variabelen er ordinal kan man ikke besvare det spørsmålet.
+Et vanlig eksempel på en ordinal variabel i utdanningsforskning er "høyeste fullførte utdanningssnivå". Du *kan* si at en person som kun har fullført ungdomsskolen har mindre utdanning en en person som har fullført videregående, og så videre. Med ordinale variabler vet man ikke *hvor mye* større en verdi er enn en annen. For eksempel gir det ikke mening å spørre om det er større forskjell mellom "ungdomsskole" og "videregående" enn mellom "videregående" og "bachelor". Er utdanningsnivået på en bachelor mye høyere eller litt høyere enn fullført videregående? Hvis variabelen er ordinal kan man ikke besvare det spørsmålet.
 
 ### Intervallvariabel
 
-I motsetning til variabler på nominellt og ordinalt målenivå, er **intervallvariable** og **forholdstallsvariable** variabler der tallverdien er meningsfull. For variabler med intervallskala er *forskjellene* mellom tallene tolkbare, men variabelen har ikke en "naturlig" nullverdi. Et godt eksempel på en variabel med intervallskala er temperaturmåling i grader celsius. Hvis det for eksempel var 15$^{\circ}$ i går og 18$^{\circ}$ i dag, så er differansen mellom dem, 3$^{\circ}$, meningsfull og måler en forskjell i temperatur. Dessuten er disse tre gradene i forskjell *nøyaktig den samme forskjellen* som mellom 7$^{\circ}$ og 10$^{\circ}$. Kort sagt er addisjon og subtraksjon meningsfulle for variabler med intervallskala. Merk at dette *ikke* var tilfelle for ordinale variabler.
+I motsetning til variabler på nominellt og ordinalt målenivå, er **intervallvariabler** og **forholdstallsvariabler** variabler der tallverdien er meningsfull. For variabler med intervallskala er *forskjellene* mellom tallene tolkbare, men variabelen har ikke en "naturlig" nullverdi. Et godt eksempel på en variabel med intervallskala er temperaturmåling i grader celsius. Hvis det for eksempel var 15$^{\circ}$ i går og 18$^{\circ}$ i dag, så er differansen mellom dem, 3$^{\circ}$, meningsfull og måler en forskjell i temperatur. Dessuten er disse tre gradene i forskjell *nøyaktig den samme forskjellen* som mellom 7$^{\circ}$ og 10$^{\circ}$. Kort sagt er addisjon og subtraksjon meningsfulle for variabler med intervallskala. Merk at dette *ikke* var tilfelle for ordinale variabler.
 
 Men legg merke til at 0$^{\circ}$ ikke betyr "ingen temperatur i det hele tatt". Det betyr faktisk "temperaturen der vann fryser", noe som er ganske vilkårlig. Mangelen på et naturlig nullpunkt gjør meningsløst å multiplisere og dividere temperaturer. Det er feil å si at 20$^{\circ}$ er dobbelt så varmt som 10$^{\circ}$, akkurat som det er rart og meningsløst å hevde at 20$^{\circ}$ er negativ to ganger så varmt som -10$^{\circ}$.
 
@@ -186,7 +186,7 @@ Det siste eksempelet krever en analyse. Ofte måles "kompetanse", "ferdighet" el
 
 ### Kontinuerlige og diskrete variabler
 
-Man kan også karakterisere variable ut fra om de er kontinuerlige eller diskrete variabler (@tbl-tab2-4). Kort sagt handler det om dette:
+Man kan også karakterisere variabler ut fra om de er kontinuerlige eller diskrete variabler (@tbl-tab2-4). Kort sagt handler det om dette:
 
 -   En **kontinuerlig variabel** er en variabel hvor det for alle par av verdier du kan tenke deg alltid er mulig å ha en annen verdi imellom.
 -   En **diskret variabel** er en variabel som ikke er kontinuerlig, altså vil det for en diskret variabel være to verdier uten noen annen verdi imellom.
@@ -205,11 +205,11 @@ tt(
 )
 ```
 
-Diskrete variabler er det motsatte. For eksempel er nominelle variabler alltid diskrete. Det finnes ikke en transporttype som faller "mellom" tog og fly, i hvert fall ikke på den samme måte som 2,65 faller mellom 2 og 3. Derfor er transporttype en diskret variabel. På samme måte er ordinale variable alltid diskrete. Selv om svaralternativet "Ganske enig" faller mellom "Helt enig" og "Hverken enig eller uenig", er det ingen svaralternativer som faller imellom. Intervallskala- og forholdstallskala-variabler kan gå begge veier. Som vi så ovenfor, er svartid (en forholdstallsvariabel) kontinuerlig. Temperatur i grader celsius (en variabel på intervallnivå) er også kontinuerlig. Imidlertid er året du gikk i første klasse (en intervallskala-variabel) diskret. Det er ikke noe år mellom 2002 og 2003. Antall spørsmål du får riktig på en flervalgsprøve (en forholdstallskala-variabel) er også diskret. Siden et flervalgsspørsmål ikke kan være være "delvis korrekt", er det ingenting mellom 5 av 10 riktige og 6 av 10 riktige. @tbl-tab2-4 oppsummerer forholdet mellom målenivåene og skillet mellom diskret/kontinuerlig. Celler med et hakemerke er mulige. Jeg prøver å hamre dette poenget hjem, fordi (a) noen lærebøker tar feil, og (b) folk veldig ofte sier ting som "diskret variabel" når de mener "nominalskala-variabel". Det er veldig upresist.
+Diskrete variabler er det motsatte. For eksempel er nominelle variabler alltid diskrete. Det finnes ikke en transporttype som faller "mellom" tog og fly, i hvert fall ikke på den samme måte som 2,65 faller mellom 2 og 3. Derfor er transporttype en diskret variabel. På samme måte er ordinale variabler alltid diskrete. Selv om svaralternativet "Ganske enig" faller mellom "Helt enig" og "Hverken enig eller uenig", er det ingen svaralternativer som faller imellom. Intervallskala- og forholdstallskala-variabler kan gå begge veier. Som vi så ovenfor, er svartid (en forholdstallsvariabel) kontinuerlig. Temperatur i grader celsius (en variabel på intervallnivå) er også kontinuerlig. Imidlertid er året du gikk i første klasse (en intervallskala-variabel) diskret. Det er ikke noe år mellom 2002 og 2003. Antall spørsmål du får riktig på en flervalgsprøve (en forholdstallskala-variabel) er også diskret. Siden et flervalgsspørsmål ikke kan være være "delvis korrekt", er det ingenting mellom 5 av 10 riktige og 6 av 10 riktige. @tbl-tab2-4 oppsummerer forholdet mellom målenivåene og skillet mellom diskret/kontinuerlig. Celler med et hakemerke er mulige. Jeg prøver å hamre dette poenget hjem, fordi (a) noen lærebøker tar feil, og (b) folk veldig ofte sier ting som "diskret variabel" når de mener "nominalskala-variabel". Det er veldig upresist.
 
 ### Noen komplikasjoner: Likert-skalaer
 
-I den virkelige verden er det mange variable som ikke passer så godt inn i disse målenivåene. Det er ikke problematisk, for målenivåene gir forskere likevel en mer presis måte å snakke om variablene sine. En vanlig målemetode som ikke helt passer inn i målenivåene er **Likert-spørsmål**. Likert-spørsmål er det vanligste verktøyet i spørreundersøkelser. Du har selv fylt ut hundrevis, kanskje tusenvis, av dem. Anta at vi har et spørsmål i en undersøkelse som ser slik ut:
+I den virkelige verden er det mange variabler som ikke passer så godt inn i disse målenivåene. Det er ikke problematisk, for målenivåene gir forskere likevel en mer presis måte å snakke om variablene sine. En vanlig målemetode som ikke helt passer inn i målenivåene er **Likert-spørsmål**. Likert-spørsmål er det vanligste verktøyet i spørreundersøkelser. Du har selv fylt ut hundrevis, kanskje tusenvis, av dem. Anta at vi har et spørsmål i en undersøkelse som ser slik ut:
 
 > Jeg har vanskeligheter med å avslutte det jeg begynner på.
 > 
@@ -229,7 +229,7 @@ Disse svaralternativene er et eksempel på en 5-punkts Likert-skala, der folk bl
 
 Likert-skalaer er veldig praktiske, om enn noe begrensede, verktøy. Men hva slags målenivå er en Likert-skala på? De er åpenbart diskrete, siden du ikke kan gi et svar på 2,5. De er åpenbart ikke nominelle skalaer, siden elementene er ordnet; og de er heller ikke forholdstallsskalaer, siden det ikke er noe naturlig nullpunkt.
 
-Men er de ordinalskala eller intervallskala? Da må vi bestemme om forskjellene mellom nabosvaralternativene er like. Ett argument sier at vi egentlig ikke kan bevise at forskjellen mellom "sterkt enig" og "enig" er like stor som forskjellen mellom "enig" og "verken enig eller uenig". Det virker egentlig ganske åpenbart at de ikke er like i det hele tatt, så dette antyder at vi burde behandle Likert-skalaer som ordinale variabler. På den annen side ser det i praksis ut til at de fleste deltakerne tolker skalaen fra "sterkt uenig" til "sterkt enig" som "på en skala fra 1 til 5". For eksempel, hvis man spør folk om hvor fornøyde de er med inntekten sin på en 7-punkts Likert-skala og sammenlikner dette med deres faktiske inntekt, så ser man at hvert nivå på Likert-skalaen svarer til omtrent like mye penger. Som en konsekvens behandler mange forskere variable med Likert-skalaer som en intervallskala.[^02-a-brief-introduction-to-research-design-5] Det er ikke nødvendigvis en intervallskala, men i praksis er det nært nok til at vi tenker på det som en.
+Men er de ordinalskala eller intervallskala? Da må vi bestemme om forskjellene mellom nabosvaralternativene er like. Ett argument sier at vi egentlig ikke kan bevise at forskjellen mellom "sterkt enig" og "enig" er like stor som forskjellen mellom "enig" og "verken enig eller uenig". Det virker egentlig ganske åpenbart at de ikke er like i det hele tatt, så dette antyder at vi burde behandle Likert-skalaer som ordinale variabler. På den annen side ser det i praksis ut til at de fleste deltakerne tolker skalaen fra "sterkt uenig" til "sterkt enig" som "på en skala fra 1 til 5". For eksempel, hvis man spør folk om hvor fornøyde de er med inntekten sin på en 7-punkts Likert-skala og sammenlikner dette med deres faktiske inntekt, så ser man at hvert nivå på Likert-skalaen svarer til omtrent like mye penger. Som en konsekvens behandler mange forskere variabler med Likert-skalaer som en intervallskala.[^02-a-brief-introduction-to-research-design-5] Det er ikke nødvendigvis en intervallskala, men i praksis er det nært nok til at vi tenker på det som en.
 
 [^02-a-brief-introduction-to-research-design-5]: Kanskje er den egentlige grunnen at de statistiske utregningene med intervallskalaer er mye enklere enn de tilsvarende utregningene med ordinale skalaer.
 
@@ -277,11 +277,11 @@ Reliabilitet betyr altså at målingen gir samme verdi på tvers av situasjoner.
   
     Hvis karakteren på skriftlig eksamen i engelsk ikke avhenger av hvilken sensor som retter,  har den høy inter-rater-reliabilitet. 
     
--   **Indre konsistens**. Hvis en samlevariabel er satt sammen av mange undervariable, har undervariablene en tendens til å gi lignende svar?
+-   **Indre konsistens**. Hvis en samlevariabel er satt sammen av mange undervariabler, har undervariablene en tendens til å gi lignende svar?
 
     Målingen av indre motivasjon fra TIMSS (nevnt over) har høy indre konsistens hvis de forskjellige undervariablene, altså svarene på hver av de ni spørsmålene, gir mer eller mindre samme svar.
    
-    Ikke alle samlevariable trenger å ha høy indre konsistens. Hvis vi vil lage en samlevariabel for kvaliteten på en lærers skriveundervisning med undervariablene 'kvalitet på grammatikkundervisningen' og 'kvalitet på sjangerundervisningen' gjør det ikke noe om undervariablenes verdier avviker.
+    Ikke alle samlevariabler trenger å ha høy indre konsistens. Hvis vi vil lage en samlevariabel for kvaliteten på en lærers skriveundervisning med undervariablene 'kvalitet på grammatikkundervisningen' og 'kvalitet på sjangerundervisningen' gjør det ikke noe om undervariablenes verdier avviker.
 
 Hvordan man bør vurdere en variabels reliabilitet avhenger av det teoretiske konstruktet. Anta at man skal måle konstruktet "elevers utagerende adferd" ved å observere én undervisningstime. Hvis formålet er å gi en generell vurdering av elevenes utagerende adferd vil målingen ha lav test-retest-reliabilitet, fordi den vil gi svært forskjellige svar avhenging av om du utfører målingen siste time fredag eller første time tirsdag. Hvis formålet derimot er å finne ut av hvordan elevenes adferd varierer i en undervisningsuke er hele poenget med målingen å fange opp disse variasjonene. Derfor må man tenke over det teoretiske konstruktet og forskningsformålet for å gi en vurdering av en målemetodes reliabilitet.
 
@@ -303,7 +303,7 @@ Det finnes flere måter en måling kan ha svak konstruktvaliditet på. For eksem
 knitr::include_graphics("images/fig-construct.png")
 ```
 
-For å ha høy konstruktvaliditet kan det være nødvendig å ha høy **prediktiv validitet**. Dette betyr at målingene dine samsvarer med andre variable -- altså predikerer andre variable -- slik man ville forvente. Hvis man måler en lærers motivasjon for yrket kan man kontrollere den prediktive validiteten ved å sjekke om de motiverte lærerne velger å bli i yrket. Hvis dette ikke er tilfelle har du lav prediktiv validitet, og da har du kanskje ikke målt lærernes motivasjon.
+For å ha høy konstruktvaliditet kan det være nødvendig å ha høy **prediktiv validitet**. Dette betyr at målingene dine samsvarer med andre variabler -- altså predikerer andre variabler -- slik man ville forvente. Hvis man måler en lærers motivasjon for yrket kan man kontrollere den prediktive validiteten ved å sjekke om de motiverte lærerne velger å bli i yrket. Hvis dette ikke er tilfelle har du lav prediktiv validitet, og da har du kanskje ikke målt lærernes motivasjon.
 
 ### Et eksempel: måling av elevers indre motivasjon for matematikk
 
@@ -327,7 +327,7 @@ Det er fristende å droppe selvrapportering og observasjon av indre motivasjon, 
 
 I dette kapittelet har jeg kort diskutert følgende temaer:
 
-- [Variable og verdier](#sec-variables-values).
+- [Variabler og verdier](#sec-variables-values).
 - [Operasjonalisering av teoretiske konstrukter](#sec-operationalization). Hva betyr det å operasjonalisere et teoretisk konstrukt? Hva betyr verdier, variabler, konstrukter og målemetoder?
 - [Målenivåer](#sec-Scales-of-measurement) og variabeltyper. Husk at det er to forskjellige distinksjoner her. Det er forskjellen mellom diskrete og kontinuerlige data, og det er forskjellen mellom de fire ulike målenivåene (nominal, ordinal, intervall og forholdstall).
 - [Vurdering av målingers reliabilitet](#sec-reliability). Hvis jeg måler den "samme" tingen to ganger, bør jeg forvente å se samme resultat? Bare hvis målingen min er reliabel. Men hva betyr det å snakke om å gjøre den "samme" tingen? Vel, det er derfor vi har forskjellige typer pålitelighet. Sørg for at du husker hva de er.
