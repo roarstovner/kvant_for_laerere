@@ -48,7 +48,7 @@ Samme dag som jeg skriver dette, våren 2025, er hovedoppslagene i media en ny m
 
 Dette kapittelet handler kun om én ting fra inferensiell statistikk: hvor godt kan man estimere gjennomsnittsverdien i en populasjon fra et utvalg. Å _estimere_ betyr å anslå størrelsen på noe. Når vi estimerer gjennomsnittet i populasjonen, forsøker vi altså å finne et tall på hvor stort gjennomsnittet er. Problemet med å estimere gjennomsnittet i populasjonen er at estimatet ville blitt annerledes med et annet utvalg. Med et annet utvalg, ville man fått ca. samme estimat eller et helt annet?
 
-Målet med kapittelet er å skjønne begrepet **standardfeil**. Deretter er det forholdsvis enkelt å skjønne hva et **konfidensintervall** er. Med disse begrepene vil du kunne forstå flere resultater i forskningsartikler, samt skjønne magien [^Vel, matematikken, men siden matematikk har et image-problem velger jeg å benytte ordet _magi_.] statistikere støtter seg til når de uttaler seg sikkert om populasjonen uten å ha samlet noe særlig data fra den Det vil også gjøre det lettere for deg å forstå statistisk hypotesetesting, noe de fleste innføringsbøker i kvantitativ metode bruker mye plass på, men som vi ikke ser oss tjent med.
+Målet med kapittelet er å skjønne begrepet **standardfeil**. Deretter er det forholdsvis enkelt å skjønne hva et **konfidensintervall** er. Med disse begrepene vil du kunne forstå flere resultater i forskningsartikler, samt skjønne magien ^[Vel, matematikken, men siden matematikk har et image-problem velger jeg å benytte ordet _magi_.] statistikere støtter seg til når de uttaler seg sikkert om populasjonen uten å ha samlet noe særlig data fra den Det vil også gjøre det lettere for deg å forstå statistisk hypotesetesting, noe de fleste innføringsbøker i kvantitativ metode bruker mye plass på, men som vi ikke ser oss tjent med.
 
 ::: {.callout-tip}
 
@@ -525,7 +525,7 @@ Haha! For en berusende følelse! Vi visste ingenting om lesehastigheten til de 6
 
 ```{r}
 #| label: fig-inf-se-vs-sd
-#| fig-cap: !expr paste0("Fra ett utvalg til usikkerheten i gjennomsnittet, vist for utvalget på ", se_n, " elever. De to panelene deler vannrett akse, så innsnevringen er reell og ikke en illusjon skapt av ulik skala. De vannrette pilene viser spredningen i hvert panel")
+#| fig-cap: !expr paste0("En sammenlikning av fordelingen til utvalget på ", se_n, " elever, og den tilhørende utvalgsfordelingen til gjennomsnittet. Fordelingene har samme gjennomsnitt, men svært ulik spredning.")
 #| fig-subcap:
 #|   - "Lesehastigheten til hver enkelt elev, med gjennomsnittet (M) og standardavviket (SD)"
 #|   - "Utvalgsfordelingen til gjennomsnittet slik sentralgrenseteoremet spår den: en normalfordeling sentrert på det samme gjennomsnittet, men med en spredning, standardfeilen (SE), som er mindre enn standardavviket"
@@ -597,7 +597,7 @@ Men, for å ikke bli alt for beruset av lykke over sentralgrenseteoremet, så ka
 * Husk at statistiske resultater er heftet med mange typer usikkerhet. Enkelt tilfeldig utvalg lar oss kun anslå utvalgsusikkerheten. Hva med måleusikkerheten, for eksempel? Kanskje har vi ikke anslått elevenes lesehastighet så godt som vi tror.
 
 ::: {.callout-warning title="En unødvendig presisering: Bessels korreksjon"}
-Problemet med formelen for standardfeilen er at den baserer seg på populasjonens standardavvik. Søren også, den vet vi jo ikke; vi har bare data på de 64 elevene i utvalget vårt. I mer matematisk presise forklaringer må man først estimere populasjonsstandardavviket. Siden det blir for avansert for oss, sier jeg bare at formelen jeg viste for standardfeilen må ganges med Bessels korreksjon, som er $\frac{n}{n-1}$. Dette gjør at den virkelige standardfeilen er bittelitt høyere enn den vi estimerte. For alt annet enn ørsmå utvalg er forskjellen helt ubetydelig, så du trenger ikke tenke mer på den.
+Problemet med formelen for standardfeilen er at den baserer seg på populasjonens standardavvik. Søren også, vi vet bare utvalgets, ikke populasjonens, standardavvik. I mer matematisk presise forklaringer må man først estimere populasjonsstandardavviket. Å skjønne dette blir for avansert for oss, men  resultatet kan jeg alltids gi: vår formel for standardfeilen må ganges med Bessels korreksjon, som er $\frac{n}{n-1}$. Dette gjør at den virkelige standardfeilen er bittelitt høyere enn den vi estimerte. For alt annet enn ørsmå utvalg er forskjellen helt ubetydelig, så du trenger ikke tenke mer på den.
 :::
 
 ## Konfidensintervall {#sec-inf-konfidensintervall}
@@ -619,7 +619,7 @@ La oss regne det ut for studien vår. Vi trakk `r se_n` elever, fikk gjennomsnit
 
 Konfidensintervallet strekker seg dermed fra `r format(round(se_ci_lav, 1), nsmall = 1)` til `r format(round(se_ci_hoy, 1), nsmall = 1)` ord/min.^[Se bort fra avrundingsfeil. De oppstår fordi jeg ikke viser alle desimaler og fordi jeg regner med 1,96 og ikke 2, slik jeg presiserte i forrige fotnote.]
 
-@fig-inf-ci viser konfidensintervallet tegnet på gjennomsnittets utvalgsfordeling. Det skraverte området utgjør 95 % av fordelingen og er alt som ligger innenfor 2 standardfeil av estimatet. Det er nettopp dette midtpartiet konfidensintervallet fanger. Legg merke til hvor smalt det er sammenlignet med spennet av lesehastigheter.
+@fig-inf-ci viser konfidensintervallet tegnet på gjennomsnittets utvalgsfordeling. Det skraverte området utgjør 95 % av fordelingen og er alt som ligger innenfor 2 standardfeil av estimatet. Det er nettopp dette midtpartiet konfidensintervallet fanger. Legg merke til hvor smalt det er sammenlignet med spennet av lesehastigheter som ble vist i @fig-inf-se-vs-sd-1.
 
 ```{r}
 #| label: fig-inf-ci
@@ -668,7 +668,7 @@ Det vanskeligste med konfidensintervaller er å tolke dem riktig, og her snubler
 
 Den riktige tolkningen handler om _prosedyren_ som er utført og ikke om _resultatet_ som er oppnådd. Se for deg at du replikerer hele studien uendelig mange ganger og regner ut et konfidensintervall hver gang. Da vil 95 % av disse intervallene inneholde det sanne gjennomsnittet. Men du vet ikke om akkurat _din_ studie er blant de 95 % som traff, eller blant de 5 % som bommet. Akkurat din studie kan jo ha bommet grovt.
 
-@fig-inf-ci-interpretation illustrerer dette. Det sanne populasjonsgjennomsnittet ligger fast (den stiplede linjen i midten). De loddrette strekene viser 50 replikerte studier, altså samme studie utført 50 ganger med forskjellig tilfeldig utvalg, som gir forskjellige estimat på gjennomsnittlig lesehastighet. De fleste konfidensintervallene fanger det sanne gjennomsnittet, men noen få, markert i blått og med stjerne over, bommer. Når du gjør én enkelt studie, vet du ikke om du har fått et av konfidensintervallene som inneholder det riktige estimatet eller ikke. Det du vet er at ved å utføre prosedyren, altså ved å gjennomføre en studie med tilfeldig utvalg, så vil konfidensintervallet inneholde populasjonsparameteren 95% av gangene.
+@fig-inf-ci-interpretation illustrerer dette. Det sanne populasjonsgjennomsnittet ligger fast (den stiplede linjen i midten). De loddrette strekene viser 50 replikerte studier, altså samme studie utført 50 ganger med forskjellig tilfeldig utvalg, som gir forskjellige estimat på gjennomsnittlig lesehastighet. De fleste konfidensintervallene fanger det sanne gjennomsnittet, men noen få, markert i blått og med stjerne over, bommer. Når du gjør én enkelt studie, vet du ikke om du har fått et av de grå konfidensintervallene eller et av de blå, altså om konfidensintervallet inneholder populasjonsgjennomsnittet eller ikke. Det du vet er at ved å utføre prosedyren, altså ved å gjennomføre en studie med tilfeldig utvalg, så vil konfidensintervallet inneholde populasjonsparameteren 95% av gangene.
 
 ```{r}
 #| label: fig-inf-ci-interpretation
@@ -712,7 +712,9 @@ Vi tenker oss en **randomisert kontrollstudie** (se @sec-design), for eksempel d
 
 Anta at intervensjonsgruppa i snitt leste 4,2 ord/min mer enn kontrollgruppa etter intervensjonen. Denne _forskjellen i gjennomsnitt_ er også et estimat som har sin egen utvalgsfordeling og sin egen standardfeil, akkurat slik som gjennomsnittet i forrige eksempel. Forskere kan dermed finne et konfidensintervall, for eksempel et 95 % konfidensintervall på 0,3 til 8,1.
 
-Forskjellen på dette konfidensintervallet og det forrige er hva usikkerheten beskriver. Her er det ingen tilfeldig trekning fra en populasjon av norske 4.-klassinger; det er bare disse 100 elevene, og de er ikke trukket tilfeldig fra noe sted. Det tilfeldige er _tilordningen_ til gruppene. Konfidensintervallet svarer derfor ikke på spørsmålet "hva er effekten av leseintervensjonen for norske 4.-klassinger generelt?", men på spørsmålet "hva er effekten av leseintervensjonen for akkurat disse 100 elevene?". Det er en usikkerhet knyttet til den tilfeldige tilordningen, siden estimatet av effekten hadde blitt annerledes med en annen tilordning. Den randomiserte kontrollstudien sier i utgangspunktet bare noe om elevene i utvalget; at funnet skal gjelde andre elever, andre skoler og andre lærere, er et spørsmål om ytre validitet, ikke noe konfidensintervallet kan svare på.
+Forskjellen på dette konfidensintervallet og det forrige er hva usikkerheten beskriver. Her er det ingen tilfeldig trekning fra en populasjon av norske 4.-klassinger; det er bare disse 100 elevene, og de er ikke trukket tilfeldig fra noe sted. Det tilfeldige er _tilordningen_ til gruppene. Konfidensintervallet svarer derfor ikke på spørsmålet "hva er effekten av leseintervensjonen for norske 4.-klassinger generelt?", men på spørsmålet "hva er effekten av leseintervensjonen for akkurat disse 100 elevene?". Det er en usikkerhet knyttet til den tilfeldige tilordningen, siden estimatet av effekten hadde blitt annerledes med en annen tilordning. Den randomiserte kontrollstudien sier i utgangspunktet bare noe om elevene i utvalget, ikke om at funnet skal gjelde andre elever. Den ytre validiteten er altså ikke noe konfidensintervallet gir svar på for randomiserte kontrollstudier.
+
+<!-- TODO: Her kan man ha en oppgave om at tilfeldig utvalg gir ytre validitet og tilfeldig tilordning gir indre validitet. Hvorfor det? -->
 
 ## Hva konfidensintervallet ikke fanger {#sec-inf-grenser}
 

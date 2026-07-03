@@ -1,5 +1,4 @@
 book:
   chapters:
     - index.qmd
-    - sec-descriptive.qmd
-    - sec-associations.qmd
+    - sec-inferential.qmd

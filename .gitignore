@@ -17,7 +17,8 @@ docs/**
 sec-*_files/
 data-raw/*.zip
 images/fig-national-*.png
-
+scratch_files/
+*_cache/
 **/*.quarto_ipynb
 
 .vscode/
