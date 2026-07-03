@@ -353,7 +353,7 @@ salaries <- data.frame(
 )
 ```
 
-Vi må forklare med et eksempel. Tenk deg at Arne (månedsinntekt 50 000 kr), Berit (60 000 kr) og Cato (65 000 kr) sitter ved et bord. Gjennomsnittsinntekten ved bordet er 58 333 kr og medianinntekten er 60 000 kr. Begge disse er gode sentralverdier for dataene.
+Jeg må forklare med et eksempel. Tenk deg at Arne (månedsinntekt 50 000 kr), Berit (60 000 kr) og Cato (65 000 kr) sitter ved et bord. Gjennomsnittsinntekten ved bordet er 58 333 kr og medianinntekten er 60 000 kr. Begge disse er gode sentralverdier for dataene.
 
 Så kommer Erling Braut Haaland og setter seg ved bordet (månedsinntekt 30 000 000 kr). Plutselig gjør gjennomsnittsinntekten et byks til
 `r format(mean(salaries$salary), big.mark = " ", scientific = FALSE)` kr,
@@ -551,7 +551,7 @@ Her står SD for _standard deviation_, som er engelsk for standardavvik.
 
 #### Hvilket spredningsmål skal du bruke?
 
-Vi har gitt deg fire ulike spredningsmål: variasjonsbredde, kvartilbredde, varians og standardavvik. Vi oppsummerer egenskapene deres kort:
+Jeg har gitt deg fire ulike spredningsmål: variasjonsbredde, kvartilbredde, varians og standardavvik. Jeg oppsummerer egenskapene deres kort:
 
 -   **Variasjonsbredde**: Viser avstanden mellom den største og minste verdien i dataene. Variasjonsbredden påvirkes lett av ekstremverdier, så den brukes vanligvis kun når du har spesielle grunner til å fokusere på ytterpunktene.
 -   **Kvartilbredde**: Beskriver hvor "den midterste halvdelen" av dataene befinner seg. Den er robust mot ekstremverdier og passer perfekt sammen med medianen. Et godt valg!
@@ -581,7 +581,7 @@ ICCS |>
   jamovi_boxplot(Likestilling)
 ```
 
-Den blågrå boksen starter og slutter ved første og tredje kvartil, og viser derfor kvartilbredden. Den tykke linjen midt i boksen viser medianen. De tynne linjene viser variasjonsbredden ved at de strekker seg ut til de mest ekstreme datapunktene i hver retning, i hvert fall nesten. I dette plottet går det ingen strek oppover, fordi ingen verdier er høyere enn 75. persentil; så mange elever fikk toppskår på _Likestilling_. Som vi skrev i @sec-descriptive-range, så er variasjonsbredden veldig følsom for hvor ekstreme de mest ekstreme verdiene er. Derfor viser de fleste boksplott ikke variasjonsbredden, men kutter strekene ved en eller annen grense. Som standard er denne grensen satt til 1,5 ganger kvartilbredden (IQR). Hvis noen observasjoner faller utenfor dette området, vises de som prikker eller sirkler i stedet for. Disse kalles **avviksverdier** (_outliers_ på engelsk).
+Den blågrå boksen starter og slutter ved første og tredje kvartil, og viser derfor kvartilbredden. Den tykke linjen midt i boksen viser medianen. De tynne linjene viser variasjonsbredden ved at de strekker seg ut til de mest ekstreme datapunktene i hver retning, i hvert fall nesten. I dette plottet går det ingen strek oppover, fordi ingen verdier er høyere enn 75. persentil; så mange elever fikk toppskår på _Likestilling_. Som jeg skrev i @sec-descriptive-range, så er variasjonsbredden veldig følsom for hvor ekstreme de mest ekstreme verdiene er. Derfor viser de fleste boksplott ikke variasjonsbredden, men kutter strekene ved en eller annen grense. Som standard er denne grensen satt til 1,5 ganger kvartilbredden (IQR). Hvis noen observasjoner faller utenfor dette området, vises de som prikker eller sirkler i stedet for. Disse kalles **avviksverdier** (_outliers_ på engelsk).
 ^[Av naturlige årsaker blir dette ofte oversatt til "uteliggere" på norsk. Av like naturlige årsaker velger jeg å _ikke_ benytte ordet "uteligger" for avviksverdiene.]
 
 I våre _Likestilling_-data er det ingen observasjoner som er avvikende, så det er ingen avviksverdier og derfor ingen prikker.
@@ -628,9 +628,9 @@ Du lurer kanskje på hvordan du lagrer alle grafene vi har laget. Bare høyrekli
 
 Å beregne grunnleggende deskriptiv statistikk og lage gode figurer er noe av det første du gjør når du analyserer data. Deskriptiv statistikk beskriver utvalget og forteller altså ingenting om verdiene for populasjonen.
 
-Vi har dekket disse temaene:
+Jeg har dekket disse temaene:
 
--   **Kategoriske variabler**: Vi viste hvordan man lager [Frekvenstabeller] og [Stolpediagram][Stolpediagram] for nominelle og ordinale data, og hvordan man finner [Typetallet].
+-   **Kategoriske variabler**: Jeg viste hvordan man lager [Frekvenstabeller] og [Stolpediagram][Stolpediagram] for nominelle og ordinale data, og hvordan man finner [Typetallet].
 -   **Histogrammer**: [Histogrammer] viser fordelingen av tallvariabler og er ofte det mest informative verktøyet.
 -   **Mål for sentraltendens**: [Typetallet] fungerer for alle variabeltyper, [medianen][Medianen for ordinale data] krever ordinal- eller tallvariabler, og [gjennomsnittet][Sentraltendensmål for tallvariabler] krever tallvariabler. Bruk medianen hvis dataene er [skjeve](#sec-descriptive-mean-or-median); bruk gjennomsnittet ellers.
 -   **Mål for spredning**: [Spredningsmål] viser deg hvor "spredt" dataene dine er. De viktigste målene er kvartilbredde og standardavvik, mens varians spiller en nøkkelrolle i videre statistikk.

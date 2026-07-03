@@ -48,7 +48,7 @@ Samme dag som jeg skriver dette, våren 2025, er hovedoppslagene i media en ny m
 
 Dette kapittelet handler kun om én ting fra inferensiell statistikk: hvor godt kan man estimere gjennomsnittsverdien i en populasjon fra et utvalg. Å _estimere_ betyr å anslå størrelsen på noe. Når vi estimerer gjennomsnittet i populasjonen, forsøker vi altså å finne et tall på hvor stort gjennomsnittet er. Problemet med å estimere gjennomsnittet i populasjonen er at estimatet ville blitt annerledes med et annet utvalg. Med et annet utvalg, ville man fått ca. samme estimat eller et helt annet?
 
-Målet med kapittelet er å skjønne begrepet **standardfeil**. Deretter er det forholdsvis enkelt å skjønne hva et **konfidensintervall** er. Med disse begrepene vil du kunne forstå flere resultater i forskningsartikler, samt skjønne magien ^[Vel, matematikken, men siden matematikk har et image-problem velger jeg å benytte ordet _magi_.] statistikere støtter seg til når de uttaler seg sikkert om populasjonen uten å ha samlet noe særlig data fra den Det vil også gjøre det lettere for deg å forstå statistisk hypotesetesting, noe de fleste innføringsbøker i kvantitativ metode bruker mye plass på, men som vi ikke ser oss tjent med.
+Målet med kapittelet er å skjønne begrepet **standardfeil**. Deretter er det forholdsvis enkelt å skjønne hva et **konfidensintervall** er. Med disse begrepene vil du kunne forstå flere resultater i forskningsartikler, samt skjønne magien ^[Vel, matematikken, men siden matematikk har et image-problem velger jeg å benytte ordet _magi_.] statistikere støtter seg til når de uttaler seg sikkert om populasjonen uten å ha samlet noe særlig data fra den Det vil også gjøre det lettere for deg å forstå statistisk hypotesetesting, noe de fleste innføringsbøker i kvantitativ metode bruker mye plass på, men som jeg ikke ser meg tjent med.
 
 ::: {.callout-tip}
 
@@ -373,7 +373,7 @@ rep_tbl |>
 
 Legg merke til hvordan gjennomsnittet varierer fra utvalg til utvalg. Lesehastighetene til hver enkelt elev varierer fra ca. 10 til 130, men gjennomsnittene varierer fra ca. 75 til 115. Gjennomsnittene varierer altså mindre enn lesehastighetene til enkeltelever. Hvis jeg hadde vist mange flere slike utvalg, med tilhørende gjennomsnitt, hadde vi fått mange forskjellige gjennomsnittsverdier. Da kunne jeg vist **utvalgsfordelingen til gjennomsnittet**, altså fordelingen til alle utvalgsgjennomsnitt man kan få. Denne fordelingen vil bestå av tallene i kolonnen lengst til høyre i @tbl-inf-replikasjoner, i hvert fall hvis kolonnen hadde vist alle mulige utvalg man kunne fått.
 
-Men -- hey! -- vi har jo laget et datasett med hele populasjonen, så jeg _kan_ faktisk vise dette. Jeg kan jo bare simulere at jeg trekker, for eksempel, 10 000 utvalg og vise alle de gjennomsnittene! Nyt og beundre @fig-inf-replikasjoner der jeg har simulert 10 000 slike gjennomsnitt.
+Men -- hey! -- jeg har jo laget et datasett med hele populasjonen, så jeg _kan_ faktisk vise dette. Jeg kan jo bare simulere at jeg trekker, for eksempel, 10 000 utvalg og vise alle de gjennomsnittene! Nyt og beundre @fig-inf-replikasjoner der jeg har simulert 10 000 slike gjennomsnitt.
 
 ```{r}
 #| label: fig-inf-replikasjoner
@@ -433,7 +433,7 @@ Når vi har vårt ene utvalg og regner ut vårt ene gjennomsnitt, ser vi på det
 
 I sist delkapittel så vi at utvalgsfordelingen så litt normalfordelt ut, men det var kun for utvalg på fem elever, $n = 5$. Hvordan vil utvalgsfordelingen se ut for større utvalg?
 
-Vi finner ut av det ved å tegne samme figur, bare for flere forskjellige $n$. I @fig-inf-clt viser vi utvalgsfordelingen for utvalg med 2 elever, 5 elever, 10 elever og 100 elever. Denne gangen er den svarte kurven den best tilpassede normalfordelingen, slik at man ser tydeligere hvor lik utvalgsfordelingen er normalfordelingen.
+Vi finner ut av det ved å tegne samme figur, bare for flere forskjellige $n$. I @fig-inf-clt viser jeg utvalgsfordelingen for utvalg med 2 elever, 5 elever, 10 elever og 100 elever. Denne gangen er den svarte kurven den best tilpassede normalfordelingen, slik at man ser tydeligere hvor lik utvalgsfordelingen er normalfordelingen.
 
 ```{r}
 #| label: fig-inf-clt
@@ -718,7 +718,7 @@ Forskjellen på dette konfidensintervallet og det forrige er hva usikkerheten be
 
 ## Hva konfidensintervallet ikke fanger {#sec-inf-grenser}
 
-Vi begynte med å skille mellom fire typer usikkerhet, og hittil har vi bare dekket utvalgs- og tilordningsusikkerhet. Det er nå på tide å innfri den lovnaden og minne om at konfidensintervallet bare dekker den ene av de tre. Det er lett å glemme, fordi konfidensintervallet er det eneste tallet vi faktisk regner ut, men de andre kildene til usikkerhet er der likevel, ofte større.
+Kapittelet begynte med å skille mellom fire typer usikkerhet, men har hittil kun vist hvordan konfidensintervallet kan dekke utvalgs- og tilordningsusikkerhet. Det er fordi konfidensintervallet i dette kapittelet, som er det som vanligvis brukes i forskning, ikke tar hensyn til de andre typene usikkerhet . Det er lett å glemme, fordi konfidensintervallet er det eneste tallet vi faktisk regner ut, men de andre kildene til usikkerhet er der likevel, og er ofte større.
 
 - **Måleusikkerhet.** Carlstenprøven måler ikke lesehastighet helt presist. Dagsform, teksten som benyttes i prøven, og tilfeldigheter i selve gjennomføringen gir feil som konfidensintervallet ikke fanger. Et smalt konfidensintervall rundt et upresist mål er fortsatt et upresist resultat.
 - **Modellusikkerhet.** Hele regnestykket bygger på antakelser: at utvalget er et enkelt tilfeldig utvalg, målingen er god for alle elevene, og så videre. Hvis antakelsene er gale, for eksempel ved selektiv dropout (se @sec-design-simple-random), så kan konfidensintervallet være misvisende selv om det er aldri så smalt.
@@ -726,11 +726,11 @@ Vi begynte med å skille mellom fire typer usikkerhet, og hittil har vi bare dek
 
 ## Sammendrag
 
-I dette kapittelet har vi forklart hvordan man estimerer populasjonsparametre. Vi har bare vist hvordan man estimerer populasjonsgjennomsnittet, men liknende tenkning fungerer for alle mulige populasjonsparametre. For eksempel, hvis man skulle estimert populasjons_medianen_, så måtte man funnet utvalgsfordelingen til medianen, som kanskje ikke er normalfordelt. Da hadde man trengt noe som likner på  sentralgrenseteoremet, men som gjelder for medianer. Deretter kunne man regnet ut et konfidensintervall for medianen. Alle begrepene du har lært utgjør altså et språk for estimering og måling av usikkerhet som kan brukes mer generelt. Du har lært:
+I dette kapittelet har jeg forklart hvordan man estimerer populasjonsparametre. Jeg har bare vist hvordan man estimerer populasjonsgjennomsnittet, men liknende tenkning fungerer for alle mulige populasjonsparametre. For eksempel, hvis man skulle estimert populasjons_medianen_, så måtte man funnet utvalgsfordelingen til medianen, som kanskje ikke er normalfordelt. Da hadde man trengt noe som likner på  sentralgrenseteoremet, men som gjelder for medianer. Deretter kunne man regnet ut et konfidensintervall for medianen. Alle begrepene du har lært utgjør altså et språk for estimering og måling av usikkerhet som kan brukes mer generelt. Du har lært:
 
 - [Fire typer usikkerhet](#sec-inf-typer-usikkerhet): måle-, modell-, utvalgs- og tilordningsusikkerhet. Kapittelet handlet mest om de to siste.
 - [Populasjon og utvalg](#sec-inf-populasjon): forskjellen på populasjonsparametre og utvalgsobservatorer.
-- [Normalfordelingen](#sec-inf-normalfordeling), en klokkeformet fordeling definert av to tall, gjennomsnitt og standardavvik. Den følger 68–95–99,7-regelen.
+- [Normalfordelingen](#sec-inf-normalfordeling): en klokkeformet fordeling definert av to tall, gjennomsnitt og standardavvik. Den følger 68–95–99,7-regelen.
 - [Utvalgsfordelingen til gjennomsnittet](#sec-inf-utvalgsfordeling): også gjennomsnittet har en fordeling.
 - [Sentralgrenseteoremet og standardfeilen](#sec-inf-clt): utvalgsfordelingen til gjennomsnittet blir tilnærmet normalfordelt for store nok utvalg uansett hvordan populasjonsfordelingen ser ut; standardfeilen måler usikkerheten i gjennomsnittet.
 - [Konfidensintervallet](#sec-inf-konfidensintervall): den vanligste måten å angi usikkerhet på. Vanligst med 95% konfidensintervall, regnet ut som $\pm 2 \cdot SE$. Vi lærte [hvordan det skal tolkes](#sec-inf-tolkning).

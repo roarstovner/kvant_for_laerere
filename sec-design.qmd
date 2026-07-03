@@ -212,7 +212,7 @@ Man kan også gå i motsatt felle, at man blankt avviser alle årsaksforklaringe
     
 ## Randomiserte kontrollstudier
 
-Forrige delkapittel forklarte hvorfor det er vanskelig å finne ut at noe forårsaker noe annet. Heldigvis finnes det et studiedesign man kan bruke for å utelukke alle tenkelige [konfundere](#sec-correlation-causality), nemlig **randomiserte kontrollstudier**. Randomiserte kontrollstudier kalles også _randomiserte kontrollerte forsøk_ og _randomiserte kontrollerte eksperimenter_, og du møter ofte på begrepet på engelsk, der det heter _randomized controlled trials_. Først forklarer vi hva slike studier er, og så forklarer vi hvorfor det selv med randomiserte kontrollstudier ikke er enkelt å finne ut av årsaksforklaringer.
+Forrige delkapittel forklarte hvorfor det er vanskelig å finne ut at noe forårsaker noe annet. Heldigvis finnes det et studiedesign man kan bruke for å utelukke alle tenkelige [konfundere](#sec-correlation-causality), nemlig **randomiserte kontrollstudier**. Randomiserte kontrollstudier kalles også _randomiserte kontrollerte forsøk_ og _randomiserte kontrollerte eksperimenter_, og du møter ofte på begrepet på engelsk, der det heter _randomized controlled trials_. Først forklarer jeg hva slike studier er, og så forklarer jeg hvorfor det selv med randomiserte kontrollstudier ikke er enkelt å finne ut av årsaksforklaringer.
 
 En randomisert kontrollstudie er et eksperimentelt forskningsdesign hvor deltakere tilfeldig tildeles ulike grupper for å teste effektiviteten av en intervensjon. I utdanning betyr dette å tilfeldig dele inn elever, lærere eller skoler i en **intervensjonsgruppe** og en **kontrollgruppe**. Intervensjonsgruppa mottar intervensjonen, som kan være en ny undervisningsmetode, en digital dings, et antimobbeopplegg eller hva som helst annet. Kontrollgruppa får ikke intervensjonen.
 
@@ -274,7 +274,7 @@ I stedet for å forske på alle norske elever som skal starte på ungdomsskolen 
 
 Et sentralt spørsmål er hvilken **analyseenhet** man skal benytte. Analyseenheten er de enhetene (tingene) du samler data fra. Hvis jeg undersøker elevenes motivasjon ved å spørre elevene selv, er det _eleven_ som er analyseenheten. Hvis jeg spør læreren om å vurdere motivasjonen til klassen, er det _læreren_ eller _klassen_ som er analyseenheten. Hvis jeg sender ut observatører i mange klasserom for å forsøke å observere klassens motivasjon i forskjellige undervisningsøkter, er det kanskje _undervisningsøkter_ som er analyseenheten.
 
-I det følgende presenterer vi et lite knippe vanlige utvalgsmetoder og deres fordeler og ulemper.
+I det følgende presenterer jeg et lite knippe vanlige utvalgsmetoder og deres fordeler og ulemper.
 
 ### Enkle tilfeldige utvalg {#sec-design-simple-random}
 
@@ -307,7 +307,7 @@ I utdanningsvitenskap er nesten alle utvalg uten tilbakelegging, siden samme per
 
 Og så for å hamre inn et siste poeng: tilfeldige utvalg er forventningsrette med hensyn på alle mulige variabler. I eksemplene tok vi frem variabelen svart/hvit, men brikkene kan variere i størrelse, materiale, eller alder også. Enkle tilfeldige utvalg er forventningsrette med hensyn på disse variablene og alle andre variabler du kan tenke deg, også. Du bør dvele ved dette, for det er det nærmeste man kommer magi i forskningsdesign. Ved et enkelt triks kan velge et utvalg som representerer populasjonen på alle mulige måter -- wow! Men det er med enkle tilfeldige utvalg som med magi -- de finnes ikke på ordentlig.
 
-Vi ramser opp noen grunner til at enkle tilfeldige utvalg ikke finnes:
+Jeg ramser opp noen grunner til at enkle tilfeldige utvalg ikke finnes:
 
 - **Manglende liste over enheter i populasjonen**: For å få et enkelt tilfeldig utvalg trenger man først en liste over alle enhetene i populasjonen. Stort sett finnes ingen slik liste. Hvis jeg vil forske på alle musikklærere på ungdomstrinnet i Norge skulle jeg gjerne hatt en liste over alle disse musikklærerne, men en slik liste finnes ikke.
 - **Selektiv deltagelse**: Hvis man er så heldig at det finnes lister over alle i populasjonen, for eksempel hvis populasjonen din er "ungdomsskoler i Oslo", så kan du banne på at ikke alle ønsker å være med i studien din.
@@ -325,7 +325,7 @@ Store internasjonale undersøkelser, som for eksempel PISA, benytter gjerne klyn
 
 ### Ikke-tilfeldige utvalg
 
-Som du ser fra listen over mulige populasjoner jeg viste tidligere, er det nesten umulig å få et enkelt tilfeldig utvalg fra de fleste populasjoner vi er interessert i. Vi rekker ikke å diskutere andre utvalgsmetoder grundig i denne boken, men for å gi deg en følelse av hva som finnes der ute, vil jeg liste opp noen av de viktigste.
+Som du ser fra listen over mulige populasjoner jeg viste tidligere, er det nesten umulig å få et enkelt tilfeldig utvalg fra de fleste populasjoner vi er interessert i. Jeg rekker ikke å diskutere andre utvalgsmetoder grundig i denne boken, men for å gi deg en følelse av hva som finnes der ute, vil jeg liste opp noen av de viktigste.
 
 **Bekvemmelighetsutvalg** er mer eller mindre det det høres ut som. Utvalgene velges på en måte som er praktisk for forskeren. Et vanlig eksempel i utdanningsforskning er at man velger ut lærere og elever som befinner seg på skoler i nærheten av forskerne. Dette høres kanskje lite prinsipielt ut, men det kan være gode grunner for å gjøre det slik, for da sparer man reisepenger i forskningsbudsjettet og de besparelsene kan man bruke til å heve kvaliteten på andre sider ved studien.
 
@@ -339,7 +339,7 @@ Stratifisert utvelgelse kan være mer effektivt, særlig når noen av underpopul
 
 I virkeligheten, og i hvert fall i utdanningsforskning, ser vi sjeldent enkle tilfeldige utvalg. Men hvor stort problem er egentlig dette? Det kan virke som et kritisk problem, bare sammenlikn @fig-design-unbiased og @fig-design-biased, men ofte er situasjonen ikke like håpløs.
 
-Noen typer skjeve utvalg er faktisk helt uproblematiske, for eksempel i tilfeldige stratifiserte utvalg. Da vet du nøyaktig hva skjevheten består i siden du har skapt den med vilje -- ofte for å gjøre studien mer effektiv. Og det finnes statistiske teknikker som kan justere for skjevhetene, selv om vi ikke dekker dem i denne boken. I slike tilfeller er det altså ingen grunn til bekymring.
+Noen typer skjeve utvalg er faktisk helt uproblematiske, for eksempel i tilfeldige stratifiserte utvalg. Da vet du nøyaktig hva skjevheten består i siden du har skapt den med vilje -- ofte for å gjøre studien mer effektiv. Og det finnes statistiske teknikker som kan justere for skjevhetene, selv om jeg ikke dekker dem i denne boken. I slike tilfeller er det altså ingen grunn til bekymring.
 
 Andre ganger trenger man ikke enkle tilfeldige utvalg for å generalisere, fordi man kan generalisere med teoretiske argumenter. Hvis jeg lurer på om multiplikasjons-spillet jeg har utviklet er passe vanskelig for norske elever, holder det at jeg gjør et bekvemmelighetsutvalg og tester det på noen nærskoler der jeg har et godt forhold til rektorene, eller må jeg teste det ut i Finnmark og Agder også? Det teoretiske argumentet mitt for at det holder å teste det ut på nærskoler kan være at kun ferdighetsnivå og språkbakgrunn teller, og jeg finner ulike ferdighetsnivåer og språkbakgrunner på nærskolene.
 
@@ -389,7 +389,7 @@ Ideen bak **økologisk validitet** er at resultatene fra studien ikke kan funger
 
 ## Sammendrag
 
-Denne korte introduksjonen til forskningsdesign har dekket noen av de viktigste temaene man må tenke på hvis man skal forske selv eller vurdere eksisterende forskning. Måling er en så sentral del av forskningsdesignet at det fikk et eget kapittel, @sec-measurement, mens resten fikk plass i dette kapittelet. Vi har dekket:
+Denne korte introduksjonen til forskningsdesign har dekket noen av de viktigste temaene man må tenke på hvis man skal forske selv eller vurdere eksisterende forskning. Måling er en så sentral del av forskningsdesignet at det fikk et eget kapittel, @sec-measurement, mens resten fikk plass i dette kapittelet. Jeg har dekket:
 
 - **Formål med kvantitativ forskning**: å beskrive, predikere og å finne årsaksforhold.
 - **Variables "roller"**: avhengige og uavhengige variabler, i tillegg til en bråte andre navn. Jeg foretrekker prediktor og utfall.

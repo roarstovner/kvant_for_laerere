@@ -25,7 +25,7 @@ ICCS <- ICCS |>
   )
 ```
 
-Framgangsmåten avhenger av hva slags variabler vi har. Derfor organiserer vi kapittelet etter variabeltype: først undersøker vi sammenhengen mellom to kategoriske variabler, deretter mellom en kategorisk og en kontinuerlig variabel, og til slutt mellom to kontinuerlige variabler.
+Framgangsmåten avhenger av hva slags variabler vi har. Derfor er kapittelet organisert etter variabeltype: først undersøker vi sammenhengen mellom to kategoriske variabler, deretter mellom en kategorisk og en kontinuerlig variabel, og til slutt mellom to kontinuerlige variabler.
 
 Vi bruker syv variabler fra ICCS-datasettet gjennom kapittelet. @tbl-associations-codebook viser målenivået for hver variabel og hva verdiene representerer. Inndelingen i _Type_ (kategorisk eller kontinuerlig) er den grove grupperingen kapittelet er organisert etter, mens _Målenivå_ er det mer finmaskede vokabularet (nominal, ordinal, intervall, forhold) fra @sec-descriptive. Det kan være lurt å gå tilbake til @tbl-associations-codebook underveis i kapittelet hvis du er usikker på variablene.
 
@@ -137,7 +137,7 @@ ICCS |>
 Gruppert stolpediagram av _Forventet utdanning_ og _Land_, vist på to måter.
 :::
 
-Vi kan også legge til _enda en variabel_, slik at vi sammenligner undergrupper langs to dimensjoner samtidig. I @fig-associations-bar-threeway ser du resultatet for _Land_, _Forventet utdanning_ og _Kjønn_, der hvert kjønn vises for seg. Figuren blir imidlertid omfattende og noe uoversiktlig. Dette gjelder særlig diagrammet for «Annet» (nederst), der det lave antallet observasjoner gjør mønstrene vanskelige å lese. I neste delkapittel viser vi hvordan slike fremstillinger kan forbedres ved hjelp av stablede stolpediagrammer.
+Vi kan også legge til _enda en variabel_, slik at vi sammenligner undergrupper langs to dimensjoner samtidig. I @fig-associations-bar-threeway ser du resultatet for _Land_, _Forventet utdanning_ og _Kjønn_, der hvert kjønn vises for seg. Figuren blir imidlertid omfattende og noe uoversiktlig. Dette gjelder særlig diagrammet for «Annet» (nederst), der det lave antallet observasjoner gjør mønstrene vanskelige å lese. I neste delkapittel viser jeg hvordan slike fremstillinger kan forbedres ved hjelp av stablede stolpediagrammer.
 
 ```{r}
 #| label: fig-associations-bar-threeway
@@ -715,7 +715,7 @@ Egenskaper ved målingen er en del av denne konteksten. Hvis variablene er lite 
 
 ### Visualiser alltid {#sec-associations-anscombe}
 
-Vi kan ikke få sagt det nok: Visualiser dataene før du tolker oppsummerende tall. Grunnen er enkel: Tallene betyr ikke alltid det du tror.
+Jeg kan ikke få sagt det nok: Visualiser dataene før du tolker oppsummerende tall. Grunnen er enkel: Tallene betyr ikke alltid det du tror.
 
 Et klassisk eksempel som viser dette perfekt, er "Anscombes kvartett" [@Anscombe1973]. Kvartetten består av fire datasett, og hvert av dem har en $X$- og en $Y$-variabel. Kvartetten er laget slik at de deskriptive statistikkene er så å si identiske for alle fire:
 
@@ -818,7 +818,7 @@ Dette er et eksempel på et mer generelt poeng: en samlet korrelasjon kan være 
 
 ### Sammenheng er ikke kausalitet {#sec-associations-causation}
 
-Vi må minne om lærdommen fra @sec-correlation-causality, nemlig at korrelasjon ikke er kausalitet. Selv om variabelen _Demokratikunnskap_ hang positivt sammen med _Likestilling_ ($r = 0{,}44$), betyr det ikke at vi kan endre elevers syn på likestilling ved å heve demokratikunnskapene deres. Faktisk bør du kunne navngi grunner til at vi ikke kan trekke denne kausale slutningen.
+Jeg må minne om lærdommen fra @sec-correlation-causality, nemlig at korrelasjon ikke er kausalitet. Selv om variabelen _Demokratikunnskap_ hang positivt sammen med _Likestilling_ ($r = 0{,}44$), betyr det ikke at vi kan endre elevers syn på likestilling ved å heve demokratikunnskapene deres. Faktisk bør du kunne navngi grunner til at vi ikke kan trekke denne kausale slutningen.
 
 ### Teorien velger hva vi ser etter {#sec-associations-theory}
 
