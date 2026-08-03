@@ -47,11 +47,11 @@ csl: apa.csl
 diagram:
   engine:
     tikz:
-      header-includes:
+      preamble:
         - '\usepackage[T1]{fontenc}'
         - '\usepackage{color}'
         - '\usetikzlibrary{arrows, shapes,decorations,calc,arrows.meta,fit,positioning,automata}'
-        - '\tikzset{-Latex,auto,node distance =1 cm and 1 cm, semithick,state/.style ={ellipse, draw, minimum width = 0.7 cm}'
+        - '\tikzset{-Latex,auto,node distance =1 cm and 1 cm, semithick,state/.style ={ellipse, draw, minimum width = 0.7 cm}}'
         
 format:
   html:

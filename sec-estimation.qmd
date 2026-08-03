@@ -386,7 +386,7 @@ Basert på disse figurene ser det ut som vi har bevis for følgende påstander o
 - Formen til utvalgsfordelingen blir normal når utvalgsstørrelsen øker
 - Standardfeilen blir mindre når utvalgsstørrelsen øker
 
-Som det viser seg, er ikke bare alle disse utsagnene sanne -– det finnes også et svært berømt teorem i statistikk som beviser at alle tre er sanne: **sentralgrenseteoremet**. Sentralgrenseteoremet gir oss ikke bare de tre punktene, det sier også hvordan standardfeilen minker med utvalgsstørrelsen, kvadratisk. Formelen for standardfeilen blir slik
+Som det viser seg, er ikke bare alle disse utsagnene sanne -- det finnes også et svært berømt teorem i statistikk som beviser at alle tre er sanne: **sentralgrenseteoremet**. Sentralgrenseteoremet gir oss ikke bare de tre punktene, det sier også hvordan standardfeilen minker med utvalgsstørrelsen, kvadratisk. Formelen for standardfeilen blir slik
 $$ \text{standardfeil} = \frac{\text{standardavvik}}{\sqrt{N}}$$
 For oss som ikke snakker flytende matematisk betyr dette at hvas du vil halvere standardfeilen må du firedoble utvalgsstørrelsen. Og hvis du trenger en tidel så stor standardfeil må utvalgsstørrelsen være 100 ganger større. Yikes, det koster å estimere gjennomsnittet mer presist!
 

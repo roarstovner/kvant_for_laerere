@@ -21,75 +21,101 @@ Sitatet fra Lord Kelvin, en av attenhundretallets store vitenskapsmenn, viser en
 
 [^measurement-flake]: Foredrag til _RIOT Science Club_, 23. november, 2020. Kilde: <https://youtu.be/Cq6n7AS_r8w?si=PSLqDe2VGExXp2qV&t=637>
 
-I dette kapittelet skal vi lære hvorfor vi bør være skeptiske til kvantitative målinger i utdanningsforskning og hva som skal til for å gjøre gode målinger. Men først må vi lære de vanligste begrepene man benytter for å beskrive målinger. Dette kapittelet bygger i stor grad på @Campbell1963 og @stevens1946 for diskusjonen om måleskalaer.
+I dette kapittelet skal vi lære hvorfor vi bør være skeptiske til kvantitative målinger i utdanningsforskning og hva som skal til for å gjøre gode målinger. Men først må vi lære de vanligste begrepene man benytter for å beskrive målinger. Dette kapittelet bygger i stor grad på @Campbell1963 og på @stevens1946 for diskusjonen om måleskalaer.
 
 ## Begreper om målinger {#sec-measurement-concepts}
 
-### Variabler og verdier {#sec-variables-values}
+Veien fra idé til data går i tre steg. Vi starter med et *teoretisk konstrukt*, altså den teoretiske beskrivelsen av det vi ønsker å undersøke. Så lager vi en *målemetode*, som er en presis oppskrift på hvordan konstruktet skal måles. Til slutt gjennomfører vi målingene, og resultatet er *variabler* med *verdier* i et datasett. Vi tar de tre stegene i tur.
 
-Kvantitative analyser baserer seg på at man har gjort en spesifikk **måling** av mange forskjellige ting. I utdanningsforskning er tingene gjerne skoler, lærere, klasser, elever, rektorer, læreplaner, lærebøker, elevtekster eller liknende. Måling er å tildele tall, merkelapper eller andre veldefinerte beskrivelser til disse tingene. Så alle følgende eksempler vil regnes som målinger:
+### Teoretiske konstrukter og operasjonalisering {#sec-operationalization}
 
--   Min **alder** er *33* år.
--   Jeg **preferanse for ansjon** er at jeg *ikke liker det*.
--   Mitt **kromosomale kjønn** er *mann*.
--   Mitt **selvidentifiserte kjønn** er *kvinne*.
+Fenomenene vi ønsker å måle i utdanningsforskning, slik som leseferdighet, motivasjon, læring og undervisning, er beskrevet teoretisk. Den teoretiske beskrivelsen kalles et *teoretisk konstrukt*, ofte omtalt som bare *konstruktet*.
 
-I denne listen viser den fete skriften "det vi skal måle", som kalles **variabelen**, og den kursiverte skriften viser "det som er målt", som kalles **verdien**. Skillet mellom variabelen og de ulike verdiene variabelen kan anta er sentralt:
+La oss bruke **leseferdighet** som gjennomgangseksempel. Hva er egentlig leseferdighet? Leseforskere er ikke helt enige, men de fleste beskrivelser inneholder minst disse delene:
 
--   Min **alder** (i år) kunne ha hatt verdiene *0, 1, 2, 3* ... osv. Den øvre grensen for verdien alderen min kunne hatt er litt uklar, men i praksis kan si at den høyeste mulige alderen er *150*, siden ingen mennesker noensinne har levd så lenge.
--   Når jeg blir spurt om jeg **liker ansjos**, kunne jeg ha svart at *jeg gjør det*, eller *jeg gjør det ikke*, eller *jeg har ingen mening*, eller *jeg gjør det av og til*.
--   Mitt **kromosomale kjønn** er nesten helt sikkert enten *mann* ($XY$) eller *kvinne* ($XX$), men det finnes noen andre verdier variabelen kunne hatt. Jeg kunne for eksempel hatt *Klinefelters syndrom* ($XXY$), som er mer likt mann enn kvinne.
--   Mitt **selvidentifiserte** kjønn er også svært sannsynlig enten mann eller kvinne, men det trenger ikke å samsvare med mitt kromosomale kjønn. Jeg kan også velge å identifisere meg med *ingen av delene*, eller eksplisitt kalle meg selv *transperson*.
+-   *avkoding*, altså å omsette bokstavene på arket til ord, raskt og uanstrengt
+-   *leseforståelse*, altså å skape mening av det som står i teksten
+-   *refleksjon*, altså å vurdere teksten, hva forfatteren vil med den og hva den er verdt
 
-Som du ser, for noen ting (som alder) virker det ganske opplagt hva mulige verdier bør være, mens for andre virker det vanskelig. Men selv det å definere alderen min kan være vanskelig. For eksempel, i eksemplet ovenfor antok jeg at det var greit å måle alder i år og runde av til heltall. Men hvis du er en pedagog som jobber med små barn er dette altfor grovt, og derfor måles ofte alder i *år og måneder* (hvis et barn er 2 år og 11 måneder, skrives dette vanligvis som "2;11"). Hvis du er interessert i nyfødte, vil du kanskje måle alder i *dager siden fødsel*, kanskje til og med *timer siden fødsel*. Med andre ord, måten du spesifiserer de tillatte måleverdiene på er en viktig del av å planlegge en studie.
+Noen leseforskere regner også *leselyst* eller *leseengasjement* som en del av leseferdigheten, mens andre holder det utenfor og heller ser på det som noe som påvirker leseferdigheten. Man kan altså helt fint være uenige om hva teoretiske konstrukter er.
 
-### Operasjonalisering av teoretiske konstrukter {#sec-operationalization}
+Et konstrukt kan man ikke måle direkte. Man må først bestemme seg for en helt presis oppskrift på hvordan målingen skal foregå. Denne oppskriften kalles en *målemetode*, og arbeidet med å komme fra det vage konstruktet til den presise målemetoden kalles å **operasjonalisere** konstruktet. Selve målemetoden omtales som en *operasjonalisering* av konstruktet. Begrepene er oppsummert i @fig-operasjonalisering.
 
-Alle tingene vi ønsker å måle (slik som alder, motivasjon, læring, undervisning) har en teoretisk beskrivelse. Denne teoretiske beskrivelsen kalles et *teoretisk konstrukt*. Ofte utelater man "teoretisk" om omtaler det bare som "konstruktet". Når vi skal gjøre en måling av et teoretisk konstrukt må vi lage en *målemetode*. Dette kalles å *operasjonalisere* konstruktet, og vi kaller målemetoden en *operasjonalisering* av konstruktet. Begrepene blir oppsummert i @fig-operasjonalisering.
-
-```{r}
-#| label: fig-operasjonalisering
-#| fig-cap: "Operasjonalisering av konstruktet _alder_. Lengst til høyre er 'Alder' en variabel i datasettet som har verdiene 21, 38 og 72 for de tre første forskningsdeltagerne."
-#| fig-alt: "Lengst til venstre er 'Teoretisk konstrukt: Alder' med en pil til 'Målemetode: Selvrapportering fra nettspørreskjema: 'hvilket år ble du født?''. Det står 'operasjonalisering' på pila. Derfra går det en pil, 'datainnsamling', til 'Variabel'. Ved 'Variabel' er det et datasett med 'Fødselsår' og 'Alder'. Fra 'Fødselsår' til 'Alder' går det en liten pil, 'Etterbehandling av data'."
-#| out-width: "100%"
-knitr::include_graphics("images/fig-operasjonalisering.png")
+```{tikz}
+%| label: fig-operasjonalisering
+%| fig-cap: "Fra teori til data. Konstruktet _leseferdighet_ operasjonaliseres til en målemetode, og datainnsamlingen gir en variabel med verdier."
+%| fig-alt: "Tre bokser med piler mellom. Første boks er 'Teoretisk konstrukt: leseferdighet'. En pil merket 'operasjonalisering' peker til andre boks, 'Målemetode: ordkjedetest med 90 ordkjeder på fire minutter'. En pil merket 'datainnsamling' peker til tredje boks, 'Variabel: antall riktige ordkjeder, med verdiene 48, 63, 21 og så videre'."
+%| fig-align: "center"
+%| out-width: "100%"
+\usetikzlibrary{positioning}
+\begin{tikzpicture}[node distance = 1.2cm and 2.6cm]
+  \node[draw, rounded corners, align=center, text width=2.6cm, minimum height=1.6cm] (K)
+    {Teoretisk konstrukt\\[2pt] \textit{leseferdighet}};
+  \node[draw, rounded corners, align=center, text width=3.4cm, minimum height=1.6cm, right=of K] (M)
+    {Målemetode\\[2pt] \textit{ordkjedetest med 90 ordkjeder på fire minutter}};
+  \node[draw, rounded corners, align=center, text width=3.4cm, minimum height=1.6cm, right=of M] (V)
+    {Variabel\\[2pt] \textit{antall riktige ordkjeder:} fra 0 til 90};
+  \draw[->] (K) -- node[above, align=center]{operasjonali-\\sering} (M);
+  \draw[->] (M) -- node[above, align=center]{datainn-\\samling} (V);
+\end{tikzpicture}
 ```
 
 Kort fortalt handler operasjonalisering om å omforme et konstrukt, som ofte er ganske vagt, til en helt presist definert måling. Operasjonalisering omfatter blant annet:
 
--   å definere hva som skal måles. For eksempel, betyr "alder" "tid siden fødsel" eller "tid siden unnfangelse"? Dette er et viktig skille når man undersøker læring hos de aller yngste barna.
--   å bestemme målemetode. For å måle alder, vil du spørre personen selv eller en forelder eller kanskje slå opp i et offisielt register? Hvis du bruker selvrapportering, hvordan vil du formulere spørsmålet?
--   å definere hvilke verdier målingene kan ha. Verdiene er ofte numeriske, men ikke alltid. Ved aldersmåling kan vi spørre: ønsker vi alder kun i år, eller skal vi inkludere måneder, dager, eller timer? For andre målinger, som kjønn, er verdiene ikke numeriske. Her må vi vurdere hvilke alternativer vi skal tilby. Er det tilstrekkelig med "mann" og "kvinne," eller er "annet" nødvendig? Skal vi la deltakerne velge blant forhåndsdefinerte svaralternativer eller skal forskningsdeltagerne få skrive fritt? Hvordan vil vi i så fall benytte disse svarene videre? Skal du slå sammen de som har skrevet "transmann" og "skeiv, men biologisk kvinne" til samme verdi?
+-   **å avgrense hva som skal måles.** Skal vi måle hele leseferdigheten, eller bare avkodingen? Skal leselyst regnes med? Svaret avhenger av hva vi trenger målingen til. En logoped som utreder mistanke om dysleksi er interessert i avkodingen, mens en norsklærer som planlegger undervisning i sakprosa er mer interessert i forståelse og refleksjon.
+-   **å bestemme målemetode.** Avkoding måles ofte med en *ordkjedetest*, der eleven setter strek mellom ordene i kjeder som "busshundmelktyv". Leseforståelse måles gjerne ved at eleven leser en tekst og svarer på spørsmål til den, slik som i nasjonale prøver i lesing. Leselyst måles vanligvis med spørsmål i et spørreskjema. Man kunne også bedt læreren om å vurdere elevens leseferdighet, eller ganske enkelt brukt elevens karakter i norsk.
+-   **å definere hvilke verdier målingene kan ha.** Skal ordkjedetesten telle antall riktige, eller antall riktige minus antall gale? Skal leselyst måles med fire svaralternativer eller sju? Skal elevene angi tall (1 til 7) eller tekst (fra *ikke interessant* til *veldig interessant*)? Skal elevene kunne skrive hva de vil? Hvordan skal vi i så fall lage verdier av svarene etterpå?
 
-Operasjonalisering er komplisert og det finnes ikke én riktig måte å gjøre det på. Hvordan du velger å operasjonalisere det uformelle konseptet "alder" eller "kjønn" til en formell måling avhenger av hva du trenger målingen til. Ofte vil du oppdage at forskerne som jobber innen ditt område har veletablerte praksiser for hvordan man skal måle konstruktet, men andre ganger må du utvikle en operasjonalisering av konstruktet som passer til din forskning.
+Legg merke til at det samme konstruktet kan operasjonaliseres på mange måter, og at operasjonaliseringene ikke er likeverdige. En ordkjedetest og en nasjonal prøve i lesing måler begge noe vi kaller "leseferdighet", men de gir forskjellige tall og rangerer ikke elevene helt likt. En elev som avkoder langsomt, men forstår godt det hun leser, kommer dårlig ut på ordkjedetesten og godt ut på den nasjonale prøven. Når du leser en forskningsartikkel er det derfor ikke nok å vite at forskerne har målt "leseferdighet"; du må vite *hvordan* de har målt den.
 
-Etter å ha operasjonalisert konstruktet kan man gjøre målinger. Hver enkelt måling gir en verdi, og samlingen av verdier utgjør en *variabel* i datasettet.
+Operasjonalisering er komplisert, og det finnes ikke én riktig måte å gjøre det på. Hvordan du velger å operasjonalisere et konstrukt til en formell måling, avhenger av hva du trenger målingen til. Ofte vil du oppdage at forskerne som jobber innen ditt område har veletablerte praksiser for hvordan man skal måle konstruktet, men andre ganger må du utvikle en operasjonalisering av konstruktet som passer til din forskning.
+
+### Variabler og verdier {#sec-variables-values}
+
+Når konstruktet er operasjonalisert, kan man gjøre målingene. Kvantitative analyser baserer seg på at man har gjort den samme **målingen** av mange forskjellige fenomener. I utdanningsforskning er fenomenene gjerne skoler, lærere, klasser, elever, rektorer, læreplaner, lærebøker, elevtekster eller liknende. Måling er å tildele disse fenomenene tall, merkelapper eller andre veldefinerte beskrivelser. Alle følgende eksempler vil regnes som målinger:
+
+-   Petters **antall riktige ordkjeder** er *48*.
+-   Petters **leselyst** er *3 av 4*.
+-   Petters **alder** er *11* år.
+-   Petters **selvidentifiserte kjønn** er *gutt*.
+
+I denne listen viser den fete skriften det fenomenet som måles, som kalles **variabelen**, og den kursiverte skriften viser resultatet av målingen, som kalles **verdien**. En variabel representerer altså fenomenet som måles, mens verdien er det variabelen får i et bestemt tilfelle. Skillet mellom variabelen og de ulike verdiene variabelen kan anta, er sentralt:
+
+-   **Antall riktige ordkjeder** kan ha verdiene *0, 1, 2, 3* og så videre opp til *90*, siden testen har 90 ordkjeder. Ingen elev kan få 91 riktige, og ingen kan få 48,5.
+-   **Leselyst**, målt med spørsmålet "jeg leser bare hvis jeg må", kan ha verdiene *helt enig*, *litt enig*, *litt uenig* og *helt uenig*. Merk at eleven med *høyest* leselyst her svarer *helt uenig*.
+-   **Alder** kan ha verdiene *0, 1, 2, 3* og så videre. Den øvre grensen er litt uklar, men i praksis kan vi si at den høyeste mulige alderen er *150*, siden ingen mennesker noensinne har levd så lenge.
+-   **Selvidentifisert kjønn** er for de fleste elever enten *gutt* eller *jente*, men eleven kan også velge å identifisere seg med *ingen av delene*, eller eksplisitt kalle seg selv *transperson*.
+
+Som eksemplene over viser, virker verdiene for noen variabler ganske opplagte, slik som for antall riktige ordkjeder. For andre variabler kan det være vanskeligere å bestemme verdiene. Selv en tilsynelatende enkel variabel som alder kan by på utfordringer. I eksemplet ovenfor antok vi at det var greit å måle alder i år og runde av til heltall. Men hvis du er pedagog og jobber med små barn, er denne inndelingen altfor grov, og da måles ofte alder i *år* og *måneder*. Hvis du derimot er interessert i nyfødte, vil du kanskje måle alder i *dager siden fødsel*, kanskje til og med *timer siden fødsel*. Måten du spesifiserer de tillatte måleverdiene på, er med andre ord en viktig del av å planlegge en studie.
 
 Til hverdags benytter forskere disse begrepene om hverandre, de kan for eksempel si "operasjonalisering av variabelen" heller enn "av konstruktet", men det er svært nyttig å forstå distinksjonene.
 
 ### Forskjellige målemetoder {#sec-measurement-methods}
 
-I utdanningsforskning benytter vi oss av mange forskjellige målemetoder. Hvilken spesifikk målemetode skal du bruke for å finne ut hvor gammel noen er? Her er et utvalg:
+I utdanningsforskning benytter vi oss av mange forskjellige målemetoder. Hvilken spesifikk målemetode skal du bruke for å finne ut hvor godt en elev leser? Her er et utvalg:
 
--   *Selvrapportering*: Selvrapportering er at folk oppgir verdien på variabelen selv. Forskeren spør forskningsdeltagerne "hvor gammel er du?", for eksempel i et spørreskjema. Det er rakst, billig og enkelt, men det fungerer bare med folk som ikke lyver om alderen sin og er gamle nok til å forstå spørsmålet.
+-   *Prøver og tester*: En prøve gir eleven oppgaver som skal løses, og verdien er hvordan eleven løser dem. Ordkjedetesten og nasjonale prøver i lesing er begge av denne typen. Dette er den vanligste målemetoden når konstruktet er en kompetanse eller en ferdighet.
+-   *Selvrapportering*: Selvrapportering er at folk oppgir verdien på variabelen selv. Forskeren spør forskningsdeltagerne "hvor godt leser du?" eller "hvor ofte leser du på fritida?", for eksempel i et spørreskjema. Det er raskt, billig og enkelt, men det fungerer bare med folk som er ærlige og som er gamle nok til å forstå spørsmålet.
 -   *Tredjepartsrapportering*: Du kan spørre andre om å oppgi verdien på variabelen, for eksempel foreldrene eller læreren til barnet.
--   *Registerdata*: Noen typer data kan du slå opp i offisielle registre, for eksempel fødselsdato. For de fleste typer informasjon om personer krever dette en søknad til en etiske komite, som for eksempel Sikt.
--   *Observasjon*: Observasjon er når forskerne observerer direkte. Det er vanskelig å observere alderen direkte.
--   *Biomarkører*: Biomarkører er lite benyttet i utdanningsforskning. Du kan anslå alderen til en person ved radiografi av tennene eller en celleprøve, du kan anslå hvor stresset en elev er ved en prøve ved å måle hjerteslagene eller du kan måle hjerneaktivitet ved et elektroencephalogram.
+-   *Registerdata*: Noen typer data kan du slå opp i offisielle registre, for eksempel fødselsdato eller karakterer. For de fleste typer informasjon om personer kreves det en søknad til Sikt, som vurderer om behandlingen av personopplysninger i et prosjekt er i tråd med personopplysningsloven (GDPR). Innhenting av sensitive personopplysninger, særlig informasjon om personers sykdom og helse, skal i tillegg meldes til en etisk komité.[^measurement-etikk]
+-   *Observasjon*: Observasjon er når forskerne observerer direkte. En forsker kan sitte bak i klasserommet og registrere hvor lenge eleven leser i den frie lesetida, eller høre eleven lese høyt.
+-   *Biomarkører*: Biomarkører er lite benyttet i utdanningsforskning. Man kan følge øyebevegelsene til en leser for å se hvor hun stopper opp, du kan anslå hvor stresset en elev er under en prøve ved å måle hjerteslagene, eller du kan måle hjerneaktivitet ved et elektroencephalogram.
 
-Hvilken type målemetode man benytter kommer først og fremst an på hvilket teoretisk konstrukt du ønsker å måle, men også hva som er praktisk gjennomførbart. Hvis du er interessert i samarbeidskulturen på en skole hadde kanskje det beste vært å observere samarbeidet direkte, men det er svært tidkrevende, og derfor dyrt og sikkert veldig vanskelig, så de fleste hadde nok benyttet en spørreundersøkelse der man lar lærerne og ledelsen på skolen svare på hvor fornøyde de er med hvordan de selv samarbeider (selvrapportering) og hvordan kollegaene deres samarbeider (tredjepartsrapportering). Hvis du er interessert i undervisningskvalitet burde du observere undervisning, men mange stiller heller lærerne spørsmål om hvordan de underviser (selvrapportering), eller spør elevene om hvordan læreren underviser (tredjepartsrapportering).
+[^measurement-etikk]: Se <https://www.forskningsetikk.no>.
+
+Hvilken type målemetode man benytter, kommer først og fremst an på hvilket teoretisk konstrukt du ønsker å måle, men også hva som er praktisk gjennomførbart. Hvis du er interessert i samarbeidskulturen på en skole, ville kanskje det beste vært å observere samarbeidet direkte. Det er imidlertid svært tidkrevende, og dermed dyrt og sikkert veldig vanskelig. De fleste hadde nok derfor benyttet en spørreundersøkelse der lærerne og ledelsen på skolen svarer på hvor fornøyde de er med hvordan de selv samarbeider (selvrapportering) og hvordan kollegaene deres samarbeider (tredjepartsrapportering). Dersom formålet er å undersøke undervisningskvalitet, er direkte observasjon av undervisningen den mest valide tilnærmingen. I praksis benytter mange imidlertid selvrapportering, der lærere beskriver egen undervisning, eller tredjepartsrapportering, der elever redegjør for hvordan læreren underviser.
 
 ## Målenivåer {#sec-Scales-of-measurement}
 
-Resultatet av en måling kalles altså en variabel. Vi skal lære fire forskjellige typer variabler. Dette er de forskjellige **målenivåene** eller **måleskalaene**.
+Resultatet av en måling kalles altså en variabel. Vi skal lære om fire ulike **målenivåer** som variabler kan ha. Disse målenivåene, eller **måleskalaene**, beskriver hvilke typer verdier en variabel kan anta, og hvilke statistiske operasjoner som er gyldige for den.
 
 ### Nominell variabel
 
-En **nominell variabel** (også kjent som en **kategorisk variabel**) er en variabel der de mulige verdiene er navn på kategorier. Et eksempel er øyenfarge; de mulige verdiene er "grønn", "blå", "grå", "brun", og så videre. Kjønn er en nominell variabel som ofte har bare to mulige verdier, "mann" og "kvinne", men som kan ha flere. I utdanningsforskning er ofte variabelen *skole* av denne typen, der de mulige verdiene er navn på skoler ("Dalsiden Skole", "Vangenhaug Skole", osv.). Ordet *nominell* kommer av *nomen* som er latin for *navn* -- en nominell variabel har altså verdier som er navnet på kategorier. For denne typen variabler gir det ikke mening å si at en av dem er "større" eller "bedre" enn noen annen, man kan altså ikke sortere dem i noen naturlig rekkefølge. Og det gir absolutt ikke mening å snakke om gjennomsnittet av målingene -- hva skulle "elevene i studien sin gjennomsnittlige øyenfarge" ha vært? For å regne gjennomsnitt måtte man summert de 10 verdiene og delt på 10, men hva blir blå + grønn + blå + brun? Kort sagt, verdiene til nominelle variabler er kun navnet på en kategori. Verdiene har ikke noen naturlig rekkefølge, de kan ikke adderes, multipliseres eller regnes med på noen måte.
+En **nominell variabel** (også kjent som en **kategorisk variabel**) er en variabel der de mulige verdiene er navn på kategorier. Ordet *nominell* kommer av *nomen* som er latin for *navn* -- en nominell variabel har altså verdier som er navnet på kategorier. Et eksempel er øyenfarge; de mulige verdiene er "grønn", "blå", "grå", "brun", og så videre. Kjønn er en nominell variabel som ofte har bare to mulige verdier, "mann" og "kvinne", men som kan ha flere. I utdanningsforskning er ofte variabelen *skole* av denne typen, der de mulige verdiene er navn på skoler ("Dalsiden Skole", "Vangenhaug Skole", osv.). For denne typen variabler gir det ikke mening å si at en av dem er "større" eller "bedre" enn noen annen, man kan altså ikke sortere dem i noen naturlig rekkefølge. Og det gir absolutt ikke mening å snakke om gjennomsnittet av målingene -- hva skulle "elevene i studien sin gjennomsnittlige øyenfarge" ha vært? For å regne gjennomsnitt måtte man summert de 10 verdiene og delt på 10, men hva blir blå + grønn + blå + brun? Kort sagt, verdiene til nominelle variabler er kun navnet på en kategori. Verdiene har ikke noen naturlig rekkefølge, de kan ikke adderes, multipliseres eller regnes med på noen måte.
 
-Men man kan telle antallet innenfor hver kategori. Anta at jeg forsker på hvordan lærere pendler til og fra jobb. En variabel jeg burde målt[^02-a-brief-introduction-to-research-design-2] er hva slags transportmiddel lærerne bruker for å komme seg på jobb. Denne "transporttype"-variabelen kan ha ganske mange mulige verdier, inkludert: "tog", "buss", "bil", "sykkel". La oss anta at disse fire er de eneste mulighetene og forestill deg at jeg spør 100 lærere om hvordan de kom seg på jobb i dag, med dette resultatet (@tbl-tab2-1).
+Men man kan telle antallet innenfor hver kategori. Anta at jeg forsker på hva som kjennetegner lærernes pendling til jobb.[^02-a-brief-introduction-to-research-design-2] En variabel jeg burde målt er hva slags transportmiddel lærerne bruker for å komme seg på jobb. Denne "transporttype"-variabelen kan ha ganske mange mulige verdier, slik som "tog", "buss", "bil" og "sykkel". La oss anta at disse fire er de eneste mulighetene og forestill deg at jeg spør 100 lærere om hvordan de kom seg på jobb i dag, med dette resultatet (@tbl-tab2-1).
 
-[^02-a-brief-introduction-to-research-design-2]: Eller burde jeg skrevet "Et konstrukt jeg burde målt"? La det være et eksempel på at forskere benytter begrepene litt om hverandre.
+[^02-a-brief-introduction-to-research-design-2]: Her er "lærernes pendling" konstruktet, og transportmiddel er én av variablene det kan operasjonaliseres i. Andre variabler kunne vært reisetid og reiselengde. Vær oppmerksom på at forskere til daglig benytter begrepene konstrukt og variabel litt om hverandre.
 
 ```{r}
 #| label: tbl-tab2-1
@@ -102,7 +128,7 @@ tt(
 )
 ```
 
-Så, hva var den gjennomsnittlige transporttypen? Åpenbart er svaret her at det ikke finnes noen. Det er et tåpelig spørsmål å stille. Du kan si at reise med bil er den mest populære metoden, og reise med tog er den minst populære metoden, men det er stort sett alt. Legg også merke til at rekkefølgen jeg viser alternativene i ikke er veldig interessant. Jeg kunne ha valgt å vise dataene som i @tbl-tab2-2.
+Så, hva var den gjennomsnittlige transporttypen? Åpenbart er svaret her at det ikke finnes noen. Det er et tåpelig spørsmål å stille. Du kan si at å reise med bil er den mest populære metoden, og at å reise med tog er den minst populære metoden, men det er stort sett alt. Legg også merke til at rekkefølgen jeg viser alternativene i, ikke er veldig interessant. Jeg kunne ha valgt å vise dataene som i @tbl-tab2-2.
 
 ```{r}
 #| label: tbl-tab2-2
@@ -115,18 +141,18 @@ tt(
 )
 ```
 
-...og ingenting endrer seg egentlig.
+... og ingenting endrer seg egentlig.
 
 ### Ordinal variabel
 
-En **ordinal variabel** er en nominell variabel der de ulike kategoriene har en naturlig rekkefølge. Ordet *ordinal* kommer av samme ord som "ordning", kategoriene kan ordnes i en rekkefølge, og det engelske "order", "the categories have a natural order". Her er et typisk eksempel: Tenk deg at jeg er interessert i elevers holdninger til klimaendringer. Jeg ber så noen elever om å velge det utsagnet som best samsvarer med deres holdning ut fra disse fire utsagnene:
+En **ordinal variabel** er en nominell variabel der de ulike kategoriene har en meningsfull rekkefølge. Ordet *ordinal* kommer av samme ord som "orden" eller "ordning". Her er et typisk eksempel: Tenk deg at jeg er interessert i elevers holdninger til klimaendringer. Jeg ber noen elever om å velge det utsagnet som best samsvarer med deres holdning ut fra disse fire utsagnene:
 
-1.  Temperaturene stiger på grunn av menneskelig aktivitet
-2.  Temperaturene stiger, men vi vet ikke hvorfor
-3.  Temperaturene stiger, men ikke på grunn av mennesker
-4.  Temperaturene stiger ikke
+1.  Temperaturene stiger på grunn av menneskelig aktivitet.
+2.  Temperaturene stiger, men vi vet ikke hvorfor.
+3.  Temperaturene stiger, men ikke på grunn av mennesker.
+4.  Temperaturene stiger ikke.
 
-Legg merke til at disse fire utsagnene faktisk har en naturlig rekkefølge i hvordan de måler enighet med nåværende vitenskapelig konsensus. Utsagn 1 er en nær match, utsagn 2 er en mindre nær match, utsagn 3 er ikke en særlig god match, og utsagn 4 er i sterk motsetning til nåværende konsensus. Derfor kan jeg ordne elementene som 1 $>$ 2 $>$ 3 $>$ 4, som viser at "holdning til klimaendring", operasjonalisert på denne måten, er en ordinal variabel.
+Legg merke til at disse fire utsagnene faktisk har en naturlig rekkefølge i hvordan de måler enighet sett i sammenheng med nåværende vitenskapelig konsensus. Utsagn 1 ligger tett opp til den nåværende konsensus, utsagn 2 ligger noe mindre tett opp til den, utsagn 3 avviker i betydelig grad, og utsagn 4 står i klar motsetning til den etablerte konsensus. Derfor kan jeg ordne elementene som 1 $>$ 2 $>$ 3 $>$ 4, som viser at "holdning til klimaendring", operasjonalisert på denne måten, er en ordinal variabel.
 
 La oss anta at jeg stilte 100 elever disse spørsmålene og fikk svarene vist i @tbl-tab2-3.
 
@@ -136,53 +162,63 @@ La oss anta at jeg stilte 100 elever disse spørsmålene og fikk svarene vist i 
 tt(
   tibble(
     Respons = c(
-      "(1) Temperaturene stiger på grunn av menneskelig aktivitet",
-      "(2) Temperaturene stiger, men vi vet ikke hvorfor", 
-      "(3) Temperaturene stiger, men ikke på grunn av mennesker",
-      "(4) Temperaturene stiger ikke"
+      "(1) Temperaturene stiger på grunn av menneskelig aktivitet.",
+      "(2) Temperaturene stiger, men vi vet ikke hvorfor.",
+      "(3) Temperaturene stiger, men ikke på grunn av mennesker.",
+      "(4) Temperaturene stiger ikke."
     ),
     Antall = c(51, 20, 10, 19)
   )
 )
 ```
 
-Det rimelig å gruppere, for eksempel, (1), (2) og (3) sammen, og si at 81 av 100 personer var i det *minste delvis* enig med vitenskapen. Og det er også ganske rimelig å gruppere (2), (3) og (4) sammen og si at 49 av 100 personer registrerte *i det minste noe uenighet*. Men det ville være fullstendig merkelig å gruppere (1), (2) og (4) sammen og si at 90 av 100 personer sa... hva da? Det er ingenting fornuftig som tillater deg å gruppere disse svarene sammen i det hele tatt.
+Det rimelig å gruppere, for eksempel, (1), (2) og (3) sammen, og si at 81 av 100 personer var i det minste *delvis enig* med vitenskapen. Og det er også ganske rimelig å gruppere (2), (3) og (4) sammen og si at 49 av 100 personer registrerte i det minste *noe uenighet*. Men det ville være fullstendig merkelig å gruppere (1), (2) og (4) sammen og si at 90 av 100 personer sa... hva da? Det er ingenting fornuftig som tillater deg å gruppere disse svarene sammen.
 
-Det er fristende å regne med svaralternativene (1) til (4) som om de var tall. For eksempel er det fristende å si at gjennomsnittet av svar (1), (2) og (3) er $\frac{2+3+4}{3} = 2$. Det ville vært galt, siden det regnestykket krever at det er like stor forskjell mellom svaralternativ (1) og (2) som mellom (2) og (3). Men man kan argumentere for at konstruktet "enighet med vitenskapelig konsensus" er som i @fig-ordinal, der det er større forskjell mellom (1) og (2) og (2) og (3).
+Det er fristende å regne med svaralternativene (1) til (4) som om de var tall. For eksempel er det fristende å si at gjennomsnittet av svar (2), (3) og (4) er $\frac{2+3+4}{3} = 3$. Det ville vært galt, siden det regnestykket krever at det er like stor forskjell mellom svaralternativ (2) og (3) som mellom (3) og (4). Dette er ikke garantert, og man kan argumentere for at konstruktet "enighet med vitenskapelig konsensus" er mer som i @fig-ordinal: De tre første utsagnene godtar alle at temperaturene stiger, mens det fjerde avviser hele premisset, trass i at termometre verden over måler høyere og høyere gjennomsnittstemperatur. Da kan forskjellen i *holdning til klimaendringer* være mye større fra (3) til (4) enn mellom de tre første.
 
-```{r}
-#| label: fig-ordinal
-#| fig-cap: "I en ordinal variabel er ikke nødvendigvis avstanden mellom kategoriene like store. Her markerer pilene avstanden mellom kategoriene, og avstanden mellom kategori (1) og (2) er større enn de andre."
-#| fig-alt: "Den ordinale variabelen \"enighet med vitenskapelig konsensus\" med forskjellig avstand mellom hvert svaralternativ. Det er størst avstand mellom (1) og (2)."
-knitr::include_graphics("images/fig-ordinal.png")
+```{tikz}
+%| label: fig-ordinal
+%| fig-cap: "I en ordinal variabel er ikke avstanden mellom kategoriene nødvendigvis like stor. Her markerer pilene avstanden mellom kategoriene, og avstanden mellom kategori (3) og (4) er større enn de andre."
+%| fig-alt: "Den ordinale variabelen \"enighet med vitenskapelig konsensus\" med de fire svaralternativene under hverandre og buede piler fra hvert alternativ til det neste. Avstanden mellom (1), (2) og (3) er liten, mens avstanden ned til (4) er mye større."
+%| fig-align: "center"
+%| out-width: "100%"
+\begin{tikzpicture}[every node/.style={anchor=west, inner sep=2pt}]
+  \node (a) at (0,0)    {(1) Temperaturene stiger på grunn av menneskelig aktivitet.};
+  \node (b) at (0,-0.9) {(2) Temperaturene stiger, men vi vet ikke hvorfor.};
+  \node (c) at (0,-1.8) {(3) Temperaturene stiger, men ikke på grunn av mennesker.};
+  \node (d) at (0,-4.2) {(4) Temperaturene stiger ikke.};
+  \draw[->] (a.west) to[out=180, in=180] (b.west);
+  \draw[->] (b.west) to[out=180, in=180] (c.west);
+  \draw[->] (c.west) to[out=180, in=180] (d.west);
+\end{tikzpicture}
 ```
 
 Når en ordinal variabel markeres med tall, som er helt vanlig, skal man altså ikke tolke tallstørrelsene bokstavelig og anta at man kan regne med dem -- tallene er der kun for å markere kategorienes rekkefølge.
 
-Et vanlig eksempel på en ordinal variabel i utdanningsforskning er "høyeste fullførte utdanningssnivå". Du *kan* si at en person som kun har fullført ungdomsskolen har mindre utdanning en en person som har fullført videregående, og så videre. Med ordinale variabler vet man ikke *hvor mye* større en verdi er enn en annen. For eksempel gir det ikke mening å spørre om det er større forskjell mellom "ungdomsskole" og "videregående" enn mellom "videregående" og "bachelor". Er utdanningsnivået på en bachelor mye høyere eller litt høyere enn fullført videregående? Hvis variabelen er ordinal kan man ikke besvare det spørsmålet.
+Et vanlig eksempel på en ordinal variabel i utdanningsforskning er "høyeste fullførte utdanningssnivå". Du *kan* si at en person som kun har fullført ungdomsskolen har mindre utdanning enn en person som har fullført videregående, og så videre. Med ordinale variabler vet man ikke *hvor mye* større en verdi er i forhold til en annen. For eksempel gir det ikke mening å spørre om det er større forskjell mellom "ungdomsskole" og "videregående" enn mellom "videregående" og "bachelor". Er utdanningsnivået på en bachelor mye høyere eller litt høyere enn fullført videregående? Hvis variabelen er ordinal kan man ikke besvare det spørsmålet.
 
 ### Intervallvariabel
 
-I motsetning til variabler på nominellt og ordinalt målenivå, er **intervallvariabler** og **forholdstallsvariabler** variabler der tallverdien er meningsfull. For variabler med intervallskala er *forskjellene* mellom tallene tolkbare, men variabelen har ikke en "naturlig" nullverdi. Et godt eksempel på en variabel med intervallskala er temperaturmåling i grader celsius. Hvis det for eksempel var 15$^{\circ}$ i går og 18$^{\circ}$ i dag, så er differansen mellom dem, 3$^{\circ}$, meningsfull og måler en forskjell i temperatur. Dessuten er disse tre gradene i forskjell *nøyaktig den samme forskjellen* som mellom 7$^{\circ}$ og 10$^{\circ}$. Kort sagt er addisjon og subtraksjon meningsfulle for variabler med intervallskala. Merk at dette *ikke* var tilfelle for ordinale variabler.
+I motsetning til variabler på nominelt og ordinalt målenivå er **intervallvariabler** og **forholdstallsvariabler** variabler der tallverdien er meningsfull. For en variabel som er målt på intervallskala, er *forskjellene* mellom tallverdiene tolkbare, men variabelen har ikke en "naturlig" nullverdi. Et godt eksempel på en variabel målt på intervallskala, er temperaturmåling i grader celsius. Hvis det for eksempel var 15$^{\circ}$ i går og 18$^{\circ}$ i dag, så er differansen mellom dem, 3$^{\circ}$, meningsfull og måler en forskjell i temperatur. Dessuten er disse tre gradene i forskjell *nøyaktig den samme forskjellen* som mellom 7$^{\circ}$ og 10$^{\circ}$. Kort sagt er regneartene addisjon og subtraksjon meningsfulle for variabler på intervallskala. Merk at dette *ikke* var tilfelle for ordinale variabler.
 
-Men legg merke til at 0$^{\circ}$ ikke betyr "ingen temperatur i det hele tatt". Det betyr faktisk "temperaturen der vann fryser", noe som er ganske vilkårlig. Mangelen på et naturlig nullpunkt gjør meningsløst å multiplisere og dividere temperaturer. Det er feil å si at 20$^{\circ}$ er dobbelt så varmt som 10$^{\circ}$, akkurat som det er rart og meningsløst å hevde at 20$^{\circ}$ er negativ to ganger så varmt som -10$^{\circ}$.
+Men legg merke til at 0$^{\circ}$ ikke betyr "ingen temperatur i det hele tatt". Det betyr faktisk "temperaturen der vann fryser". Nullpunktet er valgt av praktiske grunner og dermed ganske vilkårlig. Mangelen på et naturlig nullpunkt gjør det meningsløst å multiplisere og dividere temperaturer. Det er feil å si at 20$^{\circ}$ er dobbelt så varmt som 10$^{\circ}$, akkurat som det er rart og meningsløst å hevde at 20$^{\circ}$ er negativ to ganger så varmt som -10$^{\circ}$.
 
-Ordinale variabler er vanlige i utdanningsforskning. Anta at jeg er interessert i å undersøke bruken av nettbrett over tid. Da er det naturlig å sammenlikne bruken av nettbrett i forskjellige år, så en variabel i datasettet er årstall Dette er en variabel med intervallskala. En elev som begynte på skolen i 2018 begynte 5 år før en student som begynte i 2023; differanser gir altså mening. Det ville derimot vært helt meningsløst å dele 2023 på 2018 og si at den andre eleven begynte 0,24 % senere enn den første eleven; ganging og deling gir altså ikke mening. Derfor er årstall på en intervallskala.
+Intervallvariabler er vanlige i utdanningsforskning. Anta at jeg er interessert i å undersøke bruken av nettbrett over tid. Da er det naturlig å sammenlikne bruken av nettbrett i forskjellige år, og en variabel i datasettet vil være årstall. Dette er en variabel på intervallskala. En elev som begynte på skolen i 2018, begynte 5 år før en student som begynte i 2023; differanser gir altså mening. Det ville derimot vært helt meningsløst å dele 2023 på 2018 og si at den andre eleven begynte 0,24 % senere enn den første eleven; ganging og deling gir altså ikke mening. Derfor er årstall på en intervallskala.
 
-Tid på døgnet er en annen variabel på intervallskala. (Det gir mening å sammenlikne klokka 14 og klokka 7 ved å si "sju timer senere", men det gir ikke mening å sammenlikne dem ved å si "dobbelt så mye tid på døgnet.")
+Tid på døgnet er en annen variabel på intervallskala. Det gir mening å sammenlikne klokka 14 og klokka 7 ved å si "sju timer senere", men det gir ikke mening å sammenlikne dem ved å si "dobbelt så mye tid på døgnet."
 
 ### Forholdstallsvariabel
 
-Den fjerde og siste typen variabel er variabler på *forholdstallsnivå*. Dette er variabler med et nullpunkt der det er greit å multiplisere og dividere. Et godt eksempel på en variabel på forholdstallsnivå er tid. Når man måler elevers ferdigheter er det vanlig å registrere hvor lang tid elevene bruker på å løse en oppgave, fordi det er en indikator på hvor vanskelig oppgaven er. Anta at Roar bruker 2,3 sekunder på å svare på et spørsmål, mens Bård bruker 3,1 sekunder. Som med en intervallskalavariabel, er både addisjon og subtraksjon meningsfulle her. Bård brukte virkelig $3{,}1 - 2{,}3 = 0{,}8$ sekunder lengre enn Roar. Men legg merke til at multiplikasjon og divisjon også gir mening her: Bård brukte $3{,}1/2{,}3 = 1{,}35$ ganger så lang tid som Roar på å svare på spørsmålet. Og grunnen til at du kan gjøre dette for en forholdstallsvariabel er at "null sekunder" virkelig betyr "ingen tid i det hele tatt".
+Den fjerde og siste typen variabel er variabler på *forholdstallsnivå*. Dette er variabler med et nullpunkt der det er greit å multiplisere og dividere. Et godt eksempel på en variabel på forholdstallsnivå er tid. Når man måler elevers ferdigheter, er det vanlig å registrere hvor lang tid elevene bruker på å løse en oppgave, fordi det er en indikator på hvor vanskelig oppgaven er. Anta at Roar bruker 2,3 sekunder på å svare på et spørsmål, mens Bård bruker 3,1 sekunder. Som med en intervallskalavariabel er både addisjon og subtraksjon meningsfulle her. Bård brukte virkelig $3{,}1 - 2{,}3 = 0{,}8$ sekunder lenger tid enn Roar. Men legg merke til at multiplikasjon og divisjon også gir mening her: Bård brukte $3{,}1/2{,}3 = 1{,}35$ ganger så lang tid som Roar på å svare på spørsmålet. Og grunnen til at du kan gjøre dette for en forholdstallsvariabel er at "null sekunder" virkelig betyr "ingen tid i det hele tatt".
 
 Her er noen flere variabler på forholdstallsnivå:
 
--   inntekt (0 kr betyr virkelig "ingen inntekt")
+-   inntekt (0 kr betyr virkelig ingen inntekt)
 -   antall barn (0 barn betyr virkelig ingen barn)
 -   antall år avlagt utdanning (0 år betyr ingen utdanning)
 -   antall riktige på matematikkprøven (0 riktig betyr ingen riktig)
 
-Det siste eksempelet krever en analyse. Ofte måles "kompetanse", "ferdighet" eller liknende ut fra antall riktige svar på en prøve eller annen ferdighetstest. La oss ta matematikkompetanse som et eksempel. Hvis Bård besvarer 20 spørsmål riktig på en matematikkprøve og Roar besvarer 10 riktig, kan man si at Bård fikk dobbelt så mange riktige. Man kan også si at han fikk 10 flere riktig. Addisjon, subtraksjon, multiplikasjon og divisjon gir mening, altså er det en forholdstallsvariabel. Men er det riktig å si at Bård har dobbelt så høy *matematikkompetanse* som Roar? Det kommer kanskje an på prøven og hvilke spørsmål man svarte riktig på? Hva hvis Roar svarte riktig på 10 vanskelige spørsmål mens Bård raste gjennom de 20 enkleste spørsmålene på prøven uten å få til noe mer? Eller hva hvis Roar ikke hadde besvart noen spørsmål riktig, hadde det vært riktig å si at han har null matematikkompetanse? Dette viser at hva som er riktig målenivå kan avhenge av hvilket konstrukt man operasjonaliserer; hvis forskeren operasjonaliserer *antall riktige på prøven* er variabelen på forholdstallsnivå, men hvis forskeren operasjonaliserer *matematikkompetanse* er saken en annen.
+Det siste eksempelet krever en analyse. Ofte måles "kompetanse", "ferdighet" eller liknende ut fra antall riktige svar på en prøve eller annen ferdighetstest. La oss ta matematikkompetanse som et eksempel. Hvis Bård besvarer 20 spørsmål riktig på en matematikkprøve og Roar besvarer 10 riktig, kan man si at Bård fikk dobbelt så mange riktige. Man kan også si at han fikk 10 flere riktig. Addisjon, subtraksjon, multiplikasjon og divisjon gir mening, altså er det en forholdstallsvariabel. Men er det riktig å si at Bård har dobbelt så høy *matematikkompetanse* som Roar? Det kommer kanskje an på prøven og hvilke spørsmål man svarte riktig på? Hva hvis Roar svarte riktig på 10 vanskelige spørsmål mens Bård raste gjennom de 20 enkleste spørsmålene på prøven uten å få til noe mer? Eller hva hvis Roar ikke hadde besvart noen spørsmål riktig, hadde det vært riktig å si at han har null matematikkompetanse? Dette viser at hva som er riktig målenivå avhenger av hvordan konstruktet er operasjonalisert. Hvis forskeren operasjonaliserer konstruktet matematikkompetanse som *antall riktige svar på prøven*, er variabelen på forholdstallsnivå, men hvis forskeren operasjonaliserer matematikkompetanse som *en lærers vurdering av elevens kompetanse på en skala fra 1 til 5*, er variabelen på ordinalnivå.
 
 ### Kontinuerlige og diskrete variabler
 
@@ -205,11 +241,11 @@ tt(
 )
 ```
 
-Diskrete variabler er det motsatte. For eksempel er nominelle variabler alltid diskrete. Det finnes ikke en transporttype som faller "mellom" tog og fly, i hvert fall ikke på den samme måte som 2,65 faller mellom 2 og 3. Derfor er transporttype en diskret variabel. På samme måte er ordinale variabler alltid diskrete. Selv om svaralternativet "Ganske enig" faller mellom "Helt enig" og "Hverken enig eller uenig", er det ingen svaralternativer som faller imellom. Intervallskala- og forholdstallskala-variabler kan gå begge veier. Som vi så ovenfor, er svartid (en forholdstallsvariabel) kontinuerlig. Temperatur i grader celsius (en variabel på intervallnivå) er også kontinuerlig. Imidlertid er året du gikk i første klasse (en intervallskala-variabel) diskret. Det er ikke noe år mellom 2002 og 2003. Antall spørsmål du får riktig på en flervalgsprøve (en forholdstallskala-variabel) er også diskret. Siden et flervalgsspørsmål ikke kan være være "delvis korrekt", er det ingenting mellom 5 av 10 riktige og 6 av 10 riktige. @tbl-tab2-4 oppsummerer forholdet mellom målenivåene og skillet mellom diskret/kontinuerlig. Celler med et hakemerke er mulige. Jeg prøver å hamre dette poenget hjem, fordi (a) noen lærebøker tar feil, og (b) folk veldig ofte sier ting som "diskret variabel" når de mener "nominalskala-variabel". Det er veldig upresist.
+Diskrete variabler er det motsatte. For eksempel er nominelle variabler alltid diskrete. Det finnes ikke en transporttype som faller "mellom" tog og fly, i hvert fall ikke på den samme måte som 2,65 faller mellom 2 og 3. Derfor er transporttype en diskret variabel. På samme måte er ordinale variabler alltid diskrete. Har en skala svaralternativene "Helt enig", "Ganske enig" og "Hverken enig eller uenig", finnes det ikke noe svaralternativ mellom "Helt enig" og "Ganske enig" på den skalaen. Man kan så klart lage en ny skala med flere alternativer, for eksempel ved å føye til "Litt enig", men da har man en ny skala som også er diskret. Intervallskala- og forholdstallskala-variabler kan gå begge veier. Som vi så ovenfor, er forholdstallsvariabelen *svartid* kontinuerlig. Intervallnivåvariabelen *temperatur i grader celsius* er også kontinuerlig. Imidlertid er intervallnivåvariabelen *året du gikk i første klasse* diskret. Det er ikke noe år mellom 2002 og 2003. Forholdstallsvariabelen *antall spørsmål du får riktig på en flervalgsprøve* er også diskret. Siden et flervalgsspørsmål ikke kan være "delvis korrekt", er det ingenting mellom 5 av 10 riktige og 6 av 10 riktige. @tbl-tab2-4 oppsummerer forholdet mellom målenivåene og skillet mellom diskret/kontinuerlig. Celler med en x er mulige.
 
 ### Noen komplikasjoner: Likert-skalaer
 
-I den virkelige verden er det mange variabler som ikke passer så godt inn i disse målenivåene. Det er ikke problematisk, for målenivåene gir forskere likevel en mer presis måte å snakke om variablene sine. En vanlig målemetode som ikke helt passer inn i målenivåene er **Likert-spørsmål**. Likert-spørsmål er det vanligste verktøyet i spørreundersøkelser. Du har selv fylt ut hundrevis, kanskje tusenvis, av dem. Anta at vi har et spørsmål i en undersøkelse som ser slik ut:
+I den virkelige verden er det mange variabler som ikke passer så godt inn i disse målenivåene. Det er ikke problematisk, for målenivåene gir forskere likevel en mer presis måte å snakke om variablene på. En vanlig målemetode som ikke helt passer inn i målenivåene, er **Likert-spørsmål**. Likert-spørsmål er det vanligste verktøyet i spørreundersøkelser. Du har selv fylt ut mange slike. Anta at du får følgende påstand med svaralternativer i en undersøkelse:
 
 > Jeg har vanskeligheter med å avslutte det jeg begynner på.
 > 
@@ -235,9 +271,9 @@ Men er de ordinalskala eller intervallskala? Da må vi bestemme om forskjellene 
 
 ### Samlevariabler
 
-Mange teoretiske konstrukter er komplekse og fanges ikke opp av bare én måling. Hvis man skal måle kvaliteten på en lærers praksis i "Vurdering for læring" må man kanskje måle både hvordan læreren vurderer kompetansen til elever ut fra prøvesvar i tillegg til hvordan læreren gir tilbakemeldinger på prøven. Hvis man utelater en av delene har man ikke målt hele konstruktet "kvalitet på 'vurdering for læring'-praksis", så derfor må man kombinere delene. Når man kombinerer flere ulike målinger for å lage én variabel kalles det en **samlevariabel**.
+Mange teoretiske konstrukter er komplekse og fanges ikke opp av bare én måling. Hvis man skal måle kvaliteten på en lærers praksis i "vurdering for læring" må man kanskje måle både hvordan læreren vurderer kompetansen til elever ut fra prøvesvar i tillegg til hvordan læreren gir tilbakemeldinger på prøven. Hvis man utelater en av delene, har man ikke målt hele konstruktet "kvalitet på 'vurdering for læring'-praksis", så derfor må man bruke flere enkeltvariabler for å måle ett og samme fenomen. Når man kombinerer flere ulike målinger for å lage én variabel kalles det en **samlevariabel**.
 
-I spørreundersøkelser måles gjerne konstruktene med samlevariabler, og et typisk eksempel er fra den store internasjonale undersøkelsen om elevers matematikk- og naturfags-kompetanse, TIMSS. For å måle elevenes indre motivasjon i matematikk stilte de elevene ni Likert-spørsmål på en firepunkts skala fra "Svært enig" til "Svært uenig". Her er spørsmålene[^measurement-timss]:
+I spørreundersøkelser måles gjerne konstruktene med samlevariabler, og et typisk eksempel er fra den store internasjonale undersøkelsen om elevers matematikk- og naturfags-kompetanse, TIMSS. For å måle elevenes indre motivasjon i matematikk fikk elevene ni Likert-påstander som de skulle ta stilling til på en firepunkts skala fra "Svært enig" til "Svært uenig". Her er påstandene[^measurement-timss]:
 
   1. Jeg liker å lære matematikk
   2. Jeg skulle ønske at jeg ikke var nødt til å lære matematikk
@@ -249,41 +285,35 @@ I spørreundersøkelser måles gjerne konstruktene med samlevariabler, og et typ
   2. Jeg gleder meg til timene i matematikk
   2. Matematikk er et av de fagene jeg liker best
   
-[^measurement-timss]: Hvis du er interessert i å se hele spørreskjemaet er det tilgjengelig her: <https://www.uv.uio.no/ils/forskning/prosjekter/timss/2019/elevskjema_9trinn.pdf">
-  
-Svarene på disse 9 spørsmålene slås sammen til en samlevariabel for indre motivasjon. Man kan tenke seg at man regner gjennomsnittet til de 9 svarene og lar det være verdien på elevens indre motivasjon, men i virkeligheten er det en mer avansert utregning for å lage samlevariabelen. Merk at spørsmål 2 og 3 måler indre motivasjon motsatt av de andre spørsmålene, altså at "Svært uenig" betyr at man har høy indre motivasjon. Før slike spørsmål analyseres reverserer man ofte svaralternativene slik at man kan tolke svarene likt som hos de andre spørsmålene.
+[^measurement-timss]: Hvis du er interessert i å se hele spørreskjemaet er det tilgjengelig her: <https://www.uv.uio.no/ils/forskning/prosjekter/timss/2019/elevskjema_9trinn.pdf>
 
-Hvilket målenivå har slike samlevariabler? Det kommer an på. De kan være nominelle, for eksempel hvis en spesialpedagog lar elever ta et testbatteri og ut fra svarene lage en samlevariabel _dysleksi_ med to mulige verdier, "har dysleksi" og "har ikke dysleksi". Dette er en samlevariabel fordi den er regnet ut basert på mange andre. Men de aller vanligste samlevariablene er de som er laget på bakgrunn av mange Likert-spørsmål, slik som indre motivasjon ble målt i TIMSS-eksempelet over, og de behandles som om de er på en kontinuerlig intervallskala. Disse variablene er ikke helt kontinuerlige, for hvis man lager en samlevariablel ved å ta gjennomsnittet av 9 spørsmål, som hver har et heltall som svar, så kan man ikke få alle mulige verdier. For eksempel kan man få 3,11 og 3,22, men ikke 3,15. Likevel er det nært nok til at man benytter variablene som om de var kontinuerlige. De er kanskje heller ikke intervallskalaer, av samme grunner som ble nevnt om Likert-skalaer over.
+Svarene på disse ni spørsmålene slås sammen til en samlevariabel for indre motivasjon. Man kan tenke seg at man regner gjennomsnittet til de ni svarene og lar det være verdien på elevens indre motivasjon, men i virkeligheten er det en mer avansert utregning for å lage samlevariabelen. Merk at spørsmål 2 og 3 måler indre motivasjon motsatt av de andre spørsmålene, altså at "svært uenig" betyr at man har høy indre motivasjon. Før slike spørsmål analyseres, reverserer man ofte svaralternativene slik at man kan tolke svarene likt som i de andre spørsmålene.
+
+Hvilket målenivå har slike samlevariabler? Det kommer an på. De kan være nominelle, for eksempel hvis en spesialpedagog lar elever ta et testbatteri, altså en samling av flere tester, og ut fra svarene lager en samlevariabel _dysleksi_ med to mulige verdier, "har dysleksi" og "har ikke dysleksi". Dette er en samlevariabel fordi den er regnet ut basert på mange andre. Men de aller vanligste samlevariablene er de som er laget på bakgrunn av mange Likert-spørsmål, slik som indre motivasjon ble målt i TIMSS-eksempelet over, og de behandles som om de er på en kontinuerlig intervallskala. Disse variablene er ikke helt kontinuerlige, for hvis man lager en samlevariabel ved å ta gjennomsnittet av ni spørsmål, som hver har et heltall som svar, så kan man ikke få alle mulige verdier. Siden en nidel er 0,11, kan man få svarene 3,11 og 3,22, men ikke 3,15. Likevel er det nært nok til at man benytter variablene som om de var kontinuerlige. Strengt tatt er de kanskje heller ikke på intervallnivå, av samme grunner som ble nevnt om Likert-skalaer over, men i praksis behandles de som om de var det.
 
 ## Å vurdere en målemetodes kvalitet: Reliabilitet og validitet {#sec-reliability}
 
-Vi har nå lært begreper for å beskrive hvordan man operasjonaliserer et teoretisk konstrukt og dermed skaper en målemetode. Det er et åpenbart spørsmål vi ikke har diskutert ennå: er målingen god? Forskere diskuterer målemetoders kvalitet med to begreper  *reliabilitet* og *validitet*. Enkelt sagt forteller **reliabiliteten** til en målemetode deg hvor stabil den er, mens **validiteten** til en målemetode forteller deg hvor gyldig den er. 
+Vi har nå lært begreper for å beskrive hvordan man operasjonaliserer et teoretisk konstrukt og dermed skaper en målemetode. Det er et åpenbart spørsmål vi ikke har diskutert ennå: Er målingen til å stole på? Forskere diskuterer målemetoders kvalitet med begrepene *reliabilitet* og *validitet*. Enkelt sagt forteller **reliabiliteten** til en målemetode hvor stabil den er, mens **validiteten** til en målemetode forteller hvor gyldig den er.
 
 ### En målings reliabilitet
 
-Reliabilitet betyr altså hvor stabil målemetoden er. Baderomsvekta mi gir en svært reliabel måling av vekta mi, fordi den gir meg det samme svaret hver gang hvis jeg går av og på vekta flere ganger. Legg merke til at dette ikke betyr at baderomsvekta viser riktig vekt; det kan være at springfjæra i vekta har blitt litt løs slik at den viser noen kg for mye. Isåfall stemmer ikke vekta sin måling overens med min sanne vekt i det hele tatt, noe som betyr at målingen har lav validitet, men den har likevel høy reliabilitet.
+Reliabilitet betyr altså hvor stabil målemetoden er. Baderomsvekta mi gir en svært reliabel måling av vekta mi, fordi den gir meg det samme svaret når jeg går av og på vekta flere ganger etter hverandre. Legg merke til at dette ikke betyr at baderomsvekta viser riktig vekt; det kan være at springfjæra i vekta har blitt litt løs slik at den viser noen kilo for mye. I så fall stemmer ikke vekta sin måling overens med min sanne vekt i det hele tatt, noe som betyr at målingen har lav validitet. Den har likevel høy reliabilitet, fordi den viser samme resultat fra gang til gang.
 
 Reliabilitet betyr altså at målingen gir samme verdi på tvers av situasjoner. Dette gir opphav til mange forskjellige undertyper av reliabilitet:
 
 -   **Test-retest-reliabilitet**. Hvis vi gjentar målingen på et senere tidspunkt, får vi det samme svaret?
 
-    En prøve har høy test-retest-reliabilitet hvis elever hadde fått samme karakter hvis de tok prøven på et annet tidspunkt, som ville betydd at elevens dagsform ikke påvirker prøveresultatet.
-  
-    En forskers vurdering av kvaliteten på lærerens forklaringer har høy test-retest-reliabilitet hvis det ikke spiller noen rolle hvilken time forskeren observer.
-    
+    En prøve har høy test-retest-reliabilitet hvis elever får samme karakter når de tar samme prøve på ulike tidspunkt, noe som betyr at elevens dagsform ikke påvirker prøveresultatet.
+
+    En forskers vurdering av kvaliteten på lærerens undervisning har høy test-retest-reliabilitet hvis det ikke spiller noen rolle hvilken time forskeren observerer.
+
 -   **Inter-rater-reliabilitet**. Hvis en annen person gjennomfører målingen, får vi da det samme svaret?
 
-    En måling av elevers adferd i en musikktime har høy inter-rater-reliabilitet hvis svarer er uavhengig av hvem som observerer timen.
-  
-    Hvis karakteren på skriftlig eksamen i engelsk ikke avhenger av hvilken sensor som retter,  har den høy inter-rater-reliabilitet. 
-    
--   **Indre konsistens**. Hvis en samlevariabel er satt sammen av mange undervariabler, har undervariablene en tendens til å gi lignende svar?
+    En måling av elevers adferd i en musikktime har høy inter-rater-reliabilitet hvis resultatet er uavhengig av hvem som observerer timen.
 
-    Målingen av indre motivasjon fra TIMSS (nevnt over) har høy indre konsistens hvis de forskjellige undervariablene, altså svarene på hver av de ni spørsmålene, gir mer eller mindre samme svar.
-   
-    Ikke alle samlevariabler trenger å ha høy indre konsistens. Hvis vi vil lage en samlevariabel for kvaliteten på en lærers skriveundervisning med undervariablene 'kvalitet på grammatikkundervisningen' og 'kvalitet på sjangerundervisningen' gjør det ikke noe om undervariablenes verdier avviker.
+    Hvis karakteren på skriftlig eksamen i engelsk ikke avhenger av hvilken sensor som vurderer besvarelsen, har den høy inter-rater-reliabilitet.
 
-Hvordan man bør vurdere en variabels reliabilitet avhenger av det teoretiske konstruktet. Anta at man skal måle konstruktet "elevers utagerende adferd" ved å observere én undervisningstime. Hvis formålet er å gi en generell vurdering av elevenes utagerende adferd vil målingen ha lav test-retest-reliabilitet, fordi den vil gi svært forskjellige svar avhenging av om du utfører målingen siste time fredag eller første time tirsdag. Hvis formålet derimot er å finne ut av hvordan elevenes adferd varierer i en undervisningsuke er hele poenget med målingen å fange opp disse variasjonene. Derfor må man tenke over det teoretiske konstruktet og forskningsformålet for å gi en vurdering av en målemetodes reliabilitet.
+Hvordan man bør vurdere en variabels reliabilitet, avhenger av det teoretiske konstruktet. Anta at man skal måle konstruktet "elevers utagerende adferd" ved å observere én undervisningstime. Hvis formålet er å gi en generell vurdering av elevenes utagerende adferd, vil målingen ha lav test-retest-reliabilitet, fordi den sannsynligvis vil gi svært forskjellige svar avhengig av om du utfører målingen siste time fredag eller første time tirsdag. Hvis formålet derimot er å finne ut av hvordan elevenes adferd varierer i en undervisningsuke, er hele poenget med målingen å fange opp disse variasjonene. Derfor må man tenke over det teoretiske konstruktet og forskningsformålet for å gi en vurdering av en målemetodes reliabilitet.
 
 ### En målings validitet {#sec-validity}
 
@@ -291,7 +321,7 @@ En målemetode har høy **validitet** hvis den måler det man tror den måler. V
 
 ### Konstruktvaliditet
 
-**Konstruktvaliditet** (også kalt begrepsvaliditet) er i bunn og grunn et spørsmål om hvorvidt du måler det du ønsker å måle. En måling har god konstruktvaliditet hvis den faktisk måler det teoretiske konstruktet, og dårlig konstruktvaliditet hvis den ikke gjør det. For å gi et veldig enkelt (om enn latterlig) eksempel, anta at jeg prøver å undersøke hyppigheten av juks blant ungdomsskoleelever på norsktentamen. Og måten jeg forsøker å måle det på er ved å be de juksende studentene om å reise seg i klasserommet slik at jeg kan telle dem. Når jeg gjør dette med en klasse på 30 elever, er det 0 elever som hevder å ha jukset. Så jeg konkluderer derfor med at andelen juksere i klassen min er 0 %. Dette er åpenbart litt latterlig. Men poenget her er ikke at dette er et veldig dypt metodologisk eksempel, men heller å forklare hva konstruktvaliditet er. Problemet med målingen min er at mens jeg prøver å måle "andelen personer som jukser", måler jeg faktisk "andelen personer som er ærlige nok til å innrømme juks, eller selvskadende nok til å late som om de juksa". Åpenbart er ikke disse det samme! Så målemetoden min har mislyktes, den måler ikke konstruktet jeg prøvde å måle, så den har dårlig konstruktvaliditet.
+**Konstruktvaliditet,** også kalt begrepsvaliditet, er i bunn og grunn et spørsmål om hvorvidt du måler det du ønsker å måle. En måling har god konstruktvaliditet hvis den faktisk måler det teoretiske konstruktet, og dårlig konstruktvaliditet hvis den ikke gjør det. For å gi et veldig enkelt, om enn latterlig, eksempel, anta at jeg prøver å undersøke hyppigheten av juks blant ungdomsskoleelever på norsktentamen. Måten jeg forsøker å måle det på, er å be de elevene som jukser om å reise seg i klasserommet slik at jeg kan telle dem. Når jeg gjør dette med en klasse på 30 elever, er det 0 elever som reiser seg. Så jeg konkluderer derfor med at andelen juksere i klassen min er 0 %. Det er åpenbart en urimelig slutning. Poenget her er ikke å presentere et spesielt avansert metodologisk eksempel, men å illustrere hva konstruktvaliditet innebærer. Problemet ligger i [operasjonaliseringen](#sec-operationalization): mens jeg prøver å måle "andelen personer som jukser", måler jeg faktisk "andelen personer som er ærlige nok til å innrømme juks, eller selvskadende nok til å late som om de juksa". Åpenbart er ikke disse det samme! Så målemetoden min har mislyktes, den måler ikke konstruktet jeg prøvde å måle, så den har dårlig konstruktvaliditet.
 
 Det finnes flere måter en måling kan ha svak konstruktvaliditet på. For eksempel kan målingen bare måle en liten del av konstruktet, kalt (konstrukt-)*underrepresentasjon*, eller konstruktet kan måle andre ting enn det det skal, kalt (konstrukt-)*irrelevans*, se @fig-construct. 
 
@@ -303,35 +333,35 @@ Det finnes flere måter en måling kan ha svak konstruktvaliditet på. For eksem
 knitr::include_graphics("images/fig-construct.png")
 ```
 
-For å ha høy konstruktvaliditet kan det være nødvendig å ha høy **prediktiv validitet**. Dette betyr at målingene dine samsvarer med andre variabler -- altså predikerer andre variabler -- slik man ville forvente. Hvis man måler en lærers motivasjon for yrket kan man kontrollere den prediktive validiteten ved å sjekke om de motiverte lærerne velger å bli i yrket. Hvis dette ikke er tilfelle har du lav prediktiv validitet, og da har du kanskje ikke målt lærernes motivasjon.
+For å ha høy konstruktvaliditet kan det være nødvendig å ha høy **prediktiv validitet**. Dette betyr at målingene dine samsvarer med andre variabler -- altså predikerer andre variabler -- slik man ville forvente. Hvis man måler en lærers motivasjon for yrket, kan man kontrollere den prediktive validiteten ved å sjekke om de motiverte lærerne velger å bli i yrket. Hvis dette ikke er tilfelle, altså hvis høyt motiverte lærere ikke blir lenger i yrket enn lite motiverte, har målingen lav prediktiv validitet. Da har du kanskje ikke målt lærernes motivasjon.
 
 ### Et eksempel: måling av elevers indre motivasjon for matematikk
 
-Nå har vi vært gjennom en hel bråte med begreper som man benytter for å beskrive målemetoder og kvaliteter ved dem, og nå skal vi benytte begrepene til å diskutere et eksempel, elevers indre motivasjon for matematikk. Poenget med eksempelet er å vise hvordan måling av helt vanlige begreper i utdanningsforskning er komplisert.
+Nå har vi vært gjennom en hel bråte med begreper som man benytter for å beskrive målemetoder og kvaliteter ved dem, og nå skal vi bruke begrepene til å diskutere et eksempel, elevers indre motivasjon for matematikk. Poenget med eksempelet er å vise hvordan måling av helt vanlige konstrukter i utdanningsforskning er komplisert. Eksempelet er forholdsvis langt, men jeg håper du bruker tid på det og får en viss ærefrykt over komplikasjonene man støter på når man forsøker å måle noe i utdanningsforskning.
 
-I et eksempel over viste jeg frem hvordan TIMSS målte indre motivasjon ved hjelp av ni spørsmål i et spørreskjema. Da ber man elevene om å selvrapportere om sin indre motivasjon for matematikk. Dette virker godt; eleven vet selv hvilke følelser den har overfor matematikk, om den liker å jobbe med matematikk, gleder seg til matematikktimen og så videre. Trolig kan ingen andre rapportere like godt om elevens indre motivasjon, slik som foreldre eller lærere, for det er tross alt elevens egen sinnstiltstand man ønsker å måle. Kun eleven har tilgang til den.
+I et eksempel over viste jeg hvordan TIMSS målte indre motivasjon ved hjelp av ni spørsmål i et spørreskjema. Da ber man elevene om selv å rapportere om sin indre motivasjon for matematikk. Dette virker godt; elevene vet selv hvilke følelser de har knyttet til matematikk, om de liker å jobbe med matematikk, gleder seg til matematikktimen og så videre. Trolig kan ingen andre, slik som foreldre eller lærere, rapportere like godt om elevens indre motivasjon, for det er tross alt elevens egen sinnstilstand man ønsker å måle. Kun eleven har tilgang til den.
 
-Selvrapportering av indre motivasjon har høy reliabilitet. Hvis man setter elevene til å svare på spørreskjemaet en annen dag vil de svare mer eller mindre likt (test-retest-reliabilitet). Det spiller heller ikke så stor rolle hvordan spørsmålene er utformet, som gir høy indre konsistens. Om man spør "jeg er glad i matematikk" (enig/uenig) eller "jeg liker å jobbe med matematikk", så har ikke det så mye å si, elevene svarer likt. Og det trengs ingen forsker til å vurdere hvor motivert eleven er, så målingen har perfekt inter-rater-reliabilitet.
+Selvrapportering av indre motivasjon har høy reliabilitet. Hvis man setter elevene til å svare på spørreskjemaet en annen dag, vil de sannsynligvis svare mer eller mindre likt (test-retest-reliabilitet). Det spiller heller ikke så stor rolle hvordan påstandene som elevene skal ta stilling til, er utformet. For eksempel vil de to påstandene "jeg er glad i matematikk" eller "jeg liker å jobbe med matematikk" sannsynligvis besvares nokså likt av en og samme elev. Og det trengs ingen forsker til å vurdere hvor motivert eleven er, så målingen har svært god inter-rater-reliabilitet.
 
-Men sett fra andre sitt ståsted kan det se ut om elevens selvrapportering ikke er så god. Lærere kan observere at den eleven som svarer at den liker å jobbe med matematikk, ikke velger å jobbe med matematikk i timen, men heller foretrekker å tulle med sidemannen eller tegne i skriveboka si. Og omvendt kan læreren observere at elever som sier de "hater matte" jobbe flittig med oppgaver med et smil om munnen og kaster seg ut i helklassediskusjoner. Hva hvis det er tydelig at det ikke er samsvar mellom hvordan elevene selvrapporterer om sin indre motivasjon og hvordan andre observerer motivasjonen?
+Men sett fra andre sitt ståsted kan det se ut om elevens selvrapportering ikke er så pålitelig. Lærere kan observere at elever som svarer at de liker å jobbe med matematikk, ikke jobber med matematikk i timen, men heller foretrekker å tulle med sidemannen eller tegne i skriveboka si. Og omvendt kan læreren observere at elever som svarer at de er enige i at "matematikk er kjedelig" jobber iherdig og tilsynelatende motivert med individuell oppgaveløsing og kaster seg ut i helklassediskusjoner. Hva hvis elevenes selvrapportering om motivasjon ikke samsvarer med hvordan andre observerer motivasjonen?
 
-Selvrapporteringen kan bli påvirket av mange ting, for eksempel om det er sosialt akseptabelt å være interessert i matematikk i elevens omgangskrets. Hvis eleven er i et miljø der matematikk er ukult, kan eleven bli påvirket, bevisst eller ubevisst, til å svare at den er mindre indre motivert for matematikk enn den egentlig er. Dette kan også virke omvendt, hvis eleven går i en klasse der alle hater matematikk, men eleven synes matematikk er greit nok, kan eleven sammenlikne seg med de andre og svare veldig høyt fordi det ikke finnes noen som liker matematikk bedre. Respondenter i intervjuer og spørreundersøkelser har også en tendens til å svare det de tror at forskeren vil ha. Eleven kan svare at den er interessert i matematikk fordi den tror det er det svaret forskeren ønsker. Alt dette er konstrukt-irrelevans som selvrapporteringen fanger opp.
+Selvrapportering kan påvirkes av en rekke faktorer, for eksempel hvor sosialt akseptabelt det er å være interessert i matematikk i elevenes eget miljø. Hvis elever befinner seg i en omgangskrets der matematikk oppfattes som "ukult", kan de, bevisst eller ubevisst, nedtone sin indre motivasjon i svarene. Det motsatte kan også skje: Dersom elever går i en klasse der nesten alle misliker matematikk, men de selv synes faget er helt greit, kan de overvurdere sin egen motivasjon fordi de sammenligner seg med et miljø der interessen er enda lavere. Respondenter i intervjuer og spørreundersøkelser har også tendens til å svare det de tror at forskeren vil ha. Elever kan svare at de er interessert i matematikk fordi de tror det er det svaret forskeren ønsker. Alt dette er konstrukt-irrelevans som selvrapporteringen fanger opp.
 
-Siden selvrapportering av indre motivasjon lider av disse problemene kan det være fristende å heller observere motivasjon. Hvis en elev er indre motivert for matematikk betyr jo det at eleven villig jobber med matematikk i timen, noe som kan observeres. Da kan man ganske enkelt sette en forsker til å observere elevenes motivasjon. Men merk at en elev som er _ytre_ motivert vil også jobbe villig med matematikk i timen, så å observere kunne gitt en alvorlig konstrukt-irrelevans. Derfor måtte man gitt matematikkoppgaver eleven ikke kan bli ytre motivert av, for eksempel hvis læreren ikke er til stede og oppgaven ikke gir øving på stoff som skal vurderes. Vil observasjon da være et godt mål på en elevs indre motivasjon? Man kunne simpelthen målt hvor lenge eleven jobbet med en slik oppgave. Jeg liker tanken! "Hvor motivert var Petter?" "Sju minutter!" Selv om denne målemetoden unngår problemer med selvrapportering introduserer den mange nye. For eksempel kan jo elevene bli påvirket til å jobbe fordi det sitter en forsker bak i klasserommet. Dessuten kan reliabiliteten bli lav, for forskere kan være uenige i akkurat når eleven slutter å jobbe med oppgaven, eller målingen kan være veldig avhengig av hvilken oppgave man bruker, slik at test-retest-reliabiliten blir lav. Men kanskje viktigst av alt: siden indre motivasjon er en sinnstilstand er det unektelig rart å måle indre motivasjon ved observasjon av ytre adferd.
+Siden selvrapportering av indre motivasjon er utsatt for slike målefeil, kan det være fristende å heller observere motivasjon. Hvis en elev er indre motivert for matematikk, innebærer det sannsynligvis at eleven jobber villig med matematikk i timen, noe som kan observeres. Da kan man ganske enkelt sette en forsker til å observere elevenes motivasjon. Men merk at en elev som er _ytre_ motivert vil også jobbe villig med matematikk i timen, så å observere kan gi en alvorlig konstrukt-irrelevans ved at det ikke er mulig å skille mellom indre og ytre motivasjon når en observerer en elev i arbeid. Derfor må man gi matematikkoppgaver eleven i mindre grad blir ytre motivert av, for eksempel hvis læreren ikke er til stede og oppgaven ikke gir øving på stoff som skal vurderes. Vil observasjon da være et godt mål på en elevs indre motivasjon? Man kunne simpelthen målt hvor lenge eleven jobbet med en slik oppgave. Jeg liker tanken! "Hvor motivert var Petter?" "Sju minutter!" Selv om denne målemetoden unngår problemer med selvrapportering, introduserer den mange nye. For eksempel kan elevene bli påvirket til å jobbe fordi det sitter en forsker bak i klasserommet. Dessuten kan reliabiliteten bli lav, for forskere kan være uenige i akkurat når eleven slutter å jobbe med oppgaven, eller målingen kan være veldig avhengig av hvilken oppgave man bruker, slik at test-retest-reliabiliten blir lav. Men kanskje viktigst av alt: Siden indre motivasjon er en sinnstilstand, er det unektelig rart å måle indre motivasjon ved observasjon av ytre adferd.
 
-Dette er ikke kun et tankeeksperiment; det er svært reelt. Manglende samsvar mellom selvrapportering og observasjon går igjen i måling av mange konstrukter som handler om elevers og lærerers indre sinnstilstander, slik som tanker, holdninger, motivasjon og følelser [@leatham2006]. Men det er også ofte manglende samsvar når konstruktet ikke er en indre sinnstilstand, men handler om helt konkrete hendelser i et klasserom. For eksempel sier mange lærere at de synes helklassediskusjoner er viktige, at de setter av mye tid til det i timene og at de gir elevene rom til å diskutere heller enn å kun komme med korte svar, men når forskere observerer timene til disse lærerne er det få helklassediskusjoner og de er ofte lærerstyrte der elevene kun kommer med korte svar. Altså har målinger av helklassediskusjoner via selvrapportering lav validitet. Er elever og lærere løgnere, som ikke velger å svare sannferdig; hyklere, som gjør stikk motsatt av det de sier er viktig; eller er det noe annet som foregår? Min teori er rett og slett at selvrapportering er vanskelig, slik at vi ikke kan forvente annet enn avvik mellom observasjon og selvrapportering.
+Dette er ikke kun et tankeeksperiment; det er svært reelt. Manglende samsvar mellom selvrapportering og observasjon går igjen i måling av mange konstrukter som handler om elevers og læreres indre sinnstilstander, slik som tanker, holdninger, motivasjon, kunnskap, læring og følelser [@leatham2006]. Men det er også ofte manglende samsvar når konstruktet ikke er en indre sinnstilstand, men handler om helt konkrete hendelser i et klasserom. For eksempel sier mange lærere at de synes helklassediskusjoner er viktige, at de setter av mye tid til det i timene og at de gir elevene rom til å diskutere heller enn å kun komme med korte svar. Observasjon av helklasseundervisning har imidlertid vist det motsatte: Det er få helklassediskusjoner, og de er ofte lærerstyrte der elevene kun kommer med korte svar. Altså har målinger av helklassediskusjoner via selvrapportering lav validitet. Er elever og lærere løgnere, som ikke velger å svare sannferdig; hyklere, som gjør stikk motsatt av det de sier er viktig; eller er det noe annet som foregår? En nærliggende forklaring er rett og slett at selvrapportering er vanskelig, slik at vi ikke kan vente annet enn avvik mellom observasjon og selvrapportering.
 
-Det er fristende å droppe selvrapportering og observasjon av indre motivasjon, og heller finne en biomarkør. Kan det finnes et hormon eller en nevrotransmitter som slår ut når man jobber med en oppgave man er indre motivert for? Kanskje dopamin er et sånt stoff? Eller kan man måle puls eller hjernebølger? I så fall kunne man målt biomarkøren i elevenes kropper mens de jobbet med matematikk og slik fått en objektiv måling av elevens motivasjon for matematikk. Jeg har liten tro på at slike biomarkører ville fungere i praksis og føler meg ganske sikker på at man fremdeles ville klødd seg i hodet over hvorfor målingene av biomarkøren ikke stemmer overens med selvrapportert eller observert indre motivasjon.
+Det er fristende å droppe selvrapportering og observasjon av indre motivasjon og heller finne en biomarkør. Kan det finnes et hormon eller en nevrotransmitter som slår ut når man jobber med en oppgave man er indre motivert for? Kanskje dopamin er et sånt stoff? Eller kan man måle puls eller hjernebølger? I så fall kunne man målt biomarkøren i elevenes kropper mens de jobbet med matematikk og slik fått en objektiv måling av elevenes motivasjon for matematikk. Det er lite som tilsier at slike biomarkører faktisk ville fungere i praksis, og det er sannsynlig at man fortsatt ville undret seg over hvorfor målingene fra biomarkøren ikke samsvarer med selvrapportert eller observert indre motivasjon. Huff. Hvis du led under forvirringen at det å måle motivasjon, eller andre sinnstilstander, var enkelt, håper jeg du nå er kurert.
 
 ## Oppsummering
 
 I dette kapittelet har jeg kort diskutert følgende temaer:
 
+- [Teoretiske konstrukter og operasjonalisering](#sec-operationalization). Hva betyr det å operasjonalisere et teoretisk konstrukt? Hva betyr verdier, variabler, konstrukter og målemetoder?
 - [Variabler og verdier](#sec-variables-values).
-- [Operasjonalisering av teoretiske konstrukter](#sec-operationalization). Hva betyr det å operasjonalisere et teoretisk konstrukt? Hva betyr verdier, variabler, konstrukter og målemetoder?
-- [Målenivåer](#sec-Scales-of-measurement) og variabeltyper. Husk at det er to forskjellige distinksjoner her. Det er forskjellen mellom diskrete og kontinuerlige data, og det er forskjellen mellom de fire ulike målenivåene (nominal, ordinal, intervall og forholdstall).
+- [Målenivåer](#sec-Scales-of-measurement) og variabeltyper. Husk at det er to forskjellige distinksjoner her. Det er forskjellen mellom diskrete og kontinuerlige variabler, og det er forskjellen mellom fire ulike målenivå (nominal, ordinal, intervall og forholdstall).
 - [Vurdering av målingers reliabilitet](#sec-reliability). Hvis jeg måler den "samme" tingen to ganger, bør jeg forvente å se samme resultat? Bare hvis målingen min er reliabel. Men hva betyr det å snakke om å gjøre den "samme" tingen? Vel, det er derfor vi har forskjellige typer pålitelighet. Sørg for at du husker hva de er.
 - [Vurdering av målingers validitet](#sec-validity). Måler målemetoden din det du ønsker?
 
-Målinger er en viktig del av kvantitativ forskning, og trolig har den for lite plass i bevisstheten til folk når de hører om forskningsresultater. I første kapittel refererte jeg til en samtale mellom oljefondets leder Nicolai Tangen og forskeren Angela Duckworth. Da Duckworth sa hun hadde forsket på folks pågangsmot og at hun hadde veldig store utvalg burde ikke Tangen blitt imponert over utvalgsstørrelsen, han burde spurt: "hvordan målte du pågangsmotet til så mange folk?" Svaret er jo at alle har svart på et [spørreskjema med 10 spørsmål](https://angeladuckworth.com/grit-scale/). Tror du det måler pågangsmot på en god måte?
+Målinger er en viktig del av kvantitativ forskning, og trolig har den for lite plass i bevisstheten til folk når de hører om forskningsresultater. I første kapittel refererte jeg til en samtale mellom oljefondets leder Nicolai Tangen og forskeren Angela Duckworth. Da Duckworth sa at hun hadde forsket på folks pågangsmot og at hun hadde veldig store utvalg, burde ikke Tangen blitt imponert over utvalgsstørrelsen. Han burde spurt: "Hvordan målte du pågangsmotet til så mange folk?" Svaret er jo at alle har svart på et [spørreskjema med ti spørsmål](https://angeladuckworth.com/grit-scale/). Tror du det måler pågangsmot på en god måte?
 

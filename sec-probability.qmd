@@ -28,7 +28,7 @@ Teorien om statistisk inferens bygger på **sannsynlighetsteori**, så det må v
 
 Før vi starter på sannsynlighetsteorien er det nyttig å stoppe opp og tenke over forholdet mellom sannsynlighet og statistikk, for selv om disse fagområdene er nært beslektet, er de langt fra det samme.
 
-Sannsynlighetsteori er "læren om tilfeldigheter" -– en matematisk gren som forteller oss hvor ofte ulike hendelser vil inntreffe. Her er noen eksempler på spørsmål som kan besvares med sannsynlighetsteori:
+Sannsynlighetsteori er "læren om tilfeldigheter" -- en matematisk gren som forteller oss hvor ofte ulike hendelser vil inntreffe. Her er noen eksempler på spørsmål som kan besvares med sannsynlighetsteori:
 
 - Hvor stor er sjansen for at en rettferdig mynt lander på mynt 10 ganger på rad?
 - Hvis jeg kaster en sekssidet terning to ganger, hvor sannsynlig er det at jeg får to seksere?
