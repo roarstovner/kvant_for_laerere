@@ -31,7 +31,7 @@ Veien fra idé til data går i tre steg. Vi starter med et *teoretisk konstrukt*
 
 Fenomenene vi ønsker å måle i utdanningsforskning, slik som leseferdighet, motivasjon, læring og undervisning, er beskrevet teoretisk. Den teoretiske beskrivelsen kalles et *teoretisk konstrukt*, ofte omtalt som bare *konstruktet*.
 
-La oss bruke **leseferdighet** som gjennomgangseksempel. Hva er egentlig leseferdighet? Leseforskere er ikke helt enige, men de fleste beskrivelser inneholder minst disse delene:
+La oss bruke **leseferdighet** som eksempel. Hva er egentlig leseferdighet? Leseforskere er ikke helt enige, men de fleste beskrivelser inneholder minst disse delene:
 
 -   *avkoding*, altså å omsette bokstavene på arket til ord, raskt og uanstrengt
 -   *leseforståelse*, altså å skape mening av det som står i teksten
@@ -52,9 +52,9 @@ Et konstrukt kan man ikke måle direkte. Man må først bestemme seg for en helt
   \node[draw, rounded corners, align=center, text width=2.6cm, minimum height=1.6cm] (K)
     {Teoretisk konstrukt\\[2pt] \textit{leseferdighet}};
   \node[draw, rounded corners, align=center, text width=3.4cm, minimum height=1.6cm, right=of K] (M)
-    {Målemetode\\[2pt] \textit{ordkjedetest med 90 ordkjeder på fire minutter}};
+  {Målemetode\\[2pt] \textit{ordkjedetest med 90 ordkjeder på fire minutter\\[2pt] Eks: Sett strek mellom ordene i} "sollærerjente"};
   \node[draw, rounded corners, align=center, text width=3.4cm, minimum height=1.6cm, right=of M] (V)
-    {Variabel\\[2pt] \textit{antall riktige ordkjeder:} fra 0 til 90};
+    {Variabel\\[2pt] \textit{antall riktige ordkjeder:} hver elev får en verdi fra 0 til 90};
   \draw[->] (K) -- node[above, align=center]{operasjonali-\\sering} (M);
   \draw[->] (M) -- node[above, align=center]{datainn-\\samling} (V);
 \end{tikzpicture}
@@ -63,8 +63,8 @@ Et konstrukt kan man ikke måle direkte. Man må først bestemme seg for en helt
 Kort fortalt handler operasjonalisering om å omforme et konstrukt, som ofte er ganske vagt, til en helt presist definert måling. Operasjonalisering omfatter blant annet:
 
 -   **å avgrense hva som skal måles.** Skal vi måle hele leseferdigheten, eller bare avkodingen? Skal leselyst regnes med? Svaret avhenger av hva vi trenger målingen til. En logoped som utreder mistanke om dysleksi er interessert i avkodingen, mens en norsklærer som planlegger undervisning i sakprosa er mer interessert i forståelse og refleksjon.
--   **å bestemme målemetode.** Avkoding måles ofte med en *ordkjedetest*, der eleven setter strek mellom ordene i kjeder som "busshundmelktyv". Leseforståelse måles gjerne ved at eleven leser en tekst og svarer på spørsmål til den, slik som i nasjonale prøver i lesing. Leselyst måles vanligvis med spørsmål i et spørreskjema. Man kunne også bedt læreren om å vurdere elevens leseferdighet, eller ganske enkelt brukt elevens karakter i norsk.
--   **å definere hvilke verdier målingene kan ha.** Skal ordkjedetesten telle antall riktige, eller antall riktige minus antall gale? Skal leselyst måles med fire svaralternativer eller sju? Skal elevene angi tall (1 til 7) eller tekst (fra *ikke interessant* til *veldig interessant*)? Skal elevene kunne skrive hva de vil? Hvordan skal vi i så fall lage verdier av svarene etterpå?
+-   **å bestemme målemetode.** Avkoding måles ofte med en *ordkjedetest*, der eleven setter strek mellom ordene i kjeder som "busshundmelktyv". Leseforståelse måles gjerne ved at eleven leser en tekst og svarer på spørsmål til den, slik som i nasjonale prøver i lesing. Leselyst måles kanskje ved å svare på spørsmål i et spørreskjema?
+-   **å definere hvilke verdier målingene kan ha.** Skal ordkjedetesten telle antall riktige, eller angi kategoriene *trenger ekstra oppfølging* eller *trenger ikke ekstra oppfølging*? Skal leselyst måles med tall (1 til 7 eller 1 til 4) eller tekst (fra *ikke interessant* til *veldig interessant*)? Skal elevene kunne skrive hva de vil? Hvordan skal vi i så fall lage verdier av svarene etterpå?
 
 Legg merke til at det samme konstruktet kan operasjonaliseres på mange måter, og at operasjonaliseringene ikke er likeverdige. En ordkjedetest og en nasjonal prøve i lesing måler begge noe vi kaller "leseferdighet", men de gir forskjellige tall og rangerer ikke elevene helt likt. En elev som avkoder langsomt, men forstår godt det hun leser, kommer dårlig ut på ordkjedetesten og godt ut på den nasjonale prøven. Når du leser en forskningsartikkel er det derfor ikke nok å vite at forskerne har målt "leseferdighet"; du må vite *hvordan* de har målt den.
 
@@ -72,12 +72,14 @@ Operasjonalisering er komplisert, og det finnes ikke én riktig måte å gjøre 
 
 ### Variabler og verdier {#sec-variables-values}
 
-Når konstruktet er operasjonalisert, kan man gjøre målingene. Kvantitative analyser baserer seg på at man har gjort den samme **målingen** av mange forskjellige fenomener. I utdanningsforskning er fenomenene gjerne skoler, lærere, klasser, elever, rektorer, læreplaner, lærebøker, elevtekster eller liknende. Måling er å tildele disse fenomenene tall, merkelapper eller andre veldefinerte beskrivelser. Alle følgende eksempler vil regnes som målinger:
+Når konstruktet er operasjonalisert, kan man gjøre målingene. Kvantitative analyser baserer seg på at man har gjort den samme målingen av mange forskjellige fenomener. I utdanningsforskning er fenomenene gjerne skoler, lærere, klasser, elever, rektorer, læreplaner, lærebøker, elevtekster, undervisningstimer eller liknende. Måling er å tildele disse fenomenene tall, merkelapper eller andre veldefinerte beskrivelser. Alle følgende eksempler vil regnes som målinger:
 
 -   Petters **antall riktige ordkjeder** er *48*.
 -   Petters **leselyst** er *3 av 4*.
 -   Petters **alder** er *11* år.
 -   Petters **selvidentifiserte kjønn** er *gutt*.
+-   Timens **arbeidsro** var *middels*.
+-   Rektors **holdning til lærernes autonomi** var *lærerautonomi er svært viktig*.
 
 I denne listen viser den fete skriften det fenomenet som måles, som kalles **variabelen**, og den kursiverte skriften viser resultatet av målingen, som kalles **verdien**. En variabel representerer altså fenomenet som måles, mens verdien er det variabelen får i et bestemt tilfelle. Skillet mellom variabelen og de ulike verdiene variabelen kan anta, er sentralt:
 
@@ -86,28 +88,24 @@ I denne listen viser den fete skriften det fenomenet som måles, som kalles **va
 -   **Alder** kan ha verdiene *0, 1, 2, 3* og så videre. Den øvre grensen er litt uklar, men i praksis kan vi si at den høyeste mulige alderen er *150*, siden ingen mennesker noensinne har levd så lenge.
 -   **Selvidentifisert kjønn** er for de fleste elever enten *gutt* eller *jente*, men eleven kan også velge å identifisere seg med *ingen av delene*, eller eksplisitt kalle seg selv *transperson*.
 
-Som eksemplene over viser, virker verdiene for noen variabler ganske opplagte, slik som for antall riktige ordkjeder. For andre variabler kan det være vanskeligere å bestemme verdiene. Selv en tilsynelatende enkel variabel som alder kan by på utfordringer. I eksemplet ovenfor antok vi at det var greit å måle alder i år og runde av til heltall. Men hvis du er pedagog og jobber med små barn, er denne inndelingen altfor grov, og da måles ofte alder i *år* og *måneder*. Hvis du derimot er interessert i nyfødte, vil du kanskje måle alder i *dager siden fødsel*, kanskje til og med *timer siden fødsel*. Måten du spesifiserer de tillatte måleverdiene på, er med andre ord en viktig del av å planlegge en studie.
+Som eksemplene over viser, virker verdiene for noen variabler ganske opplagte, slik som for antall riktige ordkjeder, men for andre variabler er det vanskeligere å bestemme verdiene. Måten du spesifiserer de tillatte måleverdiene på, er med andre ord en viktig del av å planlegge en studie.
 
-Til hverdags benytter forskere disse begrepene om hverandre, de kan for eksempel si "operasjonalisering av variabelen" heller enn "av konstruktet", men det er svært nyttig å forstå distinksjonene.
+### Forskjellige målemetoder {#sec-methods-overview}
 
-### Forskjellige målemetoder {#sec-measurement-methods}
+Å bestemme målemetode er kanskje det viktigste valget i en operasjonalisering, og utvalget er større enn man skulle tro. Disse seks er de vanligste i utdanningsforskning:
 
-I utdanningsforskning benytter vi oss av mange forskjellige målemetoder. Hvilken spesifikk målemetode skal du bruke for å finne ut hvor godt en elev leser? Her er et utvalg:
+-   *prøver og tester*, der man gir folk oppgaver som skal løses
+-   *registerdata*, som fødselsdato og karakterer, hentet fra offisielle registre
+-   *selvrapportering*, der folk oppgir verdien selv, som regel i et spørreskjema
+-   *tredjepartsrapportering*, der noen andre oppgir den, for eksempel læreren eller foreldrene
+-   *observasjon*, der forskeren registrerer direkte det som skjer
+-   *fysiologiske mål*, også kalt biomarkører, for eksempel pulsmåling eller registrering av øyebevegelser
 
--   *Prøver og tester*: En prøve gir eleven oppgaver som skal løses, og verdien er hvordan eleven løser dem. Ordkjedetesten og nasjonale prøver i lesing er begge av denne typen. Dette er den vanligste målemetoden når konstruktet er en kompetanse eller en ferdighet.
--   *Selvrapportering*: Selvrapportering er at folk oppgir verdien på variabelen selv. Forskeren spør forskningsdeltagerne "hvor godt leser du?" eller "hvor ofte leser du på fritida?", for eksempel i et spørreskjema. Det er raskt, billig og enkelt, men det fungerer bare med folk som er ærlige og som er gamle nok til å forstå spørsmålet.
--   *Tredjepartsrapportering*: Du kan spørre andre om å oppgi verdien på variabelen, for eksempel foreldrene eller læreren til barnet.
--   *Registerdata*: Noen typer data kan du slå opp i offisielle registre, for eksempel fødselsdato eller karakterer. For de fleste typer informasjon om personer kreves det en søknad til Sikt, som vurderer om behandlingen av personopplysninger i et prosjekt er i tråd med personopplysningsloven (GDPR). Innhenting av sensitive personopplysninger, særlig informasjon om personers sykdom og helse, skal i tillegg meldes til en etisk komité.[^measurement-etikk]
--   *Observasjon*: Observasjon er når forskerne observerer direkte. En forsker kan sitte bak i klasserommet og registrere hvor lenge eleven leser i den frie lesetida, eller høre eleven lese høyt.
--   *Biomarkører*: Biomarkører er lite benyttet i utdanningsforskning. Man kan følge øyebevegelsene til en leser for å se hvor hun stopper opp, du kan anslå hvor stresset en elev er under en prøve ved å måle hjerteslagene, eller du kan måle hjerneaktivitet ved et elektroencephalogram.
-
-[^measurement-etikk]: Se <https://www.forskningsetikk.no>.
-
-Hvilken type målemetode man benytter, kommer først og fremst an på hvilket teoretisk konstrukt du ønsker å måle, men også hva som er praktisk gjennomførbart. Hvis du er interessert i samarbeidskulturen på en skole, ville kanskje det beste vært å observere samarbeidet direkte. Det er imidlertid svært tidkrevende, og dermed dyrt og sikkert veldig vanskelig. De fleste hadde nok derfor benyttet en spørreundersøkelse der lærerne og ledelsen på skolen svarer på hvor fornøyde de er med hvordan de selv samarbeider (selvrapportering) og hvordan kollegaene deres samarbeider (tredjepartsrapportering). Dersom formålet er å undersøke undervisningskvalitet, er direkte observasjon av undervisningen den mest valide tilnærmingen. I praksis benytter mange imidlertid selvrapportering, der lærere beskriver egen undervisning, eller tredjepartsrapportering, der elever redegjør for hvordan læreren underviser.
+Hvilken av dem som passer, avhenger først og fremst av konstruktet du skal måle. Vi skal diskutere dem nøyere i @sec-measurement-methods, for vi må først få på plass begrepene som skal til for å vurdere en målemetode.
 
 ## Målenivåer {#sec-Scales-of-measurement}
 
-Resultatet av en måling kalles altså en variabel. Vi skal lære om fire ulike **målenivåer** som variabler kan ha. Disse målenivåene, eller **måleskalaene**, beskriver hvilke typer verdier en variabel kan anta, og hvilke statistiske operasjoner som er gyldige for den.
+Resultatet av rekke målinger av samme fenomen kalles altså en variabel. Vi skal lære om fire ulike **målenivåer** som variabler kan ha. Disse målenivåene, eller **måleskalaene**, beskriver hvilke typer verdier en variabel kan anta, og hvilke statistiske operasjoner som er gyldige for den.
 
 ### Nominell variabel
 
@@ -291,9 +289,19 @@ Svarene på disse ni spørsmålene slås sammen til en samlevariabel for indre m
 
 Hvilket målenivå har slike samlevariabler? Det kommer an på. De kan være nominelle, for eksempel hvis en spesialpedagog lar elever ta et testbatteri, altså en samling av flere tester, og ut fra svarene lager en samlevariabel _dysleksi_ med to mulige verdier, "har dysleksi" og "har ikke dysleksi". Dette er en samlevariabel fordi den er regnet ut basert på mange andre. Men de aller vanligste samlevariablene er de som er laget på bakgrunn av mange Likert-spørsmål, slik som indre motivasjon ble målt i TIMSS-eksempelet over, og de behandles som om de er på en kontinuerlig intervallskala. Disse variablene er ikke helt kontinuerlige, for hvis man lager en samlevariabel ved å ta gjennomsnittet av ni spørsmål, som hver har et heltall som svar, så kan man ikke få alle mulige verdier. Siden en nidel er 0,11, kan man få svarene 3,11 og 3,22, men ikke 3,15. Likevel er det nært nok til at man benytter variablene som om de var kontinuerlige. Strengt tatt er de kanskje heller ikke på intervallnivå, av samme grunner som ble nevnt om Likert-skalaer over, men i praksis behandles de som om de var det.
 
+### Etiske sider ved å kategorisere folk {#sec-categorisation-ethics}
+
+Målenivåene er tekniske begreper, men når det er mennesker vi måler, er valget av kategorier også et etisk valg. Tre problemer er verdt å kjenne til.
+
+-   **Kategoriene bestemmer hvem som finnes i datasettet.** Hvis kjønn bare har verdiene "gutt" og "jente", har elever som ikke kjenner seg igjen i noen av dem ikke noe sted å være. De må velge en verdi som er gal, eller la være å svare, og da forsvinner de ut av analysen. Grove kategorier kan skjule folk på samme måte: "minoritetsspråklig" rommer både eleven som kom til Norge i fjor og eleven som er født her av foreldre fra Vietnam. En variabel som ikke skiller dem, kan heller ikke oppdage at de trenger forskjellige ting.
+-   **Grensene er satt, ikke funnet.** Samlevariabelen _dysleksi_ over gir verdien "har dysleksi" til elever under et bestemt punkt på en skala. Det punktet er valgt av noen. Flytter man det litt, endres antallet elever med dysleksi i Norge, uten at en eneste elev har lest annerledes. Det er ikke et argument mot å bruke slike grenser, men et argument for å vite at de er valgt, og for å være varsom med elever som ligger nær grensen.
+-   **Merkelappen blir hos eleven.** En verdi i et forskningsdatasett er anonym og forbigående. En kategori som følger et barn gjennom skolegangen, er noe helt annet. Den kan gi eleven rettigheter og hjelp hun ellers ikke ville fått, og den kan endre hva lærere forventer av henne. Begge deler skjer, ofte samtidig.
+
+Ingenting av dette er et argument mot å kategorisere. Kvantitativ forskning er umulig uten kategorier. Men det betyr at spørsmålet "hvilke verdier skal variabelen ha?" ikke bare er et teknisk spørsmål om målenivå.
+
 ## Å vurdere en målemetodes kvalitet: Reliabilitet og validitet {#sec-reliability}
 
-Vi har nå lært begreper for å beskrive hvordan man operasjonaliserer et teoretisk konstrukt og dermed skaper en målemetode. Det er et åpenbart spørsmål vi ikke har diskutert ennå: Er målingen til å stole på? Forskere diskuterer målemetoders kvalitet med begrepene *reliabilitet* og *validitet*. Enkelt sagt forteller **reliabiliteten** til en målemetode hvor stabil den er, mens **validiteten** til en målemetode forteller hvor gyldig den er.
+Vi har nå lært begreper for å beskrive hvordan man operasjonaliserer et teoretisk konstrukt og dermed skaper en målemetode. Det vi alltid må vurdere er om målingene er av god kvalitet, eller om de rett og slett er dårlige. Forskere diskuterer målemetoders kvalitet med begrepene *reliabilitet* og *validitet*. Enkelt sagt forteller **reliabiliteten** til en målemetode hvor stabil den er, mens **validiteten** til en målemetode forteller hvor gyldig den er.
 
 ### En målings reliabilitet
 
@@ -335,23 +343,63 @@ knitr::include_graphics("images/fig-construct.png")
 
 For å ha høy konstruktvaliditet kan det være nødvendig å ha høy **prediktiv validitet**. Dette betyr at målingene dine samsvarer med andre variabler -- altså predikerer andre variabler -- slik man ville forvente. Hvis man måler en lærers motivasjon for yrket, kan man kontrollere den prediktive validiteten ved å sjekke om de motiverte lærerne velger å bli i yrket. Hvis dette ikke er tilfelle, altså hvis høyt motiverte lærere ikke blir lenger i yrket enn lite motiverte, har målingen lav prediktiv validitet. Da har du kanskje ikke målt lærernes motivasjon.
 
-### Et eksempel: måling av elevers indre motivasjon for matematikk
+## Målemetoder {#sec-measurement-methods}
 
-Nå har vi vært gjennom en hel bråte med begreper som man benytter for å beskrive målemetoder og kvaliteter ved dem, og nå skal vi bruke begrepene til å diskutere et eksempel, elevers indre motivasjon for matematikk. Poenget med eksempelet er å vise hvordan måling av helt vanlige konstrukter i utdanningsforskning er komplisert. Eksempelet er forholdsvis langt, men jeg håper du bruker tid på det og får en viss ærefrykt over komplikasjonene man støter på når man forsøker å måle noe i utdanningsforskning.
+Nå har vi begrepene på plass, og kan ta målemetodene fra @sec-methods-overview én for én. Valget mellom dem følger først og fremst av ett skille: Er konstruktet noe eleven *gjør*, eller noe eleven *føler* og *tenker*? Ferdigheter og kompetanse kan man be folk om å vise fram, og da måler man med prøver. Sinnstilstander kan man ikke be noen om å demonstrere. Enten må folk fortelle deg om dem, eller så må du slutte deg til dem fra det du ser. Det er da elendigheten begynner.
 
-I et eksempel over viste jeg hvordan TIMSS målte indre motivasjon ved hjelp av ni spørsmål i et spørreskjema. Da ber man elevene om selv å rapportere om sin indre motivasjon for matematikk. Dette virker godt; elevene vet selv hvilke følelser de har knyttet til matematikk, om de liker å jobbe med matematikk, gleder seg til matematikktimen og så videre. Trolig kan ingen andre, slik som foreldre eller lærere, rapportere like godt om elevens indre motivasjon, for det er tross alt elevens egen sinnstilstand man ønsker å måle. Kun eleven har tilgang til den.
+Derfor følger to gjennomgangseksempler dette delkapittelet. **Leseferdighet** er en ferdighet, og illustrerer de to første målemetodene. **Elevers indre motivasjon for matematikk** er en sinnstilstand, og illustrerer de fire siste. Motivasjonseksempelet er forholdsvis langt, men jeg håper du bruker tid på det og får en viss ærefrykt over komplikasjonene man støter på når man forsøker å måle noe i utdanningsforskning.
+
+### Prøver og tester
+
+En prøve gir eleven oppgaver som skal løses, og verdien er hvordan eleven løser dem. Dette er den vanligste målemetoden når konstruktet er en ferdighet eller en kompetanse, rett og slett fordi ferdigheter er noe man kan be folk om å vise fram. Ordkjedetesten og de nasjonale prøvene i lesing er begge av denne typen.
+
+Vi så i [avsnittet om operasjonalisering](#sec-operationalization) at disse to ikke rangerer elevene likt, og nå har vi begrepet for hvorfor: konstrukt-underrepresentasjon. En prøve rekker over et utvalg av konstruktet, aldri hele. Ordkjedetesten måler avkoding og sier ingenting om refleksjon over tekst, og en nasjonal prøve på halvannen time sier lite om hvordan eleven leser en roman over fjorten dager.
+
+Til gjengjeld er reliabiliteten ofte god. Poengsummen på en flervalgsprøve blir den samme uansett hvem som retter den, og en prøve med mange oppgaver gir stort sett samme resultat om eleven tar den på nytt en uke senere. Men den gode reliabiliteten faller så snart oppgavene krever skjønn i vurderingen. En norskeksamen der elevene skriver lange tekster, fanger opp mer av leseferdigheten enn en ordkjedetest gjør, men to sensorer kan lande på ulik karakter for samme besvarelse. Her møter vi en avveining som går igjen i all måling: Målemetodene som fanger mest av konstruktet, er ofte de minst reliable.
+
+### Registerdata
+
+Noen verdier trenger du ikke måle selv, fordi andre allerede har registrert dem. Fødselsdato, foreldrenes utdanningsnivå og elevenes karakterer ligger i offisielle registre. Slike data er billige og dekker gjerne alle elevene i landet. For de fleste typer informasjon om personer kreves det en søknad til Sikt, som vurderer om behandlingen av personopplysninger i et prosjekt er i tråd med personopplysningsloven (GDPR). Innhenting av sensitive personopplysninger, særlig informasjon om personers sykdom og helse, skal i tillegg meldes til en etisk komité.[^measurement-etikk]
+
+[^measurement-etikk]: Se <https://www.forskningsetikk.no>.
+
+Prisen er at du må ta målingen slik den er. Bruker du standpunktkarakteren i norsk som mål på leseferdighet, har du en variabel som også fanger opp skriving, muntlig aktivitet og innleveringer levert i tide, altså konstrukt-irrelevans i rikt monn. I tillegg settes karakteren av elevens egen lærer, og lærere er ikke enige med hverandre om hva som skiller en firer fra en femmer. Registerdata er derfor sjelden den beste operasjonaliseringen av et konstrukt, men ofte den eneste som lar seg gjennomføre når du trenger data om mange tusen elever.
+
+### Selvrapportering
+
+Selvrapportering er at folk oppgir verdien på variabelen selv, som regel ved å svare på spørsmål i et spørreskjema. Det er raskt, billig og enkelt, men det fungerer bare med folk som er ærlige og som er gamle nok til å forstå spørsmålet.
+
+Her bytter vi konstrukt, til elevers indre motivasjon for matematikk. I et eksempel over viste jeg hvordan TIMSS målte indre motivasjon ved hjelp av ni spørsmål i et spørreskjema. Da ber man elevene om selv å rapportere om sin indre motivasjon for matematikk. Dette virker godt; elevene vet selv hvilke følelser de har knyttet til matematikk, om de liker å jobbe med matematikk, gleder seg til matematikktimen og så videre. Trolig kan ingen andre, slik som foreldre eller lærere, rapportere like godt om elevens indre motivasjon, for det er tross alt elevens egen sinnstilstand man ønsker å måle. Kun eleven har tilgang til den.
 
 Selvrapportering av indre motivasjon har høy reliabilitet. Hvis man setter elevene til å svare på spørreskjemaet en annen dag, vil de sannsynligvis svare mer eller mindre likt (test-retest-reliabilitet). Det spiller heller ikke så stor rolle hvordan påstandene som elevene skal ta stilling til, er utformet. For eksempel vil de to påstandene "jeg er glad i matematikk" eller "jeg liker å jobbe med matematikk" sannsynligvis besvares nokså likt av en og samme elev. Og det trengs ingen forsker til å vurdere hvor motivert eleven er, så målingen har svært god inter-rater-reliabilitet.
 
+Reliabiliteten er altså god. Validiteten er verre. Selvrapportering kan påvirkes av en rekke faktorer, for eksempel hvor sosialt akseptabelt det er å være interessert i matematikk i elevenes eget miljø. Hvis elever befinner seg i en omgangskrets der matematikk oppfattes som "ukult", kan de, bevisst eller ubevisst, nedtone sin indre motivasjon i svarene. Det motsatte kan også skje: Dersom elever går i en klasse der nesten alle misliker matematikk, men de selv synes faget er helt greit, kan de overvurdere sin egen motivasjon fordi de sammenligner seg med et miljø der interessen er enda lavere. Respondenter i intervjuer og spørreundersøkelser har også tendens til å svare det de tror at forskeren vil ha. Elever kan svare at de er interessert i matematikk fordi de tror det er det svaret forskeren ønsker. Alt dette er konstrukt-irrelevans som selvrapporteringen fanger opp.
+
+### Tredjepartsrapportering
+
+Du kan også spørre andre om å oppgi verdien på variabelen, for eksempel foreldrene eller læreren til barnet. Det er utveien når den man vil måle er for ung til å svare selv, og det er nærliggende å prøve når man mistenker at selvrapporteringen ikke holder.
+
 Men sett fra andre sitt ståsted kan det se ut om elevens selvrapportering ikke er så pålitelig. Lærere kan observere at elever som svarer at de liker å jobbe med matematikk, ikke jobber med matematikk i timen, men heller foretrekker å tulle med sidemannen eller tegne i skriveboka si. Og omvendt kan læreren observere at elever som svarer at de er enige i at "matematikk er kjedelig" jobber iherdig og tilsynelatende motivert med individuell oppgaveløsing og kaster seg ut i helklassediskusjoner. Hva hvis elevenes selvrapportering om motivasjon ikke samsvarer med hvordan andre observerer motivasjonen?
 
-Selvrapportering kan påvirkes av en rekke faktorer, for eksempel hvor sosialt akseptabelt det er å være interessert i matematikk i elevenes eget miljø. Hvis elever befinner seg i en omgangskrets der matematikk oppfattes som "ukult", kan de, bevisst eller ubevisst, nedtone sin indre motivasjon i svarene. Det motsatte kan også skje: Dersom elever går i en klasse der nesten alle misliker matematikk, men de selv synes faget er helt greit, kan de overvurdere sin egen motivasjon fordi de sammenligner seg med et miljø der interessen er enda lavere. Respondenter i intervjuer og spørreundersøkelser har også tendens til å svare det de tror at forskeren vil ha. Elever kan svare at de er interessert i matematikk fordi de tror det er det svaret forskeren ønsker. Alt dette er konstrukt-irrelevans som selvrapporteringen fanger opp.
+Da er det fristende å konkludere med at læreren har rett og eleven tar feil. Men læreren ser bare eleven i matematikktimen, ser ikke inn i hodet på henne, og kan lett forveksle det å jobbe stille med det å være motivert. Vi har ikke én riktig og én gal måling; vi har to målinger som ikke er enige, og ingen fasit å holde dem opp mot.
 
-Siden selvrapportering av indre motivasjon er utsatt for slike målefeil, kan det være fristende å heller observere motivasjon. Hvis en elev er indre motivert for matematikk, innebærer det sannsynligvis at eleven jobber villig med matematikk i timen, noe som kan observeres. Da kan man ganske enkelt sette en forsker til å observere elevenes motivasjon. Men merk at en elev som er _ytre_ motivert vil også jobbe villig med matematikk i timen, så å observere kan gi en alvorlig konstrukt-irrelevans ved at det ikke er mulig å skille mellom indre og ytre motivasjon når en observerer en elev i arbeid. Derfor må man gi matematikkoppgaver eleven i mindre grad blir ytre motivert av, for eksempel hvis læreren ikke er til stede og oppgaven ikke gir øving på stoff som skal vurderes. Vil observasjon da være et godt mål på en elevs indre motivasjon? Man kunne simpelthen målt hvor lenge eleven jobbet med en slik oppgave. Jeg liker tanken! "Hvor motivert var Petter?" "Sju minutter!" Selv om denne målemetoden unngår problemer med selvrapportering, introduserer den mange nye. For eksempel kan elevene bli påvirket til å jobbe fordi det sitter en forsker bak i klasserommet. Dessuten kan reliabiliteten bli lav, for forskere kan være uenige i akkurat når eleven slutter å jobbe med oppgaven, eller målingen kan være veldig avhengig av hvilken oppgave man bruker, slik at test-retest-reliabiliten blir lav. Men kanskje viktigst av alt: Siden indre motivasjon er en sinnstilstand, er det unektelig rart å måle indre motivasjon ved observasjon av ytre adferd.
+### Observasjon
 
-Dette er ikke kun et tankeeksperiment; det er svært reelt. Manglende samsvar mellom selvrapportering og observasjon går igjen i måling av mange konstrukter som handler om elevers og læreres indre sinnstilstander, slik som tanker, holdninger, motivasjon, kunnskap, læring og følelser [@leatham2006]. Men det er også ofte manglende samsvar når konstruktet ikke er en indre sinnstilstand, men handler om helt konkrete hendelser i et klasserom. For eksempel sier mange lærere at de synes helklassediskusjoner er viktige, at de setter av mye tid til det i timene og at de gir elevene rom til å diskutere heller enn å kun komme med korte svar. Observasjon av helklasseundervisning har imidlertid vist det motsatte: Det er få helklassediskusjoner, og de er ofte lærerstyrte der elevene kun kommer med korte svar. Altså har målinger av helklassediskusjoner via selvrapportering lav validitet. Er elever og lærere løgnere, som ikke velger å svare sannferdig; hyklere, som gjør stikk motsatt av det de sier er viktig; eller er det noe annet som foregår? En nærliggende forklaring er rett og slett at selvrapportering er vanskelig, slik at vi ikke kan vente annet enn avvik mellom observasjon og selvrapportering.
+Ved observasjon registrerer forskeren direkte det som skjer. En forsker kan sitte bak i klasserommet og registrere hvor lenge eleven leser i den frie lesetida, eller høre eleven lese høyt. For mange konstrukter er dette den mest valide tilnærmingen. Skal man måle undervisningskvalitet, er det åpenbart bedre å se på undervisningen enn å be læreren vurdere den selv. Prisen er tid og penger, og derfor ender de fleste likevel opp med selvrapportering, der lærere beskriver egen undervisning, eller tredjepartsrapportering, der elever redegjør for hvordan læreren underviser.
 
-Det er fristende å droppe selvrapportering og observasjon av indre motivasjon og heller finne en biomarkør. Kan det finnes et hormon eller en nevrotransmitter som slår ut når man jobber med en oppgave man er indre motivert for? Kanskje dopamin er et sånt stoff? Eller kan man måle puls eller hjernebølger? I så fall kunne man målt biomarkøren i elevenes kropper mens de jobbet med matematikk og slik fått en objektiv måling av elevenes motivasjon for matematikk. Det er lite som tilsier at slike biomarkører faktisk ville fungere i praksis, og det er sannsynlig at man fortsatt ville undret seg over hvorfor målingene fra biomarkøren ikke samsvarer med selvrapportert eller observert indre motivasjon. Huff. Hvis du led under forvirringen at det å måle motivasjon, eller andre sinnstilstander, var enkelt, håper jeg du nå er kurert.
+Siden selvrapportering av indre motivasjon er utsatt for målefeilene vi så over, kan det være fristende å heller observere motivasjon. Hvis en elev er indre motivert for matematikk, innebærer det sannsynligvis at eleven jobber villig med matematikk i timen, noe som kan observeres. Da kan man ganske enkelt sette en forsker til å observere elevenes motivasjon. Men merk at en elev som er _ytre_ motivert vil også jobbe villig med matematikk i timen, så å observere kan gi en alvorlig konstrukt-irrelevans ved at det ikke er mulig å skille mellom indre og ytre motivasjon når en observerer en elev i arbeid. Derfor må man gi matematikkoppgaver eleven i mindre grad blir ytre motivert av, for eksempel hvis læreren ikke er til stede og oppgaven ikke gir øving på stoff som skal vurderes. Vil observasjon da være et godt mål på en elevs indre motivasjon? Man kunne simpelthen målt hvor lenge eleven jobbet med en slik oppgave. Jeg liker tanken! "Hvor motivert var Petter?" "Sju minutter!" Selv om denne målemetoden unngår problemer med selvrapportering, introduserer den mange nye. For eksempel kan elevene bli påvirket til å jobbe fordi det sitter en forsker bak i klasserommet. Dessuten kan reliabiliteten bli lav, for forskere kan være uenige i akkurat når eleven slutter å jobbe med oppgaven, eller målingen kan være veldig avhengig av hvilken oppgave man bruker, slik at test-retest-reliabiliten blir lav. Men kanskje viktigst av alt: Siden indre motivasjon er en sinnstilstand, er det unektelig rart å måle indre motivasjon ved observasjon av ytre adferd.
+
+### Fysiologiske mål
+
+Fysiologiske mål, også kalt biomarkører, er lite benyttet i utdanningsforskning. Man kan følge øyebevegelsene til en leser for å se hvor hun stopper opp, du kan anslå hvor stresset en elev er under en prøve ved å måle hjerteslagene, eller du kan måle hjerneaktivitet ved et elektroencefalogram. Det lokkende er at kroppen ikke svarer strategisk; pulsen bryr seg ikke om hva som er kult i klassen.
+
+Det er derfor fristende å droppe både selvrapportering og observasjon av indre motivasjon og heller finne en biomarkør. Kan det finnes et hormon eller en nevrotransmitter som slår ut når man jobber med en oppgave man er indre motivert for? Kanskje dopamin er et sånt stoff? Eller kan man måle puls eller hjernebølger? I så fall kunne man målt biomarkøren i elevenes kropper mens de jobbet med matematikk og slik fått en objektiv måling av elevenes motivasjon for matematikk. Det er lite som tilsier at slike biomarkører faktisk ville fungere i praksis, og det er sannsynlig at man fortsatt ville undret seg over hvorfor målingene fra biomarkøren ikke samsvarer med selvrapportert eller observert indre motivasjon.
+
+### Når målemetodene ikke er enige
+
+Fire målemetoder, fire forsøk på å måle det samme, og ingen av dem stemmer overens med de andre. Dette er ikke kun et tankeeksperiment; det er svært reelt. Manglende samsvar mellom selvrapportering og observasjon går igjen i måling av mange konstrukter som handler om elevers og læreres indre sinnstilstander, slik som tanker, holdninger, motivasjon, kunnskap, læring og følelser [@leatham2006]. Men det er også ofte manglende samsvar når konstruktet ikke er en indre sinnstilstand, men handler om helt konkrete hendelser i et klasserom. For eksempel sier mange lærere at de synes helklassediskusjoner er viktige, at de setter av mye tid til det i timene og at de gir elevene rom til å diskutere heller enn å kun komme med korte svar. Observasjon av helklasseundervisning har imidlertid vist det motsatte: Det er få helklassediskusjoner, og de er ofte lærerstyrte der elevene kun kommer med korte svar. Altså har målinger av helklassediskusjoner via selvrapportering lav validitet. Er elever og lærere løgnere, som ikke velger å svare sannferdig; hyklere, som gjør stikk motsatt av det de sier er viktig; eller er det noe annet som foregår? En nærliggende forklaring er rett og slett at selvrapportering er vanskelig, slik at vi ikke kan vente annet enn avvik mellom observasjon og selvrapportering.
+
+Huff. Hvis du led under forvirringen at det å måle motivasjon, eller andre sinnstilstander, var enkelt, håper jeg du nå er kurert. Men merk at ingen av de fire metodene er den riktige som de tre andre bommer på. Når du leser en studie av et slikt konstrukt, er derfor ikke spørsmålet om forskeren valgte rett målemetode, men hvilken del av konstruktet den valgte metoden fikk tak i, og hvilken den lot ligge.
 
 ## Oppsummering
 
@@ -360,8 +408,10 @@ I dette kapittelet har jeg kort diskutert følgende temaer:
 - [Teoretiske konstrukter og operasjonalisering](#sec-operationalization). Hva betyr det å operasjonalisere et teoretisk konstrukt? Hva betyr verdier, variabler, konstrukter og målemetoder?
 - [Variabler og verdier](#sec-variables-values).
 - [Målenivåer](#sec-Scales-of-measurement) og variabeltyper. Husk at det er to forskjellige distinksjoner her. Det er forskjellen mellom diskrete og kontinuerlige variabler, og det er forskjellen mellom fire ulike målenivå (nominal, ordinal, intervall og forholdstall).
+- [Etiske sider ved å kategorisere folk](#sec-categorisation-ethics). Hvem faller utenfor kategoriene, hvem har satt grensene, og hva gjør merkelappen med eleven den festes på?
 - [Vurdering av målingers reliabilitet](#sec-reliability). Hvis jeg måler den "samme" tingen to ganger, bør jeg forvente å se samme resultat? Bare hvis målingen min er reliabel. Men hva betyr det å snakke om å gjøre den "samme" tingen? Vel, det er derfor vi har forskjellige typer pålitelighet. Sørg for at du husker hva de er.
 - [Vurdering av målingers validitet](#sec-validity). Måler målemetoden din det du ønsker?
+- [Målemetoder](#sec-measurement-methods). Prøver og tester, registerdata, selvrapportering, tredjepartsrapportering, observasjon og fysiologiske mål. Hvilken som passer, følger av konstruktet, og for sinnstilstander finnes det ingen metode som er den riktige.
 
 Målinger er en viktig del av kvantitativ forskning, og trolig har den for lite plass i bevisstheten til folk når de hører om forskningsresultater. I første kapittel refererte jeg til en samtale mellom oljefondets leder Nicolai Tangen og forskeren Angela Duckworth. Da Duckworth sa at hun hadde forsket på folks pågangsmot og at hun hadde veldig store utvalg, burde ikke Tangen blitt imponert over utvalgsstørrelsen. Han burde spurt: "Hvordan målte du pågangsmotet til så mange folk?" Svaret er jo at alle har svart på et [spørreskjema med ti spørsmål](https://angeladuckworth.com/grit-scale/). Tror du det måler pågangsmot på en god måte?
 
