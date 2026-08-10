@@ -25,5 +25,11 @@ scratch_files/
 tmp/
 .claude/settings.local.json
 .claude/scheduled_tasks.lock
+.claude/*
 
 /.luarc.json
+
+.DS_Store
+renv/.DS_Store
+
+*.ent
