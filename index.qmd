@@ -5,6 +5,39 @@ source("chapter_header.R")
 
 ## Forord {.unnumbered}
 
+:::{.content-visible when-format="html"}
+
+```{=html}
+<div class="grid" style="row-gap: 1rem; margin-bottom: 2rem;">
+  <div class="g-col-12 g-col-md-6">
+    <div class="card h-100">
+      <div class="card-body d-flex flex-column">
+        <div style="font-size: 2.5rem; line-height: 1;"><i class="bi bi-printer"></i></div>
+        <h5 class="card-title mt-2">Lese på papir</h5>
+        <p class="card-text flex-grow-1">Hvis du ønsker å lese på papir, bør du printe PDF-versjonen.</p>
+        <a href="Kvantitativ-metode-for-lærere.pdf" class="btn btn-primary align-self-start">
+          <i class="bi bi-file-earmark-pdf"></i>&nbsp; Last ned PDF
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="g-col-12 g-col-md-6">
+    <div class="card h-100">
+      <div class="card-body d-flex flex-column">
+        <div style="font-size: 2.5rem; line-height: 1;"><i class="bi bi-tablet"></i></div>
+        <h5 class="card-title mt-2">Lese på lesebrett</h5>
+        <p class="card-text flex-grow-1">Hvis du ønsker å lese på et lesebrett, bør du forsøke .epub-versjonen.</p>
+        <a href="Kvantitativ-metode-for-lærere.epub" class="btn btn-primary align-self-start">
+          <i class="bi bi-book"></i>&nbsp; Last ned EPUB
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+:::
+
 Denne læreboken dekker innholdet i et innføringskurs i kvantitative metoder. Boka er basert på et vanlig grunnkurs slik det vanligvis undervises for bachelorstudenter innen psykologi, helse- eller samfunnsvitenskap, men er endret slik at det passer for studenter på femårige grunnskolelærerutdanninger.
 
 Jeg hadde følgende krav til boka:
@@ -23,11 +56,18 @@ Hvis du finner feil eller har forslag til forbedringer, kan du melde inn et "iss
 
 Jeg håper dere setter pris på å ha en lærebok i kvantitativ metode som dekker de fem punktene i tillegg til å være gratis tilgjengelig på nett.
  
+Anne Kristine Øgreid har vært redaktør for boka og lest alle kapitlene med et kritisk blikk. Boka er blitt vesentlig bedre av det.
+
 *Roar Stovner, 4. august, 2025*
+
+::: {.margin-top-2}
+:::
 
 (Hvis noen ønsker å benytte boka i egen undervisning er det fritt frem, men ta gjerne kontakt via [ansattsiden min](https://www.oslomet.no/om/ansatt/robast/), for det er gøy å vite at boka blir brukt! Å gjøre endringer i boka er tillatt, siden boka er utgitt under lisensen CC-BY-SA. Det eneste kravet er at de tidligere versjonene av boka (inkludert denne) krediteres, og at den nye versjonen gjøres tilgjengelig med samme lisens. Bokas kildekode ligger på [github](https://github.com/roarstovner/kvant_for_laerere).)
 
 
+**Sitering**: Roar B. Stovner. (2025). *Kvantitativ metode for lærere*. <https://kvant.roarstovner.no>, <https://doi.org/10.5281/zenodo.17068063>.
+
 :::{.content-visible when-format="html"}
-**Sitering**: Danielle J. Navarro, David R. Foxcroft, and Roar B. Stovner. (2025). *Kvantitativ metode for lærere*. <https://kvant.roarstovner.no> . 
+**Tidligere utgaver**: Underviser du fra en eldre utgave, finner du den arkivert med eget DOI-nummer under [utgivelser på GitHub](https://github.com/roarstovner/kvant_for_laerere/releases). Hver utgave ligger der som PDF og EPUB, uendret.
 :::

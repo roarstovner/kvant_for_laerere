@@ -7,7 +7,7 @@
 source("chapter_header.R")
 ```
 
-# Komme i gang med jamovi {.unnumbered}
+# Komme i gang med jamovi
 
 > *Robots are nice to work with.*\
 > -- Roger Zelazny[^getting-started-with-jamovi-1]

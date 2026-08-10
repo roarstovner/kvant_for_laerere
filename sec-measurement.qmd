@@ -301,7 +301,7 @@ Ingenting av dette er et argument mot å kategorisere. Kvantitativ forskning er 
 
 ## Å vurdere en målemetodes kvalitet: Reliabilitet og validitet {#sec-reliability}
 
-Vi har nå lært begreper for å beskrive hvordan man operasjonaliserer et teoretisk konstrukt og dermed skaper en målemetode. Det vi alltid må vurdere er om målingene er av god kvalitet, eller om de rett og slett er dårlige. Forskere diskuterer målemetoders kvalitet med begrepene *reliabilitet* og *validitet*. Enkelt sagt forteller **reliabiliteten** til en målemetode hvor stabil den er, mens **validiteten** til en målemetode forteller hvor gyldig den er.
+Vi har nå lært begreper for å beskrive hvordan man operasjonaliserer et teoretisk konstrukt og dermed skaper en målemetode. Det vi alltid må vurdere er om målingene er av god kvalitet, eller om de rett og slett er dårlige. Forskere diskuterer målemetoders kvalitet med begrepene *reliabilitet* og *validitet*. Enkelt sagt forteller **reliabiliteten** til en målemetode hvor stabil målingen er, mens **validiteten** til en målemetode forteller hvor gyldig den er.
 
 ### En målings reliabilitet
 
@@ -345,7 +345,7 @@ For å ha høy konstruktvaliditet kan det være nødvendig å ha høy **predikti
 
 ## Målemetoder {#sec-measurement-methods}
 
-Nå har vi begrepene på plass, og kan ta målemetodene fra @sec-methods-overview én for én. Valget mellom dem følger først og fremst av ett skille: Er konstruktet noe eleven *gjør*, eller noe eleven *føler* og *tenker*? Ferdigheter og kompetanse kan man be folk om å vise fram, og da måler man med prøver. Sinnstilstander kan man ikke be noen om å demonstrere. Enten må folk fortelle deg om dem, eller så må du slutte deg til dem fra det du ser. Det er da elendigheten begynner.
+Nå har vi begrepene vi trenger for å forklare målemetodene fra @sec-methods-overview én for én. Valget mellom dem følger først og fremst av ett skille: Er konstruktet noe eleven *gjør*, eller noe eleven *føler* og *tenker*? Ferdigheter og kompetanse kan man be folk om å vise fram, og da måler man med prøver. Sinnstilstander kan man ikke be noen om å demonstrere. Enten må folk fortelle deg om dem, eller så må du slutte deg til dem fra det du ser. Det er da elendigheten begynner.
 
 Derfor følger to gjennomgangseksempler dette delkapittelet. **Leseferdighet** er en ferdighet, og illustrerer de to første målemetodene. **Elevers indre motivasjon for matematikk** er en sinnstilstand, og illustrerer de fire siste. Motivasjonseksempelet er forholdsvis langt, men jeg håper du bruker tid på det og får en viss ærefrykt over komplikasjonene man støter på når man forsøker å måle noe i utdanningsforskning.
 

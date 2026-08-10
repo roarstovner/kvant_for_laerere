@@ -745,3 +745,12 @@ I dette kapittelet har jeg forklart hvordan man estimerer populasjonsparametre. 
 - [Konfidensintervallet](#sec-inf-konfidensintervall): den vanligste måten å angi usikkerhet på. Vanligst med 95% konfidensintervall, regnet ut som $\pm 2 \cdot SE$. Vi lærte [hvordan det skal tolkes](#sec-inf-tolkning).
 - At [samme matematikk](#sec-inf-rct) ligger bak konfidensintervaller i randomiserte kontrollstudier, men at usikkerheten der kommer fra tilordning, ikke utvalg.
 - At [konfidensintervallet ikke fanger all usikkerhet](#sec-inf-grenser): Det fanger ikke måleusikkerhet, og det trenger tilfeldig utvalg eller tilordning for å fungere.
+
+```{=typst}
+// Alt etter dette punktet (etterord, referanseliste, bibliografi) hører ikke til
+// noen del av boka. orange-book har ikke noe begrep om «slutten på en del», og
+// tar dem derfor med i mini-innholdsfortegnelsen på delsiden til del III, med
+// nummeret til forrige kapittel. Vi melder dem ut ved å nullstille part-state.
+// De står fortsatt i hovedinnholdsfortegnelsen, som håndterer dem riktig.
+#part-state.update(x => none)
+```

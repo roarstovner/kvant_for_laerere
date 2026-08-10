@@ -16,13 +16,12 @@ lightbox:
 profile:
   group:
     - [all_chapters,chapter]
-book: 
-  title: Kvantitative metoder for lærere
-  author: "Danielle Navarro, David Foxcroft og Roar Bakken Stovner"
-  date: 2025-08-12
+book:
+  title: Kvantitativ metode for lærere
+  author: "Roar Bakken Stovner"
+  date: 2026-08-10
   date-format: "MMMM YYYY"
-  # cover-image: images/cover.png
-  downloads: pdf
+  downloads: [pdf, epub]
   reader-mode: true
   sidebar:
     align: left
@@ -31,7 +30,7 @@ book:
     pinned: false
   page-footer:
     left: |
-      <a href="https://kvant.roarstovner.no">Kvantitative metoder for lærere</a>
+      <a href="https://kvant.roarstovner.no">Kvantitativ metode for lærere</a>
     right: |
       Denne boka ble laget i <a href="https://quarto.org/">Quarto</a> og er utgitt under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY 4.0<\a>
   site-url: "https://kvant.roarstovner.no"
@@ -40,6 +39,17 @@ book:
   open-graph: true
   google-analytics: "G-FRV7C65B01"
 
+
+citation:
+  type: book
+  editor:
+    - Anne Kristine Øgreid
+  url: "https://kvant.roarstovner.no"
+  doi: 10.5281/zenodo.17068064
+
+# Størrelsen på romertallet på del-sidene i PDF-en. Standarden (16em) er så stor
+# at «III» kolliderer med deltittelen. Sendes videre av typst-show.typ.
+part-font-size: 9em
 
 bibliography: refs.bib
 csl: apa.csl
@@ -77,18 +87,28 @@ format:
     fig-align: 'center'
     fig-pos: 'h!'
     #reference-location: margin
-  # epub: 
-  #  # footnotes not rendering math in popup but ok in mainview (issue with calibre viewer)
-  #   title: "learning statistics with jamovi (version 0.75)"
-  #   toc: true
-  #   css: styles.css
-  #   html-math-method: mathjax
-  #   fig-width: 5
-  #   fig-height: 5
-  #   fig-align: left
-  #   include-in-header: header-includes.html
-  #   epub-cover-image: images/cover.pdf
-  typst: default
+  epub:
+   # footnotes not rendering math in popup but ok in mainview (issue with calibre viewer)
+    toc: true
+    css: styles.css
+    html-math-method: mathjax
+    fig-width: 5
+    fig-height: 5
+    fig-align: left
+    include-in-header: header-includes.html
+    contributor:
+      - role: editor
+        text: Anne Kristine Øgreid
+  typst:
+    # Se typst-show.typ: den lokale template-partialen sender margin og
+    # fontsize videre til orange-book, som ellers overstyrer dem.
+    fontsize: 11pt
+    margin:
+      x: 4.5cm
+      top: 3cm
+      bottom: 2.5cm
+    template-partials:
+      - typst-show.typ
 
 crossref:
   title-delim: "."

@@ -67,9 +67,13 @@ Analyses → Exploration → Descriptives. ...
 
 # Figurer
 
-Defaults fra header.R: `fig.width = 6`, `fig.asp = 0.618`, `out.width = 80%` (HTML) / `100%` (LaTeX).
+Defaults fra header.R: `fig.width = 6`, `fig.asp = 0.618`, `out.width = 80%` (HTML/EPUB) / `100%` (PDF).
 
 Når en figur trenger annen bredde enn default, sett `out-width` til ønsket prosent og beregn `fig-width` med: `fig_width = 6 * (out_width / 0.7)`. F.eks. `out-width: 95%` gir `fig-width: 8.14`. Se https://arelbundock.com/posts/quarto_figures/index.html
+
+Merk at tekstblokka i PDF-en er 12 cm bred (ikke 15 cm som før), så figurer med
+eksplisitt `out-width` blir ca. 20 % smalere enn de var. Skal en slik figur ha
+samme skriftstørrelse på siden som før, må `fig-width` ned med samme faktor.
 
 # Tall og desimaler
 
@@ -84,6 +88,8 @@ Boka bruker norsk desimalkomma via `options(OutDec = ",")` (satt i `chapter_head
 `chapter_header.R` har tilpasninger som avhenger av output-formatet. Vær obs på dem, og ikke fjern dem uten å teste begge byggene:
 
 - **Tabeller (tinytable) under typst:** tinytable velger output-writer etter format, og `OutDec = ","` bryter typst-writeren. Lengde-literaler (strektykkelser, skriftstørrelser) skrives da som f.eks. `0,05em`, som typst ikke kompilerer. `chapter_header.R` monkey-patcher derfor `typst_hlines`, `typst_vlines` og `style_string_typst` til å tvinge punktum i disse literalene, mens celleinnholdet beholder komma. HTML- og LaTeX-output går ikke gjennom disse funksjonene og påvirkes ikke.
+- **Sidesats i typst:** PDF-en bruker Quartos innebygde `orange-book`-mal. Den kaller `set page(margin: ...)` og `set text(size: ...)` inne i `book()`, og overstyrer dermed `margin:` og `fontsize:` fra `_quarto.yml`. Derfor ligger en lokal kopi av template-partialen i `typst-show.typ`, som sender verdiene inn som argumenter til `book()` (også `part-font-size`), setter `par(leading:)` og erstatter kolumnetittelen. Kolumnetittelen er skrevet om fordi orange-book leser heading-telleren direkte, slik at unummererte kapitler (Etterord, Referanseliste, jamovi-kapittelet) arver nummeret til forrige kapittel. Ved oppgradering av Quarto: sammenlikn `typst-show.typ` med originalen i `share/extension-subtrees/orange-book/`.
+- **Slutten på siste del:** delsidene i PDF-en har en mini-innholdsfortegnelse over kapitlene i delen, og orange-book har ikke noe begrep om hvor en del slutter. Etterord og referanseliste ville derfor havnet på delsiden til del III. Derfor står `#part-state.update(x => none)` i en `{=typst}`-blokk **sist i `sec-inferential.qmd`**. Blokka må ligge sist i det *forrige* kapittelet: Quarto flytter kapitteloverskriften øverst i sin egen fil, så en blokk øverst i `sec-epilogue.qmd` ville havnet etter overskriften og ikke virket.
 - **tikz under HTML:** `magick`, `pdftools`, `showtext` og `marquee` lastes eksplisitt fordi tikz-motoren trenger dem for HTML-output, og for at `renv::snapshot()` skal fange dem i lockfilen.
 
 # Innspill fra redaktør (kommentarer og sporendringer)

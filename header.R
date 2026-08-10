@@ -41,6 +41,8 @@ knitr::opts_chunk$set(
           fig.align = "center",
           fig.width = 6,
           fig.asp = 0.618,
-          out.width =  if (knitr::is_latex_output()) "100%" else "80%"
+          # 80 % av HTML-spalta, men full bredde i PDF (typst/LaTeX), der
+          # tekstblokka er smalere. Gir samme fysiske figurbredde som før.
+          out.width =  if (knitr::is_html_output()) "80%" else "100%"
           )
 

@@ -1,10 +1,10 @@
 [![DOI](https://zenodo.org/badge/976508160.svg)](https://doi.org/10.5281/zenodo.17068063)
 
-# Kvantitative metoder for lærere
+# Kvantitativ metode for lærere
 
 Contains all files for
 
-Danielle J. Navarro, David R. Foxcroft, and Roar B. Stovner. (2025). Kvantitativ metode for lærere. https://kvant.roarstovner.no, https://doi.org/10.5281/zenodo.17068064
+Roar B. Stovner. (2026). Kvantitativ metode for lærere. https://kvant.roarstovner.no, https://doi.org/10.5281/zenodo.17068064
 
 In principle, this repository should include everything needed to reproduce the book from scratch.
 

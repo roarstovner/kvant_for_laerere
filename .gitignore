@@ -14,6 +14,7 @@ docs/**
 *.tex
 *.toc
 *.typ
+!typst-show.typ
 sec-*_files/
 data-raw/*.zip
 images/fig-national-*.png
