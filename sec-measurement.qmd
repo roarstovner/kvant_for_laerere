@@ -31,7 +31,7 @@ Veien fra idé til data går i tre steg. Vi starter med et *teoretisk konstrukt*
 
 Fenomenene vi ønsker å måle i utdanningsforskning, slik som leseferdighet, motivasjon, læring og undervisning, er beskrevet teoretisk. Den teoretiske beskrivelsen kalles et *teoretisk konstrukt*, ofte omtalt som bare *konstruktet*.
 
-La oss bruke **leseferdighet** som eksempel. Hva er egentlig leseferdighet? Leseforskere er ikke helt enige, men de fleste beskrivelser inneholder minst disse delene:
+La oss bruke leseferdighet som eksempel. Hva er egentlig leseferdighet? Leseforskere er ikke helt enige, men de fleste beskrivelser inneholder minst disse delene:
 
 -   *avkoding*, altså å omsette bokstavene på arket til ord, raskt og uanstrengt
 -   *leseforståelse*, altså å skape mening av det som står i teksten
@@ -243,7 +243,7 @@ Diskrete variabler er det motsatte. For eksempel er nominelle variabler alltid d
 
 ### Noen komplikasjoner: Likert-skalaer
 
-I den virkelige verden er det mange variabler som ikke passer så godt inn i disse målenivåene. Det er ikke problematisk, for målenivåene gir forskere likevel en mer presis måte å snakke om variablene på. En vanlig målemetode som ikke helt passer inn i målenivåene, er **Likert-spørsmål**. Likert-spørsmål er det vanligste verktøyet i spørreundersøkelser. Du har selv fylt ut mange slike. Anta at du får følgende påstand med svaralternativer i en undersøkelse:
+I den virkelige verden er det mange variabler som ikke passer så godt inn i disse målenivåene. Det er ikke problematisk, for målenivåene gir forskere likevel en mer presis måte å snakke om variablene på. Et vanlig svarformat på spørreundersøkelser som ikke helt passer inn i målenivåene, er **Likert-spørsmål**. Likert-spørsmål er det vanligste verktøyet i spørreundersøkelser. Du har selv fylt ut mange slike. Anta at du får følgende påstand med svaralternativer i en undersøkelse:
 
 > Jeg har vanskeligheter med å avslutte det jeg begynner på.
 > 
@@ -288,16 +288,6 @@ I spørreundersøkelser måles gjerne konstruktene med samlevariabler, og et typ
 Svarene på disse ni spørsmålene slås sammen til en samlevariabel for indre motivasjon. Man kan tenke seg at man regner gjennomsnittet til de ni svarene og lar det være verdien på elevens indre motivasjon, men i virkeligheten er det en mer avansert utregning for å lage samlevariabelen. Merk at spørsmål 2 og 3 måler indre motivasjon motsatt av de andre spørsmålene, altså at "svært uenig" betyr at man har høy indre motivasjon. Før slike spørsmål analyseres, reverserer man ofte svaralternativene slik at man kan tolke svarene likt som i de andre spørsmålene.
 
 Hvilket målenivå har slike samlevariabler? Det kommer an på. De kan være nominelle, for eksempel hvis en spesialpedagog lar elever ta et testbatteri, altså en samling av flere tester, og ut fra svarene lager en samlevariabel _dysleksi_ med to mulige verdier, "har dysleksi" og "har ikke dysleksi". Dette er en samlevariabel fordi den er regnet ut basert på mange andre. Men de aller vanligste samlevariablene er de som er laget på bakgrunn av mange Likert-spørsmål, slik som indre motivasjon ble målt i TIMSS-eksempelet over, og de behandles som om de er på en kontinuerlig intervallskala. Disse variablene er ikke helt kontinuerlige, for hvis man lager en samlevariabel ved å ta gjennomsnittet av ni spørsmål, som hver har et heltall som svar, så kan man ikke få alle mulige verdier. Siden en nidel er 0,11, kan man få svarene 3,11 og 3,22, men ikke 3,15. Likevel er det nært nok til at man benytter variablene som om de var kontinuerlige. Strengt tatt er de kanskje heller ikke på intervallnivå, av samme grunner som ble nevnt om Likert-skalaer over, men i praksis behandles de som om de var det.
-
-### Etiske sider ved å kategorisere folk {#sec-categorisation-ethics}
-
-Målenivåene er tekniske begreper, men når det er mennesker vi måler, er valget av kategorier også et etisk valg. Tre problemer er verdt å kjenne til.
-
--   **Kategoriene bestemmer hvem som finnes i datasettet.** Hvis kjønn bare har verdiene "gutt" og "jente", har elever som ikke kjenner seg igjen i noen av dem ikke noe sted å være. De må velge en verdi som er gal, eller la være å svare, og da forsvinner de ut av analysen. Grove kategorier kan skjule folk på samme måte: "minoritetsspråklig" rommer både eleven som kom til Norge i fjor og eleven som er født her av foreldre fra Vietnam. En variabel som ikke skiller dem, kan heller ikke oppdage at de trenger forskjellige ting.
--   **Grensene er satt, ikke funnet.** Samlevariabelen _dysleksi_ over gir verdien "har dysleksi" til elever under et bestemt punkt på en skala. Det punktet er valgt av noen. Flytter man det litt, endres antallet elever med dysleksi i Norge, uten at en eneste elev har lest annerledes. Det er ikke et argument mot å bruke slike grenser, men et argument for å vite at de er valgt, og for å være varsom med elever som ligger nær grensen.
--   **Merkelappen blir hos eleven.** En verdi i et forskningsdatasett er anonym og forbigående. En kategori som følger et barn gjennom skolegangen, er noe helt annet. Den kan gi eleven rettigheter og hjelp hun ellers ikke ville fått, og den kan endre hva lærere forventer av henne. Begge deler skjer, ofte samtidig.
-
-Ingenting av dette er et argument mot å kategorisere. Kvantitativ forskning er umulig uten kategorier. Men det betyr at spørsmålet "hvilke verdier skal variabelen ha?" ikke bare er et teknisk spørsmål om målenivå.
 
 ## Å vurdere en målemetodes kvalitet: Reliabilitet og validitet {#sec-reliability}
 
@@ -400,6 +390,25 @@ Det er derfor fristende å droppe både selvrapportering og observasjon av indre
 Fire målemetoder, fire forsøk på å måle det samme, og ingen av dem stemmer overens med de andre. Dette er ikke kun et tankeeksperiment; det er svært reelt. Manglende samsvar mellom selvrapportering og observasjon går igjen i måling av mange konstrukter som handler om elevers og læreres indre sinnstilstander, slik som tanker, holdninger, motivasjon, kunnskap, læring og følelser [@leatham2006]. Men det er også ofte manglende samsvar når konstruktet ikke er en indre sinnstilstand, men handler om helt konkrete hendelser i et klasserom. For eksempel sier mange lærere at de synes helklassediskusjoner er viktige, at de setter av mye tid til det i timene og at de gir elevene rom til å diskutere heller enn å kun komme med korte svar. Observasjon av helklasseundervisning har imidlertid vist det motsatte: Det er få helklassediskusjoner, og de er ofte lærerstyrte der elevene kun kommer med korte svar. Altså har målinger av helklassediskusjoner via selvrapportering lav validitet. Er elever og lærere løgnere, som ikke velger å svare sannferdig; hyklere, som gjør stikk motsatt av det de sier er viktig; eller er det noe annet som foregår? En nærliggende forklaring er rett og slett at selvrapportering er vanskelig, slik at vi ikke kan vente annet enn avvik mellom observasjon og selvrapportering.
 
 Huff. Hvis du led under forvirringen at det å måle motivasjon, eller andre sinnstilstander, var enkelt, håper jeg du nå er kurert. Men merk at ingen av de fire metodene er den riktige som de tre andre bommer på. Når du leser en studie av et slikt konstrukt, er derfor ikke spørsmålet om forskeren valgte rett målemetode, men hvilken del av konstruktet den valgte metoden fikk tak i, og hvilken den lot ligge.
+
+## Etiske sider ved kvantitativ måling av folk {#sec-categorisation-ethics}
+
+Det er ikke bare vanskelig å lage reliable og valide målinger av mennesker, målingene kan også ha dype etiske konsekvenser. Jeg viser dere bare to av de mest nærliggende etiske problemene.
+
+Det første etiske problemet kan oppsummeres med at "målinger skaper folk". Alex starter i første klasse som en vanlig gutt, etter femtetrinn tar Alex nasjonale prøver i lesing, der Alex skårer på "mestringsnivå 1", foreldre og lærere begynner å tenke på Alex som "en svak leser" og "faglig svak". Underveis forsvinner konteksten rundt prøven (kanskje Alex var sliten), usikkerheten prøven er beheftet med (kanskje Alex skåret rett under grensen for nivå 2) eller at prøven var urettferdig for Alex (Alex sleit med teksten som handlet om skøyter, for Alex har hverken sett eller prøvd skøyter). Likevel har prøven påvirket andres syn på Alex, og trolig hans eget syn på seg selv.
+
+Du tror kanskje man kan innvende "men han leser jo litt dårlig, da"
+
+Noen ganger utløser målingene ekstra ressurser. Kanskje Alex blir kalt inn til spesialpedagoger som tar en spesiell type kvantitativ måling, en som skal kartlegge dysleksi. Hvis prøven sier at Alex har dysleksi får han mange rettigheter, hvis ikke får han ingenting. Men samtidig kan diagnosen senke forventningene andre har til ham og han har til seg selv. La oss håpe at grenseverdien for dysleksimålingen er satt på bakgrunn av en svært grundig vurdering av både etikk og validitet. (Jeg har ingen grunn til å tro noe annet, altså.)
+
+Hvis du betviler Dette er et eksempel på noe bredere; det er ikke bare slik at målinger skaper *folk*, målinger kan skape *alt mulig rart*, en prosess som kalles **tingliggjøring**. Jeg har selv vært med på å lage kvantitative målinger som skal måle kvaliteten av undervisning i livsmestring
+
+-   **Kategoriene bestemmer hvem som finnes i datasettet.** Hvis kjønn bare har verdiene "gutt" og "jente", har elever som ikke kjenner seg igjen i noen av dem ikke noe sted å være. De må velge en verdi som er gal, eller la være å svare, og da forsvinner de ut av analysen. Grove kategorier kan skjule folk på samme måte: "minoritetsspråklig" rommer både eleven som kom til Norge i fjor og eleven som er født her av foreldre fra Vietnam. En variabel som ikke skiller dem, kan heller ikke oppdage at de trenger forskjellige ting.
+-   **Grensene er satt, ikke funnet.** Samlevariabelen _dysleksi_ over gir verdien "har dysleksi" til elever under et bestemt punkt på en skala. Det punktet er valgt av noen. Flytter man det litt, endres antallet elever med dysleksi i Norge, uten at en eneste elev har lest annerledes. Det er ikke et argument mot å bruke slike grenser, men et argument for å vite at de er valgt, og for å være varsom med elever som ligger nær grensen.
+-   **Merkelappen blir hos eleven.** En verdi i et forskningsdatasett er anonym og forbigående. En kategori som følger et barn gjennom skolegangen, er noe helt annet. Den kan gi eleven rettigheter og hjelp hun ellers ikke ville fått, og den kan endre hva lærere forventer av henne. Begge deler skjer, ofte samtidig.
+
+Ingenting av dette er et argument mot å kategorisere. Kvantitativ forskning er umulig uten kategorier. Men det betyr at spørsmålet "hvilke verdier skal variabelen ha?" ikke bare er et teknisk spørsmål om målenivå.
+
 
 ## Oppsummering
 
