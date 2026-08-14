@@ -60,6 +60,10 @@ Anne Kristine Øgreid har vært redaktør for boka og lest alle kapitlene med et
 
 *Roar Stovner, 4. august, 2025*
 
+**Til 2026-utgaven**: Boka ble brukt for første gang studieåret 2025--26, og er skrevet vesentlig om etterpå. Kapitlene om statistisk hypotesetesting er tatt ut, og statistisk usikkerhet behandles nå med konfidensintervall i stedet. Plassen som ble ledig, har gått til måling og forskningsdesign. Underviser du fra 2025-utgaven, bør du regne med at boka ser annerledes ut fra og med kapittelet om måling.
+
+*Roar Stovner, 14. august, 2026*
+
 ::: {.margin-top-2}
 :::
 

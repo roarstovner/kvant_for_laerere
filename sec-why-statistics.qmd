@@ -25,7 +25,7 @@ Mange blir overrasket over at de skal lære seg kvantitativ metode i lærerutdan
 
 Jeg mener det er fem grunner til at lærere bør lære seg noe om kvantitativ metode, og de fortjener hvert sitt delkapittel.
 
-## Kvantitativ metode hjelper deg å vurdere påstander du møter i læreryrket
+## Kvantitativ metode hjelper deg å vurdere påstander du møter i læreryrket {.unnumbered}
 
 Som lærer møter du mange påstander som hevdes å være forskningsbaserte. Læreverk og IKT-verktøy markedsføres som evidensbaserte, pedagogiske tilnærminger presenteres som "dokumentert effektive", og entusiastiske rektorer kommer springende med nye undervisningsmetoder fra forskningsfronten. Det er en oppfatning blant både forskere og praktikere at kvantitativ forskning er mer pålitelig enn kvalitativ forskning, muligens fordi studier med store utvalg og statistiske beregninger ofte assosieres med høyere grad av generaliserbarhet og dermed større troverdighet, vi kan kalle det "*Bigger is better*"-resonnementet. Med grunnleggende kunnskaper i kvantitativ metode er du bedre rustet til å gjennomskue slike feilslutninger og kan heller foreta en kritisk vurdering av kvantitativ forskning. 
 
@@ -47,7 +47,7 @@ Når du nå vet hvordan deltagernes pågangsmot ble målt, hva tenker du da om k
 Det overordnede formålet med boka er å gi kunnskapen som trengs for å vurdere slike påstander som Duckworth framsatte. Lærere blir jevnlig møtt med påstander som bygger på kvantitative data, for eksempel påstander om elevers lesekompetanse fra PISA-undersøkelsen, eller påstander om læringseffekten av et nytt IKT-verktøy fra de som ønsker å selge det. Hvis man kan vurdere kvantitativ forskning står man bedre rustet til å forholde seg kritisk til denne typen utsagn.
 
 
-## Kvantitativ metode er premissleverandør for utdanningspolitikk og utdanningsforskning
+## Kvantitativ metode er premissleverandør for utdanningspolitikk og utdanningsforskning {.unnumbered}
 
 Kvantitative undersøkelser og statistikk danner ofte grunnlaget for beslutninger i utdanningssektoren. Det fremste eksempelet på dette er betydningen den såkalte PISA-undersøkelsen (*Programme for International Student Assessment*) har hatt for utformingen av norsk utdanningspolitikk, ettersom resultatene derfra har lagt grunnlaget for en rekke tiltak for å styrke elevenes kompetanse i lesing, matematikk og naturfag. Da de første norske resultatene kom i år 2000 ble det ramaskrik -- de norske elevene var helt gjennomsnittlige! Vi som trodde vi hadde blant verdens beste skolesystemer! Dette ble fort omdøpt "PISA-sjokket" [@bergesen2006]. Her måtte det ryddes opp, og skolesystemet måtte forbedres. Resultatene fra PISA-undersøkelsen medvirket slik til en politisk prosess som endte med etableringen av nasjonale prøver i lesing, regning og engelsk i 2004 og læreplanen Kunnskapsløftet, LK06, i 2006. 
 
@@ -61,15 +61,15 @@ Kvantitative undersøkelser kan altså være så potente at de har en betydelig 
 
 Som lærer vil du måtte forholde deg til premissene for en utdanningspolitikk som blant annet baserer seg på slike undersøkelser. Å forstå grunnlaget disse undersøkelsene hviler på, er derfor ikke bare viktig for profesjonsutøvelsen, men også for å kunne delta informert i debatten om hvordan skolen skal og bør utvikle seg.
 
-## Kvantitativ metode hjelper deg med _assessment literacy_, altså å utvikle din vurderingskompetanse
+## Kvantitativ metode hjelper deg med _assessment literacy_, altså å utvikle din vurderingskompetanse {.unnumbered}
 
 Som lærer møter du vurderingssituasjoner hele tiden. Du mottar resultater om klassen din på nasjonale prøver, du sitter i evalueringsmøte med skoleledere som lurer på hvorfor klassen din skåret dårlig på tentamen, eller du lager vurderingssituasjoner for å finne ut hvor mye elevene har lært. Kvantitative metoder kan gi deg bedre forståelse for hva slike vurderinger betyr; du kan få en grunnleggende _assessment literacy_ som hjelper deg å forberede slike vurderingssituasjoner og tolke resultatene fra dem.
 
-## Kvantitativ metode hjelper deg som lærerstudent
+## Kvantitativ metode hjelper deg som lærerstudent {.unnumbered}
 
 Videre i studiet ditt kommer du til å møte forskningslitteratur som benytter kvantitative metoder. Hvis du har innsikt i kvantitative metoder, vil du forstå denne forskningen bedre og lettere vurdere hva kunnskapen bygger på.
 
-## Kvantitativ metode hjelper deg i hverdagen
+## Kvantitativ metode hjelper deg i hverdagen {.unnumbered}
 
 Statistikk dukker opp overalt i nyhetsbildet, og norske medier er ikke immune mot å presentere tall på misvisende måter. I februar 2020 publiserte Aftenpostens A-magasinet en sak om at stadig flere nordmenn er uføretrygdede. Artikkelen inkluderte en graf over andelen uføretrygdede i befolkningen fra 2015 til 2018. I nettversjonen av artikkelen gikk y-aksen fra 9,7 % til 10,1 %, noe som fikk en økning på 0,4 prosentpoeng til å se dramatisk ut. Sjefredaktør Trine Eilertsen beklaget i etterkant og kalte det "misbruk av statistikk" [@eilertsen2020].
 

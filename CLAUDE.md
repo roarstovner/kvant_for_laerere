@@ -8,7 +8,7 @@ Dette er en lærebok i kvantitativ metode for lærere. Den er laget for å
 - vise analyser med en enkel og åpent tilgjengelig statistikk-programvare, jamovi
 - fremheve forskningsdesign og deskriptiv analyse, siden forutsetningene for inferensiell statistikk så sjeldent er oppfylt i lærerstudenters masteroppgaver og utdanningsforskning forøvrig
 
-Boka har vært brukt ett semester, men nå har vi, (Roar Bakken Stovner, forfatter, og Anne Kristine Øgreid, redaktør) fått interne midler til å skrive den om slik at den blir enda bedre tilpasset lærerstudenter. Vi ønsker å fjerne alt om statistisk testing og bytte det ut med ulike forskningsdesign og studier som er spesielt relevante. Dette betyr at alt fra kapittel 6 skal skrives om nesten fullstendig.
+Boka ble brukt ett semester i 2025-utgaven. Med interne midler har vi (Roar Bakken Stovner, forfatter, og Anne Kristine Øgreid, redaktør) skrevet den om for 2026 slik at den blir bedre tilpasset lærerstudenter. Alt om statistisk hypotesetesting er tatt ut og erstattet med måling, forskningsdesign og en inferensiell del som holder seg til konfidensintervall. Omskrivingen skjer på grenen `revisjon_2026`.
 
 - Opprinnelig versjon: Navarro DJ and Foxcroft DR (2022). learning statistics with jamovi: a tutorial for psychology students and other beginners. (Version 0.75). [Available from url: https://learnstatswithjamovi.com/]
 - Nåværende versjon er en oversettelse til norsk der veldig mye er omskrevet til å gjelde skole og undervisning.
@@ -18,25 +18,29 @@ Boka har vært brukt ett semester, men nå har vi, (Roar Bakken Stovner, forfatt
 
 # Struktur
 
-Vi planlegger følgende kapittelstruktur:
+Kapittelrekkefølgen er definert i `_quarto-all_chapters.yml`, ikke i `_quarto.yml` (boka bruker Quarto-profiler; se også `_quarto-chapter.yml` og `_quarto-print.yml`). Slik ser den ut:
 
-1. Hvorfor bør lærere kunne kvantitativ metode?
--- Section: Design
-2. Måling i utdanningsforskning
-3. Forskningsdesign
--- Section: Deskriptiv statistikk
-4. Deskriptiv statistikk
-5. Visualisere data
--- Section: Inferensiell statistikk
-6. Estimering av populasjonsparametre
--- Section: Noen viktige forskningsdesign for utdanningsforskning og norsk skole
-7. ILSAs
-8. Nasjonale prøver
-9. Lærernes egne prøver
-10. Eksamener
-11. Muligens andre ting?
+| Fil | Tittel |
+| --- | --- |
+| `index.qmd` | Forord |
+| `sec-why-statistics.qmd` | Hvorfor lære kvantitative metoder? |
+| *Del: Studiedesign* | |
+| `sec-measurement.qmd` | Måling i utdanningsforskning |
+| `sec-design.qmd` | Forskningsdesign i kvantitativ metode |
+| *Del: Deskriptiv statistikk* | |
+| `sec-jamovi.qmd` | Komme i gang med jamovi (unummerert) |
+| `sec-descriptive.qmd` | Å beskrive én variabel |
+| `sec-associations.qmd` | Å beskrive sammenhenger mellom variabler |
+| *Del: Inferensiell statistikk* | |
+| `sec-inferential.qmd` | Usikkerhet og konfidensintervall |
+| `sec-epilogue.qmd` | Etterord (unummerert) |
+| `sec-references.qmd` | Referanseliste (unummerert) |
 
-Forhåpentligvis klarer vi å bake inn den siste "Section" i de andre kapitlene. For eksempel kan "Lærernes egne prøver" komme etter kapittelet om "Måling i utdanningsforskning", siden de prøver å måle elevenes kompetanse, men ikke baserer seg på stoffet i resten av boka.
+Den planlagte fjerde delen om måleinstrumenter som er særlig relevante for norsk
+skole (ILSA-er, nasjonale prøver, kartleggingsprøver, summative vurderinger) er
+**ikke skrevet ennå**, og er utsatt til en senere utgave. Det står som et
+uttrykt ønske sist i `sec-epilogue.qmd`. Instrumentene nevnes underveis i
+kapitlene om måling og forskningsdesign, men har ingen egne kapitler.
 
 # Skriftlig fremstilling
 
@@ -49,6 +53,7 @@ Forhåpentligvis klarer vi å bake inn den siste "Section" i de andre kapitlene.
 - **Aldri** legg til referanser i refs.bib selv.
 - Gi brukeren et BibTeX-utdrag som kan importeres fra utklippstavlen til Zotero-samlingen som genererer refs.bib. Ikke ha med Citation Key i denne, BetterBibtex lager den.
 - Aldri legg til in-text referanser uten å bruke @authorYYYY fra refs.bib.
+- Bruk klammeform `[@authorYYYY]` når referansen står som en parentetisk kildeangivelse på slutten av en setning eller et ledd. Bar `@authorYYYY` gir narrativ form ("Koretz (2017)") og skal bare brukes når forfatternavnet er en del av setningen. Det er lett å skrive `... flervalgsprøver @koretz2017` og få "flervalgsprøver Koretz (2017)" i brødteksten.
 
 # Jamovi-instruksjoner
 
