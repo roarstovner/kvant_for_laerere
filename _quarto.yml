@@ -40,7 +40,7 @@ book:
     left: |
       <a href="https://kvant.roarstovner.no">Kvantitativ metode for lærere</a>
     right: |
-      Denne boka ble laget i <a href="https://quarto.org/">Quarto</a> og er utgitt under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY 4.0<\a>
+      Denne boka ble laget i <a href="https://quarto.org/">Quarto</a> og er utgitt under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
   site-url: "https://kvant.roarstovner.no"
   # repo-url: "https://github.com/roarstovner/kvant_for_laerere"
   # repo-actions: [edit,issue]
@@ -55,7 +55,8 @@ citation:
   url: "https://kvant.roarstovner.no"
   # Hoved-DOI (Zenodos «concept DOI»), som alltid peker til nyeste utgave.
   # Hver utgave har i tillegg sin egen versjons-DOI; 2025-utgaven har
-  # 10.5281/zenodo.17068064. Ny versjons-DOI opprettes ved hver GitHub-release.
+  # 10.5281/zenodo.17068064 og 2026-utgaven 10.5281/zenodo.22002981.
+  # Ny versjons-DOI opprettes ved hver GitHub-release.
   doi: 10.5281/zenodo.17068063
 
 # Størrelsen på romertallet på del-sidene i PDF-en. Standarden (16em) er så stor
