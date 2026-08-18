@@ -63,13 +63,16 @@ Jeg må innrømme at jeg synes disse navnene er problematiske. De er vanskelige 
 ```{r}
 #| label: tbl-design-var-names
 #| tbl-cap: "Navn på variablenes roller"
+# Y og X settes i kursiv med rå markup per format; tinytable slipper
+# celleinnhold gjennom uendret. `format_tt(math = TRUE)` ville fått tinytable
+# til å laste MathJax i HTML, og den kolliderer med KaTeX-en boka bruker
+# ("Math input error"), mens `markdown = TRUE` krever pakken litedown.
+symboler <- if (knitr::is_html_output()) c("<em>Y</em>", "<em>X</em>") else c("_Y_", "_X_")
+
 tt(
   tibble(
     `variabelens rolle` = c("skal forklares", "skal forklare"),
-    # `_Y_`/`_X_` gir kursiv i både HTML (via markdown) og typst. `math = TRUE`
-    # ville fungert i typst, men får tinytable til å laste MathJax i HTML, og
-    # den kolliderer med KaTeX-en boka bruker ("Math input error").
-    `matematisk symbol` = c("_Y_", "_X_"),
+    `matematisk symbol` = symboler,
     `klassisk navn` = c("avhengig variabel", "uavhengig variabel"),
     `beskrivende navn` = c("utfall", "forklaringsvariabel"),
     `predikerende navn` = c("utfall", "prediktor"),
@@ -77,8 +80,7 @@ tt(
   ) |>
     pivot_longer(-`variabelens rolle`, names_to = "navn", values_to = "verdi") |>
     pivot_wider(names_from = `variabelens rolle`, values_from = verdi)
-) |>
-  format_tt(i = 1, j = 2:3, markdown = TRUE)
+)
 ```
 
 
