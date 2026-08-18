@@ -309,7 +309,7 @@ I praksis må man gjøre et **utvalg** fra populasjonen. Siden man ikke velger h
 
 I stedet for å forske på alle norske elever som skal starte på ungdomsskolen, må jeg forske på et mindre utvalg -- alt annet er umulig med mindre man har uendelig med ressurser. Hvis jeg skulle forsket på alle elevene i norsk skole, kunne jeg analysert data fra Elevundersøkelsen, som gis hvert år og er obligatorisk for alle elever på 7. trinn.[^design-elevundersokelsen] Men for å undersøke elevenes motivasjon på ungdomsskolen trenger vi data fra 8. trinn også, og der er Elevundersøkelsen frivillig å gjennomføre, så da får vi bare et utvalg av populasjonen. Hvordan skal utvalget da være? Skal jeg rekruttere 100 elever fra hvert fylke? Skal jeg legge ut en reklame for studien på TikTok og nøye meg med de svarene jeg får? Slike valg er helt sentrale for å få gode svar i kvantitative undersøkelser.
 
-[^design-elevundersokelsen]: Se <https://www.udir.no/tall-og-forskning/statistikk/statistikk-grunnskole/elevundersokelsen/>.
+[^design-elevundersokelsen]: Se <https://www.udir.no/tall-og-forskning/brukerundersokelser/elevundersokelsen/>.
 
 I utdanningsforskning er det svært mange forskjellige populasjoner som kan være interessante å forske på. Sjekk ut disse:
 
@@ -379,7 +379,7 @@ Siden vi ristet posen før vi trakk ut brikkene, virker det rimelig å anta at h
 
 ![Enkelt tilfeldig utvalg med størrelse 4 fra en populasjon. Til høyre vises tre mulige utvalg vi kunne fått.](images/fig-design-unbiased.png){#fig-design-unbiased fig-alt="Et diagram viser en populasjon bestående av 10 sirkler merket a til j. Piler peker fra denne populasjonen til tre grupper av sirkler, som demonstrerer enkle tilfeldige utvalg. Gruppene er merket 'a, c, j, b,' 'i, e, a, f,' og 'g, c, f, d.'"}
 
-Hvis du studerer utvalgene i @fig-design-unbiased nøye ser du at ingen av dem gjengir populasjonen riktig. I populasjonen er 40% av brikkene svarte, og i utvalgene er 50%, 25% og 25% svarte. Så utvalgene er skjeve, altså ikke representative, men hvis man hadde repetert utvalgsmetoden mange, mange ganger, hadde man hatt 40% svarte brikker i utvalgene sine i gjennomsnitt. Derfor sier man at enkelt tilfeldig utvalg er en **forventingsrett** utvalgsmetode.[^sec-design-forventningsrett] Hvert enkelt utvalg er ikke nødvendigvis representativt, men hvis man repeterer utvalget mange ganger kan man forvente at gjennomsnittet er representativt, og hvis man gjør utvalget veldig veldig stort vil avviket fra et representativt utvalg være veldig lite, se @sec-inf-clt.
+Hvis du studerer utvalgene i @fig-design-unbiased nøye ser du at ingen av dem gjengir populasjonen riktig. I populasjonen er 40% av brikkene svarte, og i utvalgene er 50%, 25% og 25% svarte. Så utvalgene er skjeve, altså ikke representative, men hvis man hadde repetert utvalgsmetoden mange, mange ganger, hadde man hatt 40% svarte brikker i utvalgene sine i gjennomsnitt. Derfor sier man at enkelt tilfeldig utvalg er en **forventningsrett** utvalgsmetode.[^sec-design-forventningsrett] Hvert enkelt utvalg er ikke nødvendigvis representativt, men hvis man repeterer utvalget mange ganger kan man forvente at gjennomsnittet er representativt, og hvis man gjør utvalget veldig veldig stort vil avviket fra et representativt utvalg være veldig lite, se @sec-inf-clt.
 
 [^sec-design-forventningsrett]: På engelsk heter forventningsrett "unbiased". Mange har begynt å bruke biased og unbiased på norsk også, men jeg vil utfordre deg til å si at "utvalget er forventningsskjevt" eller "dommeren er partisk" i stedet for å bare bruke "biased".
 
@@ -477,7 +477,7 @@ Her ligger problemet: Tredjeårsstudentene er jo også eldre og har helt naturli
 Ideen bak **økologisk validitet** er at resultatene fra studien ikke kan fungere i den virkelige verden fordi studiesituasjonen skiller seg fra den virkelige situasjonen. Mange randomiserte kontrollstudier i utdanningsforskning sliter med økologisk validitet, fordi eksperimentet ikke vil fungere likedan utenfor studiesituasjonen. Hvis Oslo kommune bestemmer seg for å gjennomføre en randomisert kontrollstudie der eksperimentet er å ta ut elever til smågruppeundervisning med kvalifiserte lærere, kan man ikke vente å få samme resultat hvis kommunen etterpå vedtar å utvide tilbudet til alle skoler. Grunnen er at det ikke finnes nok kvalifiserte lærere, så eksperimentet vil se annerledes ut i virkeligheten enn i studien. Et annet eksempel er studier som undersøker effekten av å skrive på skjerm heller enn på papir. For å gjøre skjerm-situasjonen så sammenliknbar som mulig med papir-situasjonen slår forskerne gjerne av stavekontrollen -- men de fleste har jo på stavekontrollen i den virkelige verden! Da finner man effekten av et eksperiment som ikke likner på den virkelige verden.
 
 
-## Sammendrag
+## Oppsummering
 
 Denne korte introduksjonen til forskningsdesign har dekket noen av de viktigste temaene man må tenke på hvis man skal forske selv eller vurdere eksisterende forskning. Måling er en så sentral del av forskningsdesignet at det fikk et eget kapittel, @sec-measurement, mens resten fikk plass i dette kapittelet. Jeg har dekket:
 

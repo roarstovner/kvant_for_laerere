@@ -1,11 +1,19 @@
 filters:
   - diagram
   - _extensions/pandoc-quotes/pandoc-quotes.lua
-project: 
+project:
   type: book
   output-dir: docs
   preview:
     port: 4321
+  # Datafilene leseren skal laste ned. De lenkes til med absolutt URL (se
+  # sec-jamovi.qmd), for en relativ lenke er død i PDF-en og EPUB-en. Absolutte
+  # URL-er teller ikke som ressurser Quarto oppdager selv, så de må listes her
+  # for å bli kopiert til docs/.
+  resources:
+    - data_and_tables/ICCS.omv
+    - data_and_tables/ICCS.csv
+    - data_and_tables/anscombe.csv
 execute: 
   echo: false
   warning: false
@@ -19,7 +27,7 @@ profile:
 book:
   title: Kvantitativ metode for lærere
   author: "Roar Bakken Stovner"
-  date: 2026-08-10
+  date: 2026-08-17
   date-format: "MMMM YYYY"
   downloads: [pdf, epub]
   reader-mode: true
@@ -45,7 +53,10 @@ citation:
   editor:
     - Anne Kristine Øgreid
   url: "https://kvant.roarstovner.no"
-  doi: 10.5281/zenodo.17068064
+  # Hoved-DOI (Zenodos «concept DOI»), som alltid peker til nyeste utgave.
+  # Hver utgave har i tillegg sin egen versjons-DOI; 2025-utgaven har
+  # 10.5281/zenodo.17068064. Ny versjons-DOI opprettes ved hver GitHub-release.
+  doi: 10.5281/zenodo.17068063
 
 # Størrelsen på romertallet på del-sidene i PDF-en. Standarden (16em) er så stor
 # at «III» kolliderer med deltittelen. Sendes videre av typst-show.typ.

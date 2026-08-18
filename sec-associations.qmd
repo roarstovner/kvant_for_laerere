@@ -723,7 +723,7 @@ Et klassisk eksempel som viser dette perfekt, er "Anscombes kvartett" [@Anscombe
 - Standardavvikene er også praktisk talt like for både $X$ og $Y$.
 - Og for å toppe det hele, er korrelasjonen mellom $X$ og $Y$ i *alle* de fire tilfellene $r = 0{,}816$.
 
-Dette kan du forresten enkelt sjekke selv, for dataene ligger klare i filen *[anscombe.csv](data_and_tables/anscombe.csv)*.
+Dette kan du forresten enkelt sjekke selv, for dataene ligger klare i filen *[anscombe.csv](https://kvant.roarstovner.no/data_and_tables/anscombe.csv)*.
 
 Basert på kun disse tallene skulle man tro at datasettene er nokså like, men det er de absolutt ikke. Først når vi visualiserer dataene som spredningsplott, slik du ser i @fig-associations-anscombe, avsløres sannheten: De fire datasettene er helt ulike. Da skjønner vi hvorfor mange statistikere har følgende leveregel, som mange dessverre glemmer i praksis:
 
