@@ -66,7 +66,10 @@ Jeg må innrømme at jeg synes disse navnene er problematiske. De er vanskelige 
 tt(
   tibble(
     `variabelens rolle` = c("skal forklares", "skal forklare"),
-    `matematisk symbol` = c("Y", "X"),
+    # `_Y_`/`_X_` gir kursiv i både HTML (via markdown) og typst. `math = TRUE`
+    # ville fungert i typst, men får tinytable til å laste MathJax i HTML, og
+    # den kolliderer med KaTeX-en boka bruker ("Math input error").
+    `matematisk symbol` = c("_Y_", "_X_"),
     `klassisk navn` = c("avhengig variabel", "uavhengig variabel"),
     `beskrivende navn` = c("utfall", "forklaringsvariabel"),
     `predikerende navn` = c("utfall", "prediktor"),
@@ -74,20 +77,8 @@ tt(
   ) |>
     pivot_longer(-`variabelens rolle`, names_to = "navn", values_to = "verdi") |>
     pivot_wider(names_from = `variabelens rolle`, values_from = verdi)
-) |> 
-  format_tt(i = 1, j = 2:3, math = TRUE)
-
-# tt(
-#   tibble(
-#     `variabelens rolle` = c("skal forklares", "skal forklare"),
-#     `matematisk symbol` = c("$Y$", "$X$"),
-#     `klassisk navn` = c("avhengig variabel", "uavhengig variabel"),
-#     `beskrivende navn` = c("utfall", "forklaringsvariabel"),
-#     `predikerende navn` = c("utfall", "prediktor"),
-#     `årsaksforklarende navn` = c("utfall", "årsaksvariabel")
-#   )
-# ) |> 
-#   format_tt(j = 2, math = TRUE)
+) |>
+  format_tt(i = 1, j = 2:3, markdown = TRUE)
 ```
 
 
