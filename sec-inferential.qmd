@@ -50,7 +50,7 @@ Dette kapittelet handler kun om et spørsmål fra inferensiell statistikk: Hvor 
 
 Målet med kapittelet er å skjønne begrepet **standardfeil**. Deretter er det forholdsvis enkelt å skjønne hva et **konfidensintervall** er. Med disse begrepene vil du kunne forstå flere resultater i forskningsartikler, samt skjønne magien ^[Vel, matematikken, men siden matematikk har et image-problem velger jeg å benytte ordet _magi_.] statistikere støtter seg til når de uttaler seg sikkert om populasjonen uten å ha samlet noe særlig data fra den. Det vil også gjøre det lettere for deg å forstå statistisk hypotesetesting, noe de fleste innføringsbøker i kvantitativ metode bruker mye plass på, men som jeg ikke ser meg tjent med i denne sammenhengen.
 
-::: {.callout-tip}
+::: {.callout-tip collapse="true"}
 
 ## Men jeg ønsker å lære om statistisk hypotesetesting!
 
@@ -446,6 +446,11 @@ Vi finner ut av det ved å tegne samme figur, bare for flere forskjellige $n$. I
 #|   - "Allerede ved $n = 5$ ligner fordelingen mer på en normalfordeling, og den er smalere"
 #|   - "Ved $n = 10$ er normalfordelingen en meget god tilnærming"
 #|   - "Ved $n = 100$ er fordelingen svært smal og praktisk talt normal"
+#| fig-alt:
+#|   - "Histogram av utvalgsgjennomsnittene ved n lik 2, med en normalfordelingskurve lagt over. Den horisontale aksen (x-aksen) viser utvalgsgjennomsnitt fra 0 til 170 ord per minutt. Fordelingen er bred og har to tydelige topper, og kurven treffer den dårlig."
+#|   - "Histogram av utvalgsgjennomsnittene ved n lik 5, med en normalfordelingskurve lagt over. Den horisontale aksen (x-aksen) er den samme som i forrige panel. Fordelingen er smalere enn ved n lik 2, de to toppene er nesten borte, og kurven treffer bedre."
+#|   - "Histogram av utvalgsgjennomsnittene ved n lik 10, med en normalfordelingskurve lagt over. Den horisontale aksen (x-aksen) er den samme som i de forrige panelene. Fordelingen er enda smalere, har én topp, og kurven følger søylene tett."
+#|   - "Histogram av utvalgsgjennomsnittene ved n lik 100, med en normalfordelingskurve lagt over. Den horisontale aksen (x-aksen) er den samme som i de forrige panelene. Fordelingen er en smal, symmetrisk søyle rundt populasjonsgjennomsnittet, og kurven ligger praktisk talt oppå den."
 #| layout-ncol: 2
 #| fig-asp: 1
 #| fig-width: 4.285714
@@ -733,7 +738,7 @@ Kapittelet begynte med å skille mellom fire typer usikkerhet, men har hittil ku
 - **Modellusikkerhet.** Hele regnestykket bygger på antakelser: at utvalget er et enkelt tilfeldig utvalg, målingen er god for alle elevene, og så videre. Hvis antakelsene er gale, for eksempel ved selektiv dropout (se @sec-design-simple-random), så kan konfidensintervallet være misvisende.
 - **Ikke-tilfeldige utvalg.** Dette er kanskje den viktigste begrensningen i lærerstudenters egne masteroppgaver. Nesten ingen masteroppgaver bygger på et enkelt tilfeldig utvalg fra en veldefinert populasjon; de bruker de elevene og lærerne forskeren får tilgang til. Da hviler konfidensintervallet på en forutsetning som ikke er oppfylt, og det er strengt tatt meningsløst. Det betyr ikke at studien er verdiløs, men at usikkerheten må vurderes med faglig skjønn og teoretiske argumenter, ikke med et konfidensintervall regnet ut uten at forutsetningene er oppfylt.
 
-## Sammendrag
+## Oppsummering
 
 I dette kapittelet har jeg forklart hvordan man estimerer populasjonsparametre. Jeg har bare vist hvordan man estimerer populasjonsgjennomsnittet, men liknende tenkning fungerer for alle mulige populasjonsparametre. For eksempel, hvis man skulle estimert populasjons*medianen*, så måtte man funnet utvalgsfordelingen til medianen, som kanskje ikke er normalfordelt. Da hadde man trengt noe som likner på sentralgrenseteoremet, men som gjelder for medianer. Deretter kunne man regnet ut et konfidensintervall for medianen. Alle begrepene du har lært, utgjør altså et språk for estimering og måling av usikkerhet som kan brukes mer generelt. Du har lært:
 

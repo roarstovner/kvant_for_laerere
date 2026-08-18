@@ -52,7 +52,7 @@ Gir denne tabellen deg egentlig noen klar forståelse av mønstre i dataene, for
 
 Det er dette som er deskriptiv statistikk, å gjøre rå data om til tall og figurer som gir innsikt.
 
-I dag gjør man all statistikk på en datamaskin, så la oss vise dataene i statistikkprogrammet, jamovi. Etter å ha åpnet filen *[ICCS.omv](data_and_tables/ICCS.omv)* ser det ut som i @fig-descriptive-ICCS-data.
+I dag gjør man all statistikk på en datamaskin, så la oss vise dataene i statistikkprogrammet, jamovi. Etter å ha åpnet filen *[ICCS.omv](https://kvant.roarstovner.no/data_and_tables/ICCS.omv)* ser det ut som i @fig-descriptive-ICCS-data. Trenger du hjelp til å få filen inn i jamovi, står det forklart i @sec-jamovi-datafiler.
 
 ```{r}
 #| label: fig-descriptive-ICCS-data
@@ -226,7 +226,7 @@ Prinsippet er enkelt: Du deler opp de mulige verdiene i intervaller og teller hv
 ```{r}
 #| label: fig-diagram-ICCS-histogram
 #| fig-cap: Et histogram av variabelen _Likestilling_ fra ICCS 2022.
-#| fig-alt: Histogram som viser variabelen _Likestilling_. Den horisontale aksen (x-aksen) strekker seg fra fra 15 til 70, og den vertikale aksen (y-aksen) viser tetthet, altså hvor mange svar som havner innad i hver søyle.
+#| fig-alt: Histogram som viser variabelen _Likestilling_. Den horisontale aksen (x-aksen) strekker seg fra 15 til 70, og den vertikale aksen (y-aksen) viser tetthet, altså hvor mange svar som havner innad i hver søyle.
 
 source("R/jamovi-histogram.R")
 ICCS |>
@@ -242,6 +242,7 @@ Problemet med histogrammer er at utseende deres er veldig avhengig av hvor mange
 ```{r}
 #| label: fig-diagram-histogram-bins
 #| fig-cap: Variabelen _Likestilling_ framstilt med ulikt antall stolper.
+#| fig-alt: Fire histogrammer av variabelen _Likestilling_ ved siden av hverandre, med henholdsvis 5, 10, 20 og 50 stolper. Alle har den samme horisontale aksen (x-aksen), og den vertikale aksen (y-aksen) viser tetthet. Med få stolper blir fordelingen grovkornet og detaljer forsvinner; med mange stolper blir den taggete og tilfeldige småvariasjoner blir synlige.
 #| classes: .enlarge-image
 #| out-width: 100%
 #| fig-width: 8.571429
@@ -603,6 +604,7 @@ Alt i alt blir øyet ledet rundt i figuren slik at den samlet sett forteller en 
 ```{r}
 #| label: fig-diagram-owid-bar
 #| fig-cap: Et profesjonelt stolpediagram. Legg merke til forklarende tekst og farger. Grafen er laget av Roser -@roser2022. Utgitt under lisensen CC-BY.
+#| fig-alt: Liggende stolpediagram fra Our World in Data med tittelen "What share of children are not able to read with comprehension by the end of primary school age?". Fire mørkerøde stolper viser landgrupper etter inntektsnivå. Høyinntektsland 9 prosent, øvre middelinntektsland 29 prosent, nedre middelinntektsland 55 prosent og lavinntektsland 90 prosent. Under dem står to stolper i andre farger. Det globale gjennomsnittet, i blått, er 48 prosent, og landene som gjør det best, i grønt, ligger på 1,6 til 3 prosent. Tallet står skrevet ved enden av hver stolpe, og fargen på stolpen går igjen i teksten som navngir den.
 #| classes: .enlarge-image
 #| out-width: "100%"
 knitr::include_graphics("images/fig-diagram-owid-bar.png")
@@ -613,6 +615,7 @@ Eksempelet i @fig-diagram-owid-bar er et standard stolpediagram; andre diagramme
 ```{r}
 #| label: fig-diagram-owid-line
 #| fig-cap: Et profesjonelt linjediagram. Legg merke til forklarende tekst og farger. Grafen er laget av Roser -@roser2022. Utgitt under lisensen CC-BY.
+#| fig-alt: Linjediagram fra Our World in Data. Den horisontale aksen (x-aksen) viser årlig husholdningsinntekt på en logaritmisk skala fra rundt 1 000 til over 20 000 dollar, og den vertikale aksen (y-aksen) viser gjennomsnittlig prøveskår i matematikk fra 300 til 600. Én linje per land, hver med landsnavnet skrevet i samme farge som linjen ved enden av den. Alle linjene stiger, altså skårer rikere elever bedre enn fattigere elever innad i hvert land. Men linjene ligger på svært ulike nivåer. Sør-Korea, Finland og Nederland ligger over 530, mens Brasil, Uruguay, Tunisia og Marokko ligger under 490. To forklarende tekster inne i figuren peker på hovedpoenget. De fattigste elevene i et rikt land skårer ofte høyere enn de rikeste elevene i et fattigere land.
 #| classes: .enlarge-image
 #| out-width: "100%"
 knitr::include_graphics("images/fig-diagram-owid-line.png")

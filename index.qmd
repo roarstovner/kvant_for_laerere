@@ -14,7 +14,7 @@ source("chapter_header.R")
       <div class="card-body d-flex flex-column">
         <div style="font-size: 2.5rem; line-height: 1;"><i class="bi bi-printer"></i></div>
         <h5 class="card-title mt-2">Lese på papir</h5>
-        <p class="card-text flex-grow-1">Hvis du ønsker å lese på papir, bør du printe PDF-versjonen.</p>
+        <p class="card-text flex-grow-1">Hvis du ønsker å lese på papir, bør du printe PDF-versjonen. Print 2-sidig med stift, så har du en pen bok.</p>
         <a href="Kvantitativ-metode-for-lærere.pdf" class="btn btn-primary align-self-start">
           <i class="bi bi-file-earmark-pdf"></i>&nbsp; Last ned PDF
         </a>
@@ -38,31 +38,38 @@ source("chapter_header.R")
 
 :::
 
-Denne læreboken dekker innholdet i et innføringskurs i kvantitative metoder. Boka er basert på et vanlig grunnkurs slik det vanligvis undervises for bachelorstudenter innen psykologi, helse- eller samfunnsvitenskap, men er endret slik at det passer for studenter på femårige grunnskolelærerutdanninger.
+I denne læreboken dekker vi innholdet i et innføringskurs i kvantitative metoder. Boka er basert på et vanlig grunnkurs slik det vanligvis undervises for bachelorstudenter innen psykologi, helse eller samfunnsvitenskap, men er endret slik at det passer for studenter på femårige grunnskolelærerutdanninger.
 
 Jeg hadde følgende krav til boka:
 
-  1. **Tilpasset lærerstudenter**: Jeg ville at stoffet og eksemplene skulle være fra utdanningsforskning, og at de skulle være relevante for læreryrket.
+  1. **Tilpasset lærerstudenter**: Jeg ville at stoffet og eksemplene skulle være fra utdanningsforskning og at de skulle være relevante for læreryrket.
   2. **Uten matematikk**: Jeg vet at veldig mange lærerstudenter har så lite matematisk bakgrunn at å lære seg noe særlig av matematikken bak statistikken ville blitt rent pugg.
-  3. **Kort**: Boka er skrevet til et kurs på OsloMet som skal tilsvare fem studiepoeng og tre forelesninger i kvantitativ metode. De fleste lærebøker for et innføringskurs i kvantitativ metode er tre ganger så lange og er skrevet slik at det er vanskelig å plukke bare noen deler.
-  4. **Viser analysene med en enkel og åpent tilgjengelig statistikk-programvare**: Siden flere lærerstudenter skriver masteroppgaver med kvantitativ metode måtte boka ha med eksempler på hvordan man gjør statistisk analyse i en enkel programvare. Siden det finnes mye god statistikkprogramvare som er fritt tilgjengelig, ønsket jeg å bruke noen av disse.
-  5. **Fremhever forskningsdesign og deskriptiv analyse**: Nesten alle statistikklærebøker legger stor vekt på hypotesetesting. Forutsetningene for disse testene er sjelden oppfylt i praksis og de gir ofte begrensede svar på forskningsspørsmålene som stilles. Det er derfor mer hensiktsmessig å prioritere opplæring i forskningsdesign og deskriptiv statistikk.
+  3. **Kort**: Boka er skrevet til et kurs på OsloMet som skal tilsvare 5 studiepoeng og tre forelesninger i kvantitativ metode. De fleste lærebøker for et innføringskurs i kvantitativ metode er tre ganger så lange og er skrevet slik at det er vanskelig å plukke bare noen deler.
+  4. **Viser analysene med en enkel og åpent tilgjengelig statistikk-programvare**: Siden mange lærerstudenter skriver kvantitative masteroppgaver måtte boka ha med eksempler på hvordan man gjør statistisk analyse i en enkel programvare. Siden det finnes mye god statistikkprogramvare som er fritt tilgjengelig ønsket jeg å bruke noen av disse.
+  5. **Fremhever forskningsdesign og deskriptiv analyse**: Nesten alle statistikklærebøker benytter mye tid på hypotesetesting. Forutsetningene bak disse testene er nesten aldri oppfylt i praksis og de gir sjeldent gode svar på forskningsspørsmålene som stilles. Det er derfor bedre å bruke tiden til å lære mer om forskningsdesign og deskriptiv statistikk.
   
-Jeg fant ingen eksisterende bok som samlet sett dekket alle disse punktene, så jeg valgte å tilpasse en lærebok for psykologi-studenter som var gitt ut med åpen lisens.
+Jeg fant ingen eksisterende bok som dekket disse punktene, så jeg valgte å tilpasse en lærebok for psykologi-studenter som var gitt ut med en åpen lisens.
 
-Tilpasningen er en oversatt og omarbeidet versjon av Navarro og Foxcroft [-@navarro2025] sin bok "Learning statistics with jamovi: A Tutorial for Beginners in Statistical Analysis" [https://www.learnstatswithjamovi.com/](https://www.learnstatswithjamovi.com/), som igjen er en omarbeidet versjon av Navarro [-@navarro2011] sin bok "Learning statistics with R: A tutorial for psychology students and other beginners. (Version 0.6)" [https://learningstatisticswithr.com/](https://learningstatisticswithr.com/).
+Boka er en oversatt og omarbeidet versjon av Navarro og Foxcroft [-@navarro2025] sin bok "Learning statistics with jamovi: A Tutorial for Beginners in Statistical Analysis" [https://www.learnstatswithjamovi.com/](https://www.learnstatswithjamovi.com/), som igjen er en omarbeidet versjon av Navarro [-@navarro2011] sin bok "Learning statistics with R: A tutorial for psychology students and other beginners. (Version 0.6)" [https://learningstatisticswithr.com/](https://learningstatisticswithr.com/).
 
-Hvis du finner feil eller har forslag til forbedringer, kan du melde inn et "issue" her [https://github.com/roarstovner/kvant_for_laerere/issues](https://github.com/roarstovner/kvant_for_laerere/issues) eller ta kontakt med meg via [ansattsiden min](https://www.oslomet.no/om/ansatt/robast/).
+Hvis du finner noen feil eller har forslag til forbedringer kan du melde inn et "issue" her [https://github.com/roarstovner/kvant_for_laerere/issues](https://github.com/roarstovner/kvant_for_laerere/issues) eller ta kontakt med meg via [ansattsiden min](https://www.oslomet.no/om/ansatt/robast/).
 
 Jeg håper dere setter pris på å ha en lærebok i kvantitativ metode som dekker de fem punktene i tillegg til å være gratis tilgjengelig på nett.
  
-Anne Kristine Øgreid har vært redaktør for boka og lest alle kapitlene med et kritisk blikk. Boka er blitt vesentlig bedre av det.
-
 *Roar Stovner, 4. august, 2025*
 
-**Til 2026-utgaven**: Boka ble brukt for første gang studieåret 2025--26, og er skrevet vesentlig om etterpå. Kapitlene om statistisk hypotesetesting er tatt ut, og statistisk usikkerhet behandles nå med konfidensintervall i stedet. Plassen som ble ledig, har gått til måling og forskningsdesign. Underviser du fra 2025-utgaven, bør du regne med at boka ser annerledes ut fra og med kapittelet om måling.
+## Om 2026-versjonen {.unnumbered}
 
-*Roar Stovner, 14. august, 2026*
+Boka fikk gode tilbakemeldinger i 2025, men årets versjon er nok bedre på svært mange områder, blant annet takket være gode forslag fra studenter. Jeg har
+
+* forkortet boka ved å stryke delene om hypotesetesting og skrevet en grundigere og mer forståelig forklaring på estimering og konfidensintervall.
+* endret strukturen på delen om deskriptiv statistikk; heller enn å være inndelt i et kapittel om utregninger og et om diagrammer, er den delt inn i deskriptiv statistikk på én variabel og flere variabler.
+* lagt til en del om etikk ved kvantitativ måling i @sec-measurement.
+* gjort mindre forbedringer på alle delkapitlene, spesielt ved at eksemplene nå er enda tettere knyttet til skole og lærergjerningen.
+
+En spesiell takk til Anne Kristine Øgreid som tok på seg å være en slags redaktør for boka. Jeg står ansvarlig for innholdet, men hun har forbedret språket i hele boka, fått kapitlene raskere til poengene, og forbedret forklaringene. Takk også til fakultetet, LUI ved OsloMet, som har gitt økonomisk støtte (såkalte "strategimidler") til å utvikle boka videre.
+
+*Roar Stovner, 17. august, 2026*
 
 ::: {.margin-top-2}
 :::
@@ -70,8 +77,10 @@ Anne Kristine Øgreid har vært redaktør for boka og lest alle kapitlene med et
 (Hvis noen ønsker å benytte boka i egen undervisning er det fritt frem, men ta gjerne kontakt via [ansattsiden min](https://www.oslomet.no/om/ansatt/robast/), for det er gøy å vite at boka blir brukt! Å gjøre endringer i boka er tillatt, siden boka er utgitt under lisensen CC-BY-SA. Det eneste kravet er at de tidligere versjonene av boka (inkludert denne) krediteres, og at den nye versjonen gjøres tilgjengelig med samme lisens. Bokas kildekode ligger på [github](https://github.com/roarstovner/kvant_for_laerere).)
 
 
-**Sitering**: Roar B. Stovner. (2025). *Kvantitativ metode for lærere*. <https://kvant.roarstovner.no>, <https://doi.org/10.5281/zenodo.17068063>.
+**Sitering**: Roar B. Stovner. (2026). *Kvantitativ metode for lærere* (2026-utgaven). <https://kvant.roarstovner.no>, <https://doi.org/10.5281/zenodo.17068063>.
+
+DOI-en over er bokas hoved-DOI, og den peker alltid til nyeste utgave. Hver utgave har i tillegg sin egen DOI, som du bør bruke hvis du siterer et konkret sidetall eller en formulering: 2025-utgaven har <https://doi.org/10.5281/zenodo.17068064>.
 
 :::{.content-visible when-format="html"}
-**Tidligere utgaver**: Underviser du fra en eldre utgave, finner du den arkivert med eget DOI-nummer under [utgivelser på GitHub](https://github.com/roarstovner/kvant_for_laerere/releases). Hver utgave ligger der som PDF og EPUB, uendret.
+**Tidligere utgaver**: Underviser du fra en eldre utgave, finner du den arkivert med sin egen DOI under [utgivelser på GitHub](https://github.com/roarstovner/kvant_for_laerere/releases). Hver utgave ligger der som PDF og EPUB, uendret.
 :::
