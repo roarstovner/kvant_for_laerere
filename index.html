@@ -1,19 +1,25 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="nb" xml:lang="nb"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Danielle Navarro, David Foxcroft og Roar Bakken Stovner">
+<meta name="author" content="Roar Bakken Stovner">
 
-<title>Kvantitative metoder for lærere</title>
+<title>Kvantitativ metode for lærere</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -58,14 +64,14 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-8ef56b68f8fa1e9d2ba328e99e439f80.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-89d524cf73f3b2250d5e74ecba7e97ca.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-32c0091d9c65541b54b40246001d65bb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-89d524cf73f3b2250d5e74ecba7e97ca.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-a82aade05f24c3323681f036b4fc6515.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-510a82e8f80afa8ef9caa1eda2fa653d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-a82aade05f24c3323681f036b4fc6515.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -103,76 +109,22 @@ gtag('js', new Date());
 gtag('config', 'G-FRV7C65B01', { 'anonymize_ip': true});
 </script>
 <script type="text/x-mathjax-config">
-
   MathJax.Hub.Config({
-
     tex2jax: {
-
       inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-
       displayMath: [ ['S$','S$'], ["\\[","\\]"] ]
-
       processEscapes: true
-
     }
-
   });
-
 </script>
 
 
 
-
-
-
-  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
-  <script>document.addEventListener("DOMContentLoaded", function () {
- var mathElements = document.getElementsByClassName("math");
- var macros = [];
- for (var i = 0; i < mathElements.length; i++) {
-  var texText = mathElements[i].firstChild;
-  if (mathElements[i].tagName == "SPAN") {
-   katex.render(texText.data, mathElements[i], {
-    displayMode: mathElements[i].classList.contains('display'),
-    throwOnError: false,
-    macros: macros,
-    fleqn: false
-   });
-}}});
-  </script>
-  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="Kvantitative metoder for lærere">
+<meta property="og:title" content="Kvantitativ metode for lærere">
 <meta property="og:description" content="">
-<meta property="og:site_name" content="Kvantitative metoder for lærere">
+<meta property="og:site_name" content="Kvantitativ metode for lærere">
 </head>
 
 <body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -361,9 +313,25 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Kvantitative metoder for lærere</a> 
+      <a href="./">Kvantitativ metode for lærere</a> 
         <div class="sidebar-tools-main tools-wide">
-    <a href="./Kvantitative-metoder-for-lærere.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Kvantitativ-metode-for-lærere.pdf">
+              <i class="bi bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Kvantitativ-metode-for-lærere.epub">
+              <i class="bi bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Bytt mørk modus"><i class="bi"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Bytt lesermodus">
   <div class="quarto-reader-toggle-btn">
@@ -389,7 +357,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./sec-why-statistics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Hvorfor lære statistikk?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Hvorfor lære kvantitative metoder?</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -427,19 +395,19 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./sec-jamovi.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Komme i gang med jamovi</span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Komme i gang med jamovi</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./sec-descriptive.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Deskriptiv statistikk</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Å beskrive én variabel</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./sec-diagram.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Visualisere data</span></span></a>
+  <a href="./sec-associations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Å beskrive sammenhenger mellom variabler</span></span></a>
   </div>
 </li>
       </ul>
@@ -447,7 +415,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Statistisk teori</span></a>
+ <span class="menu-text">Inferensiell statistikk</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Slå på delen">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -455,49 +423,8 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./sec-probability.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Sannsynlighet</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./sec-estimation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Estimering av ukjente størrelser fra et utvalg</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./sec-testing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Hypotesetesting</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
- <span class="menu-text">Inferensiell statistikk</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Slå på delen">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./sec-categorical.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Analyse av kategoriske data</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./sec-means.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Sammenlikne gjennomsnitt: ANOVA og paret <span class="math inline">t</span>-test</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./sec-correlation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Korrelasjon og lineær regresjon</span></span></a>
+  <a href="./sec-inferential.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Usikkerhet og konfidensintervall</span></span></a>
   </div>
 </li>
       </ul>
@@ -525,23 +452,50 @@ window.Quarto = {
    
   <ul>
   <li><a href="#forord" id="toc-forord" class="nav-link active" data-scroll-target="#forord">Forord</a></li>
+  <li><a href="#om-2026-versjonen" id="toc-om-2026-versjonen" class="nav-link" data-scroll-target="#om-2026-versjonen">Om 2026-versjonen</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 class="title display-7">Kvantitative metoder for lærere</h1></header>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 class="title display-7">Kvantitativ metode for lærere</h1></header>
 
 
 <header id="title-block-header">
 
-<p class="author">Danielle Navarro, David Foxcroft og Roar Bakken Stovner</p>
+<p class="author">Roar Bakken Stovner</p>
 
-<p class="date">August 2025</p>
+<p class="date">august 2026</p>
 </header>
 
 
 <section id="forord" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="forord">Forord</h2>
+<div class="grid" style="row-gap: 1rem; margin-bottom: 2rem;">
+  <div class="g-col-12 g-col-md-6">
+    <div class="card h-100">
+      <div class="card-body d-flex flex-column">
+        <div style="font-size: 2.5rem; line-height: 1;"><i class="bi bi-printer"></i></div>
+        <h5 class="card-title mt-2 anchored">Lese på papir</h5>
+        <p class="card-text flex-grow-1">Hvis du ønsker å lese på papir, bør du printe PDF-versjonen. Print 2-sidig med stift, så har du en pen bok.</p>
+        <a href="Kvantitativ-metode-for-lærere.pdf" class="btn btn-primary align-self-start">
+          <i class="bi bi-file-earmark-pdf"></i>&nbsp; Last ned PDF
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="g-col-12 g-col-md-6">
+    <div class="card h-100">
+      <div class="card-body d-flex flex-column">
+        <div style="font-size: 2.5rem; line-height: 1;"><i class="bi bi-tablet"></i></div>
+        <h5 class="card-title mt-2 anchored">Lese på lesebrett</h5>
+        <p class="card-text flex-grow-1">Hvis du ønsker å lese på et lesebrett, bør du forsøke .epub-versjonen.</p>
+        <a href="Kvantitativ-metode-for-lærere.epub" class="btn btn-primary align-self-start">
+          <i class="bi bi-book"></i>&nbsp; Last ned EPUB
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
 <p>I denne læreboken dekker vi innholdet i et innføringskurs i kvantitative metoder. Boka er basert på et vanlig grunnkurs slik det vanligvis undervises for bachelorstudenter innen psykologi, helse eller samfunnsvitenskap, men er endret slik at det passer for studenter på femårige grunnskolelærerutdanninger.</p>
 <p>Jeg hadde følgende krav til boka:</p>
 <ol type="1">
@@ -551,21 +505,38 @@ window.Quarto = {
 <li><strong>Viser analysene med en enkel og åpent tilgjengelig statistikk-programvare</strong>: Siden mange lærerstudenter skriver kvantitative masteroppgaver måtte boka ha med eksempler på hvordan man gjør statistisk analyse i en enkel programvare. Siden det finnes mye god statistikkprogramvare som er fritt tilgjengelig ønsket jeg å bruke noen av disse.</li>
 <li><strong>Fremhever forskningsdesign og deskriptiv analyse</strong>: Nesten alle statistikklærebøker benytter mye tid på hypotesetesting. Forutsetningene bak disse testene er nesten aldri oppfylt i praksis og de gir sjeldent gode svar på forskningsspørsmålene som stilles. Det er derfor bedre å bruke tiden til å lære mer om forskningsdesign og deskriptiv statistikk.</li>
 </ol>
-<p>Jeg fant ingen eksisterende bok som dekket disse punktene, så jeg valgte å tilpasse jeg en lærebok for psykologi-studenter som var gitt ut med en åpen lisens.</p>
-<p>Boka er en oversatt og omarbeidet versjon av Navarro og Foxcroft <span class="citation" data-cites="navarro2025">(<a href="sec-references.html#ref-navarro2025" role="doc-biblioref">2025</a>)</span> sin bok “Learning statistics with jamovi: A Tutorial for Beginners in Statistical Analysis” <a href="https://www.learnstatswithjamovi.com/">https://www.learnstatswithjamovi.com/</a>, som igjen er en omarbeidet versjon av Navarro <span class="citation" data-cites="navarro2011">(<a href="sec-references.html#ref-navarro2011" role="doc-biblioref">2011</a>)</span> sin bok “Learning statistics with R: A tutorial for psychology students and other beginners. (Version 0.6)” <a href="https://learningstatisticswithr.com/">https://learningstatisticswithr.com/</a>.</p>
-<p>Hvis du finner noen feil eller har forslag til forbedringer kan du melde inn et “issue” her <a href="https://github.com/roarstovner/kvant_for_laerere/issues">https://github.com/roarstovner/kvant_for_laerere/issues</a> eller sende meg en epost.</p>
+<p>Jeg fant ingen eksisterende bok som dekket disse punktene, så jeg valgte å tilpasse en lærebok for psykologi-studenter som var gitt ut med en åpen lisens.</p>
+<p>Boka er en oversatt og omarbeidet versjon av Navarro og Foxcroft <span class="citation" data-cites="navarro2025">(<a href="sec-references.html#ref-navarro2025" role="doc-biblioref">2025</a>)</span> sin bok «Learning statistics with jamovi: A Tutorial for Beginners in Statistical Analysis» <a href="https://www.learnstatswithjamovi.com/">https://www.learnstatswithjamovi.com/</a>, som igjen er en omarbeidet versjon av Navarro <span class="citation" data-cites="navarro2011">(<a href="sec-references.html#ref-navarro2011" role="doc-biblioref">2011</a>)</span> sin bok «Learning statistics with R: A tutorial for psychology students and other beginners. (Version 0.6)» <a href="https://learningstatisticswithr.com/">https://learningstatisticswithr.com/</a>.</p>
+<p>Hvis du finner noen feil eller har forslag til forbedringer kan du melde inn et «issue» her <a href="https://github.com/roarstovner/kvant_for_laerere/issues">https://github.com/roarstovner/kvant_for_laerere/issues</a> eller ta kontakt med meg via <a href="https://www.oslomet.no/om/ansatt/robast/">ansattsiden min</a>.</p>
 <p>Jeg håper dere setter pris på å ha en lærebok i kvantitativ metode som dekker de fem punktene i tillegg til å være gratis tilgjengelig på nett.</p>
 <p><em>Roar Stovner, 4. august, 2025</em></p>
-<p>(Hvis du ønsker å benytte boka i egen undervisning er det fritt frem, men send meg gjerne en epost, for det er gøy å vite at boka blir brukt! Hvis du ønsker å gjøre endringer i boka er det også lov, siden boka er gitt ut på lisensen CC-BY-SA, eneste krav er at du viser tilbake til de tidligere versjonene av boka (inkludert min versjon) og gjør den tilgjengelig med samme lisens. Bokas kildekode finner du på <a href="https://github.com/roarstovner/kvant_for_laerere">github</a>.)</p>
-<p><strong>Sitering</strong>: Danielle J. Navarro, David R. Foxcroft, and Roar B. Stovner. (2025). <em>Kvantitativ metode for lærere</em>. <a href="https://kvant.roarstovner.no" class="uri">https://kvant.roarstovner.no</a> .</p>
+</section>
+<section id="om-2026-versjonen" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="om-2026-versjonen">Om 2026-versjonen</h2>
+<p>Boka fikk gode tilbakemeldinger i 2025, men årets versjon er nok bedre på svært mange områder, blant annet takket være gode forslag fra studenter. Jeg har</p>
+<ul>
+<li>forkortet boka ved å stryke delene om hypotesetesting og skrevet en grundigere og mer forståelig forklaring på estimering og konfidensintervall.</li>
+<li>endret strukturen på delen om deskriptiv statistikk; heller enn å være inndelt i et kapittel om utregninger og et om diagrammer, er den delt inn i deskriptiv statistikk på én variabel og flere variabler.</li>
+<li>lagt til en del om etikk ved kvantitativ måling i <a href="sec-measurement.html" class="quarto-xref"><span>2&nbsp; Måling i utdanningsforskning</span></a>.</li>
+<li>gjort mindre forbedringer på alle delkapitlene, spesielt ved at eksemplene nå er enda tettere knyttet til skole og lærergjerningen.</li>
+</ul>
+<p>En spesiell takk til Anne Kristine Øgreid som tok på seg å være en slags redaktør for boka. Jeg står ansvarlig for innholdet, men hun har forbedret språket i hele boka, fått kapitlene raskere til poengene, og forbedret forklaringene. Takk også til fakultetet, LUI ved OsloMet, som har gitt økonomisk støtte (såkalte «strategimidler») til å utvikle boka videre.</p>
+<p><em>Roar Stovner, 17. august, 2026</em></p>
+<div class="margin-top-2">
 
-
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
-<div id="ref-navarro2011" class="csl-entry" role="listitem">
-Navarro, D. (2011). <em>Learning <span>Statistics</span> with <span>R</span></em> (0.6 ed.).
 </div>
-<div id="ref-navarro2025" class="csl-entry" role="listitem">
-Navarro, D., &amp; Foxcroft, D. (2025). <em>Learning <span>Statistics</span> with jamovi: <span>A Tutorial</span> for <span>Beginners</span> in <span>Statistical Analysis</span></em> (1st ed.). Open Book Publishers. <a href="https://doi.org/10.11647/OBP.0333">https://doi.org/10.11647/OBP.0333</a>
+<p>(Hvis noen ønsker å benytte boka i egen undervisning er det fritt frem, men ta gjerne kontakt via <a href="https://www.oslomet.no/om/ansatt/robast/">ansattsiden min</a>, for det er gøy å vite at boka blir brukt! Å gjøre endringer i boka er tillatt, siden boka er utgitt under lisensen CC-BY-SA. Det eneste kravet er at de tidligere versjonene av boka (inkludert denne) krediteres, og at den nye versjonen gjøres tilgjengelig med samme lisens. Bokas kildekode ligger på <a href="https://github.com/roarstovner/kvant_for_laerere">github</a>.)</p>
+<p><strong>Sitering</strong>: Roar B. Stovner. (2026). <em>Kvantitativ metode for lærere</em> (2026-utgaven). <a href="https://kvant.roarstovner.no" class="uri">https://kvant.roarstovner.no</a>, <a href="https://doi.org/10.5281/zenodo.17068063" class="uri">https://doi.org/10.5281/zenodo.17068063</a>.</p>
+<p>DOI-en over er bokas hoved-DOI, og den peker alltid til nyeste utgave. Hver utgave har i tillegg sin egen DOI, som du bør bruke hvis du siterer et konkret sidetall eller en formulering: 2025-utgaven har <a href="https://doi.org/10.5281/zenodo.17068064" class="uri">https://doi.org/10.5281/zenodo.17068064</a>.</p>
+<p><strong>Tidligere utgaver</strong>: Underviser du fra en eldre utgave, finner du den arkivert med sin egen DOI under <a href="https://github.com/roarstovner/kvant_for_laerere/releases">utgivelser på GitHub</a>. Hver utgave ligger der som PDF og EPUB, uendret.</p>
+<a href="https://creativecommons.org/licenses/by-sa/4.0/">
+
+</a><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none"><a href="https://creativecommons.org/licenses/by-sa/4.0/">
+<div id="ref-navarro2011" class="csl-entry" role="listitem">
+Navarro, D. (2011). <em>Learning <span>Statistics</span> with <span>R</span></em> (0.6).
+</div>
+</a><div id="ref-navarro2025" class="csl-entry" role="listitem"><a href="https://creativecommons.org/licenses/by-sa/4.0/">
+Navarro, D., &amp; Foxcroft, D. (2025). <em>Learning <span>Statistics</span> with Jamovi: <span>A Tutorial</span> for <span>Beginners</span> in <span>Statistical Analysis</span></em> (1. utg.). Open Book Publishers. </a><a href="https://doi.org/10.11647/OBP.0333">https://doi.org/10.11647/OBP.0333</a>
 </div>
 </div>
 </section>
@@ -635,13 +606,14 @@ Navarro, D., &amp; Foxcroft, D. (2025). <em>Learning <span>Statistics</span> wit
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -992,8 +964,8 @@ Navarro, D., &amp; Foxcroft, D. (2025). <em>Learning <span>Statistics</span> wit
   <div class="nav-page nav-page-previous">
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./sec-why-statistics.html" class="pagination-link" aria-label="Hvorfor lære statistikk?">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Hvorfor lære statistikk?</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./sec-why-statistics.html" class="pagination-link" aria-label="Hvorfor lære kvantitative metoder?">
+        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Hvorfor lære kvantitative metoder?</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1001,18 +973,18 @@ Navarro, D., &amp; Foxcroft, D. (2025). <em>Learning <span>Statistics</span> wit
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p><a href="https://kvant.roarstovner.no">Kvantitative metoder for lærere</a></p>
+<p><a href="https://kvant.roarstovner.no">Kvantitativ metode for lærere</a></p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
     <div class="nav-footer-right">
-<p>Denne boka ble laget i <a href="https://quarto.org/">Quarto</a></p>
-</div>
-  </div>
-</footer>
+<p>Denne boka ble laget i <a href="https://quarto.org/">Quarto</a> og er utgitt under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY 4.0&lt;&gt;</a></p><a href="https://creativecommons.org/licenses/by-sa/4.0/">
+</a></div><a href="https://creativecommons.org/licenses/by-sa/4.0/">
+  </a></div><a href="https://creativecommons.org/licenses/by-sa/4.0/">
+</a></footer><a href="https://creativecommons.org/licenses/by-sa/4.0/">
 
 
 
 
-</body></html>
+</a></body></html>

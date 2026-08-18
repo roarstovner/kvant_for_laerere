@@ -1,18 +1,24 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="nb" xml:lang="nb"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2&nbsp; Måling i utdanningsforskning – Kvantitative metoder for lærere</title>
+<title>2&nbsp; Måling i utdanningsforskning – Kvantitativ metode for lærere</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -58,14 +64,14 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-8ef56b68f8fa1e9d2ba328e99e439f80.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-89d524cf73f3b2250d5e74ecba7e97ca.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-32c0091d9c65541b54b40246001d65bb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-89d524cf73f3b2250d5e74ecba7e97ca.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-a82aade05f24c3323681f036b4fc6515.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-510a82e8f80afa8ef9caa1eda2fa653d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-a82aade05f24c3323681f036b4fc6515.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -106,25 +112,14 @@ gtag('js', new Date());
 gtag('config', 'G-FRV7C65B01', { 'anonymize_ip': true});
 </script>
 <script type="text/x-mathjax-config">
-
   MathJax.Hub.Config({
-
     tex2jax: {
-
       inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-
       displayMath: [ ['S$','S$'], ["\\[","\\]"] ]
-
       processEscapes: true
-
     }
-
   });
-
 </script>
-
-
-
 
 
 
@@ -156,7 +151,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -173,13 +168,13 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="2&nbsp; Måling i utdanningsforskning – Kvantitative metoder for lærere">
+<meta property="og:title" content="2&nbsp; Måling i utdanningsforskning – Kvantitativ metode for lærere">
 <meta property="og:description" content="">
-<meta property="og:image" content="https://kvant.roarstovner.no/images/fig-operasjonalisering.png">
-<meta property="og:site_name" content="Kvantitative metoder for lærere">
-<meta property="og:image:alt" content="Lengst til venstre er 'Teoretisk konstrukt: Alder' med en pil til 'Målemetode: Selvrapportering fra nettspørreskjema: 'hvilket år ble du født?''. Det står 'operasjonalisering' på pila. Derfra går det en pil, 'datainnsamling', til 'Variabel'. Ved 'Variabel' er det et datasett med 'Fødselsår' og 'Alder'. Fra 'Fødselsår' til 'Alder' går det en liten pil, 'Etterbehandling av data'.">
-<meta property="og:image:height" content="349">
-<meta property="og:image:width" content="1044">
+<meta property="og:image" content="https://kvant.roarstovner.no/sec-measurement_files/figure-html/fig-operasjonalisering-1.png">
+<meta property="og:site_name" content="Kvantitativ metode for lærere">
+<meta property="og:image:alt" content="Tre bokser med piler mellom. Første boks er 'Teoretisk konstrukt: leseferdighet'. En pil merket 'operasjonalisering' peker til andre boks, 'Målemetode: ordkjedetest med 90 ordkjeder på fire minutter'. En pil merket 'datainnsamling' peker til tredje boks, 'Variabel: antall riktige ordkjeder, med verdiene 48, 63, 21 og så videre'.">
+<meta property="og:image:height" content="382">
+<meta property="og:image:width" content="1812">
 </head>
 
 <body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -368,9 +363,25 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Kvantitative metoder for lærere</a> 
+      <a href="./">Kvantitativ metode for lærere</a> 
         <div class="sidebar-tools-main tools-wide">
-    <a href="./Kvantitative-metoder-for-lærere.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Kvantitativ-metode-for-lærere.pdf">
+              <i class="bi bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Kvantitativ-metode-for-lærere.epub">
+              <i class="bi bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Bytt mørk modus"><i class="bi"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Bytt lesermodus">
   <div class="quarto-reader-toggle-btn">
@@ -396,7 +407,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./sec-why-statistics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Hvorfor lære statistikk?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Hvorfor lære kvantitative metoder?</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -434,19 +445,19 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./sec-jamovi.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Komme i gang med jamovi</span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Komme i gang med jamovi</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./sec-descriptive.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Deskriptiv statistikk</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Å beskrive én variabel</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./sec-diagram.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Visualisere data</span></span></a>
+  <a href="./sec-associations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Å beskrive sammenhenger mellom variabler</span></span></a>
   </div>
 </li>
       </ul>
@@ -454,7 +465,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Statistisk teori</span></a>
+ <span class="menu-text">Inferensiell statistikk</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Slå på delen">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -462,49 +473,8 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./sec-probability.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Sannsynlighet</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./sec-estimation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Estimering av ukjente størrelser fra et utvalg</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./sec-testing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Hypotesetesting</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
- <span class="menu-text">Inferensiell statistikk</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Slå på delen">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./sec-categorical.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Analyse av kategoriske data</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./sec-means.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Sammenlikne gjennomsnitt: ANOVA og paret <span class="math inline">t</span>-test</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./sec-correlation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Korrelasjon og lineær regresjon</span></span></a>
+  <a href="./sec-inferential.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Usikkerhet og konfidensintervall</span></span></a>
   </div>
 </li>
       </ul>
@@ -533,9 +503,9 @@ window.Quarto = {
   <ul>
   <li><a href="#sec-measurement-concepts" id="toc-sec-measurement-concepts" class="nav-link active" data-scroll-target="#sec-measurement-concepts"><span class="header-section-number">2.1</span> Begreper om målinger</a>
   <ul class="collapse">
-  <li><a href="#sec-variables-values" id="toc-sec-variables-values" class="nav-link" data-scroll-target="#sec-variables-values"><span class="header-section-number">2.1.1</span> Variable og verdier</a></li>
-  <li><a href="#sec-operationalization" id="toc-sec-operationalization" class="nav-link" data-scroll-target="#sec-operationalization"><span class="header-section-number">2.1.2</span> Operasjonalisering av teoretiske konstrukter</a></li>
-  <li><a href="#sec-measurement-methods" id="toc-sec-measurement-methods" class="nav-link" data-scroll-target="#sec-measurement-methods"><span class="header-section-number">2.1.3</span> Forskjellige målemetoder</a></li>
+  <li><a href="#sec-operationalization" id="toc-sec-operationalization" class="nav-link" data-scroll-target="#sec-operationalization"><span class="header-section-number">2.1.1</span> Teoretiske konstrukter og operasjonalisering</a></li>
+  <li><a href="#sec-variables-values" id="toc-sec-variables-values" class="nav-link" data-scroll-target="#sec-variables-values"><span class="header-section-number">2.1.2</span> Variabler og verdier</a></li>
+  <li><a href="#sec-methods-overview" id="toc-sec-methods-overview" class="nav-link" data-scroll-target="#sec-methods-overview"><span class="header-section-number">2.1.3</span> Forskjellige målemetoder</a></li>
   </ul></li>
   <li><a href="#sec-Scales-of-measurement" id="toc-sec-Scales-of-measurement" class="nav-link" data-scroll-target="#sec-Scales-of-measurement"><span class="header-section-number">2.2</span> Målenivåer</a>
   <ul class="collapse">
@@ -544,7 +514,7 @@ window.Quarto = {
   <li><a href="#intervallvariabel" id="toc-intervallvariabel" class="nav-link" data-scroll-target="#intervallvariabel"><span class="header-section-number">2.2.3</span> Intervallvariabel</a></li>
   <li><a href="#forholdstallsvariabel" id="toc-forholdstallsvariabel" class="nav-link" data-scroll-target="#forholdstallsvariabel"><span class="header-section-number">2.2.4</span> Forholdstallsvariabel</a></li>
   <li><a href="#kontinuerlige-og-diskrete-variabler" id="toc-kontinuerlige-og-diskrete-variabler" class="nav-link" data-scroll-target="#kontinuerlige-og-diskrete-variabler"><span class="header-section-number">2.2.5</span> Kontinuerlige og diskrete variabler</a></li>
-  <li><a href="#noen-komplikasjoner-likert-skalaer" id="toc-noen-komplikasjoner-likert-skalaer" class="nav-link" data-scroll-target="#noen-komplikasjoner-likert-skalaer"><span class="header-section-number">2.2.6</span> Noen komplikasjoner: Likert-skalaer</a></li>
+  <li><a href="#sec-measurement-likert" id="toc-sec-measurement-likert" class="nav-link" data-scroll-target="#sec-measurement-likert"><span class="header-section-number">2.2.6</span> Noen komplikasjoner: Likert-skalaer</a></li>
   <li><a href="#samlevariabler" id="toc-samlevariabler" class="nav-link" data-scroll-target="#samlevariabler"><span class="header-section-number">2.2.7</span> Samlevariabler</a></li>
   </ul></li>
   <li><a href="#sec-reliability" id="toc-sec-reliability" class="nav-link" data-scroll-target="#sec-reliability"><span class="header-section-number">2.3</span> Å vurdere en målemetodes kvalitet: Reliabilitet og validitet</a>
@@ -552,9 +522,19 @@ window.Quarto = {
   <li><a href="#en-målings-reliabilitet" id="toc-en-målings-reliabilitet" class="nav-link" data-scroll-target="#en-målings-reliabilitet"><span class="header-section-number">2.3.1</span> En målings reliabilitet</a></li>
   <li><a href="#sec-validity" id="toc-sec-validity" class="nav-link" data-scroll-target="#sec-validity"><span class="header-section-number">2.3.2</span> En målings validitet</a></li>
   <li><a href="#konstruktvaliditet" id="toc-konstruktvaliditet" class="nav-link" data-scroll-target="#konstruktvaliditet"><span class="header-section-number">2.3.3</span> Konstruktvaliditet</a></li>
-  <li><a href="#et-eksempel-måling-av-elevers-indre-motivasjon-for-matematikk" id="toc-et-eksempel-måling-av-elevers-indre-motivasjon-for-matematikk" class="nav-link" data-scroll-target="#et-eksempel-måling-av-elevers-indre-motivasjon-for-matematikk"><span class="header-section-number">2.3.4</span> Et eksempel: måling av elevers indre motivasjon for matematikk</a></li>
   </ul></li>
-  <li><a href="#oppsummering" id="toc-oppsummering" class="nav-link" data-scroll-target="#oppsummering"><span class="header-section-number">2.4</span> Oppsummering</a></li>
+  <li><a href="#sec-measurement-methods" id="toc-sec-measurement-methods" class="nav-link" data-scroll-target="#sec-measurement-methods"><span class="header-section-number">2.4</span> Målemetoder</a>
+  <ul class="collapse">
+  <li><a href="#prøver-og-tester" id="toc-prøver-og-tester" class="nav-link" data-scroll-target="#prøver-og-tester"><span class="header-section-number">2.4.1</span> Prøver og tester</a></li>
+  <li><a href="#registerdata" id="toc-registerdata" class="nav-link" data-scroll-target="#registerdata"><span class="header-section-number">2.4.2</span> Registerdata</a></li>
+  <li><a href="#selvrapportering" id="toc-selvrapportering" class="nav-link" data-scroll-target="#selvrapportering"><span class="header-section-number">2.4.3</span> Selvrapportering</a></li>
+  <li><a href="#tredjepartsrapportering" id="toc-tredjepartsrapportering" class="nav-link" data-scroll-target="#tredjepartsrapportering"><span class="header-section-number">2.4.4</span> Tredjepartsrapportering</a></li>
+  <li><a href="#observasjon" id="toc-observasjon" class="nav-link" data-scroll-target="#observasjon"><span class="header-section-number">2.4.5</span> Observasjon</a></li>
+  <li><a href="#fysiologiske-mål" id="toc-fysiologiske-mål" class="nav-link" data-scroll-target="#fysiologiske-mål"><span class="header-section-number">2.4.6</span> Fysiologiske mål</a></li>
+  <li><a href="#når-målemetodene-ikke-er-enige" id="toc-når-målemetodene-ikke-er-enige" class="nav-link" data-scroll-target="#når-målemetodene-ikke-er-enige"><span class="header-section-number">2.4.7</span> Når målemetodene ikke er enige</a></li>
+  </ul></li>
+  <li><a href="#sec-measurement-ethics" id="toc-sec-measurement-ethics" class="nav-link" data-scroll-target="#sec-measurement-ethics"><span class="header-section-number">2.5</span> Etiske sider ved kvantitativ måling av folk</a></li>
+  <li><a href="#oppsummering" id="toc-oppsummering" class="nav-link" data-scroll-target="#oppsummering"><span class="header-section-number">2.6</span> Oppsummering</a></li>
   </ul>
 </nav>
     </div>
@@ -580,39 +560,30 @@ window.Quarto = {
 <p><em>We’re seeing that the published literature–you know, in some of our best journals–features measures that have little or no validity evidence. Measurement, schmeasurement. Applied researchers are, as a norm, not engaged in this process of construct validation.</em><br>
 – Professor Jessica Kay Flake<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 </blockquote>
-<p>I dette kapittelet skal vi lære hvorfor vi bør være skeptiske til kvantitative målinger i utdanningsforskning og hva som skal til for å gjøre gode målinger. Men først må vi lære de vanligste begrepene man benytter for å beskrive målinger. Dette kapittelet bygger i stor grad på <span class="citation" data-cites="Campbell1963">Campbell &amp; Stanley (<a href="sec-references.html#ref-Campbell1963" role="doc-biblioref">1963</a>)</span> og <span class="citation" data-cites="stevens1946">Stevens (<a href="sec-references.html#ref-stevens1946" role="doc-biblioref">1946</a>)</span> for diskusjonen om måleskalaer.</p>
+<p>I dette kapittelet skal vi lære hvorfor vi bør være skeptiske til kvantitative målinger i utdanningsforskning og hva som skal til for å gjøre gode målinger. Men først må vi lære de vanligste begrepene man benytter for å beskrive målinger. Dette kapittelet bygger i stor grad på <span class="citation" data-cites="Campbell1963">Campbell &amp; Stanley (<a href="sec-references.html#ref-Campbell1963" role="doc-biblioref">1963</a>)</span> og på <span class="citation" data-cites="stevens1946">Stevens (<a href="sec-references.html#ref-stevens1946" role="doc-biblioref">1946</a>)</span> for diskusjonen om måleskalaer.</p>
 <section id="sec-measurement-concepts" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="sec-measurement-concepts"><span class="header-section-number">2.1</span> Begreper om målinger</h2>
-<section id="sec-variables-values" class="level3" data-number="2.1.1">
-<h3 data-number="2.1.1" class="anchored" data-anchor-id="sec-variables-values"><span class="header-section-number">2.1.1</span> Variable og verdier</h3>
-<p>Kvantitative analyser baserer seg på at man har gjort en spesifikk <strong>måling</strong> av mange forskjellige ting. I utdanningsforskning er tingene gjerne skoler, lærere, klasser, elever, rektorer, læreplaner, lærebøker, elevtekster eller liknende. Måling er å tildele tall, merkelapper eller andre veldefinerte beskrivelser til disse tingene. Så alle følgende eksempler vil regnes som målinger:</p>
+<p>Veien fra idé til data går i tre steg. Vi starter med et <em>teoretisk konstrukt</em>, altså den teoretiske beskrivelsen av det vi ønsker å undersøke. Så lager vi en <em>målemetode</em>, som er en presis oppskrift på hvordan konstruktet skal måles. Til slutt gjennomfører vi målingene, og resultatet er <em>variabler</em> med <em>verdier</em> i et datasett. Vi tar de tre stegene i tur.</p>
+<section id="sec-operationalization" class="level3" data-number="2.1.1">
+<h3 data-number="2.1.1" class="anchored" data-anchor-id="sec-operationalization"><span class="header-section-number">2.1.1</span> Teoretiske konstrukter og operasjonalisering</h3>
+<p>Fenomenene vi ønsker å måle i utdanningsforskning, slik som leseferdighet, motivasjon, læring og undervisning, er beskrevet teoretisk. Den teoretiske beskrivelsen kalles et <em>teoretisk konstrukt</em>, ofte omtalt som bare <em>konstruktet</em>.</p>
+<p>La oss bruke leseferdighet som eksempel. Hva er egentlig leseferdighet? Leseforskere er ikke helt enige, men de fleste beskrivelser inneholder minst disse delene:</p>
 <ul>
-<li>Min <strong>alder</strong> er <em>33</em> år.</li>
-<li>Jeg <strong>preferanse for ansjon</strong> er at jeg <em>ikke liker det</em>.</li>
-<li>Mitt <strong>kromosomale kjønn</strong> er <em>mann</em>.</li>
-<li>Mitt <strong>selvidentifiserte kjønn</strong> er <em>kvinne</em>.</li>
+<li><em>avkoding</em>, altså å omsette bokstavene på arket til ord, raskt og uanstrengt</li>
+<li><em>leseforståelse</em>, altså å skape mening av det som står i teksten</li>
+<li><em>refleksjon</em>, altså å vurdere teksten, hva forfatteren vil med den og hva den er verdt</li>
 </ul>
-<p>I denne listen viser den fete skriften “det vi skal måle”, som kalles <strong>variabelen</strong>, og den kursiverte skriften viser “det som er målt”, som kalles <strong>verdien</strong>. Skillet mellom variabelen og de ulike verdiene variabelen kan anta er sentralt:</p>
-<ul>
-<li>Min <strong>alder</strong> (i år) kunne ha hatt verdiene <em>0, 1, 2, 3</em> … osv. Den øvre grensen for verdien alderen min kunne hatt er litt uklar, men i praksis kan si at den høyeste mulige alderen er <em>150</em>, siden ingen mennesker noensinne har levd så lenge.</li>
-<li>Når jeg blir spurt om jeg <strong>liker ansjos</strong>, kunne jeg ha svart at <em>jeg gjør det</em>, eller <em>jeg gjør det ikke</em>, eller <em>jeg har ingen mening</em>, eller <em>jeg gjør det av og til</em>.</li>
-<li>Mitt <strong>kromosomale kjønn</strong> er nesten helt sikkert enten <em>mann</em> (<span class="math inline">XY</span>) eller <em>kvinne</em> (<span class="math inline">XX</span>), men det finnes noen andre verdier variabelen kunne hatt. Jeg kunne for eksempel hatt <em>Klinefelters syndrom</em> (<span class="math inline">XXY</span>), som er mer likt mann enn kvinne.</li>
-<li>Mitt <strong>selvidentifiserte</strong> kjønn er også svært sannsynlig enten mann eller kvinne, men det trenger ikke å samsvare med mitt kromosomale kjønn. Jeg kan også velge å identifisere meg med <em>ingen av delene</em>, eller eksplisitt kalle meg selv <em>transperson</em>.</li>
-</ul>
-<p>Som du ser, for noen ting (som alder) virker det ganske opplagt hva mulige verdier bør være, mens for andre virker det vanskelig. Men selv det å definere alderen min kan være vanskelig. For eksempel, i eksemplet ovenfor antok jeg at det var greit å måle alder i år og runde av til heltall. Men hvis du er en pedagog som jobber med små barn er dette altfor grovt, og derfor måles ofte alder i <em>år og måneder</em> (hvis et barn er 2 år og 11 måneder, skrives dette vanligvis som “2;11”). Hvis du er interessert i nyfødte, vil du kanskje måle alder i <em>dager siden fødsel</em>, kanskje til og med <em>timer siden fødsel</em>. Med andre ord, måten du spesifiserer de tillatte måleverdiene på er en viktig del av å planlegge en studie.</p>
-</section>
-<section id="sec-operationalization" class="level3" data-number="2.1.2">
-<h3 data-number="2.1.2" class="anchored" data-anchor-id="sec-operationalization"><span class="header-section-number">2.1.2</span> Operasjonalisering av teoretiske konstrukter</h3>
-<p>Alle tingene vi ønsker å måle (slik som alder, motivasjon, læring, undervisning) har en teoretisk beskrivelse. Denne teoretiske beskrivelsen kalles et <em>teoretisk konstrukt</em>. Ofte utelater man “teoretisk” om omtaler det bare som “konstruktet”. Når vi skal gjøre en måling av et teoretisk konstrukt må vi lage en <em>målemetode</em>. Dette kalles å <em>operasjonalisere</em> konstruktet, og vi kaller målemetoden en <em>operasjonalisering</em> av konstruktet. Begrepene blir oppsummert i <a href="#fig-operasjonalisering" class="quarto-xref">Figur&nbsp;<span>2.1</span></a>.</p>
+<p>Noen leseforskere regner også <em>leselyst</em> eller <em>leseengasjement</em> som en del av leseferdigheten, mens andre holder det utenfor og heller ser på det som noe som påvirker leseferdigheten. Man kan altså helt fint være uenige om hva teoretiske konstrukter er.</p>
+<p>Et konstrukt kan man ikke måle direkte. Man må først bestemme seg for en helt presis oppskrift på hvordan målingen skal foregå. Denne oppskriften kalles en <em>målemetode</em>, og arbeidet med å komme fra det vage konstruktet til den presise målemetoden kalles å <strong>operasjonalisere</strong> konstruktet. Selve målemetoden omtales som en <em>operasjonalisering</em> av konstruktet. Begrepene er oppsummert i <a href="#fig-operasjonalisering" class="quarto-xref">Figur&nbsp;<span>2.1</span></a>.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-operasjonalisering" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Lengst til venstre er 'Teoretisk konstrukt: Alder' med en pil til 'Målemetode: Selvrapportering fra nettspørreskjema: 'hvilket år ble du født?''. Det står 'operasjonalisering' på pila. Derfra går det en pil, 'datainnsamling', til 'Variabel'. Ved 'Variabel' er det et datasett med 'Fødselsår' og 'Alder'. Fra 'Fødselsår' til 'Alder' går det en liten pil, 'Etterbehandling av data'.">
+<div id="fig-operasjonalisering" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Tre bokser med piler mellom. Første boks er 'Teoretisk konstrukt: leseferdighet'. En pil merket 'operasjonalisering' peker til andre boks, 'Målemetode: ordkjedetest med 90 ordkjeder på fire minutter'. En pil merket 'datainnsamling' peker til tredje boks, 'Variabel: antall riktige ordkjeder, med verdiene 48, 63, 21 og så videre'." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-operasjonalisering-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/fig-operasjonalisering.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figur&nbsp;2.1. Operasjonalisering av konstruktet alder. Lengst til høyre er ‘Alder’ en variabel i datasettet som har verdiene 21, 38 og 72 for de tre første forskningsdeltagerne."><img src="images/fig-operasjonalisering.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="Lengst til venstre er 'Teoretisk konstrukt: Alder' med en pil til 'Målemetode: Selvrapportering fra nettspørreskjema: 'hvilket år ble du født?''. Det står 'operasjonalisering' på pila. Derfra går det en pil, 'datainnsamling', til 'Variabel'. Ved 'Variabel' er det et datasett med 'Fødselsår' og 'Alder'. Fra 'Fødselsår' til 'Alder' går det en liten pil, 'Etterbehandling av data'."></a>
+<a href="sec-measurement_files/figure-html/fig-operasjonalisering-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figur&nbsp;2.1. Fra teori til data. Konstruktet leseferdighet operasjonaliseres til en målemetode, og datainnsamlingen gir en variabel med verdier."><img src="sec-measurement_files/figure-html/fig-operasjonalisering-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="Tre bokser med piler mellom. Første boks er 'Teoretisk konstrukt: leseferdighet'. En pil merket 'operasjonalisering' peker til andre boks, 'Målemetode: ordkjedetest med 90 ordkjeder på fire minutter'. En pil merket 'datainnsamling' peker til tredje boks, 'Variabel: antall riktige ordkjeder, med verdiene 48, 63, 21 og så videre'."></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-operasjonalisering-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figur&nbsp;2.1. Operasjonalisering av konstruktet <em>alder</em>. Lengst til høyre er ‘Alder’ en variabel i datasettet som har verdiene 21, 38 og 72 for de tre første forskningsdeltagerne.
+Figur&nbsp;2.1. Fra teori til data. Konstruktet <em>leseferdighet</em> operasjonaliseres til en målemetode, og datainnsamlingen gir en variabel med verdier.
 </figcaption>
 </figure>
 </div>
@@ -620,34 +591,54 @@ Figur&nbsp;2.1. Operasjonalisering av konstruktet <em>alder</em>. Lengst til hø
 </div>
 <p>Kort fortalt handler operasjonalisering om å omforme et konstrukt, som ofte er ganske vagt, til en helt presist definert måling. Operasjonalisering omfatter blant annet:</p>
 <ul>
-<li>å definere hva som skal måles. For eksempel, betyr “alder” “tid siden fødsel” eller “tid siden unnfangelse”? Dette er et viktig skille når man undersøker læring hos de aller yngste barna.</li>
-<li>å bestemme målemetode. For å måle alder, vil du spørre personen selv eller en forelder eller kanskje slå opp i et offisielt register? Hvis du bruker selvrapportering, hvordan vil du formulere spørsmålet?</li>
-<li>å definere hvilke verdier målingene kan ha. Verdiene er ofte numeriske, men ikke alltid. Ved aldersmåling kan vi spørre: ønsker vi alder kun i år, eller skal vi inkludere måneder, dager, eller timer? For andre målinger, som kjønn, er verdiene ikke numeriske. Her må vi vurdere hvilke alternativer vi skal tilby. Er det tilstrekkelig med “mann” og “kvinne,” eller er “annet” nødvendig? Skal vi la deltakerne velge blant forhåndsdefinerte svaralternativer eller skal forskningsdeltagerne få skrive fritt? Hvordan vil vi i så fall benytte disse svarene videre? Skal du slå sammen de som har skrevet “transmann” og “skeiv, men biologisk kvinne” til samme verdi?</li>
+<li><strong>å avgrense hva som skal måles.</strong> Skal vi måle hele leseferdigheten, eller bare avkodingen? Skal leselyst regnes med? Svaret avhenger av hva vi trenger målingen til. En logoped som utreder mistanke om dysleksi er interessert i avkodingen, mens en norsklærer som planlegger undervisning i sakprosa er mer interessert i forståelse og refleksjon.</li>
+<li><strong>å bestemme målemetode.</strong> Avkoding måles ofte med en <em>ordkjedetest</em>, der eleven setter strek mellom ordene i kjeder som «busshundmelktyv». Leseforståelse måles gjerne ved at eleven leser en tekst og svarer på spørsmål til den, slik som i nasjonale prøver i lesing. Leselyst måles kanskje ved å svare på spørsmål i et spørreskjema?</li>
+<li><strong>å definere hvilke verdier målingene kan ha.</strong> Skal ordkjedetesten telle antall riktige, eller angi kategoriene <em>trenger ekstra oppfølging</em> eller <em>trenger ikke ekstra oppfølging</em>? Skal leselyst måles med tall (1 til 7 eller 1 til 4) eller tekst (fra <em>ikke interessant</em> til <em>veldig interessant</em>)? Skal elevene kunne skrive hva de vil? Hvordan skal vi i så fall lage verdier av svarene etterpå?</li>
 </ul>
-<p>Operasjonalisering er komplisert og det finnes ikke én riktig måte å gjøre det på. Hvordan du velger å operasjonalisere det uformelle konseptet “alder” eller “kjønn” til en formell måling avhenger av hva du trenger målingen til. Ofte vil du oppdage at forskerne som jobber innen ditt område har veletablerte praksiser for hvordan man skal måle konstruktet, men andre ganger må du utvikle en operasjonalisering av konstruktet som passer til din forskning.</p>
-<p>Etter å ha operasjonalisert konstruktet kan man gjøre målinger. Hver enkelt måling gir en verdi, og samlingen av verdier utgjør en <em>variabel</em> i datasettet.</p>
-<p>Til hverdags benytter forskere disse begrepene om hverandre, de kan for eksempel si “operasjonalisering av variabelen” heller enn “av konstruktet”, men det er svært nyttig å forstå distinksjonene.</p>
+<p>Legg merke til at det samme konstruktet kan operasjonaliseres på mange måter, og at operasjonaliseringene ikke er likeverdige. En ordkjedetest og en nasjonal prøve i lesing måler begge noe vi kaller «leseferdighet», men de gir forskjellige tall og rangerer ikke elevene helt likt. En elev som avkoder langsomt, men forstår godt det hun leser, kommer dårlig ut på ordkjedetesten og godt ut på den nasjonale prøven. Når du leser en forskningsartikkel er det derfor ikke nok å vite at forskerne har målt «leseferdighet»; du må vite <em>hvordan</em> de har målt den.</p>
+<p>Operasjonalisering er komplisert, og det finnes ikke én riktig måte å gjøre det på. Hvordan du velger å operasjonalisere et konstrukt til en formell måling, avhenger av hva du trenger målingen til. Ofte vil du oppdage at forskerne som jobber innen ditt område har veletablerte praksiser for hvordan man skal måle konstruktet, men andre ganger må du utvikle en operasjonalisering av konstruktet som passer til din forskning.</p>
 </section>
-<section id="sec-measurement-methods" class="level3" data-number="2.1.3">
-<h3 data-number="2.1.3" class="anchored" data-anchor-id="sec-measurement-methods"><span class="header-section-number">2.1.3</span> Forskjellige målemetoder</h3>
-<p>I utdanningsforskning benytter vi oss av mange forskjellige målemetoder. Hvilken spesifikk målemetode skal du bruke for å finne ut hvor gammel noen er? Her er et utvalg:</p>
+<section id="sec-variables-values" class="level3" data-number="2.1.2">
+<h3 data-number="2.1.2" class="anchored" data-anchor-id="sec-variables-values"><span class="header-section-number">2.1.2</span> Variabler og verdier</h3>
+<p>Når konstruktet er operasjonalisert, kan man gjøre målingene. Kvantitative analyser baserer seg på at man har gjort den samme målingen av mange forskjellige fenomener. I utdanningsforskning er fenomenene gjerne skoler, lærere, klasser, elever, rektorer, læreplaner, lærebøker, elevtekster, undervisningstimer eller liknende. Måling er å tildele disse fenomenene tall, merkelapper eller andre veldefinerte beskrivelser. Alle følgende eksempler vil regnes som målinger:</p>
 <ul>
-<li><em>Selvrapportering</em>: Selvrapportering er at folk oppgir verdien på variabelen selv. Forskeren spør forskningsdeltagerne “hvor gammel er du?”, for eksempel i et spørreskjema. Det er rakst, billig og enkelt, men det fungerer bare med folk som ikke lyver om alderen sin og er gamle nok til å forstå spørsmålet.</li>
-<li><em>Tredjepartsrapportering</em>: Du kan spørre andre om å oppgi verdien på variabelen, for eksempel foreldrene eller læreren til barnet.</li>
-<li><em>Registerdata</em>: Noen typer data kan du slå opp i offisielle registre, for eksempel fødselsdato. For de fleste typer informasjon om personer krever dette en søknad til en etiske komite, som for eksempel Sikt.</li>
-<li><em>Observasjon</em>: Observasjon er når forskerne observerer direkte. Det er vanskelig å observere alderen direkte.</li>
-<li><em>Biomarkører</em>: Biomarkører er lite benyttet i utdanningsforskning. Du kan anslå alderen til en person ved radiografi av tennene eller en celleprøve, du kan anslå hvor stresset en elev er ved en prøve ved å måle hjerteslagene eller du kan måle hjerneaktivitet ved et elektroencephalogram.</li>
+<li>Petters <strong>antall riktige ordkjeder</strong> er <em>48</em>.</li>
+<li>Petters <strong>leselyst</strong> er <em>3 av 4</em>.</li>
+<li>Petters <strong>alder</strong> er <em>11</em> år.</li>
+<li>Petters <strong>selvidentifiserte kjønn</strong> er <em>gutt</em>.</li>
+<li>Timens <strong>arbeidsro</strong> var <em>middels</em>.</li>
+<li>Rektors <strong>holdning til lærernes autonomi</strong> var <em>lærerautonomi er svært viktig</em>.</li>
 </ul>
-<p>Hvilken type målemetode man benytter kommer først og fremst an på hvilket teoretisk konstrukt du ønsker å måle, men også hva som er praktisk gjennomførbart. Hvis du er interessert i samarbeidskulturen på en skole hadde kanskje det beste vært å observere samarbeidet direkte, men det er svært tidkrevende, og derfor dyrt og sikkert veldig vanskelig, så de fleste hadde nok benyttet en spørreundersøkelse der man lar lærerne og ledelsen på skolen svare på hvor fornøyde de er med hvordan de selv samarbeider (selvrapportering) og hvordan kollegaene deres samarbeider (tredjepartsrapportering). Hvis du er interessert i undervisningskvalitet burde du observere undervisning, men mange stiller heller lærerne spørsmål om hvordan de underviser (selvrapportering), eller spør elevene om hvordan læreren underviser (tredjepartsrapportering).</p>
+<p>I denne listen viser den fete skriften det fenomenet som måles, som kalles <strong>variabelen</strong>, og den kursiverte skriften viser resultatet av målingen, som kalles <strong>verdien</strong>. En variabel representerer altså fenomenet som måles, mens verdien er det variabelen får i et bestemt tilfelle. Skillet mellom variabelen og de ulike verdiene variabelen kan anta, er sentralt:</p>
+<ul>
+<li><strong>Antall riktige ordkjeder</strong> kan ha verdiene <em>0, 1, 2, 3</em> og så videre opp til <em>90</em>, siden testen har 90 ordkjeder. Ingen elev kan få 91 riktige, og ingen kan få 48,5.</li>
+<li><strong>Leselyst</strong>, målt med spørsmålet «jeg leser bare hvis jeg må», kan ha verdiene <em>helt enig</em>, <em>litt enig</em>, <em>litt uenig</em> og <em>helt uenig</em>. Merk at eleven med <em>høyest</em> leselyst her svarer <em>helt uenig</em>.</li>
+<li><strong>Alder</strong> kan ha verdiene <em>0, 1, 2, 3</em> og så videre. Den øvre grensen er litt uklar, men i praksis kan vi si at den høyeste mulige alderen er <em>150</em>, siden ingen mennesker noensinne har levd så lenge.</li>
+<li><strong>Selvidentifisert kjønn</strong> er for de fleste elever enten <em>gutt</em> eller <em>jente</em>, men eleven kan også velge å identifisere seg med <em>ingen av delene</em>, eller eksplisitt kalle seg selv <em>transperson</em>.</li>
+</ul>
+<p>Som eksemplene over viser, virker verdiene for noen variabler ganske opplagte, slik som for antall riktige ordkjeder, men for andre variabler er det vanskeligere å bestemme verdiene. Måten du spesifiserer de tillatte måleverdiene på, er med andre ord en viktig del av å planlegge en studie.</p>
+</section>
+<section id="sec-methods-overview" class="level3" data-number="2.1.3">
+<h3 data-number="2.1.3" class="anchored" data-anchor-id="sec-methods-overview"><span class="header-section-number">2.1.3</span> Forskjellige målemetoder</h3>
+<p>Å bestemme målemetode er kanskje det viktigste valget i en operasjonalisering, og utvalget er større enn man skulle tro. Disse seks er de vanligste i utdanningsforskning:</p>
+<ul>
+<li><em>prøver og tester</em>, der man gir folk oppgaver som skal løses</li>
+<li><em>registerdata</em>, som fødselsdato og karakterer, hentet fra offisielle registre</li>
+<li><em>selvrapportering</em>, der folk oppgir verdien selv, som regel i et spørreskjema</li>
+<li><em>tredjepartsrapportering</em>, der noen andre oppgir den, for eksempel læreren eller foreldrene</li>
+<li><em>observasjon</em>, der forskeren registrerer direkte det som skjer</li>
+<li><em>fysiologiske mål</em>, også kalt biomarkører, for eksempel pulsmåling eller registrering av øyebevegelser</li>
+</ul>
+<p>Hvilken av dem som passer, avhenger først og fremst av konstruktet du skal måle. Vi skal diskutere dem nøyere i <a href="#sec-measurement-methods" class="quarto-xref"><span>Seksjon 2.4</span></a>, for vi må først få på plass begrepene som skal til for å vurdere en målemetode.</p>
 </section>
 </section>
 <section id="sec-Scales-of-measurement" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="sec-Scales-of-measurement"><span class="header-section-number">2.2</span> Målenivåer</h2>
-<p>Resultatet av en måling kalles altså en variabel. Vi skal lære fire forskjellige typer variable. Dette er de forskjellige <strong>målenivåene</strong> eller <strong>måleskalaene</strong>.</p>
+<p>Resultatet av rekke målinger av samme fenomen kalles altså en variabel. Vi skal lære om fire ulike <strong>målenivåer</strong> som variabler kan ha. Disse målenivåene, eller <strong>måleskalaene</strong>, beskriver hvilke typer verdier en variabel kan anta, og hvilke statistiske operasjoner som er gyldige for den.</p>
 <section id="nominell-variabel" class="level3" data-number="2.2.1">
 <h3 data-number="2.2.1" class="anchored" data-anchor-id="nominell-variabel"><span class="header-section-number">2.2.1</span> Nominell variabel</h3>
-<p>En <strong>nominell variabel</strong> (også kjent som en <strong>kategorisk variabel</strong>) er en variabel der de mulige verdiene er navn på kategorier. Et eksempel er øyenfarge; de mulige verdiene er “grønn”, “blå”, “grå”, “brun”, og så videre. Kjønn er en nominell variabel som ofte har bare to mulige verdier, “mann” og “kvinne”, men som kan ha flere. I utdanningsforskning er ofte variabelen <em>skole</em> av denne typen, der de mulige verdiene er navn på skoler (“Dalsiden Skole”, “Vangenhaug Skole”, osv.). Ordet <em>nominell</em> kommer av <em>nomen</em> som er latin for <em>navn</em> – en nominell variabel har altså verdier som er navnet på kategorier. For denne typen variabler gir det ikke mening å si at en av dem er “større” eller “bedre” enn noen annen, man kan altså ikke sortere dem i noen naturlig rekkefølge. Og det gir absolutt ikke mening å snakke om gjennomsnittet av målingene – hva skulle “elevene i studien sin gjennomsnittlige øyenfarge” ha vært? For å regne gjennomsnitt måtte man summert de 10 verdiene og delt på 10, men hva blir blå + grønn + blå + brun? Kort sagt, verdiene til nominelle variabler er kun navnet på en kategori. Verdiene har ikke noen naturlig rekkefølge, de kan ikke adderes, multipliseres eller regnes med på noen måte.</p>
-<p>Men man kan telle antallet innenfor hver kategori. Anta at jeg forsker på hvordan lærere pendler til og fra jobb. En variabel jeg burde målt<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> er hva slags transportmiddel lærerne bruker for å komme seg på jobb. Denne “transporttype”-variabelen kan ha ganske mange mulige verdier, inkludert: “tog”, “buss”, “bil”, “sykkel”. La oss anta at disse fire er de eneste mulighetene og forestill deg at jeg spør 100 lærere om hvordan de kom seg på jobb i dag, med dette resultatet (<a href="#tbl-tab2-1" class="quarto-xref">Tabell&nbsp;<span>2.1</span></a>).</p>
+<p>En <strong>nominell variabel</strong> (også kjent som en <strong>kategorisk variabel</strong>) er en variabel der de mulige verdiene er navn på kategorier. Ordet <em>nominell</em> kommer av <em>nomen</em> som er latin for <em>navn</em> – en nominell variabel har altså verdier som er navnet på kategorier. Et eksempel er øyenfarge; de mulige verdiene er «grønn», «blå», «grå», «brun», og så videre. Kjønn er en nominell variabel som ofte har bare to mulige verdier, «mann» og «kvinne», men som kan ha flere. I utdanningsforskning er ofte variabelen <em>skole</em> av denne typen, der de mulige verdiene er navn på skoler («Dalsiden Skole», «Vangenhaug Skole», osv.). For denne typen variabler gir det ikke mening å si at en av dem er «større» eller «bedre» enn noen annen, man kan altså ikke sortere dem i noen naturlig rekkefølge. Og det gir absolutt ikke mening å snakke om gjennomsnittet av målingene – hva skulle «elevene i studien sin gjennomsnittlige øyenfarge» ha vært? For å regne gjennomsnitt måtte man summert de 10 verdiene og delt på 10, men hva blir blå + grønn + blå + brun? Kort sagt, verdiene til nominelle variabler er kun navnet på en kategori. Verdiene har ikke noen naturlig rekkefølge, de kan ikke adderes, multipliseres eller regnes med på noen måte.</p>
+<p>Men man kan telle antallet innenfor hver kategori. Anta at jeg forsker på hva som kjennetegner lærernes pendling til jobb.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> En variabel jeg burde målt er hva slags transportmiddel lærerne bruker for å komme seg på jobb. Denne «transporttype»-variabelen kan ha ganske mange mulige verdier, slik som «tog», «buss», «bil» og «sykkel». La oss anta at disse fire er de eneste mulighetene og forestill deg at jeg spør 100 lærere om hvordan de kom seg på jobb i dag, med dette resultatet (<a href="#tbl-tab2-1" class="quarto-xref">Tabell&nbsp;<span>2.1</span></a>).</p>
 <div class="cell" data-layout-align="center">
 <div id="tbl-tab2-1" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -659,7 +650,7 @@ Tabell&nbsp;2.1. Hvordan 100 lærere pendlet til jobb i dag
 <!-- preamble start -->
 
     <!-- tinytable mathjax start -->
-    <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <script>
     MathJax = {
       tex: {
@@ -672,94 +663,60 @@ Tabell&nbsp;2.1. Hvordan 100 lærere pendlet til jobb i dag
     </script>
     <!-- tinytable mathjax end -->
 
+    <script src="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.js"></script>
+
     <script>
-
-      function styleCell_txgz1317ftylnsmm50a8(i, j, css_id) {
-          var table = document.getElementById("tinytable_txgz1317ftylnsmm50a8");
-          var cell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
-          if (cell) {
-              console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
-              cell.classList.add(css_id);
-          } else {
-              console.warn(`Cell at (${i}, ${j}) not found.`);
-          }
-      }
-      function spanCell_txgz1317ftylnsmm50a8(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_txgz1317ftylnsmm50a8");
-        const targetCell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
-        if (!targetCell) {
-          console.warn(`Cell at (${i}, ${j}) not found.`);
-        }
-
-        // Get all cells that need to be removed
-        const cellsToRemove = [];
-        for (let r = 0; r < rowspan; r++) {
-          for (let c = 0; c < colspan; c++) {
-            if (r === 0 && c === 0) continue; // Skip the target cell
-            const cell = table.querySelector(`[data-row="${i + r}"][data-col="${j + c}"]`);
-            if (cell) {
-              cellsToRemove.push(cell);
-            }
-          }
-        }
-
-        // Remove all cells
-        cellsToRemove.forEach(cell => cell.remove());
-
-        // Set rowspan and colspan of the target cell if it exists
-        if (targetCell) {
-          targetCell.rowSpan = rowspan;
-          targetCell.colSpan = colspan;
-        }
-      }
+      // Create table-specific functions using external factory
+      const tableFns_w8it8jnso8usj80m4hzz = TinyTable.createTableFunctions("tinytable_w8it8jnso8usj80m4hzz");
       // tinytable span after
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: '4', j: 0 }, { i: '4', j: 1 },  ], css_id: 'tinytable_css_i2fcpwqtn6of0p81njmk',}, 
-          { positions: [ { i: '0', j: 0 }, { i: '0', j: 1 },  ], css_id: 'tinytable_css_o49wjzm94gvy1dsjlb5k',}, 
+          { positions: [ { i: '4', j: 1 }, { i: '4', j: 2 } ], css_id: 'tinytable_css_o49wjzm94gvy1dsjlb5k',}, 
+          { positions: [ { i: '0', j: 1 }, { i: '0', j: 2 } ], css_id: 'tinytable_css_txgz1317ftylnsmm50a8',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  styleCell_txgz1317ftylnsmm50a8(cell.i, cell.j, group.css_id);
+                  tableFns_w8it8jnso8usj80m4hzz.styleCell(cell.i, cell.j, group.css_id);
               });
           });
       });
     </script>
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.css">
     <style>
-      /* tinytable css entries after */
-      .table td.tinytable_css_i2fcpwqtn6of0p81njmk, .table th.tinytable_css_i2fcpwqtn6of0p81njmk { border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_o49wjzm94gvy1dsjlb5k, .table th.tinytable_css_o49wjzm94gvy1dsjlb5k { border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
+    /* tinytable css entries after */
+    #tinytable_w8it8jnso8usj80m4hzz td.tinytable_css_o49wjzm94gvy1dsjlb5k, #tinytable_w8it8jnso8usj80m4hzz th.tinytable_css_o49wjzm94gvy1dsjlb5k {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.08em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%;  }
+    #tinytable_w8it8jnso8usj80m4hzz td.tinytable_css_txgz1317ftylnsmm50a8, #tinytable_w8it8jnso8usj80m4hzz th.tinytable_css_txgz1317ftylnsmm50a8 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.05em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.08em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%;  }
     </style>
     <div class="container">
-      <table class="table table-borderless" id="tinytable_txgz1317ftylnsmm50a8" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
-        <thead>
+      <table class="tinytable" id="tinytable_w8it8jnso8usj80m4hzz" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
         
+        <thead>
               <tr>
-                <th scope="col" data-row="0" data-col="0">Transportmiddel</th>
-                <th scope="col" data-row="0" data-col="1">Antall lærere</th>
+                <th scope="col" data-row="0" data-col="1">Transportmiddel</th>
+                <th scope="col" data-row="0" data-col="2">Antall lærere</th>
               </tr>
         </thead>
         
         <tbody>
                 <tr>
-                  <td data-row="1" data-col="0">(1) Tog</td>
-                  <td data-row="1" data-col="1">12</td>
+                  <td data-row="1" data-col="1">(1) Tog</td>
+                  <td data-row="1" data-col="2">12</td>
                 </tr>
                 <tr>
-                  <td data-row="2" data-col="0">(2) Buss</td>
-                  <td data-row="2" data-col="1">30</td>
+                  <td data-row="2" data-col="1">(2) Buss</td>
+                  <td data-row="2" data-col="2">30</td>
                 </tr>
                 <tr>
-                  <td data-row="3" data-col="0">(3) Bil</td>
-                  <td data-row="3" data-col="1">48</td>
+                  <td data-row="3" data-col="1">(3) Bil</td>
+                  <td data-row="3" data-col="2">48</td>
                 </tr>
                 <tr>
-                  <td data-row="4" data-col="0">(4) Sykkel</td>
-                  <td data-row="4" data-col="1">10</td>
+                  <td data-row="4" data-col="1">(4) Sykkel</td>
+                  <td data-row="4" data-col="2">10</td>
                 </tr>
         </tbody>
       </table>
@@ -770,7 +727,7 @@ Tabell&nbsp;2.1. Hvordan 100 lærere pendlet til jobb i dag
 </figure>
 </div>
 </div>
-<p>Så, hva var den gjennomsnittlige transporttypen? Åpenbart er svaret her at det ikke finnes noen. Det er et tåpelig spørsmål å stille. Du kan si at reise med bil er den mest populære metoden, og reise med tog er den minst populære metoden, men det er stort sett alt. Legg også merke til at rekkefølgen jeg viser alternativene i ikke er veldig interessant. Jeg kunne ha valgt å vise dataene som i <a href="#tbl-tab2-2" class="quarto-xref">Tabell&nbsp;<span>2.2</span></a>.</p>
+<p>Så, hva var den gjennomsnittlige transporttypen? Åpenbart er svaret her at det ikke finnes noen. Det er et tåpelig spørsmål å stille. Du kan si at å reise med bil er den mest populære metoden, og at å reise med tog er den minst populære metoden, men det er stort sett alt. Legg også merke til at rekkefølgen jeg viser alternativene i, ikke er veldig interessant. Jeg kunne ha valgt å vise dataene som i <a href="#tbl-tab2-2" class="quarto-xref">Tabell&nbsp;<span>2.2</span></a>.</p>
 <div class="cell" data-layout-align="center">
 <div id="tbl-tab2-2" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -782,7 +739,7 @@ Tabell&nbsp;2.2. Hvordan 100 lærere pendlet til jobb i dag, en annen visning
 <!-- preamble start -->
 
     <!-- tinytable mathjax start -->
-    <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <script>
     MathJax = {
       tex: {
@@ -795,94 +752,60 @@ Tabell&nbsp;2.2. Hvordan 100 lærere pendlet til jobb i dag, en annen visning
     </script>
     <!-- tinytable mathjax end -->
 
+    <script src="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.js"></script>
+
     <script>
-
-      function styleCell_bawvcrkt6vdbzf3c2qxx(i, j, css_id) {
-          var table = document.getElementById("tinytable_bawvcrkt6vdbzf3c2qxx");
-          var cell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
-          if (cell) {
-              console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
-              cell.classList.add(css_id);
-          } else {
-              console.warn(`Cell at (${i}, ${j}) not found.`);
-          }
-      }
-      function spanCell_bawvcrkt6vdbzf3c2qxx(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_bawvcrkt6vdbzf3c2qxx");
-        const targetCell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
-        if (!targetCell) {
-          console.warn(`Cell at (${i}, ${j}) not found.`);
-        }
-
-        // Get all cells that need to be removed
-        const cellsToRemove = [];
-        for (let r = 0; r < rowspan; r++) {
-          for (let c = 0; c < colspan; c++) {
-            if (r === 0 && c === 0) continue; // Skip the target cell
-            const cell = table.querySelector(`[data-row="${i + r}"][data-col="${j + c}"]`);
-            if (cell) {
-              cellsToRemove.push(cell);
-            }
-          }
-        }
-
-        // Remove all cells
-        cellsToRemove.forEach(cell => cell.remove());
-
-        // Set rowspan and colspan of the target cell if it exists
-        if (targetCell) {
-          targetCell.rowSpan = rowspan;
-          targetCell.colSpan = colspan;
-        }
-      }
+      // Create table-specific functions using external factory
+      const tableFns_68w10nuhppuxyqq31ykg = TinyTable.createTableFunctions("tinytable_68w10nuhppuxyqq31ykg");
       // tinytable span after
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: '4', j: 0 }, { i: '4', j: 1 },  ], css_id: 'tinytable_css_obgj5j3h3h0aculoa2dq',}, 
-          { positions: [ { i: '0', j: 0 }, { i: '0', j: 1 },  ], css_id: 'tinytable_css_99xgj74qbjzrt0ozrwr8',}, 
+          { positions: [ { i: '4', j: 1 }, { i: '4', j: 2 } ], css_id: 'tinytable_css_bawvcrkt6vdbzf3c2qxx',}, 
+          { positions: [ { i: '0', j: 1 }, { i: '0', j: 2 } ], css_id: 'tinytable_css_6am282wtwu7bmfsvbtxh',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  styleCell_bawvcrkt6vdbzf3c2qxx(cell.i, cell.j, group.css_id);
+                  tableFns_68w10nuhppuxyqq31ykg.styleCell(cell.i, cell.j, group.css_id);
               });
           });
       });
     </script>
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.css">
     <style>
-      /* tinytable css entries after */
-      .table td.tinytable_css_obgj5j3h3h0aculoa2dq, .table th.tinytable_css_obgj5j3h3h0aculoa2dq { border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_99xgj74qbjzrt0ozrwr8, .table th.tinytable_css_99xgj74qbjzrt0ozrwr8 { border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
+    /* tinytable css entries after */
+    #tinytable_68w10nuhppuxyqq31ykg td.tinytable_css_bawvcrkt6vdbzf3c2qxx, #tinytable_68w10nuhppuxyqq31ykg th.tinytable_css_bawvcrkt6vdbzf3c2qxx {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.08em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%;  }
+    #tinytable_68w10nuhppuxyqq31ykg td.tinytable_css_6am282wtwu7bmfsvbtxh, #tinytable_68w10nuhppuxyqq31ykg th.tinytable_css_6am282wtwu7bmfsvbtxh {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.05em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.08em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%;  }
     </style>
     <div class="container">
-      <table class="table table-borderless" id="tinytable_bawvcrkt6vdbzf3c2qxx" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
-        <thead>
+      <table class="tinytable" id="tinytable_68w10nuhppuxyqq31ykg" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
         
+        <thead>
               <tr>
-                <th scope="col" data-row="0" data-col="0">Transportmiddel</th>
-                <th scope="col" data-row="0" data-col="1">Antall lærere</th>
+                <th scope="col" data-row="0" data-col="1">Transportmiddel</th>
+                <th scope="col" data-row="0" data-col="2">Antall lærere</th>
               </tr>
         </thead>
         
         <tbody>
                 <tr>
-                  <td data-row="1" data-col="0">(3) Bil</td>
-                  <td data-row="1" data-col="1">48</td>
+                  <td data-row="1" data-col="1">(3) Bil</td>
+                  <td data-row="1" data-col="2">48</td>
                 </tr>
                 <tr>
-                  <td data-row="2" data-col="0">(1) Tog</td>
-                  <td data-row="2" data-col="1">12</td>
+                  <td data-row="2" data-col="1">(1) Tog</td>
+                  <td data-row="2" data-col="2">12</td>
                 </tr>
                 <tr>
-                  <td data-row="3" data-col="0">(4) Sykkel</td>
-                  <td data-row="3" data-col="1">10</td>
+                  <td data-row="3" data-col="1">(4) Sykkel</td>
+                  <td data-row="3" data-col="2">10</td>
                 </tr>
                 <tr>
-                  <td data-row="4" data-col="0">(2) Buss</td>
-                  <td data-row="4" data-col="1">30</td>
+                  <td data-row="4" data-col="1">(2) Buss</td>
+                  <td data-row="4" data-col="2">30</td>
                 </tr>
         </tbody>
       </table>
@@ -893,18 +816,18 @@ Tabell&nbsp;2.2. Hvordan 100 lærere pendlet til jobb i dag, en annen visning
 </figure>
 </div>
 </div>
-<p>…og ingenting endrer seg egentlig.</p>
+<p>… og ingenting endrer seg egentlig.</p>
 </section>
 <section id="ordinal-variabel" class="level3" data-number="2.2.2">
 <h3 data-number="2.2.2" class="anchored" data-anchor-id="ordinal-variabel"><span class="header-section-number">2.2.2</span> Ordinal variabel</h3>
-<p>En <strong>ordinal variabel</strong> er en nominell variabel der de ulike kategoriene har en naturlig rekkefølge. Ordet <em>ordinal</em> kommer av samme ord som “ordning”, kategoriene kan ordnes i en rekkefølge, og det engelske “order”, “the categories have a natural order”. Her er et typisk eksempel: Tenk deg at jeg er interessert i elevers holdninger til klimaendringer. Jeg ber så noen elever om å velge det utsagnet som best samsvarer med deres holdning ut fra disse fire utsagnene:</p>
+<p>En <strong>ordinal variabel</strong> er en nominell variabel der de ulike kategoriene har en meningsfull rekkefølge. Ordet <em>ordinal</em> kommer av samme ord som «orden» eller «ordning». Her er et typisk eksempel: Tenk deg at jeg er interessert i elevers holdninger til klimaendringer. Jeg ber noen elever om å velge det utsagnet som best samsvarer med deres holdning ut fra disse fire utsagnene:</p>
 <ol type="1">
-<li>Temperaturene stiger på grunn av menneskelig aktivitet</li>
-<li>Temperaturene stiger, men vi vet ikke hvorfor</li>
-<li>Temperaturene stiger, men ikke på grunn av mennesker</li>
-<li>Temperaturene stiger ikke</li>
+<li>Temperaturene stiger på grunn av menneskelig aktivitet.</li>
+<li>Temperaturene stiger, men vi vet ikke hvorfor.</li>
+<li>Temperaturene stiger, men ikke på grunn av mennesker.</li>
+<li>Temperaturene stiger ikke.</li>
 </ol>
-<p>Legg merke til at disse fire utsagnene faktisk har en naturlig rekkefølge i hvordan de måler enighet med nåværende vitenskapelig konsensus. Utsagn 1 er en nær match, utsagn 2 er en mindre nær match, utsagn 3 er ikke en særlig god match, og utsagn 4 er i sterk motsetning til nåværende konsensus. Derfor kan jeg ordne elementene som 1 <span class="math inline">&gt;</span> 2 <span class="math inline">&gt;</span> 3 <span class="math inline">&gt;</span> 4, som viser at “holdning til klimaendring”, operasjonalisert på denne måten, er en ordinal variabel.</p>
+<p>Legg merke til at disse fire utsagnene faktisk har en naturlig rekkefølge i hvordan de måler enighet sett i sammenheng med nåværende vitenskapelig konsensus. Utsagn 1 ligger tett opp til den nåværende konsensus, utsagn 2 ligger noe mindre tett opp til den, utsagn 3 avviker i betydelig grad, og utsagn 4 står i klar motsetning til den etablerte konsensus. Derfor kan jeg ordne elementene som 1 <span class="math inline">&gt;</span> 2 <span class="math inline">&gt;</span> 3 <span class="math inline">&gt;</span> 4, som viser at «holdning til klimaendring», operasjonalisert på denne måten, er en ordinal variabel.</p>
 <p>La oss anta at jeg stilte 100 elever disse spørsmålene og fikk svarene vist i <a href="#tbl-tab2-3" class="quarto-xref">Tabell&nbsp;<span>2.3</span></a>.</p>
 <div class="cell" data-layout-align="center">
 <div id="tbl-tab2-3" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
@@ -917,7 +840,7 @@ Tabell&nbsp;2.3. Holdninger til klimaendringer
 <!-- preamble start -->
 
     <!-- tinytable mathjax start -->
-    <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <script>
     MathJax = {
       tex: {
@@ -930,94 +853,60 @@ Tabell&nbsp;2.3. Holdninger til klimaendringer
     </script>
     <!-- tinytable mathjax end -->
 
+    <script src="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.js"></script>
+
     <script>
-
-      function styleCell_hcbcbn6aerrq4b54aqjs(i, j, css_id) {
-          var table = document.getElementById("tinytable_hcbcbn6aerrq4b54aqjs");
-          var cell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
-          if (cell) {
-              console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
-              cell.classList.add(css_id);
-          } else {
-              console.warn(`Cell at (${i}, ${j}) not found.`);
-          }
-      }
-      function spanCell_hcbcbn6aerrq4b54aqjs(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_hcbcbn6aerrq4b54aqjs");
-        const targetCell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
-        if (!targetCell) {
-          console.warn(`Cell at (${i}, ${j}) not found.`);
-        }
-
-        // Get all cells that need to be removed
-        const cellsToRemove = [];
-        for (let r = 0; r < rowspan; r++) {
-          for (let c = 0; c < colspan; c++) {
-            if (r === 0 && c === 0) continue; // Skip the target cell
-            const cell = table.querySelector(`[data-row="${i + r}"][data-col="${j + c}"]`);
-            if (cell) {
-              cellsToRemove.push(cell);
-            }
-          }
-        }
-
-        // Remove all cells
-        cellsToRemove.forEach(cell => cell.remove());
-
-        // Set rowspan and colspan of the target cell if it exists
-        if (targetCell) {
-          targetCell.rowSpan = rowspan;
-          targetCell.colSpan = colspan;
-        }
-      }
+      // Create table-specific functions using external factory
+      const tableFns_obgj5j3h3h0aculoa2dq = TinyTable.createTableFunctions("tinytable_obgj5j3h3h0aculoa2dq");
       // tinytable span after
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: '4', j: 0 }, { i: '4', j: 1 },  ], css_id: 'tinytable_css_fechy4wnelxzzdzkf3rv',}, 
-          { positions: [ { i: '0', j: 0 }, { i: '0', j: 1 },  ], css_id: 'tinytable_css_1woktlujcw3jr68qveqo',}, 
+          { positions: [ { i: '4', j: 1 }, { i: '4', j: 2 } ], css_id: 'tinytable_css_mx5lbf5rqvqkqugat2l9',}, 
+          { positions: [ { i: '0', j: 1 }, { i: '0', j: 2 } ], css_id: 'tinytable_css_huv9bb0cqjcppeb9zgar',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  styleCell_hcbcbn6aerrq4b54aqjs(cell.i, cell.j, group.css_id);
+                  tableFns_obgj5j3h3h0aculoa2dq.styleCell(cell.i, cell.j, group.css_id);
               });
           });
       });
     </script>
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.css">
     <style>
-      /* tinytable css entries after */
-      .table td.tinytable_css_fechy4wnelxzzdzkf3rv, .table th.tinytable_css_fechy4wnelxzzdzkf3rv { border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_1woktlujcw3jr68qveqo, .table th.tinytable_css_1woktlujcw3jr68qveqo { border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
+    /* tinytable css entries after */
+    #tinytable_obgj5j3h3h0aculoa2dq td.tinytable_css_mx5lbf5rqvqkqugat2l9, #tinytable_obgj5j3h3h0aculoa2dq th.tinytable_css_mx5lbf5rqvqkqugat2l9 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.08em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%;  }
+    #tinytable_obgj5j3h3h0aculoa2dq td.tinytable_css_huv9bb0cqjcppeb9zgar, #tinytable_obgj5j3h3h0aculoa2dq th.tinytable_css_huv9bb0cqjcppeb9zgar {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.05em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.08em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%;  }
     </style>
     <div class="container">
-      <table class="table table-borderless" id="tinytable_hcbcbn6aerrq4b54aqjs" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
-        <thead>
+      <table class="tinytable" id="tinytable_obgj5j3h3h0aculoa2dq" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
         
+        <thead>
               <tr>
-                <th scope="col" data-row="0" data-col="0">Respons</th>
-                <th scope="col" data-row="0" data-col="1">Antall</th>
+                <th scope="col" data-row="0" data-col="1">Respons</th>
+                <th scope="col" data-row="0" data-col="2">Antall</th>
               </tr>
         </thead>
         
         <tbody>
                 <tr>
-                  <td data-row="1" data-col="0">(1) Temperaturene stiger på grunn av menneskelig aktivitet</td>
-                  <td data-row="1" data-col="1">51</td>
+                  <td data-row="1" data-col="1">(1) Temperaturene stiger på grunn av menneskelig aktivitet.</td>
+                  <td data-row="1" data-col="2">51</td>
                 </tr>
                 <tr>
-                  <td data-row="2" data-col="0">(2) Temperaturene stiger, men vi vet ikke hvorfor</td>
-                  <td data-row="2" data-col="1">20</td>
+                  <td data-row="2" data-col="1">(2) Temperaturene stiger, men vi vet ikke hvorfor.</td>
+                  <td data-row="2" data-col="2">20</td>
                 </tr>
                 <tr>
-                  <td data-row="3" data-col="0">(3) Temperaturene stiger, men ikke på grunn av mennesker</td>
-                  <td data-row="3" data-col="1">10</td>
+                  <td data-row="3" data-col="1">(3) Temperaturene stiger, men ikke på grunn av mennesker.</td>
+                  <td data-row="3" data-col="2">10</td>
                 </tr>
                 <tr>
-                  <td data-row="4" data-col="0">(4) Temperaturene stiger ikke</td>
-                  <td data-row="4" data-col="1">19</td>
+                  <td data-row="4" data-col="1">(4) Temperaturene stiger ikke.</td>
+                  <td data-row="4" data-col="2">19</td>
                 </tr>
         </tbody>
       </table>
@@ -1028,47 +917,47 @@ Tabell&nbsp;2.3. Holdninger til klimaendringer
 </figure>
 </div>
 </div>
-<p>Det rimelig å gruppere, for eksempel, (1), (2) og (3) sammen, og si at 81 av 100 personer var i det <em>minste delvis</em> enig med vitenskapen. Og det er også ganske rimelig å gruppere (2), (3) og (4) sammen og si at 49 av 100 personer registrerte <em>i det minste noe uenighet</em>. Men det ville være fullstendig merkelig å gruppere (1), (2) og (4) sammen og si at 90 av 100 personer sa… hva da? Det er ingenting fornuftig som tillater deg å gruppere disse svarene sammen i det hele tatt.</p>
-<p>Det er fristende å regne med svaralternativene (1) til (4) som om de var tall. For eksempel er det fristende å si at gjennomsnittet av svar (1), (2) og (3) er <span class="math inline">\frac{2+3+4}{3} = 2</span>. Det ville vært galt, siden det regnestykket krever at det er like stor forskjell mellom svaralternativ (1) og (2) som mellom (2) og (3). Men man kan argumentere for at konstruktet “enighet med vitenskapelig konsensus” er som i <a href="#fig-ordinal" class="quarto-xref">Figur&nbsp;<span>2.2</span></a>, der det er større forskjell mellom (1) og (2) enn (2) og (3).</p>
+<p>Det rimelig å gruppere, for eksempel, (1), (2) og (3) sammen, og si at 81 av 100 personer var i det minste <em>delvis enig</em> med vitenskapen. Og det er også ganske rimelig å gruppere (2), (3) og (4) sammen og si at 49 av 100 personer registrerte i det minste <em>noe uenighet</em>. Men det ville være fullstendig merkelig å gruppere (1), (2) og (4) sammen og si at 90 av 100 personer sa… hva da? Det er ingenting fornuftig som tillater deg å gruppere disse svarene sammen.</p>
+<p>Det er fristende å regne med svaralternativene (1) til (4) som om de var tall. For eksempel er det fristende å si at gjennomsnittet av svar (2), (3) og (4) er <span class="math inline">\frac{2+3+4}{3} = 3</span>. Det ville vært galt, siden det regnestykket krever at det er like stor forskjell mellom svaralternativ (2) og (3) som mellom (3) og (4). Dette er ikke garantert, og man kan argumentere for at konstruktet «enighet med vitenskapelig konsensus» er mer som i <a href="#fig-ordinal" class="quarto-xref">Figur&nbsp;<span>2.2</span></a>: De tre første utsagnene godtar alle at temperaturene stiger, mens det fjerde avviser hele premisset, trass i at termometre verden over måler høyere og høyere gjennomsnittstemperatur. Da kan forskjellen i <em>holdning til klimaendringer</em> være mye større fra (3) til (4) enn mellom de tre første.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-ordinal" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Den ordinale variabelen &quot;enighet med vitenskapelig konsensus&quot; med forskjellig avstand mellom hvert svaralternativ. Det er størst avstand mellom (1) og (2).">
+<div id="fig-ordinal" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Den ordinale variabelen &quot;enighet med vitenskapelig konsensus&quot; med de fire svaralternativene under hverandre og buede piler fra hvert alternativ til det neste. Avstanden mellom (1), (2) og (3) er liten, mens avstanden ned til (4) er mye større." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ordinal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/fig-ordinal.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figur&nbsp;2.2. I en ordinal variabel er ikke nødvendigvis avstanden mellom kategoriene like store. Her markerer pilene avstanden mellom kategoriene, og avstanden mellom kategori (1) og (2) er større enn de andre."><img src="images/fig-ordinal.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" alt="Den ordinale variabelen &quot;enighet med vitenskapelig konsensus&quot; med forskjellig avstand mellom hvert svaralternativ. Det er størst avstand mellom (1) og (2)."></a>
+<a href="sec-measurement_files/figure-html/fig-ordinal-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figur&nbsp;2.2. I en ordinal variabel er ikke avstanden mellom kategoriene nødvendigvis like stor. Her markerer pilene avstanden mellom kategoriene, og avstanden mellom kategori (3) og (4) er større enn de andre."><img src="sec-measurement_files/figure-html/fig-ordinal-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="Den ordinale variabelen &quot;enighet med vitenskapelig konsensus&quot; med de fire svaralternativene under hverandre og buede piler fra hvert alternativ til det neste. Avstanden mellom (1), (2) og (3) er liten, mens avstanden ned til (4) er mye større."></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ordinal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figur&nbsp;2.2. I en ordinal variabel er ikke nødvendigvis avstanden mellom kategoriene like store. Her markerer pilene avstanden mellom kategoriene, og avstanden mellom kategori (1) og (2) er større enn de andre.
+Figur&nbsp;2.2. I en ordinal variabel er ikke avstanden mellom kategoriene nødvendigvis like stor. Her markerer pilene avstanden mellom kategoriene, og avstanden mellom kategori (3) og (4) er større enn de andre.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
 <p>Når en ordinal variabel markeres med tall, som er helt vanlig, skal man altså ikke tolke tallstørrelsene bokstavelig og anta at man kan regne med dem – tallene er der kun for å markere kategorienes rekkefølge.</p>
-<p>Et vanlig eksempel på en ordinal variabel i utdanningsforskning er “høyeste fullførte utdanningssnivå”. Du <em>kan</em> si at en person som kun har fullført ungdomsskolen har mindre utdanning en en person som har fullført videregående, og så videre. Med ordinale variable vet man ikke <em>hvor mye</em> større en verdi er enn en annen. For eksempel gir det ikke mening å spørre om det er større forskjell mellom “ungdomsskole” og “videregående” enn mellom “videregående” og “bachelor”. Er utdanningsnivået på en bachelor mye høyere eller litt høyere enn fullført videregående? Hvis variabelen er ordinal kan man ikke besvare det spørsmålet.</p>
+<p>Et vanlig eksempel på en ordinal variabel i utdanningsforskning er «høyeste fullførte utdanningssnivå». Du <em>kan</em> si at en person som kun har fullført ungdomsskolen har mindre utdanning enn en person som har fullført videregående, og så videre. Med ordinale variabler vet man ikke <em>hvor mye</em> større en verdi er i forhold til en annen. For eksempel gir det ikke mening å spørre om det er større forskjell mellom «ungdomsskole» og «videregående» enn mellom «videregående» og «bachelor». Er utdanningsnivået på en bachelor mye høyere eller litt høyere enn fullført videregående? Hvis variabelen er ordinal kan man ikke besvare det spørsmålet.</p>
 </section>
 <section id="intervallvariabel" class="level3" data-number="2.2.3">
 <h3 data-number="2.2.3" class="anchored" data-anchor-id="intervallvariabel"><span class="header-section-number">2.2.3</span> Intervallvariabel</h3>
-<p>I motsetning til variabler på nominellt og ordinalt målenivå, er <strong>intervallvariable</strong> og <strong>forholdstallsvariable</strong> variabler der tallverdien er meningsfull. For variabler med intervallskala er <em>forskjellene</em> mellom tallene tolkbare, men variabelen har ikke en “naturlig” nullverdi. Et godt eksempel på en variabel med intervallskala er temperaturmåling i grader celsius. Hvis det for eksempel var 15<span class="math inline">^{\circ}</span> i går og 18<span class="math inline">^{\circ}</span> i dag, så er differansen mellom dem, 3<span class="math inline">^{\circ}</span>, meningsfull og måler en forskjell i temperatur. Dessuten er disse tre gradene i forskjell <em>nøyaktig den samme forskjellen</em> som mellom 7<span class="math inline">^{\circ}</span> og 10<span class="math inline">^{\circ}</span>. Kort sagt er addisjon og subtraksjon meningsfulle for variabler med intervallskala. Merk at dette <em>ikke</em> var tilfelle for ordinale variabler.</p>
-<p>Men legg merke til at 0<span class="math inline">^{\circ}</span> ikke betyr “ingen temperatur i det hele tatt”. Det betyr faktisk “temperaturen der vann fryser”, noe som er ganske vilkårlig. Mangelen på et naturlig nullpunkt gjør meningsløst å multiplisere og dividere temperaturer. Det er feil å si at 20<span class="math inline">^{\circ}</span> er dobbelt så varmt som 10<span class="math inline">^{\circ}</span>, akkurat som det er rart og meningsløst å hevde at 20<span class="math inline">^{\circ}</span> er negativ to ganger så varmt som -10<span class="math inline">^{\circ}</span>.</p>
-<p>Intervallvariabler er vanlige i utdanningsforskning. Anta at jeg er interessert i å undersøke bruken av nettbrett over tid. Da er det naturlig å sammenlikne bruken av nettbrett i forskjellige år, så en variabel i datasettet er årstall. Dette er en variabel med intervallskala. En elev som begynte på skolen i 2018 begynte 5 år før en student som begynte i 2023; differanser gir altså mening. Det ville derimot vært helt meningsløst å dele 2023 på 2018 og si at den andre eleven begynte 0,24 % senere enn den første eleven; ganging og deling gir altså ikke mening. Derfor er årstall på en intervallskala.</p>
-<p>Tid på døgnet er en annen variabel på intervallskala. Det gir mening å sammenlikne klokka 14 og klokka 7 ved å si “sju timer senere”, men det gir ikke mening å sammenlikne dem ved å si “dobbelt så mye tid på døgnet.”</p>
+<p>I motsetning til variabler på nominelt og ordinalt målenivå er <strong>intervallvariabler</strong> og <strong>forholdstallsvariabler</strong> variabler der tallverdien er meningsfull. For en variabel som er målt på intervallskala, er <em>forskjellene</em> mellom tallverdiene tolkbare, men variabelen har ikke en «naturlig» nullverdi. Et godt eksempel på en variabel målt på intervallskala, er temperaturmåling i grader celsius. Hvis det for eksempel var 15<span class="math inline">^{\circ}</span> i går og 18<span class="math inline">^{\circ}</span> i dag, så er differansen mellom dem, 3<span class="math inline">^{\circ}</span>, meningsfull og måler en forskjell i temperatur. Dessuten er disse tre gradene i forskjell <em>nøyaktig den samme forskjellen</em> som mellom 7<span class="math inline">^{\circ}</span> og 10<span class="math inline">^{\circ}</span>. Kort sagt er regneartene addisjon og subtraksjon meningsfulle for variabler på intervallskala. Merk at dette <em>ikke</em> var tilfelle for ordinale variabler.</p>
+<p>Men legg merke til at 0<span class="math inline">^{\circ}</span> ikke betyr «ingen temperatur i det hele tatt». Det betyr faktisk «temperaturen der vann fryser». Nullpunktet er valgt av praktiske grunner og dermed ganske vilkårlig. Mangelen på et naturlig nullpunkt gjør det meningsløst å multiplisere og dividere temperaturer. Det er feil å si at 20<span class="math inline">^{\circ}</span> er dobbelt så varmt som 10<span class="math inline">^{\circ}</span>, akkurat som det er rart og meningsløst å hevde at 20<span class="math inline">^{\circ}</span> er negativ to ganger så varmt som -10<span class="math inline">^{\circ}</span>.</p>
+<p>Intervallvariabler er vanlige i utdanningsforskning. Anta at jeg er interessert i å undersøke bruken av nettbrett over tid. Da er det naturlig å sammenlikne bruken av nettbrett i forskjellige år, og en variabel i datasettet vil være årstall. Dette er en variabel på intervallskala. En elev som begynte på skolen i 2018, begynte 5 år før en student som begynte i 2023; differanser gir altså mening. Det ville derimot vært helt meningsløst å dele 2023 på 2018 og si at den andre eleven begynte 0,24 % senere enn den første eleven; ganging og deling gir altså ikke mening. Derfor er årstall på en intervallskala.</p>
+<p>Tid på døgnet er en annen variabel på intervallskala. Det gir mening å sammenlikne klokka 14 og klokka 7 ved å si «sju timer senere», men det gir ikke mening å sammenlikne dem ved å si «dobbelt så mye tid på døgnet.»</p>
 </section>
 <section id="forholdstallsvariabel" class="level3" data-number="2.2.4">
 <h3 data-number="2.2.4" class="anchored" data-anchor-id="forholdstallsvariabel"><span class="header-section-number">2.2.4</span> Forholdstallsvariabel</h3>
-<p>Den fjerde og siste typen variabel er variabler på <em>forholdstallsnivå</em>. Dette er variabler med et nullpunkt der det er greit å multiplisere og dividere. Et godt eksempel på en variabel på forholdstallsnivå er tid. Når man måler elevers ferdigheter er det vanlig å registrere hvor lang tid elevene bruker på å løse en oppgave, fordi det er en indikator på hvor vanskelig oppgaven er. Anta at Roar bruker 2,3 sekunder på å svare på et spørsmål, mens Bård bruker 3,1 sekunder. Som med en intervallskalavariabel, er både addisjon og subtraksjon meningsfulle her. Bård brukte virkelig <span class="math inline">3{,}1 - 2{,}3 = 0{,}8</span> sekunder lengre enn Roar. Men legg merke til at multiplikasjon og divisjon også gir mening her: Bård brukte <span class="math inline">3{,}1/2{,}3 = 1{,}35</span> ganger så lang tid som Roar på å svare på spørsmålet. Og grunnen til at du kan gjøre dette for en forholdstallsvariabel er at “null sekunder” virkelig betyr “ingen tid i det hele tatt”.</p>
+<p>Den fjerde og siste typen variabel er variabler på <em>forholdstallsnivå</em>. Dette er variabler med et nullpunkt der det er greit å multiplisere og dividere. Et godt eksempel på en variabel på forholdstallsnivå er tid. Når man måler elevers ferdigheter, er det vanlig å registrere hvor lang tid elevene bruker på å løse en oppgave, fordi det er en indikator på hvor vanskelig oppgaven er. Anta at Roar bruker 2,3 sekunder på å svare på et spørsmål, mens Bård bruker 3,1 sekunder. Som med en intervallskalavariabel er både addisjon og subtraksjon meningsfulle her. Bård brukte virkelig <span class="math inline">3{,}1 - 2{,}3 = 0{,}8</span> sekunder lenger tid enn Roar. Men legg merke til at multiplikasjon og divisjon også gir mening her: Bård brukte <span class="math inline">3{,}1/2{,}3 = 1{,}35</span> ganger så lang tid som Roar på å svare på spørsmålet. Og grunnen til at du kan gjøre dette for en forholdstallsvariabel er at «null sekunder» virkelig betyr «ingen tid i det hele tatt».</p>
 <p>Her er noen flere variabler på forholdstallsnivå:</p>
 <ul>
-<li>inntekt (0 kr betyr virkelig “ingen inntekt”)</li>
+<li>inntekt (0 kr betyr virkelig ingen inntekt)</li>
 <li>antall barn (0 barn betyr virkelig ingen barn)</li>
 <li>antall år avlagt utdanning (0 år betyr ingen utdanning)</li>
 <li>antall riktige på matematikkprøven (0 riktig betyr ingen riktig)</li>
 </ul>
-<p>Det siste eksempelet krever en analyse. Ofte måles “kompetanse”, “ferdighet” eller liknende ut fra antall riktige svar på en prøve eller annen ferdighetstest. La oss ta matematikkompetanse som et eksempel. Hvis Bård besvarer 20 spørsmål riktig på en matematikkprøve og Roar besvarer 10 riktig, kan man si at Bård fikk dobbelt så mange riktige. Man kan også si at han fikk 10 flere riktig. Addisjon, subtraksjon, multiplikasjon og divisjon gir mening, altså er det en forholdstallsvariabel. Men er det riktig å si at Bård har dobbelt så høy <em>matematikkompetanse</em> som Roar? Det kommer kanskje an på prøven og hvilke spørsmål man svarte riktig på? Hva hvis Roar svarte riktig på 10 vanskelige spørsmål mens Bård raste gjennom de 20 enkleste spørsmålene på prøven uten å få til noe mer? Eller hva hvis Roar ikke hadde besvart noen spørsmål riktig, hadde det vært riktig å si at han har null matematikkompetanse? Dette viser at hva som er riktig målenivå kan avhenge av hvilket konstrukt man operasjonaliserer; hvis forskeren operasjonaliserer <em>antall riktige på prøven</em> er variabelen på forholdstallsnivå, men hvis forskeren operasjonaliserer <em>matematikkompetanse</em> er saken en annen.</p>
+<p>Det siste eksempelet krever en analyse. Ofte måles «kompetanse», «ferdighet» eller liknende ut fra antall riktige svar på en prøve eller annen ferdighetstest. La oss ta matematikkompetanse som et eksempel. Hvis Bård besvarer 20 spørsmål riktig på en matematikkprøve og Roar besvarer 10 riktig, kan man si at Bård fikk dobbelt så mange riktige. Man kan også si at han fikk 10 flere riktig. Addisjon, subtraksjon, multiplikasjon og divisjon gir mening, altså er det en forholdstallsvariabel. Men er det riktig å si at Bård har dobbelt så høy <em>matematikkompetanse</em> som Roar? Det kommer kanskje an på prøven og hvilke spørsmål man svarte riktig på? Hva hvis Roar svarte riktig på 10 vanskelige spørsmål mens Bård raste gjennom de 20 enkleste spørsmålene på prøven uten å få til noe mer? Eller hva hvis Roar ikke hadde besvart noen spørsmål riktig, hadde det vært riktig å si at han har null matematikkompetanse? Dette viser at hva som er riktig målenivå avhenger av hvordan konstruktet er operasjonalisert. Hvis forskeren operasjonaliserer konstruktet matematikkompetanse som <em>antall riktige svar på prøven</em>, er variabelen på forholdstallsnivå, men hvis forskeren operasjonaliserer matematikkompetanse som <em>en lærers vurdering av elevens kompetanse på en skala fra 1 til 5</em>, er variabelen på ordinalnivå.</p>
 </section>
 <section id="kontinuerlige-og-diskrete-variabler" class="level3" data-number="2.2.5">
 <h3 data-number="2.2.5" class="anchored" data-anchor-id="kontinuerlige-og-diskrete-variabler"><span class="header-section-number">2.2.5</span> Kontinuerlige og diskrete variabler</h3>
-<p>Man kan også karakterisere variable ut fra om de er kontinuerlige eller diskrete variabler (<a href="#tbl-tab2-4" class="quarto-xref">Tabell&nbsp;<span>2.4</span></a>). Kort sagt handler det om dette:</p>
+<p>Man kan også karakterisere variabler ut fra om de er kontinuerlige eller diskrete variabler (<a href="#tbl-tab2-4" class="quarto-xref">Tabell&nbsp;<span>2.4</span></a>). Kort sagt handler det om dette:</p>
 <ul>
 <li>En <strong>kontinuerlig variabel</strong> er en variabel hvor det for alle par av verdier du kan tenke deg alltid er mulig å ha en annen verdi imellom.</li>
 <li>En <strong>diskret variabel</strong> er en variabel som ikke er kontinuerlig, altså vil det for en diskret variabel være to verdier uten noen annen verdi imellom.</li>
@@ -1085,7 +974,7 @@ Tabell&nbsp;2.4. Forholdet mellom målenivåene og skillet mellom diskret/kontin
 <!-- preamble start -->
 
     <!-- tinytable mathjax start -->
-    <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <script>
     MathJax = {
       tex: {
@@ -1098,99 +987,65 @@ Tabell&nbsp;2.4. Forholdet mellom målenivåene og skillet mellom diskret/kontin
     </script>
     <!-- tinytable mathjax end -->
 
+    <script src="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.js"></script>
+
     <script>
-
-      function styleCell_lalw07rtt7xdswwj295n(i, j, css_id) {
-          var table = document.getElementById("tinytable_lalw07rtt7xdswwj295n");
-          var cell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
-          if (cell) {
-              console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
-              cell.classList.add(css_id);
-          } else {
-              console.warn(`Cell at (${i}, ${j}) not found.`);
-          }
-      }
-      function spanCell_lalw07rtt7xdswwj295n(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_lalw07rtt7xdswwj295n");
-        const targetCell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
-        if (!targetCell) {
-          console.warn(`Cell at (${i}, ${j}) not found.`);
-        }
-
-        // Get all cells that need to be removed
-        const cellsToRemove = [];
-        for (let r = 0; r < rowspan; r++) {
-          for (let c = 0; c < colspan; c++) {
-            if (r === 0 && c === 0) continue; // Skip the target cell
-            const cell = table.querySelector(`[data-row="${i + r}"][data-col="${j + c}"]`);
-            if (cell) {
-              cellsToRemove.push(cell);
-            }
-          }
-        }
-
-        // Remove all cells
-        cellsToRemove.forEach(cell => cell.remove());
-
-        // Set rowspan and colspan of the target cell if it exists
-        if (targetCell) {
-          targetCell.rowSpan = rowspan;
-          targetCell.colSpan = colspan;
-        }
-      }
+      // Create table-specific functions using external factory
+      const tableFns_1woktlujcw3jr68qveqo = TinyTable.createTableFunctions("tinytable_1woktlujcw3jr68qveqo");
       // tinytable span after
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: '4', j: 0 }, { i: '4', j: 1 }, { i: '4', j: 2 },  ], css_id: 'tinytable_css_w6lrd5qrdrl7x6ov9d4s',}, 
-          { positions: [ { i: '0', j: 0 }, { i: '0', j: 1 }, { i: '0', j: 2 },  ], css_id: 'tinytable_css_4om6vsensikv0r8b2asv',}, 
+          { positions: [ { i: '4', j: 1 }, { i: '4', j: 2 }, { i: '4', j: 3 } ], css_id: 'tinytable_css_u6cljsbhxnmk0iqb54vw',}, 
+          { positions: [ { i: '0', j: 1 }, { i: '0', j: 2 }, { i: '0', j: 3 } ], css_id: 'tinytable_css_fechy4wnelxzzdzkf3rv',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  styleCell_lalw07rtt7xdswwj295n(cell.i, cell.j, group.css_id);
+                  tableFns_1woktlujcw3jr68qveqo.styleCell(cell.i, cell.j, group.css_id);
               });
           });
       });
     </script>
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.css">
     <style>
-      /* tinytable css entries after */
-      .table td.tinytable_css_w6lrd5qrdrl7x6ov9d4s, .table th.tinytable_css_w6lrd5qrdrl7x6ov9d4s { border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_4om6vsensikv0r8b2asv, .table th.tinytable_css_4om6vsensikv0r8b2asv { border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
+    /* tinytable css entries after */
+    #tinytable_1woktlujcw3jr68qveqo td.tinytable_css_u6cljsbhxnmk0iqb54vw, #tinytable_1woktlujcw3jr68qveqo th.tinytable_css_u6cljsbhxnmk0iqb54vw {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.08em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%;  }
+    #tinytable_1woktlujcw3jr68qveqo td.tinytable_css_fechy4wnelxzzdzkf3rv, #tinytable_1woktlujcw3jr68qveqo th.tinytable_css_fechy4wnelxzzdzkf3rv {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.05em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.08em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%;  }
     </style>
     <div class="container">
-      <table class="table table-borderless" id="tinytable_lalw07rtt7xdswwj295n" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
-        <thead>
+      <table class="tinytable" id="tinytable_1woktlujcw3jr68qveqo" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
         
+        <thead>
               <tr>
-                <th scope="col" data-row="0" data-col="0">Målenivå</th>
-                <th scope="col" data-row="0" data-col="1">kontinuerlig</th>
-                <th scope="col" data-row="0" data-col="2">diskret</th>
+                <th scope="col" data-row="0" data-col="1">Målenivå</th>
+                <th scope="col" data-row="0" data-col="2">kontinuerlig</th>
+                <th scope="col" data-row="0" data-col="3">diskret</th>
               </tr>
         </thead>
         
         <tbody>
                 <tr>
-                  <td data-row="1" data-col="0">nominal</td>
-                  <td data-row="1" data-col="1"></td>
-                  <td data-row="1" data-col="2">x</td>
+                  <td data-row="1" data-col="1">nominal</td>
+                  <td data-row="1" data-col="2"></td>
+                  <td data-row="1" data-col="3">x</td>
                 </tr>
                 <tr>
-                  <td data-row="2" data-col="0">ordinal</td>
-                  <td data-row="2" data-col="1"></td>
-                  <td data-row="2" data-col="2">x</td>
+                  <td data-row="2" data-col="1">ordinal</td>
+                  <td data-row="2" data-col="2"></td>
+                  <td data-row="2" data-col="3">x</td>
                 </tr>
                 <tr>
-                  <td data-row="3" data-col="0">intervall</td>
-                  <td data-row="3" data-col="1">x</td>
+                  <td data-row="3" data-col="1">intervall</td>
                   <td data-row="3" data-col="2">x</td>
+                  <td data-row="3" data-col="3">x</td>
                 </tr>
                 <tr>
-                  <td data-row="4" data-col="0">forholdstall</td>
-                  <td data-row="4" data-col="1">x</td>
+                  <td data-row="4" data-col="1">forholdstall</td>
                   <td data-row="4" data-col="2">x</td>
+                  <td data-row="4" data-col="3">x</td>
                 </tr>
         </tbody>
       </table>
@@ -1201,11 +1056,11 @@ Tabell&nbsp;2.4. Forholdet mellom målenivåene og skillet mellom diskret/kontin
 </figure>
 </div>
 </div>
-<p>Diskrete variabler er det motsatte. For eksempel er nominelle variabler alltid diskrete. Det finnes ikke en transporttype som faller “mellom” tog og fly, i hvert fall ikke på den samme måte som 2,65 faller mellom 2 og 3. Derfor er transporttype en diskret variabel. På samme måte er ordinale variable alltid diskrete. Selv om svaralternativet “Ganske enig” faller mellom “Helt enig” og “Hverken enig eller uenig”, er det ingen svaralternativer som faller imellom. Intervallskala- og forholdstallskala-variabler kan gå begge veier. Som vi så ovenfor, er svartid (en forholdstallsvariabel) kontinuerlig. Temperatur i grader celsius (en variabel på intervallnivå) er også kontinuerlig. Imidlertid er året du gikk i første klasse (en intervallskala-variabel) diskret. Det er ikke noe år mellom 2002 og 2003. Antall spørsmål du får riktig på en flervalgsprøve (en forholdstallskala-variabel) er også diskret. Siden et flervalgsspørsmål ikke kan være være “delvis korrekt”, er det ingenting mellom 5 av 10 riktige og 6 av 10 riktige. <a href="#tbl-tab2-4" class="quarto-xref">Tabell&nbsp;<span>2.4</span></a> oppsummerer forholdet mellom målenivåene og skillet mellom diskret/kontinuerlig. Celler med et hakemerke er mulige. Jeg prøver å hamre dette poenget hjem, fordi (a) noen lærebøker tar feil, og (b) folk veldig ofte sier ting som “diskret variabel” når de mener “nominalskala-variabel”. Det er veldig upresist.</p>
+<p>Diskrete variabler er det motsatte. For eksempel er nominelle variabler alltid diskrete. Det finnes ikke en transporttype som faller «mellom» tog og fly, i hvert fall ikke på den samme måte som 2,65 faller mellom 2 og 3. Derfor er transporttype en diskret variabel. På samme måte er ordinale variabler alltid diskrete. Har en skala svaralternativene «Helt enig», «Ganske enig» og «Hverken enig eller uenig», finnes det ikke noe svaralternativ mellom «Helt enig» og «Ganske enig» på den skalaen. Man kan så klart lage en ny skala med flere alternativer, for eksempel ved å føye til «Litt enig», men da har man en ny skala som også er diskret. Intervallskala- og forholdstallskala-variabler kan gå begge veier. Som vi så ovenfor, er forholdstallsvariabelen <em>svartid</em> kontinuerlig. Intervallnivåvariabelen <em>temperatur i grader celsius</em> er også kontinuerlig. Imidlertid er intervallnivåvariabelen <em>året du gikk i første klasse</em> diskret. Det er ikke noe år mellom 2002 og 2003. Forholdstallsvariabelen <em>antall spørsmål du får riktig på en flervalgsprøve</em> er også diskret. Siden et flervalgsspørsmål ikke kan være «delvis korrekt», er det ingenting mellom 5 av 10 riktige og 6 av 10 riktige. <a href="#tbl-tab2-4" class="quarto-xref">Tabell&nbsp;<span>2.4</span></a> oppsummerer forholdet mellom målenivåene og skillet mellom diskret/kontinuerlig. Celler med en x er mulige.</p>
 </section>
-<section id="noen-komplikasjoner-likert-skalaer" class="level3" data-number="2.2.6">
-<h3 data-number="2.2.6" class="anchored" data-anchor-id="noen-komplikasjoner-likert-skalaer"><span class="header-section-number">2.2.6</span> Noen komplikasjoner: Likert-skalaer</h3>
-<p>I den virkelige verden er det mange variable som ikke passer så godt inn i disse målenivåene. Det er ikke problematisk, for målenivåene gir forskere likevel en mer presis måte å snakke om variablene sine. En vanlig målemetode som ikke helt passer inn i målenivåene er <strong>Likert-spørsmål</strong>. Likert-spørsmål er det vanligste verktøyet i spørreundersøkelser. Du har selv fylt ut hundrevis, kanskje tusenvis, av dem. Anta at vi har et spørsmål i en undersøkelse som ser slik ut:</p>
+<section id="sec-measurement-likert" class="level3" data-number="2.2.6">
+<h3 data-number="2.2.6" class="anchored" data-anchor-id="sec-measurement-likert"><span class="header-section-number">2.2.6</span> Noen komplikasjoner: Likert-skalaer</h3>
+<p>I den virkelige verden er det mange variabler som ikke passer så godt inn i disse målenivåene. Det er ikke problematisk, for målenivåene gir forskere likevel en mer presis måte å snakke om variablene på. Et vanlig svarformat på spørreundersøkelser som ikke helt passer inn i målenivåene, er <strong>Likert-spørsmål</strong>. Likert-spørsmål er det vanligste verktøyet i spørreundersøkelser. Du har selv fylt ut mange slike. Anta at du får følgende påstand med svaralternativer i en undersøkelse:</p>
 <blockquote class="blockquote">
 <p>Jeg har vanskeligheter med å avslutte det jeg begynner på.</p>
 <ol type="1">
@@ -1227,12 +1082,12 @@ Tabell&nbsp;2.4. Forholdet mellom målenivåene og skillet mellom diskret/kontin
 </ol>
 </blockquote>
 <p>Likert-skalaer er veldig praktiske, om enn noe begrensede, verktøy. Men hva slags målenivå er en Likert-skala på? De er åpenbart diskrete, siden du ikke kan gi et svar på 2,5. De er åpenbart ikke nominelle skalaer, siden elementene er ordnet; og de er heller ikke forholdstallsskalaer, siden det ikke er noe naturlig nullpunkt.</p>
-<p>Men er de ordinalskala eller intervallskala? Da må vi bestemme om forskjellene mellom nabosvaralternativene er like. Ett argument sier at vi egentlig ikke kan bevise at forskjellen mellom “sterkt enig” og “enig” er like stor som forskjellen mellom “enig” og “verken enig eller uenig”. Det virker egentlig ganske åpenbart at de ikke er like i det hele tatt, så dette antyder at vi burde behandle Likert-skalaer som ordinale variabler. På den annen side ser det i praksis ut til at de fleste deltakerne tolker skalaen fra “sterkt uenig” til “sterkt enig” som “på en skala fra 1 til 5”. For eksempel, hvis man spør folk om hvor fornøyde de er med inntekten sin på en 7-punkts Likert-skala og sammenlikner dette med deres faktiske inntekt, så ser man at hvert nivå på Likert-skalaen svarer til omtrent like mye penger. Som en konsekvens behandler mange forskere variable med Likert-skalaer som en intervallskala.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> Det er ikke nødvendigvis en intervallskala, men i praksis er det nært nok til at vi tenker på det som en.</p>
+<p>Men er de ordinalskala eller intervallskala? Da må vi bestemme om forskjellene mellom nabosvaralternativene er like. Ett argument sier at vi egentlig ikke kan bevise at forskjellen mellom «sterkt enig» og «enig» er like stor som forskjellen mellom «enig» og «verken enig eller uenig». Det virker egentlig ganske åpenbart at de ikke er like i det hele tatt, så dette antyder at vi burde behandle Likert-skalaer som ordinale variabler. På den annen side ser det i praksis ut til at de fleste deltakerne tolker skalaen fra «sterkt uenig» til «sterkt enig» som «på en skala fra 1 til 5». For eksempel, hvis man spør folk om hvor fornøyde de er med inntekten sin på en 7-punkts Likert-skala og sammenlikner dette med deres faktiske inntekt, så ser man at hvert nivå på Likert-skalaen svarer til omtrent like mye penger. Som en konsekvens behandler mange forskere variabler med Likert-skalaer som en intervallskala.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> Det er ikke nødvendigvis en intervallskala, men i praksis er det nært nok til at vi tenker på det som en.</p>
 </section>
 <section id="samlevariabler" class="level3" data-number="2.2.7">
 <h3 data-number="2.2.7" class="anchored" data-anchor-id="samlevariabler"><span class="header-section-number">2.2.7</span> Samlevariabler</h3>
-<p>Mange teoretiske konstrukter er komplekse og fanges ikke opp av bare én måling. Hvis man skal måle kvaliteten på en lærers praksis i “Vurdering for læring” må man kanskje måle både hvordan læreren vurderer kompetansen til elever ut fra prøvesvar i tillegg til hvordan læreren gir tilbakemeldinger på prøven. Hvis man utelater en av delene har man ikke målt hele konstruktet “kvalitet på ‘vurdering for læring’-praksis”, så derfor må man kombinere delene. Når man kombinerer flere ulike målinger for å lage én variabel kalles det en <strong>samlevariabel</strong>.</p>
-<p>I spørreundersøkelser måles gjerne konstruktene med samlevariabler, og et typisk eksempel er fra den store internasjonale undersøkelsen om elevers matematikk- og naturfags-kompetanse, TIMSS. For å måle elevenes indre motivasjon i matematikk stilte de elevene ni Likert-spørsmål på en firepunkts skala fra “Svært enig” til “Svært uenig”. Her er spørsmålene<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>:</p>
+<p>Mange teoretiske konstrukter er komplekse og fanges ikke opp av bare én måling. Hvis man skal måle kvaliteten på en lærers praksis i «vurdering for læring» må man kanskje måle både hvordan læreren vurderer kompetansen til elever ut fra prøvesvar i tillegg til hvordan læreren gir tilbakemeldinger på prøven. Hvis man utelater en av delene, har man ikke målt hele konstruktet «kvalitet på ‹vurdering for læring›-praksis», så derfor må man bruke flere enkeltvariabler for å måle ett og samme fenomen. Når man kombinerer flere ulike målinger for å lage én variabel kalles det en <strong>samlevariabel</strong>.</p>
+<p>I spørreundersøkelser måles gjerne konstruktene med samlevariabler, og et typisk eksempel er fra den store internasjonale undersøkelsen om elevers matematikk- og naturfags-kompetanse, TIMSS. For å måle elevenes indre motivasjon i matematikk fikk elevene ni Likert-påstander som de skulle ta stilling til på en firepunkts skala fra «Svært enig» til «Svært uenig». Her er påstandene<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>:</p>
 <ol type="1">
 <li>Jeg liker å lære matematikk</li>
 <li>Jeg skulle ønske at jeg ikke var nødt til å lære matematikk</li>
@@ -1244,41 +1099,38 @@ Tabell&nbsp;2.4. Forholdet mellom målenivåene og skillet mellom diskret/kontin
 <li>Jeg gleder meg til timene i matematikk</li>
 <li>Matematikk er et av de fagene jeg liker best</li>
 </ol>
-<p>Svarene på disse 9 spørsmålene slås sammen til en samlevariabel for indre motivasjon. Man kan tenke seg at man regner gjennomsnittet til de 9 svarene og lar det være verdien på elevens indre motivasjon, men i virkeligheten er det en mer avansert utregning for å lage samlevariabelen. Merk at spørsmål 2 og 3 måler indre motivasjon motsatt av de andre spørsmålene, altså at “Svært uenig” betyr at man har høy indre motivasjon. Før slike spørsmål analyseres reverserer man ofte svaralternativene slik at man kan tolke svarene likt som hos de andre spørsmålene.</p>
-<p>Hvilket målenivå har slike samlevariabler? Det kommer an på. De kan være nominelle, for eksempel hvis en spesialpedagog lar elever ta et testbatteri og ut fra svarene lage en samlevariabel <em>dysleksi</em> med to mulige verdier, “har dysleksi” og “har ikke dysleksi”. Dette er en samlevariabel fordi den er regnet ut basert på mange andre. Men de aller vanligste samlevariablene er de som er laget på bakgrunn av mange Likert-spørsmål, slik som indre motivasjon ble målt i TIMSS-eksempelet over, og de behandles som om de er på en kontinuerlig intervallskala. Disse variablene er ikke helt kontinuerlige, for hvis man lager en samlevariablel ved å ta gjennomsnittet av 9 spørsmål, som hver har et heltall som svar, så kan man ikke få alle mulige verdier. For eksempel kan man få 3,11 og 3,22, men ikke 3,15. Likevel er det nært nok til at man benytter variablene som om de var kontinuerlige. De er kanskje heller ikke intervallskalaer, av samme grunner som ble nevnt om Likert-skalaer over.</p>
+<p>Svarene på disse ni spørsmålene slås sammen til en samlevariabel for indre motivasjon. Man kan tenke seg at man regner gjennomsnittet til de ni svarene og lar det være verdien på elevens indre motivasjon, men i virkeligheten er det en mer avansert utregning for å lage samlevariabelen. Merk at spørsmål 2 og 3 måler indre motivasjon motsatt av de andre spørsmålene, altså at «svært uenig» betyr at man har høy indre motivasjon. Før slike spørsmål analyseres, reverserer man ofte svaralternativene slik at man kan tolke svarene likt som i de andre spørsmålene.</p>
+<p>Hvilket målenivå har slike samlevariabler? Det kommer an på. De kan være nominelle, for eksempel hvis en spesialpedagog lar elever ta et testbatteri, altså en samling av flere tester, og ut fra svarene lager en samlevariabel <em>dysleksi</em> med to mulige verdier, «har dysleksi» og «har ikke dysleksi». Dette er en samlevariabel fordi den er regnet ut basert på mange andre. Men de aller vanligste samlevariablene er de som er laget på bakgrunn av mange Likert-spørsmål, slik som indre motivasjon ble målt i TIMSS-eksempelet over, og de behandles som om de er på en kontinuerlig intervallskala. Disse variablene er ikke helt kontinuerlige, for hvis man lager en samlevariabel ved å ta gjennomsnittet av ni spørsmål, som hver har et heltall som svar, så kan man ikke få alle mulige verdier. Siden en nidel er 0,11, kan man få svarene 3,11 og 3,22, men ikke 3,15. Likevel er det nært nok til at man benytter variablene som om de var kontinuerlige. Strengt tatt er de kanskje heller ikke på intervallnivå, av samme grunner som ble nevnt om Likert-skalaer over, men i praksis behandles de som om de var det.</p>
 </section>
 </section>
 <section id="sec-reliability" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="sec-reliability"><span class="header-section-number">2.3</span> Å vurdere en målemetodes kvalitet: Reliabilitet og validitet</h2>
-<p>Vi har nå lært begreper for å beskrive hvordan man operasjonaliserer et teoretisk konstrukt og dermed skaper en målemetode. Det er et åpenbart spørsmål vi ikke har diskutert ennå: er målingen god? Forskere diskuterer målemetoders kvalitet med to begreper <em>reliabilitet</em> og <em>validitet</em>. Enkelt sagt forteller <strong>reliabiliteten</strong> til en målemetode deg hvor stabil den er, mens <strong>validiteten</strong> til en målemetode forteller deg hvor gyldig den er.</p>
+<p>Vi har nå lært begreper for å beskrive hvordan man operasjonaliserer et teoretisk konstrukt og dermed skaper en målemetode. Det vi alltid må vurdere er om målingene er av god kvalitet, eller om de rett og slett er dårlige. Forskere diskuterer målemetoders kvalitet med begrepene <em>reliabilitet</em> og <em>validitet</em>. Enkelt sagt forteller <strong>reliabiliteten</strong> til en målemetode hvor stabil målingen er, mens <strong>validiteten</strong> til en målemetode forteller hvor gyldig den er.</p>
 <section id="en-målings-reliabilitet" class="level3" data-number="2.3.1">
 <h3 data-number="2.3.1" class="anchored" data-anchor-id="en-målings-reliabilitet"><span class="header-section-number">2.3.1</span> En målings reliabilitet</h3>
-<p>Reliabilitet betyr altså hvor stabil målemetoden er. Baderomsvekta mi gir en svært reliabel måling av vekta mi, fordi den gir meg det samme svaret hver gang hvis jeg går av og på vekta flere ganger. Legg merke til at dette ikke betyr at baderomsvekta viser riktig vekt; det kan være at springfjæra i vekta har blitt litt løs slik at den viser noen kg for mye. Isåfall stemmer ikke vekta sin måling overens med min sanne vekt i det hele tatt, noe som betyr at målingen har lav validitet, men den har likevel høy reliabilitet.</p>
-<p>Reliabilitet betyr altså at målingen gir samme verdi på tvers av situasjoner. Dette gir opphav til mange forskjellige undertyper av reliabilitet:</p>
+<p>Reliabilitet betyr altså hvor stabil målemetoden er. Baderomsvekta mi gir en svært reliabel måling av vekta mi, fordi den gir meg det samme svaret når jeg går av og på vekta flere ganger etter hverandre. Legg merke til at dette ikke betyr at baderomsvekta viser riktig vekt; det kan være at springfjæra i vekta har blitt litt løs slik at den viser noen kilo for mye. I så fall stemmer ikke vekta sin måling overens med min sanne vekt i det hele tatt, noe som betyr at målingen har lav validitet. Den har likevel høy reliabilitet, fordi den viser samme resultat fra gang til gang.</p>
+<p>Reliabilitet betyr altså at målingen gir samme verdi på tvers av situasjoner. Dette gir opphav til mange forskjellige undertyper av reliabilitet, for eksempel:</p>
 <ul>
 <li><p><strong>Test-retest-reliabilitet</strong>. Hvis vi gjentar målingen på et senere tidspunkt, får vi det samme svaret?</p>
-<p>En prøve har høy test-retest-reliabilitet hvis elever hadde fått samme karakter hvis de tok prøven på et annet tidspunkt, som ville betydd at elevens dagsform ikke påvirker prøveresultatet.</p>
-<p>En forskers vurdering av kvaliteten på lærerens forklaringer har høy test-retest-reliabilitet hvis det ikke spiller noen rolle hvilken time forskeren observer.</p></li>
+<p>En prøve har høy test-retest-reliabilitet hvis elever får samme karakter når de tar samme prøve på ulike tidspunkt, noe som betyr at elevens dagsform ikke påvirker prøveresultatet.</p>
+<p>En forskers vurdering av kvaliteten på lærerens undervisning har høy test-retest-reliabilitet hvis det ikke spiller noen rolle hvilken time forskeren observerer.</p></li>
 <li><p><strong>Inter-rater-reliabilitet</strong>. Hvis en annen person gjennomfører målingen, får vi da det samme svaret?</p>
-<p>En måling av elevers adferd i en musikktime har høy inter-rater-reliabilitet hvis svarer er uavhengig av hvem som observerer timen.</p>
-<p>Hvis karakteren på skriftlig eksamen i engelsk ikke avhenger av hvilken sensor som retter, har den høy inter-rater-reliabilitet.</p></li>
-<li><p><strong>Indre konsistens</strong>. Hvis en samlevariabel er satt sammen av mange undervariable, har undervariablene en tendens til å gi lignende svar?</p>
-<p>Målingen av indre motivasjon fra TIMSS (nevnt over) har høy indre konsistens hvis de forskjellige undervariablene, altså svarene på hver av de ni spørsmålene, gir mer eller mindre samme svar.</p>
-<p>Ikke alle samlevariable trenger å ha høy indre konsistens. Hvis vi vil lage en samlevariabel for kvaliteten på en lærers skriveundervisning med undervariablene ‘kvalitet på grammatikkundervisningen’ og ‘kvalitet på sjangerundervisningen’ gjør det ikke noe om undervariablenes verdier avviker.</p></li>
+<p>En måling av elevers adferd i en musikktime har høy inter-rater-reliabilitet hvis resultatet er uavhengig av hvem som observerer timen.</p>
+<p>Hvis karakteren på skriftlig eksamen i engelsk ikke avhenger av hvilken sensor som vurderer besvarelsen, har den høy inter-rater-reliabilitet.</p></li>
 </ul>
-<p>Hvordan man bør vurdere en variabels reliabilitet avhenger av det teoretiske konstruktet. Anta at man skal måle konstruktet “elevers utagerende adferd” ved å observere én undervisningstime. Hvis formålet er å gi en generell vurdering av elevenes utagerende adferd vil målingen ha lav test-retest-reliabilitet, fordi den vil gi svært forskjellige svar avhenging av om du utfører målingen siste time fredag eller første time tirsdag. Hvis formålet derimot er å finne ut av hvordan elevenes adferd varierer i en undervisningsuke er hele poenget med målingen å fange opp disse variasjonene. Derfor må man tenke over det teoretiske konstruktet og forskningsformålet for å gi en vurdering av en målemetodes reliabilitet.</p>
+<p>Hvordan man bør vurdere en variabels reliabilitet, avhenger av det teoretiske konstruktet. Anta at man skal måle konstruktet «elevers utagerende adferd» ved å observere én undervisningstime. Hvis formålet er å gi en generell vurdering av elevenes utagerende adferd, vil målingen ha lav test-retest-reliabilitet, fordi den sannsynligvis vil gi svært forskjellige svar avhengig av om du utfører målingen siste time fredag eller første time tirsdag. Hvis formålet derimot er å finne ut av hvordan elevenes adferd varierer i en undervisningsuke, er hele poenget med målingen å fange opp disse variasjonene. Derfor må man tenke over det teoretiske konstruktet og forskningsformålet for å gi en vurdering av en målemetodes reliabilitet.</p>
 </section>
 <section id="sec-validity" class="level3" data-number="2.3.2">
 <h3 data-number="2.3.2" class="anchored" data-anchor-id="sec-validity"><span class="header-section-number">2.3.2</span> En målings validitet</h3>
-<p>En målemetode har høy <strong>validitet</strong> hvis den måler det man tror den måler. Validitet kalles også “gyldighet”, som er et godt ord for validitet. Man skiller ofte mellom mange typer validitet, men den viktigste, som kanskje innebefatter alle andre måter å snakke om en målings validitet på, er konstruktvaliditet.</p>
+<p>En målemetode har høy <strong>validitet</strong> hvis den måler det man tror den måler. Validitet kalles også «gyldighet», som er et godt ord for validitet. Man skiller ofte mellom mange typer validitet, men den viktigste, som kanskje innebefatter alle andre måter å snakke om en målings validitet på, er konstruktvaliditet.</p>
 </section>
 <section id="konstruktvaliditet" class="level3" data-number="2.3.3">
 <h3 data-number="2.3.3" class="anchored" data-anchor-id="konstruktvaliditet"><span class="header-section-number">2.3.3</span> Konstruktvaliditet</h3>
-<p><strong>Konstruktvaliditet</strong> (også kalt begrepsvaliditet) er i bunn og grunn et spørsmål om hvorvidt du måler det du ønsker å måle. En måling har god konstruktvaliditet hvis den faktisk måler det teoretiske konstruktet, og dårlig konstruktvaliditet hvis den ikke gjør det. For å gi et veldig enkelt (om enn latterlig) eksempel, anta at jeg prøver å undersøke hyppigheten av juks blant ungdomsskoleelever på norsktentamen. Og måten jeg forsøker å måle det på er ved å be de juksende studentene om å reise seg i klasserommet slik at jeg kan telle dem. Når jeg gjør dette med en klasse på 30 elever, er det 0 elever som hevder å ha jukset. Så jeg konkluderer derfor med at andelen juksere i klassen min er 0 %. Dette er åpenbart litt latterlig. Men poenget her er ikke at dette er et veldig dypt metodologisk eksempel, men heller å forklare hva konstruktvaliditet er. Problemet med målingen min er at mens jeg prøver å måle “andelen personer som jukser”, måler jeg faktisk “andelen personer som er ærlige nok til å innrømme juks, eller selvskadende nok til å late som om de juksa”. Åpenbart er ikke disse det samme! Så målemetoden min har mislyktes, den måler ikke konstruktet jeg prøvde å måle, så den har dårlig konstruktvaliditet.</p>
+<p><strong>Konstruktvaliditet,</strong> også kalt begrepsvaliditet, er i bunn og grunn et spørsmål om hvorvidt du måler det du ønsker å måle. En måling har god konstruktvaliditet hvis den faktisk måler det teoretiske konstruktet, og dårlig konstruktvaliditet hvis den ikke gjør det. For å gi et veldig enkelt, om enn latterlig, eksempel, anta at jeg prøver å undersøke hyppigheten av juks blant ungdomsskoleelever på norsktentamen. Måten jeg forsøker å måle det på, er å be de elevene som jukser om å reise seg i klasserommet slik at jeg kan telle dem. Når jeg gjør dette med en klasse på 30 elever, er det 0 elever som reiser seg. Så jeg konkluderer derfor med at andelen juksere i klassen min er 0 %. Det er åpenbart en urimelig slutning. Poenget her er ikke å presentere et spesielt avansert metodologisk eksempel, men å illustrere hva konstruktvaliditet innebærer. Problemet ligger i <a href="#sec-operationalization">operasjonaliseringen</a>: mens jeg prøver å måle «andelen personer som jukser», måler jeg faktisk «andelen personer som er ærlige nok til å innrømme juks, eller selvskadende nok til å late som om de juksa». Åpenbart er ikke disse det samme! Så målemetoden min har mislyktes, den måler ikke konstruktet jeg prøvde å måle, så den har dårlig konstruktvaliditet.</p>
 <p>Det finnes flere måter en måling kan ha svak konstruktvaliditet på. For eksempel kan målingen bare måle en liten del av konstruktet, kalt (konstrukt-)<em>underrepresentasjon</em>, eller konstruktet kan måle andre ting enn det det skal, kalt (konstrukt-)<em>irrelevans</em>, se <a href="#fig-construct" class="quarto-xref">Figur&nbsp;<span>2.3</span></a>.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-construct" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="En ellipse det står &quot;Konstruktet som skal måles&quot; i. En anne ellipse, som delvis overlapper, er markert med &quot;Hva målemetoden måler&quot;. Området inne i konstrukt-ellipsen som ikke overlapper er underrepresentasjon og området utenfor konstrukt-ellipsen, men inne i målemetode-ellipsen, er irrelevans.">
+<div id="fig-construct" class="quarto-float quarto-figure quarto-figure-center anchored" alt="En ellipse det står &quot;Konstruktet som skal måles&quot; i. En anne ellipse, som delvis overlapper, er markert med &quot;Hva målemetoden måler&quot;. Området inne i konstrukt-ellipsen som ikke overlapper er underrepresentasjon og området utenfor konstrukt-ellipsen, men inne i målemetode-ellipsen, er irrelevans." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-construct-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="images/fig-construct.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figur&nbsp;2.3. At målemetoder fanger for lite eller for mye kalles underrepresentasjon og irrelevans"><img src="images/fig-construct.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="En ellipse det står &quot;Konstruktet som skal måles&quot; i. En anne ellipse, som delvis overlapper, er markert med &quot;Hva målemetoden måler&quot;. Området inne i konstrukt-ellipsen som ikke overlapper er underrepresentasjon og området utenfor konstrukt-ellipsen, men inne i målemetode-ellipsen, er irrelevans."></a>
@@ -1290,42 +1142,104 @@ Figur&nbsp;2.3. At målemetoder fanger for lite eller for mye kalles underrepres
 </div>
 </div>
 </div>
-<p>For å ha høy konstruktvaliditet kan det være nødvendig å ha høy <strong>prediktiv validitet</strong>. Dette betyr at målingene dine samsvarer med andre variable – altså predikerer andre variable – slik man ville forvente. Hvis man måler en lærers motivasjon for yrket kan man kontrollere den prediktive validiteten ved å sjekke om de motiverte lærerne velger å bli i yrket. Hvis dette ikke er tilfelle har du lav prediktiv validitet, og da har du kanskje ikke målt lærernes motivasjon.</p>
-</section>
-<section id="et-eksempel-måling-av-elevers-indre-motivasjon-for-matematikk" class="level3" data-number="2.3.4">
-<h3 data-number="2.3.4" class="anchored" data-anchor-id="et-eksempel-måling-av-elevers-indre-motivasjon-for-matematikk"><span class="header-section-number">2.3.4</span> Et eksempel: måling av elevers indre motivasjon for matematikk</h3>
-<p>Nå har vi vært gjennom en hel bråte med begreper som man benytter for å beskrive målemetoder og kvaliteter ved dem, og nå skal vi benytte begrepene til å diskutere et eksempel, elevers indre motivasjon for matematikk. Poenget med eksempelet er å vise hvordan måling av helt vanlige begreper i utdanningsforskning er komplisert.</p>
-<p>I et eksempel over viste vi frem hvordan TIMSS målte indre motivasjon ved hjelp av ni spørsmål i et spørreskjema. Da ber man elevene om å selvrapportere om sin indre motivasjon for matematikk. Dette virker godt; eleven vet selv hvilke følelser den har overfor matematikk, om den liker å jobbe med matematikk, gleder seg til matematikktimen og så videre. Trolig kan ingen andre rapportere like godt om elevens indre motivasjon, slik som foreldre eller lærere, for det er tross alt elevens egen sinnstiltstand man ønsker å måle. Kun eleven har tilgang til den.</p>
-<p>Selvrapportering av indre motivasjon har høy reliabilitet. Hvis man setter elevene til å svare på spørreskjemaet en annen dag vil de svare mer eller mindre likt (test-retest-reliabilitet). Det spiller heller ikke så stor rolle hvordan spørsmålene er utformet, som gir høy indre konsistens. Om man spør “jeg er glad i matematikk” (enig/uenig) eller “jeg liker å jobbe med matematikk”, så har ikke det så mye å si, elevene svarer likt. Og det trengs ingen forsker til å vurdere hvor motivert eleven er, så målingen har perfekt inter-rater-reliabilitet.</p>
-<p>Men sett fra andre sitt ståsted kan det se ut om elevens selvrapportering ikke er så god. Lærere kan observere at den eleven som svarer at den liker å jobbe med matematikk, ikke velger å jobbe med matematikk i timen, men heller foretrekker å tulle med sidemannen eller tegne i skriveboka si. Og omvendt kan læreren observere at elever som sier de “hater matte” jobbe flittig med oppgaver med et smil om munnen og kaster seg ut i helklassediskusjoner. Hva hvis det er tydelig at det ikke er samsvar mellom hvordan elevene selvrapporterer om sin indre motivasjon og hvordan andre observerer motivasjonen?</p>
-<p>Selvrapporteringen kan bli påvirket av mange ting, for eksempel om det er sosialt akseptabelt å være interessert i matematikk i elevens omgangskrets. Hvis eleven er i et miljø der matematikk er ukult, kan eleven bli påvirket, bevisst eller ubevisst, til å svare at den er mindre indre motivert for matematikk enn den egentlig er. Dette kan også virke omvendt, hvis eleven går i en klasse der alle hater matematikk, men eleven synes matematikk er greit nok, kan eleven sammenlikne seg med de andre og svare veldig høyt fordi det ikke finnes noen som liker matematikk bedre. Respondenter i intervjuer og spørreundersøkelser har også en tendens til å svare det de tror at forskeren vil ha. Eleven kan svare at den er interessert i matematikk fordi den tror det er det svaret forskeren ønsker. Alt dette er konstrukt-irrelevans som selvrapporteringen fanger opp.</p>
-<p>Siden selvrapportering av indre motivasjon lider av disse problemene kan det være fristende å heller observere motivasjon. Hvis en elev er indre motivert for matematikk betyr jo det at eleven villig jobber med matematikk i timen, noe som kan observeres. Da kan man ganske enkelt sette en forsker til å observere elevenes motivasjon. Men merk at en elev som er <em>ytre</em> motivert vil også jobbe villig med matematikk i timen, så å observere kunne gitt en alvorlig konstrukt-irrelevans. Derfor måtte man gitt matematikkoppgaver eleven ikke kan bli ytre motivert av, for eksempel hvis læreren ikke er til stede og oppgaven ikke gir øving på stoff som skal vurderes. Vil observasjon da være et godt mål på en elevs indre motivasjon? Man kunne simpelthen målt hvor lenge eleven jobbet med en slik oppgave. Jeg liker tanken! “Hvor motivert var Petter?” “Sju minutter!” Selv om denne målemetoden unngår problemer med selvrapportering introduserer den mange nye. For eksempel kan jo elevene bli påvirket til å jobbe fordi det sitter en forsker bak i klasserommet. Dessuten kan reliabiliteten bli lav, for forskere kan være uenige i akkurat når eleven slutter å jobbe med oppgaven, eller målingen kan være veldig avhengig av hvilken oppgave man bruker, slik at test-retest-reliabiliten blir lav. Men kanskje viktigst av alt: siden indre motivasjon er en sinnstilstand er det unektelig rart å måle indre motivasjon ved observasjon av ytre adferd.</p>
-<p>Dette er ikke kun et tankeeksperiment; det er svært reelt. Manglende samsvar mellom selvrapportering og observasjon går igjen i måling av mange konstrukter som handler om elevers og lærerers indre sinnstilstander, slik som tanker, holdninger, motivasjon og følelser <span class="citation" data-cites="leatham2006">(<a href="sec-references.html#ref-leatham2006" role="doc-biblioref">Leatham, 2006</a>)</span>. Men det er også ofte manglende samsvar når konstruktet ikke er en indre sinnstilstand, men handler om helt konkrete hendelser i et klasserom. For eksempel sier mange lærere at de synes helklassediskusjoner er viktige, at de setter av mye tid til det i timene og at de gir elevene rom til å diskutere heller enn å kun komme med korte svar, men når forskere observerer timene til disse lærerne er det få helklassediskusjoner og de er ofte lærerstyrte der elevene kun kommer med korte svar. Altså har målinger av helklassediskusjoner via selvrapportering lav validitet. Er elever og lærere løgnere, som ikke velger å svare sannferdig; hyklere, som gjør stikk motsatt av det de sier er viktig; eller er det noe annet som foregår? Min teori er rett og slett at selvrapportering er vanskelig, slik at vi ikke kan forvente annet enn avvik mellom observasjon og selvrapportering.</p>
-<p>Det er fristende å droppe selvrapportering og observasjon av indre motivasjon, og heller finne en biomarkør. Kan det finnes et hormon eller en nevrotransmitter som slår ut når man jobber med en oppgave man er indre motivert for? Kanskje dopamin er et sånt stoff? Eller kan man måle puls eller hjernebølger? I så fall kunne man målt biomarkøren i elevenes kropper mens de jobbet med matematikk og slik fått en objektiv måling av elevens motivasjon for matematikk. Jeg har liten tro på at slike biomarkører ville fungere i praksis og føler meg ganske sikker på at man fremdeles ville klødd seg i hodet over hvorfor målingene av biomarkøren ikke stemmer overens med selvrapportert eller observert indre motivasjon.</p>
+<p>For å ha høy konstruktvaliditet kan det være nødvendig å ha høy <strong>prediktiv validitet</strong>. Dette betyr at målingene dine samsvarer med andre variabler – altså predikerer andre variabler – slik man ville forvente. Hvis man måler en lærers motivasjon for yrket, kan man kontrollere den prediktive validiteten ved å sjekke om de motiverte lærerne velger å bli i yrket. Hvis dette ikke er tilfelle, altså hvis høyt motiverte lærere ikke blir lenger i yrket enn lite motiverte, har målingen lav prediktiv validitet. Da har du kanskje ikke målt lærernes motivasjon.</p>
 </section>
 </section>
-<section id="oppsummering" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="oppsummering"><span class="header-section-number">2.4</span> Oppsummering</h2>
-<p>I dette kapittelet har jeg kort diskutert følgende temaer:</p>
+<section id="sec-measurement-methods" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="sec-measurement-methods"><span class="header-section-number">2.4</span> Målemetoder</h2>
+<p>Nå har vi begrepene vi trenger for å forklare målemetodene fra <a href="#sec-methods-overview" class="quarto-xref"><span>Seksjon 2.1.3</span></a> én for én. Et viktig skille for å finne ut hva slags målemetode man skal bruke er om man måler noe eleven (eller personen) <em>gjør</em>, eller noe eleven <em>føler</em> og <em>tenker</em>? Ferdigheter og kompetanse er noe man gjør, og da måler man gjerne med prøver eller observasjon. Sinnstilstander og følelser kan man ikke be noen om å demonstrere, så da må du enten be folk fortelle deg om dem, eller så må du slutte deg til dem fra det du ser.</p>
+<p>Derfor følger to gjennomgangseksempler dette delkapittelet. <strong>Leseferdighet</strong> er en ferdighet, og illustrerer de to første målemetodene. <strong>Elevers indre motivasjon for matematikk</strong> er en sinnstilstand, og illustrerer de fire siste. Motivasjonseksempelet er forholdsvis langt, men jeg håper du bruker tid på det og får en viss ærefrykt over komplikasjonene man støter på når man forsøker å måle noe i utdanningsforskning.</p>
+<section id="prøver-og-tester" class="level3" data-number="2.4.1">
+<h3 data-number="2.4.1" class="anchored" data-anchor-id="prøver-og-tester"><span class="header-section-number">2.4.1</span> Prøver og tester</h3>
+<p>En prøve gir eleven oppgaver som skal løses. Dette er den vanligste målemetoden når konstruktet er en ferdighet eller en kompetanse, rett og slett fordi ferdigheter er noe man kan be folk om å vise fram. Eksempler er ordkjedetesten fra innledningen, nasjonale prøver, PISA og andre internasjonale undersøkelser eller en prøve lærere lager til elevene sine.</p>
+<p>Vi så i <a href="#sec-operationalization">avsnittet om operasjonalisering</a> at nasjonale prøver og ordkjedetester ikke nødvendigvis rangerer elevene likt, og nå skjønner vi at det er på grunn av konstrukt-underrepresentasjon. En prøve rekker over et utvalg av konstruktet, sjeldent hele. Ordkjedetesten måler avkoding og sier ingenting om refleksjon over tekst, og en nasjonal prøve på halvannen time sier lite om hvordan eleven leser en roman over fjorten dager.</p>
+<p>Til gjengjeld er reliabiliteten ofte god på prøver og tester. Poengsummen på en flervalgsprøve blir den samme uansett hvem som retter den, og en prøve med mange oppgaver gir stort sett samme resultat om eleven tar den på nytt en uke senere. Men den gode reliabiliteten faller så snart oppgavene krever skjønn i vurderingen. En norskeksamen der elevene skriver lange tekster, fanger opp mer av leseferdigheten enn en ordkjedetest gjør, men to sensorer kan lande på ulik karakter for samme besvarelse. Prøver som skal måle store kompliserte konstrukter, er ofte mindre reliable enn prøvene som måler kun en liten del av dem.</p>
+</section>
+<section id="registerdata" class="level3" data-number="2.4.2">
+<h3 data-number="2.4.2" class="anchored" data-anchor-id="registerdata"><span class="header-section-number">2.4.2</span> Registerdata</h3>
+<p>Noen verdier trenger du ikke måle selv, fordi andre allerede har registrert dem. Fødselsdato, foreldrenes utdanningsnivå og elevenes karakterer ligger i offisielle registre. Slike data er billige og dekker gjerne alle elevene i landet.</p>
+<p>Prisen er at du må godta målingen slik den er. Bruker du standpunktkarakteren i norsk som mål på leseferdighet, har du en variabel som også fanger opp skriving, muntlig aktivitet, kunnskap om litteraturhistorie, sjangerkunnskap, og mye mer, altså konstrukt-irrelevans i rikt monn. I tillegg settes karakteren av elevens egen lærer, og lærere er ikke enige med hverandre om hva som skiller en firer fra en femmer. Registerdata er derfor sjelden den mest valide operasjonaliseringen av et konstrukt, men ofte den eneste som lar seg gjennomføre når du trenger data om mange tusen elever.</p>
+</section>
+<section id="selvrapportering" class="level3" data-number="2.4.3">
+<h3 data-number="2.4.3" class="anchored" data-anchor-id="selvrapportering"><span class="header-section-number">2.4.3</span> Selvrapportering</h3>
+<p>Selvrapportering er at folk oppgir verdien på variabelen selv, som regel ved å svare på spørsmål i et spørreskjema. Det er raskt, billig og enkelt, men det fungerer bare med folk som er ærlige og kan lese godt på det språket spørsmålene er stilt på. Selvrapportering benyttes gjerne til å måle indre sinnstilstander som tanker, holdninger og følelser.</p>
+<p>I et eksempel over viste jeg hvordan TIMSS målte indre motivasjon ved hjelp av ni spørsmål i et spørreskjema. Da ber man elevene om å selvrapportere om sin indre motivasjon for matematikk. Dette virker godt; elevene vet selv hvilke følelser de har knyttet til matematikk, om de liker å jobbe med matematikk, gleder seg til matematikktimen og så videre. Trolig kan ingen andre, slik som foreldre eller lærere, rapportere like godt om elevens indre motivasjon, for det er tross alt elevens egen sinnstilstand man ønsker å måle. Kun eleven har tilgang til den.</p>
+<p>Selvrapportering av indre motivasjon har høy reliabilitet. Hvis man setter elevene til å svare på spørreskjemaet en annen dag, vil de sannsynligvis svare mer eller mindre likt (test-retest-reliabilitet). Det spiller heller ikke så stor rolle hvordan påstandene som elevene skal ta stilling til, er utformet. For eksempel vil de to påstandene «jeg er glad i matematikk» eller «jeg liker å jobbe med matematikk» sannsynligvis besvares nokså likt av en og samme elev. Og inter-rater-reliabiliteten er perfekt, for det er helt entydige svar på Likert-påstander (se <a href="#sec-measurement-likert" class="quarto-xref"><span>Seksjon 2.2.6</span></a> for en oppfriskning) i et spørreskjema.</p>
+<p>Reliabiliteten er altså trolig god. Validiteten er verre. Selvrapportering kan påvirkes av en rekke faktorer, for eksempel hvor sosialt akseptabelt det er å være interessert i matematikk i elevenes eget miljø. Hvis elever befinner seg i en omgangskrets der matematikk oppfattes som «ukult», kan de, bevisst eller ubevisst, nedtone sin indre motivasjon i svarene. Det motsatte kan også skje: Dersom elever går i en klasse der nesten alle misliker matematikk, men de selv synes faget er helt greit, kan de overvurdere sin egen motivasjon fordi de sammenligner seg med et miljø der interessen er enda lavere. Respondenter i intervjuer og spørreundersøkelser har også tendens til å svare det de tror at forskeren vil ha. Elever kan svare at de er interessert i matematikk fordi de tror det er det svaret forskeren ønsker. Alt dette er konstrukt-irrelevans som selvrapporteringen fanger opp.</p>
+</section>
+<section id="tredjepartsrapportering" class="level3" data-number="2.4.4">
+<h3 data-number="2.4.4" class="anchored" data-anchor-id="tredjepartsrapportering"><span class="header-section-number">2.4.4</span> Tredjepartsrapportering</h3>
+<p>Du kan også spørre andre om å oppgi verdien på variabelen, for eksempel foreldrene eller læreren til eleven. Det er utveien når den man vil måle er for ung til å svare selv, eller man måler noe som det er vanskelig å selvrapportere om.</p>
+<p>Sett fra andre sitt ståsted kan nemlig se ut om elevens selvrapportering ikke er så pålitelig. Lærere kan observere at elever som svarer at de liker å jobbe med matematikk, ikke jobber med matematikk i timen, men heller foretrekker å tulle med sidemannen eller tegne i skriveboka si. Og omvendt kan læreren observere at elever som svarer at de er enige i at «matematikk er kjedelig» jobber iherdig og tilsynelatende motivert med individuell oppgaveløsing og kaster seg ut i helklassediskusjoner. Hva hvis elevenes selvrapportering om motivasjon ikke samsvarer med hvordan andre observerer motivasjonen?</p>
+<p>Da er det fristende å konkludere med at læreren har rett og eleven tar feil. Men læreren ser bare eleven i matematikktimen, ser ikke inn i hodet på henne, og kan lett forveksle det å jobbe stille med det å være motivert. Vi vet ikke om den ene målingen er riktig og den andre er gal, og vi har ingen fasit å sammenlikne med.</p>
+</section>
+<section id="observasjon" class="level3" data-number="2.4.5">
+<h3 data-number="2.4.5" class="anchored" data-anchor-id="observasjon"><span class="header-section-number">2.4.5</span> Observasjon</h3>
+<p>Ved observasjon registrerer forskeren direkte det som skjer. For mange konstrukter er dette den mest valide tilnærmingen. Skal man måle undervisningskvalitet, er det åpenbart bedre å se på undervisningen enn å be læreren vurdere den selv. Prisen er tid og penger, og derfor ender de fleste likevel opp med selvrapportering, der lærere beskriver egen undervisning, eller tredjepartsrapportering, der elever rapporterer om hvordan læreren underviser.</p>
+<p>Siden selvrapportering av indre motivasjon er utsatt for målefeilene vi så over, kan det være fristende å heller prøve å observere motivasjon. Hvis en elev er indre motivert for matematikk, innebærer det sannsynligvis at eleven jobber villig med matematikk i timen, noe som kan observeres. Da kan man ganske enkelt sette en forsker til å observere elevenes motivasjon. Men merk at en elev som er <em>ytre</em> motivert også vil jobbe villig med matematikk i timen, så å observere kan gi en alvorlig konstrukt-irrelevans ved at det ikke er mulig å skille mellom indre og ytre motivasjon når en observerer en elev i arbeid.</p>
+<p>Derfor må man gi matematikkoppgaver eleven i mindre grad blir ytre motivert av, for eksempel hvis læreren ikke er til stede og oppgaven ikke gir øving på stoff som skal vurderes. Vil observasjon da være et godt mål på en elevs indre motivasjon? Man kunne simpelthen målt hvor lenge eleven jobbet med en slik oppgave. Jeg liker tanken! «Hvor motivert var Petter?» «Sju minutter!» Selv om denne målemetoden unngår problemer med selvrapportering, introduserer den mange nye. For eksempel kan elevene bli påvirket til å jobbe fordi det sitter en forsker bak i klasserommet. Dessuten kan reliabiliteten bli lav, for forskere kan være uenige i akkurat når eleven slutter å jobbe med oppgaven, eller målingen kan være veldig avhengig av hvilken oppgave man bruker, slik at test-retest-reliabiliteten blir lav. Men kanskje viktigst av alt: Siden indre motivasjon er en sinnstilstand, er det unektelig rart å måle indre motivasjon ved observasjon av ytre adferd.</p>
+</section>
+<section id="fysiologiske-mål" class="level3" data-number="2.4.6">
+<h3 data-number="2.4.6" class="anchored" data-anchor-id="fysiologiske-mål"><span class="header-section-number">2.4.6</span> Fysiologiske mål</h3>
+<p>Fysiologiske mål, også kalt biomarkører, er lite benyttet i utdanningsforskning. Man kan følge øyebevegelsene til en leser for å se hvor hun stopper opp, du kan anslå hvor stresset en elev er under en prøve ved å måle hjerteslagene, eller du kan måle hjerneaktivitet i et elektroencefalogram ved å koble elektroder til hodet. Dette høres veldig forlokkende ut. Kroppen svarer jo ikke strategisk; pulsen bryr seg ikke om hva som er kult i klassen; elektroencefalogrammet kan ikke fakes.</p>
+<p>Det er derfor fristende å droppe både selvrapportering og observasjon av indre motivasjon og heller finne en biomarkør. Kan det finnes et hormon eller en nevrotransmitter som slår ut når man jobber med en oppgave man er indre motivert for? Kanskje dopamin er et sånt stoff? Eller kan man måle puls eller hjernebølger? Man kunne målt en biomarkør i elevenes kropper mens de jobbet med matematikk og slik fått en objektiv måling av elevenes motivasjon for matematikk. Det er lite som tilsier at slike biomarkører faktisk ville fungere i praksis, og det er sannsynlig at man fortsatt ville undret seg over hvorfor målingene fra biomarkøren ikke samsvarer med selvrapportert eller observert indre motivasjon.</p>
+</section>
+<section id="når-målemetodene-ikke-er-enige" class="level3" data-number="2.4.7">
+<h3 data-number="2.4.7" class="anchored" data-anchor-id="når-målemetodene-ikke-er-enige"><span class="header-section-number">2.4.7</span> Når målemetodene ikke er enige</h3>
+<p>Dette er til å bli gal av. Jeg har presentert fire målemetoder for å måle indre motivasjon, og ingen av dem stemmer overens med de andre. Dette er ikke kun et tankeeksperiment; det er svært reelt. Manglende samsvar mellom selvrapportering og observasjon går igjen i måling av mange konstrukter som handler om elevers og læreres indre sinnstilstander, slik som tanker, holdninger, motivasjon, kunnskap, læring og følelser <span class="citation" data-cites="leatham2006">(<a href="sec-references.html#ref-leatham2006" role="doc-biblioref">Leatham, 2006</a>)</span>.</p>
+<p>Men det er også ofte manglende samsvar når konstruktet ikke er en indre sinnstilstand, men handler om helt konkrete hendelser i et klasserom. For eksempel sier mange lærere at de synes helklassediskusjoner er viktige, at de setter av mye tid til det i timene og at de gir elevene rom til å diskutere heller enn å kun komme med korte svar. Observasjon av helklasseundervisning har imidlertid vist det motsatte: Det er få helklassediskusjoner, og de er ofte lærerstyrte der elevene kun kommer med korte svar. Altså har målinger av helklassediskusjoner via selvrapportering lav validitet. Er elever og lærere løgnere, som ikke velger å svare sannferdig; hyklere, som gjør stikk motsatt av det de sier er viktig; eller er det noe annet som foregår? En nærliggende forklaring er rett og slett at selvrapportering er vanskelig, slik at vi ikke kan vente annet enn avvik mellom observasjon og selvrapportering.</p>
+<p>Huff. Hvis du led under forvirringen at å måle noe var enkelt, håper jeg du nå er kurert.</p>
+</section>
+</section>
+<section id="sec-measurement-ethics" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="sec-measurement-ethics"><span class="header-section-number">2.5</span> Etiske sider ved kvantitativ måling av folk</h2>
+<p>Det er ikke bare vanskelig å lage reliable og valide målinger av mennesker; målingene kan også ha dype etiske konsekvenser. <a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> Jeg viser deg bare to av de mest nærliggende etiske problemene.</p>
+<p>Det første etiske problemet kan oppsummeres med at «målinger skaper folk». Alex starter i første klasse som en vanlig gutt. På femte trinn tar han nasjonale prøver i lesing, og havner på «mestringsnivå 1». Underveis forsvinner usikkerheten prøven er beheftet med (kanskje Alex skåret rett under grensen for nivå 2), og at prøven var urettferdig for ham (Alex sleit med teksten som handlet om skøyter, for han har hverken sett eller prøvd skøyter). Igjen står én opplysning, mestringsnivå 1.<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a></p>
+<p>I de voksnes (og kanskje Alex sitt) hode blir «mestringsnivå 1» <strong>tingliggjort</strong>, at man behandler noe som virkelig bare fordi det er satt et begrep på det. «Mestringsnivå 1» er strengt tatt ikke annet enn en betegnelse på at skåren havnet på den ene siden av en grense noen har trukket, men på lærerværelset og rundt kjøkkenbordet blir Alex fort til «en svak leser» <span class="citation" data-cites="mosvold2016">(<a href="sec-references.html#ref-mosvold2016" role="doc-biblioref">Mosvold &amp; Ohnstad, 2016</a>)</span>. Kategorien har sluttet å være en prestasjon på en prøve og har blitt til en egenskap ved Alex. Ingenting har skjedd med Alex, men «mestringsnivå 1» har liksom blitt noe virkelig ved ham i de voksnes øyne.</p>
+<p>Derfor kan merkelappen «mestringsnivå 1» bli en selvoppfyllende profeti for Alex. En stein bryr seg ikke om hvilken kategori en geolog sier den tilhører, men mennesker merker at de blir satt i en kategori, og de blir påvirket. Læreren senker forventningene og gir Alex lettere tekster, foreldrene slutter å foreslå bøker til jul, og Alex, som nå vet hva han er, slutter å prøve seg på tykke bøker. Etter et års tid leser han dårligere enn han ville gjort uten merkelappen. Kategorien har ikke bare beskrevet Alex, den har vært med på å lage ham. Målinger skaper folk, eller, i hvert fall kan de være delaktige i det.</p>
+<p>Man kan kanskje innvende «men han leser jo litt dårlig, da, og det må det være fint å finne ut av slik at han kan få hjelp», og det kan være riktig! Noen ganger utløser målingene ekstra ressurser. Kanskje blir Alex kalt inn til spesialpedagoger som tar en annen kvantitativ måling, en som skal kartlegge dysleksi. Sier prøven at Alex har dysleksi, får han mange rettigheter; sier den nei, får han ingenting. La oss inderlig håpe grenseverdien er satt på bakgrunn av en svært grundig vurdering av både etikk og validitet.</p>
+<p>Det andre etiske problemet kan oppsummeres med at «målinger forvrenger målsetninger og målingen selv». Kvantitative målinger benyttes til å fordele knapphetsgoder som ressurser og anseelse. Skoler med gode resultater får anseelse; politikere som sitter med makten når PISA-resultatene går opp får smigrende omtale; lærere med lav strykprosent blir godt likt av rektor og elever, og så videre. Derfor er det en fare for at man, bevisst eller ubevisst, legger om målene sine til å skåre bedre på målingen.</p>
+<p>Alle skoleeiere har som mål at elevene skal lære å lese bedre. Da kan det være de måler skolene på hvor stor andel elever som havner på mestringsnivå 1 på nasjonale prøver i lesing. Da er det stor fare for at skolene endrer fokus; for eksempel at de bare fokuserer på de elevene som er gode nok til å kunne nå mestringsnivå 2, og ikke på de som virkelig sliter. Da er målsetingen forvrengt fra å lære elevene å lese til å flytte dem over en litt vilkårlig grense. Dette er ikke bare en teoretisk fare. I en amerikansk barneskole under et testbasert ansvarsregime fant <span class="citation" data-cites="booher-jennings2005">Booher-Jennings (<a href="sec-references.html#ref-booher-jennings2005" role="doc-biblioref">2005</a>)</span> at lærerne systematisk kanaliserte ressursene mot elevene som lå like under bestått-grensen, kalt «bubble kids», mens de svakeste elevene ble nedprioritert eller henvist til spesialundervisning slik at resultatene deres ikke skulle telle med.</p>
+<p>Men også målingen selv forvrenges. I USA er det godt kjent at skoler og hele skoledistrikter legger om undervisningen til å dreie seg om flervalgsprøver, og at noen har holdt svake elever borte fra statlige prøver for å heve skolens resultater <span class="citation" data-cites="koretz2017">(<a href="sec-references.html#ref-koretz2017" role="doc-biblioref">Koretz, 2017</a>)</span>. Da stiger skårene uten at elevene leser bedre, så prøven har mistet validiteten som et mål på lesekompetanse.</p>
+<p>Dette er kjent som <em>Campbells lov</em>: Jo mer en kvantitativ indikator brukes til å ta beslutninger, jo mer utsatt blir den for press som ødelegger både indikatoren selv og det den skulle måle <span class="citation" data-cites="campbell1979">(<a href="sec-references.html#ref-campbell1979" role="doc-biblioref">Campbell, 1979</a>)</span>. Campbell selv brukte nettopp skoleprøver som eksempel!</p>
+<p>Du får kanskje lyst til å droppe kvantitativ måling helt, men det er ikke noe jeg vil anbefale; kvantitative målinger kan like gjerne ha gode konsekvenser. Og alternativet er ofte beslutninger bli tatt av folks profesjonelle (og uprofesjonelle) skjønn, som inneholder trynefaktorer, fordommer og andre uspesifiserte preferanser. En profesjonell lærer møter derfor kvantitative målinger verken med uforbeholden tillit eller avvisning.</p>
+</section>
+<section id="oppsummering" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="oppsummering"><span class="header-section-number">2.6</span> Oppsummering</h2>
+<p>Målinger er en viktig del av kvantitativ forskning, og trolig er vi for lite bevisste på kvaliteten på målingene når vi evaluerer forskning. I første kapittel refererte jeg til en samtale mellom oljefondets leder Nicolai Tangen og forskeren Angela Duckworth. Da Duckworth sa at hun hadde forsket på folks pågangsmot og at hun hadde veldig store utvalg, burde ikke Tangen blitt imponert over utvalgsstørrelsen. Han burde spurt: «Hvordan målte du pågangsmotet til så mange folk?» Svaret er jo at alle har svart på et <a href="https://www.angeladuckworth.com/grit#scale">spørreskjema med ti spørsmål</a>. Tror du dette spørreskjemaet måler pågangsmot på en god måte?</p>
+<p>I dette kapittelet har du lest om:</p>
 <ul>
-<li><a href="#sec-variables-values">Variable og verdier</a>.</li>
-<li><a href="#sec-operationalization">Operasjonalisering av teoretiske konstrukter</a>. Hva betyr det å operasjonalisere et teoretisk konstrukt? Hva betyr verdier, variabler, konstrukter og målemetoder?</li>
-<li><a href="#sec-Scales-of-measurement">Målenivåer</a> og variabeltyper. Husk at det er to forskjellige distinksjoner her. Det er forskjellen mellom diskrete og kontinuerlige data, og det er forskjellen mellom de fire ulike målenivåene (nominal, ordinal, intervall og forholdstall).</li>
-<li><a href="#sec-reliability">Vurdering av målingers reliabilitet</a>. Hvis jeg måler den “samme” tingen to ganger, bør jeg forvente å se samme resultat? Bare hvis målingen min er reliabel. Men hva betyr det å snakke om å gjøre den “samme” tingen? Vel, det er derfor vi har forskjellige typer pålitelighet. Sørg for at du husker hva de er.</li>
-<li><a href="#sec-validity">Vurdering av målingers validitet</a>. Måler målemetoden din det du ønsker?</li>
+<li><a href="#sec-operationalization">Teoretiske konstrukter og operasjonalisering</a>. Hva betyr det å operasjonalisere et teoretisk konstrukt? Hva betyr verdier, variabler, konstrukter og målemetoder?</li>
+<li><a href="#sec-variables-values">Variabler og verdier</a>.</li>
+<li><a href="#sec-Scales-of-measurement">Målenivåer</a> og variabeltyper. Husk at det er to forskjellige distinksjoner her. Det er forskjellen mellom diskrete og kontinuerlige variabler, og det er forskjellen mellom fire ulike målenivå (nominal, ordinal, intervall og forholdstall).</li>
+<li><a href="#sec-reliability">Vurdering av målingers reliabilitet</a>. To typer reliabilitet, og begge handler om man får samme resultat om man måler den samme tingen to ganger.</li>
+<li><a href="#sec-validity">Vurdering av målingers validitet</a>. Måler målemetoden din det du ønsker? Hvis ikke, har målingen konstrukt-underrepresentasjon eller konstrukt-irrelevans?</li>
+<li><a href="#sec-measurement-methods">Målemetoder</a>. Prøver og tester, registerdata, selvrapportering, tredjepartsrapportering, observasjon og fysiologiske mål. Hvilken som passer, kommer an på konstruktet. Merk komplikasjonene med å måle sinnstilstander.</li>
+<li><a href="#sec-measurement-ethics">Etiske sider ved kvantitativ måling av folk</a>. «Målinger skaper folk» (tingliggjøring) og «målinger forvrenger målsetninger og målingen selv» (Campbells lov), men likevel er det ikke sikkert du bør droppe kvantitative målinger.</li>
 </ul>
-<p>Målinger er en viktig del av kvantitativ forskning, og trolig har den for lite plass i bevisstheten til folk når de hører om forskningsresultater. I første kapittel refererte jeg til en samtale mellom oljefondets leder Nicolai Tangen og forskeren Angela Duckworth. Da Duckworth sa hun hadde forsket på folks pågangsmot og at hun hadde veldig store utvalg burde ikke Tangen blitt imponert over utvalgsstørrelsen, han burde spurt: “hvordan målte du pågangsmotet til så mange folk?” Svaret er jo at alle har svart på et <a href="https://angeladuckworth.com/grit-scale/">spørreskjema med 10 spørsmål</a>. Tror du det måler pågangsmot på en god måte?</p>
+<a href="https://creativecommons.org/licenses/by-sa/4.0/">
 
-
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
+</a><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none"><a href="https://creativecommons.org/licenses/by-sa/4.0/">
+</a><div id="ref-booher-jennings2005" class="csl-entry" role="listitem"><a href="https://creativecommons.org/licenses/by-sa/4.0/">
+Booher-Jennings, J. (2005). Below the <span>Bubble</span>: <span>«<span>Educational Triage</span>»</span> and the <span>Texas Accountability System</span>. <em>American Educational Research Journal</em>, <em>42</em>(2), 231–268. </a><a href="https://doi.org/10.3102/00028312042002231">https://doi.org/10.3102/00028312042002231</a>
+</div>
+<div id="ref-campbell1979" class="csl-entry" role="listitem">
+Campbell, D. T. (1979). Assessing the Impact of Planned Social Change. <em>Evaluation and Program Planning</em>, <em>2</em>(1), 67–90. <a href="https://doi.org/10.1016/0149-7189(79)90048-X">https://doi.org/10.1016/0149-7189(79)90048-X</a>
+</div>
 <div id="ref-Campbell1963" class="csl-entry" role="listitem">
-Campbell, D. T., &amp; Stanley, J. C. (1963). <em>Experimental and quasi-experimental designs for research</em>. Houghton Mifflin.
+Campbell, D. T., &amp; Stanley, J. C. (1963). <em>Experimental and Quasi-Experimental Designs for Research</em>. Houghton Mifflin.
+</div>
+<div id="ref-koretz2017" class="csl-entry" role="listitem">
+Koretz, D. (2017). <em>The <span>Testing Charade</span>: <span>Pretending</span> to <span>Make Schools Better</span></em>. University of Chicago Press.
 </div>
 <div id="ref-leatham2006" class="csl-entry" role="listitem">
 Leatham, K. R. (2006). Viewing <span>Mathematics Teachers</span>’ <span>Beliefs</span> as <span>Sensible Systems</span>*. <em>Journal of Mathematics Teacher Education</em>, <em>9</em>(1), 91–102. <a href="https://doi.org/10.1007/s10857-006-9006-8">https://doi.org/10.1007/s10857-006-9006-8</a>
 </div>
+<div id="ref-mosvold2016" class="csl-entry" role="listitem">
+Mosvold, R., &amp; Ohnstad, F. O. (2016). Profesjonsetiske Perspektiver På&nbsp;Læreres Omtaler Av Elever. <em>Norsk pedagogisk tidsskrift</em>, <em>100</em>(1), 26–36. <a href="https://doi.org/10.18261/issn.1504-2987-2016-01-04">https://doi.org/10.18261/issn.1504-2987-2016-01-04</a>
+</div>
 <div id="ref-stevens1946" class="csl-entry" role="listitem">
-Stevens, S. S. (1946). On the theory of scales of measurement. <em>Science</em>, <em>103</em>, 677–680. <a href="https://doi.org/10.1126/science.103.2684.677">https://doi.org/10.1126/science.103.2684.677</a>
+Stevens, S. S. (1946). On the Theory of Scales of Measurement. <em>Science</em>, <em>103</em>, 677–680. <a href="https://doi.org/10.1126/science.103.2684.677">https://doi.org/10.1126/science.103.2684.677</a>
 </div>
 </div>
 </section>
@@ -1334,9 +1248,11 @@ Stevens, S. S. (1946). On the theory of scales of measurement. <em>Science</em>,
 <ol>
 <li id="fn1"><p>Foredrag til <em>Institution of Civil Engineers</em>, 3. mai, 1883. Kilde: <a href="https://en.wikiquote.org/wiki/William_Thomson" class="uri">https://en.wikiquote.org/wiki/William_Thomson</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>Foredrag til <em>RIOT Science Club</em>, 23. november, 2020. Kilde: <a href="https://youtu.be/Cq6n7AS_r8w?si=PSLqDe2VGExXp2qV&amp;t=637" class="uri">https://youtu.be/Cq6n7AS_r8w?si=PSLqDe2VGExXp2qV&amp;t=637</a><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>Eller burde jeg skrevet “Et konstrukt jeg burde målt”? La det være et eksempel på at forskere benytter begrepene litt om hverandre.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Her er «lærernes pendling» konstruktet, og transportmiddel er én av variablene det kan operasjonaliseres i. Andre variabler kunne vært reisetid og reiselengde. Vær oppmerksom på at forskere til daglig benytter begrepene konstrukt og variabel litt om hverandre.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn4"><p>Kanskje er den egentlige grunnen at de statistiske utregningene med intervallskalaer er mye enklere enn de tilsvarende utregningene med ordinale skalaer.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn5"><p>Hvis du er interessert i å se hele spørreskjemaet er det tilgjengelig her: <a href="https://www.uv.uio.no/ils/forskning/prosjekter/timss/2019/elevskjema_9trinn.pdf%22" class="uri">https://www.uv.uio.no/ils/forskning/prosjekter/timss/2019/elevskjema_9trinn.pdf"</a><a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>Hvis du er interessert i å se hele spørreskjemaet er det tilgjengelig her: <a href="https://www.uv.uio.no/ils/forskning/prosjekter/timss/2019/elevskjema_9trinn.pdf" class="uri">https://www.uv.uio.no/ils/forskning/prosjekter/timss/2019/elevskjema_9trinn.pdf</a><a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>Mange forskere mener at konsekvensene som målingen har for folk er en del av dens validitet, såkalt konsekvensvaliditet. Dette er omstridt, fordi det plumper ut i debatten om vitenskapelig tenkning bør være fri for verdispørsmål, det <em>verdifrie ideal</em>.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>En pikant detalj er at en feil i det statistiske analyseverktøyet som ble benyttet av nasjonale prøver gjorde at målingene ble gale fra 2015 til 2021. Det er anslått at 200 000 elever ble gitt feil mestringsnivå (<a href="https://www.utdanningsnytt.no/nasjonale-prover-utdanningsdirektoratet-utdanningsforbundet/over-200000-nasjonale-prover-ble-feilvurdert-av-udir/470804" class="uri">https://www.utdanningsnytt.no/nasjonale-prover-utdanningsdirektoratet-utdanningsforbundet/over-200000-nasjonale-prover-ble-feilvurdert-av-udir/470804</a>). På grunn av feilen oppdaget man heller ikke at norske elevers regne- og leseferdigheter gikk ned i perioden, mens elevenes engelskferdigheter gikk opp.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
@@ -1405,13 +1321,14 @@ Stevens, S. S. (1946). On the theory of scales of measurement. <em>Science</em>,
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -1760,8 +1677,8 @@ Stevens, S. S. (1946). On the theory of scales of measurement. <em>Science</em>,
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./sec-why-statistics.html" class="pagination-link" aria-label="Hvorfor lære statistikk?">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Hvorfor lære statistikk?</span></span>
+      <a href="./sec-why-statistics.html" class="pagination-link" aria-label="Hvorfor lære kvantitative metoder?">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Hvorfor lære kvantitative metoder?</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
@@ -1774,16 +1691,16 @@ Stevens, S. S. (1946). On the theory of scales of measurement. <em>Science</em>,
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p><a href="https://kvant.roarstovner.no">Kvantitative metoder for lærere</a></p>
+<p><a href="https://kvant.roarstovner.no">Kvantitativ metode for lærere</a></p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
     <div class="nav-footer-right">
-<p>Denne boka ble laget i <a href="https://quarto.org/">Quarto</a></p>
-</div>
-  </div>
-</footer>
+<p>Denne boka ble laget i <a href="https://quarto.org/">Quarto</a> og er utgitt under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY 4.0&lt;&gt;</a></p><a href="https://creativecommons.org/licenses/by-sa/4.0/">
+</a></div><a href="https://creativecommons.org/licenses/by-sa/4.0/">
+  </a></div><a href="https://creativecommons.org/licenses/by-sa/4.0/">
+</a></footer><a href="https://creativecommons.org/licenses/by-sa/4.0/">
 <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
 (function() {
   let previousOnload = window.onload;
@@ -1820,4 +1737,4 @@ Stevens, S. S. (1946). On the theory of scales of measurement. <em>Science</em>,
 
 
 
-</body></html>
+</a></body></html>

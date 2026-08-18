@@ -1,18 +1,24 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="nb" xml:lang="nb"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Komme i gang med jamovi – Kvantitative metoder for lærere</title>
+<title>4&nbsp; Komme i gang med jamovi – Kvantitativ metode for lærere</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -20,7 +26,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -38,14 +64,14 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-8ef56b68f8fa1e9d2ba328e99e439f80.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-89d524cf73f3b2250d5e74ecba7e97ca.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-32c0091d9c65541b54b40246001d65bb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-89d524cf73f3b2250d5e74ecba7e97ca.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-a82aade05f24c3323681f036b4fc6515.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-510a82e8f80afa8ef9caa1eda2fa653d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-a82aade05f24c3323681f036b4fc6515.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -83,76 +109,22 @@ gtag('js', new Date());
 gtag('config', 'G-FRV7C65B01', { 'anonymize_ip': true});
 </script>
 <script type="text/x-mathjax-config">
-
   MathJax.Hub.Config({
-
     tex2jax: {
-
       inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-
       displayMath: [ ['S$','S$'], ["\\[","\\]"] ]
-
       processEscapes: true
-
     }
-
   });
-
 </script>
 
 
 
-
-
-
-  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
-  <script>document.addEventListener("DOMContentLoaded", function () {
- var mathElements = document.getElementsByClassName("math");
- var macros = [];
- for (var i = 0; i < mathElements.length; i++) {
-  var texText = mathElements[i].firstChild;
-  if (mathElements[i].tagName == "SPAN") {
-   katex.render(texText.data, mathElements[i], {
-    displayMode: mathElements[i].classList.contains('display'),
-    throwOnError: false,
-    macros: macros,
-    fleqn: false
-   });
-}}});
-  </script>
-  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="Komme i gang med jamovi – Kvantitative metoder for lærere">
+<meta property="og:title" content="4&nbsp; Komme i gang med jamovi – Kvantitativ metode for lærere">
 <meta property="og:description" content="">
-<meta property="og:site_name" content="Kvantitative metoder for lærere">
+<meta property="og:site_name" content="Kvantitativ metode for lærere">
 </head>
 
 <body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -326,7 +298,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Slå av eller på sidebarnavigering" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sec-jamovi.html">Deskriptiv statistikk</a></li><li class="breadcrumb-item"><a href="./sec-jamovi.html">Komme i gang med jamovi</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sec-jamovi.html">Deskriptiv statistikk</a></li><li class="breadcrumb-item"><a href="./sec-jamovi.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Komme i gang med jamovi</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Slå av eller på sidebarnavigering" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Søk" onclick="window.quartoOpenSearch();">
@@ -341,9 +313,25 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Kvantitative metoder for lærere</a> 
+      <a href="./">Kvantitativ metode for lærere</a> 
         <div class="sidebar-tools-main tools-wide">
-    <a href="./Kvantitative-metoder-for-lærere.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Kvantitativ-metode-for-lærere.pdf">
+              <i class="bi bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Kvantitativ-metode-for-lærere.epub">
+              <i class="bi bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Bytt mørk modus"><i class="bi"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Bytt lesermodus">
   <div class="quarto-reader-toggle-btn">
@@ -369,7 +357,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./sec-why-statistics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Hvorfor lære statistikk?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Hvorfor lære kvantitative metoder?</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -407,19 +395,19 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./sec-jamovi.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Komme i gang med jamovi</span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Komme i gang med jamovi</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./sec-descriptive.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Deskriptiv statistikk</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Å beskrive én variabel</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./sec-diagram.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Visualisere data</span></span></a>
+  <a href="./sec-associations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Å beskrive sammenhenger mellom variabler</span></span></a>
   </div>
 </li>
       </ul>
@@ -427,7 +415,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Statistisk teori</span></a>
+ <span class="menu-text">Inferensiell statistikk</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Slå på delen">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -435,49 +423,8 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./sec-probability.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Sannsynlighet</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./sec-estimation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Estimering av ukjente størrelser fra et utvalg</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./sec-testing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Hypotesetesting</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
- <span class="menu-text">Inferensiell statistikk</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Slå på delen">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./sec-categorical.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Analyse av kategoriske data</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./sec-means.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Sammenlikne gjennomsnitt: ANOVA og paret <span class="math inline">t</span>-test</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./sec-correlation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Korrelasjon og lineær regresjon</span></span></a>
+  <a href="./sec-inferential.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Usikkerhet og konfidensintervall</span></span></a>
   </div>
 </li>
       </ul>
@@ -499,11 +446,19 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Innholdsfortegnelse</h2>
+   
+  <ul>
+  <li><a href="#å-skaffe-seg-jamovi" id="toc-å-skaffe-seg-jamovi" class="nav-link active" data-scroll-target="#å-skaffe-seg-jamovi"><span class="header-section-number">4.1</span> Å skaffe seg jamovi</a></li>
+  <li><a href="#sec-jamovi-datafiler" id="toc-sec-jamovi-datafiler" class="nav-link" data-scroll-target="#sec-jamovi-datafiler"><span class="header-section-number">4.2</span> Bokas datafiler</a></li>
+  <li><a href="#slik-hjelper-resten-av-boka-deg" id="toc-slik-hjelper-resten-av-boka-deg" class="nav-link" data-scroll-target="#slik-hjelper-resten-av-boka-deg"><span class="header-section-number">4.3</span> Slik hjelper resten av boka deg</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sec-jamovi.html">Deskriptiv statistikk</a></li><li class="breadcrumb-item"><a href="./sec-jamovi.html">Komme i gang med jamovi</a></li></ol></nav><h1 class="title display-7">Komme i gang med jamovi</h1></header>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sec-jamovi.html">Deskriptiv statistikk</a></li><li class="breadcrumb-item"><a href="./sec-jamovi.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Komme i gang med jamovi</span></a></li></ol></nav><h1 class="title display-7"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Komme i gang med jamovi</span></h1></header>
 
 
 <header id="title-block-header">
@@ -519,11 +474,58 @@ window.Quarto = {
 <p><em>Robots are nice to work with.</em><br>
 – Roger Zelazny<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 </blockquote>
-<p>I dette kapittelet kommer jeg <em>ikke</em> til å vise deg hvordan man kommer i gang med statistikkprogramvaren jamovi. Siden jeg ønsket at boka skulle bli ferdig innen semesterstart høsten 2025 måtte jeg nedprioritere dette kapittelet. Det er uansett ikke så vanskelig og man trenger det ikke for å skjønne resten av boka.</p>
-<p>Jeg tror likevel mange kan ha fordel av å kjøre jamovi mens man leser boka, og det er et enkelt nok program til at det ikke bør by på noen utfordringer. Du trenger ikke å installere det engang, du kan kjøre en “Cloud”-versjon fra nettsiden: <a href="https://www.jamovi.org">jamovi.org</a></p>
-<p>Hvis du ønsker en kjapp guide til hvordan man bruker jamovi kan man ganske enkelt søke på internett eller titte på kapittelet <a href="https://davidfoxcroft.github.io/lsj-book/03-Getting-started-with-jamovi.html">“Getting started with jamovi”</a> i boka jeg baserer meg på.</p>
+<p>Dette kapittelet er kort, rett og slett fordi jeg ikke rakk å skrive det ferdig før 2026-utgaven. Her får du bare det aller nødvendigste: hvordan du skaffer deg jamovi, hvordan du får bokas datafiler inn i programmet, og hvordan resten av boka hjelper deg videre. Du trenger ikke jamovi for å forstå resten av boka, men jeg tror de fleste får mer ut av kapitlene om de klikker seg gjennom analysene i jamovi mens de leser.</p>
+<p>Er du en av dem som ser for deg å skrive en kvantitativ masteroppgave, er dette kapittelet ekstra verdt tiden din. Da er jamovi godt alternativ til store og dyre statistikkprogrammer jamovi gjør de aller fleste analysene en masteroppgave har bruk for. Og skulle du trenge noe det ikke har fra før, finnes det et enkelt system med tilleggsmoduler som du installerer med noen klikk inne i programmet, så du slipper å lære deg et nytt program for å komme videre.</p>
+<section id="å-skaffe-seg-jamovi" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="å-skaffe-seg-jamovi"><span class="header-section-number">4.1</span> Å skaffe seg jamovi</h2>
+<p>jamovi er gratis og åpent tilgjengelig, og du finner det på <a href="https://www.jamovi.org">jamovi.org</a>. Der har du to muligheter. Enten laster du ned programmet og installerer det på maskinen din, eller så bruker du «Cloud»-versjonen, som kjører i nettleseren uten at du installerer noe som helst. Cloud-versjonen er den raskeste veien i gang, særlig hvis du sitter på en maskin der du ikke får lov til å installere programmer. Men vær klar over at den krever at du oppretter en brukerkonto og logger inn, og at datafilene dine da blir liggende på en server hos noen andre. Hvis du skal laste opp egne data om personer blir det et personvernspørsmål du må avklare. Den installerte versjonen krever ingen innlogging, holder dataene på din egen maskin, og er dessuten raskere når datasettene blir store. Til bokas datasett fungerer begge helt likt, så velg det som passer deg; skal du analysere dine egne innsamlede data, vil jeg anbefale den installerte versjonen.</p>
+<p>Grensesnittet er ikke stort å sette seg inn i. Øverst ligger fire faner: <strong>Variables</strong>, som viser en oversikt over variablene i datasettet, <strong>Data</strong>, som viser selve dataene i et regneark, <strong>Analyses</strong>, der du finner alle analysene, og <strong>Edit</strong>. Nesten alt vi gjør i denne boka skjer under Analyses. Der klikker du deg fram til en analyse, og resultatene dukker opp i panelet til høyre, side om side med dataene.</p>
+</section>
+<section id="sec-jamovi-datafiler" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="sec-jamovi-datafiler"><span class="header-section-number">4.2</span> Bokas datafiler</h2>
+<p>Analysene i boka bruker to datasett, og begge kan du laste ned og åpne selv:</p>
+<ul>
+<li><em><a href="https://kvant.roarstovner.no/data_and_tables/ICCS.omv">ICCS.omv</a></em> er hoveddatasettet, og brukes i <a href="sec-descriptive.html" class="quarto-xref"><span>Kapittel 5</span></a> og <a href="sec-associations.html" class="quarto-xref"><span>Kapittel 6</span></a>. Det er et utdrag fra den store internasjonale undersøkelsen ICCS <span class="citation" data-cites="fraillon2024">(<a href="sec-references.html#ref-fraillon2024" role="doc-biblioref">Fraillon et al., 2024</a>)</span>, med 16473 elever fra Norge, Spania, Polen og Brasil, og 15 variabler om blant annet kjønn, forventet utdanning, kunnskap om demokrati og holdninger til likestilling. Ønsker du dataene i et format andre programmer kan lese, ligger de samme dataene i <em><a href="https://kvant.roarstovner.no/data_and_tables/ICCS.csv">ICCS.csv</a></em>.</li>
+<li><em><a href="https://kvant.roarstovner.no/data_and_tables/anscombe.csv">anscombe.csv</a></em> er et lite datasett som brukes ett sted i <a href="sec-associations.html" class="quarto-xref"><span>Kapittel 6</span></a>, der poenget er at fire datasett kan ha helt like tall og likevel se helt forskjellige ut.</li>
+</ul>
+<p>Forskjellen på de to filtypene er verdt å merke seg. En <strong>.omv-fil</strong> er jamovis eget format. I tillegg til tallene husker den hvilket målenivå hver variabel har, hva verdiene heter, og hvilke analyser du har kjørt. Det er derfor <em>Forventet utdanning</em> allerede er ordinal og sortert i riktig rekkefølge når du åpner ICCS.omv; noen (jeg) har satt det opp på forhånd. En <strong>.csv-fil</strong> er derimot bare en tekstfil med tall og komma. Den kan leses av så å si alle programmer, men den husker ingenting om målenivåer, så det må du sette selv etter importen. Bruk .omv-filen når du kan.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="I jamovi: åpne en datafil">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tips</span>I jamovi: åpne en datafil
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Last først ned filen til maskinen din, for eksempel til Nedlastinger-mappen. Høyreklikk gjerne på lenken og velg «Lagre lenke som», så er du sikker på at filen havner et sted du finner igjen.</p>
+<p>Klikk deretter på de tre strekene (☰) øverst til venstre i jamovi og velg <strong>Open</strong>. Velg <strong>Browse</strong> under «This Device» (bruker du Cloud-versjonen, heter valget «Upload» eller liknende), finn filen du lastet ned, og åpne den.</p>
+<p>Dataene dukker nå opp i Data-fanen, med én rad per elev og én kolonne per variabel. Gå til Variables-fanen for å se hvilket målenivå hver variabel har. Åpnet du en .csv-fil, bør du sjekke målenivåene ekstra nøye, siden .csv-formatet ikke lagrer dem.</p>
+</div>
+</div>
+</div>
+<p>Når du har åpnet ICCS.omv, bør du se noe som likner på skjermbildet i <a href="sec-descriptive.html#fig-descriptive-ICCS-data" class="quarto-xref">Figur&nbsp;<span>5.1</span></a> i neste kapittel: en tabell med elever nedover og variabler bortover. Da er du klar til å følge analysene i resten av boka.</p>
+</section>
+<section id="slik-hjelper-resten-av-boka-deg" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="slik-hjelper-resten-av-boka-deg"><span class="header-section-number">4.3</span> Slik hjelper resten av boka deg</h2>
+<p>Fra og med neste kapittel er hovedteksten opptatt av <em>hva</em> en analyse er og <em>hvorfor</em> vi gjør den, ikke av hvor du skal klikke. Klikkingen har fått sin egen plass. Hver gang boka viser fram en analyse du kan gjøre selv, ligger det en liten boks like ved, med en tittel som starter med «I jamovi:». Boksen over er et eksempel på en slik boks.</p>
+<p>I nettversjonen er boksene er klappet sammen, slik at du bare ser tittelen. Klikker du på tittelen, folder den seg ut og viser oppskriften.</p>
+<p>Hver boks er skrevet slik at den skal kunne leses for seg selv, så du trenger ikke lete i teksten rundt for å skjønne hva du skal gjøre.</p>
+<p>Vil du ha en grundigere innføring i jamovi enn dette kapittelet gir, kan du lese kapittelet <a href="https://davidfoxcroft.github.io/lsj-book/03-Getting-started-with-jamovi.html">«Getting started with jamovi»</a> i boka denne er basert på <span class="citation" data-cites="navarro2025">(<a href="sec-references.html#ref-navarro2025" role="doc-biblioref">Navarro &amp; Foxcroft, 2025</a>)</span>. Det er på engelsk, men det er godt illustrert og dekker programmet langt mer utførlig enn jeg gjør her.</p>
+<a href="https://creativecommons.org/licenses/by-sa/4.0/">
 
-
+</a><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none"><a href="https://creativecommons.org/licenses/by-sa/4.0/">
+<div id="ref-fraillon2024" class="csl-entry" role="listitem">
+Fraillon, J., Friedman, T., &amp; Fraillon, J. (Red.). (2024). <em><span>ICCS</span> 2022 <span>Technical Report</span></em>.
+</div>
+</a><div id="ref-navarro2025" class="csl-entry" role="listitem"><a href="https://creativecommons.org/licenses/by-sa/4.0/">
+Navarro, D., &amp; Foxcroft, D. (2025). <em>Learning <span>Statistics</span> with Jamovi: <span>A Tutorial</span> for <span>Beginners</span> in <span>Statistical Analysis</span></em> (1. utg.). Open Book Publishers. </a><a href="https://doi.org/10.11647/OBP.0333">https://doi.org/10.11647/OBP.0333</a>
+</div>
+</div>
+</section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
@@ -596,13 +598,14 @@ window.Quarto = {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -956,8 +959,8 @@ window.Quarto = {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./sec-descriptive.html" class="pagination-link" aria-label="Deskriptiv statistikk">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Deskriptiv statistikk</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./sec-descriptive.html" class="pagination-link" aria-label="Å beskrive én variabel">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Å beskrive én variabel</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -965,18 +968,18 @@ window.Quarto = {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p><a href="https://kvant.roarstovner.no">Kvantitative metoder for lærere</a></p>
+<p><a href="https://kvant.roarstovner.no">Kvantitativ metode for lærere</a></p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
     <div class="nav-footer-right">
-<p>Denne boka ble laget i <a href="https://quarto.org/">Quarto</a></p>
-</div>
-  </div>
-</footer>
+<p>Denne boka ble laget i <a href="https://quarto.org/">Quarto</a> og er utgitt under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY 4.0&lt;&gt;</a></p><a href="https://creativecommons.org/licenses/by-sa/4.0/">
+</a></div><a href="https://creativecommons.org/licenses/by-sa/4.0/">
+  </a></div><a href="https://creativecommons.org/licenses/by-sa/4.0/">
+</a></footer><a href="https://creativecommons.org/licenses/by-sa/4.0/">
 
 
 
 
-</body></html>
+</a></body></html>

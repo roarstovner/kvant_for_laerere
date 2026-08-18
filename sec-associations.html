@@ -1,0 +1,2219 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="nb" xml:lang="nb"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>6&nbsp; Å beskrive sammenhenger mellom variabler – Kvantitativ metode for lærere</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./sec-inferential.html" rel="next">
+<link href="./sec-descriptive.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-a82aade05f24c3323681f036b4fc6515.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-510a82e8f80afa8ef9caa1eda2fa653d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-a82aade05f24c3323681f036b4fc6515.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Ingen resultater",
+    "search-matching-documents-text": "Samsvarende dokumenter",
+    "search-copy-link-title": "Kopier link for å søke",
+    "search-hide-matches-text": "Skjul ytterlige resultater",
+    "search-more-match-text": "annet resultat i dette dokumentet",
+    "search-more-matches-text": "andre resultater i dette dokumentet",
+    "search-clear-button-title": "Tøm",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Avbryt",
+    "search-submit-button-title": "Send inn",
+    "search-label": "Søk"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-FRV7C65B01"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-FRV7C65B01', { 'anonymize_ip': true});
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['S$','S$'], ["\\[","\\]"] ]
+      processEscapes: true
+    }
+  });
+</script>
+
+
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
+<meta property="og:title" content="6&nbsp; Å beskrive sammenhenger mellom variabler – Kvantitativ metode for lærere">
+<meta property="og:description" content="">
+<meta property="og:image" content="https://kvant.roarstovner.no/sec-associations_files/figure-html/fig-associations-edu-x-country-1.png">
+<meta property="og:site_name" content="Kvantitativ metode for lærere">
+<meta property="og:image:alt" content="Gruppert stolpediagram. X-aksen viser de fire kategoriene av Forventet utdanning, og innenfor hver kategori er det fire stolper, én for hvert land. Stolpene for Høyere utdanning er klart høyest i alle land.">
+<meta property="og:image:height" content="711">
+<meta property="og:image:width" content="1152">
+</head>
+
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Slå av eller på sidebarnavigering" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sec-jamovi.html">Deskriptiv statistikk</a></li><li class="breadcrumb-item"><a href="./sec-associations.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Å beskrive sammenhenger mellom variabler</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Slå av eller på sidebarnavigering" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Søk" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Kvantitativ metode for lærere</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Kvantitativ-metode-for-lærere.pdf">
+              <i class="bi bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Kvantitativ-metode-for-lærere.epub">
+              <i class="bi bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Bytt mørk modus"><i class="bi"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Bytt lesermodus">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Søk"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Forord</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-why-statistics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Hvorfor lære kvantitative metoder?</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Studiedesign</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Slå på delen">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-measurement.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Måling i utdanningsforskning</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-design.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Forskningsdesign i kvantitativ metode</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Deskriptiv statistikk</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Slå på delen">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-jamovi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Komme i gang med jamovi</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-descriptive.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Å beskrive én variabel</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-associations.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Å beskrive sammenhenger mellom variabler</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Inferensiell statistikk</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Slå på delen">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-inferential.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Usikkerhet og konfidensintervall</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-epilogue.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Etterord</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Referanseliste</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Innholdsfortegnelse</h2>
+   
+  <ul>
+  <li><a href="#sec-associations-cat-cat" id="toc-sec-associations-cat-cat" class="nav-link active" data-scroll-target="#sec-associations-cat-cat"><span class="header-section-number">6.1</span> Kategorisk × kategorisk</a>
+  <ul class="collapse">
+  <li><a href="#sec-associations-contingency" id="toc-sec-associations-contingency" class="nav-link" data-scroll-target="#sec-associations-contingency"><span class="header-section-number">6.1.1</span> Krysstabeller</a></li>
+  <li><a href="#sec-associations-bar-subgroup" id="toc-sec-associations-bar-subgroup" class="nav-link" data-scroll-target="#sec-associations-bar-subgroup"><span class="header-section-number">6.1.2</span> Grupperte stolpediagram</a></li>
+  <li><a href="#sec-associations-stacked-bar" id="toc-sec-associations-stacked-bar" class="nav-link" data-scroll-target="#sec-associations-stacked-bar"><span class="header-section-number">6.1.3</span> Stablede stolpediagram</a></li>
+  </ul></li>
+  <li><a href="#sec-associations-cat-cont" id="toc-sec-associations-cat-cont" class="nav-link" data-scroll-target="#sec-associations-cat-cont"><span class="header-section-number">6.2</span> Kategorisk × kontinuerlig</a>
+  <ul class="collapse">
+  <li><a href="#sec-associations-subgroup" id="toc-sec-associations-subgroup" class="nav-link" data-scroll-target="#sec-associations-subgroup"><span class="header-section-number">6.2.1</span> Sentraltendens og spredning per gruppe</a></li>
+  <li><a href="#boksplott-og-histogrammer-per-gruppe" id="toc-boksplott-og-histogrammer-per-gruppe" class="nav-link" data-scroll-target="#boksplott-og-histogrammer-per-gruppe"><span class="header-section-number">6.2.2</span> Boksplott og histogrammer per gruppe</a></li>
+  </ul></li>
+  <li><a href="#sec-associations-cont-cont" id="toc-sec-associations-cont-cont" class="nav-link" data-scroll-target="#sec-associations-cont-cont"><span class="header-section-number">6.3</span> Kontinuerlig × kontinuerlig</a>
+  <ul class="collapse">
+  <li><a href="#sec-associations-scatter" id="toc-sec-associations-scatter" class="nav-link" data-scroll-target="#sec-associations-scatter"><span class="header-section-number">6.3.1</span> Spredningsplott</a></li>
+  <li><a href="#sec-associations-correlation-coefficient" id="toc-sec-associations-correlation-coefficient" class="nav-link" data-scroll-target="#sec-associations-correlation-coefficient"><span class="header-section-number">6.3.2</span> Korrelasjonskoeffisienten</a></li>
+  <li><a href="#sec-associations-correlation-strength" id="toc-sec-associations-correlation-strength" class="nav-link" data-scroll-target="#sec-associations-correlation-strength"><span class="header-section-number">6.3.3</span> Styrke og retning i ekte data</a></li>
+  <li><a href="#sec-associations-correlation-matrix" id="toc-sec-associations-correlation-matrix" class="nav-link" data-scroll-target="#sec-associations-correlation-matrix"><span class="header-section-number">6.3.4</span> Korrelasjonsmatrise</a></li>
+  </ul></li>
+  <li><a href="#sec-associations-interpretation" id="toc-sec-associations-interpretation" class="nav-link" data-scroll-target="#sec-associations-interpretation"><span class="header-section-number">6.4</span> Tolkning av deskriptiv statistikk</a>
+  <ul class="collapse">
+  <li><a href="#sec-associations-context" id="toc-sec-associations-context" class="nav-link" data-scroll-target="#sec-associations-context"><span class="header-section-number">6.4.1</span> Hvordan tolke størrelsen på oppsummerende tall?</a></li>
+  <li><a href="#sec-associations-anscombe" id="toc-sec-associations-anscombe" class="nav-link" data-scroll-target="#sec-associations-anscombe"><span class="header-section-number">6.4.2</span> Visualiser alltid</a></li>
+  <li><a href="#sec-associations-ecological" id="toc-sec-associations-ecological" class="nav-link" data-scroll-target="#sec-associations-ecological"><span class="header-section-number">6.4.3</span> Gruppestatistikk er ikke individstatistikk</a></li>
+  <li><a href="#sec-associations-simpson" id="toc-sec-associations-simpson" class="nav-link" data-scroll-target="#sec-associations-simpson"><span class="header-section-number">6.4.4</span> Sammenhenger kan endre seg i undergrupper</a></li>
+  <li><a href="#sec-associations-causation" id="toc-sec-associations-causation" class="nav-link" data-scroll-target="#sec-associations-causation"><span class="header-section-number">6.4.5</span> Sammenheng er ikke kausalitet</a></li>
+  <li><a href="#sec-associations-theory" id="toc-sec-associations-theory" class="nav-link" data-scroll-target="#sec-associations-theory"><span class="header-section-number">6.4.6</span> Teorien velger hva vi ser etter</a></li>
+  </ul></li>
+  <li><a href="#oppsummering" id="toc-oppsummering" class="nav-link" data-scroll-target="#oppsummering"><span class="header-section-number">6.5</span> Oppsummering</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sec-jamovi.html">Deskriptiv statistikk</a></li><li class="breadcrumb-item"><a href="./sec-associations.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Å beskrive sammenhenger mellom variabler</span></a></li></ol></nav><h1 class="title display-7"><span id="sec-associations" class="quarto-section-identifier"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Å beskrive sammenhenger mellom variabler</span></span></h1></header>
+
+
+<header id="title-block-header">
+
+
+</header>
+
+
+<!-- \placetextbox{0.26}{0.06}{\scriptsize{©2025 D.R. Foxcroft and D.J. Navarro,}} -->
+<!-- \placetextbox{0.195}{0.05}{\scriptsize{CC BY-SA 4.0}} -->
+<p>I forrige kapittel lærte du å beskrive én variabel om gangen, med blant annet frekvenstabeller, histogram, gjennomsnitt og standardavvik. Det er nyttig for å forstå <em>hva</em> dataene inneholder, men i de fleste studier er vi mest interessert i <em>hvordan variabler henger sammen</em>. Er det forskjell mellom elever fra ulike land? Henger sosioøkonomisk status sammen med holdninger til likestilling? Slike spørsmål krever at vi ser på to variabler samtidig.</p>
+<p>Framgangsmåten avhenger av hva slags variabler vi har. Derfor er kapittelet organisert etter variabeltype: først undersøker vi sammenhengen mellom to kategoriske variabler, deretter mellom en kategorisk og en kontinuerlig variabel, og til slutt mellom to kontinuerlige variabler.</p>
+<p>Vi bruker syv variabler fra ICCS-datasettet gjennom kapittelet. <a href="#tbl-associations-codebook" class="quarto-xref">Tabell&nbsp;<span>6.1</span></a> viser målenivået for hver variabel og hva verdiene representerer. Inndelingen i <em>Type</em> (kategorisk eller kontinuerlig) er den grove grupperingen kapittelet er organisert etter, mens <em>Målenivå</em> er det mer finmaskede vokabularet (nominal, ordinal, intervall, forhold) fra <a href="sec-descriptive.html" class="quarto-xref"><span>Kapittel 5</span></a>. Det kan være lurt å gå tilbake til <a href="#tbl-associations-codebook" class="quarto-xref">Tabell&nbsp;<span>6.1</span></a> underveis i kapittelet hvis du er usikker på variablene.</p>
+<div class="cell" data-layout-align="center">
+<div id="tbl-associations-codebook" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-associations-codebook-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabell&nbsp;6.1. Variablene fra ICCS-datasettet som vi bruker i dette kapittelet.
+</figcaption>
+<div aria-describedby="tbl-associations-codebook-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<!-- preamble start -->
+
+    <!-- tinytable mathjax start -->
+    <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <!-- tinytable mathjax end -->
+
+    <script src="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.js"></script>
+
+    <script>
+      // Create table-specific functions using external factory
+      const tableFns_6h7ccfsgi30loz4o749w = TinyTable.createTableFunctions("tinytable_6h7ccfsgi30loz4o749w");
+      // tinytable span after
+      window.addEventListener('load', function () {
+          var cellsToStyle = [
+            // tinytable style arrays after
+          { positions: [ { i: '7', j: 1 }, { i: '7', j: 2 }, { i: '7', j: 3 }, { i: '7', j: 4 } ], css_id: 'tinytable_css_qies4ku4wcsrqham3062',}, 
+          { positions: [ { i: '0', j: 1 }, { i: '0', j: 2 }, { i: '0', j: 3 }, { i: '0', j: 4 } ], css_id: 'tinytable_css_6pkwq6x74enyx5ye7s01',}, 
+          ];
+
+          // Loop over the arrays to style the cells
+          cellsToStyle.forEach(function (group) {
+              group.positions.forEach(function (cell) {
+                  tableFns_6h7ccfsgi30loz4o749w.styleCell(cell.i, cell.j, group.css_id);
+              });
+          });
+      });
+    </script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.css">
+    <style>
+    /* tinytable css entries after */
+    #tinytable_6h7ccfsgi30loz4o749w td.tinytable_css_qies4ku4wcsrqham3062, #tinytable_6h7ccfsgi30loz4o749w th.tinytable_css_qies4ku4wcsrqham3062 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.08em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%;  }
+    #tinytable_6h7ccfsgi30loz4o749w td.tinytable_css_6pkwq6x74enyx5ye7s01, #tinytable_6h7ccfsgi30loz4o749w th.tinytable_css_6pkwq6x74enyx5ye7s01 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.05em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.08em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; font-weight: bold }
+    </style>
+    <div class="container">
+      <table class="tinytable" id="tinytable_6h7ccfsgi30loz4o749w" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+        
+        <thead>
+              <tr>
+                <th scope="col" data-row="0" data-col="1">Variabel</th>
+                <th scope="col" data-row="0" data-col="2">Type</th>
+                <th scope="col" data-row="0" data-col="3">Målenivå</th>
+                <th scope="col" data-row="0" data-col="4">Verdier</th>
+              </tr>
+        </thead>
+        
+        <tbody>
+                <tr>
+                  <td data-row="1" data-col="1">Land</td>
+                  <td data-row="1" data-col="2">Kategorisk</td>
+                  <td data-row="1" data-col="3">Nominal</td>
+                  <td data-row="1" data-col="4">Norge, Spania, Polen, Brasil</td>
+                </tr>
+                <tr>
+                  <td data-row="2" data-col="1">Kjønn</td>
+                  <td data-row="2" data-col="2">Kategorisk</td>
+                  <td data-row="2" data-col="3">Nominal</td>
+                  <td data-row="2" data-col="4">Jente, Gutt, Annet</td>
+                </tr>
+                <tr>
+                  <td data-row="3" data-col="1">Forventet utdanning</td>
+                  <td data-row="3" data-col="2">Kategorisk</td>
+                  <td data-row="3" data-col="3">Ordinal</td>
+                  <td data-row="3" data-col="4">Ungdomsskole &lt; VGS &lt; Kort utdanning &lt; Høyere utdanning</td>
+                </tr>
+                <tr>
+                  <td data-row="4" data-col="1">Likestilling</td>
+                  <td data-row="4" data-col="2">Kontinuerlig</td>
+                  <td data-row="4" data-col="3">Intervall</td>
+                  <td data-row="4" data-col="4">Høyere skår betyr mer positiv til likestilling</td>
+                </tr>
+                <tr>
+                  <td data-row="5" data-col="1">Demokratikunnskap</td>
+                  <td data-row="5" data-col="2">Kontinuerlig</td>
+                  <td data-row="5" data-col="3">Intervall</td>
+                  <td data-row="5" data-col="4">Høyere skår betyr mer kunnskap om demokrati</td>
+                </tr>
+                <tr>
+                  <td data-row="6" data-col="1">Sosioøkonomisk status</td>
+                  <td data-row="6" data-col="2">Kontinuerlig</td>
+                  <td data-row="6" data-col="3">Intervall</td>
+                  <td data-row="6" data-col="4">Standardisert indeks; 0 ≈ gjennomsnittet</td>
+                </tr>
+                <tr>
+                  <td data-row="7" data-col="1">Forventet politisk deltakelse</td>
+                  <td data-row="7" data-col="2">Kontinuerlig</td>
+                  <td data-row="7" data-col="3">Intervall</td>
+                  <td data-row="7" data-col="4">Høyere skår betyr mer forventet politisk engasjement</td>
+                </tr>
+        </tbody>
+      </table>
+    </div>
+<!-- hack to avoid NA insertion in last line -->
+</div>
+</div>
+</figure>
+</div>
+</div>
+<section id="sec-associations-cat-cat" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="sec-associations-cat-cat"><span class="header-section-number">6.1</span> Kategorisk × kategorisk</h2>
+<p>Når begge variablene er kategoriske (nominelle eller ordinale) bruker vi krysstabeller og stablede stolpediagram for å beskrive sammenhengen mellom variablene.</p>
+<section id="sec-associations-contingency" class="level3" data-number="6.1.1">
+<h3 data-number="6.1.1" class="anchored" data-anchor-id="sec-associations-contingency"><span class="header-section-number">6.1.1</span> Krysstabeller</h3>
+<p>I <a href="sec-descriptive.html" class="quarto-xref"><span>Kapittel 5</span></a> lærte du å lage frekvenstabeller for enkeltvariabler. Hvis du ønsker en tabell med to variabler (for eksempel for å kombinere <em>Forventet utdanning</em> og <em>Land</em> for å se om det er forskjell i hvor lang utdanning elevene ser for seg i de ulike landene), trenger du en <strong>krysstabell</strong> (<em>contingency table</em> på engelsk). Resultatet for vårt eksempel ser du i <a href="#tbl-associations-contingency" class="quarto-xref">Tabell&nbsp;<span>6.2</span></a>. Tallene er antall elever, og prosentene i parentes er andelen innenfor hvert land (kolonneprosent).</p>
+<div class="cell" data-layout-align="center">
+<div id="tbl-associations-contingency" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-associations-contingency-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabell&nbsp;6.2. Krysstabell over <em>Forventet utdanning</em> og <em>Land</em>. Kolonnene viser antall elever og kolonneprosent (andel innenfor hvert land).
+</figcaption>
+<div aria-describedby="tbl-associations-contingency-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<!-- preamble start -->
+
+    <!-- tinytable mathjax start -->
+    <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <!-- tinytable mathjax end -->
+
+    <script src="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.js"></script>
+
+    <script>
+      // Create table-specific functions using external factory
+      const tableFns_j3isn1yii50aixle68l7 = TinyTable.createTableFunctions("tinytable_j3isn1yii50aixle68l7");
+      // tinytable span after
+      window.addEventListener('load', function () {
+          var cellsToStyle = [
+            // tinytable style arrays after
+          { positions: [ { i: '5', j: 1 }, { i: '5', j: 2 }, { i: '5', j: 3 }, { i: '5', j: 4 }, { i: '5', j: 5 } ], css_id: 'tinytable_css_yshp9czjtryxf8zvk7k0',}, 
+          { positions: [ { i: '0', j: 1 }, { i: '0', j: 2 }, { i: '0', j: 3 }, { i: '0', j: 4 }, { i: '0', j: 5 } ], css_id: 'tinytable_css_mhv6xt19z99sjubdwml5',}, 
+          ];
+
+          // Loop over the arrays to style the cells
+          cellsToStyle.forEach(function (group) {
+              group.positions.forEach(function (cell) {
+                  tableFns_j3isn1yii50aixle68l7.styleCell(cell.i, cell.j, group.css_id);
+              });
+          });
+      });
+    </script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.css">
+    <style>
+    /* tinytable css entries after */
+    #tinytable_j3isn1yii50aixle68l7 td.tinytable_css_yshp9czjtryxf8zvk7k0, #tinytable_j3isn1yii50aixle68l7 th.tinytable_css_yshp9czjtryxf8zvk7k0 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.08em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%;  }
+    #tinytable_j3isn1yii50aixle68l7 td.tinytable_css_mhv6xt19z99sjubdwml5, #tinytable_j3isn1yii50aixle68l7 th.tinytable_css_mhv6xt19z99sjubdwml5 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.05em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.08em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%;  }
+    </style>
+    <div class="container">
+      <table class="tinytable" id="tinytable_j3isn1yii50aixle68l7" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+        
+        <thead>
+              <tr>
+                <th scope="col" data-row="0" data-col="1">Forventet utdanning</th>
+                <th scope="col" data-row="0" data-col="2">Norge</th>
+                <th scope="col" data-row="0" data-col="3">Spania</th>
+                <th scope="col" data-row="0" data-col="4">Polen</th>
+                <th scope="col" data-row="0" data-col="5">Brasil</th>
+              </tr>
+        </thead>
+        
+        <tbody>
+                <tr>
+                  <td data-row="1" data-col="1">Ungdomsskole</td>
+                  <td data-row="1" data-col="2">568 (12,2 %)</td>
+                  <td data-row="1" data-col="3">225 (7,5 %)</td>
+                  <td data-row="1" data-col="4">130 (3,1 %)</td>
+                  <td data-row="1" data-col="5">NA</td>
+                </tr>
+                <tr>
+                  <td data-row="2" data-col="1">VGS</td>
+                  <td data-row="2" data-col="2">820 (17,7 %)</td>
+                  <td data-row="2" data-col="3">831 (27,6 %)</td>
+                  <td data-row="2" data-col="4">1541 (36,5 %)</td>
+                  <td data-row="2" data-col="5">594 (12,9 %)</td>
+                </tr>
+                <tr>
+                  <td data-row="3" data-col="1">Kort utdanning</td>
+                  <td data-row="3" data-col="2">770 (16,6 %)</td>
+                  <td data-row="3" data-col="3">492 (16,3 %)</td>
+                  <td data-row="3" data-col="4">202 (4,8 %)</td>
+                  <td data-row="3" data-col="5">898 (19,5 %)</td>
+                </tr>
+                <tr>
+                  <td data-row="4" data-col="1">Høyere utdanning</td>
+                  <td data-row="4" data-col="2">2465 (53,1 %)</td>
+                  <td data-row="4" data-col="3">1450 (48,2 %)</td>
+                  <td data-row="4" data-col="4">2319 (55,0 %)</td>
+                  <td data-row="4" data-col="5">3108 (67,5 %)</td>
+                </tr>
+                <tr>
+                  <td data-row="5" data-col="1">NA</td>
+                  <td data-row="5" data-col="2">17 (0,4 %)</td>
+                  <td data-row="5" data-col="3">13 (0,4 %)</td>
+                  <td data-row="5" data-col="4">26 (0,6 %)</td>
+                  <td data-row="5" data-col="5">4 (0,1 %)</td>
+                </tr>
+        </tbody>
+      </table>
+    </div>
+<!-- hack to avoid NA insertion in last line -->
+</div>
+</div>
+</figure>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="I jamovi: lage en krysstabell">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tips</span>I jamovi: lage en krysstabell
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Frequencies → Contingency Tables → Independent Samples. Legg <em>Forventet utdanning</em> i «Rows» og <em>Land</em> i «Columns». Under «Cells» kryss av for «Counts» og «Percentages: Columns».</p>
+</div>
+</div>
+</div>
+<p>Når du tolker krysstabellen, kan du for eksempel se på cellen for spanske elever som ser for seg en kort utdanning (som kan være ett- til to-årig fagskole). Tallet utenfor parentesen er frekvensen, altså hvor mange spanske elever i utvalget dette gjelder. Tallet i parentesen er kolonneprosenten, og siden <em>Land</em> ligger på kolonnene betyr det «andel innenfor Spania som ser for seg kort utdanning». Hvis jeg i stedet hadde vist radprosenter, ville prosent-verdien vært en annen og betydd «andelen av elevene som ser for seg kort utdanning, som er fra Spania». Det er to ulike spørsmål, så det er viktig å være bevisst på hvilken type prosent som brukes.</p>
+<p>Krysstabeller er nyttige! Se for eksempel at norske elever skiller seg ut ved at en betydelig andel ser for seg å avslutte utdanningen etter ungdomsskolen, mens ingen brasilianske elever gjør det.</p>
+</section>
+<section id="sec-associations-bar-subgroup" class="level3" data-number="6.1.2">
+<h3 data-number="6.1.2" class="anchored" data-anchor-id="sec-associations-bar-subgroup"><span class="header-section-number">6.1.2</span> Grupperte stolpediagram</h3>
+<p>Du lærte å lage stolpediagram i <a href="sec-descriptive.html" class="quarto-xref"><span>Kapittel 5</span></a>. Et <strong>gruppert stolpediagram</strong> lar deg sammenligne undergrupper ved å dele opp dataene etter en ekstra kategorisk variabel. I <a href="#fig-associations-edu-x-country" class="quarto-xref">Figur&nbsp;<span>6.1 (a)</span></a> er <em>Forventet utdanning</em> plassert på x-aksen, og hvert utdanningsnivå har én stolpe per <em>Land</em>. I <a href="#fig-associations-country-x-edu" class="quarto-xref">Figur&nbsp;<span>6.1 (b)</span></a> er det byttet om, slik at <em>Land</em> er plassert på x-aksen og hvert land har én stolpe per utdanningsnivå. Hvis du lurer på hvilken du skal velge, må du tenke over hvilken visualisering som best kommuniserer ditt poeng eller som best besvarer forskningsspørsmålet ditt.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="I jamovi: stolpediagram for undergrupper">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tips</span>I jamovi: stolpediagram for undergrupper
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Analyses → Exploration → Descriptives. Legg variabelen i «Variables», åpne «Plots» og kryss av for «Bar plot». Legg gruppevariabelen i «Split by».</p>
+</div>
+</div>
+</div>
+<div id="fig-associations-bar-subgroups" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-associations-bar-subgroups-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-associations-bar-subgroups" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div class="cell-output-display quarto-layout-cell-subref" data-ref-parent="fig-associations-bar-subgroups">
+<div id="fig-associations-edu-x-country" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Gruppert stolpediagram. X-aksen viser de fire kategoriene av Forventet utdanning, og innenfor hver kategori er det fire stolper, én for hvert land. Stolpene for Høyere utdanning er klart høyest i alle land." data-fig-align="center">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-associations-edu-x-country-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="sec-associations_files/figure-html/fig-associations-edu-x-country-1.png" class="lightbox" data-gallery="fig-associations-bar-subgroups" title="Figur&nbsp;6.1&nbsp;(a). Forventet utdanning på x-aksen, gruppert etter Land."><img src="sec-associations_files/figure-html/fig-associations-edu-x-country-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" data-ref-parent="fig-associations-bar-subgroups" alt="Gruppert stolpediagram. X-aksen viser de fire kategoriene av Forventet utdanning, og innenfor hver kategori er det fire stolper, én for hvert land. Stolpene for Høyere utdanning er klart høyest i alle land."></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-associations-edu-x-country-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) <em>Forventet utdanning</em> på x-aksen, gruppert etter <em>Land</em>.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="cell quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-associations-bar-subgroups" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div class="cell-output-display quarto-layout-cell-subref" data-ref-parent="fig-associations-bar-subgroups">
+<div id="fig-associations-country-x-edu" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Gruppert stolpediagram. X-aksen viser de fire landene, og innenfor hvert land er det fire stolper, én for hvert utdanningsnivå. Stolpene for Høyere utdanning er klart høyest i alle land." data-fig-align="center">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-associations-country-x-edu-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="sec-associations_files/figure-html/fig-associations-country-x-edu-1.png" class="lightbox" data-gallery="fig-associations-bar-subgroups" title="Figur&nbsp;6.1&nbsp;(b). Land på x-aksen, gruppert etter Forventet utdanning."><img src="sec-associations_files/figure-html/fig-associations-country-x-edu-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" data-ref-parent="fig-associations-bar-subgroups" alt="Gruppert stolpediagram. X-aksen viser de fire landene, og innenfor hvert land er det fire stolper, én for hvert utdanningsnivå. Stolpene for Høyere utdanning er klart høyest i alle land."></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-associations-country-x-edu-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) <em>Land</em> på x-aksen, gruppert etter <em>Forventet utdanning</em>.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-associations-bar-subgroups-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figur&nbsp;6.1. Gruppert stolpediagram av <em>Forventet utdanning</em> og <em>Land</em>, vist på to måter.
+</figcaption>
+</figure>
+</div>
+<p>Vi kan også legge til <em>enda en variabel</em>, slik at vi sammenligner undergrupper langs to dimensjoner samtidig. I <a href="#fig-associations-bar-threeway" class="quarto-xref">Figur&nbsp;<span>6.2</span></a> ser du resultatet for <em>Land</em>, <em>Forventet utdanning</em> og <em>Kjønn</em>, der hvert kjønn vises for seg. Figuren blir imidlertid omfattende og noe uoversiktlig. Dette gjelder særlig diagrammet for «Annet» (nederst), der det lave antallet observasjoner gjør mønstrene vanskelige å lese. I neste delkapittel viser jeg hvordan slike fremstillinger kan forbedres ved hjelp av stablede stolpediagrammer.</p>
+<div class="cell enlarge-image" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-associations-bar-threeway" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Tre paneler med grupperte stolpediagram, ett for hvert kjønn. Hvert panel viser antall elever fordelt på Land og Forventet utdanning. Stolpene for Jente og Gutt er tydelige, men stolpene i Annet-panelet er nesten ikke synlige fordi gruppen er så mye mindre." data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-associations-bar-threeway-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="sec-associations_files/figure-html/fig-associations-bar-threeway-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figur&nbsp;6.2. Antall elever per Forventet utdanning og Land, der hvert kjønn vises for seg."><img src="sec-associations_files/figure-html/fig-associations-bar-threeway-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="Tre paneler med grupperte stolpediagram, ett for hvert kjønn. Hvert panel viser antall elever fordelt på Land og Forventet utdanning. Stolpene for Jente og Gutt er tydelige, men stolpene i Annet-panelet er nesten ikke synlige fordi gruppen er så mye mindre."></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-associations-bar-threeway-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figur&nbsp;6.2. Antall elever per <em>Forventet utdanning</em> og <em>Land</em>, der hvert kjønn vises for seg.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="sec-associations-stacked-bar" class="level3" data-number="6.1.3">
+<h3 data-number="6.1.3" class="anchored" data-anchor-id="sec-associations-stacked-bar"><span class="header-section-number">6.1.3</span> Stablede stolpediagram</h3>
+<p>I <a href="sec-descriptive.html#sec-diagram-bar" class="quarto-xref"><span>Seksjon 5.1.2</span></a> så du at vi ofte ikke ønsker å vise antallet i hver stolpe, men andelen, fordi antallet blir misvisende når gruppene har ulik størrelse. <strong>Stablede stolpediagram</strong> er en god måte å vise andelene på. Du stabler stolpene oppå hverandre slik at de summerer til 100 %, og hver stolpe viser sammensetningen innenfor den aktuelle stolpen. Det blir både kompakt og direkte sammenliknbart mellom grupper, se <a href="#fig-associations-stacked-bar" class="quarto-xref">Figur&nbsp;<span>6.3</span></a>.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="I jamovi: lage et stablet stolpediagram">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tips</span>I jamovi: lage et stablet stolpediagram
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Frequencies → Independent samples (<span class="math inline">\chi^2</span> test of association). Legg <em>Forventet utdanning</em> på «Rows» og <em>Land</em> på «Columns». Under «Plots» kryss av for «Bar plot» og velg:</p>
+<ul>
+<li>Bar Type: «Stacked»</li>
+<li>Y-axis: «Percentages»</li>
+<li>«Percentages within column» (regner prosenter innenfor hvert land)</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-associations-stacked-bar" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Fire stablede stolper, én per land, der hver stolpe er delt i fire fargede segmenter for verdiene av Forventet utdanning. Stolpene summerer alle til 100 prosent, slik at andelene kan sammenlignes direkte mellom landene." data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-associations-stacked-bar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="sec-associations_files/figure-html/fig-associations-stacked-bar-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figur&nbsp;6.3. Stablet stolpediagram av Forventet utdanning for hvert Land. Hver stolpe summerer til 100 %, og segmentene viser andelen innenfor landet."><img src="sec-associations_files/figure-html/fig-associations-stacked-bar-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" alt="Fire stablede stolper, én per land, der hver stolpe er delt i fire fargede segmenter for verdiene av Forventet utdanning. Stolpene summerer alle til 100 prosent, slik at andelene kan sammenlignes direkte mellom landene."></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-associations-stacked-bar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figur&nbsp;6.3. Stablet stolpediagram av <em>Forventet utdanning</em> for hvert <em>Land</em>. Hver stolpe summerer til 100 %, og segmentene viser andelen innenfor landet.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>I <a href="#fig-associations-stacked-bar" class="quarto-xref">Figur&nbsp;<span>6.3</span></a> ser vi et stablet stolpediagram som viser <em>Forventet utdanning</em> for hvert land. Vi ser tydelig at en større andel elever i Brasil planlegger å ta høyere utdanning enn i Norge. Forskjellene er forholdsvis små, og i stolpediagrammene <a href="#fig-associations-edu-x-country" class="quarto-xref">Figur&nbsp;<span>6.1 (a)</span></a> og <a href="#fig-associations-country-x-edu" class="quarto-xref">Figur&nbsp;<span>6.1 (b)</span></a>, er det vanskelig å se at brasilianere oftere ser for seg å ta høyere utdanning.</p>
+<p>Med vanlige stolpediagram var det vanskelig å gjøre en analyse på tvers av to variabler, siden <a href="#fig-associations-bar-threeway" class="quarto-xref">Figur&nbsp;<span>6.2</span></a> ble så stor. Vi kan prøve å lage en liknende figur med stablede stolper. Resultatet blir som i <a href="#fig-associations-stacked-bar-threeway" class="quarto-xref">Figur&nbsp;<span>6.4</span></a>, og det stablede stolpediagrammet er mye mer kompakt og lesbart enn samme informasjon vist som et vanlig stolpediagram (<a href="#fig-associations-bar-threeway" class="quarto-xref">Figur&nbsp;<span>6.2</span></a>). Den største forskjellen mellom de to diagrammene er at «Annet»-gruppen var nesten umulig å lese med det vanlige stolpediagrammet fordi stolpene ble så små. Med stablede stolper står hver stolpe like høyt (100 %), og vi ser sammensetningen innenfor hver liten gruppe. (Men husk at disse stolpene er basert på veldig få elever, så andelene er usikre.)</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="I jamovi: stablet stolpediagram med tre variabler">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tips</span>I jamovi: stablet stolpediagram med tre variabler
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Behold oppsettet for stablet stolpediagram, men legg den tredje variabelen i «Layers».</p>
+</div>
+</div>
+</div>
+<div class="cell enlarge-image" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-associations-stacked-bar-threeway" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Tre paneler med stablede stolpediagram, ett for hvert kjønn. Hvert panel har fire stolper, én per land, som hver summerer til 100 prosent og er delt i fargede segmenter for verdiene av Forventet utdanning." data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-associations-stacked-bar-threeway-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="sec-associations_files/figure-html/fig-associations-stacked-bar-threeway-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figur&nbsp;6.4. Stablet stolpediagram av Forventet utdanning for hvert Land og Kjønn. Hver stolpe summerer til 100 %."><img src="sec-associations_files/figure-html/fig-associations-stacked-bar-threeway-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="Tre paneler med stablede stolpediagram, ett for hvert kjønn. Hvert panel har fire stolper, én per land, som hver summerer til 100 prosent og er delt i fargede segmenter for verdiene av Forventet utdanning."></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-associations-stacked-bar-threeway-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figur&nbsp;6.4. Stablet stolpediagram av <em>Forventet utdanning</em> for hvert <em>Land</em> og <em>Kjønn</em>. Hver stolpe summerer til 100 %.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>For å oppsummere: Analyse av sammenhengen mellom to kategoriske variabler betyr å gjøre en undergruppeanalyse der den ene variablen bestemmer undergruppene. Resultatene kan framstilles enten i en krysstabell eller som flere stolpediagram ved siden av hverandre. Stablede stolpediagram gir en kompakt framstilling av andeler, som ofte er det mest relevante i slike analyser.</p>
+</section>
+</section>
+<section id="sec-associations-cat-cont" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="sec-associations-cat-cont"><span class="header-section-number">6.2</span> Kategorisk × kontinuerlig</h2>
+<p>Hva om du vil analysere sammenhengen mellom en <em>kontinuerlig</em> variabel og en kategorisk variabel? For eksempel vil en analyse av <em>Land</em> og <em>Likestilling</em> vise om elever fra ulike land svarer forskjellig på variabelen <em>Likestilling</em>. I likhet med forrige delkapittel er det bare å lage deskriptiv statistikk <em>separat for hver gruppe</em>, der gruppen er definert av den kategoriske variabelen, akkurat som i krysstabellen og stolpediagrammene i forrige delkapittel.</p>
+<section id="sec-associations-subgroup" class="level3" data-number="6.2.1">
+<h3 data-number="6.2.1" class="anchored" data-anchor-id="sec-associations-subgroup"><span class="header-section-number">6.2.1</span> Sentraltendens og spredning per gruppe</h3>
+<p>Egentlig er dette å regne sentraltendens og spredning per gruppe det samme grepet som vi allerede gjorde med krysstabellen (<a href="#tbl-associations-contingency" class="quarto-xref">Tabell&nbsp;<span>6.2</span></a>) og de grupperte stolpediagrammene (<a href="#fig-associations-bar-subgroups" class="quarto-xref">Figur&nbsp;<span>6.1</span></a>): vi splittet dataene etter en kategorisk variabel og tok for oss hvert utsnitt for seg. Forskjellen nå er at det vi regner ut innenfor hver gruppe er gjennomsnitt, median og standardavvik, ikke antall eller andel. Det hadde for eksempel vært interessant å vite om de spanske og norske elevene svarer forskjellig på variabelen <em>Likestilling</em>, eller om de som ser for seg høyere utdanning svarer forskjellig fra de som ser for seg å avslutte utdanningen etter videregående. Slike spørsmål er svært interessante, og derfor er undergruppeanalyser ofte det masterstudenter og andre forskere benytter til å besvare forskningsspørsmålene sine.</p>
+<p>Undergruppene vi kan undersøke er nettopp de forskjellige verdiene til de tre kategoriske variablene fra <a href="#tbl-associations-codebook" class="quarto-xref">Tabell&nbsp;<span>6.1</span></a>: <em>Land</em>, <em>Forventet utdanning</em> og <em>Kjønn</em>. En måte å tenke på verdiene til nominelle og ordinale variabler er altså som undergrupper.</p>
+<blockquote class="blockquote">
+<p>Å gjøre deskriptiv statistikk for undergrupper er å gjøre utregningene separat for hver verdi av en kategorisk variabel.</p>
+</blockquote>
+<p>For å regne ut deskriptiv statistikk separat for «Gutt», «Jente» og «Annet», må vi dele opp dataene etter verdiene i variabelen <em>Kjønn</em>. Resultatet ser du i <a href="#tbl-associations-equality-x-gender" class="quarto-xref">Tabell&nbsp;<span>6.3</span></a>.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="I jamovi: deskriptiv statistikk per undergruppe">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tips</span>I jamovi: deskriptiv statistikk per undergruppe
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Analyses → Exploration → Descriptives. Legg variabelen i «Variables» og gruppevariabelen i «Split by».</p>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div id="tbl-associations-equality-x-gender" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-associations-equality-x-gender-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabell&nbsp;6.3. Deskriptiv statistikk for <em>Likestilling</em> separat for hver verdi av <em>Kjønn</em>.
+</figcaption>
+<div aria-describedby="tbl-associations-equality-x-gender-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<!-- preamble start -->
+
+    <!-- tinytable mathjax start -->
+    <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <!-- tinytable mathjax end -->
+
+    <script src="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.js"></script>
+
+    <script>
+      // Create table-specific functions using external factory
+      const tableFns_hsqrfjg8iccvug2pjvee = TinyTable.createTableFunctions("tinytable_hsqrfjg8iccvug2pjvee");
+      // tinytable span after
+      window.addEventListener('load', function () {
+          var cellsToStyle = [
+            // tinytable style arrays after
+          { positions: [ { i: '3', j: 1 }, { i: '3', j: 2 }, { i: '3', j: 3 }, { i: '3', j: 4 }, { i: '3', j: 5 } ], css_id: 'tinytable_css_xoz0ewiozgl8tju7876s',}, 
+          { positions: [ { i: '0', j: 1 }, { i: '0', j: 2 }, { i: '0', j: 3 }, { i: '0', j: 4 }, { i: '0', j: 5 } ], css_id: 'tinytable_css_3lpfj0g34ruhw2c5w6th',}, 
+          ];
+
+          // Loop over the arrays to style the cells
+          cellsToStyle.forEach(function (group) {
+              group.positions.forEach(function (cell) {
+                  tableFns_hsqrfjg8iccvug2pjvee.styleCell(cell.i, cell.j, group.css_id);
+              });
+          });
+      });
+    </script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.css">
+    <style>
+    /* tinytable css entries after */
+    #tinytable_hsqrfjg8iccvug2pjvee td.tinytable_css_xoz0ewiozgl8tju7876s, #tinytable_hsqrfjg8iccvug2pjvee th.tinytable_css_xoz0ewiozgl8tju7876s {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.08em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%;  }
+    #tinytable_hsqrfjg8iccvug2pjvee td.tinytable_css_3lpfj0g34ruhw2c5w6th, #tinytable_hsqrfjg8iccvug2pjvee th.tinytable_css_3lpfj0g34ruhw2c5w6th {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.05em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.08em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; font-weight: bold }
+    </style>
+    <div class="container">
+      <table class="tinytable" id="tinytable_hsqrfjg8iccvug2pjvee" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+        
+        <thead>
+              <tr>
+                <th scope="col" data-row="0" data-col="1">Kjønn</th>
+                <th scope="col" data-row="0" data-col="2">N</th>
+                <th scope="col" data-row="0" data-col="3">Gjennomsnitt</th>
+                <th scope="col" data-row="0" data-col="4">Median</th>
+                <th scope="col" data-row="0" data-col="5">SD</th>
+              </tr>
+        </thead>
+        
+        <tbody>
+                <tr>
+                  <td data-row="1" data-col="1">Jente</td>
+                  <td data-row="1" data-col="2">8 317</td>
+                  <td data-row="1" data-col="3">58,2</td>
+                  <td data-row="1" data-col="4">65,7</td>
+                  <td data-row="1" data-col="5">9,6</td>
+                </tr>
+                <tr>
+                  <td data-row="2" data-col="1">Gutt</td>
+                  <td data-row="2" data-col="2">7 992</td>
+                  <td data-row="2" data-col="3">48,4</td>
+                  <td data-row="2" data-col="4">46,8</td>
+                  <td data-row="2" data-col="5">10,9</td>
+                </tr>
+                <tr>
+                  <td data-row="3" data-col="1">Annet</td>
+                  <td data-row="3" data-col="2">164</td>
+                  <td data-row="3" data-col="3">50,3</td>
+                  <td data-row="3" data-col="4">49,4</td>
+                  <td data-row="3" data-col="5">13,5</td>
+                </tr>
+        </tbody>
+      </table>
+    </div>
+<!-- hack to avoid NA insertion in last line -->
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>I <a href="#tbl-associations-equality-x-gender" class="quarto-xref">Tabell&nbsp;<span>6.3</span></a> ser vi at jentene har mye høyere gjennomsnittskår på <em>Likestilling</em> enn guttene, 58,2 mot 48,4. De som oppga «Annet», ligger nærmere guttene, med et gjennomsnitt på 50,3. Jentene har dessuten litt mindre standardavvik enn guttene, 9,6 mot 10,9, mens de som oppga «Annet» har mer sprikende svar (SD = 13,5). Bildet er det samme for alle tre gruppene om vi heller ser på medianen og kvartilbredden enn gjennomsnittet og standardavviket.</p>
+<p>Vi kan også undersøke om det er forskjell mellom landene for hvert kjønn. Da gjør vi undergruppeanalysen inndelt etter både <em>Kjønn</em> og <em>Land</em>, se <a href="#tbl-associations-equality-x-gender-country" class="quarto-xref">Tabell&nbsp;<span>6.4</span></a>.</p>
+<div class="cell" data-layout-align="center">
+<div id="tbl-associations-equality-x-gender-country" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-associations-equality-x-gender-country-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabell&nbsp;6.4. Deskriptiv statistikk for <em>Likestilling</em> separat for hver kombinasjon av <em>Land</em> og <em>Kjønn</em>. Polen og Brasil har ingen elever som har oppgitt <em>Annet</em> kjønn.
+</figcaption>
+<div aria-describedby="tbl-associations-equality-x-gender-country-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<!-- preamble start -->
+
+    <!-- tinytable mathjax start -->
+    <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <!-- tinytable mathjax end -->
+
+    <script src="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.js"></script>
+
+    <script>
+      // Create table-specific functions using external factory
+      const tableFns_6uwyd9vpz2srbozlltit = TinyTable.createTableFunctions("tinytable_6uwyd9vpz2srbozlltit");
+      // tinytable span after
+      window.addEventListener('load', function () {
+          var cellsToStyle = [
+            // tinytable style arrays after
+          { positions: [ { i: '12', j: 1 }, { i: '12', j: 2 }, { i: '12', j: 3 }, { i: '12', j: 4 }, { i: '12', j: 5 }, { i: '12', j: 6 } ], css_id: 'tinytable_css_jwngsbf4mh6n8aa7p1io',}, 
+          { positions: [ { i: '0', j: 1 }, { i: '0', j: 2 }, { i: '0', j: 3 }, { i: '0', j: 4 }, { i: '0', j: 5 }, { i: '0', j: 6 } ], css_id: 'tinytable_css_6bwok6d3r0qu83i5twya',}, 
+          ];
+
+          // Loop over the arrays to style the cells
+          cellsToStyle.forEach(function (group) {
+              group.positions.forEach(function (cell) {
+                  tableFns_6uwyd9vpz2srbozlltit.styleCell(cell.i, cell.j, group.css_id);
+              });
+          });
+      });
+    </script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.css">
+    <style>
+    /* tinytable css entries after */
+    #tinytable_6uwyd9vpz2srbozlltit td.tinytable_css_jwngsbf4mh6n8aa7p1io, #tinytable_6uwyd9vpz2srbozlltit th.tinytable_css_jwngsbf4mh6n8aa7p1io {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.08em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%;  }
+    #tinytable_6uwyd9vpz2srbozlltit td.tinytable_css_6bwok6d3r0qu83i5twya, #tinytable_6uwyd9vpz2srbozlltit th.tinytable_css_6bwok6d3r0qu83i5twya {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.05em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.08em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; font-weight: bold }
+    </style>
+    <div class="container">
+      <table class="tinytable" id="tinytable_6uwyd9vpz2srbozlltit" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+        
+        <thead>
+              <tr>
+                <th scope="col" data-row="0" data-col="1">Land</th>
+                <th scope="col" data-row="0" data-col="2">Kjønn</th>
+                <th scope="col" data-row="0" data-col="3">N</th>
+                <th scope="col" data-row="0" data-col="4">Gjennomsnitt</th>
+                <th scope="col" data-row="0" data-col="5">Median</th>
+                <th scope="col" data-row="0" data-col="6">SD</th>
+              </tr>
+        </thead>
+        
+        <tbody>
+                <tr>
+                  <td data-row="1" data-col="1">Norge</td>
+                  <td data-row="1" data-col="2">Jente</td>
+                  <td data-row="1" data-col="3">2 281</td>
+                  <td data-row="1" data-col="4">61,6</td>
+                  <td data-row="1" data-col="5">65,7</td>
+                  <td data-row="1" data-col="6">8,0</td>
+                </tr>
+                <tr>
+                  <td data-row="2" data-col="1">Norge</td>
+                  <td data-row="2" data-col="2">Gutt</td>
+                  <td data-row="2" data-col="3">2 264</td>
+                  <td data-row="2" data-col="4">49,5</td>
+                  <td data-row="2" data-col="5">46,8</td>
+                  <td data-row="2" data-col="6">11,5</td>
+                </tr>
+                <tr>
+                  <td data-row="3" data-col="1">Norge</td>
+                  <td data-row="3" data-col="2">Annet</td>
+                  <td data-row="3" data-col="3">95</td>
+                  <td data-row="3" data-col="4">50,0</td>
+                  <td data-row="3" data-col="5">49,4</td>
+                  <td data-row="3" data-col="6">13,7</td>
+                </tr>
+                <tr>
+                  <td data-row="4" data-col="1">Spania</td>
+                  <td data-row="4" data-col="2">Jente</td>
+                  <td data-row="4" data-col="3">1 475</td>
+                  <td data-row="4" data-col="4">59,3</td>
+                  <td data-row="4" data-col="5">65,7</td>
+                  <td data-row="4" data-col="6">9,2</td>
+                </tr>
+                <tr>
+                  <td data-row="5" data-col="1">Spania</td>
+                  <td data-row="5" data-col="2">Gutt</td>
+                  <td data-row="5" data-col="3">1 467</td>
+                  <td data-row="5" data-col="4">51,0</td>
+                  <td data-row="5" data-col="5">49,4</td>
+                  <td data-row="5" data-col="6">10,7</td>
+                </tr>
+                <tr>
+                  <td data-row="6" data-col="1">Spania</td>
+                  <td data-row="6" data-col="2">Annet</td>
+                  <td data-row="6" data-col="3">69</td>
+                  <td data-row="6" data-col="4">50,7</td>
+                  <td data-row="6" data-col="5">52,7</td>
+                  <td data-row="6" data-col="6">13,4</td>
+                </tr>
+                <tr>
+                  <td data-row="7" data-col="1">Polen</td>
+                  <td data-row="7" data-col="2">Jente</td>
+                  <td data-row="7" data-col="3">2 220</td>
+                  <td data-row="7" data-col="4">57,5</td>
+                  <td data-row="7" data-col="5">57,1</td>
+                  <td data-row="7" data-col="6">8,7</td>
+                </tr>
+                <tr>
+                  <td data-row="8" data-col="1">Polen</td>
+                  <td data-row="8" data-col="2">Gutt</td>
+                  <td data-row="8" data-col="3">1 998</td>
+                  <td data-row="8" data-col="4">44,6</td>
+                  <td data-row="8" data-col="5">42,6</td>
+                  <td data-row="8" data-col="6">10,0</td>
+                </tr>
+                <tr>
+                  <td data-row="9" data-col="1">Polen</td>
+                  <td data-row="9" data-col="2">Annet</td>
+                  <td data-row="9" data-col="3">0</td>
+                  <td data-row="9" data-col="4">—</td>
+                  <td data-row="9" data-col="5">—</td>
+                  <td data-row="9" data-col="6">—</td>
+                </tr>
+                <tr>
+                  <td data-row="10" data-col="1">Brasil</td>
+                  <td data-row="10" data-col="2">Jente</td>
+                  <td data-row="10" data-col="3">2 341</td>
+                  <td data-row="10" data-col="4">54,8</td>
+                  <td data-row="10" data-col="5">57,1</td>
+                  <td data-row="10" data-col="6">10,7</td>
+                </tr>
+                <tr>
+                  <td data-row="11" data-col="1">Brasil</td>
+                  <td data-row="11" data-col="2">Gutt</td>
+                  <td data-row="11" data-col="3">2 263</td>
+                  <td data-row="11" data-col="4">49,1</td>
+                  <td data-row="11" data-col="5">46,8</td>
+                  <td data-row="11" data-col="6">10,5</td>
+                </tr>
+                <tr>
+                  <td data-row="12" data-col="1">Brasil</td>
+                  <td data-row="12" data-col="2">Annet</td>
+                  <td data-row="12" data-col="3">0</td>
+                  <td data-row="12" data-col="4">—</td>
+                  <td data-row="12" data-col="5">—</td>
+                  <td data-row="12" data-col="6">—</td>
+                </tr>
+        </tbody>
+      </table>
+    </div>
+<!-- hack to avoid NA insertion in last line -->
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>Mønsteret fra <a href="#tbl-associations-equality-x-gender" class="quarto-xref">Tabell&nbsp;<span>6.3</span></a> går igjen i alle land: jentene har høyere gjennomsnittskår på <em>Likestilling</em> enn guttene. Men det er noen interessante variasjoner. De norske jentene er mer for likestilling enn de spanske (61,6 mot 59,3), mens de norske guttene er <em>mindre</em> for likestilling enn de spanske guttene (49,5 mot 51,0). Polske gutter ligger lavest av alle med et gjennomsnitt på 44,6. Men vær forsiktig med å tolke resultatet: dette er forskjeller mellom gjennomsnitt i ett utvalg, og noen av forskjellene kan være tilfeldige. Mer om dette i <a href="sec-inferential.html" class="quarto-xref"><span>Kapittel 7</span></a>.</p>
+<p>Når man deler inn i undergrupper på denne måten, kan det være at enkelte undergrupper har svært få eller ingen respondenter. ICCS-utvalget fra Polen og Brasil inneholder ingen elever som har oppgitt «Annet» kjønn, og selv i Norge og Spania er gruppen liten (henholdsvis 95 og 69 respondenter). Det er fremdeles mange nok til at det gir mening å regne gjennomsnitt der vi har dem, men andre ganger vil det være like greit å si at man ikke har mange nok respondenter til å gjøre en undergruppeanalyse for akkurat den gruppen. Merk at dette er et etisk dilemma for forskere: hvis forskning skal gagne mennesker, er det et problem om noen grupper mennesker systematisk blir utelatt fordi de er for små til å analyseres.</p>
+</section>
+<section id="boksplott-og-histogrammer-per-gruppe" class="level3" data-number="6.2.2">
+<h3 data-number="6.2.2" class="anchored" data-anchor-id="boksplott-og-histogrammer-per-gruppe"><span class="header-section-number">6.2.2</span> Boksplott og histogrammer per gruppe</h3>
+<p>Undergruppeanalyse med tall er nyttig, men en visualisering gjør sammenhengen mye tydeligere. Du lærte i <a href="sec-descriptive.html" class="quarto-xref"><span>Kapittel 5</span></a> at boksplott og histogrammer egner seg godt for kontinuerlige variabler, og ved å dele dataene inn i undergrupper får vi automatisk ett plott per gruppe.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="I jamovi: boksplott eller histogram per undergruppe">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tips</span>I jamovi: boksplott eller histogram per undergruppe
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Analyses → Exploration → Descriptives. Legg variabelen i «Variables», åpne «Plots» og kryss av for «Box plot» eller «Histogram». Legg gruppevariabelen i «Split by».</p>
+</div>
+</div>
+</div>
+<p>Se <a href="#fig-associations-equ-x-edu" class="quarto-xref">Figur&nbsp;<span>6.5</span></a> for en sammenlikning av visualisering med henholdsvis histogram og boksplott. Det er vanskelig å sammenlikne undergruppene med histogrammet fordi det er forskjellig antall observasjoner i hver søyle, men i boksplottet ser vi klart at elever som ser for seg <em>Høyere utdanning</em> er mer for likestilling enn elever med lavere utdanningsambisjoner. Forskjellen kommer kanskje tydeligst frem ved å titte på medianen, den svarte streken i midten av boksen.</p>
+<div id="fig-associations-equ-x-edu" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-associations-equ-x-edu-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-associations-equ-x-edu" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div class="cell-output-display quarto-layout-cell-subref" data-ref-parent="fig-associations-equ-x-edu">
+<div id="fig-associations-histogram-equ-x-edu" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Fire histogrammer av Likestilling stablet vertikalt, ett for hvert forventet utdanningsnivå. Alle har omtrent samme form, med en lang hale av lave verdier og en topp i øvre del av skalaen, men panelene for Ungdomsskole og Kort utdanning er nesten flate fordi de deler y-akse med det mye større Høyere utdanning-panelet." data-fig-align="center">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-associations-histogram-equ-x-edu-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="sec-associations_files/figure-html/fig-associations-histogram-equ-x-edu-1.png" class="lightbox" data-gallery="fig-associations-equ-x-edu" title="Figur&nbsp;6.5&nbsp;(a). Med histogrammet er det vanskelig å se forskjell på gruppene."><img src="sec-associations_files/figure-html/fig-associations-histogram-equ-x-edu-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" data-ref-parent="fig-associations-equ-x-edu" alt="Fire histogrammer av Likestilling stablet vertikalt, ett for hvert forventet utdanningsnivå. Alle har omtrent samme form, med en lang hale av lave verdier og en topp i øvre del av skalaen, men panelene for Ungdomsskole og Kort utdanning er nesten flate fordi de deler y-akse med det mye større Høyere utdanning-panelet."></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-associations-histogram-equ-x-edu-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Med histogrammet er det vanskelig å se forskjell på gruppene.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="cell quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-associations-equ-x-edu" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div class="cell-output-display quarto-layout-cell-subref" data-ref-parent="fig-associations-equ-x-edu">
+<div id="fig-associations-boxplot-equ-x-edu" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Fire vertikale boksplott av Likestilling, ett for hvert forventet utdanningsnivå. Medianen for Høyere utdanning ligger klart over de tre andre gruppene, som ligger på omtrent samme nivå." data-fig-align="center">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-associations-boxplot-equ-x-edu-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="sec-associations_files/figure-html/fig-associations-boxplot-equ-x-edu-1.png" class="lightbox" data-gallery="fig-associations-equ-x-edu" title="Figur&nbsp;6.5&nbsp;(b). Med boksplott kommer forskjellen tydelig frem; særlig at Høyere utdanning ligger høyere enn de andre gruppene."><img src="sec-associations_files/figure-html/fig-associations-boxplot-equ-x-edu-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" data-ref-parent="fig-associations-equ-x-edu" alt="Fire vertikale boksplott av Likestilling, ett for hvert forventet utdanningsnivå. Medianen for Høyere utdanning ligger klart over de tre andre gruppene, som ligger på omtrent samme nivå."></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-associations-boxplot-equ-x-edu-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Med boksplott kommer forskjellen tydelig frem; særlig at <em>Høyere utdanning</em> ligger høyere enn de andre gruppene.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-associations-equ-x-edu-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figur&nbsp;6.5. Sammenlikning av histogram og boksplott for å vise variabelen <em>Likestilling</em> for hvert forventede utdanningsnivå.
+</figcaption>
+</figure>
+</div>
+<p>For å oppsummere: Å analysere sammenhengen mellom en kategorisk og en kontinuerlig variabel er en undergruppeanalyse, men det vi regner ut innenfor hver gruppe er sentraltendens og spredning i stedet for antall. Resultatet kan vises som tabell eller som ett boksplott per gruppe. Boksplottet er som regel et bedre visuelt valg enn histogrammet, fordi det lar oss sammenligne medianer direkte og gir en tydelig framstilling som ikke påvirkes like mye av ulik gruppestørrelse.</p>
+</section>
+</section>
+<section id="sec-associations-cont-cont" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="sec-associations-cont-cont"><span class="header-section-number">6.3</span> Kontinuerlig × kontinuerlig</h2>
+<p>Hva om begge variablene er kontinuerlige? Da kan vi ikke dele inn i grupper, siden det ville bli altfor mange. I stedet bruker vi spredningsplott og korrelasjon.</p>
+<section id="sec-associations-scatter" class="level3" data-number="6.3.1">
+<h3 data-number="6.3.1" class="anchored" data-anchor-id="sec-associations-scatter"><span class="header-section-number">6.3.1</span> Spredningsplott</h3>
+<p><strong>Spredningsplott</strong> viser sammenhengen mellom to tallvariabler. ICCS-datasettet vårt har fire kontinuerlige variabler (se <a href="#tbl-associations-codebook" class="quarto-xref">Tabell&nbsp;<span>6.1</span></a>); to av dem er <em>Demokratikunnskap</em> og <em>Likestilling</em>. <em>Demokratikunnskap</em> er hovedvariabelen i ICCS, og måler elevenes kunnskap om demokrati og samfunn, for eksempel hvordan lover blir til, hva som kjennetegner frie valg, og hvilke rettigheter og plikter innbyggere har. Et naturlig spørsmål å stille er om elever som kan mer om demokrati og samfunn også svarer annerledes på spørsmål om likestilling mellom kjønnene.</p>
+<p>Hvis man skulle analysere dette på samme måte som for de kategoriske variablene, måtte man gjort en undergruppeanalyse av <em>Likestilling</em> der gruppene er definert av de ulike verdiene av <em>Demokratikunnskap</em>. Men fordi <em>Demokratikunnskap</em> er satt sammen av mange enkeltspørsmål, har den 15817 ulike verdier, og da ville man støtt på problemer. Man kan ikke vise så mange undergrupper!</p>
+<p>Løsningen er å legge hver sin variabel på hver sin akse og plotte hver elev som ett punkt: elevens <em>Demokratikunnskap</em> bestemmer hvor langt til høyre punktet ligger, og elevens <em>Likestilling</em> hvor langt opp. <a href="#fig-associations-scatter-howto" class="quarto-xref">Figur&nbsp;<span>6.6</span></a> viser prinsippet for noen få elever.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-associations-scatter-howto" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Et spredningsplott med tolv punkter. Ett punkt er markert med en rød ring og merket 'én elev'. Fra dette punktet går det en stiplet pil loddrett ned til x-aksen, der verdien for Demokratikunnskap er markert, og en stiplet pil vannrett bort til y-aksen, der verdien for Likestilling er markert." data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-associations-scatter-howto-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="sec-associations_files/figure-html/fig-associations-scatter-howto-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Figur&nbsp;6.6. Slik leser du et spredningsplott: hvert punkt er én elev, og elevens verdi på hver variabel leser vi av ved å følge punktet loddrett ned til x-aksen (Demokratikunnskap) og vannrett bort til y-aksen (Likestilling). Her er bare tolv elever tegnet inn, slik at hvert punkt er lett å se."><img src="sec-associations_files/figure-html/fig-associations-scatter-howto-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" alt="Et spredningsplott med tolv punkter. Ett punkt er markert med en rød ring og merket 'én elev'. Fra dette punktet går det en stiplet pil loddrett ned til x-aksen, der verdien for Demokratikunnskap er markert, og en stiplet pil vannrett bort til y-aksen, der verdien for Likestilling er markert."></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-associations-scatter-howto-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figur&nbsp;6.6. Slik leser du et spredningsplott: hvert punkt er én elev, og elevens verdi på hver variabel leser vi av ved å følge punktet loddrett ned til x-aksen (<em>Demokratikunnskap</em>) og vannrett bort til y-aksen (<em>Likestilling</em>). Her er bare tolv elever tegnet inn, slik at hvert punkt er lett å se.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Gjør vi dette for alle de rundt 16 000 elevene, får vi <a href="#fig-associations-scatter" class="quarto-xref">Figur&nbsp;<span>6.7</span></a>. Vi ser en tendens til at punkter som ligger lengre til høyre også ligger litt lenger opp. Dette betyr at elever med høyere <em>Demokratikunnskap</em> i større grad mener det skal være <em>Likestilling</em> mellom kjønnene.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="I jamovi: lage et spredningsplott">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tips</span>I jamovi: lage et spredningsplott
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Analyses → Exploration → Scatterplot. Legg én variabel i «X-Axis» og én i «Y-Axis».</p>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-associations-scatter" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Et spredningsplott med Demokratikunnskap på x-aksen og Likestilling på y-aksen. En tett, mørk horisontal stripe ligger langs hele toppen, og ellers er punktene jevnt spredt utover skyen, med en svak tendens til at høyere Demokratikunnskap følges av høyere Likestilling." data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-associations-scatter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="sec-associations_files/figure-html/fig-associations-scatter-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Figur&nbsp;6.7. Spredningsplott over Demokratikunnskap og Likestilling. Hvert punkt er en elev; den mørke randen langs toppen viser at svært mange elever har høyest mulig skår på Likestilling."><img src="sec-associations_files/figure-html/fig-associations-scatter-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="Et spredningsplott med Demokratikunnskap på x-aksen og Likestilling på y-aksen. En tett, mørk horisontal stripe ligger langs hele toppen, og ellers er punktene jevnt spredt utover skyen, med en svak tendens til at høyere Demokratikunnskap følges av høyere Likestilling."></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-associations-scatter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figur&nbsp;6.7. Spredningsplott over <em>Demokratikunnskap</em> og <em>Likestilling</em>. Hvert punkt er en elev; den mørke randen langs toppen viser at svært mange elever har høyest mulig skår på <em>Likestilling</em>.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Spredningsplottet antyder en sammenheng ved at punktskyen trekker svakt oppover mot høyre, men det er vanskelig å si <em>hvor sterk</em> sammenhengen er. Er den sterk, moderat eller svak? For å avgjøre det trenger vi et tall som oppsummerer styrken. Det tallet er korrelasjonskoeffisienten.</p>
+</section>
+<section id="sec-associations-correlation-coefficient" class="level3" data-number="6.3.2">
+<h3 data-number="6.3.2" class="anchored" data-anchor-id="sec-associations-correlation-coefficient"><span class="header-section-number">6.3.2</span> Korrelasjonskoeffisienten</h3>
+<p><strong>Korrelasjonskoeffisienten</strong> kalles mer presist Pearsons korrelasjonskoeffisient og skrives som <span class="math inline">r</span>. Det er et tall mellom <span class="math inline">-1</span> og <span class="math inline">1</span> som måler styrken og retningen på sammenhengen mellom to variabler, <span class="math inline">X</span> og <span class="math inline">Y</span>.</p>
+<ul>
+<li>En <span class="math inline">r = 1</span> betyr en perfekt positiv lineær sammenheng.</li>
+<li>En <span class="math inline">r = -1</span> betyr en perfekt negativ lineær sammenheng.</li>
+<li>En <span class="math inline">r = 0</span> betyr at det ikke er noen lineær sammenheng i det hele tatt.</li>
+</ul>
+<p>Hvordan ser ulike korrelasjoner ut? <a href="#fig-associations-correlation-examples" class="quarto-xref">Figur&nbsp;<span>6.8</span></a> viser eksempler. Disse punktskyene er ikke hentet fra virkelige observasjoner, de er <em>simulerte</em> slik at vi kan vise nøyaktige verdier av <span class="math inline">r</span> i pene spredningsplott.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-associations-correlation-examples" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Spredningsplott med varierende grad av positiv og negativ korrelasjon. Positive korrelasjoner: 0, 0.33, 0.66 og 1. Negative korrelasjoner: 0, -0.33, -0.66 og -1. 0 viser ingen korrelasjon, og 1 og -1 viser perfekte korrelasjoner." data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-associations-correlation-examples-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="sec-associations_files/figure-html/fig-associations-correlation-examples-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="Figur&nbsp;6.8. Illustrasjon av effekten av å variere styrken og retningen på en korrelasjon. I venstre kolonne er korrelasjonene 0; 0{,}33; 0{,}66 og 1. I høyre kolonne er korrelasjonene 0; -0{,}33; -0{,}66 og -1."><img src="sec-associations_files/figure-html/fig-associations-correlation-examples-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="Spredningsplott med varierende grad av positiv og negativ korrelasjon. Positive korrelasjoner: 0, 0.33, 0.66 og 1. Negative korrelasjoner: 0, -0.33, -0.66 og -1. 0 viser ingen korrelasjon, og 1 og -1 viser perfekte korrelasjoner."></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-associations-correlation-examples-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figur&nbsp;6.8. Illustrasjon av effekten av å variere styrken og retningen på en korrelasjon. I venstre kolonne er korrelasjonene <span class="math inline">0; 0{,}33; 0{,}66</span> og <span class="math inline">1</span>. I høyre kolonne er korrelasjonene <span class="math inline">0; -0{,}33; -0{,}66</span> og <span class="math inline">-1</span>.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Korrelasjonen måler altså i hvor stor grad punktene faller på en rett linje. Jo nærmere <span class="math inline">r</span> ligger <span class="math inline">\pm 1</span>, jo tettere samler punktene seg rundt linja. Jo nærmere <span class="math inline">r</span> er <span class="math inline">0</span>, jo mer ser plottet ut som en sky uten retning. Merk at <span class="math inline">r</span> ikke viser hvor bratt linja er, den viser bare hvor tett punktene ligger rundt linja.</p>
+</section>
+<section id="sec-associations-correlation-strength" class="level3" data-number="6.3.3">
+<h3 data-number="6.3.3" class="anchored" data-anchor-id="sec-associations-correlation-strength"><span class="header-section-number">6.3.3</span> Styrke og retning i ekte data</h3>
+<p>Stiliserte plott er rene og tydelige, men ekte data ser sjelden så pene ut. Nå vender vi tilbake til ICCS og bruker korrelasjonskoeffisienten <span class="math inline">r</span> til å sammenligne ekte korrelasjoner. I figurene som følger, har vi regnet ut den rette linja som best viser sammenhengen mellom variablene fordi det gjør det lettere å se hellingen i en rotete punktsky. For å vise ulike sammenhenger henter vi inn enda en variabel fra ICCS, nemlig <em>Sosioøkonomisk status</em> som er en samlevariabel for utdanningen, inntekten og yrket til elevenes foresatte.</p>
+<p><strong>Styrken</strong> ser vi best ved å sammenligne to plott der retningen er den samme. I <a href="#fig-associations-scatter-strength" class="quarto-xref">Figur&nbsp;<span>6.9</span></a> står <em>Sosioøkonomisk status</em> × <em>Likestilling</em> (<span class="math inline">r = 0{,}18</span>) til venstre og <em>Demokratikunnskap</em> × <em>Likestilling</em> (<span class="math inline">r = 0{,}44</span>) til høyre. Begge er positive, men korrelasjonen til høyre er omtrent dobbelt så sterk. Det vises ved at punktene samler seg tettere rundt linja, ikke ved at linja er brattere. Sammenligner du med de stiliserte plottene i <a href="#fig-associations-correlation-examples" class="quarto-xref">Figur&nbsp;<span>6.8</span></a>, ser du raskt at de ekte dataene ser helt annerledes ut og at det ikke er enkelt å se i hvilket spredningsplott sammenhengen mellom variablene er sterkest. Slik er det med ekte data, så da er det godt å ha et tall som kan måle det for oss.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-associations-scatter-strength" class="quarto-float quarto-figure quarto-figure-center anchored" alt="To spredningsplott side om side, begge med Likestilling på y-aksen. Det venstre har Sosioøkonomisk status på x-aksen, undertittel r = 0,18, og regresjonslinja heller bare svakt oppover. Det høyre har Demokratikunnskap på x-aksen, undertittel r = 0,44, og regresjonslinja heller tydelig brattere oppover." data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-associations-scatter-strength-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="sec-associations_files/figure-html/fig-associations-scatter-strength-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="Figur&nbsp;6.9. Sammenligning av to positive sammenhenger med ulik styrke. Til venstre Sosioøkonomisk status × Likestilling; til høyre Demokratikunnskap × Likestilling. Over hvert plott vises korrelasjonskoeffisienten."><img src="sec-associations_files/figure-html/fig-associations-scatter-strength-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="To spredningsplott side om side, begge med Likestilling på y-aksen. Det venstre har Sosioøkonomisk status på x-aksen, undertittel r = 0,18, og regresjonslinja heller bare svakt oppover. Det høyre har Demokratikunnskap på x-aksen, undertittel r = 0,44, og regresjonslinja heller tydelig brattere oppover."></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-associations-scatter-strength-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figur&nbsp;6.9. Sammenligning av to positive sammenhenger med ulik styrke. Til venstre <em>Sosioøkonomisk status</em> × <em>Likestilling</em>; til høyre <em>Demokratikunnskap</em> × <em>Likestilling</em>. Over hvert plott vises korrelasjonskoeffisienten.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Retningen</strong> ser vi best ved å bytte ut én av variablene. I <a href="#fig-associations-scatter-direction" class="quarto-xref">Figur&nbsp;<span>6.10</span></a> beholder vi <em>Demokratikunnskap</em> på x-aksen, men sammenligner <em>Likestilling</em> (<span class="math inline">r = 0{,}44</span>) til venstre med <em>Forventet politisk deltakelse</em> (<span class="math inline">r = -0{,}23</span>) til høyre. Det viktige er fortegnet. Til venstre heller linja oppover (positiv sammenheng), til høyre heller den nedover (negativ sammenheng). Den negative korrelasjonen er overraskende, for den betyr jo at elever som kan mer om demokrati forventer å delta <em>mindre</em> politisk! Det er et resultat vi kommer tilbake til i <a href="#sec-associations-simpson" class="quarto-xref"><span>Seksjon 6.4.4</span></a>.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-associations-scatter-direction" class="quarto-float quarto-figure quarto-figure-center anchored" alt="To spredningsplott side om side, begge med Demokratikunnskap på x-aksen. Det venstre har Likestilling på y-aksen, undertittel r = 0,44, og linja heller oppover. Det høyre har Forventet politisk deltakelse på y-aksen, undertittel r = -0,23, og linja heller nedover." data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-associations-scatter-direction-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="sec-associations_files/figure-html/fig-associations-scatter-direction-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12" title="Figur&nbsp;6.10. Sammenligning av en positiv og en negativ sammenheng, med Demokratikunnskap på x-aksen i begge. Til venstre Likestilling på y-aksen; til høyre Forventet politisk deltakelse. Over hvert plott vises korrelasjonskoeffisienten."><img src="sec-associations_files/figure-html/fig-associations-scatter-direction-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="To spredningsplott side om side, begge med Demokratikunnskap på x-aksen. Det venstre har Likestilling på y-aksen, undertittel r = 0,44, og linja heller oppover. Det høyre har Forventet politisk deltakelse på y-aksen, undertittel r = -0,23, og linja heller nedover."></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-associations-scatter-direction-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figur&nbsp;6.10. Sammenligning av en positiv og en negativ sammenheng, med <em>Demokratikunnskap</em> på x-aksen i begge. Til venstre <em>Likestilling</em> på y-aksen; til høyre <em>Forventet politisk deltakelse</em>. Over hvert plott vises korrelasjonskoeffisienten.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="sec-associations-correlation-matrix" class="level3" data-number="6.3.4">
+<h3 data-number="6.3.4" class="anchored" data-anchor-id="sec-associations-correlation-matrix"><span class="header-section-number">6.3.4</span> Korrelasjonsmatrise</h3>
+<p>Vi har nå sett på tre par av variabler og lest av <span class="math inline">r</span> for hvert par. Når vi vil sammenligne korrelasjoner for mange variabler samtidig, er det vanlig å samle alle korrelasjonene i én tabell, en <strong>korrelasjonsmatrise</strong>. <a href="#tbl-associations-correlation-matrix" class="quarto-xref">Tabell&nbsp;<span>6.5</span></a> viser matrisen for de fire ICCS-variablene vi har jobbet med: <em>Demokratikunnskap</em>, <em>Likestilling</em>, <em>Sosioøkonomisk status</em> og <em>Forventet politisk deltakelse</em>.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="I jamovi: lage en korrelasjonsmatrise">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tips</span>I jamovi: lage en korrelasjonsmatrise
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Regression → Correlation Matrix. Legg de kontinuerlige variablene du vil korrelere i variabelboksen. Pearsons <span class="math inline">r</span> er valgt som standard.</p>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div id="tbl-associations-correlation-matrix" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-associations-correlation-matrix-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabell&nbsp;6.5. Korrelasjonsmatrise for fire kontinuerlige ICCS-variabler. Hver celle er Pearsons <span class="math inline">r</span> mellom variabelen i raden og variabelen i kolonnen.
+</figcaption>
+<div aria-describedby="tbl-associations-correlation-matrix-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<!-- preamble start -->
+
+    <!-- tinytable mathjax start -->
+    <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <!-- tinytable mathjax end -->
+
+    <script src="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.js"></script>
+
+    <script>
+      // Create table-specific functions using external factory
+      const tableFns_5c0edumyy75o4to8451i = TinyTable.createTableFunctions("tinytable_5c0edumyy75o4to8451i");
+      // tinytable span after
+      window.addEventListener('load', function () {
+          var cellsToStyle = [
+            // tinytable style arrays after
+          { positions: [ { i: '4', j: 1 }, { i: '4', j: 2 }, { i: '4', j: 3 }, { i: '4', j: 4 }, { i: '4', j: 5 } ], css_id: 'tinytable_css_ct14v9tmeu3p3urfo449',}, 
+          { positions: [ { i: '0', j: 1 }, { i: '0', j: 2 }, { i: '0', j: 3 }, { i: '0', j: 4 }, { i: '0', j: 5 } ], css_id: 'tinytable_css_8ro1jjur816xl2fmxalo',}, 
+          ];
+
+          // Loop over the arrays to style the cells
+          cellsToStyle.forEach(function (group) {
+              group.positions.forEach(function (cell) {
+                  tableFns_5c0edumyy75o4to8451i.styleCell(cell.i, cell.j, group.css_id);
+              });
+          });
+      });
+    </script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.css">
+    <style>
+    /* tinytable css entries after */
+    #tinytable_5c0edumyy75o4to8451i td.tinytable_css_ct14v9tmeu3p3urfo449, #tinytable_5c0edumyy75o4to8451i th.tinytable_css_ct14v9tmeu3p3urfo449 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.08em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%;  }
+    #tinytable_5c0edumyy75o4to8451i td.tinytable_css_8ro1jjur816xl2fmxalo, #tinytable_5c0edumyy75o4to8451i th.tinytable_css_8ro1jjur816xl2fmxalo {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.05em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.08em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; font-weight: bold }
+    </style>
+    <div class="container">
+      <table class="tinytable" id="tinytable_5c0edumyy75o4to8451i" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+        
+        <thead>
+              <tr>
+                <th scope="col" data-row="0" data-col="1"> </th>
+                <th scope="col" data-row="0" data-col="2">Demokratikunnskap</th>
+                <th scope="col" data-row="0" data-col="3">Likestilling</th>
+                <th scope="col" data-row="0" data-col="4">Sosioøkonomisk status</th>
+                <th scope="col" data-row="0" data-col="5">Forventet politisk deltakelse</th>
+              </tr>
+        </thead>
+        
+        <tbody>
+                <tr>
+                  <td data-row="1" data-col="1">Demokratikunnskap</td>
+                  <td data-row="1" data-col="2">1,00</td>
+                  <td data-row="1" data-col="3"></td>
+                  <td data-row="1" data-col="4"></td>
+                  <td data-row="1" data-col="5"></td>
+                </tr>
+                <tr>
+                  <td data-row="2" data-col="1">Likestilling</td>
+                  <td data-row="2" data-col="2">0,44</td>
+                  <td data-row="2" data-col="3">1,00</td>
+                  <td data-row="2" data-col="4"></td>
+                  <td data-row="2" data-col="5"></td>
+                </tr>
+                <tr>
+                  <td data-row="3" data-col="1">Sosioøkonomisk status</td>
+                  <td data-row="3" data-col="2">0,39</td>
+                  <td data-row="3" data-col="3">0,18</td>
+                  <td data-row="3" data-col="4">1,00</td>
+                  <td data-row="3" data-col="5"></td>
+                </tr>
+                <tr>
+                  <td data-row="4" data-col="1">Forventet politisk deltakelse</td>
+                  <td data-row="4" data-col="2">-0,23</td>
+                  <td data-row="4" data-col="3">-0,14</td>
+                  <td data-row="4" data-col="4">-0,03</td>
+                  <td data-row="4" data-col="5">1,00</td>
+                </tr>
+        </tbody>
+      </table>
+    </div>
+<!-- hack to avoid NA insertion in last line -->
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>Hver celle er korrelasjonen mellom variabelen i raden og variabelen i kolonnen. Diagonalen er <span class="math inline">1{,}00</span> fordi en variabel henger perfekt sammen med seg selv, og den øvre halvdelen er tom fordi den ville gjentatt den nedre: korrelasjonen mellom <em>Likestilling</em> og <em>Demokratikunnskap</em> er den samme som mellom <em>Demokratikunnskap</em> og <em>Likestilling</em>.</p>
+<p>Matrisen bekrefter mønsteret fra <a href="#fig-associations-scatter-strength" class="quarto-xref">Figur&nbsp;<span>6.9</span></a> og <a href="#fig-associations-scatter-direction" class="quarto-xref">Figur&nbsp;<span>6.10</span></a> og legger til to par vi ikke har sett. <em>Demokratikunnskap</em> henger positivt sammen med både <em>Likestilling</em> (<span class="math inline">r = 0{,}44</span>) og <em>Sosioøkonomisk status</em> (<span class="math inline">r = 0{,}39</span>); det er de to sterkeste sammenhengene i tabellen. <em>Forventet politisk deltakelse</em> skiller seg ut ved å henge negativt sammen med alle de tre andre variablene, sterkest med <em>Demokratikunnskap</em> (<span class="math inline">r = -0{,}23</span>) og svakest med <em>Sosioøkonomisk status</em> (<span class="math inline">r = -0{,}03</span>, som er så nær null at sammenhengen i praksis er fraværende).</p>
+</section>
+</section>
+<section id="sec-associations-interpretation" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="sec-associations-interpretation"><span class="header-section-number">6.4</span> Tolkning av deskriptiv statistikk</h2>
+<p>Vi har i disse to kapitlene sett mange måter å beskrive data på, som grovt sett kan deles opp i oppsummerende tall og diagrammer. Resten av kapittelet handler om noen forhold du bør være bevisst på når du leser eller lager slike tall og diagrammer.</p>
+<section id="sec-associations-context" class="level3" data-number="6.4.1">
+<h3 data-number="6.4.1" class="anchored" data-anchor-id="sec-associations-context"><span class="header-section-number">6.4.1</span> Hvordan tolke størrelsen på oppsummerende tall?</h3>
+<p>De fleste oppsummerende tall sier lite i seg selv. Tenk for eksempel over at 53,1 % av norske elever i ICCS så for seg å ta høyere utdanning. Er dette tallet høyt eller lite? For å besvare dette må man tolke tallet i kontekst, for eksempel ved å sammenlikne med naboland eller opp mot en eller annen politisk målsetting om hvor mange vi ønsker at skal ta høyere utdanning.</p>
+<p>Størrelsen på korrelasjoner kan i hvert fall være vanskelige å tolke. I det virkelige liv ser man sjelden korrelasjoner på <span class="math inline">1</span>. Hvordan skal man tolke en korrelasjon på, si, <span class="math inline">r = 0{,}4</span>? Det ærlige svaret er at det avhenger av hva du skal bruke dataene til, og hvor sterke sammenhengene i fagfeltet ditt pleier å være. Ser man for eksempel etter korrelasjoner mellom undervisning og læring, gjør man det svært bra hvis man får en korrelasjon på <span class="math inline">0{,}3</span>, fordi læring påvirkes av så mye annet enn undervisningen at slike sammenhenger er vanskelige å påvise. Men korrelerer man hvor godt en elev gjør det på den samme rettskrivningprøven på mandag og tirsdag, bør korrelasjonen være svært høy. Tolkningen avhenger i stor grad av konteksten.</p>
+<p>Egenskaper ved målingen er en del av denne konteksten. Hvis variablene er lite reliable, blir sammenhengen mellom dem svakere enn den «egentlig» er. Det er en av grunnene til at korrelasjoner i utdanningsforskning sjelden er store; se <a href="sec-measurement.html" class="quarto-xref"><span>Kapittel 2</span></a> for mer om hva som påvirker målekvalitet.</p>
+</section>
+<section id="sec-associations-anscombe" class="level3" data-number="6.4.2">
+<h3 data-number="6.4.2" class="anchored" data-anchor-id="sec-associations-anscombe"><span class="header-section-number">6.4.2</span> Visualiser alltid</h3>
+<p>Jeg kan ikke få sagt det nok: Visualiser dataene før du tolker oppsummerende tall. Grunnen er enkel: Tallene betyr ikke alltid det du tror.</p>
+<p>Et klassisk eksempel som viser dette perfekt, er «Anscombes kvartett» <span class="citation" data-cites="Anscombe1973">(<a href="sec-references.html#ref-Anscombe1973" role="doc-biblioref">Anscombe, 1973</a>)</span>. Kvartetten består av fire datasett, og hvert av dem har en <span class="math inline">X</span>- og en <span class="math inline">Y</span>-variabel. Kvartetten er laget slik at de deskriptive statistikkene er så å si identiske for alle fire:</p>
+<ul>
+<li>Gjennomsnittet for alle <span class="math inline">X</span>-variablene er <span class="math inline">9{,}0</span> og for alle <span class="math inline">Y</span>-variablene er <span class="math inline">7{,}5</span>.</li>
+<li>Standardavvikene er også praktisk talt like for både <span class="math inline">X</span> og <span class="math inline">Y</span>.</li>
+<li>Og for å toppe det hele, er korrelasjonen mellom <span class="math inline">X</span> og <span class="math inline">Y</span> i <em>alle</em> de fire tilfellene <span class="math inline">r = 0{,}816</span>.</li>
+</ul>
+<p>Dette kan du forresten enkelt sjekke selv, for dataene ligger klare i filen <em><a href="https://kvant.roarstovner.no/data_and_tables/anscombe.csv">anscombe.csv</a></em>.</p>
+<p>Basert på kun disse tallene skulle man tro at datasettene er nokså like, men det er de absolutt ikke. Først når vi visualiserer dataene som spredningsplott, slik du ser i <a href="#fig-associations-anscombe" class="quarto-xref">Figur&nbsp;<span>6.11</span></a>, avsløres sannheten: De fire datasettene er helt ulike. Da skjønner vi hvorfor mange statistikere har følgende leveregel, som mange dessverre glemmer i praksis:</p>
+<blockquote class="blockquote">
+<p><strong>Visualiser alltid dataene dine!</strong></p>
+</blockquote>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-associations-anscombe" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Fire spredningsplott som viser samme positive korrelasjon mellom x og y. De fire plottene illustrerer henholdsvis en lineær sammenheng, en ikke-lineær sammenheng, en avviksverdi og en innflytelsesrik observasjon." data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-associations-anscombe-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="sec-associations_files/figure-html/fig-associations-anscombe-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13" title="Figur&nbsp;6.11. Spredningsplott for Anscombes kvartett. Alle fire datasettene har en Pearson-korrelasjon på r = 0,816, men de er likevel svært forskjellige fra hverandre."><img src="sec-associations_files/figure-html/fig-associations-anscombe-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="Fire spredningsplott som viser samme positive korrelasjon mellom x og y. De fire plottene illustrerer henholdsvis en lineær sammenheng, en ikke-lineær sammenheng, en avviksverdi og en innflytelsesrik observasjon."></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-associations-anscombe-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figur&nbsp;6.11. Spredningsplott for Anscombes kvartett. Alle fire datasettene har en Pearson-korrelasjon på <span class="math inline">r = 0,816</span>, men de er likevel svært forskjellige fra hverandre.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="sec-associations-ecological" class="level3" data-number="6.4.3">
+<h3 data-number="6.4.3" class="anchored" data-anchor-id="sec-associations-ecological"><span class="header-section-number">6.4.3</span> Gruppestatistikk er ikke individstatistikk</h3>
+<p>Når vi rapporterer et gjennomsnitt for en gruppe, er det fristende å lese tallet som om det beskriver den typiske personen i gruppa. Men gjennomsnittet er en oppsummering av mange ulike individer, ikke en beskrivelse av noen enkelt av dem. Å forveksle de to nivåene kalles en <strong>økologisk feilslutning</strong>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>Tenk på en setning som «Norge skårer rundt 490 på PISA i lesing». Det betyr ikke at «den typiske norske 15-åringen skårer rundt 490». Det betyr at <em>gjennomsnittet</em> over alle norske 15-åringer er omtrent 490, mens enkeltelevene fordeler seg over et stort spenn rundt det tallet. Standardavviket er nettopp et mål på hvor lite «typisk» gjennomsnittet er for et tilfeldig enkeltindivid.</p>
+<p>Samme logikk gjelder mange steder i utdanningssystemet. Klassegjennomsnittet på en prøve forteller deg ikke karakteren hvert individ fikk. Skolegjennomsnittet forteller deg ikke hvilken klasse som drar snittet opp eller ned. Det er greit å sammenligne grupper med grupper, men ikke å hente ut en påstand om enkeltindivider fra et grupperesultat.</p>
+<p>Vi har sett dette i ICCS-tallene allerede. Det landsgjennomsnittet på variabelen <em>Likestilling</em> skjuler at jenter og gutter svarer ganske forskjellig (<a href="#tbl-associations-equality-x-gender-country" class="quarto-xref">Tabell&nbsp;<span>6.4</span></a>). Stopper man ved landgjennomsnittet, mister man at norske elever er en heterogen gruppe.</p>
+<p>Og noen ganger blir det enda verre, for sammenhengen mellom to variabler kan endre seg, eller til og med snu, når vi undersøker undergrupper. Det skal vi se på nå.</p>
+</section>
+<section id="sec-associations-simpson" class="level3" data-number="6.4.4">
+<h3 data-number="6.4.4" class="anchored" data-anchor-id="sec-associations-simpson"><span class="header-section-number">6.4.4</span> Sammenhenger kan endre seg i undergrupper</h3>
+<p>I <a href="#sec-associations-correlation-strength" class="quarto-xref"><span>Seksjon 6.3.3</span></a> så vi at korrelasjonen mellom <em>Demokratikunnskap</em> og <em>Forventet politisk deltakelse</em> var negativ (<span class="math inline">r = -0{,}23</span>): elever som vet mer om demokrati, forventer å delta <em>mindre</em> politisk. Hmm, snodig. Men se hva som skjer hvis vi regner korrelasjonen separat for hvert land, <a href="#tbl-associations-simpson" class="quarto-xref">Tabell&nbsp;<span>6.6</span></a>.</p>
+<div class="cell" data-layout-align="center">
+<div id="tbl-associations-simpson" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-associations-simpson-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabell&nbsp;6.6. Korrelasjon mellom <em>Demokratikunnskap</em> og <em>Forventet politisk deltakelse</em> totalt og innenfor hvert land.
+</figcaption>
+<div aria-describedby="tbl-associations-simpson-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<!-- preamble start -->
+
+    <!-- tinytable mathjax start -->
+    <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <!-- tinytable mathjax end -->
+
+    <script src="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.js"></script>
+
+    <script>
+      // Create table-specific functions using external factory
+      const tableFns_h9vfufdtc89q4nn0ao1v = TinyTable.createTableFunctions("tinytable_h9vfufdtc89q4nn0ao1v");
+      // tinytable span after
+      window.addEventListener('load', function () {
+          var cellsToStyle = [
+            // tinytable style arrays after
+          { positions: [ { i: '5', j: 1 }, { i: '5', j: 2 }, { i: '5', j: 3 } ], css_id: 'tinytable_css_oasitn7cxopudgjo8nu2',}, 
+          { positions: [ { i: '0', j: 1 }, { i: '0', j: 2 }, { i: '0', j: 3 } ], css_id: 'tinytable_css_l1vcst6hgwaoqe2of6g5',}, 
+          ];
+
+          // Loop over the arrays to style the cells
+          cellsToStyle.forEach(function (group) {
+              group.positions.forEach(function (cell) {
+                  tableFns_h9vfufdtc89q4nn0ao1v.styleCell(cell.i, cell.j, group.css_id);
+              });
+          });
+      });
+    </script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.css">
+    <style>
+    /* tinytable css entries after */
+    #tinytable_h9vfufdtc89q4nn0ao1v td.tinytable_css_oasitn7cxopudgjo8nu2, #tinytable_h9vfufdtc89q4nn0ao1v th.tinytable_css_oasitn7cxopudgjo8nu2 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.08em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%;  }
+    #tinytable_h9vfufdtc89q4nn0ao1v td.tinytable_css_l1vcst6hgwaoqe2of6g5, #tinytable_h9vfufdtc89q4nn0ao1v th.tinytable_css_l1vcst6hgwaoqe2of6g5 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.05em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.08em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; font-weight: bold }
+    </style>
+    <div class="container">
+      <table class="tinytable" id="tinytable_h9vfufdtc89q4nn0ao1v" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+        
+        <thead>
+              <tr>
+                <th scope="col" data-row="0" data-col="1">Land</th>
+                <th scope="col" data-row="0" data-col="2">N</th>
+                <th scope="col" data-row="0" data-col="3">r</th>
+              </tr>
+        </thead>
+        
+        <tbody>
+                <tr>
+                  <td data-row="1" data-col="1">Alle land</td>
+                  <td data-row="1" data-col="2">16 473</td>
+                  <td data-row="1" data-col="3">-0,23</td>
+                </tr>
+                <tr>
+                  <td data-row="2" data-col="1">Norge</td>
+                  <td data-row="2" data-col="2">4 640</td>
+                  <td data-row="2" data-col="3">-0,10</td>
+                </tr>
+                <tr>
+                  <td data-row="3" data-col="1">Spania</td>
+                  <td data-row="3" data-col="2">3 011</td>
+                  <td data-row="3" data-col="3">-0,13</td>
+                </tr>
+                <tr>
+                  <td data-row="4" data-col="1">Polen</td>
+                  <td data-row="4" data-col="2">4 218</td>
+                  <td data-row="4" data-col="3">-0,11</td>
+                </tr>
+                <tr>
+                  <td data-row="5" data-col="1">Brasil</td>
+                  <td data-row="5" data-col="2">4 604</td>
+                  <td data-row="5" data-col="3">-0,31</td>
+                </tr>
+        </tbody>
+      </table>
+    </div>
+<!-- hack to avoid NA insertion in last line -->
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>Korrelasjonen er fortsatt svakt negativ, men den er mye svakere innenfor hvert land enn det er totalt. Hvordan kan det henge sammen?</p>
+<p>Forklaringen ligger i Brasil. Brasilianske elever har lavest gjennomsnittlig <em>Demokratikunnskap</em> av de fire landene, men høyest <em>Forventet politisk deltakelse</em>. Når vi regner korrelasjonen med alle elevene sammen, drar denne forskjellen <em>mellom</em> land korrelasjonen tydelig nedover. Sammenhengen <em>innenfor</em> hvert land (altså om en elev som vet mer enn klassekameraten sin også tenker hun skal delta mer politisk) er langt svakere.</p>
+<p>Dette er et eksempel på et mer generelt poeng: en samlet korrelasjon kan være drevet av forskjeller mellom undergrupper, ikke av sammenhengen innenfor undergruppene. I ekstreme tilfeller snur korrelasjonen fortegn når man studerer undergruppene hver for seg; det kalles <strong>Simpson-paradokset</strong>, og du så et eksempel på dette allerede i <a href="sec-why-statistics.html" class="quarto-xref"><span>Kapittel 1</span></a> med opptaksdata fra Berkeley-universitetet.</p>
+</section>
+<section id="sec-associations-causation" class="level3" data-number="6.4.5">
+<h3 data-number="6.4.5" class="anchored" data-anchor-id="sec-associations-causation"><span class="header-section-number">6.4.5</span> Sammenheng er ikke kausalitet</h3>
+<p>Jeg må minne om lærdommen fra <a href="sec-design.html#sec-correlation-causality" class="quarto-xref"><span>Seksjon 3.4</span></a>, nemlig at korrelasjon ikke er kausalitet. Selv om variabelen <em>Demokratikunnskap</em> hang positivt sammen med <em>Likestilling</em> (<span class="math inline">r = 0{,}44</span>), betyr det ikke at vi kan endre elevers syn på likestilling ved å heve demokratikunnskapene deres. Faktisk bør du kunne navngi grunner til at vi ikke kan trekke denne kausale slutningen.</p>
+</section>
+<section id="sec-associations-theory" class="level3" data-number="6.4.6">
+<h3 data-number="6.4.6" class="anchored" data-anchor-id="sec-associations-theory"><span class="header-section-number">6.4.6</span> Teorien velger hva vi ser etter</h3>
+<p>Det er ikke dataene som forteller oss hvilke par av variabler det er interessant å sammenligne, det gjør forskningsspørsmålet vårt og teorien vår. Med teori mener vi her forestillingene våre om hvilke begreper som kan henge sammen og hvorfor; den gir føringer for hva vi ser etter og hvordan vi analyserer dataene. Vi regnet korrelasjonen mellom <em>Forventet utdanning</em> og <em>Land</em> fordi vi hadde en forestilling om at landenes skoletradisjoner påvirket om elevene ser for seg å ta høyere utdanning, ikke fordi datasettet ba oss om det. Tester man derimot «alt mot alt» i et stort datasett, finner man nesten alltid sammenhenger ved ren tilfeldighet, og slike funn betyr lite. Selv om noe finnes i dataene, betyr ikke det at det er sant; du må ikke lytte utelukkende til dataene, slik vi advarte i <a href="sec-why-statistics.html" class="quarto-xref"><span>Kapittel 1</span></a>, for forskningsspørsmål og teori spiller en avgjørende rolle.</p>
+</section>
+</section>
+<section id="oppsummering" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="oppsummering"><span class="header-section-number">6.5</span> Oppsummering</h2>
+<p>Deskriptiv statistikk kan fortelle deg om enkeltvariabler i dataene (<a href="sec-descriptive.html" class="quarto-xref"><span>Kapittel 5</span></a>), men også om sammenhenger mellom variabler (dette kapittelet). I dette kapittelet har vi sett at man undersøker sammenhenger forskjellig avhengig av variabeltypen:</p>
+<ul>
+<li><strong>Kategorisk × kategorisk</strong>: Bruk <a href="#sec-associations-contingency">krysstabeller</a> eller <a href="#sec-associations-stacked-bar">stablede stolpediagram</a>.</li>
+<li><strong>Kategorisk × kontinuerlig</strong>: Bruk <a href="#sec-associations-subgroup">sentraltendens og spredningsmål per gruppe</a>, eller <a href="#boksplott-og-histogrammer-per-gruppe">boksplott og histogram per gruppe</a> for å vise forskjellene visuelt.</li>
+<li><strong>Kontinuerlig × kontinuerlig</strong>: Bruk <a href="#sec-associations-scatter">spredningsplott</a> for å visualisere sammenhengen, og <a href="#sec-associations-correlation-coefficient">korrelasjonskoeffisienten</a> for å beskrive styrken og retningen med et tall.</li>
+</ul>
+<p>Tallene og diagrammene er bare oppsummeringer. <a href="#sec-associations-interpretation">Tolkning av deskriptiv statistikk</a> minner deg om noen forhold som er lette å glemme: Tolkningen avhenger av konteksten. Du må alltid visualisere dataene, et gruppegjennomsnitt sier lite om enkeltindivider, en sammenheng mellom variabler kan endre seg i undergrupper, en sammenheng er ikke det samme som en årsakssammenheng, og det er forskningsspørsmålet og teorien (ikke dataene) som bør styre hvilke variabler du undersøker.</p>
+<a href="https://creativecommons.org/licenses/by-sa/4.0/">
+
+</a><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none"><a href="https://creativecommons.org/licenses/by-sa/4.0/">
+</a><div id="ref-Anscombe1973" class="csl-entry" role="listitem"><a href="https://creativecommons.org/licenses/by-sa/4.0/">
+Anscombe, F. J. (1973). Graphs in Statistical Analysis. <em>American Statistician</em>, <em>27</em>, 17–21. </a><a href="https://doi.org/10.1080/00031305.1973.10478966">https://doi.org/10.1080/00031305.1973.10478966</a>
+</div>
+</div>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Ingen gir dårligere navn enn statistikere. Hvorfor kalle det en <em>økologisk</em> feilslutning når det ikke har noe med økologi å gjøre? Hvor er økosystemene, liksom? Jeg velger å tenke at informasjon om økologien (økosystemet) ikke gir presis informasjon om individene, for da passer navnet litt.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Kopiert!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Kopiert!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/kvant\.roarstovner\.no");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./sec-descriptive.html" class="pagination-link" aria-label="Å beskrive én variabel">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Å beskrive én variabel</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./sec-inferential.html" class="pagination-link" aria-label="Usikkerhet og konfidensintervall">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Usikkerhet og konfidensintervall</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p><a href="https://kvant.roarstovner.no">Kvantitativ metode for lærere</a></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Denne boka ble laget i <a href="https://quarto.org/">Quarto</a> og er utgitt under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY 4.0&lt;&gt;</a></p><a href="https://creativecommons.org/licenses/by-sa/4.0/">
+</a></div><a href="https://creativecommons.org/licenses/by-sa/4.0/">
+  </a></div><a href="https://creativecommons.org/licenses/by-sa/4.0/">
+</a></footer><a href="https://creativecommons.org/licenses/by-sa/4.0/">
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+
+
+</a></body></html>

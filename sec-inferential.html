@@ -1,0 +1,1804 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="nb" xml:lang="nb"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>7&nbsp; Usikkerhet og konfidensintervall – Kvantitativ metode for lærere</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./sec-epilogue.html" rel="next">
+<link href="./sec-associations.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-a82aade05f24c3323681f036b4fc6515.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-510a82e8f80afa8ef9caa1eda2fa653d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-a82aade05f24c3323681f036b4fc6515.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Ingen resultater",
+    "search-matching-documents-text": "Samsvarende dokumenter",
+    "search-copy-link-title": "Kopier link for å søke",
+    "search-hide-matches-text": "Skjul ytterlige resultater",
+    "search-more-match-text": "annet resultat i dette dokumentet",
+    "search-more-matches-text": "andre resultater i dette dokumentet",
+    "search-clear-button-title": "Tøm",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Avbryt",
+    "search-submit-button-title": "Send inn",
+    "search-label": "Søk"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-FRV7C65B01"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-FRV7C65B01', { 'anonymize_ip': true});
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['S$','S$'], ["\\[","\\]"] ]
+      processEscapes: true
+    }
+  });
+</script>
+
+
+<script type="module" src="site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
+<meta property="og:title" content="7&nbsp; Usikkerhet og konfidensintervall – Kvantitativ metode for lærere">
+<meta property="og:description" content="">
+<meta property="og:image" content="https://kvant.roarstovner.no/images/fig-inferential-estimate.png">
+<meta property="og:site_name" content="Kvantitativ metode for lærere">
+<meta property="og:image:height" content="631">
+<meta property="og:image:width" content="536">
+</head>
+
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Slå av eller på sidebarnavigering" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sec-inferential.html">Inferensiell statistikk</a></li><li class="breadcrumb-item"><a href="./sec-inferential.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Usikkerhet og konfidensintervall</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Slå av eller på sidebarnavigering" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Søk" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Kvantitativ metode for lærere</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Kvantitativ-metode-for-lærere.pdf">
+              <i class="bi bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Kvantitativ-metode-for-lærere.epub">
+              <i class="bi bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Bytt mørk modus"><i class="bi"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Bytt lesermodus">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Søk"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Forord</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-why-statistics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Hvorfor lære kvantitative metoder?</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Studiedesign</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Slå på delen">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-measurement.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Måling i utdanningsforskning</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-design.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Forskningsdesign i kvantitativ metode</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Deskriptiv statistikk</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Slå på delen">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-jamovi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Komme i gang med jamovi</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-descriptive.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Å beskrive én variabel</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-associations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Å beskrive sammenhenger mellom variabler</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Inferensiell statistikk</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Slå på delen">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-inferential.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Usikkerhet og konfidensintervall</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-epilogue.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Etterord</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Referanseliste</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Innholdsfortegnelse</h2>
+   
+  <ul>
+  <li><a href="#sec-inf-typer-usikkerhet" id="toc-sec-inf-typer-usikkerhet" class="nav-link active" data-scroll-target="#sec-inf-typer-usikkerhet"><span class="header-section-number">7.1</span> Fire typer usikkerhet</a></li>
+  <li><a href="#sec-inf-populasjon" id="toc-sec-inf-populasjon" class="nav-link" data-scroll-target="#sec-inf-populasjon"><span class="header-section-number">7.2</span> Populasjonsparametre og observatorer</a></li>
+  <li><a href="#sec-inf-populasjonsfordeling" id="toc-sec-inf-populasjonsfordeling" class="nav-link" data-scroll-target="#sec-inf-populasjonsfordeling"><span class="header-section-number">7.3</span> Populasjonsfordelingen og utvalg trukket fra den</a></li>
+  <li><a href="#sec-inf-normalfordeling" id="toc-sec-inf-normalfordeling" class="nav-link" data-scroll-target="#sec-inf-normalfordeling"><span class="header-section-number">7.4</span> Normalfordelingen</a></li>
+  <li><a href="#sec-inf-utvalgsfordeling" id="toc-sec-inf-utvalgsfordeling" class="nav-link" data-scroll-target="#sec-inf-utvalgsfordeling"><span class="header-section-number">7.5</span> Utvalgsfordelingen til gjennomsnittet</a></li>
+  <li><a href="#sec-inf-clt" id="toc-sec-inf-clt" class="nav-link" data-scroll-target="#sec-inf-clt"><span class="header-section-number">7.6</span> Sentralgrenseteoremet og standardfeilen</a></li>
+  <li><a href="#sec-inf-eksempel" id="toc-sec-inf-eksempel" class="nav-link" data-scroll-target="#sec-inf-eksempel"><span class="header-section-number">7.7</span> Et eksempel</a></li>
+  <li><a href="#sec-inf-konfidensintervall" id="toc-sec-inf-konfidensintervall" class="nav-link" data-scroll-target="#sec-inf-konfidensintervall"><span class="header-section-number">7.8</span> Konfidensintervall</a></li>
+  <li><a href="#sec-inf-tolkning" id="toc-sec-inf-tolkning" class="nav-link" data-scroll-target="#sec-inf-tolkning"><span class="header-section-number">7.9</span> Tolking av konfidensintervallet</a></li>
+  <li><a href="#sec-inf-rct" id="toc-sec-inf-rct" class="nav-link" data-scroll-target="#sec-inf-rct"><span class="header-section-number">7.10</span> Tilordningsusikkerhet i randomiserte kontrollstudier</a></li>
+  <li><a href="#sec-inf-grenser" id="toc-sec-inf-grenser" class="nav-link" data-scroll-target="#sec-inf-grenser"><span class="header-section-number">7.11</span> Hva konfidensintervallet ikke fanger</a></li>
+  <li><a href="#oppsummering" id="toc-oppsummering" class="nav-link" data-scroll-target="#oppsummering"><span class="header-section-number">7.12</span> Oppsummering</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sec-inferential.html">Inferensiell statistikk</a></li><li class="breadcrumb-item"><a href="./sec-inferential.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Usikkerhet og konfidensintervall</span></a></li></ol></nav><h1 class="title display-7"><span id="sec-inferential" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Usikkerhet og konfidensintervall</span></span></h1></header>
+
+
+<header id="title-block-header">
+
+
+</header>
+
+
+<!-- \placetextbox{0.26}{0.06}{\scriptsize{©2025 D.R. Foxcroft and D.J. Navarro,}} -->
+<!-- \placetextbox{0.195}{0.05}{\scriptsize{CC BY-SA 4.0}} -->
+<!-- \placetextbox{0.70}{0.06}{\scriptsize{\url{https://doi.org/10.11647/OBP.0333.08}}} -->
+<!-- Arbeidstittel. Alternativ: "Usikkerhet i kvantitativ metode". -->
+<blockquote class="blockquote">
+<p><em>[God] has afforded us only the twilight … of Probability.</em><br>
+– John Locke</p>
+</blockquote>
+<p>I de foregående kapitlene har vi beskrevet dataene våre ved å regne ut gjennomsnitt og andre oppsummerende tall og laget figurer. Men forskere ønsker nesten alltid å si noe som går <em>utover</em> dataene vi faktisk har samlet inn. Da trenger vi <strong>inferensiell statistikk</strong>, og det møter du faktisk oftere enn du tror.</p>
+<p>Samme dag som jeg skriver dette, våren 2025, er hovedoppslagene i media en ny meningsmåling der 28% av 1000 respondenter svarer at, om det hadde vært valg i dag, så hadde de stemt på Arbeiderpartiet. Dette viser at Arbeiderpartiet ligger an til å gjøre et godt valg, fortelles det. Ser du at dette går forbi deskriptiv statistikk? At 280 av 1000 personer svarte at de ville stemme Arbeiderpartiet betyr ikke at de vil gjøre et godt valg, for Arbeiderpartiet trenger mange flere stemmer enn 280 for å gjøre det godt. Media antar at disse 1000 personene sier noe om de 4 350 000 andre stemmeberettigede i Norge også. Dette krever inferensiell statistikk: Ved å spørre 0,02% av populasjonen kan man finne ut noe om de resterende 99,98%.</p>
+<p>Dette kapittelet handler kun om et spørsmål fra inferensiell statistikk: Hvor godt kan man estimere gjennomsnittsverdien i en populasjon fra et utvalg? Å <em>estimere</em> betyr å anslå størrelsen på noe. Når vi estimerer gjennomsnittet i populasjonen, forsøker vi altså å finne et tall på hvor stort gjennomsnittet er. Problemet med å estimere gjennomsnittet i populasjonen er at estimatet ville blitt annerledes med et annet utvalg.</p>
+<p>Målet med kapittelet er å skjønne begrepet <strong>standardfeil</strong>. Deretter er det forholdsvis enkelt å skjønne hva et <strong>konfidensintervall</strong> er. Med disse begrepene vil du kunne forstå flere resultater i forskningsartikler, samt skjønne magien <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> statistikere støtter seg til når de uttaler seg sikkert om populasjonen uten å ha samlet noe særlig data fra den. Det vil også gjøre det lettere for deg å forstå statistisk hypotesetesting, noe de fleste innføringsbøker i kvantitativ metode bruker mye plass på, men som jeg ikke ser meg tjent med i denne sammenhengen.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tips</span>Men jeg ønsker å lære om statistisk hypotesetesting!
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Statistisk hypotesetesting er en metode som bruker data og beregninger til å vurdere om en antakelse om en populasjon kan forkastes. Et eksempel på en slik antakelse er at «gutter og jenter har lik lesehastiget i populasjonen». Noen lærerutdannere (og kanskje noen studenter) ønsker gjerne å dekke hypotesetesting i innføringskurs i kvantitative metoder. Argumentene <em>for</em> å lære om hypotesetesting er at det opptrer svært ofte i forskningslitteraturen og at noen sensorer kanskje vil forvente hypotesetesting i en kvantitativ masteroppgave. Argumentene <em>mot</em> er svært mye bedre.</p>
+<ul>
+<li>statistisk hypotesetesting passer til <em>svært</em> få forskningsspørsmål</li>
+<li>statistisk hypotesetesting blir svært ofte misforstått av studenter, forskere <span class="citation" data-cites="lytsy2022">(<a href="sec-references.html#ref-lytsy2022" role="doc-biblioref">Lytsy et al., 2022</a>)</span> og lærebokforfattere i kvantitativ metode <span class="citation" data-cites="cassidy2019">(<a href="sec-references.html#ref-cassidy2019" role="doc-biblioref">Cassidy et al., 2019</a>)</span></li>
+<li>statistisk hypotesetesting innbyr til tanketom bruk <span class="citation" data-cites="gigerenzer2018">(<a href="sec-references.html#ref-gigerenzer2018" role="doc-biblioref">Gigerenzer, 2018</a>)</span></li>
+<li>å lære om andre ting (utvalgsfordeling og standardfeil) gjør deg bedre rustet til å lære annen statistikk</li>
+</ul>
+<p>Statistisk hypotesetesting er så ofte misbrukt at foreningen for amerikanske statistikere advarer mot å bruke det <span class="citation" data-cites="wasserstein2016">(<a href="sec-references.html#ref-wasserstein2016" role="doc-biblioref">Wasserstein &amp; Lazar, 2016</a>)</span>.</p>
+</div>
+</div>
+</div>
+<section id="sec-inf-typer-usikkerhet" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="sec-inf-typer-usikkerhet"><span class="header-section-number">7.1</span> Fire typer usikkerhet</h2>
+<p>Når en forsker rapporterer et resultat, er det alltid beheftet med usikkerhet. Det er sikkert en million forskjellige kilder til usikkerhet, og for oss vil det være nyttig å skille mellom minst fire:</p>
+<ul>
+<li><strong>Måleusikkerhet.</strong> Måleinstrumentene våre er aldri perfekte. En lesehastighetsprøve fanger ikke opp lesehastighet helt presist; dagsform, konsentrasjon og tilfeldigheter ved akkurat den teksten eleven leser, spiller inn. Vi drøftet dette i <a href="sec-measurement.html" class="quarto-xref"><span>Kapittel 2</span></a>.</li>
+<li><strong>Modellusikkerhet.</strong> Når vi analyserer data, gjør vi en rekke antakelser: at utvalget er tilfeldig, at en effekt er den samme for alle, og så videre. Hvis antakelsene ikke stemmer overens med virkeligheten, er også konklusjonene usikre.</li>
+<li><strong>Utvalgsusikkerhet.</strong> Vi har bare et utvalg, ikke hele populasjonen, og et annet utvalg ville gitt et annet estimat.</li>
+<li><strong>Tilordningsusikkerhet.</strong> I eksperimenter fordeles deltakerne tilfeldig på en intervensjons- og en kontrollgruppe. Da vil den tilfeldige tilordningen være en kilde til usikkerhet: En annen tilfeldig inndeling av de <em>samme</em> deltakerne ville gitt et litt annet resultat. Dette ligner utvalgsusikkerheten, men oppstår under prosessen med gruppetilordning, ikke utvalg.</li>
+</ul>
+<p>Vi skal lære inferensiell statistikk som tar hensyn til de to siste usikkerhetene, utvalgs- og tilordningsusikkerhet. Men begrepene du lærer, standardfeil og konfidensintervall, gjelder ikke bare dem; de vil være grunnlag for å lære mye annen statistikk også. Måle- og modellusikkerheten ser vi bort fra, slik det dessverre ofte gjøres i utdanningsforskning. Selvsagt er det usikkerhet i målingene og selvsagt er det usikkerhet i de statistiske modellene, men det tas for sjeldent hensyn til disse usikkerhetene. Grunnen er neppe at forskerne ikke vet om dem, men at det ikke er del av vanlig statistisk praksis, og at det krever mer faglig skjønn enn en formel kan gi.</p>
+</section>
+<section id="sec-inf-populasjon" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="sec-inf-populasjon"><span class="header-section-number">7.2</span> Populasjonsparametre og observatorer</h2>
+<p>Gjennom hele kapittelet skal vi bruke estimering av lesehastighet som eksempel. Konstruktet er altså lesehastighet, og vi skal måle den i antall ord per minutt. Lesehastighet måles i de svært mye brukte Carlstenprøvene, som finnes i varianter fra 1. til 10. trinn. Carlstenprøven benyttes i nesten 80% av norske barneskoler <span class="citation" data-cites="arnesen2019">(<a href="sec-references.html#ref-arnesen2019" role="doc-biblioref">Arnesen et al., 2019</a>)</span>. Jeg husker selv at jeg tok denne prøven på barneskolen. Hele klassen ble bedt om å lese i et lesehefte, læreren sa fra når vi skulle stoppe å lese, vi markerte hvor langt vi kom med en strek, og så svarte vi på spørsmål om teksten så langt vi var kommet. I likhet med nesten alle kartleggingsprøvene som benyttes i norsk skole, har Carlstenprøven ingen informasjon om validitet og reliabilitet, og ingen studier har undersøkt dette <span class="citation" data-cites="arnesen2019">(<a href="sec-references.html#ref-arnesen2019" role="doc-biblioref">Arnesen et al., 2019</a>)</span>.</p>
+<p>Vi tenker oss en forskergruppe som vil estimere den gjennomsnittlige lesehastigheten for alle norske 4.-klassinger. <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> Prosessen vi nå skal forstå, er vist i <a href="#fig-inferential-estimate" class="quarto-xref">Figur&nbsp;<span>7.1</span></a>, som er en presisering av <a href="sec-design.html#fig-design-sampling" class="quarto-xref">Figur&nbsp;<span>3.3</span></a>.</p>
+<div id="fig-inferential-estimate" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-inferential-estimate-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/fig-inferential-estimate.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figur&nbsp;7.1. Logikken bak estimering av populasjonsparametre"><img src="images/fig-inferential-estimate.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-inferential-estimate-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figur&nbsp;7.1. Logikken bak estimering av populasjonsparametre
+</figcaption>
+</figure>
+</div>
+<p>Populasjonen er hele gruppa forskerne vil si noe om, altså alle norske 4.-klassinger. For å beskrive den bruker statistikere en <strong>fordeling</strong>: en kurve som viser hvilke lesehastigheter som er vanlige blant disse elevene, og hvilke som er sjeldne. Egenskapene ved denne fordelingen kalles <strong>populasjonsparametre</strong>. De to viktigste er populasjonsgjennomsnittet og populasjonsstandardavviket. Disse kjenner forskerne ikke, og det er nettopp dem de vil finne ut av.</p>
+<p>Siden forskerne ikke kan teste alle de rundt 60 000 fjerdeklassingene, trekker de et utvalg og gir dem Carlstenprøven. Da får de mange størrelser de <em>kan</em> regne ut, slik som gjennomsnittet og standardavviket i utvalget sitt. Slike størrelser, som beregnes fra dataene, kalles <strong>observatorer</strong>. Observatorene ligner gjerne på populasjonsparametrene, men de er ikke de samme. Vi benytter altså observatorene til å anslå populasjonsparametrene.</p>
+<blockquote class="blockquote">
+<p>Populasjonsparametre beskriver <em>populasjonen</em>. Observatorer beskriver <em>utvalget</em>.</p>
+</blockquote>
+<p>Det vi skal lære nå, er den siste pila i <a href="#fig-inferential-estimate" class="quarto-xref">Figur&nbsp;<span>7.1</span></a>, hvordan man estimerer populasjonsparametre. Vi skal også lære hvordan man estimerer utvalgsusikkerheten. (Og for ordens skyld: Legg merke til at figuren ikke nevner måleusikkerhet eller andre former for usikkerhet. Livet som utdanningsforsker blir mer komfortabelt hvis man bare lukker øyene for slikt.)</p>
+</section>
+<section id="sec-inf-populasjonsfordeling" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="sec-inf-populasjonsfordeling"><span class="header-section-number">7.3</span> Populasjonsfordelingen og utvalg trukket fra den</h2>
+<p>Til vanlig har man ikke kunnskap om hele populasjonen, men nå, for å forklare estimering av populasjonsparametre, skal vi ha det. Det beste hadde vært om vi hadde et datasett der Carlstenprøven var gitt til hele populasjonen av norske fjerdeklassinger. Da hadde vi kunnet sett hvor godt populasjonsparameteren ble estimert fra et utvalg. Det nest beste hadde vært å simulere et datasett som likner, så det er det jeg har gjort. Dessverre er jeg ikke lesedidaktiker, men jeg har gjort mitt beste for å lage et datasett som virker ekte.</p>
+<p>Populasjonsfordelingen til det simulerte datasettet vises i panel (a) i <a href="#fig-inf-population" class="quarto-xref">Figur&nbsp;<span>7.2</span></a>. Legg merke til at fordelingen har to humper. Helt til venstre, nær 0–20 ord/min, er det en liten hump av elever som ennå ikke har knekt lesekoden. Hovedtyngden av elevene leser raskere, med en topp litt over 100 ord/min, men denne humpen er skjev: den har en lengre hale av elever med lavere lesehastighet. <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<p>For å få gode estimater må utvalget være representativt for populasjonen, og den enkleste måten å få til representative utvalg på er ved tilfeldige utvalg. Se <a href="sec-design.html#sec-design-simple-random" class="quarto-xref"><span>Seksjon 3.6.2</span></a> hvis du trenger å friske opp enkle tilfeldige utvalg. <a href="#fig-inf-population" class="quarto-xref">Figur&nbsp;<span>7.2</span></a> (b), (c) og (d) viser tre enkle tilfeldige utvalg med forskjellig størrelse. Alle tre har omtrent samme form som populasjonen, men de store utvalgene likner mer på populasjonen enn de små. Gjennomsnittene for utvalgene (observatorene) er vist som en grå vertikal strek og med <code>M =</code>. Populasjonsgjennomsnittet er vist i rødt og er 99. Legg merke til at utvalgenes gjennomsnitt blir bedre og bedre estimater på populasjonsgjennomsnittet med større utvalg. For det minste utvalget (<span class="math inline">n = 10</span>) er gjennomsnittet langt unna populasjonsgjennomsnittet, det mellomste (<span class="math inline">n = 100</span>) er nære, og det største utvalget (<span class="math inline">n = 10 000</span>) er nesten eksakt.</p>
+<div id="fig-inf-population" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-inf-population-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-inf-population" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-inf-population-1" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Fire figurer av lesehastighet. Panel (a) er en glattet fordeling med to topper, en liten nær null og en stor rundt 110 ord per minutt. Panel (b), (c) og (d) er histogrammer av tre utvalg på henholdsvis 10, 100 og 10 000 elever, alle med omtrent samme form. Hvert panel har en rød stiplet loddrett strek på populasjonsgjennomsnittet, og utvalgspanelene har i tillegg en grå strek på utvalgets eget gjennomsnitt" data-fig-align="center">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-inf-population-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="sec-inferential_files/figure-html/fig-inf-population-1.png" class="lightbox" data-gallery="fig-inf-population" title="Figur&nbsp;7.2&nbsp;(a). Hele populasjonen"><img src="sec-inferential_files/figure-html/fig-inf-population-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" data-ref-parent="fig-inf-population" alt="Fire figurer av lesehastighet. Panel (a) er en glattet fordeling med to topper, en liten nær null og en stor rundt 110 ord per minutt. Panel (b), (c) og (d) er histogrammer av tre utvalg på henholdsvis 10, 100 og 10 000 elever, alle med omtrent samme form. Hvert panel har en rød stiplet loddrett strek på populasjonsgjennomsnittet, og utvalgspanelene har i tillegg en grå strek på utvalgets eget gjennomsnitt"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-inf-population-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Hele populasjonen
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-inf-population" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-inf-population-2" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Fire figurer av lesehastighet. Panel (a) er en glattet fordeling med to topper, en liten nær null og en stor rundt 110 ord per minutt. Panel (b), (c) og (d) er histogrammer av tre utvalg på henholdsvis 10, 100 og 10 000 elever, alle med omtrent samme form. Hvert panel har en rød stiplet loddrett strek på populasjonsgjennomsnittet, og utvalgspanelene har i tillegg en grå strek på utvalgets eget gjennomsnitt" data-fig-align="center">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-inf-population-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="sec-inferential_files/figure-html/fig-inf-population-2.png" class="lightbox" data-gallery="fig-inf-population" title="Figur&nbsp;7.2&nbsp;(b). Utvalg på 10 elever"><img src="sec-inferential_files/figure-html/fig-inf-population-2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" data-ref-parent="fig-inf-population" alt="Fire figurer av lesehastighet. Panel (a) er en glattet fordeling med to topper, en liten nær null og en stor rundt 110 ord per minutt. Panel (b), (c) og (d) er histogrammer av tre utvalg på henholdsvis 10, 100 og 10 000 elever, alle med omtrent samme form. Hvert panel har en rød stiplet loddrett strek på populasjonsgjennomsnittet, og utvalgspanelene har i tillegg en grå strek på utvalgets eget gjennomsnitt"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-inf-population-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Utvalg på 10 elever
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-inf-population" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-inf-population-3" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Fire figurer av lesehastighet. Panel (a) er en glattet fordeling med to topper, en liten nær null og en stor rundt 110 ord per minutt. Panel (b), (c) og (d) er histogrammer av tre utvalg på henholdsvis 10, 100 og 10 000 elever, alle med omtrent samme form. Hvert panel har en rød stiplet loddrett strek på populasjonsgjennomsnittet, og utvalgspanelene har i tillegg en grå strek på utvalgets eget gjennomsnitt" data-fig-align="center">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-inf-population-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="sec-inferential_files/figure-html/fig-inf-population-3.png" class="lightbox" data-gallery="fig-inf-population" title="Figur&nbsp;7.2&nbsp;(c). Utvalg på 100 elever"><img src="sec-inferential_files/figure-html/fig-inf-population-3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" data-ref-parent="fig-inf-population" alt="Fire figurer av lesehastighet. Panel (a) er en glattet fordeling med to topper, en liten nær null og en stor rundt 110 ord per minutt. Panel (b), (c) og (d) er histogrammer av tre utvalg på henholdsvis 10, 100 og 10 000 elever, alle med omtrent samme form. Hvert panel har en rød stiplet loddrett strek på populasjonsgjennomsnittet, og utvalgspanelene har i tillegg en grå strek på utvalgets eget gjennomsnitt"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-inf-population-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(c) Utvalg på 100 elever
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-inf-population" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-inf-population-4" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Fire figurer av lesehastighet. Panel (a) er en glattet fordeling med to topper, en liten nær null og en stor rundt 110 ord per minutt. Panel (b), (c) og (d) er histogrammer av tre utvalg på henholdsvis 10, 100 og 10 000 elever, alle med omtrent samme form. Hvert panel har en rød stiplet loddrett strek på populasjonsgjennomsnittet, og utvalgspanelene har i tillegg en grå strek på utvalgets eget gjennomsnitt" data-fig-align="center">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-inf-population-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="sec-inferential_files/figure-html/fig-inf-population-4.png" class="lightbox" data-gallery="fig-inf-population" title="Figur&nbsp;7.2&nbsp;(d). Utvalg på 10 000 elever"><img src="sec-inferential_files/figure-html/fig-inf-population-4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" data-ref-parent="fig-inf-population" alt="Fire figurer av lesehastighet. Panel (a) er en glattet fordeling med to topper, en liten nær null og en stor rundt 110 ord per minutt. Panel (b), (c) og (d) er histogrammer av tre utvalg på henholdsvis 10, 100 og 10 000 elever, alle med omtrent samme form. Hvert panel har en rød stiplet loddrett strek på populasjonsgjennomsnittet, og utvalgspanelene har i tillegg en grå strek på utvalgets eget gjennomsnitt"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-inf-population-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(d) Utvalg på 10 000 elever
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-inf-population-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figur&nbsp;7.2. Lesehastighet på 4. trinn i hele populasjonen og i tre tilfeldige utvalg trukket fra den. Den røde stiplede streken er populasjonsgjennomsnittet; i utvalgspanelene viser den grå streken utvalgets eget gjennomsnitt.
+</figcaption>
+</figure>
+</div>
+<p>Hvis vi hadde vært lite ambisiøse kunne kapittelet sluttet her. I så fall hadde du lært følgende:</p>
+<blockquote class="blockquote">
+<p><strong>Hvis vi gjør et enkelt tilfeldig utvalg fra en populasjon</strong> vil</p>
+<ul>
+<li>utvalgsfordelingen tilnærme seg populasjonsfordelingen med større utvalg</li>
+<li>observatorene tilnærme seg populasjonsparameteren med større utvalg</li>
+</ul>
+</blockquote>
+<p>Men vi skal ikke slutte her, for i virkeligheten er det ikke nok å vite at vi kan estimere populasjonsparameteren bedre hvis vi gjør et større utvalg; vi må vite hvor godt vi har estimert populasjonsparameteren med det utvalget vi har. Hvis vi bare har råd til å gjøre Carlstenprøven på 100 elever, hvor godt får vi da estimert gjennomsnittet?</p>
+<p>Målet nå er å sette et tall på hvor usikre estimatene er, men vi trenger litt teori først. Et naturlig sted å begynne er normalfordelingen.</p>
+</section>
+<section id="sec-inf-normalfordeling" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="sec-inf-normalfordeling"><span class="header-section-number">7.4</span> Normalfordelingen</h2>
+<p><strong>Normalfordelingen</strong> er berømt, så du har kanskje hørt om den allerede. Du skal ikke lære så mye om den, annet enn at den har bjelleform og er fullt ut beskrevet av sitt gjennomsnitt og standardavvik.</p>
+<p><a href="#fig-inf-standardnormal" class="quarto-xref">Figur&nbsp;<span>7.3</span></a> viser en normalfordeling med gjennomsnitt 0 og standardavvik 1. Denne normalfordelingen kalles en standard normalfordeling. På den vannrette aksen leser vi av verdien til en eller annen variabel, og høyden på kurven forteller hvilke verdier av variabelen som er sannsynlige.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-inf-standardnormal" class="quarto-float quarto-figure quarto-figure-center anchored" alt="En bjelleformet kurve med topp ved x lik 0, symmetrisk om toppen, som faller mot null på begge sider" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-inf-standardnormal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="sec-inferential_files/figure-html/fig-inf-standardnormal-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figur&nbsp;7.3. Normalfordelingen med gjennomsnitt 0 og standardavvik 1. På x-aksen finner man verdien til en variabel, og høyden på kurven forteller hvor sannsynlig den verdien er"><img src="sec-inferential_files/figure-html/fig-inf-standardnormal-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="En bjelleformet kurve med topp ved x lik 0, symmetrisk om toppen, som faller mot null på begge sider"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-inf-standardnormal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figur&nbsp;7.3. Normalfordelingen med gjennomsnitt 0 og standardavvik 1. På <span class="math inline">x</span>-aksen finner man verdien til en variabel, og høyden på kurven forteller hvor sannsynlig den verdien er
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Normalfordelinger kan ha andre gjennomsnitt og standardavvik enn det som ble vist over, så nå skal vi forandre normalfordelingens gjennomsnitt og standardavvik for å se hvordan kurven forandrer seg. Jeg tenker på gjennomsnittet og standardavviket som to knotter vi kan skru på for å endre fordelingen. Endrer vi gjennomsnittet, <em>flytter</em> hele kurven til venstre eller høyre uten å endre formen. Endrer vi standardavviket, blir kurven bredere eller smalere, men den blir værende på samme sted. En bred kurve betyr stor spredning; en smal kurve betyr at verdiene ligger tett rundt gjennomsnittet.</p>
+<p>Skru på de to bryterne under og se selv! Den stiplede streken viser gjennomsnittet.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="248" data-source-offset="-1"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 247;"><span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>viewof mu <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">0</span><span class="op">,</span> <span class="dv">10</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">5</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.5</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Gjennomsnitt"</span>})</span>
+<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>viewof sigma <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="fl">0.5</span><span class="op">,</span> <span class="dv">3</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Standardavvik"</span>})</span>
+<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>normalPdf <span class="op">=</span> (x<span class="op">,</span> m<span class="op">,</span> s) <span class="kw">=&gt;</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">exp</span>(<span class="op">-</span><span class="fl">0.5</span> <span class="op">*</span> ((x <span class="op">-</span> m) <span class="op">/</span> s) <span class="op">**</span> <span class="dv">2</span>) <span class="op">/</span> (s <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">sqrt</span>(<span class="dv">2</span> <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span>))</span>
+<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>kurve <span class="op">=</span> d3<span class="op">.</span><span class="fu">range</span>(<span class="op">-</span><span class="dv">3</span><span class="op">,</span> <span class="fl">13.01</span><span class="op">,</span> <span class="fl">0.05</span>)<span class="op">.</span><span class="fu">map</span>(x <span class="kw">=&gt;</span> ({x<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="fu">normalPdf</span>(x<span class="op">,</span> mu<span class="op">,</span> sigma)}))</span>
+<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>  <span class="dt">height</span><span class="op">:</span> <span class="dv">320</span><span class="op">,</span></span>
+<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marginLeft</span><span class="op">:</span> <span class="dv">20</span><span class="op">,</span></span>
+<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>  <span class="dt">x</span><span class="op">:</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"Observert verdi"</span><span class="op">,</span> <span class="dt">domain</span><span class="op">:</span> [<span class="op">-</span><span class="dv">3</span><span class="op">,</span> <span class="dv">13</span>]}<span class="op">,</span></span>
+<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> {<span class="dt">label</span><span class="op">:</span> <span class="kw">null</span><span class="op">,</span> <span class="dt">ticks</span><span class="op">:</span> []<span class="op">,</span> <span class="dt">domain</span><span class="op">:</span> [<span class="dv">0</span><span class="op">,</span> <span class="fl">0.85</span>]}<span class="op">,</span></span>
+<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">areaY</span>(kurve<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> <span class="st">"x"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"y"</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"#3d6da9"</span><span class="op">,</span> <span class="dt">fillOpacity</span><span class="op">:</span> <span class="fl">0.35</span>})<span class="op">,</span></span>
+<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">lineY</span>(kurve<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> <span class="st">"x"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"y"</span><span class="op">,</span> <span class="dt">stroke</span><span class="op">:</span> <span class="st">"#3d6da9"</span><span class="op">,</span> <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">2</span>})<span class="op">,</span></span>
+<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">ruleX</span>([mu]<span class="op">,</span> {<span class="dt">stroke</span><span class="op">:</span> <span class="st">"#595959"</span><span class="op">,</span> <span class="dt">strokeDasharray</span><span class="op">:</span> <span class="st">"4 4"</span>})<span class="op">,</span></span>
+<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">ruleY</span>([<span class="dv">0</span>])</span>
+<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>  ]</span>
+<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div><button title="Kopier til utklipstavle" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-4" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-5" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</div>
+<p>Nå vet du hvordan alle mulige normalfordelinger ser ut; de kan være lenger til høyre og venstre eller være smalere og bredere.</p>
+<p>For alle normalfordelingene gjelder en enkel tommelfingerregel, <strong>68–95–99,7-regelen</strong>. Uansett hvilket gjennomsnitt og standardavvik fordelingen har, vil rundt 68 % av observasjonene ligge innenfor ett standardavvik fra gjennomsnittet, rundt 95 % innenfor to standardavvik, og hele 99,7 % innenfor tre. <a href="#fig-inf-normal-sds" class="quarto-xref">Figur&nbsp;<span>7.4</span></a> illustrerer de to første tilfellene.</p>
+<div id="fig-inf-normal-sds" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-inf-normal-sds-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-inf-normal-sds" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-inf-normal-sds-1" class="quarto-float quarto-figure quarto-figure-center anchored" alt="To bjellekurver. I den venstre er det midterste området innenfor ett standardavvik skravert og merket 68,3 prosent. I den høyre er området innenfor to standardavvik skravert og merket 95,4 prosent" data-fig-align="center">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-inf-normal-sds-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="sec-inferential_files/figure-html/fig-inf-normal-sds-1.png" class="lightbox" data-gallery="fig-inf-normal-sds" title="Figur&nbsp;7.4&nbsp;(a). 68,3 % av observasjonene faller innenfor ett standardavvik fra gjennomsnittet"><img src="sec-inferential_files/figure-html/fig-inf-normal-sds-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" data-ref-parent="fig-inf-normal-sds" alt="To bjellekurver. I den venstre er det midterste området innenfor ett standardavvik skravert og merket 68,3 prosent. I den høyre er området innenfor to standardavvik skravert og merket 95,4 prosent"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-inf-normal-sds-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) 68,3 % av observasjonene faller innenfor ett standardavvik fra gjennomsnittet
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-inf-normal-sds" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-inf-normal-sds-2" class="quarto-float quarto-figure quarto-figure-center anchored" alt="To bjellekurver. I den venstre er det midterste området innenfor ett standardavvik skravert og merket 68,3 prosent. I den høyre er området innenfor to standardavvik skravert og merket 95,4 prosent" data-fig-align="center">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-inf-normal-sds-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="sec-inferential_files/figure-html/fig-inf-normal-sds-2.png" class="lightbox" data-gallery="fig-inf-normal-sds" title="Figur&nbsp;7.4&nbsp;(b). 95,4 % faller innenfor to standardavvik"><img src="sec-inferential_files/figure-html/fig-inf-normal-sds-2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" data-ref-parent="fig-inf-normal-sds" alt="To bjellekurver. I den venstre er det midterste området innenfor ett standardavvik skravert og merket 68,3 prosent. I den høyre er området innenfor to standardavvik skravert og merket 95,4 prosent"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-inf-normal-sds-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) 95,4 % faller innenfor to standardavvik
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-inf-normal-sds-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figur&nbsp;7.4. Andelen av en normalfordeling som ligger innenfor ett og to standardavvik fra gjennomsnittet.
+</figcaption>
+</figure>
+</div>
+<p>Kanskje lurer du på hvorfor du må lære dette om normalfordelingen. Lesehastigheten i populasjonen var jo <em>ikke</em> normalfordelt; den har blant annet to humper, slik vi nettopp så i <a href="#fig-inf-population" class="quarto-xref">Figur&nbsp;<span>7.2</span></a>. Vi forventer ikke at fordelinger i den virkelige verden er normalfordelte, så hvorfor er normalfordelingen da så viktig for oss? Bare les videre.</p>
+</section>
+<section id="sec-inf-utvalgsfordeling" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="sec-inf-utvalgsfordeling"><span class="header-section-number">7.5</span> Utvalgsfordelingen til gjennomsnittet</h2>
+<p>Vi skal nå forstå noe litt vanskelig, så ta det rolig, les sakte, og forsøk å henge med. Hvis du ikke helt forstår, kan det være fint å lese videre uansett, men deretter returnere til disse delkapitlene senere. Du skal lære at <em>utvalgets gjennomsnitt</em> har sin egen fordeling. Dette er rart. Vi har jo bare ett utvalg vi kan estimere populasjonsgjennomsnittet med, så vi får bare én verdi for utvalgets gjennomsnitt. Hvordan kan denne ene verdien ha en fordeling?</p>
+<p>For å forstå dette må vi gjøre et tankeeksperiment: Vi må se for oss alle tenkelige utvalg vi kunne fått. Tenk deg at vi gjør studien vår med 5 elever, altså <span class="math inline">n = 5</span>. I <a href="#tbl-inf-replikasjoner" class="quarto-xref">Tabell&nbsp;<span>7.1</span></a> vises 10 forskjellige tilfeldige utvalg vi kunne fått. Vi ser de fem elevene i utvalget har forskjellige lesehastigheter, og at dette gir forskjellige gjennomsnitt (kolonnen helt til høyre). Det er dette man mener med at utvalgets gjennomsnitt har en fordeling. Dette er bare 10 utvalg; det finnes enormt mange forskjellige slike utvalg man kunne trukket.</p>
+<div class="cell" data-layout-align="center" data-tbl-colwidths="[22,13,13,13,13,13,18]">
+<div id="tbl-inf-replikasjoner" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-tbl-colwidths="[22,13,13,13,13,13,18]" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-inf-replikasjoner-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabell&nbsp;7.1. Ti forskjellige utvalg av en liten lesehastighetsstudie, hver med et utvalg på <span class="math inline">n = 5</span> elever. Utvalgsgjennomsnittet varierer en god del fra utvalg til utvalg
+</figcaption>
+<div aria-describedby="tbl-inf-replikasjoner-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<!-- preamble start -->
+
+    <!-- tinytable mathjax start -->
+    <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <!-- tinytable mathjax end -->
+
+    <script src="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.js"></script>
+
+    <script>
+      // Create table-specific functions using external factory
+      const tableFns_hzicwr1eqi3bxedggl4n = TinyTable.createTableFunctions("tinytable_hzicwr1eqi3bxedggl4n");
+      // tinytable span after
+      window.addEventListener('load', function () {
+          var cellsToStyle = [
+            // tinytable style arrays after
+          { positions: [ { i: '10', j: 1 }, { i: '10', j: 2 }, { i: '10', j: 3 }, { i: '10', j: 4 }, { i: '10', j: 5 }, { i: '10', j: 6 }, { i: '10', j: 7 } ], css_id: 'tinytable_css_g69j0gqvky3m9jccc4zb',}, 
+          { positions: [ { i: '0', j: 1 }, { i: '0', j: 2 }, { i: '0', j: 3 }, { i: '0', j: 4 }, { i: '0', j: 5 }, { i: '0', j: 6 }, { i: '0', j: 7 } ], css_id: 'tinytable_css_1os1xegf4voonvorvbwf',}, 
+          ];
+
+          // Loop over the arrays to style the cells
+          cellsToStyle.forEach(function (group) {
+              group.positions.forEach(function (cell) {
+                  tableFns_hzicwr1eqi3bxedggl4n.styleCell(cell.i, cell.j, group.css_id);
+              });
+          });
+      });
+    </script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.css">
+    <style>
+    /* tinytable css entries after */
+    #tinytable_hzicwr1eqi3bxedggl4n td.tinytable_css_g69j0gqvky3m9jccc4zb, #tinytable_hzicwr1eqi3bxedggl4n th.tinytable_css_g69j0gqvky3m9jccc4zb {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.08em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%;  }
+    #tinytable_hzicwr1eqi3bxedggl4n td.tinytable_css_1os1xegf4voonvorvbwf, #tinytable_hzicwr1eqi3bxedggl4n th.tinytable_css_1os1xegf4voonvorvbwf {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.05em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.08em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%;  }
+    </style>
+    <div class="container">
+      <table class="tinytable" id="tinytable_hzicwr1eqi3bxedggl4n" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+        
+        <thead>
+              <tr>
+                <th scope="col" data-row="0" data-col="1"> </th>
+                <th scope="col" data-row="0" data-col="2">Elev 1</th>
+                <th scope="col" data-row="0" data-col="3">Elev 2</th>
+                <th scope="col" data-row="0" data-col="4">Elev 3</th>
+                <th scope="col" data-row="0" data-col="5">Elev 4</th>
+                <th scope="col" data-row="0" data-col="6">Elev 5</th>
+                <th scope="col" data-row="0" data-col="7">Utvalgets gjennomsnitt</th>
+              </tr>
+        </thead>
+        
+        <tbody>
+                <tr>
+                  <td data-row="1" data-col="1">Utvalg 1</td>
+                  <td data-row="1" data-col="2">102</td>
+                  <td data-row="1" data-col="3">99</td>
+                  <td data-row="1" data-col="4">112</td>
+                  <td data-row="1" data-col="5">87</td>
+                  <td data-row="1" data-col="6">45</td>
+                  <td data-row="1" data-col="7">89</td>
+                </tr>
+                <tr>
+                  <td data-row="2" data-col="1">Utvalg 2</td>
+                  <td data-row="2" data-col="2">110</td>
+                  <td data-row="2" data-col="3">79</td>
+                  <td data-row="2" data-col="4">97</td>
+                  <td data-row="2" data-col="5">103</td>
+                  <td data-row="2" data-col="6">96</td>
+                  <td data-row="2" data-col="7">97</td>
+                </tr>
+                <tr>
+                  <td data-row="3" data-col="1">Utvalg 3</td>
+                  <td data-row="3" data-col="2">127</td>
+                  <td data-row="3" data-col="3">110</td>
+                  <td data-row="3" data-col="4">134</td>
+                  <td data-row="3" data-col="5">17</td>
+                  <td data-row="3" data-col="6">100</td>
+                  <td data-row="3" data-col="7">98</td>
+                </tr>
+                <tr>
+                  <td data-row="4" data-col="1">Utvalg 4</td>
+                  <td data-row="4" data-col="2">93</td>
+                  <td data-row="4" data-col="3">94</td>
+                  <td data-row="4" data-col="4">125</td>
+                  <td data-row="4" data-col="5">103</td>
+                  <td data-row="4" data-col="6">122</td>
+                  <td data-row="4" data-col="7">107</td>
+                </tr>
+                <tr>
+                  <td data-row="5" data-col="1">Utvalg 5</td>
+                  <td data-row="5" data-col="2">115</td>
+                  <td data-row="5" data-col="3">92</td>
+                  <td data-row="5" data-col="4">120</td>
+                  <td data-row="5" data-col="5">50</td>
+                  <td data-row="5" data-col="6">96</td>
+                  <td data-row="5" data-col="7">95</td>
+                </tr>
+                <tr>
+                  <td data-row="6" data-col="1">Utvalg 6</td>
+                  <td data-row="6" data-col="2">119</td>
+                  <td data-row="6" data-col="3">124</td>
+                  <td data-row="6" data-col="4">87</td>
+                  <td data-row="6" data-col="5">106</td>
+                  <td data-row="6" data-col="6">66</td>
+                  <td data-row="6" data-col="7">100</td>
+                </tr>
+                <tr>
+                  <td data-row="7" data-col="1">Utvalg 7</td>
+                  <td data-row="7" data-col="2">49</td>
+                  <td data-row="7" data-col="3">109</td>
+                  <td data-row="7" data-col="4">86</td>
+                  <td data-row="7" data-col="5">112</td>
+                  <td data-row="7" data-col="6">134</td>
+                  <td data-row="7" data-col="7">98</td>
+                </tr>
+                <tr>
+                  <td data-row="8" data-col="1">Utvalg 8</td>
+                  <td data-row="8" data-col="2">110</td>
+                  <td data-row="8" data-col="3">135</td>
+                  <td data-row="8" data-col="4">11</td>
+                  <td data-row="8" data-col="5">102</td>
+                  <td data-row="8" data-col="6">100</td>
+                  <td data-row="8" data-col="7">92</td>
+                </tr>
+                <tr>
+                  <td data-row="9" data-col="1">Utvalg 9</td>
+                  <td data-row="9" data-col="2">100</td>
+                  <td data-row="9" data-col="3">60</td>
+                  <td data-row="9" data-col="4">30</td>
+                  <td data-row="9" data-col="5">92</td>
+                  <td data-row="9" data-col="6">91</td>
+                  <td data-row="9" data-col="7">75</td>
+                </tr>
+                <tr>
+                  <td data-row="10" data-col="1">Utvalg 10</td>
+                  <td data-row="10" data-col="2">94</td>
+                  <td data-row="10" data-col="3">130</td>
+                  <td data-row="10" data-col="4">115</td>
+                  <td data-row="10" data-col="5">111</td>
+                  <td data-row="10" data-col="6">113</td>
+                  <td data-row="10" data-col="7">113</td>
+                </tr>
+        </tbody>
+      </table>
+    </div>
+<!-- hack to avoid NA insertion in last line -->
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>Legg merke til hvordan gjennomsnittet varierer fra utvalg til utvalg. Lesehastighetene til hver enkelt elev varierer fra ca. 10 til 130, men gjennomsnittene varierer fra ca. 75 til 115. Gjennomsnittene varierer altså mindre enn lesehastighetene til enkeltelever. Hvis jeg hadde vist mange flere slike utvalg, med tilhørende gjennomsnitt, hadde vi fått mange forskjellige gjennomsnittsverdier. Da kunne jeg vist <strong>utvalgsfordelingen til gjennomsnittet</strong>, altså fordelingen til alle utvalgsgjennomsnitt man kan få. Denne fordelingen vil bestå av tallene i kolonnen lengst til høyre i <a href="#tbl-inf-replikasjoner" class="quarto-xref">Tabell&nbsp;<span>7.1</span></a>, i hvert fall hvis kolonnen hadde vist alle mulige utvalg man kunne fått.</p>
+<p>Men – hey! – vi har jo simulert et datasett med hele populasjonen, det som ble vist i <a href="#fig-inf-population" class="quarto-xref">Figur&nbsp;<span>7.2</span></a>, så jeg <em>kan</em> faktisk vise dette. Nyt og beundre <a href="#fig-inf-replikasjoner" class="quarto-xref">Figur&nbsp;<span>7.5</span></a>, der jeg har tegnet opp gjennomsnittene man kan få fra populasjonen når man trekker utvalg på <span class="math inline">n = 5</span> elever.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-inf-replikasjoner" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Et histogram av utvalgsgjennomsnitt som er samlet rundt 100, lagt oppå en bredere bimodal kurve som viser populasjonen. Histogrammet er merket «Utvalgsfordelingen til gjennomsnittet» og kurven er merket «Populasjonsfordelingen». En rød stiplet loddrett strek merket «Gjennomsnitt» går gjennom begge fordelingene" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-inf-replikasjoner-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="sec-inferential_files/figure-html/fig-inf-replikasjoner-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Figur&nbsp;7.5. Utvalgsfordelingen til gjennomsnittet for studier med n = 5 elever, vist som et grønt histogram. Til sammenligning viser den svarte linjen populasjonsfordelingen av lesehastighet. Den røde stiplede streken er gjennomsnittet, som er det samme i begge fordelingene"><img src="sec-inferential_files/figure-html/fig-inf-replikasjoner-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="Et histogram av utvalgsgjennomsnitt som er samlet rundt 100, lagt oppå en bredere bimodal kurve som viser populasjonen. Histogrammet er merket «Utvalgsfordelingen til gjennomsnittet» og kurven er merket «Populasjonsfordelingen». En rød stiplet loddrett strek merket «Gjennomsnitt» går gjennom begge fordelingene"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-inf-replikasjoner-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figur&nbsp;7.5. Utvalgsfordelingen til gjennomsnittet for studier med <span class="math inline">n = 5</span> elever, vist som et grønt histogram. Til sammenligning viser den svarte linjen populasjonsfordelingen av lesehastighet. Den røde stiplede streken er gjennomsnittet, som er det samme i begge fordelingene
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Jeg har tegnet inn populasjonsfordelingen som en svart linje, slik at vi kan sammenlikne den med utvalgsfordelingen til gjennomsnittet. Legg merke til det følgende i figuren:</p>
+<ul>
+<li>Utvalgsfordelingen til gjennomsnittet er jevnere og ser mer normalformet ut enn populasjonsfordelingen. De to humpene i populasjonsfordelingen har forsvunnet i utvalgsfordelingen, og de grønne søylene ser mer ut som en normalfordeling.</li>
+<li>Utvalgsfordelingen til gjennomsnittet og populasjonsfordelingen har samme gjennomsnitt; den røde stiplede streken er gjennomsnittet til begge fordelingene. Derfor kan vi bruke utvalgets gjennomsnitt til å estimere populasjonens gjennomsnitt.</li>
+<li>Utvalgsfordelingen til gjennomsnittet er mindre spredt enn populasjonsfordelingen. Tenk på forskjellen mellom to måter å trekke på. Trekker du én elev om gangen, kan du få nesten hva som helst: noen elever leser svært sakte, andre svært raskt. Trekker du derimot fem elever og regner ut gjennomsnittet deres, betyr det mindre om én av dem er en uvanlig rask eller uvanlig langsom leser, for de andre fire drar gjennomsnittet mot midten. Gjennomsnittet av fem tilfeldige elever er derfor mer stabilt enn lesehastigheten til én tilfeldig elev.</li>
+</ul>
+<p>Dette delkapittelet er verdt å skjønne ordentlig, for utvalgsfordelingen til gjennomsnittet er nøkkelen for resten. Her er oppsummeringen:</p>
+<ul>
+<li>Vi prøver å estimere populasjonens gjennomsnitt ut fra utvalgets gjennomsnitt.</li>
+<li>Vi har bare ett utvalg og derfor bare ett gjennomsnitt, og det lager ingen fordeling. Men vi kan tenke oss gjennomsnittene til alle mulige utvalg vi kunne trukket; de utgjør utvalgsfordelingen til gjennomsnittet.</li>
+<li>Denne utvalgsfordelingen likner mer på normalfordelingen og har samme gjennomsnitt, men mindre spredning, enn populasjonsfordelingen.</li>
+</ul>
+<p>Når vi har vårt ene utvalg og regner ut vårt ene gjennomsnitt, ser vi på dette som et trekk fra denne utvalgsfordelingen.</p>
+<p>Men dersom ulike tilfeldige utvalg kan gi ulike gjennomsnitt, hvor mye kan vi egentlig stole på det gjennomsnittet vi har observert? Og hvordan kan ett enkelt utvalg brukes til å si noe om den ukjente populasjonen? For å svare på disse spørsmålene må vi se nærmere på utvalgsfordelingens form og spredning, og det er beskrevet av sentralgrenseteoremet og standardfeilen.</p>
+</section>
+<section id="sec-inf-clt" class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="sec-inf-clt"><span class="header-section-number">7.6</span> Sentralgrenseteoremet og standardfeilen</h2>
+<p>I forrige delkapittel så vi at utvalgsfordelingen så litt normalfordelt ut, men det var kun for utvalg på fem elever, <span class="math inline">n = 5</span>. Hvordan vil utvalgsfordelingen se ut for større utvalg?</p>
+<p>Vi finner ut av det ved å tegne samme figur, bare for flere forskjellige <span class="math inline">n</span>. I <a href="#fig-inf-clt" class="quarto-xref">Figur&nbsp;<span>7.6</span></a> viser jeg utvalgsfordelingen for utvalg med 2 elever, 5 elever, 10 elever og 100 elever. Hvert grønt histogram er altså utvalgsfordelingen til gjennomsnittet for én bestemt utvalgsstørrelse. Denne gangen er den svarte kurven den best tilpassede normalfordelingen, slik at man ser tydeligere hvorvidt utvalgsfordelingen er lik normalfordelingen.</p>
+<div id="fig-inf-clt" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-inf-clt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-inf-clt" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-inf-clt-1" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Histogram av utvalgsgjennomsnittene ved n lik 2, med en normalfordelingskurve lagt over. Den horisontale aksen (x-aksen) viser utvalgsgjennomsnitt fra 0 til 170 ord per minutt. Fordelingen er bred og har to tydelige topper, og kurven treffer den dårlig." data-fig-align="center">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-inf-clt-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="sec-inferential_files/figure-html/fig-inf-clt-1.png" class="lightbox" data-gallery="fig-inf-clt" title="Figur&nbsp;7.6&nbsp;(a). For n = 2 ser man fremdeles de to humpene, og normalfordelingen passer dårlig"><img src="sec-inferential_files/figure-html/fig-inf-clt-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" data-ref-parent="fig-inf-clt" alt="Histogram av utvalgsgjennomsnittene ved n lik 2, med en normalfordelingskurve lagt over. Den horisontale aksen (x-aksen) viser utvalgsgjennomsnitt fra 0 til 170 ord per minutt. Fordelingen er bred og har to tydelige topper, og kurven treffer den dårlig."></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-inf-clt-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) For <span class="math inline">n = 2</span> ser man fremdeles de to humpene, og normalfordelingen passer dårlig
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-inf-clt" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-inf-clt-2" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Histogram av utvalgsgjennomsnittene ved n lik 5, med en normalfordelingskurve lagt over. Den horisontale aksen (x-aksen) er den samme som i forrige panel. Fordelingen er smalere enn ved n lik 2, de to toppene er nesten borte, og kurven treffer bedre." data-fig-align="center">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-inf-clt-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="sec-inferential_files/figure-html/fig-inf-clt-2.png" class="lightbox" data-gallery="fig-inf-clt" title="Figur&nbsp;7.6&nbsp;(b). Allerede ved n = 5 ligner fordelingen mer på en normalfordeling, og den er smalere"><img src="sec-inferential_files/figure-html/fig-inf-clt-2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" data-ref-parent="fig-inf-clt" alt="Histogram av utvalgsgjennomsnittene ved n lik 5, med en normalfordelingskurve lagt over. Den horisontale aksen (x-aksen) er den samme som i forrige panel. Fordelingen er smalere enn ved n lik 2, de to toppene er nesten borte, og kurven treffer bedre."></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-inf-clt-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Allerede ved <span class="math inline">n = 5</span> ligner fordelingen mer på en normalfordeling, og den er smalere
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-inf-clt" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-inf-clt-3" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Histogram av utvalgsgjennomsnittene ved n lik 10, med en normalfordelingskurve lagt over. Den horisontale aksen (x-aksen) er den samme som i de forrige panelene. Fordelingen er enda smalere, har én topp, og kurven følger søylene tett." data-fig-align="center">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-inf-clt-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="sec-inferential_files/figure-html/fig-inf-clt-3.png" class="lightbox" data-gallery="fig-inf-clt" title="Figur&nbsp;7.6&nbsp;(c). Ved n = 10 er normalfordelingen en meget god tilnærming"><img src="sec-inferential_files/figure-html/fig-inf-clt-3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" data-ref-parent="fig-inf-clt" alt="Histogram av utvalgsgjennomsnittene ved n lik 10, med en normalfordelingskurve lagt over. Den horisontale aksen (x-aksen) er den samme som i de forrige panelene. Fordelingen er enda smalere, har én topp, og kurven følger søylene tett."></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-inf-clt-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(c) Ved <span class="math inline">n = 10</span> er normalfordelingen en meget god tilnærming
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-inf-clt" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-inf-clt-4" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Histogram av utvalgsgjennomsnittene ved n lik 100, med en normalfordelingskurve lagt over. Den horisontale aksen (x-aksen) er den samme som i de forrige panelene. Fordelingen er en smal, symmetrisk søyle rundt populasjonsgjennomsnittet, og kurven ligger praktisk talt oppå den." data-fig-align="center">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-inf-clt-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="sec-inferential_files/figure-html/fig-inf-clt-4.png" class="lightbox" data-gallery="fig-inf-clt" title="Figur&nbsp;7.6&nbsp;(d). Ved n = 100 er fordelingen svært smal og praktisk talt normal"><img src="sec-inferential_files/figure-html/fig-inf-clt-4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" data-ref-parent="fig-inf-clt" alt="Histogram av utvalgsgjennomsnittene ved n lik 100, med en normalfordelingskurve lagt over. Den horisontale aksen (x-aksen) er den samme som i de forrige panelene. Fordelingen er en smal, symmetrisk søyle rundt populasjonsgjennomsnittet, og kurven ligger praktisk talt oppå den."></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-inf-clt-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(d) Ved <span class="math inline">n = 100</span> er fordelingen svært smal og praktisk talt normal
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-inf-clt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figur&nbsp;7.6. Sentralgrenseteoremet demonstrert med lesehastighets-eksempelet. Hvert panel viser utvalgsfordelingen til gjennomsnittet (grønne søyler) for én bestemt utvalgsstørrelse <span class="math inline">n</span>, med den best tilpassede normalfordelingen lagt over (svart linje). Selv om populasjonens fordeling er humpete, blir gjennomsnittets fordeling mer og mer normal når <span class="math inline">n</span> øker. Den blir også mindre spredt.
+</figcaption>
+</figure>
+</div>
+<p>Selv om populasjonsfordelingen var aldri så humpete, ser vi at utvalgsfordelingen til gjennomsnittet fort blir normalfordelt. Allerede ved <span class="math inline">n = 10</span> er utvalgsfordelingen nesten en perfekt bjellekurve, og ved <span class="math inline">n = 100</span> er den smal og praktisk talt helt normal. Dette er innholdet i sentralgrenseteoremet:</p>
+<blockquote class="blockquote">
+<p><strong>Sentralgrenseteoremet:</strong></p>
+<p>Uansett hvilken fordeling populasjonen har, gjelder følgende om gjennomsnittets utvalgsfordeling:</p>
+<ul>
+<li>den blir tilnærmet normal når utvalget er tilstrekkelig stort</li>
+<li>den har samme gjennomsnitt som populasjonsfordelingen</li>
+<li>den blir smalere og smalere (får mindre og mindre standardavvik) når <span class="math inline">n</span> øker.</li>
+</ul>
+</blockquote>
+<blockquote class="blockquote">
+<p>Standardavviket til utvalgsfordelingen kalles <strong>standardfeilen</strong>, og sentralgrenseteoremet gir oss en enkel formel for den:</p>
+<p><span class="math display"> \text{standardfeil} = \frac{\text{populasjonens standardavvik}}{\sqrt{n}}</span></p>
+</blockquote>
+<p>Men her stusser du kanskje: Formelen krever populasjonens standardavvik, og det er jo nettopp et av tallene vi ikke kjenner. Løsningen er den samme som ellers i kapittelet: Siden vi sjelden kan undersøke hele populasjonen, bruker vi variasjonen i utvalget som beste anslag på variasjonen i populasjonen. Vi setter altså inn utvalgets standardavvik i formelen.</p>
+<p>Vanligvis skrives dette med forkortelser, SE for standardfeilen (av engelsk <em>standard error</em>) og SD for standardavviket (<em>standard deviation</em>), altså <span class="math inline">\text{SE} = \frac{\text{SD}}{\sqrt{n}}</span>. Det er slik du vil se den i forskningsartikler, og slik vi kommer til å regne i <a href="#sec-inf-eksempel" class="quarto-xref"><span>Seksjon 7.7</span></a>.</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="En unødvendig presisering: Bessels korreksjon">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Advarsel</span>En unødvendig presisering: Bessels korreksjon
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Å bruke utvalgets standardavvik i stedet for populasjonens er en tilnærming, og her innfrir jeg et løfte fra <a href="sec-descriptive.html" class="quarto-xref"><span>Kapittel 5</span></a>. Regner man ut standardavviket slik vi gjorde der, ved å dele på antallet observasjoner <span class="math inline">n</span>, får man en litt for lav verdi når målet er å <em>anslå</em> populasjonens standardavvik. Verdien må derfor ganges med <strong>Bessels korreksjon</strong>, som for standardavviket er <span class="math inline">\sqrt{\frac{n}{n-1}}</span>. Det er det samme som å dele på <span class="math inline">n - 1</span> i stedet for <span class="math inline">n</span> inne under rottegnet, og det er nettopp dette jamovi gjør, så du får korreksjonen gratis. Den gjør standardfeilen bittelitt høyere enn den ellers ville blitt. For alt annet enn ørsmå utvalg er forskjellen helt ubetydelig, så du trenger ikke tenke mer på den.</p>
+</div>
+</div>
+<p>Dette gjør normalfordelingen nyttig for oss. Selv om populasjonen vår slett ikke er normalfordelt, vet vi at utvalgsfordelingen til gjennomsnittet er normalfordelt (så lenge utvalget er stort nok). Og ikke nok med det, vi vet presisjonen vi anslår gjennomsnittet med, siden vi vet standardfeilen.</p>
+<p>Legg merke til kvadratroten i nevneren. Den har en viktig konsekvens: for å <em>halvere</em> standardfeilen må du <em>firedoble</em> utvalget, og for å gjøre den en tidel så stor må utvalget bli hundre ganger større. Presisjon er dyrt, og det er grunnen til at studier sjelden har så store utvalg som vi skulle ønske.</p>
+</section>
+<section id="sec-inf-eksempel" class="level2" data-number="7.7">
+<h2 data-number="7.7" class="anchored" data-anchor-id="sec-inf-eksempel"><span class="header-section-number">7.7</span> Et eksempel</h2>
+<p>La oss se hvordan dette faktisk benyttes. Vi har søkt penger til studien vår for å anslå lesehastigheten til norske fjerdeklassinger. Vi ble svært skuffet da vi bare fikk nok penger til å samle data fra <span class="math inline">n = 64</span> tilfeldig trukkede elever. Huff, det er jommen dyrt å reise land og strand rundt for å gi Carlstenprøven til tilfeldige elever. Hvordan skal det gå, når vi anslår lesehastigheten til 60 000 elever ut fra bare 64?</p>
+<p>Etter å ha samlet dataene, gjør vi litt deskriptiv statistikk. Husk at i virkeligheten ville vi ikke visst populasjonsfordelingen, det er bare i dette kapittelet vi faktisk vet «fasiten», så nå må du late som om du ikke aner noe om den. <a href="#fig-inf-se-vs-sd-1" class="quarto-xref">Figur&nbsp;<span>7.7 (a)</span></a> viser lesehastigheten til de 64 elevene vi testet: gjennomsnittet ble M = 97 ord/min og standardavviket SD = 31 ord/min. Disse tallene gjelder utvalget. Kanskje blir vi bekymret av det rare histogrammet. Har vi hatt uflaks som har så mange elever med lav lesehastighet? Er utvalget vårt blitt lite representativt, slik at gjennomsnittet (M = 97) bommer grovt på populasjonen? Ingen grunn til bekymring, sentralgrenseteoremet kommer til unnsetning!</p>
+<p>Ut fra de tre tallene, (M, SD og n), gir sentralgrenseteoremet oss en normalfordeling som er en svært god tilnærming til utvalgsfordelingen til gjennomsnittet. Denne er tegnet i <a href="#fig-inf-se-vs-sd-2" class="quarto-xref">Figur&nbsp;<span>7.7 (b)</span></a>. Som vi lærte i forrige delkapittel, er den sentrert på samme gjennomsnitt som populasjonen, men er mye smalere. Standardfeilen er <span class="math inline">\text{SE} = \frac{\text{SD}}{\sqrt{n}} = \frac{31}{\sqrt{64}} =</span> 3,9. Nå er vi i mål!</p>
+<p>I mål med hva da? Med å estimere populasjonsgjennomsnittet ut fra utvalget vårt. La oss tenke over hva vi har oppnådd. Utvalget vårt, <a href="#fig-inf-se-vs-sd-1" class="quarto-xref">Figur&nbsp;<span>7.7 (a)</span></a>, hadde en rar fordeling og høyt standardavvik. Sentralgrenseteoremet forteller oss at gjennomsnittet til utvalget er trukket fra en annen fordeling, vist i <a href="#fig-inf-se-vs-sd-2" class="quarto-xref">Figur&nbsp;<span>7.7 (b)</span></a>, en normalfordeling med mindre standardavvik som vi husker kalles standardfeilen. Vi har derfor svært god grunn til å tro at gjennomsnittet i populasjonen er ca. 97. Og på grunn av 68-95-99,7-regelen (<a href="#sec-inf-normalfordeling" class="quarto-xref"><span>Seksjon 7.4</span></a>) er vi 68 % sikre på at gjennomsnittet er innenfor én standardfeil fra estimatet vårt.</p>
+<p>Haha! For en berusende følelse! Vi visste ingenting om lesehastigheten til de 60 000 fjerdeklassingene, og så målte vi kun 64 av elevene, men likevel kan vi være 68% sikre på at snitthastigheten er 97 <span class="math inline">\pm</span> 3,9!!! Og siden to standardavvik er 3,9 <span class="math inline">\cdot</span> 2 <span class="math inline">=</span> 7,8, så kan vi være 95% sikre på at gjennomsnittet er 97 <span class="math inline">\pm</span> 7,8. Wow!</p>
+<div id="fig-inf-se-vs-sd" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-inf-se-vs-sd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-inf-se-vs-sd" style="flex-basis: 100.0%;justify-content: center;">
+<div id="fig-inf-se-vs-sd-1" class="quarto-float quarto-figure quarto-figure-center anchored" alt="To paneler med samme vannrette akse for lesehastighet. Panel (a) er et bredt histogram av64 elevers lesehastighet med en vannrett pil som markerer standardavviket. Panel (b) er en smal, høy normalfordeling sentrert på samme gjennomsnitt, med en mye kortere vannrett pil som markerer standardfeilen" data-fig-align="center">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-inf-se-vs-sd-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="sec-inferential_files/figure-html/fig-inf-se-vs-sd-1.png" class="lightbox" data-gallery="fig-inf-se-vs-sd" title="Figur&nbsp;7.7&nbsp;(a). Lesehastigheten til hver enkelt elev, med gjennomsnittet (M) og standardavviket (SD)"><img src="sec-inferential_files/figure-html/fig-inf-se-vs-sd-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" data-ref-parent="fig-inf-se-vs-sd" alt="To paneler med samme vannrette akse for lesehastighet. Panel (a) er et bredt histogram av64 elevers lesehastighet med en vannrett pil som markerer standardavviket. Panel (b) er en smal, høy normalfordeling sentrert på samme gjennomsnitt, med en mye kortere vannrett pil som markerer standardfeilen"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-inf-se-vs-sd-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Lesehastigheten til hver enkelt elev, med gjennomsnittet (M) og standardavviket (SD)
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-inf-se-vs-sd" style="flex-basis: 100.0%;justify-content: center;">
+<div id="fig-inf-se-vs-sd-2" class="quarto-float quarto-figure quarto-figure-center anchored" alt="To paneler med samme vannrette akse for lesehastighet. Panel (a) er et bredt histogram av64 elevers lesehastighet med en vannrett pil som markerer standardavviket. Panel (b) er en smal, høy normalfordeling sentrert på samme gjennomsnitt, med en mye kortere vannrett pil som markerer standardfeilen" data-fig-align="center">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-inf-se-vs-sd-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="sec-inferential_files/figure-html/fig-inf-se-vs-sd-2.png" class="lightbox" data-gallery="fig-inf-se-vs-sd" title="Figur&nbsp;7.7&nbsp;(b). Utvalgsfordelingen til gjennomsnittet slik sentralgrenseteoremet spår den: en normalfordeling sentrert på det samme gjennomsnittet, men med en spredning, standardfeilen (SE), som er mindre enn standardavviket"><img src="sec-inferential_files/figure-html/fig-inf-se-vs-sd-2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" data-ref-parent="fig-inf-se-vs-sd" alt="To paneler med samme vannrette akse for lesehastighet. Panel (a) er et bredt histogram av64 elevers lesehastighet med en vannrett pil som markerer standardavviket. Panel (b) er en smal, høy normalfordeling sentrert på samme gjennomsnitt, med en mye kortere vannrett pil som markerer standardfeilen"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-inf-se-vs-sd-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Utvalgsfordelingen til gjennomsnittet slik sentralgrenseteoremet spår den: en normalfordeling sentrert på det samme gjennomsnittet, men med en spredning, standardfeilen (SE), som er mindre enn standardavviket
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-inf-se-vs-sd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figur&nbsp;7.7. En sammenlikning av fordelingen til utvalget på 64 elever, og den tilhørende utvalgsfordelingen til gjennomsnittet. Fordelingene har samme gjennomsnitt, men svært ulik spredning.
+</figcaption>
+</figure>
+</div>
+<p>Jeg pepret forrige avsnitt med utropstegn, fordi dette virkelig er helt fantastisk. Vi har en hemmelig ingrediens som, krydret med litt matematikk, gir oss muligheten til å si hvor godt vi har estimert gjennomsnittet til 60 000 elever ut fra bare 64. Og hva er den hemmelige ingrediensen?</p>
+<p>Tilfeldig utvalg.</p>
+<p>Uten tilfeldige utvalg fungerer ingenting av dette; vi har ikke peiling på om utvalgets gjennomsnitt er en tilnærming av populasjonsgjennomsnittet og vi har i hvert fall ingen peiling på usikkerheten.</p>
+<p>Men, for å ikke bli alt for beruset av lykke over sentralgrenseteoremet, så kan det være lurt å komme med noen innvendinger:</p>
+<ul>
+<li>Tenk tilbake på <a href="sec-design.html#sec-design-simple-random" class="quarto-xref"><span>Seksjon 3.6.2</span></a> om hvor enkelt det var å hente inn et tilfeldig utvalg. Det var så vanskelig at jeg skrev, litt satt på spissen, at enkle tilfeldige utvalg ikke finnes! Oops.</li>
+<li>Husk at statistiske resultater er heftet med mange typer usikkerhet. Enkelt tilfeldig utvalg lar oss kun anslå utvalgsusikkerheten. Hva med måleusikkerheten, for eksempel? Kanskje har vi ikke anslått elevenes lesehastighet så godt som vi tror.</li>
+</ul>
+</section>
+<section id="sec-inf-konfidensintervall" class="level2" data-number="7.8">
+<h2 data-number="7.8" class="anchored" data-anchor-id="sec-inf-konfidensintervall"><span class="header-section-number">7.8</span> Konfidensintervall</h2>
+<blockquote class="blockquote">
+<p><em>Statistics means never having to say you’re certain</em></p>
+</blockquote>
+<p>Å rapportere et estimat sammen med en øvre og nedre grense er så vanlig at det har fått sitt eget navn, <strong>konfidensintervall</strong>. Det vanligste er å oppgi 95% konfidensintervall.</p>
+<p>Oppskriften er enkel når vi først har standardfeilen. Vi vet fra sentralgrenseteoremet at gjennomsnittets utvalgsfordeling er normal, og vi vet fra 68–95–99,7-regelen at 95 % av en normalfordeling ligger innenfor (nesten nøyaktig) to standardavvik fra sentrum. <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> Standardavviket til utvalgsfordelingen er jo standardfeilen, så derfor blir et <strong>95 % konfidensintervall</strong> ganske enkelt:</p>
+<p><span class="math display"> \text{estimat} \pm 2 \cdot \text{standardfeil}</span></p>
+<p>La oss regne det ut for studien vår. Vi trakk 64 elever, fikk gjennomsnittet M = 97 ord/min og standardfeilen SE = 3,9 (regnet ut i forrige delkapittel). Et 95 % konfidensintervall har da</p>
+<ul>
+<li>nedre grense på 97 <span class="math inline">-</span> 2 <span class="math inline">\cdot</span> 3,9 <span class="math inline">=</span> 89,3</li>
+<li>øvre grense på 97 <span class="math inline">+</span> 2 <span class="math inline">\cdot</span> 3,9 <span class="math inline">=</span> 104,9.</li>
+</ul>
+<p>Konfidensintervallet strekker seg dermed fra 89,3 til 104,9 ord/min.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
+<p><a href="#fig-inf-ci" class="quarto-xref">Figur&nbsp;<span>7.8</span></a> viser konfidensintervallet tegnet på gjennomsnittets utvalgsfordeling. Det skraverte området utgjør 95 % av fordelingen og er alt som ligger innenfor 2 standardfeil av estimatet. Det er nettopp dette midtpartiet konfidensintervallet fanger. Legg merke til hvor smalt det er sammenlignet med spennet av lesehastigheter som ble vist i <a href="#fig-inf-se-vs-sd-1" class="quarto-xref">Figur&nbsp;<span>7.7 (a)</span></a>.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-inf-ci" class="quarto-float quarto-figure quarto-figure-center anchored" alt="En bjelleformet normalfordeling sentrert på gjennomsnittet, tegnet på en akse fra 0 til 160 slik at kurven er smal. Det midterste området, innenfor cirka to standardfeil fra gjennomsnittet, er skravert og utgjør de 95 prosentene som er konfidensintervallet" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-inf-ci-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="sec-inferential_files/figure-html/fig-inf-ci-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16" title="Figur&nbsp;7.8. 95 % konfidensintervall for studien vår, tegnet på gjennomsnittets utvalgsfordeling og på samme vannrette akse som forrige figur, slik at man ser hvor smal fordelingen er. Det skraverte området er de 95 % av fordelingen som ligger innenfor 2 standardfeil til hver side av estimatet (M); det er konfidensintervallet"><img src="sec-inferential_files/figure-html/fig-inf-ci-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="En bjelleformet normalfordeling sentrert på gjennomsnittet, tegnet på en akse fra 0 til 160 slik at kurven er smal. Det midterste området, innenfor cirka to standardfeil fra gjennomsnittet, er skravert og utgjør de 95 prosentene som er konfidensintervallet"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-inf-ci-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figur&nbsp;7.8. 95 % konfidensintervall for studien vår, tegnet på gjennomsnittets utvalgsfordeling og på samme vannrette akse som forrige figur, slik at man ser hvor smal fordelingen er. Det skraverte området er de 95 % av fordelingen som ligger innenfor 2 standardfeil til hver side av estimatet (M); det er konfidensintervallet
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>I en forskningsartikkel ser du gjerne estimatet og konfidensintervallet skrevet svært kompakt, ofte med engelsk <em>CI</em> for <em>confidence interval</em>:</p>
+<blockquote class="blockquote">
+<p>Gjennomsnittlig lesehastighet var 97 ord/min, 95% CI [89.3, 104.9].</p>
+</blockquote>
+<div class="callout callout-style-default callout-tip callout-titled" title="I jamovi: konfidensintervall for et gjennomsnitt">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tips</span>I jamovi: konfidensintervall for et gjennomsnitt
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Analyses → Exploration → Descriptives. Legg variabelen du vil undersøke i Variables-boksen. Åpne så seksjonen Statistics og kryss av for «Confidence interval for the mean» (du finner den i bolken om gjennomsnitt). Standardinnstillingen er 95 %, men du kan endre prosenten i feltet ved siden av. Samme sted kan du krysse av for «Std. error of Mean» hvis du vil se standardfeilen direkte.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="sec-inf-tolkning" class="level2" data-number="7.9">
+<h2 data-number="7.9" class="anchored" data-anchor-id="sec-inf-tolkning"><span class="header-section-number">7.9</span> Tolking av konfidensintervallet</h2>
+<p>Det vanskeligste med konfidensintervaller er å tolke dem riktig, og her snubler mange, også erfarne forskere. Den riktige tolkningen er:</p>
+<blockquote class="blockquote">
+<p>Ved tilfeldig utvalg fra en populasjon, vil et 95% konfidensintervall inneholde populasjonsparameteren i 95% av tilfellene.</p>
+</blockquote>
+<p>Husk at populasjonsparameteren er en tallverdi som beskriver hele populasjonen. Hvis populasjonsparameteren er gjennomsnittet, sier tolkningen altså at det 95 % konfidensintervallet inneholder populasjonsgjennomsnittet i 95 % av tilfellene.</p>
+<p>Men hva betyr «95 % av tilfellene» her? Vi har jo bare utført studien én gang. Disse tilfellene viser til et tankeeksperiment. Se for deg at du gjentar studien mange, mange ganger med nye tilfeldige utvalg og regner ut konfidensintervallet hver gang. I 95 % av disse intervallene vil man finne det sanne gjennomsnittet. Men i virkeligheten har man bare ett intervall og man vet ikke om det er blant de 95 % som traff, eller blant de 5 % som bommet. Akkurat ditt konfidensintervall kan jo ha bommet grovt.</p>
+<p><a href="#fig-inf-ci-interpretation" class="quarto-xref">Figur&nbsp;<span>7.9</span></a> illustrerer tankeeksperimentet. Det sanne populasjonsgjennomsnittet ligger fast (den stiplede linjen i midten). De loddrette strekene viser 50 gjentakelser av studien, altså samme studie utført 50 ganger med forskjellig tilfeldig utvalg, som gir forskjellige estimat på gjennomsnittlig lesehastighet. De fleste konfidensintervallene fanger det sanne gjennomsnittet, men noen få, markert i blått og med stjerne over, bommer. Når du gjør én enkelt studie, vet du ikke om du har fått et av de grå konfidensintervallene eller et av de blå, altså om konfidensintervallet inneholder populasjonsgjennomsnittet eller ikke. Det du vet, er at ved å utføre prosedyren, altså ved å gjennomføre en studie med tilfeldig utvalg, så vil konfidensintervallet inneholde populasjonsparameteren 95% av gangene.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-inf-ci-interpretation" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Femti loddrette intervaller side om side, de fleste krysser en vannrett stiplet linje for det sanne gjennomsnittet, men noen få ligger helt over eller under og er markert med stjerne" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-inf-ci-interpretation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="sec-inferential_files/figure-html/fig-inf-ci-interpretation-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-17" title="Figur&nbsp;7.9. 95 % konfidensintervaller fra 50 forskjellige tilfeldige utvalg i en lesehastighetsstudie med n = 25. Prikken er utvalgets gjennomsnitt og linjen er konfidensintervallet. Den stiplede vannrette linjen er det sanne populasjonsgjennomsnittet. De fleste intervallene inneholder det sanne gjennomsnittet, men noen få, i blått og markert med stjerne, gjør det ikke"><img src="sec-inferential_files/figure-html/fig-inf-ci-interpretation-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="Femti loddrette intervaller side om side, de fleste krysser en vannrett stiplet linje for det sanne gjennomsnittet, men noen få ligger helt over eller under og er markert med stjerne"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-inf-ci-interpretation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figur&nbsp;7.9. 95 % konfidensintervaller fra 50 forskjellige tilfeldige utvalg i en lesehastighetsstudie med <span class="math inline">n = 25</span>. Prikken er utvalgets gjennomsnitt og linjen er konfidensintervallet. Den stiplede vannrette linjen er det sanne populasjonsgjennomsnittet. De fleste intervallene inneholder det sanne gjennomsnittet, men noen få, i blått og markert med stjerne, gjør det ikke
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Så når du møter et 95 % konfidensintervall i en forskningsartikkel, må du tenke at du ikke vet om dette intervallet er blant de 95% som traff eller blant de 5% som bommet.</p>
+</section>
+<section id="sec-inf-rct" class="level2" data-number="7.10">
+<h2 data-number="7.10" class="anchored" data-anchor-id="sec-inf-rct"><span class="header-section-number">7.10</span> Tilordningsusikkerhet i randomiserte kontrollstudier</h2>
+<p>Så langt har usikkerheten vår handlet om <em>tilfeldig utvalg</em>: vi trakk elever tilfeldig fra en populasjon, og spørsmålet var hvor godt utvalgsgjennomsnittet estimerte populasjonsgjennomsnittet. Men konfidensintervaller dukker også opp ved <em>tilfeldig tilordning</em> i randomiserte kontrollstudier.</p>
+<p>Vi tenker oss en <strong>randomisert kontrollstudie</strong> (se <a href="sec-design.html" class="quarto-xref"><span>Kapittel 3</span></a>), for eksempel der forskerne rekrutterer 100 elever på 4. trinn fra én skole og deler dem tilfeldig i to grupper. Den ene gruppa, intervensjonsgruppa, får prøve ut en ny lesestrategi; den andre, kontrollgruppa, fortsetter som før. Alle elevene tar Carlstenprøven noen uker etterpå. Forskjellen i lesehastighet mellom de to gruppene er effekten av intervensjonen.</p>
+<p>Anta at intervensjonsgruppa i snitt leste 4,2 ord/min mer enn kontrollgruppa etter intervensjonen. Denne <em>forskjellen i gjennomsnitt</em> er også et estimat som har sin egen utvalgsfordeling og sin egen standardfeil, akkurat slik som gjennomsnittet i forrige eksempel. Forskere kan dermed finne et konfidensintervall, for eksempel et 95 % konfidensintervall på 0,3 til 8,1.</p>
+<p>Forskjellen på dette konfidensintervallet og det forrige er hva usikkerheten beskriver. Her er det ingen tilfeldig trekning fra en populasjon av norske 4.-klassinger; det er bare disse 100 elevene, og de er ikke trukket tilfeldig fra noe sted. Det tilfeldige er <em>tilordningen</em> til gruppene. Konfidensintervallet svarer derfor ikke på spørsmålet «hva er effekten av leseintervensjonen for norske 4.-klassinger generelt?», men på spørsmålet «hva er effekten av leseintervensjonen for akkurat disse 100 elevene?». Det er en usikkerhet knyttet til den tilfeldige tilordningen, siden estimatet av effekten hadde blitt annerledes med en annen tilordning. Den randomiserte kontrollstudien sier i utgangspunktet bare noe om elevene i utvalget, ikke om at funnet skal gjelde andre elever. Den ytre validiteten er altså ikke noe konfidensintervallet gir svar på for randomiserte kontrollstudier.</p>
+<!-- TODO: Her kan man ha en oppgave om at tilfeldig utvalg gir ytre validitet og tilfeldig tilordning gir indre validitet. Hvorfor det? -->
+</section>
+<section id="sec-inf-grenser" class="level2" data-number="7.11">
+<h2 data-number="7.11" class="anchored" data-anchor-id="sec-inf-grenser"><span class="header-section-number">7.11</span> Hva konfidensintervallet ikke fanger</h2>
+<p>Kapittelet begynte med å skille mellom fire typer usikkerhet, men har hittil kun vist hvordan konfidensintervallet kan dekke utvalgs- og tilordningsusikkerhet. Det er fordi konfidensintervallet i dette kapittelet, som er det som vanligvis brukes i forskning, ikke tar hensyn til de andre typene usikkerhet. Det er lett å glemme, fordi konfidensintervallet er det eneste tallet vi faktisk regner ut, men de andre kildene til usikkerhet er der likevel, og er ofte større.</p>
+<ul>
+<li><strong>Måleusikkerhet.</strong> Carlstenprøven måler ikke lesehastighet helt presist. Dagsform, teksten som benyttes i prøven, og tilfeldigheter i selve gjennomføringen gir feil som konfidensintervallet ikke fanger.</li>
+<li><strong>Modellusikkerhet.</strong> Hele regnestykket bygger på antakelser: at utvalget er et enkelt tilfeldig utvalg, målingen er god for alle elevene, og så videre. Hvis antakelsene er gale, for eksempel ved selektiv dropout (se <a href="sec-design.html#sec-design-simple-random" class="quarto-xref"><span>Seksjon 3.6.2</span></a>), så kan konfidensintervallet være misvisende.</li>
+<li><strong>Ikke-tilfeldige utvalg.</strong> Dette er kanskje den viktigste begrensningen i lærerstudenters egne masteroppgaver. Nesten ingen masteroppgaver bygger på et enkelt tilfeldig utvalg fra en veldefinert populasjon; de bruker de elevene og lærerne forskeren får tilgang til. Da hviler konfidensintervallet på en forutsetning som ikke er oppfylt, og det er strengt tatt meningsløst. Det betyr ikke at studien er verdiløs, men at usikkerheten må vurderes med faglig skjønn og teoretiske argumenter, ikke med et konfidensintervall regnet ut uten at forutsetningene er oppfylt.</li>
+</ul>
+</section>
+<section id="oppsummering" class="level2" data-number="7.12">
+<h2 data-number="7.12" class="anchored" data-anchor-id="oppsummering"><span class="header-section-number">7.12</span> Oppsummering</h2>
+<p>I dette kapittelet har jeg forklart hvordan man estimerer populasjonsparametre. Jeg har bare vist hvordan man estimerer populasjonsgjennomsnittet, men liknende tenkning fungerer for alle mulige populasjonsparametre. For eksempel, hvis man skulle estimert populasjons<em>medianen</em>, så måtte man funnet utvalgsfordelingen til medianen, som kanskje ikke er normalfordelt. Da hadde man trengt noe som likner på sentralgrenseteoremet, men som gjelder for medianer. Deretter kunne man regnet ut et konfidensintervall for medianen. Alle begrepene du har lært, utgjør altså et språk for estimering og måling av usikkerhet som kan brukes mer generelt. Du har lært:</p>
+<ul>
+<li><a href="#sec-inf-typer-usikkerhet">Fire typer usikkerhet</a>: måle-, modell-, utvalgs- og tilordningsusikkerhet. Kapittelet handlet mest om de to siste.</li>
+<li><a href="#sec-inf-populasjon">Populasjon og utvalg</a>: forskjellen på populasjonsparametre og utvalgsobservatorer.</li>
+<li><a href="#sec-inf-normalfordeling">Normalfordelingen</a>: en bjelleformet fordeling definert av to tall, gjennomsnitt og standardavvik. Den følger 68–95–99,7-regelen.</li>
+<li><a href="#sec-inf-utvalgsfordeling">Utvalgsfordelingen til gjennomsnittet</a>: Også gjennomsnittet har en fordeling.</li>
+<li><a href="#sec-inf-clt">Sentralgrenseteoremet og standardfeilen</a>: Utvalgsfordelingen til gjennomsnittet blir tilnærmet normalfordelt for store nok utvalg uansett hvordan populasjonsfordelingen ser ut. Standardfeilen måler usikkerheten i gjennomsnittet.</li>
+<li><a href="#sec-inf-konfidensintervall">Konfidensintervallet</a>: den vanligste måten å angi usikkerhet på. Vanligst med 95% konfidensintervall, regnet ut som <span class="math inline">\pm 2 \cdot SE</span>. Vi lærte <a href="#sec-inf-tolkning">hvordan det skal tolkes</a>.</li>
+<li>At <a href="#sec-inf-rct">samme matematikk</a> ligger bak konfidensintervaller i randomiserte kontrollstudier, men at usikkerheten der kommer fra tilordning, ikke utvalg.</li>
+<li>At <a href="#sec-inf-grenser">konfidensintervallet ikke fanger all usikkerhet</a>: Det fanger ikke måleusikkerhet, og det trenger tilfeldig utvalg eller tilordning for å fungere.</li>
+</ul>
+<a href="https://creativecommons.org/licenses/by-sa/4.0/">
+
+</a><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none"><a href="https://creativecommons.org/licenses/by-sa/4.0/">
+</a><div id="ref-arnesen2019" class="csl-entry" role="listitem"><a href="https://creativecommons.org/licenses/by-sa/4.0/">
+Arnesen, A., Braeken, J., Ogden, T., &amp; Melby-Lervåg, M. (2019). Assessing <span>Children</span>’s <span>Social Functioning</span> and <span>Reading Proficiency</span>: <span>A Systematic Review</span> of the <span>Quality</span> of <span>Educational Assessment Instruments Used</span> in <span>Norwegian Elementary Schools</span>. <em>Scandinavian Journal of Educational Research</em>, <em>63</em>(3), 465–490. </a><a href="https://doi.org/10.1080/00313831.2017.1420685">https://doi.org/10.1080/00313831.2017.1420685</a>
+</div>
+<div id="ref-cassidy2019" class="csl-entry" role="listitem">
+Cassidy, S. A., Dimova, R., Giguère, B., Spence, J. R., &amp; Stanley, D. J. (2019). Failing <span>Grade</span>: 89% of <span>Introduction-to-Psychology Textbooks That Define</span> or <span>Explain Statistical Significance Do So Incorrectly</span>. <em>Advances in Methods and Practices in Psychological Science</em>, 2515245919858072. <a href="https://doi.org/10.1177/2515245919858072">https://doi.org/10.1177/2515245919858072</a>
+</div>
+<div id="ref-gigerenzer2018" class="csl-entry" role="listitem">
+Gigerenzer, G. (2018). Statistical <span>Rituals</span>: <span>The Replication Delusion</span> and <span>How We Got There</span>. <em>Advances in Methods and Practices in Psychological Science</em>, <em>1</em>(2), 198–218. <a href="https://doi.org/10.1177/2515245918771329">https://doi.org/10.1177/2515245918771329</a>
+</div>
+<div id="ref-lytsy2022" class="csl-entry" role="listitem">
+Lytsy, P., Hartman, M., &amp; Pingel, R. (2022). Misinterpretations of <span>P-values</span> and Statistical Tests Persists among Researchers and Professionals Working with Statistics and Epidemiology. <em>Upsala Journal of Medical Sciences</em>, <em>127</em>, 10.48101/ujms.v127.8760. <a href="https://doi.org/10.48101/ujms.v127.8760">https://doi.org/10.48101/ujms.v127.8760</a>
+</div>
+<div id="ref-wasserstein2016" class="csl-entry" role="listitem">
+Wasserstein, R. L., &amp; Lazar, N. A. (2016). The <span>ASA Statement</span> on P-<span>Values</span>: <span>Context</span>, <span>Process</span>, and <span>Purpose</span>. <em>The American Statistician</em>, <em>70</em>(2), 129–133. <a href="https://doi.org/10.1080/00031305.2016.1154108">https://doi.org/10.1080/00031305.2016.1154108</a>
+</div>
+</div>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Vel, matematikken, men siden matematikk har et image-problem velger jeg å benytte ordet <em>magi</em>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Merk at dette er en <em>forskningsbruk</em> av Carlstenprøven. I klasserommet bruker læreren prøven som en kartlegging av sine egne elever, ikke for å trekke slutninger om en populasjon.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Et poeng som er verdt å huske fra <a href="sec-descriptive.html" class="quarto-xref"><span>Kapittel 5</span></a>: Siden fordelingen er skjev, er ikke populasjonsgjennomsnittet og medianen like. Gjennomsnittet er på 99 ord/min, og er lavere enn populasjonsmedianen, som er på 106 ord/min, som igjen er lavere enn den vanligste lesehastigheten, som er rundt 110 ord/min. Gjennomsnittet er altså noe vi <em>velger</em> å regne ut og estimere, ikke nødvendigvis et godt sammendrag av en typisk elev, jamfør den økologiske feilslutningen, <a href="sec-associations.html#sec-associations-ecological" class="quarto-xref"><span>Seksjon 6.4.3</span></a>.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Det presise tallet er 1,96 standardavvik, ikke 2,0. Jeg regner med 2 fordi det er lett å gjøre overslag med i hodet, og fordi forskjellen er ubetydelig.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>Se bort fra små avrundingsfeil; de oppstår fordi jeg ikke viser alle desimaler.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Ilxudmlld29mIG11ID0gSW5wdXRzLnJhbmdlKFswLCAxMF0sIHt2YWx1ZTogNSwgc3RlcDogMC41LCBsYWJlbDogXCJHamVubm9tc25pdHRcIn0pXG52aWV3b2Ygc2lnbWEgPSBJbnB1dHMucmFuZ2UoWzAuNSwgM10sIHt2YWx1ZTogMSwgc3RlcDogMC4xLCBsYWJlbDogXCJTdGFuZGFyZGF2dmlrXCJ9KVxuXG5ub3JtYWxQZGYgPSAoeCwgbSwgcykgPT4gTWF0aC5leHAoLTAuNSAqICgoeCAtIG0pIC8gcykgKiogMikgLyAocyAqIE1hdGguc3FydCgyICogTWF0aC5QSSkpXG5cbmt1cnZlID0gZDMucmFuZ2UoLTMsIDEzLjAxLCAwLjA1KS5tYXAoeCA9PiAoe3gsIHk6IG5vcm1hbFBkZih4LCBtdSwgc2lnbWEpfSkpXG5cblBsb3QucGxvdCh7XG4gIGhlaWdodDogMzIwLFxuICBtYXJnaW5MZWZ0OiAyMCxcbiAgeDoge2xhYmVsOiBcIk9ic2VydmVydCB2ZXJkaVwiLCBkb21haW46IFstMywgMTNdfSxcbiAgeToge2xhYmVsOiBudWxsLCB0aWNrczogW10sIGRvbWFpbjogWzAsIDAuODVdfSxcbiAgbWFya3M6IFtcbiAgICBQbG90LmFyZWFZKGt1cnZlLCB7eDogXCJ4XCIsIHk6IFwieVwiLCBmaWxsOiBcIiMzZDZkYTlcIiwgZmlsbE9wYWNpdHk6IDAuMzV9KSxcbiAgICBQbG90LmxpbmVZKGt1cnZlLCB7eDogXCJ4XCIsIHk6IFwieVwiLCBzdHJva2U6IFwiIzNkNmRhOVwiLCBzdHJva2VXaWR0aDogMn0pLFxuICAgIFBsb3QucnVsZVgoW211XSwge3N0cm9rZTogXCIjNTk1OTU5XCIsIHN0cm9rZURhc2hhcnJheTogXCI0IDRcIn0pLFxuICAgIFBsb3QucnVsZVkoWzBdKVxuICBdXG59KVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdtdScpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdzaWdtYScpIn1dfQ==
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../..";
+window._ojs.paths.runtimeToRoot = "../..";
+window._ojs.paths.docToRoot = "";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Kopiert!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Kopiert!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/kvant\.roarstovner\.no");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./sec-associations.html" class="pagination-link" aria-label="Å beskrive sammenhenger mellom variabler">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Å beskrive sammenhenger mellom variabler</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./sec-epilogue.html" class="pagination-link" aria-label="Etterord">
+        <span class="nav-page-text">Etterord</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p><a href="https://kvant.roarstovner.no">Kvantitativ metode for lærere</a></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Denne boka ble laget i <a href="https://quarto.org/">Quarto</a> og er utgitt under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY 4.0&lt;&gt;</a></p><a href="https://creativecommons.org/licenses/by-sa/4.0/">
+</a></div><a href="https://creativecommons.org/licenses/by-sa/4.0/">
+  </a></div><a href="https://creativecommons.org/licenses/by-sa/4.0/">
+</a></footer><a href="https://creativecommons.org/licenses/by-sa/4.0/">
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+
+
+</a></body></html>

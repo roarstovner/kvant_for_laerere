@@ -1,18 +1,24 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="nb" xml:lang="nb"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Etterord – Kvantitative metoder for lærere</title>
+<title>Etterord – Kvantitativ metode for lærere</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -51,21 +57,21 @@ div.csl-indent {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./sec-references.html" rel="next">
-<link href="./sec-correlation.html" rel="prev">
+<link href="./sec-inferential.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-8ef56b68f8fa1e9d2ba328e99e439f80.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-89d524cf73f3b2250d5e74ecba7e97ca.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-32c0091d9c65541b54b40246001d65bb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-89d524cf73f3b2250d5e74ecba7e97ca.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-a82aade05f24c3323681f036b4fc6515.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-510a82e8f80afa8ef9caa1eda2fa653d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-a82aade05f24c3323681f036b4fc6515.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -103,76 +109,22 @@ gtag('js', new Date());
 gtag('config', 'G-FRV7C65B01', { 'anonymize_ip': true});
 </script>
 <script type="text/x-mathjax-config">
-
   MathJax.Hub.Config({
-
     tex2jax: {
-
       inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-
       displayMath: [ ['S$','S$'], ["\\[","\\]"] ]
-
       processEscapes: true
-
     }
-
   });
-
 </script>
 
 
 
-
-
-
-  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
-  <script>document.addEventListener("DOMContentLoaded", function () {
- var mathElements = document.getElementsByClassName("math");
- var macros = [];
- for (var i = 0; i < mathElements.length; i++) {
-  var texText = mathElements[i].firstChild;
-  if (mathElements[i].tagName == "SPAN") {
-   katex.render(texText.data, mathElements[i], {
-    displayMode: mathElements[i].classList.contains('display'),
-    throwOnError: false,
-    macros: macros,
-    fleqn: false
-   });
-}}});
-  </script>
-  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="Etterord – Kvantitative metoder for lærere">
+<meta property="og:title" content="Etterord – Kvantitativ metode for lærere">
 <meta property="og:description" content="">
-<meta property="og:site_name" content="Kvantitative metoder for lærere">
+<meta property="og:site_name" content="Kvantitativ metode for lærere">
 </head>
 
 <body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -361,9 +313,25 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Kvantitative metoder for lærere</a> 
+      <a href="./">Kvantitativ metode for lærere</a> 
         <div class="sidebar-tools-main tools-wide">
-    <a href="./Kvantitative-metoder-for-lærere.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Kvantitativ-metode-for-lærere.pdf">
+              <i class="bi bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Kvantitativ-metode-for-lærere.epub">
+              <i class="bi bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Bytt mørk modus"><i class="bi"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Bytt lesermodus">
   <div class="quarto-reader-toggle-btn">
@@ -389,7 +357,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./sec-why-statistics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Hvorfor lære statistikk?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Hvorfor lære kvantitative metoder?</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -427,19 +395,19 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./sec-jamovi.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Komme i gang med jamovi</span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Komme i gang med jamovi</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./sec-descriptive.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Deskriptiv statistikk</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Å beskrive én variabel</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./sec-diagram.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Visualisere data</span></span></a>
+  <a href="./sec-associations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Å beskrive sammenhenger mellom variabler</span></span></a>
   </div>
 </li>
       </ul>
@@ -447,7 +415,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Statistisk teori</span></a>
+ <span class="menu-text">Inferensiell statistikk</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Slå på delen">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -455,49 +423,8 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./sec-probability.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Sannsynlighet</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./sec-estimation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Estimering av ukjente størrelser fra et utvalg</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./sec-testing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Hypotesetesting</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
- <span class="menu-text">Inferensiell statistikk</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Slå på delen">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./sec-categorical.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Analyse av kategoriske data</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./sec-means.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Sammenlikne gjennomsnitt: ANOVA og paret <span class="math inline">t</span>-test</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./sec-correlation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Korrelasjon og lineær regresjon</span></span></a>
+  <a href="./sec-inferential.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Usikkerhet og konfidensintervall</span></span></a>
   </div>
 </li>
       </ul>
@@ -536,17 +463,17 @@ window.Quarto = {
 <!-- \placetextbox{0.195}{0.05}{\scriptsize{CC BY-SA 4.0}} -->
 <!-- \placetextbox{0.70}{0.06}{\scriptsize{\url{https://doi.org/10.11647/OBP.0333.17}}} -->
 <blockquote class="blockquote">
-<p><em>“Begin at the beginning”, the King said, very gravely, “and go on till you come to the end: then stop”</em><br>
+<p><em>«Begin at the beginning», the King said, very gravely, «and go on till you come to the end: then stop»</em><br>
 – Lewis Carroll, <em>Alice in Wonderland</em></p>
 </blockquote>
-<p>Som nevnt i forordet, er denne læreboken en betydelig forkortet versjon av en bok skrevet for et kurs som krevde et firedels semesters arbeid, altså 7,5 studiepoeng. Fra over 500 sider har vi kuttet og komprimert materialet ned til omtrent 170 sider. Alle disse er omarbeidet, og i tilleg er 30 sider skrevet spesifikt for denne utgaven, hovedsakelig i kapitlene om måling og forskningsdesign. Dette betyr naturligvis at mange detaljer, og faktisk også mye som ikke er detaljer, har blitt utelatt for å holde omfanget håndterbart. Skulle du ønske å lese mer om en metode, kanskje særlig hvis du planlegger å benytte den i en fremtidig masteroppgave, vil du finne et vell av ytterligere informasjon og detaljer i den originale utgaven av boken <span class="citation" data-cites="navarro2025">(<a href="sec-references.html#ref-navarro2025" role="doc-biblioref">Navarro &amp; Foxcroft, 2025</a>)</span>.</p>
-<p>Den største unnlatelsessynden i denne boken er at vi ikke har adressert alle de matematiske antagelsene som ligger til grunn for analysemetodene i inferensiell statistikk. Dette er for å ikke overvelde studenter med lite matematisk forkunnskap. Jeg tror mange er lettet over at de slipper å lære seg å uttale ord som “heteroskedastisitet” eller å vurdere om residualene er normalfordelte. Jeg har vektlagt de viktigste antagelsene med størst påvirkning på resultatenes validitet, nemlig at trekkene i utvalget er tilfeldige og uavhengige av hverandre.</p>
-<p>Noe av hovedpoenget med å skrive denne boka er å gjøre alt materialet relevant for lærere i skolen. Dette arbeidet er langt fra i mål. Til fremtidige utgaver håper jeg å ha flere og bedre eksempler, og at eksemplene samlet sett viser noe av bredden i kvantitativ forskning på utdanningsfeltet. Jeg ønsker å inkludere egne kapitler om store internasjonale undersøkelser, nasjonale prøver, kartleggingsprøver og summative vurderinger i skolen, og jeg ønsker at dette går på bekostning av noe av teorien i de senere delene. Målet er at alle lærere skal tenke “jeg er jommen glad jeg har lært dette” når de kommer til slutten av boka.</p>
+<p>Som nevnt i forordet, er denne læreboken en betydelig omarbeidet og forkortet versjon av en bok skrevet for et kurs som krevde et firedels semesters arbeid, altså 7,5 studiepoeng. Fra over 500 sider har jeg kuttet og komprimert materialet ned til omtrent 130 sider, samtidig som jeg har gjort det relevant for utdanningsforskning. Komprimeringen betyr naturligvis at mange detaljer, og faktisk også mye som ikke er detaljer, har blitt utelatt for å holde omfanget håndterbart. Skulle du ønske å lese mer om en metode, kanskje særlig hvis du planlegger å benytte den i en fremtidig masteroppgave, vil du finne et vell av ytterligere informasjon og detaljer i den originale utgaven av boken <span class="citation" data-cites="navarro2025">(<a href="sec-references.html#ref-navarro2025" role="doc-biblioref">Navarro &amp; Foxcroft, 2025</a>)</span>.</p>
+<p>Noe av hovedpoenget med å skrive denne boka er å gjøre alt materialet relevant for lærere i skolen. Dette arbeidet er langt fra i mål. Til fremtidige utgaver håper jeg å ha flere og bedre eksempler, og at eksemplene samlet sett viser noe av bredden i kvantitativ forskning på utdanningsfeltet. Jeg ønsker å inkludere egne kapitler om store internasjonale undersøkelser, nasjonale prøver, kartleggingsprøver og summative vurderinger i skolen.</p>
+<p>Målet er at alle lærere skal tenke «jeg er jommen glad jeg har lært dette» når de kommer til slutten av boka.</p>
+<a href="https://creativecommons.org/licenses/by-sa/4.0/">
 
-
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
-<div id="ref-navarro2025" class="csl-entry" role="listitem">
-Navarro, D., &amp; Foxcroft, D. (2025). <em>Learning <span>Statistics</span> with jamovi: <span>A Tutorial</span> for <span>Beginners</span> in <span>Statistical Analysis</span></em> (1st ed.). Open Book Publishers. <a href="https://doi.org/10.11647/OBP.0333">https://doi.org/10.11647/OBP.0333</a>
+</a><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none"><a href="https://creativecommons.org/licenses/by-sa/4.0/">
+</a><div id="ref-navarro2025" class="csl-entry" role="listitem"><a href="https://creativecommons.org/licenses/by-sa/4.0/">
+Navarro, D., &amp; Foxcroft, D. (2025). <em>Learning <span>Statistics</span> with Jamovi: <span>A Tutorial</span> for <span>Beginners</span> in <span>Statistical Analysis</span></em> (1. utg.). Open Book Publishers. </a><a href="https://doi.org/10.11647/OBP.0333">https://doi.org/10.11647/OBP.0333</a>
 </div>
 </div>
 
@@ -615,13 +542,14 @@ Navarro, D., &amp; Foxcroft, D. (2025). <em>Learning <span>Statistics</span> wit
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -970,8 +898,8 @@ Navarro, D., &amp; Foxcroft, D. (2025). <em>Learning <span>Statistics</span> wit
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./sec-correlation.html" class="pagination-link" aria-label="Korrelasjon og lineær regresjon">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Korrelasjon og lineær regresjon</span></span>
+      <a href="./sec-inferential.html" class="pagination-link" aria-label="Usikkerhet og konfidensintervall">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Usikkerhet og konfidensintervall</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
@@ -984,18 +912,18 @@ Navarro, D., &amp; Foxcroft, D. (2025). <em>Learning <span>Statistics</span> wit
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p><a href="https://kvant.roarstovner.no">Kvantitative metoder for lærere</a></p>
+<p><a href="https://kvant.roarstovner.no">Kvantitativ metode for lærere</a></p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
     <div class="nav-footer-right">
-<p>Denne boka ble laget i <a href="https://quarto.org/">Quarto</a></p>
-</div>
-  </div>
-</footer>
+<p>Denne boka ble laget i <a href="https://quarto.org/">Quarto</a> og er utgitt under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY 4.0&lt;&gt;</a></p><a href="https://creativecommons.org/licenses/by-sa/4.0/">
+</a></div><a href="https://creativecommons.org/licenses/by-sa/4.0/">
+  </a></div><a href="https://creativecommons.org/licenses/by-sa/4.0/">
+</a></footer><a href="https://creativecommons.org/licenses/by-sa/4.0/">
 
 
 
 
-</body></html>
+</a></body></html>

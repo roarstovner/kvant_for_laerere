@@ -2,66 +2,50 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://kvant.roarstovner.no/index.html</loc>
-    <lastmod>2025-08-12T21:44:33.700Z</lastmod>
+    <lastmod>2026-08-18T20:32:49.548Z</lastmod>
   </url>
   <url>
     <loc>https://kvant.roarstovner.no/sec-why-statistics.html</loc>
-    <lastmod>2025-09-18T18:15:43.645Z</lastmod>
+    <lastmod>2026-08-18T20:32:49.552Z</lastmod>
   </url>
   <url>
     <loc>https://kvant.roarstovner.no/sec-measurement.html</loc>
-    <lastmod>2025-09-08T10:48:16.244Z</lastmod>
+    <lastmod>2026-08-18T20:32:49.552Z</lastmod>
   </url>
   <url>
     <loc>https://kvant.roarstovner.no/sec-design.html</loc>
-    <lastmod>2025-08-22T11:38:53.088Z</lastmod>
+    <lastmod>2026-08-18T20:32:49.548Z</lastmod>
   </url>
   <url>
     <loc>https://kvant.roarstovner.no/sec-jamovi.html</loc>
-    <lastmod>2025-09-07T05:46:55.559Z</lastmod>
+    <lastmod>2026-08-18T20:32:49.552Z</lastmod>
   </url>
   <url>
     <loc>https://kvant.roarstovner.no/sec-descriptive.html</loc>
-    <lastmod>2025-09-17T11:53:20.159Z</lastmod>
+    <lastmod>2026-08-18T20:32:49.548Z</lastmod>
   </url>
   <url>
-    <loc>https://kvant.roarstovner.no/sec-diagram.html</loc>
-    <lastmod>2025-09-05T19:11:17.745Z</lastmod>
+    <loc>https://kvant.roarstovner.no/sec-associations.html</loc>
+    <lastmod>2026-08-18T20:32:49.548Z</lastmod>
   </url>
   <url>
-    <loc>https://kvant.roarstovner.no/sec-probability.html</loc>
-    <lastmod>2025-08-15T10:35:16.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://kvant.roarstovner.no/sec-estimation.html</loc>
-    <lastmod>2025-09-18T10:53:33.415Z</lastmod>
-  </url>
-  <url>
-    <loc>https://kvant.roarstovner.no/sec-testing.html</loc>
-    <lastmod>2025-08-18T11:43:20.310Z</lastmod>
-  </url>
-  <url>
-    <loc>https://kvant.roarstovner.no/sec-categorical.html</loc>
-    <lastmod>2025-09-05T11:07:57.642Z</lastmod>
-  </url>
-  <url>
-    <loc>https://kvant.roarstovner.no/sec-means.html</loc>
-    <lastmod>2025-09-29T08:40:03.512Z</lastmod>
-  </url>
-  <url>
-    <loc>https://kvant.roarstovner.no/sec-correlation.html</loc>
-    <lastmod>2025-09-06T11:05:49.963Z</lastmod>
+    <loc>https://kvant.roarstovner.no/sec-inferential.html</loc>
+    <lastmod>2026-08-18T20:32:49.552Z</lastmod>
   </url>
   <url>
     <loc>https://kvant.roarstovner.no/sec-epilogue.html</loc>
-    <lastmod>2025-09-05T19:27:08.350Z</lastmod>
+    <lastmod>2026-08-18T20:32:49.548Z</lastmod>
   </url>
   <url>
     <loc>https://kvant.roarstovner.no/sec-references.html</loc>
-    <lastmod>2025-08-12T21:56:13.080Z</lastmod>
+    <lastmod>2026-03-12T08:18:55.960Z</lastmod>
   </url>
   <url>
-    <loc>https://kvant.roarstovner.no/Kvantitative-metoder-for-lærere.pdf</loc>
-    <lastmod>2025-09-29T08:46:56.538Z</lastmod>
+    <loc>https://kvant.roarstovner.no/Kvantitativ-metode-for-lærere.epub</loc>
+    <lastmod>2026-08-18T20:37:36.463Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kvant.roarstovner.no/Kvantitativ-metode-for-lærere.pdf</loc>
+    <lastmod>2026-08-18T20:37:49.598Z</lastmod>
   </url>
 </urlset>
