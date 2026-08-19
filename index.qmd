@@ -77,10 +77,15 @@ En spesiell takk til Anne Kristine Øgreid som tok på seg å være en slags red
 (Hvis noen ønsker å benytte boka i egen undervisning er det fritt frem, men ta gjerne kontakt via [ansattsiden min](https://www.oslomet.no/om/ansatt/robast/), for det er gøy å vite at boka blir brukt! Å gjøre endringer i boka er tillatt, siden boka er utgitt under lisensen CC-BY-SA. Det eneste kravet er at de tidligere versjonene av boka (inkludert denne) krediteres, og at den nye versjonen gjøres tilgjengelig med samme lisens. Bokas kildekode ligger på [github](https://github.com/roarstovner/kvant_for_laerere).)
 
 
-**Sitering**: Roar B. Stovner. (2026). *Kvantitativ metode for lærere* (2026-utgaven). <https://kvant.roarstovner.no>, <https://doi.org/10.5281/zenodo.17068063>.
+**Sitering**: Roar B. Stovner. (2026). *Kvantitativ metode for lærere*. <https://kvant.roarstovner.no>, <https://doi.org/10.5281/zenodo.17068063>.
 
-DOI-en over er bokas hoved-DOI, og den peker alltid til nyeste utgave. Hver utgave har i tillegg sin egen DOI, som du bør bruke hvis du siterer et konkret sidetall eller en formulering: 2026-utgaven har <https://doi.org/10.5281/zenodo.22002981> og 2025-utgaven <https://doi.org/10.5281/zenodo.17068064>.
+DOI-en over er bokas hoved-DOI, og den peker alltid til nyeste utgave. Hver utgave har i tillegg sin egen DOI. Siterer du et konkret sidetall eller en formulering, bør du bruke DOI-en til utgaven du faktisk leser:
+
+* Roar B. Stovner. (2026). *Kvantitativ metode for lærere* (2026-utgaven). <https://doi.org/10.5281/zenodo.22002981>
+* Roar B. Stovner. (2025). *Kvantitativ metode for lærere* (2025-utgaven). <https://doi.org/10.5281/zenodo.17068064>
 
 :::{.content-visible when-format="html"}
 **Tidligere utgaver**: Underviser du fra en eldre utgave, finner du den arkivert med sin egen DOI under [utgivelser på GitHub](https://github.com/roarstovner/kvant_for_laerere/releases). Hver utgave ligger der som PDF og EPUB, uendret.
+
+**Personvern**: Nettstedet teller sidevisninger, slik at jeg vet om boka blir lest. Tellingen skjer med [GoatCounter](https://www.goatcounter.com/), som ikke lagrer informasjonskapsler eller andre data på maskinen din. Det lagres bare aggregerte tall, og ingen enkeltpersoner kan identifiseres.
 :::

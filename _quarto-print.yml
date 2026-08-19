@@ -1,3 +1,6 @@
+# Profil for en trykkeklar PDF. Formatet må være typst, ikke pdf: LaTeX-veien
+# ble forlatt sammen med preamblene, og en pdf-render ville gått på Quartos
+# standardmal i stedet for orange-book.
 format:
-  pdf:
+  typst:
     subtitle: Vitenskapsteori og metode, MGVM4100, OsloMet
