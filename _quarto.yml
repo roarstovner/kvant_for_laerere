@@ -39,6 +39,8 @@ book:
     style: floating
     collapse-level: 2
     pinned: false
+  # {{< meta date >}} løses ved render, men vises som «?meta:date» i en
+  # quarto preview som ble startet før denne fila ble endret. Start den på nytt.
   page-footer:
     left: |
       &copy; Roar Bakken Stovner, {{< meta date >}}. DOI: <a href="https://doi.org/10.5281/zenodo.17068063">10.5281/zenodo.17068063</a>
@@ -88,7 +90,8 @@ format:
     collapse: true
     html-math-method: katex
     css: styles.css
-    # Besøksteller (GoatCounter).
+    # Besøksteller (GoatCounter). Cookiefri, derfor uten samtykkebanner.
+    # Bare under html: en teller hører ikke hjemme i EPUB-fila leseren eier.
     include-in-header:
       text: |
         <script data-goatcounter="https://kvant.goatcounter.com/count"

@@ -7,6 +7,22 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [Unreleased]
 
 ### Added
+
+### Fixed
+
+### Changed
+
+## [v2026] - 2026-08-19
+
+2026-utgaven, undervist på MGVM4100 høsten 2026.
+[Release](https://github.com/roarstovner/kvant_for_laerere/releases/tag/v2026),
+DOI [10.5281/zenodo.22002981](https://doi.org/10.5281/zenodo.22002981).
+
+Hovedgrepet i denne utgaven: alt om statistisk hypotesetesting er tatt ut, og
+erstattet med kapitler om måling og forskningsdesign og en inferensiell del som
+holder seg til konfidensintervall.
+
+### Added
 - Add lang: nb for Norwegian quotation marks (#13)
 - Restructure chapters 4-5 from numbers/diagrams to univariate/associations (#3)
 - Reorganize sec-descriptive into 'Describing a Single Variable' with integrated diagrams (#5)

@@ -8,7 +8,7 @@ Dette er en lærebok i kvantitativ metode for lærere. Den er laget for å
 - vise analyser med en enkel og åpent tilgjengelig statistikk-programvare, jamovi
 - fremheve forskningsdesign og deskriptiv analyse, siden forutsetningene for inferensiell statistikk så sjeldent er oppfylt i lærerstudenters masteroppgaver og utdanningsforskning forøvrig
 
-Boka ble brukt ett semester i 2025-utgaven. Med interne midler har vi (Roar Bakken Stovner, forfatter, og Anne Kristine Øgreid, redaktør) skrevet den om for 2026 slik at den blir bedre tilpasset lærerstudenter. Alt om statistisk hypotesetesting er tatt ut og erstattet med måling, forskningsdesign og en inferensiell del som holder seg til konfidensintervall. Omskrivingen skjer på grenen `revisjon_2026`.
+Boka ble brukt ett semester i 2025-utgaven. Med interne midler har vi (Roar Bakken Stovner, forfatter, og Anne Kristine Øgreid, redaktør) skrevet den om for 2026 slik at den blir bedre tilpasset lærerstudenter. Alt om statistisk hypotesetesting er tatt ut og erstattet med måling, forskningsdesign og en inferensiell del som holder seg til konfidensintervall. 2026-utgaven ble utgitt 19. august 2026; se [release.md](release.md) for utgivelsesrutinen. Arbeidet foregår på `openbook`.
 
 - Opprinnelig versjon: Navarro DJ and Foxcroft DR (2022). learning statistics with jamovi: a tutorial for psychology students and other beginners. (Version 0.75). [Available from url: https://learnstatswithjamovi.com/]
 - Nåværende versjon er en oversettelse til norsk der veldig mye er omskrevet til å gjelde skole og undervisning.
@@ -18,23 +18,7 @@ Boka ble brukt ett semester i 2025-utgaven. Med interne midler har vi (Roar Bakk
 
 # Struktur
 
-Kapittelrekkefølgen er definert i `_quarto-all_chapters.yml`, ikke i `_quarto.yml` (boka bruker Quarto-profiler; se også `_quarto-chapter.yml` og `_quarto-print.yml`). Slik ser den ut:
-
-| Fil | Tittel |
-| --- | --- |
-| `index.qmd` | Forord |
-| `sec-why-statistics.qmd` | Hvorfor lære kvantitative metoder? |
-| *Del: Studiedesign* | |
-| `sec-measurement.qmd` | Måling i utdanningsforskning |
-| `sec-design.qmd` | Forskningsdesign i kvantitativ metode |
-| *Del: Deskriptiv statistikk* | |
-| `sec-jamovi.qmd` | Komme i gang med jamovi (unummerert) |
-| `sec-descriptive.qmd` | Å beskrive én variabel |
-| `sec-associations.qmd` | Å beskrive sammenhenger mellom variabler |
-| *Del: Inferensiell statistikk* | |
-| `sec-inferential.qmd` | Usikkerhet og konfidensintervall |
-| `sec-epilogue.qmd` | Etterord (unummerert) |
-| `sec-references.qmd` | Referanseliste (unummerert) |
+Kapittelrekkefølgen er definert i `_quarto-all_chapters.yml`, ikke i `_quarto.yml` (boka bruker Quarto-profiler; se også `_quarto-chapter.yml` og `_quarto-print.yml`).
 
 Den planlagte fjerde delen om måleinstrumenter som er særlig relevante for norsk
 skole (ILSA-er, nasjonale prøver, kartleggingsprøver, summative vurderinger) er
@@ -90,12 +74,10 @@ Boka bruker norsk desimalkomma via `options(OutDec = ",")` (satt i `chapter_head
 
 # Output-format: typst og HTML
 
-`chapter_header.R` har tilpasninger som avhenger av output-formatet. Vær obs på dem, og ikke fjern dem uten å teste begge byggene:
-
-- **Tabeller (tinytable) under typst:** tinytable velger output-writer etter format, og `OutDec = ","` bryter typst-writeren. Lengde-literaler (strektykkelser, skriftstørrelser) skrives da som f.eks. `0,05em`, som typst ikke kompilerer. `chapter_header.R` monkey-patcher derfor `typst_hlines`, `typst_vlines` og `style_string_typst` til å tvinge punktum i disse literalene, mens celleinnholdet beholder komma. HTML- og LaTeX-output går ikke gjennom disse funksjonene og påvirkes ikke.
-- **Sidesats i typst:** PDF-en bruker Quartos innebygde `orange-book`-mal. Den kaller `set page(margin: ...)` og `set text(size: ...)` inne i `book()`, og overstyrer dermed `margin:` og `fontsize:` fra `_quarto.yml`. Derfor ligger en lokal kopi av template-partialen i `typst-show.typ`, som sender verdiene inn som argumenter til `book()` (også `part-font-size`), setter `par(leading:)` og erstatter kolumnetittelen. Kolumnetittelen er skrevet om fordi orange-book leser heading-telleren direkte, slik at unummererte kapitler (Etterord, Referanseliste, jamovi-kapittelet) arver nummeret til forrige kapittel. Ved oppgradering av Quarto: sammenlikn `typst-show.typ` med originalen i `share/extension-subtrees/orange-book/`.
-- **Slutten på siste del:** delsidene i PDF-en har en mini-innholdsfortegnelse over kapitlene i delen, og orange-book har ikke noe begrep om hvor en del slutter. Etterord og referanseliste ville derfor havnet på delsiden til del III. Derfor står `#part-state.update(x => none)` i en `{=typst}`-blokk **sist i `sec-inferential.qmd`**. Blokka må ligge sist i det *forrige* kapittelet: Quarto flytter kapitteloverskriften øverst i sin egen fil, så en blokk øverst i `sec-epilogue.qmd` ville havnet etter overskriften og ikke virket.
-- **tikz under HTML:** `magick`, `pdftools`, `showtext` og `marquee` lastes eksplisitt fordi tikz-motoren trenger dem for HTML-output, og for at `renv::snapshot()` skal fange dem i lockfilen.
+Byggets ikke-opplagte tilpasninger (tinytable under typst, sidesats, slutten på
+siste del, tikz under HTML) er kommentert der de står: `chapter_header.R`,
+`typst-show.typ` og sist i `sec-inferential.qmd`. Ikke fjern dem uten å teste
+både PDF- og HTML-bygget.
 
 # Innspill fra redaktør (kommentarer og sporendringer)
 
