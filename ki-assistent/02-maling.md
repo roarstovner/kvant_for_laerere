@@ -1,0 +1,451 @@
+# Kapittel 2. Måling i utdanningsforskning
+
+Fra læreboka *Kvantitativ metode for lærere* av Roar Bakken Stovner (2026-utgaven).
+Nettversjon av dette kapittelet: https://kvant.roarstovner.no/sec-measurement.html
+Hele boka: https://kvant.roarstovner.no/
+
+---
+
+> *When you can measure what you are speaking about, and express it in numbers, you know something about it, when you cannot express it in numbers, your knowledge is of a meager and unsatisfactory kind; it may be the beginning of knowledge, but you have scarcely, in your thoughts advanced to the stage of science.*\
+> – Lord Kelvin [^1]
+
+Sitatet fra Lord Kelvin, en av attenhundretallets store vitenskapsmenn, viser en stor tro på verdien av å måle ting. Hvis man ikke kan måle noe, vet man ikke noe vitenskapelig om det. Nuvel, i samfunnsvitenskapene, og dermed i utdanningsforskning, gjelder nok ikke dette. Kanskje gjelder heller det motsatte, at hvis noe er målt, så bør vi være ekstra skeptiske til det:
+
+> *We’re seeing that the published literature–you know, in some of our best journals–features measures that have little or no validity evidence. Measurement, schmeasurement. Applied researchers are, as a norm, not engaged in this process of construct validation.*\
+> – Professor Jessica Kay Flake[^2]
+
+I dette kapittelet skal vi lære hvorfor vi bør være skeptiske til kvantitative målinger i utdanningsforskning og hva som skal til for å gjøre gode målinger. Men først må vi lære de vanligste begrepene man benytter for å beskrive målinger. Dette kapittelet bygger i stor grad på Campbell & Stanley ([1963](https://kvant.roarstovner.no/sec-references.html#ref-Campbell1963)) og på Stevens ([1946](https://kvant.roarstovner.no/sec-references.html#ref-stevens1946)) for diskusjonen om måleskalaer.
+
+## 2.1 Begreper om målinger
+
+*Lenke: https://kvant.roarstovner.no/sec-measurement.html#sec-measurement-concepts*
+
+Veien fra idé til data går i tre steg. Vi starter med et *teoretisk konstrukt*, altså den teoretiske beskrivelsen av det vi ønsker å undersøke. Så lager vi en *målemetode*, som er en presis oppskrift på hvordan konstruktet skal måles. Til slutt gjennomfører vi målingene, og resultatet er *variabler* med *verdier* i et datasett. Vi tar de tre stegene i tur.
+
+### 2.1.1 Teoretiske konstrukter og operasjonalisering
+
+*Lenke: https://kvant.roarstovner.no/sec-measurement.html#sec-operationalization*
+
+Fenomenene vi ønsker å måle i utdanningsforskning, slik som leseferdighet, motivasjon, læring og undervisning, er beskrevet teoretisk. Den teoretiske beskrivelsen kalles et *teoretisk konstrukt*, ofte omtalt som bare *konstruktet*.
+
+La oss bruke leseferdighet som eksempel. Hva er egentlig leseferdighet? Leseforskere er ikke helt enige, men de fleste beskrivelser inneholder minst disse delene:
+
+- *avkoding*, altså å omsette bokstavene på arket til ord, raskt og uanstrengt
+- *leseforståelse*, altså å skape mening av det som står i teksten
+- *refleksjon*, altså å vurdere teksten, hva forfatteren vil med den og hva den er verdt
+
+Noen leseforskere regner også *leselyst* eller *leseengasjement* som en del av leseferdigheten, mens andre holder det utenfor og heller ser på det som noe som påvirker leseferdigheten. Man kan altså helt fint være uenige om hva teoretiske konstrukter er.
+
+Et konstrukt kan man ikke måle direkte. Man må først bestemme seg for en helt presis oppskrift på hvordan målingen skal foregå. Denne oppskriften kalles en *målemetode*, og arbeidet med å komme fra det vage konstruktet til den presise målemetoden kalles å **operasjonalisere** konstruktet. Selve målemetoden omtales som en *operasjonalisering* av konstruktet. Begrepene er oppsummert i [Figur 2.1](https://kvant.roarstovner.no/sec-measurement.html#fig-operasjonalisering).
+
+Bildebeskrivelse: Tre bokser med piler mellom. Første boks er 'Teoretisk konstrukt: leseferdighet'. En pil merket 'operasjonalisering' peker til andre boks, 'Målemetode: ordkjedetest med 90 ordkjeder på fire minutter'. En pil merket 'datainnsamling' peker til tredje boks, 'Variabel: antall riktige ordkjeder, med verdiene 48, 63, 21 og så videre'.
+
+Figur 2.1. Fra teori til data. Konstruktet *leseferdighet* operasjonaliseres til en målemetode, og datainnsamlingen gir en variabel med verdier.
+
+Kort fortalt handler operasjonalisering om å omforme et konstrukt, som ofte er ganske vagt, til en helt presist definert måling. Operasjonalisering omfatter blant annet:
+
+- **å avgrense hva som skal måles.** Skal vi måle hele leseferdigheten, eller bare avkodingen? Skal leselyst regnes med? Svaret avhenger av hva vi trenger målingen til. En logoped som utreder mistanke om dysleksi er interessert i avkodingen, mens en norsklærer som planlegger undervisning i sakprosa er mer interessert i forståelse og refleksjon.
+- **å bestemme målemetode.** Avkoding måles ofte med en *ordkjedetest*, der eleven setter strek mellom ordene i kjeder som «busshundmelktyv». Leseforståelse måles gjerne ved at eleven leser en tekst og svarer på spørsmål til den, slik som i nasjonale prøver i lesing. Leselyst måles kanskje ved å svare på spørsmål i et spørreskjema?
+- **å definere hvilke verdier målingene kan ha.** Skal ordkjedetesten telle antall riktige, eller angi kategoriene *trenger ekstra oppfølging* eller *trenger ikke ekstra oppfølging*? Skal leselyst måles med tall (1 til 7 eller 1 til 4) eller tekst (fra *ikke interessant* til *veldig interessant*)? Skal elevene kunne skrive hva de vil? Hvordan skal vi i så fall lage verdier av svarene etterpå?
+
+Legg merke til at det samme konstruktet kan operasjonaliseres på mange måter, og at operasjonaliseringene ikke er likeverdige. En ordkjedetest og en nasjonal prøve i lesing måler begge noe vi kaller «leseferdighet», men de gir forskjellige tall og rangerer ikke elevene helt likt. En elev som avkoder langsomt, men forstår godt det hun leser, kommer dårlig ut på ordkjedetesten og godt ut på den nasjonale prøven. Når du leser en forskningsartikkel er det derfor ikke nok å vite at forskerne har målt «leseferdighet»; du må vite *hvordan* de har målt den.
+
+Operasjonalisering er komplisert, og det finnes ikke én riktig måte å gjøre det på. Hvordan du velger å operasjonalisere et konstrukt til en formell måling, avhenger av hva du trenger målingen til. Ofte vil du oppdage at forskerne som jobber innen ditt område har veletablerte praksiser for hvordan man skal måle konstruktet, men andre ganger må du utvikle en operasjonalisering av konstruktet som passer til din forskning.
+
+### 2.1.2 Variabler og verdier
+
+*Lenke: https://kvant.roarstovner.no/sec-measurement.html#sec-variables-values*
+
+Når konstruktet er operasjonalisert, kan man gjøre målingene. Kvantitative analyser baserer seg på at man har gjort den samme målingen av mange forskjellige fenomener. I utdanningsforskning er fenomenene gjerne skoler, lærere, klasser, elever, rektorer, læreplaner, lærebøker, elevtekster, undervisningstimer eller liknende. Måling er å tildele disse fenomenene tall, merkelapper eller andre veldefinerte beskrivelser. Alle følgende eksempler vil regnes som målinger:
+
+- Petters **antall riktige ordkjeder** er *48*.
+- Petters **leselyst** er *3 av 4*.
+- Petters **alder** er *11* år.
+- Petters **selvidentifiserte kjønn** er *gutt*.
+- Timens **arbeidsro** var *middels*.
+- Rektors **holdning til lærernes autonomi** var *lærerautonomi er svært viktig*.
+
+I denne listen viser den fete skriften det fenomenet som måles, som kalles **variabelen**, og den kursiverte skriften viser resultatet av målingen, som kalles **verdien**. En variabel representerer altså fenomenet som måles, mens verdien er det variabelen får i et bestemt tilfelle. Skillet mellom variabelen og de ulike verdiene variabelen kan anta, er sentralt:
+
+- **Antall riktige ordkjeder** kan ha verdiene *0, 1, 2, 3* og så videre opp til *90*, siden testen har 90 ordkjeder. Ingen elev kan få 91 riktige, og ingen kan få 48,5.
+- **Leselyst**, målt med spørsmålet «jeg leser bare hvis jeg må», kan ha verdiene *helt enig*, *litt enig*, *litt uenig* og *helt uenig*. Merk at eleven med *høyest* leselyst her svarer *helt uenig*.
+- **Alder** kan ha verdiene *0, 1, 2, 3* og så videre. Den øvre grensen er litt uklar, men i praksis kan vi si at den høyeste mulige alderen er *150*, siden ingen mennesker noensinne har levd så lenge.
+- **Selvidentifisert kjønn** er for de fleste elever enten *gutt* eller *jente*, men eleven kan også velge å identifisere seg med *ingen av delene*, eller eksplisitt kalle seg selv *transperson*.
+
+Som eksemplene over viser, virker verdiene for noen variabler ganske opplagte, slik som for antall riktige ordkjeder, men for andre variabler er det vanskeligere å bestemme verdiene. Måten du spesifiserer de tillatte måleverdiene på, er med andre ord en viktig del av å planlegge en studie.
+
+### 2.1.3 Forskjellige målemetoder
+
+*Lenke: https://kvant.roarstovner.no/sec-measurement.html#sec-methods-overview*
+
+Å bestemme målemetode er kanskje det viktigste valget i en operasjonalisering, og utvalget er større enn man skulle tro. Disse seks er de vanligste i utdanningsforskning:
+
+- *prøver og tester*, der man gir folk oppgaver som skal løses
+- *registerdata*, som fødselsdato og karakterer, hentet fra offisielle registre
+- *selvrapportering*, der folk oppgir verdien selv, som regel i et spørreskjema
+- *tredjepartsrapportering*, der noen andre oppgir den, for eksempel læreren eller foreldrene
+- *observasjon*, der forskeren registrerer direkte det som skjer
+- *fysiologiske mål*, også kalt biomarkører, for eksempel pulsmåling eller registrering av øyebevegelser
+
+Hvilken av dem som passer, avhenger først og fremst av konstruktet du skal måle. Vi skal diskutere dem nøyere i [Seksjon 2.4](https://kvant.roarstovner.no/sec-measurement.html#sec-measurement-methods), for vi må først få på plass begrepene som skal til for å vurdere en målemetode.
+
+## 2.2 Målenivåer
+
+*Lenke: https://kvant.roarstovner.no/sec-measurement.html#sec-Scales-of-measurement*
+
+Resultatet av rekke målinger av samme fenomen kalles altså en variabel. Vi skal lære om fire ulike **målenivåer** som variabler kan ha. Disse målenivåene, eller **måleskalaene**, beskriver hvilke typer verdier en variabel kan anta, og hvilke statistiske operasjoner som er gyldige for den.
+
+### 2.2.1 Nominell variabel
+
+*Lenke: https://kvant.roarstovner.no/sec-measurement.html#nominell-variabel*
+
+En **nominell variabel** (også kjent som en **kategorisk variabel**) er en variabel der de mulige verdiene er navn på kategorier. Ordet *nominell* kommer av *nomen* som er latin for *navn* – en nominell variabel har altså verdier som er navnet på kategorier. Et eksempel er øyenfarge; de mulige verdiene er «grønn», «blå», «grå», «brun», og så videre. Kjønn er en nominell variabel som ofte har bare to mulige verdier, «mann» og «kvinne», men som kan ha flere. I utdanningsforskning er ofte variabelen *skole* av denne typen, der de mulige verdiene er navn på skoler («Dalsiden Skole», «Vangenhaug Skole», osv.). For denne typen variabler gir det ikke mening å si at en av dem er «større» eller «bedre» enn noen annen, man kan altså ikke sortere dem i noen naturlig rekkefølge. Og det gir absolutt ikke mening å snakke om gjennomsnittet av målingene – hva skulle «elevene i studien sin gjennomsnittlige øyenfarge» ha vært? For å regne gjennomsnitt måtte man summert de 10 verdiene og delt på 10, men hva blir blå + grønn + blå + brun? Kort sagt, verdiene til nominelle variabler er kun navnet på en kategori. Verdiene har ikke noen naturlig rekkefølge, de kan ikke adderes, multipliseres eller regnes med på noen måte.
+
+Men man kan telle antallet innenfor hver kategori. Anta at jeg forsker på hva som kjennetegner lærernes pendling til jobb.[^3] En variabel jeg burde målt er hva slags transportmiddel lærerne bruker for å komme seg på jobb. Denne «transporttype»-variabelen kan ha ganske mange mulige verdier, slik som «tog», «buss», «bil» og «sykkel». La oss anta at disse fire er de eneste mulighetene og forestill deg at jeg spør 100 lærere om hvordan de kom seg på jobb i dag, med dette resultatet ([Tabell 2.1](https://kvant.roarstovner.no/sec-measurement.html#tbl-tab2-1)).
+
+| Transportmiddel | Antall lærere |
+|-----------------|---------------|
+| (1) Tog | 12 |
+| (2) Buss | 30 |
+| (3) Bil | 48 |
+| (4) Sykkel | 10 |
+
+Tabell 2.1. Hvordan 100 lærere pendlet til jobb i dag
+
+Så, hva var den gjennomsnittlige transporttypen? Åpenbart er svaret her at det ikke finnes noen. Det er et tåpelig spørsmål å stille. Du kan si at å reise med bil er den mest populære metoden, og at å reise med tog er den minst populære metoden, men det er stort sett alt. Legg også merke til at rekkefølgen jeg viser alternativene i, ikke er veldig interessant. Jeg kunne ha valgt å vise dataene som i [Tabell 2.2](https://kvant.roarstovner.no/sec-measurement.html#tbl-tab2-2).
+
+| Transportmiddel | Antall lærere |
+|-----------------|---------------|
+| (3) Bil | 48 |
+| (1) Tog | 12 |
+| (4) Sykkel | 10 |
+| (2) Buss | 30 |
+
+Tabell 2.2. Hvordan 100 lærere pendlet til jobb i dag, en annen visning
+
+… og ingenting endrer seg egentlig.
+
+### 2.2.2 Ordinal variabel
+
+*Lenke: https://kvant.roarstovner.no/sec-measurement.html#ordinal-variabel*
+
+En **ordinal variabel** er en nominell variabel der de ulike kategoriene har en meningsfull rekkefølge. Ordet *ordinal* kommer av samme ord som «orden» eller «ordning». Her er et typisk eksempel: Tenk deg at jeg er interessert i elevers holdninger til klimaendringer. Jeg ber noen elever om å velge det utsagnet som best samsvarer med deres holdning ut fra disse fire utsagnene:
+
+1. Temperaturene stiger på grunn av menneskelig aktivitet.
+2. Temperaturene stiger, men vi vet ikke hvorfor.
+3. Temperaturene stiger, men ikke på grunn av mennesker.
+4. Temperaturene stiger ikke.
+
+Legg merke til at disse fire utsagnene faktisk har en naturlig rekkefølge i hvordan de måler enighet sett i sammenheng med nåværende vitenskapelig konsensus. Utsagn 1 ligger tett opp til den nåværende konsensus, utsagn 2 ligger noe mindre tett opp til den, utsagn 3 avviker i betydelig grad, og utsagn 4 står i klar motsetning til den etablerte konsensus. Derfor kan jeg ordne elementene som 1 \> 2 \> 3 \> 4, som viser at «holdning til klimaendring», operasjonalisert på denne måten, er en ordinal variabel.
+
+La oss anta at jeg stilte 100 elever disse spørsmålene og fikk svarene vist i [Tabell 2.3](https://kvant.roarstovner.no/sec-measurement.html#tbl-tab2-3).
+
+| Respons | Antall |
+|---------------------------------------------------------------|--------|
+| (1) Temperaturene stiger på grunn av menneskelig aktivitet. | 51 |
+| (2) Temperaturene stiger, men vi vet ikke hvorfor. | 20 |
+| (3) Temperaturene stiger, men ikke på grunn av mennesker. | 10 |
+| (4) Temperaturene stiger ikke. | 19 |
+
+Tabell 2.3. Holdninger til klimaendringer
+
+Det rimelig å gruppere, for eksempel, (1), (2) og (3) sammen, og si at 81 av 100 personer var i det minste *delvis enig* med vitenskapen. Og det er også ganske rimelig å gruppere (2), (3) og (4) sammen og si at 49 av 100 personer registrerte i det minste *noe uenighet*. Men det ville være fullstendig merkelig å gruppere (1), (2) og (4) sammen og si at 90 av 100 personer sa… hva da? Det er ingenting fornuftig som tillater deg å gruppere disse svarene sammen.
+
+Det er fristende å regne med svaralternativene (1) til (4) som om de var tall. For eksempel er det fristende å si at gjennomsnittet av svar (2), (3) og (4) er (2+3+4) / (3) = 3. Det ville vært galt, siden det regnestykket krever at det er like stor forskjell mellom svaralternativ (2) og (3) som mellom (3) og (4). Dette er ikke garantert, og man kan argumentere for at konstruktet «enighet med vitenskapelig konsensus» er mer som i [Figur 2.2](https://kvant.roarstovner.no/sec-measurement.html#fig-ordinal): De tre første utsagnene godtar alle at temperaturene stiger, mens det fjerde avviser hele premisset, trass i at termometre verden over måler høyere og høyere gjennomsnittstemperatur. Da kan forskjellen i *holdning til klimaendringer* være mye større fra (3) til (4) enn mellom de tre første.
+
+Bildebeskrivelse: Den ordinale variabelen "enighet med vitenskapelig konsensus" med de fire svaralternativene under hverandre og buede piler fra hvert alternativ til det neste. Avstanden mellom (1), (2) og (3) er liten, mens avstanden ned til (4) er mye større.
+
+Figur 2.2. I en ordinal variabel er ikke avstanden mellom kategoriene nødvendigvis like stor. Her markerer pilene avstanden mellom kategoriene, og avstanden mellom kategori (3) og (4) er større enn de andre.
+
+Når en ordinal variabel markeres med tall, som er helt vanlig, skal man altså ikke tolke tallstørrelsene bokstavelig og anta at man kan regne med dem – tallene er der kun for å markere kategorienes rekkefølge.
+
+Et vanlig eksempel på en ordinal variabel i utdanningsforskning er «høyeste fullførte utdanningssnivå». Du *kan* si at en person som kun har fullført ungdomsskolen har mindre utdanning enn en person som har fullført videregående, og så videre. Med ordinale variabler vet man ikke *hvor mye* større en verdi er i forhold til en annen. For eksempel gir det ikke mening å spørre om det er større forskjell mellom «ungdomsskole» og «videregående» enn mellom «videregående» og «bachelor». Er utdanningsnivået på en bachelor mye høyere eller litt høyere enn fullført videregående? Hvis variabelen er ordinal kan man ikke besvare det spørsmålet.
+
+### 2.2.3 Intervallvariabel
+
+*Lenke: https://kvant.roarstovner.no/sec-measurement.html#intervallvariabel*
+
+I motsetning til variabler på nominelt og ordinalt målenivå er **intervallvariabler** og **forholdstallsvariabler** variabler der tallverdien er meningsfull. For en variabel som er målt på intervallskala, er *forskjellene* mellom tallverdiene tolkbare, men variabelen har ikke en «naturlig» nullverdi. Et godt eksempel på en variabel målt på intervallskala, er temperaturmåling i grader celsius. Hvis det for eksempel var 15° i går og 18° i dag, så er differansen mellom dem, 3°, meningsfull og måler en forskjell i temperatur. Dessuten er disse tre gradene i forskjell *nøyaktig den samme forskjellen* som mellom 7° og 10°. Kort sagt er regneartene addisjon og subtraksjon meningsfulle for variabler på intervallskala. Merk at dette *ikke* var tilfelle for ordinale variabler.
+
+Men legg merke til at 0° ikke betyr «ingen temperatur i det hele tatt». Det betyr faktisk «temperaturen der vann fryser». Nullpunktet er valgt av praktiske grunner og dermed ganske vilkårlig. Mangelen på et naturlig nullpunkt gjør det meningsløst å multiplisere og dividere temperaturer. Det er feil å si at 20° er dobbelt så varmt som 10°, akkurat som det er rart og meningsløst å hevde at 20° er negativ to ganger så varmt som -10°.
+
+Intervallvariabler er vanlige i utdanningsforskning. Anta at jeg er interessert i å undersøke bruken av nettbrett over tid. Da er det naturlig å sammenlikne bruken av nettbrett i forskjellige år, og en variabel i datasettet vil være årstall. Dette er en variabel på intervallskala. En elev som begynte på skolen i 2018, begynte 5 år før en student som begynte i 2023; differanser gir altså mening. Det ville derimot vært helt meningsløst å dele 2023 på 2018 og si at den andre eleven begynte 0,24 % senere enn den første eleven; ganging og deling gir altså ikke mening. Derfor er årstall på en intervallskala.
+
+Tid på døgnet er en annen variabel på intervallskala. Det gir mening å sammenlikne klokka 14 og klokka 7 ved å si «sju timer senere», men det gir ikke mening å sammenlikne dem ved å si «dobbelt så mye tid på døgnet.»
+
+### 2.2.4 Forholdstallsvariabel
+
+*Lenke: https://kvant.roarstovner.no/sec-measurement.html#forholdstallsvariabel*
+
+Den fjerde og siste typen variabel er variabler på *forholdstallsnivå*. Dette er variabler med et nullpunkt der det er greit å multiplisere og dividere. Et godt eksempel på en variabel på forholdstallsnivå er tid. Når man måler elevers ferdigheter, er det vanlig å registrere hvor lang tid elevene bruker på å løse en oppgave, fordi det er en indikator på hvor vanskelig oppgaven er. Anta at Roar bruker 2,3 sekunder på å svare på et spørsmål, mens Bård bruker 3,1 sekunder. Som med en intervallskalavariabel er både addisjon og subtraksjon meningsfulle her. Bård brukte virkelig 3{,}1 - 2{,}3 = 0{,}8 sekunder lenger tid enn Roar. Men legg merke til at multiplikasjon og divisjon også gir mening her: Bård brukte 3{,}1/2{,}3 = 1{,}35 ganger så lang tid som Roar på å svare på spørsmålet. Og grunnen til at du kan gjøre dette for en forholdstallsvariabel er at «null sekunder» virkelig betyr «ingen tid i det hele tatt».
+
+Her er noen flere variabler på forholdstallsnivå:
+
+- inntekt (0 kr betyr virkelig ingen inntekt)
+- antall barn (0 barn betyr virkelig ingen barn)
+- antall år avlagt utdanning (0 år betyr ingen utdanning)
+- antall riktige på matematikkprøven (0 riktig betyr ingen riktig)
+
+Det siste eksempelet krever en analyse. Ofte måles «kompetanse», «ferdighet» eller liknende ut fra antall riktige svar på en prøve eller annen ferdighetstest. La oss ta matematikkompetanse som et eksempel. Hvis Bård besvarer 20 spørsmål riktig på en matematikkprøve og Roar besvarer 10 riktig, kan man si at Bård fikk dobbelt så mange riktige. Man kan også si at han fikk 10 flere riktig. Addisjon, subtraksjon, multiplikasjon og divisjon gir mening, altså er det en forholdstallsvariabel. Men er det riktig å si at Bård har dobbelt så høy *matematikkompetanse* som Roar? Det kommer kanskje an på prøven og hvilke spørsmål man svarte riktig på? Hva hvis Roar svarte riktig på 10 vanskelige spørsmål mens Bård raste gjennom de 20 enkleste spørsmålene på prøven uten å få til noe mer? Eller hva hvis Roar ikke hadde besvart noen spørsmål riktig, hadde det vært riktig å si at han har null matematikkompetanse? Dette viser at hva som er riktig målenivå avhenger av hvordan konstruktet er operasjonalisert. Hvis forskeren operasjonaliserer konstruktet matematikkompetanse som *antall riktige svar på prøven*, er variabelen på forholdstallsnivå, men hvis forskeren operasjonaliserer matematikkompetanse som *en lærers vurdering av elevens kompetanse på en skala fra 1 til 5*, er variabelen på ordinalnivå.
+
+### 2.2.5 Kontinuerlige og diskrete variabler
+
+*Lenke: https://kvant.roarstovner.no/sec-measurement.html#kontinuerlige-og-diskrete-variabler*
+
+Man kan også karakterisere variabler ut fra om de er kontinuerlige eller diskrete variabler ([Tabell 2.4](https://kvant.roarstovner.no/sec-measurement.html#tbl-tab2-4)). Kort sagt handler det om dette:
+
+- En **kontinuerlig variabel** er en variabel hvor det for alle par av verdier du kan tenke deg alltid er mulig å ha en annen verdi imellom.
+- En **diskret variabel** er en variabel som ikke er kontinuerlig, altså vil det for en diskret variabel være to verdier uten noen annen verdi imellom.
+
+Disse definisjonene virker sannsynligvis litt abstrakte, men de er ganske enkle når du ser noen eksempler. For eksempel er svartid kontinuerlig. Hvis Roar bruker 3,1 sekunder og Bård bruker 2,3 sekunder på å svare på et spørsmål, vil Louises responstid ligge imellom hvis hun bruker 3,0 sekunder. Og selvfølgelig vil det også være mulig for Ingrid å bruke 3,031 sekunder på å svare, noe som betyr at hennes svartid vil ligge mellom Louises og Roars. Fordi vi i prinsippet alltid kan finne en ny verdi for svartiden mellom to andre, er svartid en kontinuerlig variabel.
+
+| Målenivå | kontinuerlig | diskret |
+|--------------|--------------|---------|
+| nominal | | x |
+| ordinal | | x |
+| intervall | x | x |
+| forholdstall | x | x |
+
+Tabell 2.4. Forholdet mellom målenivåene og skillet mellom diskret/kontinuerlig. Celler med en x tilsvarer en kombinasjon som er mulig
+
+Diskrete variabler er det motsatte. For eksempel er nominelle variabler alltid diskrete. Det finnes ikke en transporttype som faller «mellom» tog og fly, i hvert fall ikke på den samme måte som 2,65 faller mellom 2 og 3. Derfor er transporttype en diskret variabel. På samme måte er ordinale variabler alltid diskrete. Har en skala svaralternativene «Helt enig», «Ganske enig» og «Hverken enig eller uenig», finnes det ikke noe svaralternativ mellom «Helt enig» og «Ganske enig» på den skalaen. Man kan så klart lage en ny skala med flere alternativer, for eksempel ved å føye til «Litt enig», men da har man en ny skala som også er diskret. Intervallskala- og forholdstallskala-variabler kan gå begge veier. Som vi så ovenfor, er forholdstallsvariabelen *svartid* kontinuerlig. Intervallnivåvariabelen *temperatur i grader celsius* er også kontinuerlig. Imidlertid er intervallnivåvariabelen *året du gikk i første klasse* diskret. Det er ikke noe år mellom 2002 og 2003. Forholdstallsvariabelen *antall spørsmål du får riktig på en flervalgsprøve* er også diskret. Siden et flervalgsspørsmål ikke kan være «delvis korrekt», er det ingenting mellom 5 av 10 riktige og 6 av 10 riktige. [Tabell 2.4](https://kvant.roarstovner.no/sec-measurement.html#tbl-tab2-4) oppsummerer forholdet mellom målenivåene og skillet mellom diskret/kontinuerlig. Celler med en x er mulige.
+
+### 2.2.6 Noen komplikasjoner: Likert-skalaer
+
+*Lenke: https://kvant.roarstovner.no/sec-measurement.html#sec-measurement-likert*
+
+I den virkelige verden er det mange variabler som ikke passer så godt inn i disse målenivåene. Det er ikke problematisk, for målenivåene gir forskere likevel en mer presis måte å snakke om variablene på. Et vanlig svarformat på spørreundersøkelser som ikke helt passer inn i målenivåene, er **Likert-spørsmål**. Likert-spørsmål er det vanligste verktøyet i spørreundersøkelser. Du har selv fylt ut mange slike. Anta at du får følgende påstand med svaralternativer i en undersøkelse:
+
+> Jeg har vanskeligheter med å avslutte det jeg begynner på.
+>
+> 1. Sterkt uenig
+> 2. Uenig
+> 3. Verken enig eller uenig
+> 4. Enig
+> 5. Sterkt enig
+
+Disse svaralternativene er et eksempel på en 5-punkts Likert-skala, der folk blir bedt om å velge mellom én av flere (i dette tilfellet 5) tydelig ordnede muligheter, vanligvis med en verbal beskrivelse gitt i hvert tilfelle. Det er imidlertid ikke nødvendig at alle elementene er beskrevet. Dette er også et eksempel på en 5-punkts Likert-skala:
+
+> 1. Sterkt uenig
+> 2. 
+> 3. 
+> 4. 
+> 5. Sterkt enig
+
+Likert-skalaer er veldig praktiske, om enn noe begrensede, verktøy. Men hva slags målenivå er en Likert-skala på? De er åpenbart diskrete, siden du ikke kan gi et svar på 2,5. De er åpenbart ikke nominelle skalaer, siden elementene er ordnet; og de er heller ikke forholdstallsskalaer, siden det ikke er noe naturlig nullpunkt.
+
+Men er de ordinalskala eller intervallskala? Da må vi bestemme om forskjellene mellom nabosvaralternativene er like. Ett argument sier at vi egentlig ikke kan bevise at forskjellen mellom «sterkt enig» og «enig» er like stor som forskjellen mellom «enig» og «verken enig eller uenig». Det virker egentlig ganske åpenbart at de ikke er like i det hele tatt, så dette antyder at vi burde behandle Likert-skalaer som ordinale variabler. På den annen side ser det i praksis ut til at de fleste deltakerne tolker skalaen fra «sterkt uenig» til «sterkt enig» som «på en skala fra 1 til 5». For eksempel, hvis man spør folk om hvor fornøyde de er med inntekten sin på en 7-punkts Likert-skala og sammenlikner dette med deres faktiske inntekt, så ser man at hvert nivå på Likert-skalaen svarer til omtrent like mye penger. Som en konsekvens behandler mange forskere variabler med Likert-skalaer som en intervallskala.[^4] Det er ikke nødvendigvis en intervallskala, men i praksis er det nært nok til at vi tenker på det som en.
+
+### 2.2.7 Samlevariabler
+
+*Lenke: https://kvant.roarstovner.no/sec-measurement.html#samlevariabler*
+
+Mange teoretiske konstrukter er komplekse og fanges ikke opp av bare én måling. Hvis man skal måle kvaliteten på en lærers praksis i «vurdering for læring» må man kanskje måle både hvordan læreren vurderer kompetansen til elever ut fra prøvesvar i tillegg til hvordan læreren gir tilbakemeldinger på prøven. Hvis man utelater en av delene, har man ikke målt hele konstruktet «kvalitet på ‹vurdering for læring›-praksis», så derfor må man bruke flere enkeltvariabler for å måle ett og samme fenomen. Når man kombinerer flere ulike målinger for å lage én variabel kalles det en **samlevariabel**.
+
+I spørreundersøkelser måles gjerne konstruktene med samlevariabler, og et typisk eksempel er fra den store internasjonale undersøkelsen om elevers matematikk- og naturfags-kompetanse, TIMSS. For å måle elevenes indre motivasjon i matematikk fikk elevene ni Likert-påstander som de skulle ta stilling til på en firepunkts skala fra «Svært enig» til «Svært uenig». Her er påstandene[^5]:
+
+1. Jeg liker å lære matematikk
+2. Jeg skulle ønske at jeg ikke var nødt til å lære matematikk
+3. Matematikk er kjedelig
+4. Jeg lærer mye interessant i matematikk
+5. Jeg liker matematikk
+6. Jeg liker alt skolearbeid som har med tall å gjøre
+7. Jeg liker å løse oppgaver i matematikk
+8. Jeg gleder meg til timene i matematikk
+9. Matematikk er et av de fagene jeg liker best
+
+Svarene på disse ni spørsmålene slås sammen til en samlevariabel for indre motivasjon. Man kan tenke seg at man regner gjennomsnittet til de ni svarene og lar det være verdien på elevens indre motivasjon, men i virkeligheten er det en mer avansert utregning for å lage samlevariabelen. Merk at spørsmål 2 og 3 måler indre motivasjon motsatt av de andre spørsmålene, altså at «svært uenig» betyr at man har høy indre motivasjon. Før slike spørsmål analyseres, reverserer man ofte svaralternativene slik at man kan tolke svarene likt som i de andre spørsmålene.
+
+Hvilket målenivå har slike samlevariabler? Det kommer an på. De kan være nominelle, for eksempel hvis en spesialpedagog lar elever ta et testbatteri, altså en samling av flere tester, og ut fra svarene lager en samlevariabel *dysleksi* med to mulige verdier, «har dysleksi» og «har ikke dysleksi». Dette er en samlevariabel fordi den er regnet ut basert på mange andre. Men de aller vanligste samlevariablene er de som er laget på bakgrunn av mange Likert-spørsmål, slik som indre motivasjon ble målt i TIMSS-eksempelet over, og de behandles som om de er på en kontinuerlig intervallskala. Disse variablene er ikke helt kontinuerlige, for hvis man lager en samlevariabel ved å ta gjennomsnittet av ni spørsmål, som hver har et heltall som svar, så kan man ikke få alle mulige verdier. Siden en nidel er 0,11, kan man få svarene 3,11 og 3,22, men ikke 3,15. Likevel er det nært nok til at man benytter variablene som om de var kontinuerlige. Strengt tatt er de kanskje heller ikke på intervallnivå, av samme grunner som ble nevnt om Likert-skalaer over, men i praksis behandles de som om de var det.
+
+## 2.3 Å vurdere en målemetodes kvalitet: Reliabilitet og validitet
+
+*Lenke: https://kvant.roarstovner.no/sec-measurement.html#sec-reliability*
+
+Vi har nå lært begreper for å beskrive hvordan man operasjonaliserer et teoretisk konstrukt og dermed skaper en målemetode. Det vi alltid må vurdere er om målingene er av god kvalitet, eller om de rett og slett er dårlige. Forskere diskuterer målemetoders kvalitet med begrepene *reliabilitet* og *validitet*. Enkelt sagt forteller **reliabiliteten** til en målemetode hvor stabil målingen er, mens **validiteten** til en målemetode forteller hvor gyldig den er.
+
+### 2.3.1 En målings reliabilitet
+
+*Lenke: https://kvant.roarstovner.no/sec-measurement.html#en-målings-reliabilitet*
+
+Reliabilitet betyr altså hvor stabil målemetoden er. Baderomsvekta mi gir en svært reliabel måling av vekta mi, fordi den gir meg det samme svaret når jeg går av og på vekta flere ganger etter hverandre. Legg merke til at dette ikke betyr at baderomsvekta viser riktig vekt; det kan være at springfjæra i vekta har blitt litt løs slik at den viser noen kilo for mye. I så fall stemmer ikke vekta sin måling overens med min sanne vekt i det hele tatt, noe som betyr at målingen har lav validitet. Den har likevel høy reliabilitet, fordi den viser samme resultat fra gang til gang.
+
+Reliabilitet betyr altså at målingen gir samme verdi på tvers av situasjoner. Dette gir opphav til mange forskjellige undertyper av reliabilitet, for eksempel:
+
+- **Test-retest-reliabilitet**. Hvis vi gjentar målingen på et senere tidspunkt, får vi det samme svaret?
+
+ En prøve har høy test-retest-reliabilitet hvis elever får samme karakter når de tar samme prøve på ulike tidspunkt, noe som betyr at elevens dagsform ikke påvirker prøveresultatet.
+
+ En forskers vurdering av kvaliteten på lærerens undervisning har høy test-retest-reliabilitet hvis det ikke spiller noen rolle hvilken time forskeren observerer.
+
+- **Inter-rater-reliabilitet**. Hvis en annen person gjennomfører målingen, får vi da det samme svaret?
+
+ En måling av elevers adferd i en musikktime har høy inter-rater-reliabilitet hvis resultatet er uavhengig av hvem som observerer timen.
+
+ Hvis karakteren på skriftlig eksamen i engelsk ikke avhenger av hvilken sensor som vurderer besvarelsen, har den høy inter-rater-reliabilitet.
+
+Hvordan man bør vurdere en variabels reliabilitet, avhenger av det teoretiske konstruktet. Anta at man skal måle konstruktet «elevers utagerende adferd» ved å observere én undervisningstime. Hvis formålet er å gi en generell vurdering av elevenes utagerende adferd, vil målingen ha lav test-retest-reliabilitet, fordi den sannsynligvis vil gi svært forskjellige svar avhengig av om du utfører målingen siste time fredag eller første time tirsdag. Hvis formålet derimot er å finne ut av hvordan elevenes adferd varierer i en undervisningsuke, er hele poenget med målingen å fange opp disse variasjonene. Derfor må man tenke over det teoretiske konstruktet og forskningsformålet for å gi en vurdering av en målemetodes reliabilitet.
+
+### 2.3.2 En målings validitet
+
+*Lenke: https://kvant.roarstovner.no/sec-measurement.html#sec-validity*
+
+En målemetode har høy **validitet** hvis den måler det man tror den måler. Validitet kalles også «gyldighet», som er et godt ord for validitet. Man skiller ofte mellom mange typer validitet, men den viktigste, som kanskje innebefatter alle andre måter å snakke om en målings validitet på, er konstruktvaliditet.
+
+### 2.3.3 Konstruktvaliditet
+
+*Lenke: https://kvant.roarstovner.no/sec-measurement.html#konstruktvaliditet*
+
+**Konstruktvaliditet,** også kalt begrepsvaliditet, er i bunn og grunn et spørsmål om hvorvidt du måler det du ønsker å måle. En måling har god konstruktvaliditet hvis den faktisk måler det teoretiske konstruktet, og dårlig konstruktvaliditet hvis den ikke gjør det. For å gi et veldig enkelt, om enn latterlig, eksempel, anta at jeg prøver å undersøke hyppigheten av juks blant ungdomsskoleelever på norsktentamen. Måten jeg forsøker å måle det på, er å be de elevene som jukser om å reise seg i klasserommet slik at jeg kan telle dem. Når jeg gjør dette med en klasse på 30 elever, er det 0 elever som reiser seg. Så jeg konkluderer derfor med at andelen juksere i klassen min er 0 %. Det er åpenbart en urimelig slutning. Poenget her er ikke å presentere et spesielt avansert metodologisk eksempel, men å illustrere hva konstruktvaliditet innebærer. Problemet ligger i [operasjonaliseringen](https://kvant.roarstovner.no/sec-measurement.html#sec-operationalization): mens jeg prøver å måle «andelen personer som jukser», måler jeg faktisk «andelen personer som er ærlige nok til å innrømme juks, eller selvskadende nok til å late som om de juksa». Åpenbart er ikke disse det samme! Så målemetoden min har mislyktes, den måler ikke konstruktet jeg prøvde å måle, så den har dårlig konstruktvaliditet.
+
+Det finnes flere måter en måling kan ha svak konstruktvaliditet på. For eksempel kan målingen bare måle en liten del av konstruktet, kalt (konstrukt-)*underrepresentasjon*, eller konstruktet kan måle andre ting enn det det skal, kalt (konstrukt-)*irrelevans*, se [Figur 2.3](https://kvant.roarstovner.no/sec-measurement.html#fig-construct).
+
+Bildebeskrivelse: En ellipse det står "Konstruktet som skal måles" i. En anne ellipse, som delvis overlapper, er markert med "Hva målemetoden måler". Området inne i konstrukt-ellipsen som ikke overlapper er underrepresentasjon og området utenfor konstrukt-ellipsen, men inne i målemetode-ellipsen, er irrelevans.
+
+Figur 2.3. At målemetoder fanger for lite eller for mye kalles underrepresentasjon og irrelevans
+
+For å ha høy konstruktvaliditet kan det være nødvendig å ha høy **prediktiv validitet**. Dette betyr at målingene dine samsvarer med andre variabler – altså predikerer andre variabler – slik man ville forvente. Hvis man måler en lærers motivasjon for yrket, kan man kontrollere den prediktive validiteten ved å sjekke om de motiverte lærerne velger å bli i yrket. Hvis dette ikke er tilfelle, altså hvis høyt motiverte lærere ikke blir lenger i yrket enn lite motiverte, har målingen lav prediktiv validitet. Da har du kanskje ikke målt lærernes motivasjon.
+
+## 2.4 Målemetoder
+
+*Lenke: https://kvant.roarstovner.no/sec-measurement.html#sec-measurement-methods*
+
+Nå har vi begrepene vi trenger for å forklare målemetodene fra [Seksjon 2.1.3](https://kvant.roarstovner.no/sec-measurement.html#sec-methods-overview) én for én. Et viktig skille for å finne ut hva slags målemetode man skal bruke er om man måler noe eleven (eller personen) *gjør*, eller noe eleven *føler* og *tenker*? Ferdigheter og kompetanse er noe man gjør, og da måler man gjerne med prøver eller observasjon. Sinnstilstander og følelser kan man ikke be noen om å demonstrere, så da må du enten be folk fortelle deg om dem, eller så må du slutte deg til dem fra det du ser.
+
+Derfor følger to gjennomgangseksempler dette delkapittelet. **Leseferdighet** er en ferdighet, og illustrerer de to første målemetodene. **Elevers indre motivasjon for matematikk** er en sinnstilstand, og illustrerer de fire siste. Motivasjonseksempelet er forholdsvis langt, men jeg håper du bruker tid på det og får en viss ærefrykt over komplikasjonene man støter på når man forsøker å måle noe i utdanningsforskning.
+
+### 2.4.1 Prøver og tester
+
+*Lenke: https://kvant.roarstovner.no/sec-measurement.html#prøver-og-tester*
+
+En prøve gir eleven oppgaver som skal løses. Dette er den vanligste målemetoden når konstruktet er en ferdighet eller en kompetanse, rett og slett fordi ferdigheter er noe man kan be folk om å vise fram. Eksempler er ordkjedetesten fra innledningen, nasjonale prøver, PISA og andre internasjonale undersøkelser eller en prøve lærere lager til elevene sine.
+
+Vi så i [avsnittet om operasjonalisering](https://kvant.roarstovner.no/sec-measurement.html#sec-operationalization) at nasjonale prøver og ordkjedetester ikke nødvendigvis rangerer elevene likt, og nå skjønner vi at det er på grunn av konstrukt-underrepresentasjon. En prøve rekker over et utvalg av konstruktet, sjeldent hele. Ordkjedetesten måler avkoding og sier ingenting om refleksjon over tekst, og en nasjonal prøve på halvannen time sier lite om hvordan eleven leser en roman over fjorten dager.
+
+Til gjengjeld er reliabiliteten ofte god på prøver og tester. Poengsummen på en flervalgsprøve blir den samme uansett hvem som retter den, og en prøve med mange oppgaver gir stort sett samme resultat om eleven tar den på nytt en uke senere. Men den gode reliabiliteten faller så snart oppgavene krever skjønn i vurderingen. En norskeksamen der elevene skriver lange tekster, fanger opp mer av leseferdigheten enn en ordkjedetest gjør, men to sensorer kan lande på ulik karakter for samme besvarelse. Prøver som skal måle store kompliserte konstrukter, er ofte mindre reliable enn prøvene som måler kun en liten del av dem.
+
+### 2.4.2 Registerdata
+
+*Lenke: https://kvant.roarstovner.no/sec-measurement.html#registerdata*
+
+Noen verdier trenger du ikke måle selv, fordi andre allerede har registrert dem. Fødselsdato, foreldrenes utdanningsnivå og elevenes karakterer ligger i offisielle registre. Slike data er billige og dekker gjerne alle elevene i landet.
+
+Prisen er at du må godta målingen slik den er. Bruker du standpunktkarakteren i norsk som mål på leseferdighet, har du en variabel som også fanger opp skriving, muntlig aktivitet, kunnskap om litteraturhistorie, sjangerkunnskap, og mye mer, altså konstrukt-irrelevans i rikt monn. I tillegg settes karakteren av elevens egen lærer, og lærere er ikke enige med hverandre om hva som skiller en firer fra en femmer. Registerdata er derfor sjelden den mest valide operasjonaliseringen av et konstrukt, men ofte den eneste som lar seg gjennomføre når du trenger data om mange tusen elever.
+
+### 2.4.3 Selvrapportering
+
+*Lenke: https://kvant.roarstovner.no/sec-measurement.html#selvrapportering*
+
+Selvrapportering er at folk oppgir verdien på variabelen selv, som regel ved å svare på spørsmål i et spørreskjema. Det er raskt, billig og enkelt, men det fungerer bare med folk som er ærlige og kan lese godt på det språket spørsmålene er stilt på. Selvrapportering benyttes gjerne til å måle indre sinnstilstander som tanker, holdninger og følelser.
+
+I et eksempel over viste jeg hvordan TIMSS målte indre motivasjon ved hjelp av ni spørsmål i et spørreskjema. Da ber man elevene om å selvrapportere om sin indre motivasjon for matematikk. Dette virker godt; elevene vet selv hvilke følelser de har knyttet til matematikk, om de liker å jobbe med matematikk, gleder seg til matematikktimen og så videre. Trolig kan ingen andre, slik som foreldre eller lærere, rapportere like godt om elevens indre motivasjon, for det er tross alt elevens egen sinnstilstand man ønsker å måle. Kun eleven har tilgang til den.
+
+Selvrapportering av indre motivasjon har høy reliabilitet. Hvis man setter elevene til å svare på spørreskjemaet en annen dag, vil de sannsynligvis svare mer eller mindre likt (test-retest-reliabilitet). Det spiller heller ikke så stor rolle hvordan påstandene som elevene skal ta stilling til, er utformet. For eksempel vil de to påstandene «jeg er glad i matematikk» eller «jeg liker å jobbe med matematikk» sannsynligvis besvares nokså likt av en og samme elev. Og inter-rater-reliabiliteten er perfekt, for det er helt entydige svar på Likert-påstander (se [Seksjon 2.2.6](https://kvant.roarstovner.no/sec-measurement.html#sec-measurement-likert) for en oppfriskning) i et spørreskjema.
+
+Reliabiliteten er altså trolig god. Validiteten er verre. Selvrapportering kan påvirkes av en rekke faktorer, for eksempel hvor sosialt akseptabelt det er å være interessert i matematikk i elevenes eget miljø. Hvis elever befinner seg i en omgangskrets der matematikk oppfattes som «ukult», kan de, bevisst eller ubevisst, nedtone sin indre motivasjon i svarene. Det motsatte kan også skje: Dersom elever går i en klasse der nesten alle misliker matematikk, men de selv synes faget er helt greit, kan de overvurdere sin egen motivasjon fordi de sammenligner seg med et miljø der interessen er enda lavere. Respondenter i intervjuer og spørreundersøkelser har også tendens til å svare det de tror at forskeren vil ha. Elever kan svare at de er interessert i matematikk fordi de tror det er det svaret forskeren ønsker. Alt dette er konstrukt-irrelevans som selvrapporteringen fanger opp.
+
+### 2.4.4 Tredjepartsrapportering
+
+*Lenke: https://kvant.roarstovner.no/sec-measurement.html#tredjepartsrapportering*
+
+Du kan også spørre andre om å oppgi verdien på variabelen, for eksempel foreldrene eller læreren til eleven. Det er utveien når den man vil måle er for ung til å svare selv, eller man måler noe som det er vanskelig å selvrapportere om.
+
+Sett fra andre sitt ståsted kan nemlig se ut om elevens selvrapportering ikke er så pålitelig. Lærere kan observere at elever som svarer at de liker å jobbe med matematikk, ikke jobber med matematikk i timen, men heller foretrekker å tulle med sidemannen eller tegne i skriveboka si. Og omvendt kan læreren observere at elever som svarer at de er enige i at «matematikk er kjedelig» jobber iherdig og tilsynelatende motivert med individuell oppgaveløsing og kaster seg ut i helklassediskusjoner. Hva hvis elevenes selvrapportering om motivasjon ikke samsvarer med hvordan andre observerer motivasjonen?
+
+Da er det fristende å konkludere med at læreren har rett og eleven tar feil. Men læreren ser bare eleven i matematikktimen, ser ikke inn i hodet på henne, og kan lett forveksle det å jobbe stille med det å være motivert. Vi vet ikke om den ene målingen er riktig og den andre er gal, og vi har ingen fasit å sammenlikne med.
+
+### 2.4.5 Observasjon
+
+*Lenke: https://kvant.roarstovner.no/sec-measurement.html#observasjon*
+
+Ved observasjon registrerer forskeren direkte det som skjer. For mange konstrukter er dette den mest valide tilnærmingen. Skal man måle undervisningskvalitet, er det åpenbart bedre å se på undervisningen enn å be læreren vurdere den selv. Prisen er tid og penger, og derfor ender de fleste likevel opp med selvrapportering, der lærere beskriver egen undervisning, eller tredjepartsrapportering, der elever rapporterer om hvordan læreren underviser.
+
+Siden selvrapportering av indre motivasjon er utsatt for målefeilene vi så over, kan det være fristende å heller prøve å observere motivasjon. Hvis en elev er indre motivert for matematikk, innebærer det sannsynligvis at eleven jobber villig med matematikk i timen, noe som kan observeres. Da kan man ganske enkelt sette en forsker til å observere elevenes motivasjon. Men merk at en elev som er *ytre* motivert også vil jobbe villig med matematikk i timen, så å observere kan gi en alvorlig konstrukt-irrelevans ved at det ikke er mulig å skille mellom indre og ytre motivasjon når en observerer en elev i arbeid.
+
+Derfor må man gi matematikkoppgaver eleven i mindre grad blir ytre motivert av, for eksempel hvis læreren ikke er til stede og oppgaven ikke gir øving på stoff som skal vurderes. Vil observasjon da være et godt mål på en elevs indre motivasjon? Man kunne simpelthen målt hvor lenge eleven jobbet med en slik oppgave. Jeg liker tanken! «Hvor motivert var Petter?» «Sju minutter!» Selv om denne målemetoden unngår problemer med selvrapportering, introduserer den mange nye. For eksempel kan elevene bli påvirket til å jobbe fordi det sitter en forsker bak i klasserommet. Dessuten kan reliabiliteten bli lav, for forskere kan være uenige i akkurat når eleven slutter å jobbe med oppgaven, eller målingen kan være veldig avhengig av hvilken oppgave man bruker, slik at test-retest-reliabiliteten blir lav. Men kanskje viktigst av alt: Siden indre motivasjon er en sinnstilstand, er det unektelig rart å måle indre motivasjon ved observasjon av ytre adferd.
+
+### 2.4.6 Fysiologiske mål
+
+*Lenke: https://kvant.roarstovner.no/sec-measurement.html#fysiologiske-mål*
+
+Fysiologiske mål, også kalt biomarkører, er lite benyttet i utdanningsforskning. Man kan følge øyebevegelsene til en leser for å se hvor hun stopper opp, du kan anslå hvor stresset en elev er under en prøve ved å måle hjerteslagene, eller du kan måle hjerneaktivitet i et elektroencefalogram ved å koble elektroder til hodet. Dette høres veldig forlokkende ut. Kroppen svarer jo ikke strategisk; pulsen bryr seg ikke om hva som er kult i klassen; elektroencefalogrammet kan ikke fakes.
+
+Det er derfor fristende å droppe både selvrapportering og observasjon av indre motivasjon og heller finne en biomarkør. Kan det finnes et hormon eller en nevrotransmitter som slår ut når man jobber med en oppgave man er indre motivert for? Kanskje dopamin er et sånt stoff? Eller kan man måle puls eller hjernebølger? Man kunne målt en biomarkør i elevenes kropper mens de jobbet med matematikk og slik fått en objektiv måling av elevenes motivasjon for matematikk. Det er lite som tilsier at slike biomarkører faktisk ville fungere i praksis, og det er sannsynlig at man fortsatt ville undret seg over hvorfor målingene fra biomarkøren ikke samsvarer med selvrapportert eller observert indre motivasjon.
+
+### 2.4.7 Når målemetodene ikke er enige
+
+*Lenke: https://kvant.roarstovner.no/sec-measurement.html#når-målemetodene-ikke-er-enige*
+
+Dette er til å bli gal av. Jeg har presentert fire målemetoder for å måle indre motivasjon, og ingen av dem stemmer overens med de andre. Dette er ikke kun et tankeeksperiment; det er svært reelt. Manglende samsvar mellom selvrapportering og observasjon går igjen i måling av mange konstrukter som handler om elevers og læreres indre sinnstilstander, slik som tanker, holdninger, motivasjon, kunnskap, læring og følelser ([Leatham, 2006](https://kvant.roarstovner.no/sec-references.html#ref-leatham2006)).
+
+Men det er også ofte manglende samsvar når konstruktet ikke er en indre sinnstilstand, men handler om helt konkrete hendelser i et klasserom. For eksempel sier mange lærere at de synes helklassediskusjoner er viktige, at de setter av mye tid til det i timene og at de gir elevene rom til å diskutere heller enn å kun komme med korte svar. Observasjon av helklasseundervisning har imidlertid vist det motsatte: Det er få helklassediskusjoner, og de er ofte lærerstyrte der elevene kun kommer med korte svar. Altså har målinger av helklassediskusjoner via selvrapportering lav validitet. Er elever og lærere løgnere, som ikke velger å svare sannferdig; hyklere, som gjør stikk motsatt av det de sier er viktig; eller er det noe annet som foregår? En nærliggende forklaring er rett og slett at selvrapportering er vanskelig, slik at vi ikke kan vente annet enn avvik mellom observasjon og selvrapportering.
+
+Huff. Hvis du led under forvirringen at å måle noe var enkelt, håper jeg du nå er kurert.
+
+## 2.5 Etiske sider ved kvantitativ måling av folk
+
+*Lenke: https://kvant.roarstovner.no/sec-measurement.html#sec-measurement-ethics*
+
+Det er ikke bare vanskelig å lage reliable og valide målinger av mennesker; målingene kan også ha dype etiske konsekvenser. [^6] Jeg viser deg bare to av de mest nærliggende etiske problemene.
+
+Det første etiske problemet kan oppsummeres med at «målinger skaper folk». Alex starter i første klasse som en vanlig gutt. På femte trinn tar han nasjonale prøver i lesing, og havner på «mestringsnivå 1». Underveis forsvinner usikkerheten prøven er beheftet med (kanskje Alex skåret rett under grensen for nivå 2), og at prøven var urettferdig for ham (Alex sleit med teksten som handlet om skøyter, for han har hverken sett eller prøvd skøyter). Igjen står én opplysning, mestringsnivå 1.[^7]
+
+I de voksnes (og kanskje Alex sitt) hode blir «mestringsnivå 1» **tingliggjort**, at man behandler noe som virkelig bare fordi det er satt et begrep på det. «Mestringsnivå 1» er strengt tatt ikke annet enn en betegnelse på at skåren havnet på den ene siden av en grense noen har trukket, men på lærerværelset og rundt kjøkkenbordet blir Alex fort til «en svak leser» ([Mosvold & Ohnstad, 2016](https://kvant.roarstovner.no/sec-references.html#ref-mosvold2016)). Kategorien har sluttet å være en prestasjon på en prøve og har blitt til en egenskap ved Alex. Ingenting har skjedd med Alex, men «mestringsnivå 1» har liksom blitt noe virkelig ved ham i de voksnes øyne.
+
+Derfor kan merkelappen «mestringsnivå 1» bli en selvoppfyllende profeti for Alex. En stein bryr seg ikke om hvilken kategori en geolog sier den tilhører, men mennesker merker at de blir satt i en kategori, og de blir påvirket. Læreren senker forventningene og gir Alex lettere tekster, foreldrene slutter å foreslå bøker til jul, og Alex, som nå vet hva han er, slutter å prøve seg på tykke bøker. Etter et års tid leser han dårligere enn han ville gjort uten merkelappen. Kategorien har ikke bare beskrevet Alex, den har vært med på å lage ham. Målinger skaper folk, eller, i hvert fall kan de være delaktige i det.
+
+Man kan kanskje innvende «men han leser jo litt dårlig, da, og det må det være fint å finne ut av slik at han kan få hjelp», og det kan være riktig! Noen ganger utløser målingene ekstra ressurser. Kanskje blir Alex kalt inn til spesialpedagoger som tar en annen kvantitativ måling, en som skal kartlegge dysleksi. Sier prøven at Alex har dysleksi, får han mange rettigheter; sier den nei, får han ingenting. La oss inderlig håpe grenseverdien er satt på bakgrunn av en svært grundig vurdering av både etikk og validitet.
+
+Det andre etiske problemet kan oppsummeres med at «målinger forvrenger målsetninger og målingen selv». Kvantitative målinger benyttes til å fordele knapphetsgoder som ressurser og anseelse. Skoler med gode resultater får anseelse; politikere som sitter med makten når PISA-resultatene går opp får smigrende omtale; lærere med lav strykprosent blir godt likt av rektor og elever, og så videre. Derfor er det en fare for at man, bevisst eller ubevisst, legger om målene sine til å skåre bedre på målingen.
+
+Alle skoleeiere har som mål at elevene skal lære å lese bedre. Da kan det være de måler skolene på hvor stor andel elever som havner på mestringsnivå 1 på nasjonale prøver i lesing. Da er det stor fare for at skolene endrer fokus; for eksempel at de bare fokuserer på de elevene som er gode nok til å kunne nå mestringsnivå 2, og ikke på de som virkelig sliter. Da er målsetingen forvrengt fra å lære elevene å lese til å flytte dem over en litt vilkårlig grense. Dette er ikke bare en teoretisk fare. I en amerikansk barneskole under et testbasert ansvarsregime fant Booher-Jennings ([2005](https://kvant.roarstovner.no/sec-references.html#ref-booher-jennings2005)) at lærerne systematisk kanaliserte ressursene mot elevene som lå like under bestått-grensen, kalt «bubble kids», mens de svakeste elevene ble nedprioritert eller henvist til spesialundervisning slik at resultatene deres ikke skulle telle med.
+
+Men også målingen selv forvrenges. I USA er det godt kjent at skoler og hele skoledistrikter legger om undervisningen til å dreie seg om flervalgsprøver, og at noen har holdt svake elever borte fra statlige prøver for å heve skolens resultater ([Koretz, 2017](https://kvant.roarstovner.no/sec-references.html#ref-koretz2017)). Da stiger skårene uten at elevene leser bedre, så prøven har mistet validiteten som et mål på lesekompetanse.
+
+Dette er kjent som *Campbells lov*: Jo mer en kvantitativ indikator brukes til å ta beslutninger, jo mer utsatt blir den for press som ødelegger både indikatoren selv og det den skulle måle ([Campbell, 1979](https://kvant.roarstovner.no/sec-references.html#ref-campbell1979)). Campbell selv brukte nettopp skoleprøver som eksempel!
+
+Du får kanskje lyst til å droppe kvantitativ måling helt, men det er ikke noe jeg vil anbefale; kvantitative målinger kan like gjerne ha gode konsekvenser. Og alternativet er ofte beslutninger bli tatt av folks profesjonelle (og uprofesjonelle) skjønn, som inneholder trynefaktorer, fordommer og andre uspesifiserte preferanser. En profesjonell lærer møter derfor kvantitative målinger verken med uforbeholden tillit eller avvisning.
+
+## 2.6 Oppsummering
+
+*Lenke: https://kvant.roarstovner.no/sec-measurement.html#oppsummering*
+
+Målinger er en viktig del av kvantitativ forskning, og trolig er vi for lite bevisste på kvaliteten på målingene når vi evaluerer forskning. I første kapittel refererte jeg til en samtale mellom oljefondets leder Nicolai Tangen og forskeren Angela Duckworth. Da Duckworth sa at hun hadde forsket på folks pågangsmot og at hun hadde veldig store utvalg, burde ikke Tangen blitt imponert over utvalgsstørrelsen. Han burde spurt: «Hvordan målte du pågangsmotet til så mange folk?» Svaret er jo at alle har svart på et [spørreskjema med ti spørsmål](https://www.angeladuckworth.com/grit#scale). Tror du dette spørreskjemaet måler pågangsmot på en god måte?
+
+I dette kapittelet har du lest om:
+
+- [Teoretiske konstrukter og operasjonalisering](https://kvant.roarstovner.no/sec-measurement.html#sec-operationalization). Hva betyr det å operasjonalisere et teoretisk konstrukt? Hva betyr verdier, variabler, konstrukter og målemetoder?
+- [Variabler og verdier](https://kvant.roarstovner.no/sec-measurement.html#sec-variables-values).
+- [Målenivåer](https://kvant.roarstovner.no/sec-measurement.html#sec-Scales-of-measurement) og variabeltyper. Husk at det er to forskjellige distinksjoner her. Det er forskjellen mellom diskrete og kontinuerlige variabler, og det er forskjellen mellom fire ulike målenivå (nominal, ordinal, intervall og forholdstall).
+- [Vurdering av målingers reliabilitet](https://kvant.roarstovner.no/sec-measurement.html#sec-reliability). To typer reliabilitet, og begge handler om man får samme resultat om man måler den samme tingen to ganger.
+- [Vurdering av målingers validitet](https://kvant.roarstovner.no/sec-measurement.html#sec-validity). Måler målemetoden din det du ønsker? Hvis ikke, har målingen konstrukt-underrepresentasjon eller konstrukt-irrelevans?
+- [Målemetoder](https://kvant.roarstovner.no/sec-measurement.html#sec-measurement-methods). Prøver og tester, registerdata, selvrapportering, tredjepartsrapportering, observasjon og fysiologiske mål. Hvilken som passer, kommer an på konstruktet. Merk komplikasjonene med å måle sinnstilstander.
+- [Etiske sider ved kvantitativ måling av folk](https://kvant.roarstovner.no/sec-measurement.html#sec-measurement-ethics). «Målinger skaper folk» (tingliggjøring) og «målinger forvrenger målsetninger og målingen selv» (Campbells lov), men likevel er det ikke sikkert du bør droppe kvantitative målinger.
+
+Booher-Jennings, J. (2005). Below the Bubble: «Educational Triage» and the Texas Accountability System. *American Educational Research Journal*, *42*(2), 231–268. <https://doi.org/10.3102/00028312042002231>
+
+Campbell, D. T. (1979). Assessing the Impact of Planned Social Change. *Evaluation and Program Planning*, *2*(1), 67–90. <https://doi.org/10.1016/0149-7189(79)90048-X>
+
+Campbell, D. T., & Stanley, J. C. (1963). *Experimental and Quasi-Experimental Designs for Research*. Houghton Mifflin.
+
+Koretz, D. (2017). *The Testing Charade: Pretending to Make Schools Better*. University of Chicago Press.
+
+Leatham, K. R. (2006). Viewing Mathematics Teachers’ Beliefs as Sensible Systems\*. *Journal of Mathematics Teacher Education*, *9*(1), 91–102. <https://doi.org/10.1007/s10857-006-9006-8>
+
+Mosvold, R., & Ohnstad, F. O. (2016). Profesjonsetiske Perspektiver På Læreres Omtaler Av Elever. *Norsk pedagogisk tidsskrift*, *100*(1), 26–36. <https://doi.org/10.18261/issn.1504-2987-2016-01-04>
+
+Stevens, S. S. (1946). On the Theory of Scales of Measurement. *Science*, *103*, 677–680. <https://doi.org/10.1126/science.103.2684.677>
+
+[^1]: Foredrag til *Institution of Civil Engineers*, 3. mai, 1883. Kilde: <https://en.wikiquote.org/wiki/William_Thomson>
+
+[^2]: Foredrag til *RIOT Science Club*, 23. november, 2020. Kilde: <https://youtu.be/Cq6n7AS_r8w?si=PSLqDe2VGExXp2qV&t=637>
+
+[^3]: Her er «lærernes pendling» konstruktet, og transportmiddel er én av variablene det kan operasjonaliseres i. Andre variabler kunne vært reisetid og reiselengde. Vær oppmerksom på at forskere til daglig benytter begrepene konstrukt og variabel litt om hverandre.
+
+[^4]: Kanskje er den egentlige grunnen at de statistiske utregningene med intervallskalaer er mye enklere enn de tilsvarende utregningene med ordinale skalaer.
+
+[^5]: Hvis du er interessert i å se hele spørreskjemaet er det tilgjengelig her: <https://www.uv.uio.no/ils/forskning/prosjekter/timss/2019/elevskjema_9trinn.pdf>
+
+[^6]: Mange forskere mener at konsekvensene som målingen har for folk er en del av dens validitet, såkalt konsekvensvaliditet. Dette er omstridt, fordi det plumper ut i debatten om vitenskapelig tenkning bør være fri for verdispørsmål, det *verdifrie ideal*.
+
+[^7]: En pikant detalj er at en feil i det statistiske analyseverktøyet som ble benyttet av nasjonale prøver gjorde at målingene ble gale fra 2015 til 2021. Det er anslått at 200 000 elever ble gitt feil mestringsnivå (<https://www.utdanningsnytt.no/nasjonale-prover-utdanningsdirektoratet-utdanningsforbundet/over-200000-nasjonale-prover-ble-feilvurdert-av-udir/470804>). På grunn av feilen oppdaget man heller ikke at norske elevers regne- og leseferdigheter gikk ned i perioden, mens elevenes engelskferdigheter gikk opp.

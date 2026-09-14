@@ -1,0 +1,121 @@
+# Begrepsregister: hvor i boka står begrepet?
+
+Fra læreboka *Kvantitativ metode for lærere* av Roar Bakken Stovner (2026-utgaven). Hele boka: https://kvant.roarstovner.no/
+
+Registeret viser hvor hvert fagbegrep blir innført i boka. Bruk det til å henvise studenten til riktig sted, og til å sjekke om et begrep hører til pensum. Står ikke begrepet her, er det sannsynligvis ikke dekket i boka, og da skal du si det.
+
+- **68–95–99,7-regelen** — Kapittel 7, «Normalfordelingen» — https://kvant.roarstovner.no/sec-inferential.html#sec-inf-normalfordeling
+- **95 % konfidensintervall** — Kapittel 7, «Konfidensintervall» — https://kvant.roarstovner.no/sec-inferential.html#sec-inf-konfidensintervall
+- **alder** — Kapittel 2, «Variabler og verdier» — https://kvant.roarstovner.no/sec-measurement.html#sec-variables-values
+- **analyseenhet** — Kapittel 3, «Populasjon, utvalg og analyseenhet» — https://kvant.roarstovner.no/sec-design.html#populasjon-utvalg-og-analyseenhet
+- **antall riktige ordkjeder** — Kapittel 2, «Variabler og verdier» — https://kvant.roarstovner.no/sec-measurement.html#sec-variables-values
+- **arbeidsro** — Kapittel 2, «Variabler og verdier» — https://kvant.roarstovner.no/sec-measurement.html#sec-variables-values
+- **avhengig variabel** — Kapittel 3, «Variablenes roller: avhengige og uavhengige variable» — https://kvant.roarstovner.no/sec-design.html#variablenes-roller-avhengige-og-uavhengige-variable
+- **avviksverdier** — Kapittel 5, «Boksplott» — https://kvant.roarstovner.no/sec-descriptive.html#sec-descriptive-box-plot
+- **bekvemmelighetsutvalg** — Kapittel 3, «Ikke-tilfeldige utvalg» — https://kvant.roarstovner.no/sec-design.html#ikke-tilfeldige-utvalg
+- **bessels korreksjon** — Kapittel 7, «Sentralgrenseteoremet og standardfeilen» — https://kvant.roarstovner.no/sec-inferential.html#sec-inf-clt
+- **boksplott** — Kapittel 5, «Boksplott» — https://kvant.roarstovner.no/sec-descriptive.html#sec-descriptive-box-plot
+- **csv-fil** — Kapittel 4, «Bokas datafiler» — https://kvant.roarstovner.no/sec-jamovi.html#sec-jamovi-datafiler
+- **deskriptiv statistikk** — Kapittel 5
+- **diskret variabel** — Kapittel 2, «Kontinuerlige og diskrete variabler» — https://kvant.roarstovner.no/sec-measurement.html#kontinuerlige-og-diskrete-variabler
+- **eksperiment** — Kapittel 3, «Eksperimentelle studier og observasjonsstudier» — https://kvant.roarstovner.no/sec-design.html#eksperimentelle-studier-og-observasjonsstudier
+- **elevundersøkelser** — Kapittel 1, «Kvantitativ metode er premissleverandør for utdanningspolitikk og utdanningsforskning» — https://kvant.roarstovner.no/sec-why-statistics.html#kvantitativ-metode-er-premissleverandør-for-utdanningspolitikk-og-utdanningsforskning
+- **enkelt tilfeldig utvalg** — Kapittel 3, «Enkle tilfeldige utvalg» — https://kvant.roarstovner.no/sec-design.html#sec-design-simple-random
+- **etiske hensyn** — Kapittel 3, «Randomiserte kontrollstudier» — https://kvant.roarstovner.no/sec-design.html#randomiserte-kontrollstudier
+- **fordeling** — Kapittel 7, «Populasjonsparametre og observatorer» — https://kvant.roarstovner.no/sec-inferential.html#sec-inf-populasjon
+- **forholdstallsvariabler** — Kapittel 2, «Intervallvariabel» — https://kvant.roarstovner.no/sec-measurement.html#intervallvariabel
+- **forklaringsvariabel** — Kapittel 3, «Variablenes roller: avhengige og uavhengige variable» — https://kvant.roarstovner.no/sec-design.html#variablenes-roller-avhengige-og-uavhengige-variable
+- **forskningsdesign** — Kapittel 3
+- **forventingsrett** — Kapittel 3, «Enkle tilfeldige utvalg» — https://kvant.roarstovner.no/sec-design.html#sec-design-simple-random
+- **frafall** — Kapittel 3, «Randomiserte kontrollstudier» — https://kvant.roarstovner.no/sec-design.html#randomiserte-kontrollstudier
+- **frekvenstabell** — Kapittel 5, «Frekvenstabeller» — https://kvant.roarstovner.no/sec-descriptive.html#frekvenstabeller
+- **generalisere** — Kapittel 3, «Populasjon, utvalg og analyseenhet» — https://kvant.roarstovner.no/sec-design.html#populasjon-utvalg-og-analyseenhet
+- **generalisering** — Kapittel 3, «Randomiserte kontrollstudier» — https://kvant.roarstovner.no/sec-design.html#randomiserte-kontrollstudier
+- **gruppert stolpediagram** — Kapittel 6, «Grupperte stolpediagram» — https://kvant.roarstovner.no/sec-associations.html#sec-associations-bar-subgroup
+- **histogrammer** — Kapittel 5, «Histogrammer» — https://kvant.roarstovner.no/sec-descriptive.html#sec-histogram
+- **holdning til lærernes autonomi** — Kapittel 2, «Variabler og verdier» — https://kvant.roarstovner.no/sec-measurement.html#sec-variables-values
+- **ikke-målt konfundering** — Kapittel 3, «Konfundere» — https://kvant.roarstovner.no/sec-design.html#sec-design-konfunder
+- **ikke-tilfeldige utvalg** — Kapittel 7, «Hva konfidensintervallet ikke fanger» — https://kvant.roarstovner.no/sec-inferential.html#sec-inf-grenser
+- **indre validitet** — Kapittel 3, «Indre validitet» — https://kvant.roarstovner.no/sec-design.html#indre-validitet
+- **inferensiell statistikk** — Kapittel 7
+- **inter-rater-reliabilitet** — Kapittel 2, «En målings reliabilitet» — https://kvant.roarstovner.no/sec-measurement.html#en-målings-reliabilitet
+- **intervallvariabler** — Kapittel 2, «Intervallvariabel» — https://kvant.roarstovner.no/sec-measurement.html#intervallvariabel
+- **intervensjon** — Kapittel 3, «Eksperimentelle studier og observasjonsstudier» — https://kvant.roarstovner.no/sec-design.html#eksperimentelle-studier-og-observasjonsstudier
+- **intervensjonsgruppe** — Kapittel 3, «Randomiserte kontrollstudier» — https://kvant.roarstovner.no/sec-design.html#randomiserte-kontrollstudier
+- **kategorisk variabel** — Kapittel 2, «Nominell variabel» — https://kvant.roarstovner.no/sec-measurement.html#nominell-variabel
+- **kategoriske variabler** — Kapittel 5, «Oppsummering» — https://kvant.roarstovner.no/sec-descriptive.html#oppsummering
+- **kausal sammenheng** — Kapittel 3, «Finne årsaksforhold» — https://kvant.roarstovner.no/sec-design.html#finne-årsaksforhold
+- **kausalitet** — Kapittel 3, «Finne årsaksforhold» — https://kvant.roarstovner.no/sec-design.html#finne-årsaksforhold
+- **konfidensintervall** — Kapittel 7
+- **konfunder** — Kapittel 3, «Konfundere» — https://kvant.roarstovner.no/sec-design.html#sec-design-konfunder
+- **konstruktvaliditet** — Kapittel 2, «Konstruktvaliditet» — https://kvant.roarstovner.no/sec-measurement.html#konstruktvaliditet
+- **kontinuerlig variabel** — Kapittel 2, «Kontinuerlige og diskrete variabler» — https://kvant.roarstovner.no/sec-measurement.html#kontinuerlige-og-diskrete-variabler
+- **kontrollgruppe** — Kapittel 3, «Randomiserte kontrollstudier» — https://kvant.roarstovner.no/sec-design.html#randomiserte-kontrollstudier
+- **korrelasjonsmatrise** — Kapittel 6, «Korrelasjonsmatrise» — https://kvant.roarstovner.no/sec-associations.html#sec-associations-correlation-matrix
+- **krysstabell** — Kapittel 6, «Krysstabeller» — https://kvant.roarstovner.no/sec-associations.html#sec-associations-contingency
+- **kvartilbredde** — Kapittel 5, «Hvilket spredningsmål skal du bruke?» — https://kvant.roarstovner.no/sec-descriptive.html#hvilket-spredningsmål-skal-du-bruke
+- **leseferdighet** — Kapittel 2, «Målemetoder» — https://kvant.roarstovner.no/sec-measurement.html#sec-measurement-methods
+- **leselyst** — Kapittel 2, «Variabler og verdier» — https://kvant.roarstovner.no/sec-measurement.html#sec-variables-values
+- **likert-spørsmål** — Kapittel 2, «Noen komplikasjoner: Likert-skalaer» — https://kvant.roarstovner.no/sec-measurement.html#sec-measurement-likert
+- **med tilbakelegging** — Kapittel 3, «Enkle tilfeldige utvalg» — https://kvant.roarstovner.no/sec-design.html#sec-design-simple-random
+- **modellusikkerhet** — Kapittel 7, «Fire typer usikkerhet» — https://kvant.roarstovner.no/sec-inferential.html#sec-inf-typer-usikkerhet
+- **målenivåer** — Kapittel 2, «Målenivåer» — https://kvant.roarstovner.no/sec-measurement.html#sec-Scales-of-measurement
+- **måleskalaene** — Kapittel 2, «Målenivåer» — https://kvant.roarstovner.no/sec-measurement.html#sec-Scales-of-measurement
+- **måleusikkerhet** — Kapittel 7, «Fire typer usikkerhet» — https://kvant.roarstovner.no/sec-inferential.html#sec-inf-typer-usikkerhet
+- **nasjonale prøver** — Kapittel 1, «Kvantitativ metode er premissleverandør for utdanningspolitikk og utdanningsforskning» — https://kvant.roarstovner.no/sec-why-statistics.html#kvantitativ-metode-er-premissleverandør-for-utdanningspolitikk-og-utdanningsforskning
+- **nominell variabel** — Kapittel 2, «Nominell variabel» — https://kvant.roarstovner.no/sec-measurement.html#nominell-variabel
+- **normalfordelingen** — Kapittel 7, «Normalfordelingen» — https://kvant.roarstovner.no/sec-inferential.html#sec-inf-normalfordeling
+- **note** — Kapittel 3, «Konfundere» — https://kvant.roarstovner.no/sec-design.html#sec-design-konfunder
+- **observasjonsstudier** — Kapittel 3, «Eksperimentelle studier og observasjonsstudier» — https://kvant.roarstovner.no/sec-design.html#eksperimentelle-studier-og-observasjonsstudier
+- **observatorer** — Kapittel 7, «Populasjonsparametre og observatorer» — https://kvant.roarstovner.no/sec-inferential.html#sec-inf-populasjon
+- **omv-fil** — Kapittel 4, «Bokas datafiler» — https://kvant.roarstovner.no/sec-jamovi.html#sec-jamovi-datafiler
+- **operasjonalisere** — Kapittel 2, «Teoretiske konstrukter og operasjonalisering» — https://kvant.roarstovner.no/sec-measurement.html#sec-operationalization
+- **ordinal variabel** — Kapittel 2, «Ordinal variabel» — https://kvant.roarstovner.no/sec-measurement.html#ordinal-variabel
+- **persentil** — Kapittel 5, «Kvartilbredde» — https://kvant.roarstovner.no/sec-descriptive.html#kvartilbredde
+- **pISA-undersøkelser** — Kapittel 1, «Kvantitativ metode er premissleverandør for utdanningspolitikk og utdanningsforskning» — https://kvant.roarstovner.no/sec-why-statistics.html#kvantitativ-metode-er-premissleverandør-for-utdanningspolitikk-og-utdanningsforskning
+- **populasjon** — Kapittel 3, «Populasjon, utvalg og analyseenhet» — https://kvant.roarstovner.no/sec-design.html#populasjon-utvalg-og-analyseenhet
+- **populasjonsparametre** — Kapittel 7, «Populasjonsparametre og observatorer» — https://kvant.roarstovner.no/sec-inferential.html#sec-inf-populasjon
+- **prediktiv validitet** — Kapittel 2, «Konstruktvaliditet» — https://kvant.roarstovner.no/sec-measurement.html#konstruktvaliditet
+- **prediktor** — Kapittel 3, «Variablenes roller: avhengige og uavhengige variable» — https://kvant.roarstovner.no/sec-design.html#variablenes-roller-avhengige-og-uavhengige-variable
+- **randomisering** — Kapittel 3, «Enkle tilfeldige utvalg» — https://kvant.roarstovner.no/sec-design.html#sec-design-simple-random
+- **randomiserte kontrollstudier** — Kapittel 3, «Randomiserte kontrollstudier» — https://kvant.roarstovner.no/sec-design.html#randomiserte-kontrollstudier
+- **retningen** — Kapittel 6, «Styrke og retning i ekte data» — https://kvant.roarstovner.no/sec-associations.html#sec-associations-correlation-strength
+- **retningsproblemet** — Kapittel 3, «Retningsproblemet» — https://kvant.roarstovner.no/sec-design.html#retningsproblemet
+- **samlevariabel** — Kapittel 2, «Samlevariabler» — https://kvant.roarstovner.no/sec-measurement.html#samlevariabler
+- **selektiv deltagelse** — Kapittel 3, «Enkle tilfeldige utvalg» — https://kvant.roarstovner.no/sec-design.html#sec-design-simple-random
+- **selektiv dropout** — Kapittel 3, «Enkle tilfeldige utvalg» — https://kvant.roarstovner.no/sec-design.html#sec-design-simple-random
+- **selvidentifisert kjønn** — Kapittel 2, «Variabler og verdier» — https://kvant.roarstovner.no/sec-measurement.html#sec-variables-values
+- **selvidentifiserte kjønn** — Kapittel 2, «Variabler og verdier» — https://kvant.roarstovner.no/sec-measurement.html#sec-variables-values
+- **sentralgrenseteoremet** — Kapittel 7, «Sentralgrenseteoremet og standardfeilen» — https://kvant.roarstovner.no/sec-inferential.html#sec-inf-clt
+- **simpson-paradokset** — Kapittel 6, «Sammenhenger kan endre seg i undergrupper» — https://kvant.roarstovner.no/sec-associations.html#sec-associations-simpson
+- **simpsons paradoks** — Kapittel 1, «En advarsel mot å «tro på dataene»» — https://kvant.roarstovner.no/sec-why-statistics.html#en-advarsel-mot-å-tro-på-dataene
+- **snøball-utvalg** — Kapittel 3, «Ikke-tilfeldige utvalg» — https://kvant.roarstovner.no/sec-design.html#ikke-tilfeldige-utvalg
+- **spredning** — Kapittel 5, «Spredningsmål» — https://kvant.roarstovner.no/sec-descriptive.html#sec-descriptive-dispersion
+- **spredningsplott** — Kapittel 6, «Spredningsplott» — https://kvant.roarstovner.no/sec-associations.html#sec-associations-scatter
+- **stablede stolpediagram** — Kapittel 6, «Stablede stolpediagram» — https://kvant.roarstovner.no/sec-associations.html#sec-associations-stacked-bar
+- **standardavvik** — Kapittel 5, «Hvilket spredningsmål skal du bruke?» — https://kvant.roarstovner.no/sec-descriptive.html#hvilket-spredningsmål-skal-du-bruke
+- **standardfeil** — Kapittel 7
+- **stolpediagrammet** — Kapittel 5, «Stolpediagram» — https://kvant.roarstovner.no/sec-descriptive.html#sec-diagram-bar
+- **store internasjonale undersøkelser** — Kapittel 1, «Kvantitativ metode er premissleverandør for utdanningspolitikk og utdanningsforskning» — https://kvant.roarstovner.no/sec-why-statistics.html#kvantitativ-metode-er-premissleverandør-for-utdanningspolitikk-og-utdanningsforskning
+- **stratifisert utvalg** — Kapittel 3, «Ikke-tilfeldige utvalg» — https://kvant.roarstovner.no/sec-design.html#ikke-tilfeldige-utvalg
+- **styrken** — Kapittel 6, «Styrke og retning i ekte data» — https://kvant.roarstovner.no/sec-associations.html#sec-associations-correlation-strength
+- **test-retest-reliabilitet** — Kapittel 2, «En målings reliabilitet» — https://kvant.roarstovner.no/sec-measurement.html#en-målings-reliabilitet
+- **tilfeldig gruppeinndeling** — Kapittel 3, «Randomiserte kontrollstudier» — https://kvant.roarstovner.no/sec-design.html#randomiserte-kontrollstudier
+- **tilfeldig klyngeutvalg** — Kapittel 3, «Tilfeldige klyngeutvalg» — https://kvant.roarstovner.no/sec-design.html#tilfeldige-klyngeutvalg
+- **tilfeldig utvalg** — Kapittel 3, «Enkle tilfeldige utvalg» — https://kvant.roarstovner.no/sec-design.html#sec-design-simple-random
+- **tilfeldige avvik** — Kapittel 3, «Randomiserte kontrollstudier» — https://kvant.roarstovner.no/sec-design.html#randomiserte-kontrollstudier
+- **tilfeldige korrelasjoner** — Kapittel 3, «Korrelasjon er ikke kausalitet» — https://kvant.roarstovner.no/sec-design.html#sec-correlation-causality
+- **tilordningsusikkerhet** — Kapittel 7, «Fire typer usikkerhet» — https://kvant.roarstovner.no/sec-inferential.html#sec-inf-typer-usikkerhet
+- **uavhengig variabel** — Kapittel 3, «Variablenes roller: avhengige og uavhengige variable» — https://kvant.roarstovner.no/sec-design.html#variablenes-roller-avhengige-og-uavhengige-variable
+- **utfallsvariabel** — Kapittel 3, «Variablenes roller: avhengige og uavhengige variable» — https://kvant.roarstovner.no/sec-design.html#variablenes-roller-avhengige-og-uavhengige-variable
+- **utvalg** — Kapittel 3, «Populasjon, utvalg og analyseenhet» — https://kvant.roarstovner.no/sec-design.html#populasjon-utvalg-og-analyseenhet
+- **utvalgsfordelingen til gjennomsnittet** — Kapittel 7, «Utvalgsfordelingen til gjennomsnittet» — https://kvant.roarstovner.no/sec-inferential.html#sec-inf-utvalgsfordeling
+- **utvalgsusikkerhet** — Kapittel 7, «Fire typer usikkerhet» — https://kvant.roarstovner.no/sec-inferential.html#sec-inf-typer-usikkerhet
+- **validitet** — Kapittel 2, «En målings validitet» — https://kvant.roarstovner.no/sec-measurement.html#sec-validity
+- **varians** — Kapittel 5, «Hvilket spredningsmål skal du bruke?» — https://kvant.roarstovner.no/sec-descriptive.html#hvilket-spredningsmål-skal-du-bruke
+- **variasjonsbredde** — Kapittel 5, «Hvilket spredningsmål skal du bruke?» — https://kvant.roarstovner.no/sec-descriptive.html#hvilket-spredningsmål-skal-du-bruke
+- **ytre validitet** — Kapittel 3, «Ytre validitet» — https://kvant.roarstovner.no/sec-design.html#ytre-validitet
+- **å bestemme målemetode** — Kapittel 2, «Teoretiske konstrukter og operasjonalisering» — https://kvant.roarstovner.no/sec-measurement.html#sec-operationalization
+- **årsaksvariabel** — Kapittel 3, «Variablenes roller: avhengige og uavhengige variable» — https://kvant.roarstovner.no/sec-design.html#variablenes-roller-avhengige-og-uavhengige-variable
+- **økologisk feilslutning** — Kapittel 6, «Gruppestatistikk er ikke individstatistikk» — https://kvant.roarstovner.no/sec-associations.html#sec-associations-ecological
+- **økologisk validitet** — Kapittel 3, «Ytre validitet» — https://kvant.roarstovner.no/sec-design.html#ytre-validitet

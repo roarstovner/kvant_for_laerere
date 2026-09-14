@@ -1,0 +1,61 @@
+# Kapittel 4. Komme i gang med jamovi
+
+Fra læreboka *Kvantitativ metode for lærere* av Roar Bakken Stovner (2026-utgaven).
+Nettversjon av dette kapittelet: https://kvant.roarstovner.no/sec-jamovi.html
+Hele boka: https://kvant.roarstovner.no/
+
+---
+
+> *Robots are nice to work with.*\
+> – Roger Zelazny[^1]
+
+Dette kapittelet er kort, rett og slett fordi jeg ikke rakk å skrive det ferdig før 2026-utgaven. Her får du bare det aller nødvendigste: hvordan du skaffer deg jamovi, hvordan du får bokas datafiler inn i programmet, og hvordan resten av boka hjelper deg videre. Du trenger ikke jamovi for å forstå resten av boka, men jeg tror de fleste får mer ut av kapitlene om de klikker seg gjennom analysene i jamovi mens de leser.
+
+Er du en av dem som ser for deg å skrive en kvantitativ masteroppgave, er dette kapittelet ekstra verdt tiden din. Da er jamovi godt alternativ til store og dyre statistikkprogrammer jamovi gjør de aller fleste analysene en masteroppgave har bruk for. Og skulle du trenge noe det ikke har fra før, finnes det et enkelt system med tilleggsmoduler som du installerer med noen klikk inne i programmet, så du slipper å lære deg et nytt program for å komme videre.
+
+## 4.1 Å skaffe seg jamovi
+
+*Lenke: https://kvant.roarstovner.no/sec-jamovi.html#å-skaffe-seg-jamovi*
+
+jamovi er gratis og åpent tilgjengelig, og du finner det på [jamovi.org](https://www.jamovi.org). Der har du to muligheter. Enten laster du ned programmet og installerer det på maskinen din, eller så bruker du «Cloud»-versjonen, som kjører i nettleseren uten at du installerer noe som helst. Cloud-versjonen er den raskeste veien i gang, særlig hvis du sitter på en maskin der du ikke får lov til å installere programmer. Men vær klar over at den krever at du oppretter en brukerkonto og logger inn, og at datafilene dine da blir liggende på en server hos noen andre. Hvis du skal laste opp egne data om personer blir det et personvernspørsmål du må avklare. Den installerte versjonen krever ingen innlogging, holder dataene på din egen maskin, og er dessuten raskere når datasettene blir store. Til bokas datasett fungerer begge helt likt, så velg det som passer deg; skal du analysere dine egne innsamlede data, vil jeg anbefale den installerte versjonen.
+
+Grensesnittet er ikke stort å sette seg inn i. Øverst ligger fire faner: **Variables**, som viser en oversikt over variablene i datasettet, **Data**, som viser selve dataene i et regneark, **Analyses**, der du finner alle analysene, og **Edit**. Nesten alt vi gjør i denne boka skjer under Analyses. Der klikker du deg fram til en analyse, og resultatene dukker opp i panelet til høyre, side om side med dataene.
+
+## 4.2 Bokas datafiler
+
+*Lenke: https://kvant.roarstovner.no/sec-jamovi.html#sec-jamovi-datafiler*
+
+Analysene i boka bruker to datasett, og begge kan du laste ned og åpne selv:
+
+- *[ICCS.omv](https://kvant.roarstovner.no/data_and_tables/ICCS.omv)* er hoveddatasettet, og brukes i [Kapittel 5](https://kvant.roarstovner.no/sec-descriptive.html) og [Kapittel 6](https://kvant.roarstovner.no/sec-associations.html). Det er et utdrag fra den store internasjonale undersøkelsen ICCS ([Fraillon et al., 2024](https://kvant.roarstovner.no/sec-references.html#ref-fraillon2024)), med 16473 elever fra Norge, Spania, Polen og Brasil, og 15 variabler om blant annet kjønn, forventet utdanning, kunnskap om demokrati og holdninger til likestilling. Ønsker du dataene i et format andre programmer kan lese, ligger de samme dataene i *[ICCS.csv](https://kvant.roarstovner.no/data_and_tables/ICCS.csv)*.
+- *[anscombe.csv](https://kvant.roarstovner.no/data_and_tables/anscombe.csv)* er et lite datasett som brukes ett sted i [Kapittel 6](https://kvant.roarstovner.no/sec-associations.html), der poenget er at fire datasett kan ha helt like tall og likevel se helt forskjellige ut.
+
+Forskjellen på de to filtypene er verdt å merke seg. En **.omv-fil** er jamovis eget format. I tillegg til tallene husker den hvilket målenivå hver variabel har, hva verdiene heter, og hvilke analyser du har kjørt. Det er derfor *Forventet utdanning* allerede er ordinal og sortert i riktig rekkefølge når du åpner ICCS.omv; noen (jeg) har satt det opp på forhånd. En **.csv-fil** er derimot bare en tekstfil med tall og komma. Den kan leses av så å si alle programmer, men den husker ingenting om målenivåer, så det må du sette selv etter importen. Bruk .omv-filen når du kan.
+
+**Tips — I jamovi: åpne en datafil**
+
+Last først ned filen til maskinen din, for eksempel til Nedlastinger-mappen. Høyreklikk gjerne på lenken og velg «Lagre lenke som», så er du sikker på at filen havner et sted du finner igjen.
+
+Klikk deretter på de tre strekene (☰) øverst til venstre i jamovi og velg **Open**. Velg **Browse** under «This Device» (bruker du Cloud-versjonen, heter valget «Upload» eller liknende), finn filen du lastet ned, og åpne den.
+
+Dataene dukker nå opp i Data-fanen, med én rad per elev og én kolonne per variabel. Gå til Variables-fanen for å se hvilket målenivå hver variabel har. Åpnet du en .csv-fil, bør du sjekke målenivåene ekstra nøye, siden .csv-formatet ikke lagrer dem.
+
+Når du har åpnet ICCS.omv, bør du se noe som likner på skjermbildet i [Figur 5.1](https://kvant.roarstovner.no/sec-descriptive.html#fig-descriptive-ICCS-data) i neste kapittel: en tabell med elever nedover og variabler bortover. Da er du klar til å følge analysene i resten av boka.
+
+## 4.3 Slik hjelper resten av boka deg
+
+*Lenke: https://kvant.roarstovner.no/sec-jamovi.html#slik-hjelper-resten-av-boka-deg*
+
+Fra og med neste kapittel er hovedteksten opptatt av *hva* en analyse er og *hvorfor* vi gjør den, ikke av hvor du skal klikke. Klikkingen har fått sin egen plass. Hver gang boka viser fram en analyse du kan gjøre selv, ligger det en liten boks like ved, med en tittel som starter med «I jamovi:». Boksen over er et eksempel på en slik boks.
+
+I nettversjonen er boksene er klappet sammen, slik at du bare ser tittelen. Klikker du på tittelen, folder den seg ut og viser oppskriften.
+
+Hver boks er skrevet slik at den skal kunne leses for seg selv, så du trenger ikke lete i teksten rundt for å skjønne hva du skal gjøre.
+
+Vil du ha en grundigere innføring i jamovi enn dette kapittelet gir, kan du lese kapittelet [«Getting started with jamovi»](https://davidfoxcroft.github.io/lsj-book/03-Getting-started-with-jamovi.html) i boka denne er basert på ([Navarro & Foxcroft, 2025](https://kvant.roarstovner.no/sec-references.html#ref-navarro2025)). Det er på engelsk, men det er godt illustrert og dekker programmet langt mer utførlig enn jeg gjør her.
+
+Fraillon, J., Friedman, T., & Fraillon, J. (Red.). (2024). *ICCS 2022 Technical Report*.
+
+Navarro, D., & Foxcroft, D. (2025). *Learning Statistics with Jamovi: A Tutorial for Beginners in Statistical Analysis* (1. utg.). Open Book Publishers. <https://doi.org/10.11647/OBP.0333>
+
+[^1]: Kilde: *Dismal Light* (1968).

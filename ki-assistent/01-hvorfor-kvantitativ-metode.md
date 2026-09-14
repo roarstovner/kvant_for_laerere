@@ -1,0 +1,166 @@
+# Kapittel 1. Hvorfor lære kvantitative metoder?
+
+Fra læreboka *Kvantitativ metode for lærere* av Roar Bakken Stovner (2026-utgaven).
+Nettversjon av dette kapittelet: https://kvant.roarstovner.no/sec-why-statistics.html
+Hele boka: https://kvant.roarstovner.no/
+
+---
+
+> *Thou shalt not answer questionnaires*\
+> *Or quizzes upon World Affairs,*\
+> *Nor with compliance*\
+> *Take any test. Thou shalt not sit*\
+> *With statisticians nor commit*\
+> *A social science*\
+> – W.H. Auden[^1]
+
+Mange blir overrasket over at de skal lære seg kvantitativ metode i lærerutdanninga. Hvis du virkelig digget kvantitative metoder eller statistikk, ville du sannsynligvis vært påmeldt et statistikkurs nå, ikke et obligatorisk kurs i vitenskapsteori og metode for lærere. Likevel er studentmassen på OsloMet, hvor jeg jobber, delt på midten i synet på kvantitativ metode; mange ser ikke vitsen, mens mange setter pris på å ha blitt tvunget gjennom stoffet, fordi det gir et mer solid grunnlag for å forstå og bruke utdanningsforskning. Dessuten er mange nysgjerrige på hvordan man har utledet all kunnskapen som de er blitt undervist i på lærerutdanninga, og for å vite det må man vite noe om forskningsmetode, blant annet kvantitativ metode.
+
+Jeg mener det er fem grunner til at lærere bør lære seg noe om kvantitativ metode, og de fortjener hvert sitt delkapittel.
+
+## Kvantitativ metode hjelper deg å vurdere påstander du møter i læreryrket
+
+*Lenke: https://kvant.roarstovner.no/sec-why-statistics.html#kvantitativ-metode-hjelper-deg-å-vurdere-påstander-du-møter-i-læreryrket*
+
+Som lærer møter du mange påstander som hevdes å være forskningsbaserte. Læreverk og IKT-verktøy markedsføres som evidensbaserte, pedagogiske tilnærminger presenteres som «dokumentert effektive», og entusiastiske rektorer kommer springende med nye undervisningsmetoder fra forskningsfronten. Det er en oppfatning blant både forskere og praktikere at kvantitativ forskning er mer pålitelig enn kvalitativ forskning, muligens fordi studier med store utvalg og statistiske beregninger ofte assosieres med høyere grad av generaliserbarhet og dermed større troverdighet, vi kan kalle det «*Bigger is better*»-resonnementet. Med grunnleggende kunnskaper i kvantitativ metode er du bedre rustet til å gjennomskue slike feilslutninger og kan heller foreta en kritisk vurdering av kvantitativ forskning.
+
+Vi tar et eksempel: Da Nicolai Tangen, lederen for oljefondet, intervjuet psykologen og utdanningsforskeren Angela Duckworth til podcasten sin, spurte han om det var en sammenheng mellom kjønn og *grit*, altså pågangsmot ([Tangen, 2022](https://kvant.roarstovner.no/sec-references.html#ref-tangen2022), ca. 40:30). Duckworth svarte at menn og kvinner hadde like mye pågangsmot, i hvert fall var utvalget hennes så stort at kjønnsforskjellen måtte være liten. Tangen svarte at han var en «big believer in sample size» og virket fornøyd med Duckworth sitt svar. Tangen betraktet altså utvalgsstørrelsen nærmest som en garanti for kvalitet, men, som du kommer til å lære i løpet av dette kurset, så er utvalgsstørrelse bare én av mange faktorer som er avgjørende for å vurdere kvaliteten og holdbarheten i slike påstander, og ofte langt fra den viktigste.
+
+Du kommer for eksempel til å lære at du må undersøke hvordan målingene er gjort. Hvordan målte Duckworth hvor mye pågangsmot forskningsdeltagerne hadde? Jo, ved å la forskningsdeltagerne svare på noen påstander om seg selv. For hver påstand skulle de krysse av på en gradert skala fra «Very much like me» til «Not like me at all»:
+
+- New ideas and projects sometimes distract me from previous ones.
+- Setbacks don’t discourage me.
+- I have been obsessed with a certain idea or project for a short time but later lost interest.
+- I am a hard worker.
+- I often set a goal but later choose to pursue a different one.
+- I have difficulty maintaining my focus on projects that take more than a few months to complete.
+- I finish whatever I begin.
+- I am diligent.
+
+Når du nå vet hvordan deltagernes pågangsmot ble målt, hva tenker du da om konklusjonen om at menn og kvinner har like stort pågangsmot? Tenker du for eksempel at menn har en tendens til å rangere seg selv høyere enn kvinner på skalaen når de tar stilling til påstandene, selv om de faktisk ikke har så mye mer pågangsmot sammenlignet med kvinner? I så fall er Duckworths konklusjon feil, samme hvor mange deltagere hun har spurt! Du lærer om dette i [Kapittel 2](https://kvant.roarstovner.no/sec-measurement.html).
+
+Det overordnede formålet med boka er å gi kunnskapen som trengs for å vurdere slike påstander som Duckworth framsatte. Lærere blir jevnlig møtt med påstander som bygger på kvantitative data, for eksempel påstander om elevers lesekompetanse fra PISA-undersøkelsen, eller påstander om læringseffekten av et nytt IKT-verktøy fra de som ønsker å selge det. Hvis man kan vurdere kvantitativ forskning står man bedre rustet til å forholde seg kritisk til denne typen utsagn.
+
+## Kvantitativ metode er premissleverandør for utdanningspolitikk og utdanningsforskning
+
+*Lenke: https://kvant.roarstovner.no/sec-why-statistics.html#kvantitativ-metode-er-premissleverandør-for-utdanningspolitikk-og-utdanningsforskning*
+
+Kvantitative undersøkelser og statistikk danner ofte grunnlaget for beslutninger i utdanningssektoren. Det fremste eksempelet på dette er betydningen den såkalte PISA-undersøkelsen (*Programme for International Student Assessment*) har hatt for utformingen av norsk utdanningspolitikk, ettersom resultatene derfra har lagt grunnlaget for en rekke tiltak for å styrke elevenes kompetanse i lesing, matematikk og naturfag. Da de første norske resultatene kom i år 2000 ble det ramaskrik – de norske elevene var helt gjennomsnittlige! Vi som trodde vi hadde blant verdens beste skolesystemer! Dette ble fort omdøpt «PISA-sjokket» ([Bergesen, 2006](https://kvant.roarstovner.no/sec-references.html#ref-bergesen2006)). Her måtte det ryddes opp, og skolesystemet måtte forbedres. Resultatene fra PISA-undersøkelsen medvirket slik til en politisk prosess som endte med etableringen av nasjonale prøver i lesing, regning og engelsk i 2004 og læreplanen Kunnskapsløftet, LK06, i 2006.
+
+Kvantitative undersøkelser kan altså være så potente at de har en betydelig påvirkning på hvilke mål vi har for skolen og hvordan vi styrer den. Her er en liten smørbrødliste over undersøkelser som har hatt tydelig påvirkning på norsk utdanningspolitikk:
+
+- **PISA-undersøkelser** og andre **store internasjonale undersøkelser** brukes som argument for reformer og endringer i skolesystemet. I denne boka ser vi nærmere på noen variabler fra den store internasjonale ICCS-undersøkelsen i kapittel 4 og 5.
+- **Nasjonale prøver** påvirker prioriteringer og ressursfordelinger i skolen, og det er politisk omstridte spørsmål om skolers skår på nasjonale prøver skal være offentlig kjent og hvordan ressurser skal fordeles basert på resultatene.
+- **Randomiserte kontrollerte eksperimenter** blir benyttet til å argumentere for at noen undervisningsmetoder er bedre enn andre.
+- Kvantitative **elevundersøkelser** om trivsel, mobbing og læringsmiljø danner grunnlag for tiltak for å bedre elevenes skolemiljø.
+- Statistikk over karakterer og over hvor mange elever som gjennomfører videregående skole, brukes til å vurdere kvaliteten til den enkelte skole.
+
+Som lærer vil du måtte forholde deg til premissene for en utdanningspolitikk som blant annet baserer seg på slike undersøkelser. Å forstå grunnlaget disse undersøkelsene hviler på, er derfor ikke bare viktig for profesjonsutøvelsen, men også for å kunne delta informert i debatten om hvordan skolen skal og bør utvikle seg.
+
+## Kvantitativ metode hjelper deg med *assessment literacy*, altså å utvikle din vurderingskompetanse
+
+*Lenke: https://kvant.roarstovner.no/sec-why-statistics.html#kvantitativ-metode-hjelper-deg-med-assessment-literacy-altså-å-utvikle-din-vurderingskompetanse*
+
+Som lærer møter du vurderingssituasjoner hele tiden. Du mottar resultater om klassen din på nasjonale prøver, du sitter i evalueringsmøte med skoleledere som lurer på hvorfor klassen din skåret dårlig på tentamen, eller du lager vurderingssituasjoner for å finne ut hvor mye elevene har lært. Kvantitative metoder kan gi deg bedre forståelse for hva slike vurderinger betyr; du kan få en grunnleggende *assessment literacy* som hjelper deg å forberede slike vurderingssituasjoner og tolke resultatene fra dem.
+
+## Kvantitativ metode hjelper deg som lærerstudent
+
+*Lenke: https://kvant.roarstovner.no/sec-why-statistics.html#kvantitativ-metode-hjelper-deg-som-lærerstudent*
+
+Videre i studiet ditt kommer du til å møte forskningslitteratur som benytter kvantitative metoder. Hvis du har innsikt i kvantitative metoder, vil du forstå denne forskningen bedre og lettere vurdere hva kunnskapen bygger på.
+
+## Kvantitativ metode hjelper deg i hverdagen
+
+*Lenke: https://kvant.roarstovner.no/sec-why-statistics.html#kvantitativ-metode-hjelper-deg-i-hverdagen*
+
+Statistikk dukker opp overalt i nyhetsbildet, og norske medier er ikke immune mot å presentere tall på misvisende måter. I februar 2020 publiserte Aftenpostens A-magasinet en sak om at stadig flere nordmenn er uføretrygdede. Artikkelen inkluderte en graf over andelen uføretrygdede i befolkningen fra 2015 til 2018. I nettversjonen av artikkelen gikk y-aksen fra 9,7 % til 10,1 %, noe som fikk en økning på 0,4 prosentpoeng til å se dramatisk ut. Sjefredaktør Trine Eilertsen beklaget i etterkant og kalte det «misbruk av statistikk» ([Eilertsen, 2020](https://kvant.roarstovner.no/sec-references.html#ref-eilertsen2020)).
+
+[Figur 1.1](https://kvant.roarstovner.no/sec-why-statistics.html#fig-aftenposten) illustrerer to grep som kan gjøre en graf misvisende. Det venstre panelet viser grafen omtrent slik A-magasinet presenterte den på nett, med en avkortet y-akse som skaper et inntrykk av kraftig økning. Det midterste panelet viser de samme dataene med y-aksen fra null; nå er økningen knapt synlig. Men begge disse grafene viser bare fire år. Det høyre panelet viser hele tidsserien fra 2015 til 2024, og her ser vi at andelen uføretrygdede flatet ut etter 2019. A-magasinet viste altså bare den bratteste delen av kurven.
+
+Bildebeskrivelse: Tre linjediagrammer side om side. Venstre diagram har avkortet y-akse og viser bratt økning. Midtre diagram har y-akse fra null og viser at økningen er minimal. Høyre diagram viser hele tidsserien fra 2015 til 2024, der kurven flater ut etter 2019.
+
+Figur 1.1. Andel uføretrygdede i befolkningen. Venstre panel viser 2015–2018 med avkortet y-akse, liknende slik A-magasinet presenterte det. Midtre panel viser det samme med y-akse fra null. Høyre panel viser hele tidsserien 2015–2024. Kilde: SSB, tabell 11714.
+
+Poenget er ikke at journalister er dårlige i statistikk, men at en grunnleggende kunnskap om kvantitativ metode er nyttig for å oppdage når tall blir presentert på en misvisende måte, enten det gjelder helsestatistikk, kriminalitet, økonomi eller andre temaer du møter som privatperson. En bivirkning ved å kunne noe om kvantitativ metode er at du oftere blir irritert på aviser eller internett.
+
+## 1.1 En advarsel mot å «tro på dataene»
+
+*Lenke: https://kvant.roarstovner.no/sec-why-statistics.html#en-advarsel-mot-å-tro-på-dataene*
+
+Kvantitativ forskning har en snedig makt over sinnene våre. Når man har tallfestet noe, fremstår det som autoritativt, sikkert, objektivt og krystallklart. Jeg tror det er bakgrunnen for at man hører uttalelser som «vi må stole på dataene» eller «vi må høre på det evidensen sier». Dette er det reneste vrøvl, og jeg skal nå forklare hvorfor. Jeg forklarer med en halvlang anekdote for å illustrere at enhver statistisk analyse er forankret i en teori om verden. Det er ikke sant at «dataene snakker for seg selv», dataene snakker alltid ut fra et teoretisk ståsted. Et bedre utsagn er «hva dataene betyr avhenger av teorien du har», eller kanskje enda bedre, «at teorier stemmer overens med data er bare et av flere kriterier man kan bruke for å bedømme hvilke teorier som er mest sanne».
+
+Anekdoten er jeg temmelig sikker på at er sann. I 1973 hadde University of California, Berkeley, noen bekymringer rundt hvilke studenter som slapp inn på utdanningene deres. De syntes kjønnsfordelingen var problematisk ([Tabell 1.1](https://kvant.roarstovner.no/sec-why-statistics.html#tbl-tab1-4)).
+
+| | Antall søkere | Prosent tilbudt plass |
+|---------|---------------|-----------------------|
+| Menn | 8442 | 44% |
+| Kvinner | 4321 | 35% |
+
+Tabell 1.1. Berkeley-studenter etter kjønn
+
+Berkeley var rett og slett bekymret for å bli saksøkt fordi en mindre andel kvinner ble tilbudt plass på studiene deres. I USA er det forbudt å forskjellsbehandle søkere etter kjønn, og når kvinner systematisk blir tatt opp i lavere grad enn menn, kan det se ut som ulovlig diskriminering. Av mennene fikk 44 % plass, mot 35 % av kvinnene, en forskjell på 9 prosentpoeng i opptaksraten. Med nesten 13 000 søkere er en så stor forskjell altfor stor til å være tilfeldig, og det er nok med litt sunn fornuft for å anta at kvinner ble diskriminert. *Man må jo lytte til dataene.*
+
+Men da andre så nærmere på opptaksdataene, viste de en litt annen historie ([Bickel et al., 1975](https://kvant.roarstovner.no/sec-references.html#ref-Bickel1975)). I stedet for å undersøke opptaksraten til universitetet som helhet, underøkte de opptaksraten på hvert fakultet. da viste det seg at de fleste fakultetene hadde *høyere* opptaksrate for kvinnelige søkere. [Tabell 1.2](https://kvant.roarstovner.no/sec-why-statistics.html#tbl-tab1-5) viser opptaksdataene for de seks største fakultetene.
+
+| | Menn | | Kvinner | |
+|----------|--------|-----------------------|---------|-----------------------|
+| fakultet | Søkere | Prosent tilbudt plass | Søkere | Prosent tilbudt plass |
+| A | 825 | 62% | 108 | 82% |
+| B | 560 | 63% | 25 | 68% |
+| C | 325 | 37% | 593 | 34% |
+| D | 417 | 33% | 375 | 35% |
+| E | 191 | 28% | 393 | 24% |
+| F | 272 | 6% | 341 | 7% |
+
+Tabell 1.2. Berkeley-studenter etter kjønn for de seks største fakultetene
+
+De fleste fakultetene hadde altså en *høyere* opptaksrate for kvinner enn for menn! Likevel var den totale opptaksraten ved universitetet lavere for kvinner enn for menn. Hvordan kan begge disse påstandene være sanne samtidig?
+
+For det første, merk at fakultetene har ulike opptaksrater: fakultet A og B tok opp mange søkere, mens fakultet C, D, E og F avslo de fleste. For det andre, menn og kvinner søkte til ulike fakulteter. Menn søkte i størst grad til fakultet A og B, altså de som var lettest å komme inn på. Kvinner søkte i størst grad til fakultet C, D, E og F, altså de som var vanskeligst å komme inn på. Dermed fikk kvinner en lavere opptaksrate totalt, selv om de hadde en høyere opptaksrate på de fleste fakultetene. Hvis vi ser på [Figur 1.2](https://kvant.roarstovner.no/sec-why-statistics.html#fig-fig1-1), ser vi at denne trenden er systematisk, faktisk helt slående.
+
+Denne statistiske effekten er kjent som **Simpsons paradoks**: Sammenhenger som gjelder hele utvalget kan være snudd på hodet i undergruppene. Simpsons paradoks illustrerer et viktig poeng: Hvordan kan man vite om man skal stole på dataene når resultatet avhenger av hvordan man analyserer dem?
+
+Bildebeskrivelse: Et spredningsdiagram viser prosentandelen kvinnelige søkere (x-akse) mot opptaksraten for begge kjønn (y-akse). Blå sirkler av varierende størrelser og grå pluss-tegn representerer datapunktene. En nedadgående trendlinje indikerer en negativ korrelasjon mellom variablene.
+
+Figur 1.2. Berkeley-opptaksdata for 1973. Denne figuren viser opptaksraten for de 85 fakultetene som hadde kvinnelige søkere. De fakultetene som hadde størst andel kvinnelige søkere er til høyre, og disse har lav opptaksrate. Fakultetene som hadde minst andel kvinnelige søkere (til venstre) hadde høy opptaksrate. Figuren er en nytegning av Figur 1 fra Bickel et al. ([1975](https://kvant.roarstovner.no/sec-references.html#ref-Bickel1975)). Større sirkler betyr flere søkere; de minste fakultetene (færre enn 40 søkere) vises som små sirkler.
+
+Men selv denne mer detaljerte analysen hviler på et valg. Simpsons paradoks handler egentlig om hvilke variabler vi tar hensyn til. Den første analysen så bare på *kjønn* og *opptak*. Den andre tok i tillegg hensyn til *fakultet*. Men beslutningen om å inkludere fakultet er ikke noe dataene selv kan fortelle deg, den kommer fra en antakelse om at diskriminering skjer ved *fakultetenes* opptaksbeslutning, ikke universitetets.
+
+Andre kan tenke at kjønnsdiskriminering skjer på et annet sted i prosessen: Hvorfor var det plass til så mange flere studenter på utdanningene med mange mannlige søkere enn på utdanningene med mange kvinnelige søkere? Hva om administrasjonen prioriterte å finansiere mange studieplasser på studier som tiltrakk seg menn? Det ville også vært kjønnsdiskriminerende, men det fanges ikke opp av noen av disse analysene. Denne alternative tolkningen er i seg selv en hypotese som trenger egne data for å undersøkes, for eksempel referater fra møter der det ble besluttet hvor mange plasser hvert studieprogram skal ha. Poenget er at valget av hva man analyserer, gjenspeiler teorien og hva den sier er viktig.
+
+De tre måtene å lese Berkeley-tallene på hviler hver på sin antakelse om *hvor* en eventuell diskriminering skjer:
+
+1. Den første analysen (som bare ser på kjønn og opptak) antar at diskriminering viser seg i universitetets samlede opptaksrate. Universitetet behandles da som én beslutningstaker.
+2. Den andre analysen (som tar hensyn til fakultet) antar at diskriminering skjer i det enkelte fakultetets opptaksbeslutning, slik at kjønnene derfor må sammenlignes innenfor hvert fakultet. Det ser på fakultetet som beslutningstagerne.
+3. En tredje analyse (som ser på hvordan studieplassene er fordelt mellom fakulteter) antar at diskrimineringen ligger i finansieringen av antall studieplasser, ikke i selve opptaket. Da er det finansieringsbeslutningene, ikke opptaksbeslutningene, man må analysere.
+
+Det anekdoten viser, er at slutningene du kan trekke fra data eller statistiske undersøkelser er teoriavhengige. Basert på et teoretiske ståsted velger man hva slags data og metode som er relevant for å besvare forskningsspørsmålene. Den kjente statistikeren Sander Greenland har en minneverdig formulering:
+
+> Den største illusjonen om forskning: «La dataene tale for seg selv» Men DATAENE SIER IKKE NOE SOM HELST! De er bare merker på papir eller bits \[på en datamaskins harddisk\] som bare ligger der og gjør ingenting. Hvis du hører dem snakke bør du umiddelbart oppsøke hjelp! ([Greenland, 2022, s. 7](https://kvant.roarstovner.no/sec-references.html#ref-greenland2022), min oversettelse)
+
+Men dette betyr ikke at alle tolkninger er like gode, eller at kvantitativ forskning bare er «meninger med tall». Tvert imot: Nettopp fordi tolkninger bygger på antakelser, kan antakelsene gjøres eksplisitte, og da kan andre forskere kritisere dem. Forskere kan påpeke at analysen ikke er gjort i tråd med teorien, eller utfordre selve teorien. Hvis forskerne derimot *ikke* er bevisste sine antakelser, risikerer de å forsterke egne eksisterende oppfatninger og gå ut i verden med en ny klubbe og bare hamre løs: «Dere må jo lytte til dataene!»
+
+Kvantitative metoder er altså ikke verktøy som gir deg ferdige svar. De er verktøy som undersøker data med et teoretisk blikk. Ulike antakelser gir ulike analyser, men det betyr ikke at alle analyser er like gode. I eksempelet fra Berkeley vil jeg argumentere for at analysen som tar hensyn til fakulteter er bedre, men merk at dette er et argument som baserer seg på kunnskap om hvordan opptaksbeslutninger i USA fungerer, ikke noe dataene alene kan fortelle deg. Teorier kan vurderes etter hvor godt de henger sammen internt, hvor mye de klarer å forklare, og om de tåler å bli testet mot nye data. Når du leser en kvantitativ studie, kan du stille deg spørsmål som: Hvilke antakelser er gjort? Hva er inkludert og hva er utelatt? Hvilke andre forklaringer er mulige?
+
+## 1.2 Oppsummering
+
+*Lenke: https://kvant.roarstovner.no/sec-why-statistics.html#oppsummering*
+
+Ettersom årene går, og flere og flere lærere i skolen har mastergrad og noe kjennskap til kvantitativ forskning, får vi forhåpentligvis en lærerstand som kan benytte seg kritisk av kvantitativ forskning, en lærerstand som både kan avvise forskning som ikke er god nok og som kan samle seg om og implementere lærdom fra god forskning.
+
+I dette kapittelet har du lært:
+
+- Fem grunner til at lærere bør kunne litt om kvantitativ metode
+- Hvorfor data og statistikk ikke i seg selv gir noen objektiv sannhet, men at de er viktige deler av hvordan teorier blir underbygget.
+
+Bergesen, H. O. (2006). *Kampen om kunnskapskolen*. Universitetsforlaget.
+
+Bickel, P. J., Hammel, E. A., & O’Connell, J. W. (1975). Sex Bias in Graduate Admissions: Data from Berkeley. *Science*, *187*, 398–404. <https://doi.org/10.1126/science.187.4175.398>
+
+Eilertsen, T. (2020). *Trine Eilertsen Beklager Misbruk Av Statistikk i A-magasinet*. https://www.journalisten.no/a-magasinet-aftenposten-statistikk/trine-eilertsen-beklager-misbruk-av-statistikk-i-a-magasinet/398871.
+
+Greenland, S. (2022). *What Does Statistics Have to Offer the Epidemiologist?*
+
+Tangen, N. (2022). Bonus Episode: Grit with Angela Duckworth \[Audio Podcast Episode\]. *In Good Company*.
+
+[^1]: Sitatet kommer fra Audens dikt fra 1946, *Under Which Lyre: A Reactionary Tract for the Times*, som var en advarsel om samfunnsutviklingen etter andre verdenskrig.

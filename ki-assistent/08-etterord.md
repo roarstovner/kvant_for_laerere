@@ -1,0 +1,18 @@
+# Etterord
+
+Fra læreboka *Kvantitativ metode for lærere* av Roar Bakken Stovner (2026-utgaven).
+Nettversjon av dette kapittelet: https://kvant.roarstovner.no/sec-epilogue.html
+Hele boka: https://kvant.roarstovner.no/
+
+---
+
+> *«Begin at the beginning», the King said, very gravely, «and go on till you come to the end: then stop»*\
+> – Lewis Carroll, *Alice in Wonderland*
+
+Som nevnt i forordet, er denne læreboken en betydelig omarbeidet og forkortet versjon av en bok skrevet for et kurs som krevde et firedels semesters arbeid, altså 7,5 studiepoeng. Fra over 500 sider har jeg kuttet og komprimert materialet ned til omtrent 130 sider, samtidig som jeg har gjort det relevant for utdanningsforskning. Komprimeringen betyr naturligvis at mange detaljer, og faktisk også mye som ikke er detaljer, har blitt utelatt for å holde omfanget håndterbart. Skulle du ønske å lese mer om en metode, kanskje særlig hvis du planlegger å benytte den i en fremtidig masteroppgave, vil du finne et vell av ytterligere informasjon og detaljer i den originale utgaven av boken ([Navarro & Foxcroft, 2025](https://kvant.roarstovner.no/sec-references.html#ref-navarro2025)).
+
+Noe av hovedpoenget med å skrive denne boka er å gjøre alt materialet relevant for lærere i skolen. Dette arbeidet er langt fra i mål. Til fremtidige utgaver håper jeg å ha flere og bedre eksempler, og at eksemplene samlet sett viser noe av bredden i kvantitativ forskning på utdanningsfeltet. Jeg ønsker å inkludere egne kapitler om store internasjonale undersøkelser, nasjonale prøver, kartleggingsprøver og summative vurderinger i skolen.
+
+Målet er at alle lærere skal tenke «jeg er jommen glad jeg har lært dette» når de kommer til slutten av boka.
+
+Navarro, D., & Foxcroft, D. (2025). *Learning Statistics with Jamovi: A Tutorial for Beginners in Statistical Analysis* (1. utg.). Open Book Publishers. <https://doi.org/10.11647/OBP.0333>
