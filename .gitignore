@@ -33,3 +33,7 @@ tmp/
 renv/.DS_Store
 
 *.ent
+
+# Bare på dev-maskinen: chainlink og lokale arbeidsnotater
+.chainlink/
+CLAUDE.local.md
