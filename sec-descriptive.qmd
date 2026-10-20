@@ -48,7 +48,7 @@ Gir denne tabellen deg egentlig noen klar forståelse av mønstre i dataene, for
 
 Det er dette som er deskriptiv statistikk, å gjøre rå data om til tall og figurer som gir innsikt.
 
-I dag gjør man all statistikk på en datamaskin, så la oss vise dataene i statistikkprogrammet, jamovi. Etter å ha åpnet filen *[ICCS.omv](https://kvant.roarstovner.no/data_and_tables/ICCS.omv)* ser det ut som i @fig-descriptive-ICCS-data. Trenger du hjelp til å få filen inn i jamovi, står det forklart i @sec-jamovi-datafiler.
+I dag gjør man all statistikk på en datamaskin, så la oss vise dataene i statistikkprogrammet, jamovi. Etter å ha åpnet filen *[ICCS.omv](https://kvant.roarstovner.no/data_and_tables/ICCS.omv)* ser det ut som i @fig-descriptive-ICCS-data. Trenger du hjelp til å få filen inn i jamovi, står det forklart i @sec-jamovi-datafiler. Du trenger ikke å benytte jamovi for å lese videre i kapittelet; det er helt valgfritt.
 
 ```{r}
 #| label: fig-descriptive-ICCS-data
